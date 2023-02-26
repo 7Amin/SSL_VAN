@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 
 from monai.utils import ensure_tuple_rep
+from util_models.van_3d import VAN3D
 
 
 class SSLHead(nn.Module):
@@ -10,7 +11,7 @@ class SSLHead(nn.Module):
         patch_size = ensure_tuple_rep(2, args.spatial_dims)
         window_size = ensure_tuple_rep(7, args.spatial_dims)
         #  todo add van here
-        self.van = None
+        self.van3d = VAN3D()
         self.rotation_pre = nn.Identity()
         self.rotation_head = nn.Linear(dim, 4)
         self.contrastive_pre = nn.Identity()
@@ -51,7 +52,7 @@ class SSLHead(nn.Module):
             )
 
     def forward(self, x):
-        x_out = self.swinViT(x.contiguous())[4]
+        x_out = self.van3d(x.contiguous())[4]
         _, c, h, w, d = x_out.shape
         x4_reshape = x_out.flatten(start_dim=2, end_dim=4)
         x4_reshape = x4_reshape.transpose(1, 2)
