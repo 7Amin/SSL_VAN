@@ -147,7 +147,7 @@ def main():
     parser.add_argument("--eval_num", default=100, type=int, help="evaluation frequency")
     parser.add_argument("--warmup_steps", default=500, type=int, help="warmup steps")
     parser.add_argument("--in_channels", default=1, type=int, help="number of input channels")
-    parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
+    # parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
     parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
     parser.add_argument("--use_checkpoint", action="store_true", help="use gradient checkpointing to save memory")
     parser.add_argument("--spatial_dims", default=3, type=int, help="spatial dimension of input data")
@@ -213,7 +213,7 @@ def main():
 
     model = SSLHead(args)
     model.cuda()
-
+    optimizer = None
     if args.opt == "adam":
         optimizer = optim.Adam(params=model.parameters(), lr=args.lr, weight_decay=args.decay)
 
@@ -241,7 +241,7 @@ def main():
 
             scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambdas)
 
-    loss_function = Loss(args.batch_size * args.sw_batch_size, args)
+    loss_function = Loss(args.batch_size, args)
     if args.distributed:
         model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
         model = DistributedDataParallel(model, device_ids=[args.local_rank])

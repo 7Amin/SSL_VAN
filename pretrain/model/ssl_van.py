@@ -11,7 +11,7 @@ class SSLHead(nn.Module):
         patch_size = ensure_tuple_rep(2, args.spatial_dims)
         window_size = ensure_tuple_rep(7, args.spatial_dims)
         #  todo add van here
-        self.van3d = VAN3D()
+        self.van3d = VAN3D(in_chans=args.in_channels, drop_path_rate=args.dropout_path_rate)
         self.rotation_pre = nn.Identity()
         self.rotation_head = nn.Linear(dim, 4)
         self.contrastive_pre = nn.Identity()
