@@ -142,6 +142,8 @@ def main():
 
     parser = argparse.ArgumentParser(description="PyTorch Training")
     parser.add_argument("--logdir", default="test", type=str, help="directory to save the tensorboard logs")
+    parser.add_argument("--data_dir", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/", type=str,
+                        help="directory image data")
     parser.add_argument("--epochs", default=100, type=int, help="number of training epochs")
     parser.add_argument("--num_steps", default=100000, type=int, help="number of training iterations")
     parser.add_argument("--eval_num", default=100, type=int, help="evaluation frequency")
