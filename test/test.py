@@ -4,6 +4,9 @@ import xml.etree.ElementTree as ET
 import json
 import xmltodict
 import pandas as pd
+import numpy as np
+from PIL import Image, ImageDraw
+from data_cleaner.segmentation_luna import get_mask_of_subject
 
 
 base = "/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16/manifest-1600709154662/LIDC-IDRI/LIDC-IDRI-0002/01-01-2000-NA-NA-98329/3000522.000000-NA-04919/"
@@ -110,7 +113,27 @@ def run(xml_url):
         lidc_read_message = json_object['LidcReadMessage']
         result = get_reading_sessions(lidc_read_message)
         df = pd.DataFrame(result, columns=['x', 'y', 'z', 'nodule_id'])
-        print("z")
+        df = df.astype({'z': 'float'})
+        df = df.astype({'x': 'int32'})
+        df = df.astype({'y': 'int32'})
+        new_df = df[(df['z'] == -87.00)]
+        new_df = new_df[(new_df['nodule_id'] == 'MI014_11691')]
+        new_df = new_df[['x', 'y']]
+        return new_df.to_numpy()
 
 
-run(xml_url_global)
+images = get_mask_of_subject(xml_url_global)
+for key in images:
+    mask = images[key]
+    mask.save(f'image/mask_{key}.png')
+    print(key)
+region_coords = run(xml_url_global)
+mask = Image.new('1', (512, 512), 0)
+res = []
+for region_coord in region_coords:
+    res.append((region_coord[0], region_coord[1]))
+draw = ImageDraw.Draw(mask)
+draw.polygon(res, fill=1)
+mask.save('mask_MI014.png')
+print("amin")
+
