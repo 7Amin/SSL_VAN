@@ -94,5 +94,5 @@ def get_mask_of_subject(xml_url):
                 if len(temp_list) == 1:
                     temp_list.append(temp_list[0])
                 draw.polygon(temp_list, fill=1)
-            result[z_position] = np.array(mask) * 1
+            result[z_position] = np.array(mask) * 1.0
     return result

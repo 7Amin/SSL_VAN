@@ -13,14 +13,15 @@ from data_cleaner.segmentation_luna import get_mask_of_subject
 def _read_images_directories(args, data_type):
     base_url = args.base_dir_code
     json_url = base_url + args.luna16_json
-    with open(json_url, "w") as in_file:
-        json_data = json.load(in_file)
+    in_file = open(json_url)
+    json_data = json.load(in_file)
     return json_data[data_type]
 
 
 def _load_images(args, subject_info):
-    x, y = args.image_size
-    luda16_data = args.base_data + args.luna_data + subject_info['files_dir']
+    x = args.size_x
+    y = args.size_y
+    luda16_data = os.path.join(args.base_data + args.luna_data, subject_info['files_dir'])
     paths = os.listdir(luda16_data)
     result_images = []
     result_labels = []
@@ -48,7 +49,7 @@ def _load_images(args, subject_info):
         else:
             result_labels.append(np.zeros((x, y)))
 
-    return result_images, result_labels
+    return np.array(result_images), np.array(result_labels)
 
 
 class Luna16Dataset(Dataset):
