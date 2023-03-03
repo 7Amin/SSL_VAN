@@ -36,7 +36,7 @@ class Loss(torch.nn.Module):
         _, d, _, _ = target_recons.shape
         rot_loss = self.alpha1 * self.rot_loss(output_rot, target_rot)
         contrast_loss = self.alpha2 * self.contrast_loss(output_contrastive, target_contrastive)
-        recon_loss = self.alpha3 * self.recon_loss(output_recons[:, :, d, :, :], target_recons)
+        recon_loss = self.alpha3 * self.recon_loss(output_recons[:, :, : d, :, :], target_recons)
         total_loss = rot_loss + contrast_loss + recon_loss
 
         return total_loss, (rot_loss, contrast_loss, recon_loss)
