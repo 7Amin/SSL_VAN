@@ -48,7 +48,7 @@ parser.add_argument("--max_grad_norm", default=1.0, type=float, help="maximum gr
 
 
 parser.add_argument("--num_steps", default=100000, type=int, help="number of training iterations")
-parser.add_argument("--eval_num", default=100, type=int, help="evaluation frequency")
+parser.add_argument("--eval_num", default=1, type=int, help="evaluation frequency")
 # parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
 parser.add_argument("--use_checkpoint", action="store_true", help="use gradient checkpointing to save memory")
 parser.add_argument("--spatial_dims", default=3, type=int, help="spatial dimension of input data")
@@ -98,9 +98,8 @@ def train(args, global_step, train_loader, val_best):
 
     for data in train_loader:
         t1 = time()
-        x, y = data
+        x, _ = data
         x = x.to(args.device)
-        y = y.to(args.device)
         x1, rot1 = rot_rand(args, x)
         x2, rot2 = rot_rand(args, x)
         x1_augment = aug_rand(args, x1)
@@ -170,7 +169,7 @@ def validation(args, test_loader):
     loss_val_recon = []
     with torch.no_grad():
         for step, batch in enumerate(test_loader):
-            val_inputs, y = batch
+            val_inputs, _ = batch
             x1, rot1 = rot_rand(args, val_inputs)
             x2, rot2 = rot_rand(args, val_inputs)
             x1_augment = aug_rand(args, x1)
@@ -188,18 +187,19 @@ def validation(args, test_loader):
             loss_val_recon.append(loss_recon.item())
             x_gt = x1.detach().cpu().numpy()
             x_gt = (x_gt - np.min(x_gt)) / (np.max(x_gt) - np.min(x_gt))
-            xgt = x_gt[0][0][:, :, 48] * 255.0
+            xgt = x_gt[0][48][:, :] * 255.0
             xgt = xgt.astype(np.uint8)
             x1_augment = x1_augment.detach().cpu().numpy()
             x1_augment = (x1_augment - np.min(x1_augment)) / (np.max(x1_augment) - np.min(x1_augment))
-            x_aug = x1_augment[0][0][:, :, 48] * 255.0
+            x_aug = x1_augment[0][48][:, :] * 255.0
             x_aug = x_aug.astype(np.uint8)
             rec_x1 = rec_x1.detach().cpu().numpy()
             rec_x1 = (rec_x1 - np.min(rec_x1)) / (np.max(rec_x1) - np.min(rec_x1))
-            recon = rec_x1[0][0][:, :, 48] * 255.0
+            recon = rec_x1[0][0][48][:, :] * 255.0
             recon = recon.astype(np.uint8)
             img_list = [xgt, x_aug, recon]
             print("Validation step:{}, Loss:{:.4f}, Loss Reconstruction:{:.4f}".format(step, loss, loss_recon))
+            break
 
     return np.mean(loss_val), np.mean(loss_val_recon), img_list
 
@@ -208,3 +208,8 @@ global_step = 0
 val_best = 1010101010
 for i in range(args.epochs):
     global_step, loss, val_best = train(args, global_step, training_data_loader, val_best)
+    checkpoint = {"epoch": i, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict(), "loss": loss}
+    save_ckp(checkpoint, logdir + "/model_final_epoch.pt")
+
+
+torch.save(model.state_dict(), logdir + "final_model.pth")
