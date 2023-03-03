@@ -16,10 +16,10 @@ from pretrain.optimizers.lr_scheduler import WarmupCosineSchedule
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 
-parser.add_argument("--num_workers", default=1, type=int, help="number of worker for loading data")
-parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
-parser.add_argument("--size_x", default=32, type=int, help="size image for x")
-parser.add_argument("--size_y", default=32, type=int, help="size image for y")
+parser.add_argument("--num_workers", default=5, type=int, help="number of worker for loading data")
+parser.add_argument("--batch_size", default=2, type=int, help="number of batch size")
+parser.add_argument("--size_x", default=256, type=int, help="size image for x")
+parser.add_argument("--size_y", default=256, type=int, help="size image for y")
 parser.add_argument("--base_data", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D",
                     type=str, help="base direction of data")
 parser.add_argument("--luna_data", default="/LUNA_16/manifest-1600709154662", type=str,
@@ -38,17 +38,17 @@ parser.add_argument("--epochs", default=100, type=int, help="number of training 
 parser.add_argument("--logdir", default="test_log", type=str, help="directory to save the tensorboard logs")
 parser.add_argument("--warmup_steps", default=500, type=int, help="warmup steps")
 parser.add_argument("--multi_gpu", default=False, type=bool, help="using single gpu or multi gpu")
-parser.add_argument("--num_stages", default=1, type=int, help="number of stages in attention")
-parser.add_argument("--embed_dims", default=[16], type=int, help="VAN3D embed dims")
-parser.add_argument("--depths", default=[1], type=int, help="VAN3D depths")
-parser.add_argument("--mlp_ratios", default=[3], type=int, help="VAN3D mlp_ratios")
+parser.add_argument("--num_stages", default=4, type=int, help="number of stages in attention")
+parser.add_argument("--embed_dims", default=[64, 128, 256, 512], type=int, help="VAN3D embed dims")
+parser.add_argument("--depths", default=[3, 4, 6, 3], type=int, help="VAN3D depths")
+parser.add_argument("--mlp_ratios", default=[8, 8, 4, 4], type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--grad_clip", default=True, action="store_true", help="gradient clip")
 parser.add_argument("--lrdecay", default=True, action="store_true", help="enable learning rate decay")
 parser.add_argument("--max_grad_norm", default=1.0, type=float, help="maximum gradient norm")
 
 
 parser.add_argument("--num_steps", default=100000, type=int, help="number of training iterations")
-parser.add_argument("--eval_num", default=1, type=int, help="evaluation frequency")
+parser.add_argument("--eval_num", default=100, type=int, help="evaluation frequency")
 # parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
 parser.add_argument("--use_checkpoint", action="store_true", help="use gradient checkpointing to save memory")
 parser.add_argument("--spatial_dims", default=3, type=int, help="spatial dimension of input data")
@@ -68,7 +68,7 @@ args.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 if args.multi_gpu:
     args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-args.device = "cpu"
+# args.device = "cpu"
 
 args.distributed = False
 
@@ -199,7 +199,6 @@ def validation(args, test_loader):
             recon = recon.astype(np.uint8)
             img_list = [xgt, x_aug, recon]
             print("Validation step:{}, Loss:{:.4f}, Loss Reconstruction:{:.4f}".format(step, loss, loss_recon))
-            break
 
     return np.mean(loss_val), np.mean(loss_val_recon), img_list
 
