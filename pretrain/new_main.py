@@ -6,6 +6,8 @@ import numpy as np
 import torch
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
+from torchsummary import summary
+
 
 from pretrain.data_loader.data_utils import get_loader
 from pretrain.model.ssl_van import SSLHead
@@ -77,6 +79,7 @@ validation_data_loader = get_loader(args, "validation")
 
 model = SSLHead(args, upsample="deconv")
 model = model.to(args.device)
+# print(summary(model, (256, args.size_x, args.size_y)))
 # model.cuda()
 loss_function = Loss(args.batch_size, args)
 optimizer = optim.AdamW(params=model.parameters(), lr=args.lr, weight_decay=args.decay)
@@ -86,7 +89,10 @@ logdir = "./runs/" + args.logdir
 os.makedirs(logdir, exist_ok=True)
 writer = SummaryWriter(logdir)
 
+with open('./runs/model.txt', 'w') as f:
+    f.write(str(model))
 
+print(model)
 def save_ckp(state, checkpoint_dir):
     torch.save(state, checkpoint_dir)
 
