@@ -128,7 +128,8 @@ class VAN3D(nn.Module):
                  drop_rate=0.,
                  drop_path_rate=0.,
                  depths=[3, 4, 6, 3],
-                 num_stages=4,
+                 # num_stages=4,
+                 num_stages=1,
                  linear=False,
                  pretrained=None,
                  init_cfg=None,
@@ -183,8 +184,7 @@ class VAN3D(nn.Module):
                 elif isinstance(m, nn.Conv2d):
                     fan_out = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
                     fan_out //= m.groups
-                    normal_init(
-                        m, mean=0, std=math.sqrt(2.0 / fan_out), bias=0)
+                    normal_init(m, mean=0, std=math.sqrt(2.0 / fan_out), bias=0)
         else:
             super(VAN3D, self).init_weights()
 

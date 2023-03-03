@@ -6,50 +6,57 @@ from util_models.van_3d import VAN3D
 
 
 class SSLHead(nn.Module):
-    def __init__(self, args, upsample="vae", dim=768):
+    def __init__(self, args, upsample="vae"):
         super(SSLHead, self).__init__()
-        self.van3d = VAN3D(in_chans=args.in_channels, drop_path_rate=args.dropout_path_rate)
+        self.args = args
+        embed_dims = args.embed_dims
+        mlp_ratios = args.mlp_ratios
+        depths = args.depths
+        self.van3d = VAN3D(in_chans=args.in_channels, drop_path_rate=args.dropout_path_rate,
+                           embed_dims=embed_dims, mlp_ratios=mlp_ratios, depths=depths, num_stages=args.num_stages)
         self.rotation_pre = nn.Identity()
-        self.rotation_head = nn.Linear(dim, 4)
+        self.rotation_head = nn.Linear(embed_dims[-1], 4)
         self.contrastive_pre = nn.Identity()
-        self.contrastive_head = nn.Linear(dim, 512)
+        self.contrastive_head = nn.Linear(embed_dims[-1], 512)
         if upsample == "large_kernel_deconv":
-            self.conv = nn.ConvTranspose3d(dim, args.in_channels, kernel_size=(32, 32, 32), stride=(32, 32, 32))
+            self.conv = nn.ConvTranspose3d(embed_dims[-1], args.in_channels, kernel_size=(32, 32, 32), stride=(32, 32, 32))
         elif upsample == "deconv":
             self.conv = nn.Sequential(
-                nn.ConvTranspose3d(dim, dim // 2, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(dim // 2, dim // 4, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(dim // 4, dim // 8, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(dim // 8, dim // 16, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(dim // 16, args.in_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                nn.ConvTranspose3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                # nn.ConvTranspose3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                nn.ConvTranspose3d(embed_dims[-1] // 2, args.in_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                # nn.ConvTranspose3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                # nn.ConvTranspose3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                # nn.ConvTranspose3d(embed_dims[-1] // 16, args.in_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
             )
         elif upsample == "vae":
             self.conv = nn.Sequential(
-                nn.Conv3d(dim, dim // 2, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(dim // 2),
+                nn.Conv3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(embed_dims[-1] // 2),
                 nn.LeakyReLU(),
                 nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(dim // 2, dim // 4, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(dim // 4),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(dim // 4, dim // 8, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(dim // 8),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(dim // 8, dim // 16, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(dim // 16),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(dim // 16, dim // 16, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(dim // 16),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(dim // 16, args.in_channels, kernel_size=1, stride=1),
+                # nn.Conv3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=3, stride=1, padding=1),
+                nn.Conv3d(embed_dims[-1] // 2, args.in_channels, kernel_size=3, stride=1, padding=1),
+                # nn.InstanceNorm3d(embed_dims[-1] // 4),
+                # nn.LeakyReLU(),
+                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                # nn.Conv3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=3, stride=1, padding=1),
+                # nn.InstanceNorm3d(embed_dims[-1] // 8),
+                # nn.LeakyReLU(),
+                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                # nn.Conv3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
+                # nn.InstanceNorm3d(embed_dims[-1] // 16),
+                # nn.LeakyReLU(),
+                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                # nn.Conv3d(embed_dims[-1] // 16, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
+                # nn.InstanceNorm3d(embed_dims[-1] // 16),
+                # nn.LeakyReLU(),
+                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                # nn.Conv3d(embed_dims[-1] // 16, args.in_channels, kernel_size=1, stride=1),
             )
 
     def forward(self, x):
-        x_out = self.van3d(x.contiguous())[4]
+        x_out = self.van3d(x.contiguous())[-1]
         _, c, h, w, d = x_out.shape
         x4_reshape = x_out.flatten(start_dim=2, end_dim=4)
         x4_reshape = x4_reshape.transpose(1, 2)
@@ -59,5 +66,5 @@ class SSLHead(nn.Module):
         x_contrastive = self.contrastive_head(x_contrastive)
         x_rec = x_out.flatten(start_dim=2, end_dim=4)
         x_rec = x_rec.view(-1, c, h, w, d)
-        x_rec = self.conv(x_rec)
-        return x_rot, x_contrastive, x_rec
+        x_rec_1 = self.conv(x_rec)
+        return x_rot, x_contrastive, x_rec_1

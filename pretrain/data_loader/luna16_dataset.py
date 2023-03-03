@@ -39,7 +39,7 @@ def _load_images(args, subject_info):
 
     my_keys = list(images.keys())
     my_keys.sort()
-    masked_images = get_mask_of_subject(xml_url)
+    masked_images = get_mask_of_subject(xml_url, args)
     for key in my_keys:
         temp = cv2.resize(images[key], (x, y), interpolation=cv2.INTER_AREA)
         result_images.append(temp)

@@ -71,7 +71,7 @@ def get_reading_sessions(lidc_read_message):
     return result
 
 
-def get_mask_of_subject(xml_url):
+def get_mask_of_subject(xml_url, args):
     result = dict()
     print(xml_url)
     if xml_url is None or xml_url == "":
@@ -91,7 +91,7 @@ def get_mask_of_subject(xml_url):
             # print(f"z_position is {z_position}")
             df_z = df[(df['z'] == z_position)]
             nodule_ids = df_z['nodule_id'].unique()
-            mask = Image.new('1', (512, 512), 0)
+            mask = Image.new('1', (args.size_x, args.size_y), 0)
             for nodule_id in nodule_ids:
                 # print(f"nodule_id is {nodule_id}")
                 df_z_nodule = df_z[(df_z['nodule_id'] == nodule_id)]
