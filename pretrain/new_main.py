@@ -44,6 +44,7 @@ parser.add_argument("--depths", default=[1], type=int, help="VAN3D depths")
 parser.add_argument("--mlp_ratios", default=[3], type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--grad_clip", default=True, action="store_true", help="gradient clip")
 parser.add_argument("--lrdecay", default=True, action="store_true", help="enable learning rate decay")
+parser.add_argument("--max_grad_norm", default=1.0, type=float, help="maximum gradient norm")
 
 
 parser.add_argument("--num_steps", default=100000, type=int, help="number of training iterations")
