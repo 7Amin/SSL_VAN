@@ -5,10 +5,9 @@ from torch.nn import functional as F
 class Contrast(torch.nn.Module):
     def __init__(self, args, batch_size, temperature=0.5):
         super().__init__()
-        device = torch.device(f"cuda:{args.local_rank}")
         self.batch_size = batch_size
-        self.register_buffer("temp", torch.tensor(temperature).to(torch.device(f"cuda:{args.local_rank}")))
-        self.register_buffer("neg_mask", (~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())
+        self.register_buffer("temp", torch.tensor(temperature).to(args.device))
+        self.register_buffer("neg_mask", (~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(args.device)).float())
 
     def forward(self, x_i, x_j):
         z_i = F.normalize(x_i, dim=1)

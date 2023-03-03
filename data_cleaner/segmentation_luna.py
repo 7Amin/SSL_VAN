@@ -32,6 +32,8 @@ def _get_edge_maps(roi, nodule_id):
 
 
 def _get_roi(unblinded_read_nodule):
+    if not("roi" in unblinded_read_nodule):
+        return []
     rois = unblinded_read_nodule['roi']
     result = []
     nodule_id = unblinded_read_nodule['noduleID']
@@ -44,6 +46,8 @@ def _get_roi(unblinded_read_nodule):
 
 
 def _get_unblinded_read_nodules(reading_session):
+    if not("unblindedReadNodule" in reading_session):
+        return []
     unblinded_read_nodules = reading_session['unblindedReadNodule']
     result = []
     if isinstance(unblinded_read_nodules, list):
@@ -55,6 +59,8 @@ def _get_unblinded_read_nodules(reading_session):
 
 
 def get_reading_sessions(lidc_read_message):
+    if not("readingSession" in lidc_read_message):
+        return []
     reading_sessions = lidc_read_message['readingSession']
     result = []
     if isinstance(reading_sessions, list):
@@ -67,6 +73,7 @@ def get_reading_sessions(lidc_read_message):
 
 def get_mask_of_subject(xml_url):
     result = dict()
+    print(xml_url)
     with open(xml_url) as xml_file:
         data_dict = xmltodict.parse(xml_file.read())
         json_data = json.dumps(data_dict)
