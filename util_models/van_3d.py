@@ -57,11 +57,13 @@ class Block3D(nn.Module):
                  linear=False,
                  norm_cfg=dict(type='SyncBN', requires_grad=True)):
         super().__init__()
-        self.norm1 = build_norm_layer(norm_cfg, dim)[1]
+        # self.norm1 = build_norm_layer(norm_cfg, dim)[1]
+        self.norm1 = nn.BatchNorm3d(dim)
         self.attn = SpatialAttention3D(dim)
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
 
-        self.norm2 = build_norm_layer(norm_cfg, dim)[1]
+        # self.norm2 = build_norm_layer(norm_cfg, dim)[1]
+        self.norm2 = nn.BatchNorm3d(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
         self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim,
                        act_layer=act_layer, drop=drop, linear=linear)
@@ -74,16 +76,17 @@ class Block3D(nn.Module):
 
     def forward(self, x, D, H, W):
         B, N, C = x.shape
-        x = x.permute(0, 2, 1).view(B, C, D, H, W)
+        x = x.permute(0, 2, 1)
+        x = x.view(B, C, D, H, W)
 
         x = self.norm1(x)
         x = self.attn(x)
-        x = self.layer_scale_1.unsqueeze(-1).unsqueeze(-1) * x
+        x = self.layer_scale_1.unsqueeze(-1).unsqueeze(-1).unsqueeze(-1) * x
         x = x + self.drop_path(x)
 
         x = self.norm2(x)
         x = self.mlp(x)
-        x = self.layer_scale_2.unsqueeze(-1).unsqueeze(-1) * x
+        x = self.layer_scale_2.unsqueeze(-1).unsqueeze(-1).unsqueeze(-1) * x
         x = x + self.drop_path(x)
 
         x = x.view(B, C, N).permute(0, 2, 1)
@@ -101,9 +104,13 @@ class OverlapPatchEmbed3D(nn.Module):
 
         self.proj = nn.Conv3d(in_chans, embed_dim, kernel_size=patch_size, stride=stride,
                               padding=(patch_size // 2, patch_size // 2, patch_size // 2))
-        self.norm = build_norm_layer(norm_cfg, embed_dim)[1]
+        #  todo remove
+        # norm_cfg = dict(type='BN', requires_grad=True)
+        # self.norm = build_norm_layer(norm_cfg, embed_dim)[1]
+        self.norm = nn.BatchNorm3d(embed_dim)
 
     def forward(self, x):
+        x = torch.unsqueeze(x, dim=1)
         x = self.proj(x)
         _, _, D, H, W = x.shape
         x = self.norm(x)

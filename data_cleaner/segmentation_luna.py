@@ -74,6 +74,8 @@ def get_reading_sessions(lidc_read_message):
 def get_mask_of_subject(xml_url):
     result = dict()
     print(xml_url)
+    if xml_url is None or xml_url == "":
+        return result
     with open(xml_url) as xml_file:
         data_dict = xmltodict.parse(xml_file.read())
         json_data = json.dumps(data_dict)
