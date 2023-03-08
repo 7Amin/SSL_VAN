@@ -27,7 +27,7 @@ parser.add_argument("--luna_data", default="/LUNA_16/manifest-1600709154662", ty
                     help="direction of Luna16 data")
 parser.add_argument("--base_dir_code", default="/home/amin/CETI/medical_image/SSL_VAN",
                     type=str, help="direction of start point of code")
-parser.add_argument("--luna16_json", default="/input_list/dataset_LUNA16_List.json",
+parser.add_argument("--luna16_json", default="input_list/dataset_LUNA16_List.json",
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument("--dataset_name", default="-Luna16Dataset-",
                     type=str, help="names of all datasets")
