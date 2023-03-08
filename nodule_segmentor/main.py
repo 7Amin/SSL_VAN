@@ -17,8 +17,8 @@ from nodule_segmentor.optimizers.lr_scheduler import WarmupCosineSchedule
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 
-parser.add_argument("--num_workers", default=6, type=int, help="number of worker for loading data")
-parser.add_argument("--batch_size", default=2, type=int, help="number of batch size")
+parser.add_argument("--num_workers", default=0, type=int, help="number of worker for loading data")
+parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
 parser.add_argument("--size_x", default=512, type=int, help="size image for x")
 parser.add_argument("--size_y", default=512, type=int, help="size image for y")
 parser.add_argument("--base_data", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D",
