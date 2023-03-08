@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
-from pretrain.data_loader.luna16_dataset import Luna16Dataset
+from nodule_segmentor.data_loader.luna16_dataset import Luna16Dataset
 
 
 def get_loader(args, data_type="training"):

@@ -12,3 +12,5 @@ The reference standard of our challenge consists of all nodules >= 3 mm accepted
 (0020, 1041) Slice Location                      DS: '-69.5' is <imageZposition>-69.5</imageZposition> in the xml file
 
 conda create -n ssl_van_seg python=3.9
+
+SSL_VAN]$ sbatch nodule_segmentor/jobs/job.sh
