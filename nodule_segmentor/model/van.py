@@ -5,9 +5,9 @@ from monai.utils import ensure_tuple_rep
 from util_models.van_3d import VAN3D
 
 
-class SSLHead(nn.Module):
+class VAN(nn.Module):
     def __init__(self, args, upsample="vae"):
-        super(SSLHead, self).__init__()
+        super(VAN, self).__init__()
         self.args = args
         embed_dims = args.embed_dims
         mlp_ratios = args.mlp_ratios
@@ -70,15 +70,7 @@ class SSLHead(nn.Module):
             )
 
     def forward(self, x):
-        x_out = self.van3d(x.contiguous())[-1]
-        _, c, seq, h, w = x_out.shape
-        x4_reshape = x_out.flatten(start_dim=2, end_dim=4)
-        x4_reshape = x4_reshape.transpose(1, 2)
-        x_rot = self.rotation_pre(x4_reshape[:, 0])
-        x_rot = self.rotation_head(x_rot)
-        x_contrastive = self.contrastive_pre(x4_reshape[:, 1])
-        x_contrastive = self.contrastive_head(x_contrastive)
-        x_rec = x_out.flatten(start_dim=2, end_dim=4)
-        x_rec = x_rec.view(-1, c, seq, h, w)
-        x_rec_1 = self.conv(x_rec)
-        return x_rot, x_contrastive, x_rec_1
+        x = self.van3d(x.contiguous())[-1]
+        x = x.flatten(start_dim=2, end_dim=4)
+        x = self.conv(x)
+        return x

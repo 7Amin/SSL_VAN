@@ -9,19 +9,18 @@ from torch.utils.tensorboard import SummaryWriter
 from torchsummary import summary
 
 
-from pretrain.data_loader.data_utils import get_loader
-from pretrain.model.ssl_van import SSLHead
-from pretrain.utils.ops import aug_rand, rot_rand
-from pretrain.losses.loss import Loss
-from pretrain.optimizers.lr_scheduler import WarmupCosineSchedule
+from nodule_segmentor.data_loader.data_utils import get_loader
+from nodule_segmentor.model.van import VAN
+from nodule_segmentor.losses.loss import Loss
+from nodule_segmentor.optimizers.lr_scheduler import WarmupCosineSchedule
 
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 
-parser.add_argument("--num_workers", default=5, type=int, help="number of worker for loading data")
+parser.add_argument("--num_workers", default=6, type=int, help="number of worker for loading data")
 parser.add_argument("--batch_size", default=2, type=int, help="number of batch size")
-parser.add_argument("--size_x", default=256, type=int, help="size image for x")
-parser.add_argument("--size_y", default=256, type=int, help="size image for y")
+parser.add_argument("--size_x", default=512, type=int, help="size image for x")
+parser.add_argument("--size_y", default=512, type=int, help="size image for y")
 parser.add_argument("--base_data", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D",
                     type=str, help="base direction of data")
 parser.add_argument("--luna_data", default="/LUNA_16/manifest-1600709154662", type=str,
@@ -77,11 +76,10 @@ args.distributed = False
 training_data_loader = get_loader(args, "training")
 validation_data_loader = get_loader(args, "validation")
 
-model = SSLHead(args, upsample="deconv")
+model = VAN(args, upsample="deconv")
 model = model.to(args.device)
-# print(summary(model, (256, args.size_x, args.size_y)))
-# model.cuda()
-loss_function = Loss(args.batch_size, args)
+
+loss_function = Loss(args)
 optimizer = optim.AdamW(params=model.parameters(), lr=args.lr, weight_decay=args.decay)
 scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=args.num_steps)
 
@@ -93,6 +91,8 @@ with open('./runs/model.txt', 'w') as f:
     f.write(str(model))
 
 print(model)
+
+
 def save_ckp(state, checkpoint_dir):
     torch.save(state, checkpoint_dir)
 
@@ -100,28 +100,15 @@ def save_ckp(state, checkpoint_dir):
 def train(args, global_step, train_loader, val_best):
     model.train()
     loss_train = []
-    loss_train_recon = []
-
+    loss = None
     for data in train_loader:
         t1 = time()
-        x, _ = data
+        x, y = data
         x = x.to(args.device)
-        x1, rot1 = rot_rand(args, x)
-        x2, rot2 = rot_rand(args, x)
-        x1_augment = aug_rand(args, x1)
-        x2_augment = aug_rand(args, x2)
-
-        rot1_p, contrastive1_p, rec_x1 = model(x1_augment)
-        rot2_p, contrastive2_p, rec_x2 = model(x2_augment)
-
-        rot_p = torch.cat([rot1_p, rot2_p], dim=0)
-        rots = torch.cat([rot1, rot2], dim=0)
-        imgs_recon = torch.cat([rec_x1, rec_x2], dim=0)
-        imgs = torch.cat([x1, x2], dim=0)
-
-        loss, losses_tasks = loss_function(rot_p, rots, contrastive1_p, contrastive2_p, imgs_recon, imgs)
+        y = y.to(args.device)
+        predicted = model(x)
+        loss = loss_function(predicted, y)
         loss_train.append(loss.item())
-        loss_train_recon.append(losses_tasks[2].item())
         loss.backward()
 
         if args.grad_clip:
@@ -138,17 +125,9 @@ def train(args, global_step, train_loader, val_best):
         val_cond = global_step % args.eval_num == 0
 
         if val_cond:
-            val_loss, val_loss_recon, img_list = validation(args, validation_data_loader)
-            writer.add_scalar("Validation/loss_recon", scalar_value=val_loss_recon, global_step=global_step)
-            writer.add_scalar("train/loss_total", scalar_value=np.mean(loss_train), global_step=global_step)
-            writer.add_scalar("train/loss_recon", scalar_value=np.mean(loss_train_recon), global_step=global_step)
-
-            writer.add_image("Validation/x1_gt", img_list[0], global_step, dataformats="HW")
-            writer.add_image("Validation/x1_aug", img_list[1], global_step, dataformats="HW")
-            writer.add_image("Validation/x1_recon", img_list[2], global_step, dataformats="HW")
-
-            if val_loss_recon < val_best:
-                val_best = val_loss_recon
+            val_loss = validation(validation_data_loader)
+            if val_loss < val_best:
+                val_best = val_loss
                 checkpoint = {
                     "global_step": global_step,
                     "state_dict": model.state_dict(),
@@ -156,57 +135,31 @@ def train(args, global_step, train_loader, val_best):
                 }
                 save_ckp(checkpoint, logdir + "/model_bestValRMSE.pt")
                 print(
-                    "Model was saved ! Best Recon. Val Loss: {:.4f}, Recon. Val Loss: {:.4f}".format(
-                        val_best, val_loss_recon
+                    "Model was saved ! Best Recon. Val Loss: {:.4f}".format(
+                        val_best
                     )
                 )
             else:
                 print(
-                    "Model was not saved ! Best Recon. Val Loss: {:.4f} Recon. Val Loss: {:.4f}".format(
-                        val_best, val_loss_recon
+                    "Model was not saved ! Best Recon. Val Loss: {:.4f}".format(
+                        val_best
                     )
                 )
     return global_step, loss, val_best
 
 
-def validation(args, test_loader):
+def validation(test_loader):
     model.eval()
     loss_val = []
-    loss_val_recon = []
     with torch.no_grad():
         for step, batch in enumerate(test_loader):
-            val_inputs, _ = batch
-            x1, rot1 = rot_rand(args, val_inputs)
-            x2, rot2 = rot_rand(args, val_inputs)
-            x1_augment = aug_rand(args, x1)
-            x2_augment = aug_rand(args, x2)
-            rot1_p, contrastive1_p, rec_x1 = model(x1_augment)
-            rot2_p, contrastive2_p, rec_x2 = model(x2_augment)
-            rot_p = torch.cat([rot1_p, rot2_p], dim=0)
-            rots = torch.cat([rot1, rot2], dim=0)
-            imgs_recon = torch.cat([rec_x1, rec_x2], dim=0)
-            imgs = torch.cat([x1, x2], dim=0)
-            loss, losses_tasks = loss_function(rot_p, rots, contrastive1_p, contrastive2_p, imgs_recon, imgs)
-
-            loss_recon = losses_tasks[2]
+            val_inputs, y = batch
+            output = model(val_inputs)
+            loss = loss_function(output, y)
             loss_val.append(loss.item())
-            loss_val_recon.append(loss_recon.item())
-            x_gt = x1.detach().cpu().numpy()
-            x_gt = (x_gt - np.min(x_gt)) / (np.max(x_gt) - np.min(x_gt))
-            xgt = x_gt[0][48][:, :] * 255.0
-            xgt = xgt.astype(np.uint8)
-            x1_augment = x1_augment.detach().cpu().numpy()
-            x1_augment = (x1_augment - np.min(x1_augment)) / (np.max(x1_augment) - np.min(x1_augment))
-            x_aug = x1_augment[0][48][:, :] * 255.0
-            x_aug = x_aug.astype(np.uint8)
-            rec_x1 = rec_x1.detach().cpu().numpy()
-            rec_x1 = (rec_x1 - np.min(rec_x1)) / (np.max(rec_x1) - np.min(rec_x1))
-            recon = rec_x1[0][0][48][:, :] * 255.0
-            recon = recon.astype(np.uint8)
-            img_list = [xgt, x_aug, recon]
-            print("Validation step:{}, Loss:{:.4f}, Loss Reconstruction:{:.4f}".format(step, loss, loss_recon))
+            print("Validation step:{}, Loss:{:.4f}".format(step, loss))
 
-    return np.mean(loss_val), np.mean(loss_val_recon), img_list
+    return np.mean(loss_val)
 
 
 global_step = 0
