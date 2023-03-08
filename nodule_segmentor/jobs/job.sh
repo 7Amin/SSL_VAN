@@ -12,6 +12,6 @@ module spider cuda
 conda activate ssl_van_seg
 #pip3 install -r ./requirements.txt
 
-PYTHONPATH=.. python3 nodule_segmentor/main.py --num_workers 6 \
+PYTHONPATH=. python3 nodule_segmentor/main.py --num_workers 6 \
  --batch_size 2 --base_data ../images --luna_data /luna16 --base_dir_code ../ \
 
