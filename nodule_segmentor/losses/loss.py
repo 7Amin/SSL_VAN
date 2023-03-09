@@ -4,7 +4,9 @@ import torch
 class Loss(torch.nn.Module):
     def __init__(self, args):
         super().__init__()
-        self.recon_loss = torch.nn.MSELoss().to(args.device)
+        # self.recon_loss = torch.nn.MSELoss().to(args.device)
+        self.recon_loss = torch.nn.CrossEntropyLoss().to(args.device)
+
 
     def __call__(self, output_recons, target_recons):
         # _, d, _, _ = target_recons.shape
