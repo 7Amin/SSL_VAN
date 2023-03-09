@@ -18,7 +18,24 @@ def _read_images_directories(args, data_type):
     return json_data[data_type]
 
 
-def _load_images(args, subject_info):
+def get_min_max(args, subjects_info, min_val=np.inf, max_val=-np.inf):
+    for subject_info in subjects_info:
+        luda16_data = os.path.join(args.base_data + args.luna_data, subject_info['files_dir'])
+        paths = os.listdir(luda16_data)
+        for path in paths:
+            temp_url = os.path.join(luda16_data, path)
+            if os.path.isfile(temp_url) and temp_url.endswith('.dcm'):
+                ds = dcmread(temp_url)
+                batch_min = np.min(ds.pixel_array)
+                batch_max = np.max(ds.pixel_array)
+                min_val = min(min_val, batch_min)
+                max_val = max(max_val, batch_max)
+            elif os.path.isfile(temp_url) and temp_url.endswith('.xml'):
+                continue
+    return min_val, max_val
+
+
+def _load_images(args, subject_info, min_val, max_val):
     x = args.size_x
     y = args.size_y
     luda16_data = os.path.join(args.base_data + args.luna_data, subject_info['files_dir'])
@@ -32,7 +49,8 @@ def _load_images(args, subject_info):
         if os.path.isfile(temp_url) and temp_url.endswith('.dcm'):
             ds = dcmread(temp_url)
             key = float(ds.SliceLocation)
-            image = (ds.pixel_array + 5000) / 10000.0
+            # image = (ds.pixel_array + 5000) / 10000.0
+            image = (ds.pixel_array - min_val) / (max_val - min_val)
             images[key] = image
         elif os.path.isfile(temp_url) and temp_url.endswith('.xml'):
             xml_url = temp_url
@@ -53,17 +71,26 @@ def _load_images(args, subject_info):
 
 
 class Luna16Dataset(Dataset):
-    def __init__(self, args, data_type="training"):
+    def __init__(self, args, data_type="training", min_val=np.inf, max_val=-np.inf):
         self.args = args
         self.subjects_info = _read_images_directories(args, data_type)
+        # min_val, max_val = get_min_max(args, self.subjects_info, min_val, max_val)
+        self.min_val = -3000
+        self.max_val = 5000
 
     def __len__(self):
         return len(self.subjects_info)
 
+    def set_max(self, max_val):
+        self.max_val = max_val
+
+    def set_min(self, min_val):
+        self.min_val = min_val
+
     def __getitem__(self, index):
         subject_info = self.subjects_info[index]
 
-        data, label = _load_images(self.args, subject_info)
+        data, label = _load_images(self.args, subject_info, self.min_val, self.max_val)
         # print(subject_info)
         # print(data.shape)
         return torch.from_numpy(data).float(), torch.from_numpy(label).float()

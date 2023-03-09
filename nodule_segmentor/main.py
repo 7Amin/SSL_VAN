@@ -19,14 +19,14 @@ parser = argparse.ArgumentParser(description="PyTorch Training")
 
 parser.add_argument("--num_workers", default=0, type=int, help="number of worker for loading data")
 parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
-parser.add_argument("--size_x", default=512, type=int, help="size image for x")
-parser.add_argument("--size_y", default=512, type=int, help="size image for y")
+parser.add_argument("--size_x", default=128, type=int, help="size image for x")
+parser.add_argument("--size_y", default=128, type=int, help="size image for y")
 parser.add_argument("--patch_size", default=128, type=int, help="patch size")
 parser.add_argument("--base_data", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D",
                     type=str, help="base direction of data")
 parser.add_argument("--luna_data", default="/LUNA_16/manifest-1600709154662", type=str,
                     help="direction of Luna16 data")
-parser.add_argument("--base_dir_code", default="/home/amin/CETI/medical_image/SSL_VAN",
+parser.add_argument("--base_dir_code", default="/home/amin/CETI/medical_image/SSL_VAN/",
                     type=str, help="direction of start point of code")
 parser.add_argument("--luna16_json", default="input_list/dataset_LUNA16_List.json",
                     type=str, help="direction of json file of luna16 dataset")
@@ -40,10 +40,10 @@ parser.add_argument("--epochs", default=100, type=int, help="number of training 
 parser.add_argument("--logdir", default="test_log", type=str, help="directory to save the tensorboard logs")
 parser.add_argument("--warmup_steps", default=500, type=int, help="warmup steps")
 parser.add_argument("--multi_gpu", default=False, type=bool, help="using single gpu or multi gpu")
-parser.add_argument("--num_stages", default=3, type=int, help="number of stages in attention")
-parser.add_argument("--embed_dims", default=[128, 256, 512], type=int, help="VAN3D embed dims")
-parser.add_argument("--depths", default=[3, 4, 6], type=int, help="VAN3D depths")
-parser.add_argument("--mlp_ratios", default=[8, 8, 4], type=int, help="VAN3D mlp_ratios")
+parser.add_argument("--num_stages", default=1, type=int, help="number of stages in attention")
+parser.add_argument("--embed_dims", default=[64], type=int, help="VAN3D embed dims")
+parser.add_argument("--depths", default=[3], type=int, help="VAN3D depths")
+parser.add_argument("--mlp_ratios", default=[8], type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--grad_clip", default=True, action="store_true", help="gradient clip")
 parser.add_argument("--lrdecay", default=True, action="store_true", help="enable learning rate decay")
 parser.add_argument("--max_grad_norm", default=1.0, type=float, help="maximum gradient norm")
@@ -54,16 +54,7 @@ parser.add_argument("--eval_num", default=100, type=int, help="evaluation freque
 # parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
 parser.add_argument("--use_checkpoint", action="store_true", help="use gradient checkpointing to save memory")
 parser.add_argument("--spatial_dims", default=3, type=int, help="spatial dimension of input data")
-parser.add_argument("--a_min", default=-1000, type=float, help="a_min in ScaleIntensityRanged")
-parser.add_argument("--a_max", default=1000, type=float, help="a_max in ScaleIntensityRanged")
-parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
-parser.add_argument("--b_max", default=1.0, type=float, help="b_max in ScaleIntensityRanged")
-parser.add_argument("--space_x", default=1.5, type=float, help="spacing in x direction")
-parser.add_argument("--space_y", default=1.5, type=float, help="spacing in y direction")
-parser.add_argument("--space_z", default=2.0, type=float, help="spacing in z direction")
-parser.add_argument("--roi_x", default=96, type=int, help="roi size in x direction")
-parser.add_argument("--roi_y", default=96, type=int, help="roi size in y direction")
-parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
+
 
 args = parser.parse_args()
 args.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -74,8 +65,7 @@ if args.multi_gpu:
 
 args.distributed = False
 
-training_data_loader = get_loader(args, "training")
-validation_data_loader = get_loader(args, "validation")
+training_data_loader, validation_data_loader = get_loader(args)
 
 model = VAN(args, upsample="deconv")
 model = model.to(args.device)
