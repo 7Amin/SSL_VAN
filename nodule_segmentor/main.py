@@ -61,6 +61,8 @@ args.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 if args.multi_gpu:
     args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# torch.backends.cudnn.enabled = True
+# torch.backends.cudnn.benchmark = True
 # args.device = "cpu"
 
 args.distributed = False

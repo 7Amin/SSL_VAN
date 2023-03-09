@@ -23,6 +23,12 @@ def random_patch_collate(batch, patch_size):
     batch_tensor_x = torch.stack(patches_x)
     batch_tensor_y = torch.stack(patches_y)
 
+    b, seq, c, h, w = batch_tensor_x.shape
+    batch_tensor_x = batch_tensor_x.view(b, c, seq, h, w)
+
+    b, seq, c, h, w = batch_tensor_y.shape
+    batch_tensor_y = batch_tensor_y.view(b, c, seq, h, w)
+
     return batch_tensor_x, batch_tensor_y
 
 

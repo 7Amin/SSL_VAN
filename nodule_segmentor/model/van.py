@@ -58,11 +58,11 @@ class VAN(nn.Module):
             )
 
     def forward(self, x):
-        b, seq, c, h, w = x.shape
-        x = x.view(b, c, seq, h, w)
+        # b, seq, c, h, w = x.shape
+        # x = x.view(b, c, seq, h, w)
         x = self.van3d(x.contiguous())[-1]
         # x = x.flatten(start_dim=2, end_dim=4)
         x = self.conv(x)
         # x = x.squeeze(1)
-        x = x.view(b, seq, c, h, w)
+        # x = x.view(b, seq, c, h, w)
         return x
