@@ -1,0 +1,360 @@
+VAN(
+  (van3d): VAN3D(
+    (patch_embed1): OverlapPatchEmbed3D(
+      (proj): Conv3d(1, 128, kernel_size=(7, 7, 7), stride=(4, 4, 4), padding=(3, 3, 3))
+      (norm): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (block1): ModuleList(
+      (0): Block3D(
+        (norm1): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(128, 128, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=128)
+            (conv_spatial): Conv3d(128, 128, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=128)
+            (conv1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(128, 1024, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(1024, 1024, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=1024)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(1024, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (1): Block3D(
+        (norm1): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(128, 128, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=128)
+            (conv_spatial): Conv3d(128, 128, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=128)
+            (conv1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(128, 1024, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(1024, 1024, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=1024)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(1024, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (2): Block3D(
+        (norm1): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(128, 128, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=128)
+            (conv_spatial): Conv3d(128, 128, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=128)
+            (conv1): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(128, 1024, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(1024, 1024, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=1024)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(1024, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+    )
+    (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+    (patch_embed2): OverlapPatchEmbed3D(
+      (proj): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (norm): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (block2): ModuleList(
+      (0): Block3D(
+        (norm1): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(256, 256, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=256)
+            (conv_spatial): Conv3d(256, 256, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=256)
+            (conv1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(256, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (1): Block3D(
+        (norm1): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(256, 256, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=256)
+            (conv_spatial): Conv3d(256, 256, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=256)
+            (conv1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(256, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (2): Block3D(
+        (norm1): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(256, 256, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=256)
+            (conv_spatial): Conv3d(256, 256, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=256)
+            (conv1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(256, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (3): Block3D(
+        (norm1): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(256, 256, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=256)
+            (conv_spatial): Conv3d(256, 256, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=256)
+            (conv1): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(256, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+    )
+    (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (patch_embed3): OverlapPatchEmbed3D(
+      (proj): Conv3d(256, 512, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (block3): ModuleList(
+      (0): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (1): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (2): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (3): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (4): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (5): Block3D(
+        (norm1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (attn): SpatialAttention3D(
+          (proj_1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (activation): GELU(approximate='none')
+          (spatial_gating_unit): AttentionModule3D(
+            (norm): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (conv0): Conv3d(512, 512, kernel_size=(5, 5, 5), stride=(1, 1, 1), padding=(2, 2, 2), groups=512)
+            (conv_spatial): Conv3d(512, 512, kernel_size=(7, 7, 7), stride=(1, 1, 1), padding=(9, 9, 9), dilation=(3, 3, 3), groups=512)
+            (conv1): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_2): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        )
+        (drop_path): Identity()
+        (norm2): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): Mlp(
+          (fc1): Conv3d(512, 2048, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (dwconv3d): DWConv3D(
+            (dwconv3d): Conv3d(2048, 2048, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=2048)
+          )
+          (act): GELU(approximate='none')
+          (fc2): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+    )
+    (norm3): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (rotation_pre): Identity()
+  (rotation_head): Linear(in_features=512, out_features=4, bias=True)
+  (contrastive_pre): Identity()
+  (contrastive_head): Linear(in_features=512, out_features=512, bias=True)
+  (conv): Sequential(
+    (0): ConvTranspose3d(512, 256, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+    (1): ConvTranspose3d(256, 128, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+    (2): ConvTranspose3d(128, 64, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+    (3): ConvTranspose3d(64, 1, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+  )
+)
