@@ -110,7 +110,7 @@ class OverlapPatchEmbed3D(nn.Module):
         self.norm = nn.BatchNorm3d(embed_dim)
 
     def forward(self, x):
-        x = torch.unsqueeze(x, dim=1)
+        # x = torch.unsqueeze(x, dim=1)
         x = self.proj(x)
         _, _, D, H, W = x.shape
         x = self.norm(x)
