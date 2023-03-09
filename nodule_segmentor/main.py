@@ -11,7 +11,7 @@ from torchsummary import summary
 
 from nodule_segmentor.data_loader.data_utils import get_loader
 from nodule_segmentor.model.van import VAN
-from nodule_segmentor.losses.loss import Loss
+from nodule_segmentor.losses.loss import Loss, get_IoU
 from nodule_segmentor.optimizers.lr_scheduler import WarmupCosineSchedule
 
 
@@ -114,7 +114,9 @@ def train(args, global_step, train_loader, val_best):
         if args.lrdecay:
             scheduler.step()
         optimizer.zero_grad()
-        print("Step:{}/{}, Loss:{:.4f}, Time:{:.4f}".format(global_step, args.num_steps, loss, time() - t1))
+        iou = get_IoU(x, predicted)
+        print("Step:{}/{}, Loss:{:.6f}, Time:{:.4f}, IoU:{:.4f}".format(global_step,
+                                                                        args.num_steps, loss, time() - t1, iou))
 
         global_step += 1
 
@@ -152,16 +154,17 @@ def validation(test_loader):
             x, y = batch
             x = x.to(args.device)
             y = y.to(args.device)
-            output = model(x)
-            loss = loss_function(output, y)
+            predicted = model(x)
+            loss = loss_function(predicted, y)
             loss_val.append(loss.item())
-            print("Validation step:{}, Loss:{:.4f}".format(step, loss))
+            iou = get_IoU(x, predicted)
+            print("Validation step:{}, Loss:{:.4f}, IoU: {:.4f}".format(step, loss, iou))
 
     return np.mean(loss_val)
 
 
 global_step = 0
-val_best = 1010101010
+val_best = np.inf
 for i in range(args.epochs):
     global_step, loss, val_best = train(args, global_step, training_data_loader, val_best)
     checkpoint = {"epoch": i, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict(), "loss": loss}

@@ -22,14 +22,18 @@ class IoU(torch.nn.Module):
         self.threshold = threshold
 
     def __call__(self, predictions, targets):
-        predictions = predictions > 0.5
-        targets = targets > 0.5
+        return get_IoU(predictions, targets) * -1.0
 
-        # Calculate intersection and union
-        intersection = torch.logical_and(predictions, targets).float().sum()
-        union = torch.logical_or(predictions, targets).float().sum()
 
-        # Calculate IoU, handling the case where the union is 0
-        iou = torch.where(union > 0.0, intersection / union, torch.tensor(0.0))
+def get_IoU(predictions, targets):
+    predictions = predictions > 0.5
+    targets = targets > 0.5
 
-        return iou
+    # Calculate intersection and union
+    intersection = torch.logical_and(predictions, targets).float().sum()
+    union = torch.logical_or(predictions, targets).float().sum()
+
+    # Calculate IoU, handling the case where the union is 0
+    iou = torch.where(union > 0.0, intersection / union, torch.tensor(0.0))
+
+    return iou
