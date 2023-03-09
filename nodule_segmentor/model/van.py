@@ -61,5 +61,5 @@ class VAN(nn.Module):
         x = self.van3d(x.contiguous())[-1]
         # x = x.flatten(start_dim=2, end_dim=4)
         x = self.conv(x)
-        x = x.squeeze(1)
+        # x = x.squeeze(1)
         return x

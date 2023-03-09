@@ -59,13 +59,13 @@ def _load_images(args, subject_info, min_val, max_val):
     my_keys.sort()
     masked_images = get_mask_of_subject(xml_url, args)
     for key in my_keys:
-        temp = cv2.resize(images[key], (x, y), interpolation=cv2.INTER_AREA)
+        temp = cv2.resize(images[key], (x, y), interpolation=cv2.INTER_AREA).reshap((1, x, y))
         result_images.append(temp)
         if key in masked_images:
-            temp = cv2.resize(masked_images[key], (x, y), interpolation=cv2.INTER_AREA)
+            temp = cv2.resize(masked_images[key], (x, y), interpolation=cv2.INTER_AREA).reshap((1, x, y))
             result_labels.append(temp)
         else:
-            result_labels.append(np.zeros((x, y)))
+            result_labels.append(np.zeros((1, x, y)))
 
     return np.array(result_images), np.array(result_labels)
 

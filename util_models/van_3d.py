@@ -189,7 +189,7 @@ class VAN3D(nn.Module):
             super(VAN3D, self).init_weights()
 
     def forward(self, x):
-        x = torch.unsqueeze(x, dim=1)
+        # x = torch.unsqueeze(x, dim=1)
         B = x.shape[0]
         outs = []
 
