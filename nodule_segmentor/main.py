@@ -21,7 +21,7 @@ parser.add_argument("--num_workers", default=0, type=int, help="number of worker
 parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
 parser.add_argument("--size_x", default=512, type=int, help="size image for x")
 parser.add_argument("--size_y", default=512, type=int, help="size image for y")
-parser.add_argument("--patch_size", default=128, type=int, help="patch size")
+parser.add_argument("--patch_size", default=96, type=int, help="patch size")
 parser.add_argument("--base_data", default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D",
                     type=str, help="base direction of data")
 parser.add_argument("--luna_data", default="/LUNA_16/manifest-1600709154662", type=str,
