@@ -62,6 +62,8 @@ class Luna16Dataset(Dataset):
 
     def __getitem__(self, index):
         subject_info = self.subjects_info[index]
-        # print(subject_info)
+
         data, label = _load_images(self.args, subject_info)
+        # print(subject_info)
+        # print(data.shape)
         return torch.from_numpy(data).float(), torch.from_numpy(label).float()

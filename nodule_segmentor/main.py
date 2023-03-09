@@ -91,7 +91,12 @@ writer = SummaryWriter(logdir)
 with open('./runs/model.txt', 'w') as f:
     f.write(str(model))
 
-# print(model)
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+
+print(f"Number of trainable parameters: {count_parameters(model)}")
 
 
 def save_ckp(state, checkpoint_dir):
