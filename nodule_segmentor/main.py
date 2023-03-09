@@ -154,8 +154,10 @@ def validation(test_loader):
     loss_val = []
     with torch.no_grad():
         for step, batch in enumerate(test_loader):
-            val_inputs, y = batch
-            output = model(val_inputs)
+            x, y = batch
+            x = x.to(args.device)
+            y = y.to(args.device)
+            output = model(x)
             loss = loss_function(output, y)
             loss_val.append(loss.item())
             print("Validation step:{}, Loss:{:.4f}".format(step, loss))
