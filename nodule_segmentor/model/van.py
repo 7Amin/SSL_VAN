@@ -23,10 +23,10 @@ class VAN(nn.Module):
                 nn.ConvTranspose3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 nn.ConvTranspose3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 nn.ConvTranspose3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                # nn.ConvTranspose3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 # nn.ConvTranspose3d(embed_dims[-1] // 16, embed_dims[-1] // 32, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 # nn.ConvTranspose3d(embed_dims[-1] // 32, embed_dims[-1] // 64, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(embed_dims[-1] // 16, args.in_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                nn.ConvTranspose3d(embed_dims[-1] // 8, args.in_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
             )
         elif upsample == "vae":
             self.conv = nn.Sequential(
@@ -42,10 +42,10 @@ class VAN(nn.Module):
                 nn.InstanceNorm3d(embed_dims[-1] // 8),
                 nn.LeakyReLU(),
                 nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 16),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                # nn.Conv3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
+                # nn.InstanceNorm3d(embed_dims[-1] // 16),
+                # nn.LeakyReLU(),
+                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
                 # nn.Conv3d(embed_dims[-1] // 16, embed_dims[-1] // 32, kernel_size=3, stride=1, padding=1),
                 # nn.InstanceNorm3d(embed_dims[-1] // 32),
                 # nn.LeakyReLU(),
@@ -54,7 +54,7 @@ class VAN(nn.Module):
                 # nn.InstanceNorm3d(embed_dims[-1] // 64),
                 # nn.LeakyReLU(),
                 # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 16, args.in_channels, kernel_size=1, stride=1),
+                nn.Conv3d(embed_dims[-1] // 8, args.in_channels, kernel_size=1, stride=1),
             )
 
     def forward(self, x):
