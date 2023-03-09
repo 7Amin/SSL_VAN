@@ -10,11 +10,12 @@ def random_patch_collate(batch, patch_size):
     patches_x, patches_y = [], []
     for vol_x, vol_y in batch:
         # Choose a random patch from the volume
-        x = randint(0, vol_x.shape[0] - patch_size)
-        y = randint(0, vol_x.shape[1] - patch_size)
-        z = randint(0, vol_x.shape[2] - patch_size)
-        patch_x = vol_x[x:x+patch_size, y:y+patch_size, z:z+patch_size]
-        patch_y = vol_y[x:x+patch_size, y:y+patch_size, z:z+patch_size]
+        z = randint(0, vol_x.shape[0] - patch_size)
+        x = randint(0, vol_x.shape[2] - patch_size)
+        y = randint(0, vol_x.shape[3] - patch_size)
+
+        patch_x = vol_x[z:z+patch_size, :, x:x+patch_size, y:y+patch_size]
+        patch_y = vol_y[z:z+patch_size, :, x:x+patch_size, y:y+patch_size]
         patches_x.append(patch_x)
         patches_y.append(patch_y)
 
