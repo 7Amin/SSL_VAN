@@ -91,7 +91,7 @@ writer = SummaryWriter(logdir)
 with open('./runs/model.txt', 'w') as f:
     f.write(str(model))
 
-print(model)
+# print(model)
 
 
 def save_ckp(state, checkpoint_dir):
