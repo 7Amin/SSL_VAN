@@ -116,7 +116,7 @@ def train(args, global_step, train_loader, val_best):
         if args.lrdecay:
             scheduler.step()
         optimizer.zero_grad()
-        iou = get_IoU(x, predicted)
+        iou = get_IoU(x, predicted, args)
         print("Step:{}/{}, Loss:{:.6f}, Time:{:.4f}, IoU:{:.4f}".format(global_step,
                                                                         args.num_steps, loss, time() - t1, iou))
 
@@ -159,7 +159,7 @@ def validation(test_loader):
             predicted = model(x)
             loss = loss_function(predicted, y)
             loss_val.append(loss.item())
-            iou = get_IoU(x, predicted)
+            iou = get_IoU(x, predicted, args)
             print("Validation step:{}, Loss:{:.4f}, IoU: {:.4f}".format(step, loss, iou))
 
     return np.mean(loss_val)

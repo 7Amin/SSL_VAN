@@ -18,15 +18,16 @@ class Loss(torch.nn.Module):
 
 
 class IoU(torch.nn.Module):
-    def __init__(self, threshold):
+    def __init__(self, threshold, argas):
         super().__init__()
         self.threshold = threshold
+        self.args = args
 
     def __call__(self, predictions, targets):
-        return get_IoU(predictions, targets) * -1.0
+        return get_IoU(predictions, targets, self.args) * -1.0
 
 
-def get_IoU(predictions, targets):
+def get_IoU(predictions, targets, args):
     predictions = predictions > 0.5
     targets = targets > 0.5
 
@@ -35,6 +36,6 @@ def get_IoU(predictions, targets):
     union = torch.logical_or(predictions, targets).float().sum()
 
     # Calculate IoU, handling the case where the union is 0
-    iou = torch.where(union > 0.0, intersection / union, torch.tensor(0.0))
+    iou = torch.where(union > 0.0, intersection / union, torch.tensor(0.0).to(args.device))
 
     return iou
