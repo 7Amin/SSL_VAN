@@ -14,3 +14,27 @@ The reference standard of our challenge consists of all nodules >= 3 mm accepted
 conda create -n ssl_van_seg python=3.9
 
 SSL_VAN]$ sbatch nodule_segmentor/jobs/job.sh
+
+BTCV
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data.zip
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg.zip
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2
+
+
+
+You may download the labeled training and unlabeled testing data from: 
+
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data.zip (4.3 GB)
+
+The registered labeled (training) data for deep brain structures are located here: 
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg.zip  (23.9 GB)
+
+The registered labeled (training) data for canine leg structures are located here: 
+http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2   (73 GB)
+
+New notes - 6/19/2013. 
+1.	Here is the updated CAP data. The testing data has been corrected http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg-CAP-v2.tar.bz2 
+
+2.	There are 15 files total: http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2-part-a[a-o]
+a.	The proper way to reconstruct the full tar.bz2 is through:
+"cat  MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2-part-a* > MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2"
