@@ -85,7 +85,7 @@ def main():
                     checkpoint = {
                         "global_step": global_step,
                         "state_dict": model.state_dict(),
-                        "optimizer": optimizer.state_dict(),
+                        "optimizers": optimizer.state_dict(),
                     }
                     save_ckp(checkpoint, logdir + "/model_bestValRMSE.pt")
                     print(
@@ -230,7 +230,7 @@ def main():
         model_dict = torch.load(model_pth)
         model.load_state_dict(model_dict["state_dict"])
         model.epoch = model_dict["epoch"]
-        model.optimizer = model_dict["optimizer"]
+        model.optimizer = model_dict["optimizers"]
 
     if args.lrdecay:
         if args.lr_schedule == "warmup_cosine":
@@ -257,7 +257,7 @@ def main():
         scaler = None
     while global_step < args.num_steps:
         global_step, loss, best_val = train(args, global_step, train_loader, best_val, scaler)
-    checkpoint = {"epoch": args.epochs, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
+    checkpoint = {"epoch": args.epochs, "state_dict": model.state_dict(), "optimizers": optimizer.state_dict()}
 
     if args.distributed:
         if dist.get_rank() == 0:

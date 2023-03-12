@@ -131,7 +131,7 @@ def train(args, global_step, train_loader, val_best):
                 checkpoint = {
                     "global_step": global_step,
                     "state_dict": model.state_dict(),
-                    "optimizer": optimizer.state_dict(),
+                    "optimizers": optimizer.state_dict(),
                 }
                 save_ckp(checkpoint, logdir + "/model_bestValRMSE.pt")
                 print(
@@ -169,7 +169,7 @@ global_step = 0
 val_best = np.inf
 for i in range(args.epochs):
     global_step, loss, val_best = train(args, global_step, training_data_loader, val_best)
-    checkpoint = {"epoch": i, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict(), "loss": loss}
+    checkpoint = {"epoch": i, "state_dict": model.state_dict(), "optimizers": optimizer.state_dict(), "loss": loss}
     save_ckp(checkpoint, logdir + "/model_final_epoch.pt")
 
 

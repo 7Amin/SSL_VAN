@@ -17,7 +17,7 @@ class WarmupCosineSchedule(LambdaLR):
     ) -> None:
         """
         Args:
-            optimizer: wrapped optimizer.
+            optimizer: wrapped optimizers.
             warmup_steps: number of warmup iterations.
             t_total: total number of training iterations.
             cycles: cosine cycles parameter.
