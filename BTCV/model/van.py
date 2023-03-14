@@ -21,7 +21,8 @@ class VAN(nn.Module):
                 nn.ConvTranspose3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 nn.ConvTranspose3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
                 nn.ConvTranspose3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
-                nn.ConvTranspose3d(embed_dims[-1] // 8, out_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                nn.ConvTranspose3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
+                nn.ConvTranspose3d(embed_dims[-1] // 16, out_channels, kernel_size=(2, 2, 2), stride=(2, 2, 2)),
             )
         elif upsample == "vae":
             self.conv = nn.Sequential(
