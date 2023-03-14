@@ -107,7 +107,7 @@ def main_worker(gpu, args):
     if args.distributed:
         args.rank = args.rank * args.ngpus_per_node + gpu
         dist.init_process_group(
-            backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank
+            backend=args.dist_backend, world_size=args.world_size, rank=args.rank
         )
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
