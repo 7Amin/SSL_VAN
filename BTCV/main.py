@@ -205,7 +205,8 @@ def main_worker(gpu, args):
         if args.norm_name == "batch":
             model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
         model.cuda(args.gpu)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu)
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
+                                                          find_unused_parameters=True)
     if args.optim_name == "adam":
         optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
     elif args.optim_name == "adamw":

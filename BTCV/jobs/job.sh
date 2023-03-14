@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=segmentation
 #SBATCH --time=01:59:59
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=30
 #SBATCH -p devel
 #SBATCH --gpus-per-node=2
