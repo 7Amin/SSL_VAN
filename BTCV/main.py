@@ -24,7 +24,7 @@ parser.add_argument("--checkpoint", default=None, help="start training from save
 parser.add_argument("--base_data",
                     default='/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training',
                     type=str, help="base direction of data")
-parser.add_argument("--json_list", default='../input_list/dataset_BTCV_List.json',
+parser.add_argument("--json_list", default='./input_list/dataset_BTCV_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
     "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"
@@ -45,13 +45,15 @@ parser.add_argument("--space_z", default=2.0, type=float, help="spacing in z dir
 parser.add_argument("--roi_x", default=96, type=int, help="roi size in x direction")
 parser.add_argument("--roi_y", default=96, type=int, help="roi size in y direction")
 parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
+parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
 parser.add_argument("--RandFlipd_prob", default=0.2, type=float, help="RandFlipd aug probability")
 parser.add_argument("--RandRotate90d_prob", default=0.2, type=float, help="RandRotate90d aug probability")
 parser.add_argument("--RandScaleIntensityd_prob", default=0.1, type=float, help="RandScaleIntensityd aug probability")
 parser.add_argument("--RandShiftIntensityd_prob", default=0.1, type=float, help="RandShiftIntensityd aug probability")
 parser.add_argument("--workers", default=8, type=int, help="number of workers")
 parser.add_argument("--test_mode", default=False, type=bool, help="this runner is a test or not")
-parser.add_argument("--distributed", defalt=False, action="store_true", help="start distributed training")
+parser.add_argument("--distributed", action="store_true", help="start distributed training")
+parser.add_argument("--use_normal_dataset", action="store_true", help="use monai Dataset class")
 parser.add_argument("--noamp", action="store_true", help="do NOT use amp for training")
 parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
@@ -76,20 +78,6 @@ parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
-
-
-
-parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
-
-parser.add_argument("--multi_gpu", default=False, type=bool, help="using single gpu or multi gpu")
-parser.add_argument("--grad_clip", default=True, action="store_true", help="gradient clip")
-parser.add_argument("--lrdecay", default=True, action="store_true", help="enable learning rate decay")
-parser.add_argument("--max_grad_norm", default=1.0, type=float, help="maximum gradient norm")
-parser.add_argument("--num_steps", default=100000, type=int, help="number of training iterations")
-parser.add_argument("--eval_num", default=100, type=int, help="evaluation frequency")
-# parser.add_argument("--feature_size", default=48, type=int, help="embedding size")
-parser.add_argument("--use_checkpoint", action="store_true", help="use gradient checkpointing to save memory")
-parser.add_argument("--spatial_dims", default=3, type=int, help="spatial dimension of input data")
 
 
 def main():
@@ -129,7 +117,7 @@ def main_worker(gpu, args):
 
     # todo should remove this
     pretrained_dir = args.pretrained_dir
-    model = VAN(args,
+    model = VAN(embed_dims=args.embed_dims,
                 mlp_ratios=args.mlp_ratios,
                 depths=args.depths,
                 num_stages=args.num_stages,

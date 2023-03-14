@@ -57,7 +57,8 @@ class Sampler(torch.utils.data.Sampler):
 
 def get_loader(args):
     data_dir = args.base_data
-    datalist_json = os.path.join(data_dir, args.json_list)
+    datalist_json = args.json_list
+    print(datalist_json)
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
@@ -164,29 +165,29 @@ def get_loader(args):
         loader = [train_loader, val_loader]
 
     return loader
-
-
-class Config:
-    def __init__(self):
-        self.base_data = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training'
-        self.json_list = '../../input_list/dataset_BTCV_List.json'
-        self.space_x = 1.5
-        self.space_y = 1.5
-        self.space_z = 2.0
-        self.a_min = -175.0
-        self.a_max = 250.0
-        self.b_min = 0.0
-        self.b_max = 1.0
-        self.roi_x = 96
-        self.roi_y = 96
-        self.roi_z = 96
-        self.RandFlipd_prob = 0.2
-        self.RandRotate90d_prob = 0.2
-        self.RandScaleIntensityd_prob = 0.1
-        self.RandShiftIntensityd_prob = 0.1
-        self.test_mode = False
-        self.workers = 0
-        self.distributed = False
-
-
-a = get_loader(args=Config())
+#
+#
+# class Config:
+#     def __init__(self):
+#         self.base_data = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training'
+#         self.json_list = '../../input_list/dataset_BTCV_List.json'
+#         self.space_x = 1.5
+#         self.space_y = 1.5
+#         self.space_z = 2.0
+#         self.a_min = -175.0
+#         self.a_max = 250.0
+#         self.b_min = 0.0
+#         self.b_max = 1.0
+#         self.roi_x = 96
+#         self.roi_y = 96
+#         self.roi_z = 96
+#         self.RandFlipd_prob = 0.2
+#         self.RandRotate90d_prob = 0.2
+#         self.RandScaleIntensityd_prob = 0.1
+#         self.RandShiftIntensityd_prob = 0.1
+#         self.test_mode = False
+#         self.workers = 0
+#         self.distributed = False
+#
+#
+# a = get_loader(args=Config())

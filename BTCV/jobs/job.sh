@@ -12,7 +12,10 @@ module spider cuda
 conda activate ssl_van_seg
 #pip3 install -r ./requirements.txt
 
-PYTHONPATH=. python3 BTCV/main.py --num_workers 2 --num_stages 3 --embed_dims 128 256 512 --depths 3 4 6 \
- --mlp_ratios 8 8 4 --batch_size 8 --base_data ../images --luna_data /luna16 --base_dir_code ./ --patch_size 96 \
- --size_x 512 --size_y 512
+PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+--json_list input_list/dataset_BTCV_List.json --resume_ckpt False --noamp --save_checkpoint --max_epochs 5000 \
+--distributed --use_normal_dataset --batch_size 8 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+--mlp_ratios 8 8 4 4
+
+
 
