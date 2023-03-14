@@ -66,7 +66,7 @@ parser.add_argument("--mlp_ratios", default=[8], nargs='+', type=int, help="VAN3
 parser.add_argument("--in_channels", default=1, type=int, help="number of input channels")
 parser.add_argument("--out_channels", default=14, type=int, help="number of output channels")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
-parser.add_argument("--logdir", default="./run/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
+parser.add_argument("--logdir", default="./runs/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
 parser.add_argument("--resume_ckpt", action="store_true", help="resume training from pretrained checkpoint")
 parser.add_argument("--use_ssl_pretrained", action="store_true", help="use self-supervised pretrained weights")
 parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")

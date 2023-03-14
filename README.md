@@ -38,3 +38,9 @@ New notes - 6/19/2013.
 2.	There are 15 files total: http://masi.vuse.vanderbilt.edu/MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2-part-a[a-o]
 a.	The proper way to reconstruct the full tar.bz2 is through:
 "cat  MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2-part-a* > MICCAI-2013-SATA-Challenge-Data-Std-Reg-canine-legs.tar.bz2"
+
+
+export MASTER_ADDR=localhost
+export MASTER_PORT=12345
+export TORCH_DISTRIBUTED_DEBUG=DETAIL
+
