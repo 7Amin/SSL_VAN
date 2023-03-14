@@ -10,7 +10,7 @@
 cd SSL_VAN
 module spider cuda
 conda activate ssl_van_seg
-#pip3 install -r ./requirements.txt
+pip3 install -r ./requirements.txt
 
 PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
 --json_list input_list/dataset_BTCV_List.json --resume_ckpt False --noamp --save_checkpoint --max_epochs 5000 \
