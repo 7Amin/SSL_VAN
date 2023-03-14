@@ -46,6 +46,7 @@ parser.add_argument("--roi_x", default=96, type=int, help="roi size in x directi
 parser.add_argument("--roi_y", default=96, type=int, help="roi size in y direction")
 parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
 parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
+parser.add_argument("--save_checkpoint", action="store_true", help="save checkpoint during training")
 parser.add_argument("--RandFlipd_prob", default=0.2, type=float, help="RandFlipd aug probability")
 parser.add_argument("--RandRotate90d_prob", default=0.2, type=float, help="RandRotate90d aug probability")
 parser.add_argument("--RandScaleIntensityd_prob", default=0.1, type=float, help="RandScaleIntensityd aug probability")
