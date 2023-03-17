@@ -1,5 +1,6 @@
 import argparse
 import os
+import warnings
 import numpy as np
 from functools import partial
 
@@ -92,7 +93,7 @@ def main():
     args.amp = not args.noamp
     if args.distributed:
         args.ngpus_per_node = torch.cuda.device_count()
-        print("Found total gpus", args.ngpus_per_node)
+        warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
         args.world_size = args.ngpus_per_node * args.world_size
         mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
     else:
@@ -113,9 +114,9 @@ def main_worker(gpu, args):
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
     loader = get_loader(args)
-    print(args.rank, " gpu", args.gpu)
+    warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
-        print("Batch size is:", args.batch_size, "epochs", args.max_epochs)
+        warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
     inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
     # todo should remove this
@@ -130,9 +131,9 @@ def main_worker(gpu, args):
                 upsample="deconv")
 
     if args.resume_ckpt:
-        model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
+        model_dict = torch.load(os.path.join(args.logdir, "model_final.pt"))["state_dict"]
         model.load_state_dict(model_dict)
-        print("Use pretrained weights")
+        warnings.warn("Use pretrained weights")
 
     if args.use_ssl_pretrained:
         try:
@@ -141,18 +142,18 @@ def main_worker(gpu, args):
             # fix potential differences in state dict keys from pre-training to
             # fine-tuning
             if "module." in list(state_dict.keys())[0]:
-                print("Tag 'module.' found in state dict - fixing!")
+                warnings.warn("Tag 'module.' found in state dict - fixing!")
                 for key in list(state_dict.keys()):
                     state_dict[key.replace("module.", "")] = state_dict.pop(key)
             if "swin_vit" in list(state_dict.keys())[0]:
-                print("Tag 'swin_vit' found in state dict - fixing!")
+                warnings.warn("Tag 'swin_vit' found in state dict - fixing!")
                 for key in list(state_dict.keys()):
                     state_dict[key.replace("swin_vit", "swinViT")] = state_dict.pop(key)
             # We now load model weights, setting param `strict` to False, i.e.:
             # this load the encoder weights (Swin-ViT, SSL pre-trained), but leaves
             # the decoder weights untouched (CNN UNet decoder).
             model.load_state_dict(state_dict, strict=False)
-            print("Using pretrained self-supervised Swin UNETR backbone weights !")
+            warnings.warn("Using pretrained self-supervised Swin UNETR backbone weights !")
         except ValueError:
             raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
 
@@ -180,7 +181,7 @@ def main_worker(gpu, args):
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
 
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print("Total parameters count", pytorch_total_params)
+    warnings.warn(f"Total parameters count {pytorch_total_params}")
 
     best_acc = 0
     start_epoch = 0
@@ -197,7 +198,8 @@ def main_worker(gpu, args):
             start_epoch = checkpoint["epoch"]
         if "best_acc" in checkpoint:
             best_acc = checkpoint["best_acc"]
-        print("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc))
+        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+            args.checkpoint, start_epoch, best_acc))
 
     model.cuda(args.gpu)
 

@@ -15,4 +15,4 @@ conda activate ssl_van_seg
 PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
 --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 5000 \
 --distributed --use_normal_dataset --batch_size 32 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
---mlp_ratios 8 8 4 4
+--mlp_ratios 8 8 4 4 --resume_ckpt
