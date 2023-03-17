@@ -187,7 +187,7 @@ def main_worker(gpu, args):
     start_epoch = 0
 
     if args.checkpoint is not None:
-        checkpoint = torch.load(args.checkpoint, map_location="cpu")
+        checkpoint = torch.load(os.path.join(args.logdir, "model_final.pt"), map_location="cpu")
         from collections import OrderedDict
 
         new_state_dict = OrderedDict()
