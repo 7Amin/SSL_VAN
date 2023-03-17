@@ -21,7 +21,7 @@ from monai.utils.enums import MetricReduction
 
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
-parser.add_argument("--checkpoint", default=None, help="start training from saved checkpoint")
+parser.add_argument("--checkpoint", action="store_true", help="start training from saved checkpoint")
 parser.add_argument("--base_data",
                     default='/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training',
                     type=str, help="base direction of data")
