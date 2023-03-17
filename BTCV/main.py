@@ -133,7 +133,7 @@ def main_worker(gpu, args):
     if args.resume_ckpt:
         model_dict = torch.load(os.path.join(args.logdir, "model_final.pt"))["state_dict"]
         model.load_state_dict(model_dict)
-        warnings.warn("Use pretrained weights")
+        warnings.warn("Use model_final weights")
 
     if args.use_ssl_pretrained:
         try:
@@ -256,4 +256,7 @@ def main_worker(gpu, args):
 
 
 if __name__ == "__main__":
+
+    os.environ['MASTER_ADDR'] = 'localhost'
+    os.environ['MASTER_PORT'] = '12345'
     main()
