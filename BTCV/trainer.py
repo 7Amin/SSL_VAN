@@ -105,7 +105,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
     return run_acc.avg
 
 
-def save_checkpoint(model, epoch, args, filename="model.pt", best_acc=0.0, optimizer=None, scheduler=None):
+def save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0, optimizer=None, scheduler=None):
     state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
     save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
     if optimizer is not None:
@@ -190,7 +190,7 @@ def run_training(
             if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                 save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
                 if b_new_best:
-                    warnings.warn("Copying to model.pt new best model!!!!")
+                    warnings.warn("Copying to model_best.pt new best model!!!!")
                     shutil.copyfile(os.path.join(args.logdir, "model_final.pt"),
                                     os.path.join(args.logdir, "model_best.pt"))
 

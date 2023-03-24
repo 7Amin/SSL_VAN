@@ -69,7 +69,7 @@ def main_worker(gpu, args):
                 dropout_path_rate=args.dropout_path_rate,
                 upsample="deconv")
 
-    model_dict = torch.load(os.path.join("../", args.logdir, "model_final.pt"))["state_dict"]
+    model_dict = torch.load(os.path.join("../", args.logdir, "model_best.pt"))["state_dict"]
     model.load_state_dict(model_dict)
     warnings.warn("Use model_final weights")
 
