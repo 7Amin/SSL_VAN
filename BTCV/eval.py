@@ -109,7 +109,7 @@ class Config:
         self.roi_x = 96
         self.roi_y = 96
         self.roi_z = 96
-        self.batch_size = 8
+        self.batch_size = 1
         self.workers = 1
         self.RandFlipd_prob = 0.2
         self.RandRotate90d_prob = 0.2
