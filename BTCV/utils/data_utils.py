@@ -83,7 +83,7 @@ def get_loader(args):
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
                 pos=1,
                 neg=1,
-                num_samples=4,
+                num_samples=24,
                 image_key="image",
                 label_key="label",
                 image_threshold=0,
@@ -102,33 +102,6 @@ def get_loader(args):
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
-    # val_transform = transforms.Compose(
-    #     [
-    #         transforms.LoadImaged(keys=["image", "label"]),
-    #         transforms.AddChanneld(keys=["image", "label"]),
-    #         transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-    #         transforms.Spacingd(
-    #             keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
-    #         ),
-    #         transforms.ScaleIntensityRanged(
-    #             keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
-    #         ),
-    #         transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
-    #         # todo can remove later
-    #         # Randomly crops a spatial region of size.
-    #         transforms.RandCropByPosNegLabeld(
-    #             keys=["image", "label"],
-    #             spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-    #             pos=1,
-    #             neg=1,
-    #             num_samples=4,
-    #             image_key="image",
-    #             label_key="label",
-    #             image_threshold=0,
-    #         ),
-    #         transforms.ToTensord(keys=["image", "label"]),
-    #     ]
-    # )
     val_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
@@ -141,9 +114,36 @@ def get_loader(args):
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
             transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
+            # todo can remove later
+            # Randomly crops a spatial region of size.
+            transforms.RandCropByPosNegLabeld(
+                keys=["image", "label"],
+                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                pos=1,
+                neg=1,
+                num_samples=64,
+                image_key="image",
+                label_key="label",
+                image_threshold=0,
+            ),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
+    # val_transform = transforms.Compose(
+    #     [
+    #         transforms.LoadImaged(keys=["image", "label"]),
+    #         transforms.AddChanneld(keys=["image", "label"]),
+    #         transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+    #         transforms.Spacingd(
+    #             keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+    #         ),
+    #         transforms.ScaleIntensityRanged(
+    #             keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+    #         ),
+    #         transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
+    #         transforms.ToTensord(keys=["image", "label"]),
+    #     ]
+    # )
 
 
     if args.test_mode:

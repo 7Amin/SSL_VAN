@@ -254,7 +254,7 @@ def main_worker(gpu, args):
         loss_func=dice_loss,
         acc_func=dice_acc,
         args=args,
-        model_inferer=model_inferer,
+        model_inferer=None,
         scheduler=scheduler,
         start_epoch=start_epoch,
         post_label=post_label,
