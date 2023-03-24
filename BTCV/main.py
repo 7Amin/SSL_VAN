@@ -40,6 +40,7 @@ parser.add_argument("--a_min", default=-175.0, type=float, help="a_min in ScaleI
 parser.add_argument("--a_max", default=250.0, type=float, help="a_max in ScaleIntensityRanged")
 parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
 parser.add_argument("--b_max", default=1.0, type=float, help="b_max in ScaleIntensityRanged")
+parser.add_argument("--sw_batch_size", default=4, type=int, help="number of sliding window batch size")
 parser.add_argument("--space_x", default=1.5, type=float, help="spacing in x direction")
 parser.add_argument("--space_y", default=1.5, type=float, help="spacing in y direction")
 parser.add_argument("--space_z", default=2.0, type=float, help="spacing in z direction")
@@ -62,6 +63,7 @@ parser.add_argument("--rank", default=0, type=int, help="node rank for distribut
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
 parser.add_argument("--num_stages", default=1, type=int, help="number of stages in attention")
 parser.add_argument("--embed_dims", default=[64], nargs='+', type=int, help="VAN3D embed dims")
+parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
 parser.add_argument("--depths", default=[3], nargs='+', type=int, help="VAN3D depths")
 parser.add_argument("--mlp_ratios", default=[8], nargs='+', type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--in_channels", default=1, type=int, help="number of input channels")
@@ -179,7 +181,13 @@ def main_worker(gpu, args):
     #  get_not_nans=True parameter specifies that the metric should only return a value for batches where the ground
     #  truth labels are not all zeros.
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
-
+    model_inferer = partial(
+        sliding_window_inference,
+        roi_size=inf_size,
+        sw_batch_size=args.sw_batch_size,
+        predictor=model,
+        overlap=args.infer_overlap,
+    )
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
 
@@ -246,7 +254,7 @@ def main_worker(gpu, args):
         loss_func=dice_loss,
         acc_func=dice_acc,
         args=args,
-        model_inferer=None,
+        model_inferer=model_inferer,
         scheduler=scheduler,
         start_epoch=start_epoch,
         post_label=post_label,
