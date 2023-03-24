@@ -193,7 +193,7 @@ def main_worker(gpu, args):
 
     best_acc = 0
     start_epoch = 0
-
+    warnings.warn(f"Total args.checkpoint {args.checkpoint}")
     if args.checkpoint is not None:
         checkpoint = torch.load(os.path.join(args.logdir, "model_final.pt"), map_location="cpu")
         from collections import OrderedDict
