@@ -133,9 +133,9 @@ def main_worker(gpu, args):
                 upsample="deconv")
 
     if args.resume_ckpt:
-        model_dict = torch.load(os.path.join(args.logdir, "model_final.pt"))["state_dict"]
+        model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
         model.load_state_dict(model_dict)
-        warnings.warn("Use model_final weights")
+        print("Use pretrained weights")
 
     if args.use_ssl_pretrained:
         try:
