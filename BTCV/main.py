@@ -194,7 +194,7 @@ def main_worker(gpu, args):
     best_acc = 0
     start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
-    if args.checkpoint is not None:
+    if args.checkpoint is not None and args.checkpoint:
         checkpoint = torch.load(os.path.join(args.logdir, "model_final.pt"), map_location="cpu")
         from collections import OrderedDict
 
@@ -242,7 +242,7 @@ def main_worker(gpu, args):
         )
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None:
+        if args.checkpoint is not None and args.checkpoint:
             scheduler.step(epoch=start_epoch)
     else:
         scheduler = None
