@@ -12,7 +12,7 @@ from pretrain.optimizers.lr_scheduler import WarmupCosineSchedule
 from torch.cuda.amp import GradScaler, autocast
 from torch.nn.parallel import DistributedDataParallel
 from torch.utils.tensorboard import SummaryWriter
-from pretrain.data_loader.data_utils import get_loader
+from pretrain.utils.data_utils import get_loader
 from pretrain.utils.ops import aug_rand, rot_rand
 
 

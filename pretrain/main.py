@@ -6,10 +6,8 @@ import numpy as np
 import torch
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
-from torchsummary import summary
 
-
-from pretrain.data_loader.data_utils import get_loader
+from pretrain.utils.data_utils import get_loader
 from pretrain.model.ssl_van import SSLHead
 from pretrain.utils.ops import aug_rand, rot_rand
 from pretrain.losses.loss import Loss
