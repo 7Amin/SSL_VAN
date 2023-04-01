@@ -15,6 +15,11 @@ for data_type in json_data:
         number = int(file_data['subject_id'].split('-')[2])
         output_dir = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16/manifest-1600709154662/images/'
         # Get a list of all DICOM files in the input directory
+
+        output_file = os.path.join(output_dir, 'img_{}.nii.gz'.format(number))
+        if os.path.isfile(output_file):
+            print(number)
+            continue
         dicom_files = [os.path.join(url, f) for f in os.listdir(url) if f.endswith('.dcm')]
         dicom_files = sorted(dicom_files)
         data = []
@@ -25,7 +30,6 @@ for data_type in json_data:
         image = nib.Nifti1Image(np.array(data), np.eye(4))
 
         # Save the NIfTI image to a file
-        output_file = os.path.join(output_dir, 'img_{}.nii.gz'.format(number))
         nib.save(image, output_file)
         print(output_file)
 
