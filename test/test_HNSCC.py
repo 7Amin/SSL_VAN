@@ -44,13 +44,18 @@ def part_two():
     json_url = '/home/amin/CETI/medical_image/SSL_VAN/input_list/dataset_HNSCC_List.json'
     in_file = open(json_url)
     json_data = json.load(in_file)
+    count = 0
     for data_type in json_data:
         for file_data in json_data[data_type]:
             url = os.path.join('/media/amin/SP PHD U3/CT_Segmentation_Images/3D/HNSCC/manifest-1600709154662',
                                file_data['files_dir'])
             number = int(file_data['subject_id'].split('-')[2])
-            output_dir = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/HNSCC/manifest-1600709154662/images/'
+            # output_dir = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/HNSCC/manifest-1600709154662/images/'
+            output_dir = '/media/amin/ADATA_Amin/CT_Segmentation_Images/3D/HNSCC/manifest-1600709154662/images/'
+            # output_file = os.path.join(output_dir, 'img_{}.nii.gz'.format(number))
             output_file = os.path.join(output_dir, 'img_{}.nii.gz'.format(number))
+            count += 1
+            print(f"count is {count}")
             if os.path.isfile(output_file):
                 print(number)
                 continue
