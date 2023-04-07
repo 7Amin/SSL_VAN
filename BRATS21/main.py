@@ -8,10 +8,10 @@ import torch
 import torch.multiprocessing as mp
 import torch.distributed as dist
 
-from BTCV.utils.data_utils import get_loader
-from BTCV.model.van import VAN
-from BTCV.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
-from BTCV.trainer import run_training
+from BRATS21.utils.data_utils import get_loader
+from BRATS21.model.van import VAN
+from BRATS21.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
+from BRATS21.trainer import run_training
 
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceCELoss
