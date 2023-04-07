@@ -34,7 +34,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         with autocast(enabled=args.amp):
             logits = model(data)
             loss = loss_func(logits, target)
-            #
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
@@ -60,52 +59,49 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
     return run_loss.avg
 
 
-def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_label=None, post_pred=None):
+def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sigmoid=None, post_pred=None):
     model.eval()
-    run_acc = AverageMeter()
     start_time = time.time()
+    run_acc = AverageMeter()
+
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            if isinstance(batch_data, list):
-                data, target = batch_data
-            else:
-                data, target = batch_data["image"], batch_data["label"]
+            data, target = batch_data["image"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
             with autocast(enabled=args.amp):
-                if model_inferer is not None:
-                    logits = model_inferer(data)
-                else:
-                    logits = model(data)
-            if not logits.is_cuda:
-                target = target.cpu()
+                logits = model_inferer(data)
             val_labels_list = decollate_batch(target)
-            val_labels_convert = [post_label(val_label_tensor) for val_label_tensor in val_labels_list]
             val_outputs_list = decollate_batch(logits)
-            val_output_convert = [post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list]
+            val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
             acc_func.reset()
-            acc_func(y_pred=val_output_convert, y=val_labels_convert)
+            acc_func(y_pred=val_output_convert, y=val_labels_list)
             acc, not_nans = acc_func.aggregate()
             acc = acc.cuda(args.rank)
-
             if args.distributed:
                 acc_list, not_nans_list = distributed_all_gather(
                     [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
                 )
                 for al, nl in zip(acc_list, not_nans_list):
                     run_acc.update(al, n=nl)
-
             else:
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
-                avg_acc = np.mean(run_acc.avg)
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             avg_acc, time.time() - start_time))
+                Dice_TC = run_acc[0]
+                Dice_WT = run_acc[1]
+                Dice_ET = run_acc[2]
+                warnings.warn(
+                    "Final validation stats {}/{} , Dice_TC: {:.4f} ,"
+                    " Dice_WT: {:.4f} , Dice_ET: {:.4f} , "
+                    "time {:.2f}s".format(epoch, args.max_epochs - 1, Dice_TC,
+                                          Dice_WT, Dice_ET, time.time() - start_time))
+
             start_time = time.time()
+
     return run_acc.avg
 
 
-def save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0, optimizer=None, scheduler=None):
+def save_checkpoint(model, epoch, args, filename="model.pt", best_acc=0, optimizer=None, scheduler=None):
     state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
     save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
     if optimizer is not None:
@@ -128,8 +124,9 @@ def run_training(
     model_inferer=None,
     scheduler=None,
     start_epoch=0,
-    post_label=None,
+    post_sigmoid=None,
     post_pred=None,
+    semantic_classes=None,
 ):
     writer = None
     if args.logdir is not None and args.rank == 0:
@@ -160,25 +157,34 @@ def run_training(
             if args.distributed:
                 torch.distributed.barrier()
             epoch_time = time.time()
-            val_avg_acc = val_epoch(
+            val_acc = val_epoch(
                 model,
                 val_loader,
                 epoch=epoch,
                 acc_func=acc_func,
                 model_inferer=model_inferer,
                 args=args,
-                post_label=post_label,
+                post_sigmoid=post_sigmoid,
                 post_pred=post_pred,
             )
 
-            val_avg_acc = np.mean(val_avg_acc)
-
             if args.rank == 0:
-                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                                                                                          val_avg_acc,
-                                                                                          time.time() - epoch_time))
+                Dice_TC = val_acc[0]
+                Dice_WT = val_acc[1]
+                Dice_ET = val_acc[2]
+                warnings.warn(
+                    "Final validation stats {}/{} , Dice_TC: {:.4f} ,"
+                    " Dice_WT: {:.4f} , Dice_ET: {:.4f} , "
+                    "time {:.2f}s".format(epoch, args.max_epochs - 1, Dice_TC,
+                                          Dice_WT, Dice_ET, time.time() - epoch_time))
+
                 if writer is not None:
-                    writer.add_scalar("val_acc", val_avg_acc, epoch)
+                    writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
+                    if semantic_classes is not None:
+                        for val_channel_ind in range(len(semantic_classes)):
+                            if val_channel_ind < val_acc.size:
+                                writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
+                val_avg_acc = np.mean(val_acc)
                 if val_avg_acc > val_acc_max:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
