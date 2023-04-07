@@ -5,6 +5,7 @@
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
+#SBATCH -G 8
 #SBATCH --mem=80gb
 
 cd SSL_VAN
