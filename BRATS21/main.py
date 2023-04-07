@@ -22,9 +22,6 @@ from monai.utils.enums import MetricReduction
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 parser.add_argument("--checkpoint", action="store_true", help="start training from saved checkpoint")
-parser.add_argument("--base_data",
-                    default='/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training',
-                    type=str, help="base direction of data")
 parser.add_argument("--json_list", default='./input_list/dataset_BTCV_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
@@ -36,6 +33,11 @@ parser.add_argument(
     type=str,
     help="pretrained model name",
 )
+parser.add_argument("--fold", default=0, type=int, help="data fold")
+parser.add_argument("--data_dir",
+                    default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training'",
+                    type=str,
+                    help="dataset directory")
 parser.add_argument("--a_min", default=-175.0, type=float, help="a_min in ScaleIntensityRanged")
 parser.add_argument("--a_max", default=250.0, type=float, help="a_max in ScaleIntensityRanged")
 parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
