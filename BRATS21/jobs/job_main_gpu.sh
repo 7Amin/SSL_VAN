@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=segmentation
+#SBATCH --job-name=BRA_seg
 #SBATCH --time=23:59:59
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=64
