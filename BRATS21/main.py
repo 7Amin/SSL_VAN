@@ -16,13 +16,13 @@ from BRATS21.trainer import run_training
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceCELoss
 from monai.metrics import DiceMetric
-from monai.transforms import AsDiscrete
+from monai.transforms import Activations, AsDiscrete, Compose
 from monai.utils.enums import MetricReduction
 
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 parser.add_argument("--checkpoint", action="store_true", help="start training from saved checkpoint")
-parser.add_argument("--json_list", default='./input_list/dataset_BTCV_List.json',
+parser.add_argument("--json_list", default='../input_list/dataset_BRATS21_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
     "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"
@@ -35,7 +35,7 @@ parser.add_argument(
 )
 parser.add_argument("--fold", default=0, type=int, help="data fold")
 parser.add_argument("--data_dir",
-                    default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training'",
+                    default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BraTS21",
                     type=str,
                     help="dataset directory")
 parser.add_argument("--a_min", default=-175.0, type=float, help="a_min in ScaleIntensityRanged")
@@ -71,7 +71,7 @@ parser.add_argument("--mlp_ratios", default=[8], nargs='+', type=int, help="VAN3
 parser.add_argument("--in_channels", default=1, type=int, help="number of input channels")
 parser.add_argument("--out_channels", default=14, type=int, help="number of output channels")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
-parser.add_argument("--logdir", default="./runs/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
+parser.add_argument("--logdir", default="./runs/BraTS21/test_log", type=str, help="directory to save the tensorboard logs")
 parser.add_argument("--resume_ckpt", action="store_true", help="resume training from pretrained checkpoint")
 parser.add_argument("--use_ssl_pretrained", action="store_true", help="use self-supervised pretrained weights")
 parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")
@@ -117,6 +117,7 @@ def main_worker(gpu, args):
         )
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
+    args.test_mode = False
     loader = get_loader(args)
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
@@ -125,6 +126,8 @@ def main_worker(gpu, args):
 
     # todo should remove this
     pretrained_dir = args.pretrained_dir
+    model_name = args.pretrained_model_name
+    pretrained_pth = os.path.join(pretrained_dir, model_name)
     model = VAN(embed_dims=args.embed_dims,
                 mlp_ratios=args.mlp_ratios,
                 depths=args.depths,
@@ -135,31 +138,31 @@ def main_worker(gpu, args):
                 upsample="deconv")
 
     if args.resume_ckpt:
-        model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
+        model_dict = torch.load(os.path.join(pretrained_pth))["state_dict"]
         model.load_state_dict(model_dict)
         print("Use pretrained weights")
 
-    if args.use_ssl_pretrained:
-        try:
-            model_dict = torch.load("./pretrained_models/model_van.pt")
-            state_dict = model_dict["state_dict"]
-            # fix potential differences in state dict keys from pre-training to
-            # fine-tuning
-            if "module." in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'module.' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("module.", "")] = state_dict.pop(key)
-            if "swin_vit" in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'swin_vit' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("swin_vit", "swinViT")] = state_dict.pop(key)
-            # We now load model weights, setting param `strict` to False, i.e.:
-            # this load the encoder weights (Swin-ViT, SSL pre-trained), but leaves
-            # the decoder weights untouched (CNN UNet decoder).
-            model.load_state_dict(state_dict, strict=False)
-            warnings.warn("Using pretrained self-supervised Swin UNETR backbone weights !")
-        except ValueError:
-            raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
+    # if args.use_ssl_pretrained:
+    #     try:
+    #         model_dict = torch.load("./pretrained_models/model_van.pt")
+    #         state_dict = model_dict["state_dict"]
+    #         # fix potential differences in state dict keys from pre-training to
+    #         # fine-tuning
+    #         if "module." in list(state_dict.keys())[0]:
+    #             warnings.warn("Tag 'module.' found in state dict - fixing!")
+    #             for key in list(state_dict.keys()):
+    #                 state_dict[key.replace("module.", "")] = state_dict.pop(key)
+    #         if "swin_vit" in list(state_dict.keys())[0]:
+    #             warnings.warn("Tag 'swin_vit' found in state dict - fixing!")
+    #             for key in list(state_dict.keys()):
+    #                 state_dict[key.replace("swin_vit", "swinViT")] = state_dict.pop(key)
+    #         # We now load model weights, setting param `strict` to False, i.e.:
+    #         # this load the encoder weights (Swin-ViT, SSL pre-trained), but leaves
+    #         # the decoder weights untouched (CNN UNet decoder).
+    #         model.load_state_dict(state_dict, strict=False)
+    #         warnings.warn("Using pretrained self-supervised Swin UNETR backbone weights !")
+    #     except ValueError:
+    #         raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
 
     #  The Dice coefficient is a metric used to measure the similarity between two sets, and it is often used in image
     #  segmentation tasks in deep learning. By default, the regular Dice coefficient is used, but if this flag is set,
@@ -174,8 +177,8 @@ def main_worker(gpu, args):
     #  The to_onehot=True parameter specifies that the labels should be converted to a one-hot encoding format,
     #  and the n_classes parameter specifies the number of classes in the segmentation task. This transform is applied
     #  to the ground truth labels (post_label) and the predicted labels (post_pred).
-    post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
+    post_sigmoid = Activations(sigmoid=True)
     #  The DiceMetric is a metric used to evaluate the similarity between the predicted segmentation and the ground
     #  truth segmentation. The include_background=True parameter includes the background class (i.e., the pixels that
     #  do not belong to any of the segmented classes) in the computation. The reduction=MetricReduction.MEAN parameter
@@ -259,7 +262,7 @@ def main_worker(gpu, args):
         model_inferer=None,
         scheduler=scheduler,
         start_epoch=start_epoch,
-        post_label=post_label,
+        post_sigmoid=post_sigmoid,
         post_pred=post_pred,
     )
     return accuracy
