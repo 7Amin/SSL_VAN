@@ -51,7 +51,7 @@ parser.add_argument("--roi_y", default=96, type=int, help="roi size in y directi
 parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
 parser.add_argument("--batch_size", default=1, type=int, help="number of batch size")
 parser.add_argument("--save_checkpoint", action="store_true", help="save checkpoint during training")
-parser.add_argument("--val_every", default=100, type=int, help="validation frequency")
+parser.add_argument("--val_every", default=1, type=int, help="validation frequency")
 parser.add_argument("--RandFlipd_prob", default=0.5, type=float, help="RandFlipd aug probability")
 parser.add_argument("--RandRotate90d_prob", default=0.2, type=float, help="RandRotate90d aug probability")
 parser.add_argument("--RandScaleIntensityd_prob", default=0.1, type=float, help="RandScaleIntensityd aug probability")
@@ -64,10 +64,10 @@ parser.add_argument("--noamp", action="store_true", help="do NOT use amp for tra
 parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
 parser.add_argument("--num_stages", default=1, type=int, help="number of stages in attention")
-parser.add_argument("--embed_dims", default=[64], nargs='+', type=int, help="VAN3D embed dims")
+parser.add_argument("--embed_dims", default=[8], nargs='+', type=int, help="VAN3D embed dims")
 parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
 parser.add_argument("--depths", default=[3], nargs='+', type=int, help="VAN3D depths")
-parser.add_argument("--mlp_ratios", default=[4], nargs='+', type=int, help="VAN3D mlp_ratios")
+parser.add_argument("--mlp_ratios", default=[1], nargs='+', type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--in_channels", default=4, type=int, help="number of input channels")
 parser.add_argument("--out_channels", default=3, type=int, help="number of output channels")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
@@ -90,10 +90,6 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 
 def main():
     args = parser.parse_args()
-    #  The first argument, --noamp, is a flag that can be used to disable the use of Automatic Mixed Precision (AMP)
-    #  during training. AMP is a technique used in deep learning models to improve performance by using lower-precision
-    #  data types (e.g. float16) for some parts of the computation. By default, this argument is not set, so AMP will
-    #  be used during training unless the user explicitly sets the --noamp flag.
     args.amp = not args.noamp
     if args.distributed:
         args.ngpus_per_node = torch.cuda.device_count()
@@ -164,27 +160,14 @@ def main_worker(gpu, args):
     #     except ValueError:
     #         raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
 
-    #  The Dice coefficient is a metric used to measure the similarity between two sets, and it is often used in image
-    #  segmentation tasks in deep learning. By default, the regular Dice coefficient is used, but if this flag is set,
-    #  the computation will use the squared version of the Dice coefficient.
     if args.squared_dice:
         dice_loss = DiceCELoss(
-            to_onehot_y=True, softmax=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
+            to_onehot_y=True, sigmoid=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
         )
     else:
-        dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
-    #  The AsDiscrete transform is used to convert the output of the segmentation model into discrete labels.
-    #  The to_onehot=True parameter specifies that the labels should be converted to a one-hot encoding format,
-    #  and the n_classes parameter specifies the number of classes in the segmentation task. This transform is applied
-    #  to the ground truth labels (post_label) and the predicted labels (post_pred).
-    post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
+        dice_loss = DiceCELoss(to_onehot_y=True, sigmoid=True)
     post_sigmoid = Activations(sigmoid=True)
-    #  The DiceMetric is a metric used to evaluate the similarity between the predicted segmentation and the ground
-    #  truth segmentation. The include_background=True parameter includes the background class (i.e., the pixels that
-    #  do not belong to any of the segmented classes) in the computation. The reduction=MetricReduction.MEAN parameter
-    #  specifies that the mean of the Dice scores should be computed over all samples in the batch. The
-    #  get_not_nans=True parameter specifies that the metric should only return a value for batches where the ground
-    #  truth labels are not all zeros.
+    post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
     model_inferer = partial(
         sliding_window_inference,
@@ -234,13 +217,6 @@ def main_worker(gpu, args):
     else:
         raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
 
-    # The argument --warmup_epochs is an integer that represents the number of warm-up epochs used in training a
-    # machine learning model. During warm-up, the learning rate is gradually increased from a very small value to
-    # its full value over a certain number of epochs. This helps to prevent the model from getting stuck in local
-    # minima and can improve convergence speed and stability.
-    # 1 - Set the initial learning rate to a small value, say 0.001.
-    # 2 - Gradually increase the learning rate over the first 10 epochs to its full value, say 0.01.
-    # 3 - Continue training with a constant learning rate of 0.01 for the remaining epochs.
     if args.lrschedule == "warmup_cosine":
         scheduler = LinearWarmupCosineAnnealingLR(
             optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
@@ -251,6 +227,7 @@ def main_worker(gpu, args):
             scheduler.step(epoch=start_epoch)
     else:
         scheduler = None
+    semantic_classes = ["Dice_Val_TC", "Dice_Val_WT", "Dice_Val_ET"]
     accuracy = run_training(
         model=model,
         train_loader=loader[0],
@@ -259,11 +236,12 @@ def main_worker(gpu, args):
         loss_func=dice_loss,
         acc_func=dice_acc,
         args=args,
-        model_inferer=None,
+        model_inferer=model_inferer,
         scheduler=scheduler,
         start_epoch=start_epoch,
         post_sigmoid=post_sigmoid,
         post_pred=post_pred,
+        semantic_classes=semantic_classes,
     )
     return accuracy
 
