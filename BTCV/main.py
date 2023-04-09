@@ -25,7 +25,7 @@ parser.add_argument("--checkpoint", action="store_true", help="start training fr
 parser.add_argument("--base_data",
                     default='/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training',
                     type=str, help="base direction of data")
-parser.add_argument("--json_list", default='./input_list/dataset_BTCV_List.json',
+parser.add_argument("--json_list", default='../input_list/dataset_BTCV_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
     "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"

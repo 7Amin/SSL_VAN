@@ -17,6 +17,7 @@ import numpy as np
 import torch
 
 from monai import data, transforms
+from monai.transforms import AsDiscreted
 
 
 class Sampler(torch.utils.data.Sampler):
@@ -98,19 +99,30 @@ def get_loader(args):
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
-            # transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            transforms.CropForegroundd(
-                keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
+            transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
+            # transforms.RandSpatialCropd(
+            #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
+            # ),
+            transforms.RandCropByPosNegLabeld(
+                keys=["image", "label"],
+                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                pos=1,
+                neg=1,
+                num_samples=4,
+                image_key="image",
+                label_key="label",
+                image_threshold=0,
             ),
-            transforms.RandSpatialCropd(
-                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
-            ),
+            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
+            transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
-            transforms.RandScaleIntensityd(keys="image", factors=0.1, prob=1.0),
-            transforms.RandShiftIntensityd(keys="image", offsets=0.1, prob=1.0),
+            transforms.RandScaleIntensityd(keys="image", factors=0.1, prob=args.RandScaleIntensityd_prob),
+            transforms.RandShiftIntensityd(keys="image", offsets=0.1, prob=args.RandShiftIntensityd_prob),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
@@ -118,6 +130,7 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
@@ -127,6 +140,7 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
@@ -137,7 +151,12 @@ def get_loader(args):
         val_ds = data.Dataset(data=validation_files, transform=test_transform)
         val_sampler = Sampler(val_ds, shuffle=False) if args.distributed else None
         test_loader = data.DataLoader(
-            val_ds, batch_size=1, shuffle=False, num_workers=args.workers, sampler=val_sampler, pin_memory=True
+            val_ds,
+            batch_size=1,
+            shuffle=False,
+            num_workers=args.workers,
+            sampler=val_sampler,
+            pin_memory=True
         )
 
         loader = test_loader
@@ -152,11 +171,17 @@ def get_loader(args):
             num_workers=args.workers,
             sampler=train_sampler,
             pin_memory=True,
+            persistent_workers=True,
         )
         val_ds = data.Dataset(data=validation_files, transform=val_transform)
         val_sampler = Sampler(val_ds, shuffle=False) if args.distributed else None
         val_loader = data.DataLoader(
-            val_ds, batch_size=1, shuffle=False, num_workers=args.workers, sampler=val_sampler, pin_memory=True
+            val_ds,
+            batch_size=1,
+            shuffle=False,
+            num_workers=args.workers,
+            sampler=val_sampler,
+            pin_memory=True
         )
         loader = [train_loader, val_loader]
 
