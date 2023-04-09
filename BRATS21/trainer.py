@@ -90,14 +90,9 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
-                Dice_TC = run_acc[0]
-                Dice_WT = run_acc[1]
-                Dice_ET = run_acc[2]
-                warnings.warn(
-                    "Final validation stats {}/{} , Dice_TC: {:.4f} ,"
-                    " Dice_WT: {:.4f} , Dice_ET: {:.4f} , "
-                    "time {:.2f}s".format(epoch, args.max_epochs - 1, Dice_TC,
-                                          Dice_WT, Dice_ET, time.time() - start_time))
+                avg_acc = np.mean(run_acc.avg)
+                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                             avg_acc, time.time() - start_time))
 
             start_time = time.time()
 
@@ -170,24 +165,19 @@ def run_training(
                 post_sigmoid=post_sigmoid,
                 post_pred=post_pred,
             )
-
+            val_acc = np.mean(val_acc)
             if args.rank == 0:
-                Dice_TC = val_acc[0]
-                Dice_WT = val_acc[1]
-                Dice_ET = val_acc[2]
-                warnings.warn(
-                    "Final validation stats {}/{} , Dice_TC: {:.4f} ,"
-                    " Dice_WT: {:.4f} , Dice_ET: {:.4f} , "
-                    "time {:.2f}s".format(epoch, args.max_epochs - 1, Dice_TC,
-                                          Dice_WT, Dice_ET, time.time() - epoch_time))
+                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+                                                                                          val_acc,
+                                                                                          time.time() - epoch_time))
 
-                if writer is not None:
-                    writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
-                    if semantic_classes is not None:
-                        for val_channel_ind in range(len(semantic_classes)):
-                            if val_channel_ind < val_acc.size:
-                                writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
-                val_avg_acc = np.mean(val_acc)
+                # if writer is not None:
+                #     writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
+                #     if semantic_classes is not None:
+                #         for val_channel_ind in range(len(semantic_classes)):
+                #             if val_channel_ind < val_acc.size:
+                #                 writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
+                val_avg_acc = val_acc
                 if val_avg_acc > val_acc_max:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
