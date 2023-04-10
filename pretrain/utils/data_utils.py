@@ -26,6 +26,8 @@ from monai.transforms import (
     ToTensord,
 )
 
+from simmim.data.data_simmim import build_loader_simmim
+
 
 def get_loader(args):
     splits1 = "/dataset_LUNA16_0.json"
