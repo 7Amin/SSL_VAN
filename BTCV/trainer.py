@@ -185,7 +185,8 @@ def run_training(
                     b_new_best = True
                     if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                         save_checkpoint(
-                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler
+                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler,
+                            filename="model_final.pt"
                         )
             if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                 save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")

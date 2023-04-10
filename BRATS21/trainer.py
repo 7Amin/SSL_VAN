@@ -99,7 +99,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
     return run_acc.avg
 
 
-def save_checkpoint(model, epoch, args, filename="model.pt", best_acc=0, optimizer=None, scheduler=None):
+def save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0, optimizer=None, scheduler=None):
     state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
     save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
     if optimizer is not None:
@@ -170,13 +170,6 @@ def run_training(
                 warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
                                                                                           val_acc,
                                                                                           time.time() - epoch_time))
-
-                # if writer is not None:
-                #     writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
-                #     if semantic_classes is not None:
-                #         for val_channel_ind in range(len(semantic_classes)):
-                #             if val_channel_ind < val_acc.size:
-                #                 writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
                 val_avg_acc = val_acc
                 if val_avg_acc > val_acc_max:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
@@ -184,7 +177,8 @@ def run_training(
                     b_new_best = True
                     if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                         save_checkpoint(
-                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler
+                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler,
+                            filename="model_final.pt"
                         )
             if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                 save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
