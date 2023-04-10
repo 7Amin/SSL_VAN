@@ -51,6 +51,8 @@ def part_one_new():
     result = dict()
     res = []
     for index, row in df.iterrows():
+        if row['Number of Images'] < 96:
+            continue
         res.append({
             "name": 'images/img_{}.nii.gz'.format(index + 1),
             "files_dir": row['File Location'],
@@ -103,6 +105,23 @@ def part_two():
 
             nib.save(image, output_file)
             print(output_file)
+
+
+def part_three():
+    json_url = '/home/amin/CETI/medical_image/SSL_VAN/input_list/dataset_TCIAcolon_List.json'
+    in_file = open(json_url)
+    json_data1 = json.load(in_file)
+
+    result = dict()
+    for data_type in json_data1:
+        res = []
+        for file_data in json_data1[data_type]:
+            res.append({
+                "image": file_data['name']}
+            )
+        result[data_type] = res
+    with open('/home/amin/CETI/medical_image/SSL_VAN/jsons/dataset_TCIAcolon_v2_0.json', "w") as outfile:
+        json.dump(result, outfile, indent=4)
 
 
 part_two()
