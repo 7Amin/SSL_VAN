@@ -68,10 +68,10 @@ def main_worker(gpu, args):
                 out_channels=args.out_channels,
                 dropout_path_rate=args.dropout_path_rate,
                 upsample=args.upsample)
-    base_url = '-'.join(args.embed_dims) + "_"\
-                     + '-'.join(args.depths) + "_" + \
-                     '-'.join(args.mlp_ratios) + "_" +\
-                     + "_" + args.upsample
+    base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
+               '-'.join([str(elem) for elem in args.depths]) + "_" + \
+               '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
+               args.upsample
     args.best_model_url = base_url + "_" + "_best.pt"
     model_dict = torch.load(os.path.join("../", args.logdir, args.best_model_url))["state_dict"]
     model.load_state_dict(model_dict)
