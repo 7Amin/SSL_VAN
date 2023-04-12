@@ -21,7 +21,7 @@ for (( i=1; i<=$num_runs; i++ ))
 do
     n_clusters=$(shuf -n 1 -e $n_clusters_range)
 
-    PYTHONPATH=. python3 clustering/kmeanis_learning.py \
+    PYTHONPATH=. python3 clustering/kmeans_learning.py \
              --num_workers 8 \
              --mode server \
              --num_samples 6 \
