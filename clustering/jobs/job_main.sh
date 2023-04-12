@@ -21,15 +21,14 @@ for (( i=1; i<=$num_runs; i++ ))
 do
     n_clusters=$(shuf -n 1 -e $n_clusters_range)
 
-    command="PYTHONPATH=. python3 clustering/kmeanis_learning.py \
+    PYTHONPATH=. python3 clustering/kmeanis_learning.py \
              --num_workers 8 \
              --mode server \
              --num_samples 6 \
-             --km_path ./cluster_models_1/cluster_model_${n_clusters}_${i}.joblib \
-             --n_clusters $n_clusters \
+             --km_path ./cluster_models_1/cluster_model_1_{}_{}_{}.joblib \
+             --n_clusters "$n_clusters" \
              --max_iter 250 \
              --batch_size 20 \
-             --n_init 50"
+             --n_init 50
 
-    $command
 done
