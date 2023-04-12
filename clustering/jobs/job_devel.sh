@@ -12,7 +12,6 @@
 cd SSL_VAN
 module spider cuda
 conda activate ssl_van_seg
-pip3 install scikit-learn
 
 
 n_clusters_range=$(seq 50 500)
