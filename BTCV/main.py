@@ -104,14 +104,6 @@ def main():
 
 
 def main_worker(gpu, args):
-
-    print("aaa")
-    base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
-               '-'.join([str(elem) for elem in args.depths]) + "_" + \
-               '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
-               args.upsample
-    args.best_model_url = base_url + "_" + "_best.pt"
-    args.final_model_url = base_url + "_" + "_final.pt"
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
@@ -202,7 +194,12 @@ def main_worker(gpu, args):
     best_acc = 0
     start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
-
+    base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
+               '-'.join([str(elem) for elem in args.depths]) + "_" + \
+               '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
+               args.upsample
+    args.best_model_url = base_url + "_" + "_best.pt"
+    args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     if args.checkpoint is not None and args.checkpoint:
         checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
