@@ -4,8 +4,10 @@ import sys
 
 import numpy as np
 from sklearn.cluster import MiniBatchKMeans
+from clustering.data_utils import get_loader
 
 import joblib
+
 
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -41,74 +43,34 @@ def get_km_model(
     )
 
 
-def load_feature_shard(feat_dir, split, nshard, rank, percent):
-    feat_path = f"{feat_dir}/{split}_{rank}_{nshard}.npy"
-    leng_path = f"{feat_dir}/{split}_{rank}_{nshard}.len"
-    with open(leng_path, "r") as f:
-        lengs = [int(line.rstrip()) for line in f]
-        offsets = [0] + np.cumsum(lengs[:-1]).tolist()
+def load_data(args):
+    training_loader = get_loader(args)
+    res = []
+    for idx, batch_data in enumerate(training_loader):
+        if isinstance(batch_data, list):
+            data, _ = batch_data
+        else:
+            data, _ = batch_data["image"], batch_data["label"]
+        res.extend(data)
 
-    if percent < 0:
-        return np.load(feat_path, mmap_mode="r")
-    else:
-        nsample = int(np.ceil(len(lengs) * percent))
-        indices = np.random.choice(len(lengs), nsample, replace=False)
-        feat = np.load(feat_path, mmap_mode="r")
-        sampled_feat = np.concatenate(
-            [feat[offsets[i]: offsets[i] + lengs[i]] for i in indices], axis=0
-        )
-        logger.info(
-            (
-                f"sampled {nsample} utterances, {len(sampled_feat)} frames "
-                f"from shard {rank}/{nshard}"
-            )
-        )
-        return sampled_feat
+    return res
 
 
-def load_feature(feat_dir, split, nshard, seed, percent):
-    assert percent <= 1.0
-    feat = np.concatenate(
-        [
-            load_feature_shard(feat_dir, split, nshard, r, percent)
-            for r in range(nshard)
-        ],
-        axis=0,
-    )
-    logging.info(f"loaded feature with dimension {feat.shape}")
-    return feat
-
-
-def learn_kmeans(
-    feat_dir,
-    split,
-    nshard,
-    km_path,
-    n_clusters,
-    seed,
-    percent,
-    init,
-    max_iter,
-    batch_size,
-    tol,
-    n_init,
-    reassignment_ratio,
-    max_no_improvement,
-):
-    np.random.seed(seed)
-    feat = load_feature(feat_dir, split, nshard, seed, percent)
+def learn_kmeans(args):
+    np.random.seed(args.seed)
+    feat = load_data(args)
     km_model = get_km_model(
-        n_clusters,
-        init,
-        max_iter,
-        batch_size,
-        tol,
-        max_no_improvement,
-        n_init,
-        reassignment_ratio,
+        args.n_clusters,
+        args.init,
+        args.max_iter,
+        args.batch_size,
+        args.tol,
+        args.max_no_improvement,
+        args.n_init,
+        args.reassignment_ratio,
     )
     km_model.fit(feat)
-    joblib.dump(km_model, km_path)
+    joblib.dump(km_model, args.km_path)
 
     inertia = -km_model.score(feat) / len(feat)
     logger.info("total intertia: %.5f", inertia)
@@ -119,18 +81,23 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("feat_dir", type=str)
-    parser.add_argument("split", type=str)
-    parser.add_argument("nshard", type=int)
+    parser.add_argument("--a_min", default=-1000, type=float, help="a_min in ScaleIntensityRanged")
+    parser.add_argument("--a_max", default=1000, type=float, help="a_max in ScaleIntensityRanged")
+    parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
+    parser.add_argument("--b_max", default=1.0, type=float, help="b_max in ScaleIntensityRanged")
+    parser.add_argument("--space_x", default=1.5, type=float, help="spacing in x direction")
+    parser.add_argument("--space_y", default=1.5, type=float, help="spacing in y direction")
+    parser.add_argument("--space_z", default=2.0, type=float, help="spacing in z direction")
+    parser.add_argument("--roi_x", default=96, type=int, help="roi size in x direction")
+    parser.add_argument("--roi_y", default=96, type=int, help="roi size in y direction")
+    parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
+
     parser.add_argument("km_path", type=str)
     parser.add_argument("n_clusters", type=int)
     parser.add_argument("--seed", default=0, type=int)
-    parser.add_argument(
-        "--percent", default=-1, type=float, help="sample a subset; -1 for all"
-    )
     parser.add_argument("--init", default="k-means++")
     parser.add_argument("--max_iter", default=100, type=int)
-    parser.add_argument("--batch_size", default=10000, type=int)
+    parser.add_argument("--batch_size", default=500, type=int)
     parser.add_argument("--tol", default=0.0, type=float)
     parser.add_argument("--max_no_improvement", default=100, type=int)
     parser.add_argument("--n_init", default=20, type=int)
@@ -138,4 +105,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     logging.info(str(args))
 
-    learn_kmeans(**vars(args))
+    learn_kmeans(args)

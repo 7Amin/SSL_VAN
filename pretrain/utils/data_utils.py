@@ -41,11 +41,11 @@ def get_loader(args):
     jsonlist3 = list_dir + splits3
     jsonlist4 = list_dir + splits4
     jsonlist5 = list_dir + splits5
-    datadir1 = "/dataset/dataset1"
-    datadir2 = "/dataset/dataset2"
-    datadir3 = "/dataset/dataset3"
-    datadir4 = "/dataset/dataset4"
-    datadir5 = "/dataset/dataset8"
+    datadir1 = "/home/karimimonsefi.1/images/LUNA_16/"
+    datadir2 = "/home/karimimonsefi.1/images/TCIAcovid19/"
+    datadir3 = "/home/karimimonsefi.1/images/HNSCC/"
+    datadir4 = "/home/karimimonsefi.1/images/Colonography/"
+    datadir5 = "/home/karimimonsefi.1/images/TCIA_LIDC/"
     num_workers = 4
     datalist1 = load_decathlon_datalist(jsonlist1, False, "training", base_dir=datadir1)
     print("Dataset 1 LUNA16: number of data: {}".format(len(datalist1)))
