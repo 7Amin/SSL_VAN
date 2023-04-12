@@ -19,6 +19,7 @@ from typing import Optional
 import random
 import numpy as np
 import torch
+import os
 
 
 class RandomSelect(Randomizable):
@@ -44,18 +45,29 @@ def get_loader(args):
     splits3 = "/dataset_HNSCC_0.json"
     splits4 = "/dataset_TCIAcolon_v2_0.json"
     splits5 = "/dataset_LIDC_0.json"
-    list_dir = "./jsons"
+
+    list_dir = "../jsons"
+
+    datadir1 = "/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16"
+    datadir2 = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIAcovid19"
+    datadir3 = "/media/amin/Amin/CT_Segmentation_Images/3D/HNSCC"
+    datadir4 = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIA_CT_Colonography_Trial"
+    datadir5 = "/media/amin/SP PHD U3/CT_Segmentation_Images/3D/TCIA_LIDC"
+
+    if args.mode == "server":
+        list_dir = "./jsons"
+        datadir1 = "/home/karimimonsefi.1/images/LUNA_16/"
+        datadir2 = "/home/karimimonsefi.1/images/TCIAcovid19/"
+        datadir3 = "/home/karimimonsefi.1/images/HNSCC/"
+        datadir4 = "/home/karimimonsefi.1/images/Colonography/"
+        datadir5 = "/home/karimimonsefi.1/images/TCIA_LIDC/"
+
     jsonlist1 = list_dir + splits1
     jsonlist2 = list_dir + splits2
     jsonlist3 = list_dir + splits3
     jsonlist4 = list_dir + splits4
     jsonlist5 = list_dir + splits5
-    datadir1 = "/home/karimimonsefi.1/images/LUNA_16/"
-    datadir2 = "/home/karimimonsefi.1/images/TCIAcovid19/"
-    datadir3 = "/home/karimimonsefi.1/images/HNSCC/"
-    datadir4 = "/home/karimimonsefi.1/images/Colonography/"
-    datadir5 = "/home/karimimonsefi.1/images/TCIA_LIDC/"
-    num_workers = 4
+
     datalist1 = load_decathlon_datalist(jsonlist1, False, "training", base_dir=datadir1)
     print("Dataset 1 LUNA16: number of data: {}".format(len(datalist1)))
     new_datalist1 = []
@@ -82,13 +94,13 @@ def get_loader(args):
             ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
-            RandomSelect(prob=1.0, percent=0.1),
+            # RandomSelect(prob=1.0, percent=0.1),
             SpatialPadd(keys="image", spatial_size=[args.roi_x, args.roi_y, args.roi_z]),
             CropForegroundd(keys=["image"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]),
             RandSpatialCropSamplesd(
                 keys=["image"],
                 roi_size=[args.roi_x, args.roi_y, args.roi_z],
-                num_samples=args.batch_size,
+                num_samples=args.num_samples,
                 random_center=True,
                 random_size=False,
             ),
@@ -103,7 +115,7 @@ def get_loader(args):
     else:
         train_sampler = None
     train_loader = DataLoader(
-        train_ds, batch_size=args.batch_size, num_workers=num_workers, sampler=train_sampler, drop_last=True
+        train_ds, batch_size=args.batch_size, num_workers=args.num_workers, sampler=train_sampler, drop_last=True
     )
 
     return train_loader

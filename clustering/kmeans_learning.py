@@ -7,6 +7,7 @@ from sklearn.cluster import MiniBatchKMeans
 from clustering.data_utils import get_loader
 
 import joblib
+import random
 
 
 logging.basicConfig(
@@ -47,11 +48,18 @@ def load_data(args):
     training_loader = get_loader(args)
     res = []
     for idx, batch_data in enumerate(training_loader):
-        if isinstance(batch_data, list):
-            data, _ = batch_data
-        else:
-            data, _ = batch_data["image"], batch_data["label"]
-        res.extend(data)
+        print(idx)
+        data = batch_data["image"].numpy()
+        sampled_indices = np.random.choice(len(data), int(len(data) * 0.05), replace=False)
+        data = np.squeeze(data)
+
+        sampled_values = data[sampled_indices]
+        merged_array = np.reshape(sampled_values,
+                                  (sampled_values.shape[0] * sampled_values.shape[1],
+                                   sampled_values.shape[2],
+                                   sampled_values.shape[3]))
+
+        res.extend(merged_array)
 
     return res
 
@@ -91,13 +99,17 @@ if __name__ == "__main__":
     parser.add_argument("--roi_x", default=96, type=int, help="roi size in x direction")
     parser.add_argument("--roi_y", default=96, type=int, help="roi size in y direction")
     parser.add_argument("--roi_z", default=96, type=int, help="roi size in z direction")
+    parser.add_argument("--num_workers", default=1, type=int, help="num_workers")
+    parser.add_argument("--distributed", action="store_true", help="start distributed training")
+    parser.add_argument("--mode", default='test', choices=['test', 'server'], type=str)
+    parser.add_argument("--num_samples", default=4, type=int)
 
-    parser.add_argument("km_path", type=str)
-    parser.add_argument("n_clusters", type=int)
-    parser.add_argument("--seed", default=0, type=int)
+    parser.add_argument("--km_path", default='./cluster_model_1', type=str)
+    parser.add_argument("--n_clusters", default=96, type=int)
+    parser.add_argument("--seed", default=42, type=int)
     parser.add_argument("--init", default="k-means++")
     parser.add_argument("--max_iter", default=100, type=int)
-    parser.add_argument("--batch_size", default=500, type=int)
+    parser.add_argument("--batch_size", default=2, type=int)
     parser.add_argument("--tol", default=0.0, type=float)
     parser.add_argument("--max_no_improvement", default=100, type=int)
     parser.add_argument("--n_init", default=20, type=int)
