@@ -8,6 +8,7 @@ from clustering.data_utils import get_loader
 
 import joblib
 import random
+import json
 
 
 logging.basicConfig(
@@ -49,7 +50,10 @@ def load_data(args):
     res = []
     for idx, batch_data in enumerate(training_loader):
         data = batch_data["image"].numpy()
-        sampled_indices = np.random.choice(len(data), int(len(data) * 0.1), replace=False)
+        number = 0.1
+        if len(res) == 0:
+            number = 0.5
+        sampled_indices = np.random.choice(len(data), int(len(data) * number), replace=False)
         data = np.squeeze(data)
 
         sampled_values = data[sampled_indices]
@@ -58,11 +62,13 @@ def load_data(args):
                                    sampled_values.shape[2] * sampled_values.shape[3]))
 
         res.extend(merged_array)
+        break
 
     return res
 
 
 def learn_kmeans(args):
+    filename = "cluster_paths.json"
     np.random.seed(args.seed)
     feat = load_data(args)
     km_model = get_km_model(
@@ -76,9 +82,26 @@ def learn_kmeans(args):
         args.reassignment_ratio,
     )
     km_model.fit(feat)
-    joblib.dump(km_model, args.km_path)
+    url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
+    joblib.dump(km_model, url)
 
+    if os.path.isfile(filename):
+        with open(filename, 'r') as file:
+            data = json.load(file)
+    else:
+        # Create new file with empty list
+        data = []
+
+    # Append new record to data
+    data.append({
+        "url": url,
+    })
+
+    # Write updated data back to file
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
     inertia = -km_model.score(feat) / len(feat)
+    # y_pred = km_model.predict(feat)
     logger.info("total intertia: %.5f", inertia)
     logger.info("finished successfully")
 
@@ -102,15 +125,15 @@ if __name__ == "__main__":
     parser.add_argument("--mode", default='test', choices=['test', 'server'], type=str)
     parser.add_argument("--num_samples", default=4, type=int)
 
-    parser.add_argument("--km_path", default='../cluster_models/cluster_model_1.joblib', type=str)
-    parser.add_argument("--n_clusters", default=96, type=int)
+    parser.add_argument("--km_path", default='../cluster_models/cluster_model_{}_{}_{}.joblib', type=str)
+    parser.add_argument("--n_clusters", default=105, type=int)
     parser.add_argument("--seed", default=42, type=int)
     parser.add_argument("--init", default="k-means++")
-    parser.add_argument("--max_iter", default=100, type=int)
-    parser.add_argument("--batch_size", default=40, type=int)
+    parser.add_argument("--max_iter", default=2, type=int)
+    parser.add_argument("--batch_size", default=2, type=int)
     parser.add_argument("--tol", default=0.0, type=float)
     parser.add_argument("--max_no_improvement", default=100, type=int)
-    parser.add_argument("--n_init", default=20, type=int)
+    parser.add_argument("--n_init", default=2, type=int)
     parser.add_argument("--reassignment_ratio", default=0.0, type=float)
     args = parser.parse_args()
     logging.info(str(args))
