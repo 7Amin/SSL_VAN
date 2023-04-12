@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=clustering
 #SBATCH --time=23:59:59
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=64
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=90
 #SBATCH -p a100
-#SBATCH --gpus-per-node=2
-#SBATCH -G 8
+#SBATCH --gpus-per-node=1
+#SBATCH -G 1
 #SBATCH --mem=80gb
 
 
@@ -28,9 +28,9 @@ do
              --num_workers 8 \
              --mode server \
              --num_samples 6 \
-             --km_path ./cluster_models/cluster_model_${n_clusters}_${i}.joblib \
+             --km_path ./cluster_models_1/cluster_model_${n_clusters}_${i}.joblib \
              --n_clusters $n_clusters \
-             --max_iter 100 \
+             --max_iter 250 \
              --batch_size 20 \
              --n_init 50"
 

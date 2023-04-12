@@ -36,7 +36,7 @@ do
              --num_workers 8 \
              --mode server \
              --num_samples 6 \
-             --km_path ./cluster_models/cluster_model_${n_clusters}_${i}.joblib \
+             --km_path ./cluster_models_1/cluster_model_${n_clusters}_${i}.joblib \
              --n_clusters $n_clusters \
              --max_iter 100 \
              --batch_size 20 \

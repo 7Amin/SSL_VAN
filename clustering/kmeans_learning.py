@@ -125,7 +125,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", default='test', choices=['test', 'server'], type=str)
     parser.add_argument("--num_samples", default=4, type=int)
 
-    parser.add_argument("--km_path", default='../cluster_models/cluster_model_{}_{}_{}.joblib', type=str)
+    parser.add_argument("--km_path", default='../cluster_models_1/cluster_model_1_{}_{}_{}.joblib', type=str)
     parser.add_argument("--n_clusters", default=105, type=int)
     parser.add_argument("--seed", default=42, type=int)
     parser.add_argument("--init", default="k-means++")
