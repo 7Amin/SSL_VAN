@@ -186,14 +186,14 @@ def run_training(
                     if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                         save_checkpoint(
                             model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler,
-                            filename="model_final.pt"
+                            filename=args.final_model_url
                         )
             if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
-                save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
+                save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename=args.final_model_url)
                 if b_new_best:
-                    warnings.warn("Copying to model_best.pt new best model!!!!")
-                    shutil.copyfile(os.path.join(args.logdir, "model_final.pt"),
-                                    os.path.join(args.logdir, "model_best.pt"))
+                    warnings.warn("Copying to best model new best model!!!!")
+                    shutil.copyfile(os.path.join(args.logdir, args.final_model_url),
+                                    os.path.join(args.logdir, args.best_model_url))
 
         if scheduler is not None:
             scheduler.step()

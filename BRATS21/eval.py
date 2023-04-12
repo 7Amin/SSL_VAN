@@ -67,9 +67,13 @@ def main_worker(gpu, args):
                 in_channels=args.in_channels,
                 out_channels=args.out_channels,
                 dropout_path_rate=args.dropout_path_rate,
-                upsample="deconv")
-
-    model_dict = torch.load(os.path.join("../", args.logdir, "model_best.pt"))["state_dict"]
+                upsample=args.upsample)
+    base_url = '-'.join(args.embed_dims) + "_"\
+                     + '-'.join(args.depths) + "_" + \
+                     '-'.join(args.mlp_ratios) + "_" +\
+                     + "_" + args.upsample
+    args.best_model_url = base_url + "_" + "_best.pt"
+    model_dict = torch.load(os.path.join("../", args.logdir, args.best_model_url))["state_dict"]
     model.load_state_dict(model_dict)
     warnings.warn("Use model_final weights")
 
@@ -129,6 +133,7 @@ class Config:
         self.dropout_path_rate = 0.0
         self.use_normal_dataset = True
         self.amp = False
+        self.upsample = "deconv"
 
 
 acc = main_worker(gpu=0, args=Config())

@@ -86,6 +86,7 @@ parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
+parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 
 
 def main():
@@ -131,7 +132,7 @@ def main_worker(gpu, args):
                 in_channels=args.in_channels,
                 out_channels=args.out_channels,
                 dropout_path_rate=args.dropout_path_rate,
-                upsample="deconv")
+                upsample=args.upsample)
 
     if args.resume_ckpt:
         model_dict = torch.load(os.path.join(pretrained_pth))["state_dict"]
@@ -182,8 +183,15 @@ def main_worker(gpu, args):
     best_acc = 0
     start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+    base_url = '-'.join(args.embed_dims) + "_"\
+                     + '-'.join(args.depths) + "_" + \
+                     '-'.join(args.mlp_ratios) + "_" +\
+                     + "_" + args.upsample
+    args.best_model_url = base_url + "_" + "_best.pt"
+    args.final_model_url = base_url + "_" + "_final.pt"
+    warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     if args.checkpoint is not None and args.checkpoint:
-        checkpoint = torch.load(os.path.join(args.logdir, "model_final.pt"), map_location="cpu")
+        checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
         from collections import OrderedDict
 
         new_state_dict = OrderedDict()
