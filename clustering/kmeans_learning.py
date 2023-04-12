@@ -48,16 +48,14 @@ def load_data(args):
     training_loader = get_loader(args)
     res = []
     for idx, batch_data in enumerate(training_loader):
-        print(idx)
         data = batch_data["image"].numpy()
-        sampled_indices = np.random.choice(len(data), int(len(data) * 0.05), replace=False)
+        sampled_indices = np.random.choice(len(data), int(len(data) * 0.1), replace=False)
         data = np.squeeze(data)
 
         sampled_values = data[sampled_indices]
         merged_array = np.reshape(sampled_values,
                                   (sampled_values.shape[0] * sampled_values.shape[1],
-                                   sampled_values.shape[2],
-                                   sampled_values.shape[3]))
+                                   sampled_values.shape[2] * sampled_values.shape[3]))
 
         res.extend(merged_array)
 
@@ -104,12 +102,12 @@ if __name__ == "__main__":
     parser.add_argument("--mode", default='test', choices=['test', 'server'], type=str)
     parser.add_argument("--num_samples", default=4, type=int)
 
-    parser.add_argument("--km_path", default='./cluster_model_1', type=str)
+    parser.add_argument("--km_path", default='../cluster_models/cluster_model_1.joblib', type=str)
     parser.add_argument("--n_clusters", default=96, type=int)
     parser.add_argument("--seed", default=42, type=int)
     parser.add_argument("--init", default="k-means++")
     parser.add_argument("--max_iter", default=100, type=int)
-    parser.add_argument("--batch_size", default=2, type=int)
+    parser.add_argument("--batch_size", default=40, type=int)
     parser.add_argument("--tol", default=0.0, type=float)
     parser.add_argument("--max_no_improvement", default=100, type=int)
     parser.add_argument("--n_init", default=20, type=int)
@@ -118,3 +116,11 @@ if __name__ == "__main__":
     logging.info(str(args))
 
     learn_kmeans(args)
+
+
+# # load the model from the file
+# loaded_model = load('my_model.joblib')
+#
+# # use the model to make predictions on new data
+# X_new = np.random.randn(10, 10)
+# y_pred = loaded_model.predict(X_new)
