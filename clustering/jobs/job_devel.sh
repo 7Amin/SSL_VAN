@@ -9,6 +9,10 @@
 #SBATCH --mem=80gb
 
 
+cd SSL_VAN
+module spider cuda
+conda activate ssl_van_seg
+
 n_clusters_range=$(seq 50 500)
 
 num_runs=400
@@ -17,16 +21,13 @@ for (( i=1; i<=$num_runs; i++ ))
 do
     n_clusters=$(shuf -n 1 -e $n_clusters_range)
 
-    command="cd SSL_VAN && \
-             module spider cuda && \
-             conda activate ssl_van_seg && \
-             PYTHONPATH=. python3 clustering/kmeanis_learning.py \
+    command="PYTHONPATH=. python3 clustering/kmeanis_learning.py \
              --num_workers 8 \
              --mode server \
              --num_samples 6 \
              --km_path ./cluster_models_1/cluster_model_${n_clusters}_${i}.joblib \
              --n_clusters $n_clusters \
-             --max_iter 100 \
+             --max_iter 250 \
              --batch_size 20 \
              --n_init 50"
 
