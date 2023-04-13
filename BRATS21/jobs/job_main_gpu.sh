@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=BRA_seg
 #SBATCH --time=23:59:59
-#SBATCH --nodes=4
+#SBATCH --nodes=3
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
-#SBATCH -G 8
+#SBATCH -G 6
 #SBATCH --mem=80gb
 
 cd SSL_VAN
