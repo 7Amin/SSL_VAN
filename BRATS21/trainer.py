@@ -125,6 +125,7 @@ def run_training(
     post_sigmoid=None,
     post_pred=None,
     semantic_classes=None,
+    val_acc_max=0.0,
 ):
     writer = None
     if args.logdir is not None and args.rank == 0:
@@ -134,7 +135,6 @@ def run_training(
     scaler = None
     if args.amp:
         scaler = GradScaler()
-    val_acc_max = 0.0
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)

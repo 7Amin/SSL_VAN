@@ -190,6 +190,7 @@ def main_worker(gpu, args):
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+    best_acc = 0.0
     if args.checkpoint is not None and args.checkpoint:
         checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
         from collections import OrderedDict
@@ -250,6 +251,7 @@ def main_worker(gpu, args):
         post_sigmoid=post_sigmoid,
         post_pred=post_pred,
         semantic_classes=semantic_classes,
+        val_acc_max=best_acc,
     )
     return accuracy
 
