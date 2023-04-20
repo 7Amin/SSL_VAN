@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=BRA_seg
 #SBATCH --time=23:59:59
-#SBATCH --nodes=4
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
