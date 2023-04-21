@@ -49,6 +49,9 @@ class ClusteringLoss(nn.Module):
                               np.arange(seq)[:, np.newaxis],
                               np.arange(cluster_number),
                               targets]
+        res = torch.log(res)
+        res = res.sum(dim=(-2, -1)) / (seq * cluster_number * -1.0)
+
         return res
 
 
