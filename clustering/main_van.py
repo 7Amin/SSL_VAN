@@ -118,9 +118,7 @@ def main_worker(gpu, args):
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
-    inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
-    # todo should remove this
     pretrained_dir = args.pretrained_dir
     model = VAN(embed_dims=args.embed_dims,
                 mlp_ratios=args.mlp_ratios,
