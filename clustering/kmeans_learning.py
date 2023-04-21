@@ -4,10 +4,9 @@ import sys
 
 import numpy as np
 from sklearn.cluster import MiniBatchKMeans
-from clustering.data_utils import get_loader
+from clustering.utils.data_utils import get_loader
 
 import joblib
-import random
 import json
 
 
@@ -62,7 +61,6 @@ def load_data(args):
                                    sampled_values.shape[2] * sampled_values.shape[3]))
 
         res.extend(merged_array)
-        break
 
     return res
 
@@ -82,6 +80,7 @@ def learn_kmeans(args):
         args.reassignment_ratio,
     )
     km_model.fit(feat)
+    # y_pred = km_model.predict(feat)
     url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
     joblib.dump(km_model, url)
 

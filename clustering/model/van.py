@@ -56,7 +56,7 @@ class VAN(nn.Module):
         # x = x.flatten(start_dim=2, end_dim=4)
         x = self.conv(x)
         # x = x.squeeze(1)
-        x = x.view(b, seq, c * h * w)
-        y = self.projection(x)
+        y = x.view(b, seq, c * h * w)
+        y = self.projection(y)
         y = y.view(b, seq, self.cluster_number, self.max_cluster_size, self.project_dim)
         return x, y
