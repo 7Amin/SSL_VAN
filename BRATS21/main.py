@@ -87,7 +87,7 @@ parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="typ
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
-parser.add_argument("--model_inferer", default='_inferer', type=str, choices=['', '_inferer'])
+parser.add_argument("--model_inferer", default='', type=str, choices=['', '_inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['', '_valid_loader'])
 
 
