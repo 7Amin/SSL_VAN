@@ -106,6 +106,9 @@ def main():
 
 
 def main_worker(gpu, args):
+    if args.model_inferer != "":
+        args.model_inferer = "_" + args.model_inferer
+
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
