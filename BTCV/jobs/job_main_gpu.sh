@@ -52,14 +52,14 @@ conda activate ssl_van_seg
 #--mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
 #--valid_loader valid_loader
 
-PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
---json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
---distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
---mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
---valid_loader valid_loader
-
 #PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
 #--json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
-#--distributed --use_normal_dataset --batch_size 8 --num_stages 4 --embed_dims 96 192 480 768 --depths 3 3 24 3 \
+#--distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
 #--mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
 #--valid_loader valid_loader
+
+PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+--json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
+--distributed --use_normal_dataset --batch_size 8 --num_stages 4 --embed_dims 96 192 480 768 --depths 3 3 24 3 \
+--mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+--valid_loader valid_loader
