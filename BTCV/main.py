@@ -86,6 +86,7 @@ parser.add_argument("--max_epochs", default=5000, type=int, help="max number of 
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='', type=str, choices=['', '_inferer'])
+parser.add_argument("--valid_loader", default='', type=str, choices=['', '_valid_loader'])
 
 
 def main():
@@ -199,7 +200,7 @@ def main_worker(gpu, args):
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
-               args.upsample + args.model_inferer
+               args.upsample + args.model_inferer + args.valid_loader
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
