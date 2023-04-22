@@ -85,8 +85,8 @@ parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="typ
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
-parser.add_argument("--model_inferer", default='', type=str, choices=['', '_inferer'])
-parser.add_argument("--valid_loader", default='', type=str, choices=['', '_valid_loader'])
+parser.add_argument("--model_inferer", default='', type=str, choices=['', 'inferer'])
+parser.add_argument("--valid_loader", default='', type=str, choices=['', 'valid_loader'])
 
 
 def main():
@@ -108,6 +108,9 @@ def main():
 def main_worker(gpu, args):
     if args.model_inferer != "":
         args.model_inferer = "_" + args.model_inferer
+
+    if args.valid_loader != "":
+        args.valid_loader = "_" + args.valid_loader
 
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
