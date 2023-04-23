@@ -16,6 +16,16 @@ class VANV2(nn.Module):
         self.contrastive_pre = nn.Identity()
         self.contrastive_head = nn.Linear(embed_dims[-1], 512)
         self.num_stages = num_stages
+
+        for i in range(num_stages - 1):
+            conv = nn.Conv3d(embed_dims[-1] // 2 ** i, embed_dims[-1] // 2 ** (i + 1),
+                             kernel_size=3, stride=1, padding=1)
+            setattr(self, f"conv{i}", conv)
+        self.final_conv0 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
+                                     kernel_size=3, stride=1, padding=1)
+        self.final_conv1 = nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1)
+        self.final_conv2 = nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1)
+
         if upsample == "deconv":
             for i in range(num_stages):
                 upsample = nn.ConvTranspose3d(embed_dims[-1] // 2**i, embed_dims[-1] // 2**(i + 1),
@@ -24,37 +34,20 @@ class VANV2(nn.Module):
             upsample = nn.ConvTranspose3d(embed_dims[-1] // 2 ** num_stages, out_channels,
                                           kernel_size=(2, 2, 2), stride=(2, 2, 2))
             setattr(self, f"final_upsample", upsample)
-            for i in range(num_stages - 1):
-                conv = nn.Conv3d(embed_dims[-1] // 2**i, embed_dims[-1] // 2**(i + 1),
-                                 kernel_size=3, stride=1, padding=1)
-                setattr(self, f"conv{i}", conv)
-            self.final_conv0 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
-                                         kernel_size=3, stride=1, padding=1)
-            self.final_conv1 = nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1)
         elif upsample == "vae":
-            self.conv = nn.Sequential(
-                nn.Conv3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 2),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 4),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 8),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 16),
-                nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 16, out_channels, kernel_size=3, stride=1, padding=1),
+            for i in range(num_stages):
+                upsample = nn.Sequential(
+                    nn.Conv3d(embed_dims[-1] // 2**i, embed_dims[-1] // 2**(i + 1), kernel_size=3, stride=1, padding=1),
+                    nn.InstanceNorm3d(embed_dims[-1] // 2**(i + 1)),
+                    nn.LeakyReLU(),
+                    nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
+                setattr(self, f"upsample{i}", upsample)
+            upsample = nn.Sequential(
+                nn.Conv3d(embed_dims[-1] // 2 ** num_stages, out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
-                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
-            )
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
+            setattr(self, f"final_upsample", upsample)
 
     def forward(self, x):
         van_res = self.van3d(x.contiguous())
@@ -71,4 +64,5 @@ class VANV2(nn.Module):
         final_upsample = getattr(self, "final_upsample")
         x = final_upsample(x)
         x = self.final_conv1(x)
+        x = self.final_conv2(x)
         return x
