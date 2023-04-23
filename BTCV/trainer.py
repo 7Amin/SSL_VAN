@@ -29,7 +29,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         else:
             data, target = batch_data["image"], batch_data["label"]
         data, target = data.cuda(args.rank), target.cuda(args.rank)
-        warnings.warn("input size {}".format(data.shape))
+        # warnings.warn("input size {}".format(data.shape))
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):

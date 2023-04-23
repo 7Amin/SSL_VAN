@@ -203,5 +203,6 @@ class VAN3D(nn.Module):
             x = norm(x)
             x = x.reshape(B, D, H, W, -1).permute(0, 4, 1, 2, 3).contiguous()
             outs.append(x)
+            warnings.warn("input size {} stage {}".format(i, x.shape))
 
         return outs
