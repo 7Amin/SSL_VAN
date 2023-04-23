@@ -31,6 +31,26 @@ class VANV2(nn.Module):
             self.final_conv0 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
                                          kernel_size=3, stride=1, padding=1)
             self.final_conv1 = nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1)
+        elif upsample == "vae":
+            self.conv = nn.Sequential(
+                nn.Conv3d(embed_dims[-1], embed_dims[-1] // 2, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(embed_dims[-1] // 2),
+                nn.LeakyReLU(),
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                nn.Conv3d(embed_dims[-1] // 2, embed_dims[-1] // 4, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(embed_dims[-1] // 4),
+                nn.LeakyReLU(),
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                nn.Conv3d(embed_dims[-1] // 4, embed_dims[-1] // 8, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(embed_dims[-1] // 8),
+                nn.LeakyReLU(),
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                nn.Conv3d(embed_dims[-1] // 8, embed_dims[-1] // 16, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(embed_dims[-1] // 16),
+                nn.LeakyReLU(),
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                nn.Conv3d(embed_dims[-1] // 16, out_channels, kernel_size=1, stride=1),
+            )
 
     def forward(self, x):
         van_res = self.van3d(x.contiguous())
