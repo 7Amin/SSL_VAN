@@ -10,6 +10,7 @@ import torch.distributed as dist
 
 from BTCV.utils.data_utils import get_loader
 from BTCV.model.van import VAN
+from BTCV.model.van_v2 import VANV2
 from BTCV.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from BTCV.trainer import run_training
 
@@ -61,11 +62,11 @@ parser.add_argument("--use_normal_dataset", action="store_true", help="use monai
 parser.add_argument("--noamp", action="store_true", help="do NOT use amp for training")
 parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
-parser.add_argument("--num_stages", default=1, type=int, help="number of stages in attention")
+parser.add_argument("--num_stages", default=4, type=int, help="number of stages in attention")
 parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
-parser.add_argument("--embed_dims", default=[64], nargs='+', type=int, help="VAN3D embed dims")
-parser.add_argument("--depths", default=[3], nargs='+', type=int, help="VAN3D depths")
-parser.add_argument("--mlp_ratios", default=[8], nargs='+', type=int, help="VAN3D mlp_ratios")
+parser.add_argument("--embed_dims", default=[64, 128, 256, 512], nargs='+', type=int, help="VAN3D embed dims")
+parser.add_argument("--depths", default=[3, 4, 6, 3], nargs='+', type=int, help="VAN3D depths")
+parser.add_argument("--mlp_ratios", default=[8, 8, 4, 4], nargs='+', type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--in_channels", default=1, type=int, help="number of input channels")
 parser.add_argument("--out_channels", default=14, type=int, help="number of output channels")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
@@ -87,6 +88,7 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='', type=str, choices=['', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['', 'valid_loader'])
+parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2'])
 
 
 def main():
@@ -104,6 +106,31 @@ def main():
     else:
         main_worker(gpu=0, args=args)
 
+
+def get_model(args):
+    if args.model_v == "VANV2":
+        model = VANV2(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
+    if args.model_v == "VAN":
+        model = VAN(embed_dims=args.embed_dims,
+                    mlp_ratios=args.mlp_ratios,
+                    depths=args.depths,
+                    num_stages=args.num_stages,
+                    in_channels=args.in_channels,
+                    out_channels=args.out_channels,
+                    dropout_path_rate=args.dropout_path_rate,
+                    upsample=args.upsample)
+        return model
+
+    return None
 
 def main_worker(gpu, args):
     if args.model_inferer != "":
@@ -131,14 +158,7 @@ def main_worker(gpu, args):
 
     # todo should remove this
     pretrained_dir = args.pretrained_dir
-    model = VAN(embed_dims=args.embed_dims,
-                mlp_ratios=args.mlp_ratios,
-                depths=args.depths,
-                num_stages=args.num_stages,
-                in_channels=args.in_channels,
-                out_channels=args.out_channels,
-                dropout_path_rate=args.dropout_path_rate,
-                upsample=args.upsample)
+    model = get_model(args)
 
     if args.resume_ckpt:
         model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
