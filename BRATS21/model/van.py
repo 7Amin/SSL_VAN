@@ -42,15 +42,11 @@ class VAN(nn.Module):
                 nn.InstanceNorm3d(embed_dims[-1] // 16),
                 nn.LeakyReLU(),
                 nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                # nn.Conv3d(embed_dims[-1] // 16, embed_dims[-1] // 32, kernel_size=3, stride=1, padding=1),
-                # nn.InstanceNorm3d(embed_dims[-1] // 32),
-                # nn.LeakyReLU(),
-                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                # nn.Conv3d(embed_dims[-1] // 32, embed_dims[-1] // 64, kernel_size=3, stride=1, padding=1),
-                # nn.InstanceNorm3d(embed_dims[-1] // 64),
-                # nn.LeakyReLU(),
-                # nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
-                nn.Conv3d(embed_dims[-1] // 16, out_channels, kernel_size=1, stride=1),
+                nn.Conv3d(embed_dims[-1] // 16, out_channels, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(out_channels),
+                nn.LeakyReLU(),
+                nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False),
+                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
             )
 
     def forward(self, x):
