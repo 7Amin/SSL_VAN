@@ -2,11 +2,11 @@
 #SBATCH --job-name=clustering
 #SBATCH --time=23:59:59
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=50
+#SBATCH --ntasks-per-node=96
 #SBATCH -p a100
 #SBATCH --gpus-per-node=1
 #SBATCH -G 1
-#SBATCH --mem=80gb
+#SBATCH --mem=96gb
 
 
 cd SSL_VAN
