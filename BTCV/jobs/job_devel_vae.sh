@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=segmentation
+#SBATCH --job-name=BTCVvae
 #SBATCH --time=01:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
