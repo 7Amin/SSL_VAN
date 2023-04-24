@@ -129,7 +129,7 @@ def get_loader(args):
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
-    if args.valid_loader != '':
+    if args.valid_loader != 'none':
         val_transform = transforms.Compose(
             [
                 transforms.LoadImaged(keys=["image", "label"]),

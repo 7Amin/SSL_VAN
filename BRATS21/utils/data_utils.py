@@ -125,7 +125,7 @@ def get_loader(args):
         ]
     )
 
-    if args.valid_loader == '':
+    if args.valid_loader == 'none':
         val_transform = transforms.Compose(
             [
                 transforms.LoadImaged(keys=["image", "label"]),

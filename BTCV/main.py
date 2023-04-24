@@ -87,8 +87,8 @@ parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="typ
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
-parser.add_argument("--model_inferer", default='', type=str, choices=['', 'inferer'])
-parser.add_argument("--valid_loader", default='', type=str, choices=['', 'valid_loader'])
+parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
+parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3'])
 
 
@@ -142,16 +142,6 @@ def get_model(args):
 
 
 def main_worker(gpu, args):
-    if args.model_inferer != "":
-        args.model_inferer = "_" + args.model_inferer
-
-    if args.valid_loader != "":
-        args.valid_loader = "_" + args.valid_loader
-
-    args.model_name = "_" + args.model_v
-    if args.model_v == "VAN":
-        args.model_name = ""
-
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
@@ -229,7 +219,7 @@ def main_worker(gpu, args):
         predictor=model,
         overlap=args.infer_overlap,
     )
-    if args.model_inferer == '':
+    if args.model_inferer == 'none':
         model_inferer = None
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
@@ -239,7 +229,7 @@ def main_worker(gpu, args):
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
-               args.upsample + args.model_inferer + args.valid_loader + args.model_name
+               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
