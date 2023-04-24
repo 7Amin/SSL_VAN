@@ -21,13 +21,14 @@ class VANV3(nn.Module):
         self.first_conv0 = nn.Conv3d(in_channels, embed_dims[-1] // 2 ** num_stages,
                                      kernel_size=3, stride=1, padding=1)
         self.instance_norm_0 = nn.InstanceNorm3d(embed_dims[-1] // 2 ** num_stages)
-        self.first_conv1 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, out_channels,
+        self.first_conv1 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** (num_stages - 1),
                                      kernel_size=3, stride=1, padding=1)
-        self.instance_norm_1 = nn.InstanceNorm3d(out_channels)
+        self.instance_norm_1 = nn.InstanceNorm3d(embed_dims[-1] // 2 ** (num_stages - 1))
 
         self.final_conv0 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
                                      kernel_size=3, stride=1, padding=1)
-        self.final_conv1 = nn.Conv3d(2 * out_channels, out_channels, kernel_size=3, stride=1, padding=1)
+        self.final_conv1 = nn.Conv3d(out_channels + embed_dims[-1] // 2 ** (num_stages - 1), out_channels,
+                                     kernel_size=3, stride=1, padding=1)
         self.final_conv11 = nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1)
         self.final_conv2 = nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1)
         self.relu = nn.LeakyReLU()
