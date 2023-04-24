@@ -20,12 +20,15 @@ class VANV3(nn.Module):
 
         self.first_conv0 = nn.Conv3d(in_channels, embed_dims[-1] // 2 ** num_stages,
                                      kernel_size=3, stride=1, padding=1)
+        self.instance_norm_0 = nn.InstanceNorm3d(embed_dims[-1] // 2 ** num_stages)
         self.first_conv1 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, out_channels,
                                      kernel_size=3, stride=1, padding=1)
+        self.instance_norm_1 = nn.InstanceNorm3d(out_channels)
 
         self.final_conv0 = nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
                                      kernel_size=3, stride=1, padding=1)
         self.final_conv1 = nn.Conv3d(2 * out_channels, out_channels, kernel_size=3, stride=1, padding=1)
+        self.final_conv11 = nn.Conv3d(2 * out_channels, out_channels, kernel_size=3, stride=1, padding=1)
         self.final_conv2 = nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1)
         self.relu = nn.LeakyReLU()
 
@@ -55,8 +58,11 @@ class VANV3(nn.Module):
     def forward(self, x):
         first_x = x.clone()
         first_x = self.first_conv0(first_x)
+        first_x = self.instance_norm_0(first_x)
         first_x = self.relu(first_x)
+
         first_x = self.first_conv1(first_x)
+        first_x = self.instance_norm_1(first_x)
         first_x = self.relu(first_x)
 
         van_res = self.van3d(x.contiguous())
@@ -72,7 +78,13 @@ class VANV3(nn.Module):
         x = self.final_conv0(x)
         final_upsample = getattr(self, "final_upsample")
         x = final_upsample(x)
-        x = torch.cat((x, first_x), dim=1)
+        x = torch.cat((first_x, x), dim=1)
+
         x = self.final_conv1(x)
+        x = self.relu(x)
+
+        x = self.final_conv11(x)
+        x = self.relu(x)
+
         x = self.final_conv2(x)
         return x
