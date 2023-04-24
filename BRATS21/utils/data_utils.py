@@ -1,14 +1,3 @@
-# Copyright 2020 - 2022 MONAI Consortium
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#     http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import json
 import math
 import os
@@ -135,6 +124,27 @@ def get_loader(args):
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
+
+    if args.valid_loader == '':
+        val_transform = transforms.Compose(
+            [
+                transforms.LoadImaged(keys=["image", "label"]),
+                transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+                AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
+                transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+                transforms.RandCropByPosNegLabeld(
+                    keys=["image", "label"],
+                    spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                    pos=1,
+                    neg=1,
+                    num_samples=4,
+                    image_key="image",
+                    label_key="label",
+                    image_threshold=0,
+                ),
+                transforms.ToTensord(keys=["image", "label"]),
+            ]
+        )
 
     test_transform = transforms.Compose(
         [

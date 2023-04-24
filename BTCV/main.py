@@ -93,10 +93,6 @@ parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2
 
 def main():
     args = parser.parse_args()
-    #  The first argument, --noamp, is a flag that can be used to disable the use of Automatic Mixed Precision (AMP)
-    #  during training. AMP is a technique used in deep learning models to improve performance by using lower-precision
-    #  data types (e.g. float16) for some parts of the computation. By default, this argument is not set, so AMP will
-    #  be used during training unless the user explicitly sets the --noamp flag.
     args.amp = not args.noamp
     if args.distributed:
         args.ngpus_per_node = torch.cuda.device_count()
@@ -131,6 +127,7 @@ def get_model(args):
         return model
 
     return None
+
 
 def main_worker(gpu, args):
     if args.model_inferer != "":

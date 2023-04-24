@@ -10,6 +10,7 @@ import torch.distributed as dist
 
 from BRATS21.utils.data_utils import get_loader
 from BRATS21.model.van import VAN
+from BRATS21.model.van_v2 import VANV2
 from BRATS21.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from BRATS21.trainer import run_training
 
@@ -88,6 +89,8 @@ parser.add_argument("--max_epochs", default=5000, type=int, help="max number of 
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='', type=str, choices=['', 'inferer'])
+parser.add_argument("--valid_loader", default='', type=str, choices=['', 'valid_loader'])
+parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2'])
 
 
 def main():
@@ -102,10 +105,43 @@ def main():
         main_worker(gpu=0, args=args)
 
 
-def main_worker(gpu, args):
+def get_model(args):
+    if args.model_v == "VANV2":
+        model = VANV2(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
 
+    if args.model_v == "VAN":
+        model = VAN(embed_dims=args.embed_dims,
+                    mlp_ratios=args.mlp_ratios,
+                    depths=args.depths,
+                    num_stages=args.num_stages,
+                    in_channels=args.in_channels,
+                    out_channels=args.out_channels,
+                    dropout_path_rate=args.dropout_path_rate,
+                    upsample=args.upsample)
+        return model
+
+    return None
+
+
+def main_worker(gpu, args):
     if args.model_inferer != "":
         args.model_inferer = "_" + args.model_inferer
+
+    if args.valid_loader != "":
+        args.valid_loader = "_" + args.valid_loader
+
+    args.model_name = "_" + args.model_v
+    if args.model_v == "VAN":
+        args.model_name = ""
+
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
@@ -128,14 +164,7 @@ def main_worker(gpu, args):
     pretrained_dir = args.pretrained_dir
     model_name = args.pretrained_model_name
     pretrained_pth = os.path.join(pretrained_dir, model_name)
-    model = VAN(embed_dims=args.embed_dims,
-                mlp_ratios=args.mlp_ratios,
-                depths=args.depths,
-                num_stages=args.num_stages,
-                in_channels=args.in_channels,
-                out_channels=args.out_channels,
-                dropout_path_rate=args.dropout_path_rate,
-                upsample=args.upsample)
+    model = get_model(args)
 
     if args.resume_ckpt:
         model_dict = torch.load(os.path.join(pretrained_pth))["state_dict"]
@@ -191,7 +220,7 @@ def main_worker(gpu, args):
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" + \
-               args.upsample + args.model_inferer
+               args.upsample + args.model_inferer + args.valid_loader + args.model_name
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
