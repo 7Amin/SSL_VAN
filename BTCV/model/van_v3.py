@@ -53,7 +53,7 @@ class VANV3(nn.Module):
             setattr(self, f"final_upsample", upsample)
 
     def forward(self, x):
-        first_x = x.contiguous()
+        first_x = x.clone()
         first_x = self.first_conv0(first_x)
         first_x = self.relu(first_x)
         first_x = self.first_conv1(first_x)
