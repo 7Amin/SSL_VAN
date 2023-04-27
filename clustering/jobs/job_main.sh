@@ -4,8 +4,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=96
 #SBATCH -p a100
-#SBATCH --gpus-per-node=1
-#SBATCH -G 1
+#SBATCH --gpus-per-node=0
+#SBATCH -G 0
 #SBATCH --mem=96gb
 
 
