@@ -23,7 +23,7 @@ do
     n_clusters=$(shuf -n 1 -e $n_clusters_range)
 
     PYTHONPATH=. python3 clustering/kmeans_learning.py \
-             --num_workers 5 \
+             --num_workers 32 \
              --mode server \
              --num_samples 2 \
              --km_path ./cluster_models_1/cluster_model_1_{}_{}_{}.joblib \

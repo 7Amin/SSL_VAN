@@ -50,9 +50,9 @@ def load_data(args):
     for idx, batch_data in enumerate(training_loader):
         data = batch_data["image"].numpy()
         logger.info(f"for batch number {idx} the res size is {len(res)}")
-        number = 0.1
+        number = 0.05
         if len(res) == 0:
-            number = 0.5
+            number = 0.1
         sampled_indices = np.random.choice(len(data), int(len(data) * number), replace=False)
         data = np.squeeze(data)
 
