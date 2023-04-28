@@ -75,7 +75,7 @@ def get_loader(args):
         item_dict = {"image": item["image"]}
         new_datalist1.append(item_dict)
     datalist2 = load_decathlon_datalist(jsonlist2, False, "training", base_dir=datadir2)
-    print("Dataset 2 Covid 19: number of data: {}".format(len(datalist2)))
+    print("Dataset 2 Covid 19: OK number of data: {}".format(len(datalist2)))
     datalist3 = load_decathlon_datalist(jsonlist3, False, "training", base_dir=datadir3)
     print("Dataset 3 HNSCC: number of data: {}".format(len(datalist3)))
     datalist4 = load_decathlon_datalist(jsonlist4, False, "training", base_dir=datadir4)
@@ -84,7 +84,7 @@ def get_loader(args):
     print("Dataset 5 TCIA LIDC: number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = datalist4
+    datalist = datalist5
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
@@ -117,8 +117,8 @@ def get_loader(args):
     else:
         train_sampler = None
     train_loader = DataLoader(
-        train_ds, batch_size=args.batch_size, num_workers=args.num_workers, sampler=train_sampler, drop_last=True,
-        shuffle=True
+        train_ds, batch_size=args.batch_size, num_workers=args.num_workers, sampler=train_sampler, drop_last=True
+        # , shuffle=True
     )
     print("loader is ready")
     return train_loader
