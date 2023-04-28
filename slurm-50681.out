@@ -1,0 +1,321 @@
+/var/spool/slurmd/job50681/slurm_script: line 12: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+2023-04-27 22:30:00 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=48, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=450, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 1222
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: number of data: 450
+Dataset all training: number of data: 450
+loader is ready
+2023-04-27 22:31:46 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 22:32:03 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 9 the res size is 11520
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 10 the res size is 12672
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 11 the res size is 13824
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 12 the res size is 14976
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 13 the res size is 16128
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 14 the res size is 17280
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 15 the res size is 18432
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 16 the res size is 19584
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 17 the res size is 20736
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 18 the res size is 21888
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 19 the res size is 23040
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 20 the res size is 24192
+2023-04-27 22:32:04 | INFO | learn_kmeans | for batch number 21 the res size is 25344
+2023-04-27 22:32:05 | INFO | learn_kmeans | data is ready and size is 26496
+2023-04-27 22:32:05 | INFO | learn_kmeans | model is defined
+2023-04-27 22:32:05 | INFO | learn_kmeans | training is started
+Init 1/50 with method k-means++
+Inertia for init 1/50: 98810.267530109
+Init 2/50 with method k-means++
+Inertia for init 2/50: 102461.90129412444
+Init 3/50 with method k-means++
+Inertia for init 3/50: 98901.6744439259
+Init 4/50 with method k-means++
+Inertia for init 4/50: 98720.15381298342
+Init 5/50 with method k-means++
+Inertia for init 5/50: 95433.41512627646
+Init 6/50 with method k-means++
+Inertia for init 6/50: 100248.14593828376
+Init 7/50 with method k-means++
+Inertia for init 7/50: 96711.46219640531
+Init 8/50 with method k-means++
+Inertia for init 8/50: 97116.44769704755
+Init 9/50 with method k-means++
+Inertia for init 9/50: 96254.32337498834
+Init 10/50 with method k-means++
+Inertia for init 10/50: 102672.31223158847
+Init 11/50 with method k-means++
+Inertia for init 11/50: 98674.75250546476
+Init 12/50 with method k-means++
+Inertia for init 12/50: 100148.82263302963
+Init 13/50 with method k-means++
+Inertia for init 13/50: 99296.14559296993
+Init 14/50 with method k-means++
+Inertia for init 14/50: 97917.26703264179
+Init 15/50 with method k-means++
+Inertia for init 15/50: 92776.53931888644
+Init 16/50 with method k-means++
+Inertia for init 16/50: 95216.32409152802
+Init 17/50 with method k-means++
+Inertia for init 17/50: 98431.72056500327
+Init 18/50 with method k-means++
+Inertia for init 18/50: 97369.88151624467
+Init 19/50 with method k-means++
+Inertia for init 19/50: 96177.61769500599
+Init 20/50 with method k-means++
+Inertia for init 20/50: 98282.78391868368
+Init 21/50 with method k-means++
+Inertia for init 21/50: 102382.25883042472
+Init 22/50 with method k-means++
+Inertia for init 22/50: 96258.92797602815
+Init 23/50 with method k-means++
+Inertia for init 23/50: 97991.80289554376
+Init 24/50 with method k-means++
+Inertia for init 24/50: 98260.68952680854
+Init 25/50 with method k-means++
+Inertia for init 25/50: 98521.37732068254
+Init 26/50 with method k-means++
+Inertia for init 26/50: 98138.08162440911
+Init 27/50 with method k-means++
+Inertia for init 27/50: 95879.96028298595
+Init 28/50 with method k-means++
+Inertia for init 28/50: 96696.80602126529
+Init 29/50 with method k-means++
+Inertia for init 29/50: 96198.96964699472
+Init 30/50 with method k-means++
+Inertia for init 30/50: 94458.24135548719
+Init 31/50 with method k-means++
+Inertia for init 31/50: 98206.69745324278
+Init 32/50 with method k-means++
+Inertia for init 32/50: 96798.38206578641
+Init 33/50 with method k-means++
+Inertia for init 33/50: 99053.77869284025
+Init 34/50 with method k-means++
+Inertia for init 34/50: 99445.4567429751
+Init 35/50 with method k-means++
+Inertia for init 35/50: 100890.68001480734
+Init 36/50 with method k-means++
+Inertia for init 36/50: 94361.97367363356
+Init 37/50 with method k-means++
+Inertia for init 37/50: 95754.68966966603
+Init 38/50 with method k-means++
+Inertia for init 38/50: 98291.62897928504
+Init 39/50 with method k-means++
+Inertia for init 39/50: 97765.31857570965
+Init 40/50 with method k-means++
+Inertia for init 40/50: 100329.73034221376
+Init 41/50 with method k-means++
+Inertia for init 41/50: 99320.99608679737
+Init 42/50 with method k-means++
+Inertia for init 42/50: 97830.08284714498
+Init 43/50 with method k-means++
+Inertia for init 43/50: 93807.74960376615
+Init 44/50 with method k-means++
+Inertia for init 44/50: 99240.42612415533
+Init 45/50 with method k-means++
+Inertia for init 45/50: 99358.60232181773
+Init 46/50 with method k-means++
+Inertia for init 46/50: 97841.2830780387
+Init 47/50 with method k-means++
+Inertia for init 47/50: 99091.47546569184
+Init 48/50 with method k-means++
+Inertia for init 48/50: 97997.76427534981
+Init 49/50 with method k-means++
+Inertia for init 49/50: 98321.73441479703
+Init 50/50 with method k-means++
+Inertia for init 50/50: 99030.96272614984
+Minibatch step 1/331200: mean batch inertia: 49.049232891115814
+Minibatch step 2/331200: mean batch inertia: 58.033894623323945, ewa inertia: 58.033894623323945
+Minibatch step 3/331200: mean batch inertia: 88.70372319580937, ewa inertia: 58.080193945620785
+Minibatch step 4/331200: mean batch inertia: 70.05500353859972, ewa inertia: 58.09827117639103
+Minibatch step 5/331200: mean batch inertia: 74.23211629325776, ewa inertia: 58.1226269074049
+Minibatch step 6/331200: mean batch inertia: 73.96297422059374, ewa inertia: 58.146539572707674
+Minibatch step 7/331200: mean batch inertia: 42.7610377538171, ewa inertia: 58.123313544374064
+Minibatch step 8/331200: mean batch inertia: 83.78878870033556, ewa inertia: 58.16205827042752
+Minibatch step 9/331200: mean batch inertia: 46.262131794567395, ewa inertia: 58.144094083574885
+Minibatch step 10/331200: mean batch inertia: 87.96281168193347, ewa inertia: 58.189108564608
+Minibatch step 11/331200: mean batch inertia: 65.66264243559007, ewa inertia: 58.20039064766794
+Minibatch step 12/331200: mean batch inertia: 74.02363099372998, ewa inertia: 58.22427748820998
+Minibatch step 13/331200: mean batch inertia: 57.46728422603478, ewa inertia: 58.22313472750171
+Minibatch step 14/331200: mean batch inertia: 83.22759524120531, ewa inertia: 58.26088158263807
+Minibatch step 15/331200: mean batch inertia: 70.76652076740176, ewa inertia: 58.279760156340394
+Minibatch step 16/331200: mean batch inertia: 65.82797564729445, ewa inertia: 58.29115497913687
+Minibatch step 17/331200: mean batch inertia: 117.25724140694247, ewa inertia: 58.38017046983816
+Minibatch step 18/331200: mean batch inertia: 51.52397352712999, ewa inertia: 58.36982032160597
+Minibatch step 19/331200: mean batch inertia: 79.29140286984273, ewa inertia: 58.40140364431909
+Minibatch step 20/331200: mean batch inertia: 79.96791437928661, ewa inertia: 58.43396055375784
+Minibatch step 21/331200: mean batch inertia: 123.56205026425384, ewa inertia: 58.53227823456774
+Minibatch step 22/331200: mean batch inertia: 72.20170885552385, ewa inertia: 58.55291367347925
+Minibatch step 23/331200: mean batch inertia: 85.698268475611, ewa inertia: 58.59389243304015
+Minibatch step 24/331200: mean batch inertia: 56.22602828443919, ewa inertia: 58.59031789381141
+Minibatch step 25/331200: mean batch inertia: 48.3306899999307, ewa inertia: 58.57482990967149
+Minibatch step 26/331200: mean batch inertia: 42.76248782205632, ewa inertia: 58.55095952119338
+Minibatch step 27/331200: mean batch inertia: 37.55870508291877, ewa inertia: 58.51926951185153
+Minibatch step 28/331200: mean batch inertia: 103.67309585756644, ewa inertia: 58.58743394759251
+Minibatch step 29/331200: mean batch inertia: 59.19474381606061, ewa inertia: 58.588350745522035
+Minibatch step 30/331200: mean batch inertia: 59.44669988485805, ewa inertia: 58.58964651355515
+Minibatch step 31/331200: mean batch inertia: 62.05363395136336, ewa inertia: 58.59487576582946
+Minibatch step 32/331200: mean batch inertia: 45.94815828506385, ewa inertia: 58.57578421964571
+Minibatch step 33/331200: mean batch inertia: 76.26084267602272, ewa inertia: 58.60248166985725
+Minibatch step 34/331200: mean batch inertia: 67.33323317252169, ewa inertia: 58.61566165476522
+Minibatch step 35/331200: mean batch inertia: 66.00587640471227, ewa inertia: 58.62681795887504
+Minibatch step 36/331200: mean batch inertia: 73.38890443421664, ewa inertia: 58.64910287637564
+Minibatch step 37/331200: mean batch inertia: 63.50433228690556, ewa inertia: 58.656432354294694
+Minibatch step 38/331200: mean batch inertia: 69.27913730288533, ewa inertia: 58.672468441321286
+Minibatch step 39/331200: mean batch inertia: 46.40919262340226, ewa inertia: 58.65395574053566
+Minibatch step 40/331200: mean batch inertia: 70.26601574645294, ewa inertia: 58.67148536276597
+Minibatch step 41/331200: mean batch inertia: 37.021941122024636, ewa inertia: 58.638803105543275
+Minibatch step 42/331200: mean batch inertia: 64.45202664469181, ewa inertia: 58.64757877605563
+Minibatch step 43/331200: mean batch inertia: 64.52354455745439, ewa inertia: 58.65644916256188
+Minibatch step 44/331200: mean batch inertia: 87.06831838878676, ewa inertia: 58.699339858453826
+Minibatch step 45/331200: mean batch inertia: 48.82675878542246, ewa inertia: 58.684436162076075
+Minibatch step 46/331200: mean batch inertia: 66.35926460959686, ewa inertia: 58.696022120407235
+Minibatch step 47/331200: mean batch inertia: 59.23577972476846, ewa inertia: 58.6968369411105
+Minibatch step 48/331200: mean batch inertia: 54.2021925992569, ewa inertia: 58.69005180416389
+Minibatch step 49/331200: mean batch inertia: 70.03700357760762, ewa inertia: 58.707181217717796
+Minibatch step 50/331200: mean batch inertia: 58.09831594127792, ewa inertia: 58.70626207173684
+Minibatch step 51/331200: mean batch inertia: 62.354927599610974, ewa inertia: 58.711770114953616
+Minibatch step 52/331200: mean batch inertia: 45.86412192085786, ewa inertia: 58.69237524278832
+Minibatch step 53/331200: mean batch inertia: 63.34067799926082, ewa inertia: 58.69939234322456
+Minibatch step 54/331200: mean batch inertia: 55.93151556301948, ewa inertia: 58.69521394298272
+Minibatch step 55/331200: mean batch inertia: 53.5434921251231, ewa inertia: 58.68743687868433
+Minibatch step 56/331200: mean batch inertia: 66.67838477135457, ewa inertia: 58.699500052466526
+Minibatch step 57/331200: mean batch inertia: 57.291222164262834, ewa inertia: 58.697374109320954
+Minibatch step 58/331200: mean batch inertia: 36.527174006154745, ewa inertia: 58.663905867477474
+Minibatch step 59/331200: mean batch inertia: 91.67462897149164, ewa inertia: 58.71373901553803
+Minibatch step 60/331200: mean batch inertia: 83.00492270067022, ewa inertia: 58.750409104506794
+Minibatch step 61/331200: mean batch inertia: 49.89580528886809, ewa inertia: 58.73704215154512
+Minibatch step 62/331200: mean batch inertia: 66.35818626416275, ewa inertia: 58.74854706774336
+Minibatch step 63/331200: mean batch inertia: 53.47951380939391, ewa inertia: 58.74059290952417
+Minibatch step 64/331200: mean batch inertia: 44.92831092348536, ewa inertia: 58.719741821497536
+Minibatch step 65/331200: mean batch inertia: 63.83572491544949, ewa inertia: 58.72746493444459
+Minibatch step 66/331200: mean batch inertia: 51.34462247599098, ewa inertia: 58.71631975958184
+Minibatch step 67/331200: mean batch inertia: 55.21526678836953, ewa inertia: 58.711034552998136
+Minibatch step 68/331200: mean batch inertia: 77.1325480529646, ewa inertia: 58.73884375932333
+Minibatch step 69/331200: mean batch inertia: 66.36607335653034, ewa inertia: 58.75035786219868
+Minibatch step 70/331200: mean batch inertia: 40.91628437771699, ewa inertia: 58.72343545817637
+Minibatch step 71/331200: mean batch inertia: 55.49587501546474, ewa inertia: 58.71856311724311
+Minibatch step 72/331200: mean batch inertia: 36.61110339332519, ewa inertia: 58.68518958858112
+Minibatch step 73/331200: mean batch inertia: 74.82103947250019, ewa inertia: 58.70954834600108
+Minibatch step 74/331200: mean batch inertia: 85.79757010140399, ewa inertia: 58.75044055531595
+Minibatch step 75/331200: mean batch inertia: 61.87556119999677, ewa inertia: 58.75515825263214
+Minibatch step 76/331200: mean batch inertia: 77.80974039435745, ewa inertia: 58.78392314245624
+Minibatch step 77/331200: mean batch inertia: 59.31748268844656, ewa inertia: 58.784728606540455
+Minibatch step 78/331200: mean batch inertia: 64.45488972850119, ewa inertia: 58.79328830933241
+Minibatch step 79/331200: mean batch inertia: 79.59676322301576, ewa inertia: 58.82469333618629
+Minibatch step 80/331200: mean batch inertia: 40.128920167166264, ewa inertia: 58.79647010613154
+Minibatch step 81/331200: mean batch inertia: 49.646566704721195, ewa inertia: 58.78265736747975
+Minibatch step 82/331200: mean batch inertia: 50.221756503263215, ewa inertia: 58.76973378992121
+Minibatch step 83/331200: mean batch inertia: 57.723772976696715, ewa inertia: 58.76815480239323
+Minibatch step 84/331200: mean batch inertia: 43.58763106862709, ewa inertia: 58.74523820997331
+Minibatch step 85/331200: mean batch inertia: 71.94132637093227, ewa inertia: 58.76515908880632
+Minibatch step 86/331200: mean batch inertia: 41.38368632848755, ewa inertia: 58.738919933037266
+Minibatch step 87/331200: mean batch inertia: 53.27070015212594, ewa inertia: 58.73066508187538
+Minibatch step 88/331200: mean batch inertia: 52.32624510566308, ewa inertia: 58.72099693834787
+Minibatch step 89/331200: mean batch inertia: 38.008003643352744, ewa inertia: 58.68972850298538
+Minibatch step 90/331200: mean batch inertia: 26.95906744252008, ewa inertia: 58.641827742808054
+Minibatch step 91/331200: mean batch inertia: 69.43804229065911, ewa inertia: 58.65812576076911
+Minibatch step 92/331200: mean batch inertia: 62.991635622889554, ewa inertia: 58.664667648321846
+Minibatch step 93/331200: mean batch inertia: 38.614875777236726, ewa inertia: 58.634400385052665
+Minibatch step 94/331200: mean batch inertia: 32.34164858802117, ewa inertia: 58.594708719132704
+Minibatch step 95/331200: mean batch inertia: 59.51042022730625, ewa inertia: 58.59609108167665
+Minibatch step 96/331200: mean batch inertia: 72.33507138884559, ewa inertia: 58.61683151313254
+Minibatch step 97/331200: mean batch inertia: 73.26834005042895, ewa inertia: 58.63894950164036
+Minibatch step 98/331200: mean batch inertia: 72.77645999737365, ewa inertia: 58.66029155620614
+Minibatch step 99/331200: mean batch inertia: 42.58311765379601, ewa inertia: 58.63602137633308
+Minibatch step 100/331200: mean batch inertia: 58.43994441667945, ewa inertia: 58.63572537760167
+Minibatch step 101/331200: mean batch inertia: 67.9646264770428, ewa inertia: 58.6498083320485
+Minibatch step 102/331200: mean batch inertia: 45.19225492366445, ewa inertia: 58.62949274400701
+Converged (lack of improvement in inertia) at step 102/331200
+2023-04-27 22:32:53 | INFO | learn_kmeans | training is finished
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+/var/spool/slurmd/job50681/slurm_script: line 34: 1897608 Segmentation fault      (core dumped) PYTHONPATH=. python3 clustering/kmeans_learning.py --num_workers 48 --mode server --num_samples 6 --km_path ./cluster_models_1/cluster_model_1_{}_{}_{}.joblib --n_clusters "$n_clusters" --max_iter 250 --batch_size 20 --n_init 50
+2023-04-27 22:33:02 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=48, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=335, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 1222
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: number of data: 450
+Dataset all training: number of data: 450
+loader is ready
+slurmstepd: error: *** JOB 50681 ON a100-01 CANCELLED AT 2023-04-27T22:33:29 ***

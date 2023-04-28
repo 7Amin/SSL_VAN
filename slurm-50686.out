@@ -1,0 +1,677 @@
+/var/spool/slurmd/job50686/slurm_script: line 12: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+2023-04-27 22:59:59 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=75, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:01:45 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:01:46 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 8.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x14c143d73be0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x14c02ff98e80>
+
+2023-04-27 23:01:52 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=296, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:02:25 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:02:30 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 9 the res size is 11520
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 10 the res size is 12672
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 11 the res size is 13824
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 12 the res size is 14976
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 13 the res size is 16128
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 14 the res size is 17280
+2023-04-27 23:02:31 | INFO | learn_kmeans | for batch number 15 the res size is 18432
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 16 the res size is 19584
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 17 the res size is 20736
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 18 the res size is 21888
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 19 the res size is 23040
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 20 the res size is 24192
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 21 the res size is 25344
+2023-04-27 23:02:32 | INFO | learn_kmeans | for batch number 22 the res size is 26496
+2023-04-27 23:02:36 | INFO | learn_kmeans | for batch number 23 the res size is 27648
+2023-04-27 23:02:36 | INFO | learn_kmeans | for batch number 24 the res size is 28800
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 25 the res size is 29952
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 26 the res size is 31104
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 27 the res size is 32256
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 28 the res size is 33408
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 29 the res size is 34560
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 30 the res size is 35712
+2023-04-27 23:02:37 | INFO | learn_kmeans | for batch number 31 the res size is 36864
+2023-04-27 23:02:55 | INFO | learn_kmeans | for batch number 32 the res size is 38016
+2023-04-27 23:02:56 | INFO | learn_kmeans | for batch number 33 the res size is 39168
+2023-04-27 23:02:56 | INFO | learn_kmeans | for batch number 34 the res size is 40320
+2023-04-27 23:02:56 | INFO | learn_kmeans | for batch number 35 the res size is 41472
+2023-04-27 23:02:56 | INFO | learn_kmeans | for batch number 36 the res size is 42624
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 5.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x14e417b63be0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x14e303d88610>
+
+2023-04-27 23:03:01 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=489, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:03:42 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:03:42 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:03:44 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:03:44 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:03:44 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:03:44 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:03:46 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:03:46 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 23:03:46 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 9.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x14bc177fbbe0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x14bb03a20640>
+
+2023-04-27 23:03:51 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=480, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:04:21 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:04:22 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:04:26 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:04:29 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:04:29 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:04:30 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:04:30 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 9 the res size is 11520
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 10 the res size is 12672
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 11 the res size is 13824
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 12 the res size is 14976
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 13 the res size is 16128
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 14 the res size is 17280
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 15 the res size is 18432
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 16 the res size is 19584
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 17 the res size is 20736
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 18 the res size is 21888
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 19 the res size is 23040
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 20 the res size is 24192
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 21 the res size is 25344
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 22 the res size is 26496
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 23 the res size is 27648
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 24 the res size is 28800
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 25 the res size is 29952
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 26 the res size is 31104
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 27 the res size is 32256
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 28 the res size is 33408
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 29 the res size is 34560
+2023-04-27 23:04:32 | INFO | learn_kmeans | for batch number 30 the res size is 35712
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 31.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x14f16a369be0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x14f05658e610>
+
+2023-04-27 23:04:37 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=422, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:05:00 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:05:21 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:05:21 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 9 the res size is 11520
+2023-04-27 23:05:23 | INFO | learn_kmeans | for batch number 10 the res size is 12672
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 11 the res size is 13824
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 12 the res size is 14976
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 13 the res size is 16128
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 14 the res size is 17280
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 15 the res size is 18432
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 16 the res size is 19584
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 17 the res size is 20736
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 18 the res size is 21888
+2023-04-27 23:05:32 | INFO | learn_kmeans | for batch number 19 the res size is 23040
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 20.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x146eff092be0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x146deb2b7640>
+
+2023-04-27 23:05:37 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=32, distributed=False, mode='server', num_samples=6, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=469, seed=42, init='k-means++', max_iter=250, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0)
+Dataset 1 LUNA16: number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: number of data: 954
+Dataset 4 TCIA Colon: number of data: 1535
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 954
+loader is ready
+2023-04-27 23:06:04 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-04-27 23:06:09 | INFO | learn_kmeans | for batch number 1 the res size is 2304
+2023-04-27 23:06:10 | INFO | learn_kmeans | for batch number 2 the res size is 3456
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 3 the res size is 4608
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 4 the res size is 5760
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 5 the res size is 6912
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 6 the res size is 8064
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 7 the res size is 9216
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 8 the res size is 10368
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 9 the res size is 11520
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 10 the res size is 12672
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 11 the res size is 13824
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 12 the res size is 14976
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 13 the res size is 16128
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 14 the res size is 17280
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 15 the res size is 18432
+2023-04-27 23:06:14 | INFO | learn_kmeans | for batch number 16 the res size is 19584
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 145, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 73, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1313, in _next_data
+    return self._process_data(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 17.
+Original Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/dictionary.py", line 131, in __call__
+    data = self._loader(d[key], reader)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/io/array.py", line 240, in __call__
+    img_array, meta_data = reader.get_data(img)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 450, in get_data
+    data = self._get_array_data(i)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/image_reader.py", line 522, in _get_array_data
+    _array = np.array(img.get_fdata(dtype=self.dtype))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/dataobj_images.py", line 368, in get_fdata
+    data = np.asanyarray(self._dataobj, dtype=dtype)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 426, in __array__
+    arr = self._get_scaled(dtype=dtype, slicer=())
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 393, in _get_scaled
+    scaled = apply_read_scaling(self._get_unscaled(slicer=slicer), scl_slope, scl_inter)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/arrayproxy.py", line 363, in _get_unscaled
+    return array_from_file(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/nibabel/volumeutils.py", line 454, in array_from_file
+    n_read = infile.readinto(data_bytes)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 300, in read
+    return self._buffer.read(size)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/gzip.py", line 506, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 89, in apply_transform
+    return _apply_transform(transform, data, unpack_items)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 53, in _apply_transform
+    return transform(parameters)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/compose.py", line 173, in __call__
+    input_ = apply_transform(_transform, input_, self.map_items, self.unpack_items, self.log_stats)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x14bc295a3be0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 97, in __getitem__
+    return self._transform(index)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/data/dataset.py", line 83, in _transform
+    return apply_transform(self.transform, data_i) if self.transform is not None else data_i
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/transform.py", line 113, in apply_transform
+    raise RuntimeError(f"applying transform {transform}") from e
+RuntimeError: applying transform <monai.transforms.compose.Compose object at 0x14bb157c86d0>
+
+slurmstepd: error: *** JOB 50686 ON a100-01 CANCELLED AT 2023-04-27T23:06:17 ***
