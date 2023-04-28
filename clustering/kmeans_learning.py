@@ -63,6 +63,7 @@ def load_data(args):
 
         res.extend(merged_array)
 
+    logger.info(f"data is ready and size is {len(res)}")
     return res
 
 
@@ -70,6 +71,7 @@ def learn_kmeans(args):
     filename = "cluster_paths.json"
     np.random.seed(args.seed)
     feat = load_data(args)
+    logger.info(f"model is defined")
     km_model = get_km_model(
         args.n_clusters,
         args.init,
@@ -80,7 +82,9 @@ def learn_kmeans(args):
         args.n_init,
         args.reassignment_ratio,
     )
+    logger.info(f"training is started")
     km_model.fit(feat)
+    logger.info(f"training is finished")
     # y_pred = km_model.predict(feat)
     url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
     joblib.dump(km_model, url)
