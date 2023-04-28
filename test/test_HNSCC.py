@@ -76,4 +76,22 @@ def part_two():
             print(output_file)
 
 
-part_two()
+def part_three():
+    json_url = '/home/amin/CETI/medical_image/SSL_VAN/jsons/dataset_HNSCC_0.json'
+    in_file = open(json_url)
+    json_data = json.load(in_file)
+    result = dict()
+    for data_type in json_data:
+        res = []
+        for file_data in json_data[data_type]:
+            number = int(file_data['image'].split('_')[1].split('.')[0])
+            if number > 1012:
+                continue
+            res.append(file_data)
+        result[data_type] = res
+    with open(json_url, "w") as outfile:
+        json.dump(result, outfile, indent=4)
+
+
+
+part_three()
