@@ -81,10 +81,10 @@ def get_loader(args):
     datalist4 = load_decathlon_datalist(jsonlist4, False, "training", base_dir=datadir4)
     print("Dataset 4 TCIA Colon: number of data: {}".format(len(datalist4)))
     datalist5 = load_decathlon_datalist(jsonlist5, False, "training", base_dir=datadir5)
-    print("Dataset 5 TCIA LIDC: number of data: {}".format(len(datalist5)))
+    print("Dataset 5 TCIA LIDC: OK number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = datalist5
+    datalist = datalist3
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
