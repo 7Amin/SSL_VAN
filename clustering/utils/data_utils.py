@@ -83,7 +83,9 @@ def get_loader(args):
     datalist5 = load_decathlon_datalist(jsonlist5, False, "training", base_dir=datadir5)
     print("Dataset 5: number of data: {}".format(len(datalist5)))
 
-    datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
+    # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
+    datalist = new_datalist1
+
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
     train_transforms = Compose(
