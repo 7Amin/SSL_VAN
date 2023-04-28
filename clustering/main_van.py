@@ -9,7 +9,10 @@ import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from clustering.utils.data_utils import get_loader
-from clustering.model.van import VAN
+from BTCV.model.van import VAN
+from BTCV.model.van_v2 import VANV2
+from BTCV.model.van_v3 import VANV3
+from BTCV.model.van_v4 import VANV4
 from clustering.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from clustering.training_van import run_training
 from clustering.losses.loss import ClusteringLoss
@@ -87,7 +90,9 @@ parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="typ
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
-parser.add_argument("--model_inferer", default='', type=str, choices=['', '_inferer'])
+parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
+parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
+parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4'])
 
 
 def main():
@@ -100,6 +105,54 @@ def main():
         mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
     else:
         main_worker(gpu=0, args=args)
+
+
+def get_model(args):
+    if args.model_v == "VANV4":
+        model = VANV4(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
+    if args.model_v == "VANV3":
+        model = VANV3(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
+    if args.model_v == "VANV2":
+        model = VANV2(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
+    if args.model_v == "VAN":
+        model = VAN(embed_dims=args.embed_dims,
+                    mlp_ratios=args.mlp_ratios,
+                    depths=args.depths,
+                    num_stages=args.num_stages,
+                    in_channels=args.in_channels,
+                    out_channels=args.out_channels,
+                    dropout_path_rate=args.dropout_path_rate,
+                    upsample=args.upsample)
+        return model
+
+    return None
 
 
 def main_worker(gpu, args):
@@ -134,23 +187,6 @@ def main_worker(gpu, args):
         model.load_state_dict(model_dict)
         print("Use pretrained weights")
 
-    if args.use_ssl_pretrained:
-        try:
-            model_dict = torch.load("./pretrained_models/model_van.pt")
-            state_dict = model_dict["state_dict"]
-            if "module." in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'module.' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("module.", "")] = state_dict.pop(key)
-            if "swin_vit" in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'swin_vit' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("swin_vit", "swinViT")] = state_dict.pop(key)
-            model.load_state_dict(state_dict, strict=False)
-            warnings.warn("Using pretrained self-supervised Swin UNETR backbone weights !")
-        except ValueError:
-            raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
-
     clustering_loss = ClusteringLoss(args.embedding_dim, args.max_cluster_size)
 
 
@@ -159,10 +195,12 @@ def main_worker(gpu, args):
 
     start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
-    base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
+    base_url = 'pre_train_' + \
+               '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
-               args.upsample
+               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v
+
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
