@@ -117,5 +117,5 @@ def get_loader(args):
     train_loader = DataLoader(
         train_ds, batch_size=args.batch_size, num_workers=args.num_workers, sampler=train_sampler, drop_last=True
     )
-
+    print("loader is ready")
     return train_loader

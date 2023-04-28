@@ -49,6 +49,7 @@ def load_data(args):
     res = []
     for idx, batch_data in enumerate(training_loader):
         data = batch_data["image"].numpy()
+        logger.info(f"for batch number {idx} the res size is {len(res)}")
         number = 0.1
         if len(res) == 0:
             number = 0.5
