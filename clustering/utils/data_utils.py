@@ -84,7 +84,7 @@ def get_loader(args):
     print("Dataset 5 TCIA LIDC: number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = datalist2 + datalist3 + datalist4 + datalist5
+    datalist = datalist3
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
