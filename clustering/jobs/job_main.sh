@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=clustering
-#SBATCH --time=23:59:59
+#SBATCH --time=06:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=96
-#SBATCH -p a100
+#SBATCH -p mi100
 #SBATCH --gpus-per-node=0
 #SBATCH -G 0
 #SBATCH --mem=96gb

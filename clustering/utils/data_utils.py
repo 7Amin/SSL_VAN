@@ -1,4 +1,4 @@
-from monai.data import CacheDataset, DataLoader, Dataset, DistributedSampler, SmartCacheDataset, load_decathlon_datalist
+from monai.data import CacheDataset, DataLoader, Dataset, DistributedSampler, load_decathlon_datalist
 from monai.transforms import (
     AddChanneld,
     AsChannelFirstd,
@@ -84,7 +84,7 @@ def get_loader(args):
     print("Dataset 5 TCIA LIDC: OK number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = datalist4
+    datalist = new_datalist1
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
