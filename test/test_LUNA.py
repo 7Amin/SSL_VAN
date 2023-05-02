@@ -15,13 +15,13 @@ def part_one():
             url = os.path.join('/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16/manifest-1600709154662/',
                                file_data['files_dir'])
             number = int(file_data['subject_id'].split('-')[2])
-            output_dir = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16/manifest-1600709154662/images/'
+            output_dir = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16/images2/'
             # Get a list of all DICOM files in the input directory
 
             output_file = os.path.join(output_dir, 'img_{}.nii.gz'.format(number))
             if os.path.isfile(output_file):
                 print(number)
-                continue
+                # continue
             dicom_files = [os.path.join(url, f) for f in os.listdir(url) if f.endswith('.dcm')]
             dicom_files = sorted(dicom_files)
             data = []
@@ -55,7 +55,7 @@ def part_two():
         json.dump(result, outfile, indent=4)
 
 
-part_two()
+part_one()
 
 
 
