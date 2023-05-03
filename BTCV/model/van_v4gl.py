@@ -30,15 +30,20 @@ class VANV4GL(nn.Module):
 
         t0s = torch.split(x, self.patch_count, dim=2)
         res_t0s = None
+        print(f"t0s len is {len(t0s)}")
         for i, t0 in enumerate(t0s):
+            print(f"t0.shape is {t0.shape}")
             t1s = torch.split(t0, self.patch_count, dim=3)
             res_t1s = None
+            print(f"t1s len is {len(t1s)}")
             for j, t1 in enumerate(t1s):
+                print(f"t1.shape is {t1.shape}")
                 t2s = torch.split(t1, self.patch_count, dim=4)
                 res_t2s = None
+                print(f"t2s len is {len(t2s)}")
                 for k, t2 in enumerate(t2s):
+                    print(f"t2.shape is {t2.shape}")
                     model = getattr(self, f"van{i}_{j}_{k}")
-                    print(t2.shape)
                     t2 = model(t2)
                     if k == 0:
                         res_t2s = t2
