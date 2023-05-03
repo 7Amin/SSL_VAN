@@ -27,18 +27,20 @@ class VANV4GL(nn.Module):
     def forward(self, x):
         #  x is b, c, seq, w, h
         x1 = self.van(x)
-
-        t0s = torch.split(x, self.patch_count, dim=2)
+        split_size_d2 = x.size(2) // self.patch_count
+        t0s = torch.split(x, split_size_d2, dim=2)
         res_t0s = None
         print(f"t0s len is {len(t0s)}")
         for i, t0 in enumerate(t0s):
             print(f"t0.shape is {t0.shape}")
-            t1s = torch.split(t0, self.patch_count, dim=3)
+            split_size_d3 = x.size(3) // self.patch_count
+            t1s = torch.split(t0, split_size_d3, dim=3)
             res_t1s = None
             print(f"t1s len is {len(t1s)}")
             for j, t1 in enumerate(t1s):
                 print(f"t1.shape is {t1.shape}")
-                t2s = torch.split(t1, self.patch_count, dim=4)
+                split_size_d4 = x.size(4) // self.patch_count
+                t2s = torch.split(t1, split_size_d4, dim=4)
                 res_t2s = None
                 print(f"t2s len is {len(t2s)}")
                 for k, t2 in enumerate(t2s):
