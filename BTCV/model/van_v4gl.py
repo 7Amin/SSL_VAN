@@ -59,7 +59,7 @@ class VANV4GL(nn.Module):
             if i == 0:
                 res_t0s = res_t1s
             else:
-                res_t0s = torch.cat((res_t0s, res_t1s), dim=3)
+                res_t0s = torch.cat((res_t0s, res_t1s), dim=2)
 
         x = x1 + res_t0s
         x = self.conv(x)
