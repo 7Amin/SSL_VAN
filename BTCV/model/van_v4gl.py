@@ -64,8 +64,8 @@ class VANV4GL(nn.Module):
                 res_t0s = torch.cat((res_t0s, res_t1s), dim=2)
                 res_t1s = None
 
-        print(f"res_t0s.shape is {res_t0s.shape}")
+        # print(f"res_t0s.shape is {res_t0s.shape}")
         x = self.van(x) + res_t0s
         x = self.conv(x)
-        print(f"x.shape is {x.shape}")
+        # print(f"x.shape is {x.shape}")
         return x
