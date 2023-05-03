@@ -38,6 +38,7 @@ class VANV4GL(nn.Module):
                 res_t2s = None
                 for k, t2 in enumerate(t2s):
                     model = getattr(self, f"van{i}_{j}_{k}")
+                    print(t2.shape)
                     t2 = model(t2)
                     if k == 0:
                         res_t2s = t2
