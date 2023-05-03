@@ -30,21 +30,21 @@ class VANV4GL(nn.Module):
         split_size_d2 = x.size(2) // self.patch_count
         t0s = torch.split(x, split_size_d2, dim=2)
         res_t0s = None
-        print(f"t0s len is {len(t0s)}")
+        # print(f"t0s len is {len(t0s)}")
         for i, t0 in enumerate(t0s):
-            print(f"t0.shape is {t0.shape}")
+            # print(f"t0.shape is {t0.shape}")
             split_size_d3 = x.size(3) // self.patch_count
             t1s = torch.split(t0, split_size_d3, dim=3)
             res_t1s = None
-            print(f"t1s len is {len(t1s)}")
+            # print(f"t1s len is {len(t1s)}")
             for j, t1 in enumerate(t1s):
-                print(f"t1.shape is {t1.shape}")
+                # print(f"t1.shape is {t1.shape}")
                 split_size_d4 = x.size(4) // self.patch_count
                 t2s = torch.split(t1, split_size_d4, dim=4)
                 res_t2s = None
-                print(f"t2s len is {len(t2s)}")
+                # print(f"t2s len is {len(t2s)}")
                 for k, t2 in enumerate(t2s):
-                    print(f"t2.shape is {t2.shape}")
+                    # print(f"t2.shape is {t2.shape}")
                     model = getattr(self, f"van{i}_{j}_{k}")
                     t2 = model(t2)
                     if k == 0:
@@ -61,6 +61,9 @@ class VANV4GL(nn.Module):
             else:
                 res_t0s = torch.cat((res_t0s, res_t1s), dim=2)
 
+        print(f"x1.shape is {x1.shape}")
+        print(f"res_t0s.shape is {res_t0s.shape}")
         x = x1 + res_t0s
         x = self.conv(x)
+        print(f"x.shape is {x.shape}")
         return x
