@@ -92,6 +92,7 @@ parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv',
 parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL'])
+parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
 def main():
@@ -115,7 +116,9 @@ def get_model(args):
                         in_channels=args.in_channels,
                         out_channels=args.out_channels,
                         dropout_path_rate=args.dropout_path_rate,
-                        upsample=args.upsample)
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
     if args.model_v == "VANV4":
