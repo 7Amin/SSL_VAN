@@ -6,7 +6,7 @@ from BTCV.model.van_v4 import VANV4
 
 class VANV4GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
-                 upsample="deconv", patch_count=4):
+                 upsample="deconv", patch_count=2):
         super(VANV4GL, self).__init__()
         self.patch_count = patch_count
         for i in range(patch_count):
