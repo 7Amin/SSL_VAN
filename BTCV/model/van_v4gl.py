@@ -12,8 +12,9 @@ class VANV4GL(nn.Module):
         for i in range(patch_count):
             for j in range(patch_count):
                 for k in range(patch_count):
-                    setattr(self, f"van{i}_{j}_{k}", VANV4(embed_dims, mlp_ratios, depths, num_stages, in_channels,
-                                                           out_channels, dropout_path_rate, upsample))
+                    setattr(self, f"van{i}_{j}_{k}", VANV4(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
+                                                           num_stages - 2, in_channels, out_channels,
+                                                           dropout_path_rate, upsample))
         self.van = VANV4(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
         self.conv = nn.Sequential(
