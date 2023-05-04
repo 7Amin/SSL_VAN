@@ -93,5 +93,20 @@ def part_three():
         json.dump(result, outfile, indent=4)
 
 
+def part_four():
+    json_url = '/home/amin/CETI/medical_image/SSL_VAN/jsons/dataset_HNSCC_0.json'
+    in_file = open(json_url)
+    base_url = "/media/amin/Amin/CT_Segmentation_Images/3D/HNSCC/"
+    json_data = json.load(in_file)
+    for data_type in json_data:
+        for file_data in json_data[data_type]:
+            url = base_url + file_data["image"]
+            try:
+                loaded_image = nib.load(url)
+                image_data = loaded_image.get_fdata()
+                print("Done")
+            except:
+                print(url)
 
-part_three()
+
+part_four()
