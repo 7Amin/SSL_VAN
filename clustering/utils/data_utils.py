@@ -69,7 +69,7 @@ def get_loader(args):
     jsonlist5 = list_dir + splits5
 
     datalist1 = load_decathlon_datalist(jsonlist1, False, "training", base_dir=datadir1)
-    print("Dataset 1 LUNA16: number of data: {}".format(len(datalist1)))
+    print("Dataset 1 LUNA16: OK number of data: {}".format(len(datalist1)))
     new_datalist1 = []
     for item in datalist1:
         item_dict = {"image": item["image"]}
@@ -84,7 +84,7 @@ def get_loader(args):
     print("Dataset 5 TCIA LIDC: OK number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = new_datalist1
+    datalist = datalist3
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
