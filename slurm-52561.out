@@ -1,4 +1,4 @@
-/var/spool/slurmd/job52558/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+/var/spool/slurmd/job52561/slurm_script: line 11: cd: SSL_VAN: No such file or directory
 
 ----------------------------------------------------------------------------
   cuda:
@@ -62,7 +62,7 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f"Total parameters count {pytorch_total_params}")
 /home/karimimonsefi.1/SSL_VAN/BTCV/main.py:255: UserWarning: Total args.checkpoint True
   warnings.warn(f"Total args.checkpoint {args.checkpoint}")
-/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:262: UserWarning:  Best url model is 96-192-384-768_3-3-24-3_8-8-4-4_vae___VANV4GL_2__best.pt, final model url is 96-192-384-768_3-3-24-3_8-8-4-4_vae___VANV4GL_2__final.pt
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:262: UserWarning:  Best url model is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer__VANV4GL_2__best.pt, final model url is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer__VANV4GL_2__final.pt
   warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
 /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
   warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
@@ -70,7 +70,7 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f"Total parameters count {pytorch_total_params}")
 /home/karimimonsefi.1/SSL_VAN/BTCV/main.py:255: UserWarning: Total args.checkpoint True
   warnings.warn(f"Total args.checkpoint {args.checkpoint}")
-/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:262: UserWarning:  Best url model is 96-192-384-768_3-3-24-3_8-8-4-4_vae___VANV4GL_2__best.pt, final model url is 96-192-384-768_3-3-24-3_8-8-4-4_vae___VANV4GL_2__final.pt
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:262: UserWarning:  Best url model is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer__VANV4GL_2__best.pt, final model url is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer__VANV4GL_2__final.pt
   warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
 input_list/dataset_BTCV_List.json
 input_list/dataset_BTCV_List.json
@@ -93,9 +93,9 @@ Traceback (most recent call last):
     fn(i, *args)
   File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 267, in main_worker
     checkpoint = torch.load(temp, map_location="cpu")
-  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/serialization.py", line 777, in load
-    with _open_zipfile_reader(opened_file) as opened_zipfile:
-  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/serialization.py", line 282, in __init__
-    super(_open_zipfile_reader, self).__init__(torch._C.PyTorchFileReader(name_or_buffer))
-RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/serialization.py", line 795, in load
+    return _legacy_load(opened_file, map_location, pickle_module, **pickle_load_args)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/serialization.py", line 1002, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+EOFError: Ran out of input
 
