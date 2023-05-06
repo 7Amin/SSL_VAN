@@ -77,14 +77,14 @@ def get_loader(args):
     datalist2 = load_decathlon_datalist(jsonlist2, False, "training", base_dir=datadir2)
     print("Dataset 2 Covid 19: OK number of data: {}".format(len(datalist2)))
     datalist3 = load_decathlon_datalist(jsonlist3, False, "training", base_dir=datadir3)
-    print("Dataset 3 HNSCC: number of data: {}".format(len(datalist3)))
+    print("Dataset 3 HNSCC: OK number of data: {}".format(len(datalist3)))
     datalist4 = load_decathlon_datalist(jsonlist4, False, "training", base_dir=datadir4)
     print("Dataset 4 TCIA Colon: number of data: {}".format(len(datalist4)))
     datalist5 = load_decathlon_datalist(jsonlist5, False, "training", base_dir=datadir5)
     print("Dataset 5 TCIA LIDC: OK number of data: {}".format(len(datalist5)))
 
     # datalist = new_datalist1 + datalist2 + datalist3 + datalist4 + datalist5
-    datalist = datalist3
+    datalist = datalist4
 
     print("Dataset all training: number of data: {}".format(len(datalist)))
 
