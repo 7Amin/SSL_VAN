@@ -127,8 +127,10 @@ def part_three():
 
 def part_four():
     json_url = './jsons/dataset_TCIAcolon_v2_0.json'
+    # json_url = '/home/amin/CETI/medical_image/SSL_VAN/jsons/dataset_TCIAcolon_v2_0.json'
     in_file = open(json_url)
     base_url = "/home/karimimonsefi.1/images/Colonography/"
+    # base_url = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIA_CT_Colonography_Trial/images/"
     json_data = json.load(in_file)
     for data_type in json_data:
         for file_data in json_data[data_type]:
@@ -137,7 +139,7 @@ def part_four():
             try:
                 loaded_image = nib.load(url)
                 image_data = loaded_image.get_fdata()
-                warnings.warn("Done")
+                warnings.warn(f"Done: {url}")
             except:
                 warnings.warn(f"Failed: has problem with {url}")
 
