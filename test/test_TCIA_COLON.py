@@ -5,6 +5,7 @@ import nibabel as nib
 import numpy as np
 import json
 import random
+import warnings
 import glob
 
 
@@ -136,8 +137,9 @@ def part_four():
                 loaded_image = nib.load(url)
                 image_data = loaded_image.get_fdata()
                 print("Done")
+                warnings.warn("Done")
             except:
-                print(url)
+                warnings.warn(url)
 
 
 part_four()
