@@ -133,13 +133,13 @@ def part_four():
     for data_type in json_data:
         for file_data in json_data[data_type]:
             url = base_url + file_data["image"]
+            warnings.warn(f"Start: url is {url}")
             try:
                 loaded_image = nib.load(url)
                 image_data = loaded_image.get_fdata()
-                print("Done")
                 warnings.warn("Done")
             except:
-                warnings.warn(url)
+                warnings.warn(f"Failed: has problem with {url}")
 
 
 part_four()
