@@ -70,6 +70,15 @@ def load_data(args):
 def learn_kmeans(args):
     filename = "cluster_paths.json"
     np.random.seed(args.seed)
+    if os.path.isfile(filename):
+        with open(filename, 'r') as file:
+            data = json.load(file)
+    else:
+        # Create new file with empty list
+        data = []
+
+    if len(data) > args.num_runs:
+        return
     feat = load_data(args)
     logger.info(f"model is defined")
     km_model = get_km_model(
@@ -88,19 +97,10 @@ def learn_kmeans(args):
     # y_pred = km_model.predict(feat)
     url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
     joblib.dump(km_model, url)
-
-    if os.path.isfile(filename):
-        with open(filename, 'r') as file:
-            data = json.load(file)
-    else:
-        # Create new file with empty list
-        data = []
-
     # Append new record to data
     data.append({
         "url": url,
     })
-
     # Write updated data back to file
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
@@ -139,6 +139,7 @@ if __name__ == "__main__":
     parser.add_argument("--max_no_improvement", default=100, type=int)
     parser.add_argument("--n_init", default=2, type=int)
     parser.add_argument("--reassignment_ratio", default=0.0, type=float)
+    parser.add_argument("--num_runs", default=400, type=int)
     args = parser.parse_args()
     logging.info(str(args))
 
