@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=clustering
+#SBATCH --job-name=image_checker
 #SBATCH --time=01:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=96
