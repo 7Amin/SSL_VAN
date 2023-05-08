@@ -535,7 +535,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 5 --embed_dims 32 64 128 256 512 --depths 2 3 4 4 3 \
-  --mlp_ratios 4 6 6 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GL --upsample vae --checkpoint \
+  --mlp_ratios 4 6 6 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GLV1 --upsample vae --checkpoint \
   --patch_count 2
 
 elif [ $job -eq 4122 ]
@@ -543,7 +543,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GL --upsample vae --checkpoint \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GLV1 --upsample vae --checkpoint \
   --patch_count 2
 
 elif [ $job -eq 4123 ]
@@ -551,7 +551,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV4GL --upsample vae --checkpoint \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV4GLV1 --upsample vae --checkpoint \
   --patch_count 2
 
 
@@ -560,7 +560,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GL \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GLV1 \
   --upsample vae --checkpoint --patch_count 2
 
 elif [ $job -eq 4125 ]
@@ -568,7 +568,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GL \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GLV1 \
   --upsample vae --checkpoint --patch_count 2
 
 elif [ $job -eq 4126 ]
@@ -576,7 +576,7 @@ then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GL \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4GLV1 \
   --upsample vae --checkpoint --patch_count 2
 
 
@@ -586,7 +586,7 @@ then
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
+  --valid_loader valid_loader --model_v VANV4GLV1 --upsample vae --checkpoint --patch_count 2
 
 elif [ $job -eq 4128 ]
 then
@@ -594,7 +594,7 @@ then
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
+  --valid_loader valid_loader --model_v VANV4GLV1 --upsample vae --checkpoint --patch_count 2
 
 elif [ $job -eq 4129 ]
 then
@@ -602,6 +602,6 @@ then
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
+  --valid_loader valid_loader --model_v VANV4GLV1 --upsample vae --checkpoint --patch_count 2
 fi
 
