@@ -537,9 +537,9 @@ then
 
 elif [ $job -eq 4221 ]
 then
-  PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+  PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Trainicng \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 2 --num_stages 3 --embed_dims 128 256 512  --depths 3 4 3 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 3 --embed_dims 64 128 256  --depths 3 4 3 \
   --mlp_ratios 6 6 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GLV2 --upsample vae --checkpoint \
   --patch_count 2
 
@@ -547,7 +547,7 @@ elif [ $job -eq 4241 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 2 --num_stages 3 --embed_dims 128 256 512  --depths 3 4 3 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 3 --embed_dims 64 128 256  --depths 3 4 3 \
   --mlp_ratios 6 6 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4GLV2 --upsample vae --checkpoint \
   --patch_count 4
 fi
