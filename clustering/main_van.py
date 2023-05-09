@@ -2,6 +2,8 @@ import argparse
 import os
 import warnings
 import numpy as np
+import json
+import joblib
 from functools import partial
 
 import torch
@@ -17,11 +19,6 @@ from clustering.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from clustering.training_van import run_training
 from clustering.losses.loss import ClusteringLoss
 
-from monai.inferers import sliding_window_inference
-from monai.metrics import DiceMetric
-from monai.transforms import AsDiscrete
-from monai.utils.enums import MetricReduction
-
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
 parser.add_argument("--checkpoint", action="store_true", help="start training from saved checkpoint")
@@ -32,6 +29,9 @@ parser.add_argument("--json_list", default='../input_list/dataset_BTCV_List.json
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
     "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"
+)
+parser.add_argument(
+    "--cluster_path", default="./cluster_paths.json", type=str, help="path to clusters path :D"
 )
 parser.add_argument(
     "--pretrained_model_name",
@@ -155,6 +155,7 @@ def get_model(args):
     return None
 
 
+
 def main_worker(gpu, args):
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
@@ -172,20 +173,7 @@ def main_worker(gpu, args):
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
 
-    pretrained_dir = args.pretrained_dir
-    model = VAN(embed_dims=args.embed_dims,
-                mlp_ratios=args.mlp_ratios,
-                depths=args.depths,
-                num_stages=args.num_stages,
-                in_channels=args.in_channels,
-                out_channels=args.out_channels,
-                dropout_path_rate=args.dropout_path_rate,
-                upsample=args.upsample)
-
-    if args.resume_ckpt:
-        model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
-        model.load_state_dict(model_dict)
-        print("Use pretrained weights")
+    model = get_model(args)
 
     clustering_loss = ClusteringLoss(args.embedding_dim, args.max_cluster_size)
 
