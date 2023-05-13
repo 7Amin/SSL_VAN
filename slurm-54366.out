@@ -43121,3 +43121,71 @@ loader is ready
 2023-05-13 16:02:27 | INFO | learn_kmeans | for batch number 27 the res size is 5376
 2023-05-13 16:02:27 | INFO | learn_kmeans | for batch number 28 the res size is 5568
 2023-05-13 16:02:27 | INFO | learn_kmeans | for batch number 29 the res size is 5760
+2023-05-13 16:03:37 | INFO | learn_kmeans | for batch number 30 the res size is 5952
+2023-05-13 16:03:38 | INFO | learn_kmeans | for batch number 31 the res size is 6144
+2023-05-13 16:03:38 | INFO | learn_kmeans | for batch number 32 the res size is 6336
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 33 the res size is 6528
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 34 the res size is 6720
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 35 the res size is 6912
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 36 the res size is 7104
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 37 the res size is 7296
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 38 the res size is 7488
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 39 the res size is 7680
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 40 the res size is 7872
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 41 the res size is 8064
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 42 the res size is 8256
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 43 the res size is 8448
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 44 the res size is 8640
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 45 the res size is 8832
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 46 the res size is 9024
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 47 the res size is 9216
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 48 the res size is 9408
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 49 the res size is 9600
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 50 the res size is 9792
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 51 the res size is 9984
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 52 the res size is 10176
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 53 the res size is 10368
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 54 the res size is 10560
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 55 the res size is 10752
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 56 the res size is 10944
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 57 the res size is 11136
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 58 the res size is 11328
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 59 the res size is 11520
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 60 the res size is 11712
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 61 the res size is 11904
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 62 the res size is 12096
+2023-05-13 16:03:39 | INFO | learn_kmeans | for batch number 63 the res size is 12288
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 146, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 82, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 305, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/resource_sharer.py", line 58, in detach
+    return reduction.recv_handle(conn)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 189, in recv_handle
+    return recvfds(s, 1)[0]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 164, in recvfds
+    raise RuntimeError('received %d items of ancdata' %
+RuntimeError: received 0 items of ancdata
+2023-05-13 16:12:40 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=64, distributed=False, mode='server', num_samples=1, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=356, seed=42, init='k-means++', max_iter=350, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0, num_runs=400)
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
