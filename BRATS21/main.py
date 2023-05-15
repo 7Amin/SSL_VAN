@@ -11,13 +11,18 @@ import torch.distributed as dist
 from BRATS21.utils.data_utils import get_loader
 from BRATS21.model.van import VAN
 from BRATS21.model.van_v2 import VANV2
+from BRATS21.model.van_v3 import VANV3
+from BRATS21.model.van_v4 import VANV4
+from BRATS21.model.van_v4gl import VANV4GL
+from BRATS21.model.van_v4gl_v1 import VANV4GLV1
+from BRATS21.model.van_v4gl_v2 import VANV4GLV2
 from BRATS21.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from BRATS21.trainer import run_training
 
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceCELoss
 from monai.metrics import DiceMetric
-from monai.transforms import Activations, AsDiscrete, Compose
+from monai.transforms import Activations, AsDiscrete
 from monai.utils.enums import MetricReduction
 
 
@@ -90,7 +95,9 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2'])
+parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
+                                                                   'VANV4GLV1', 'VANV4GLV2'])
+parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
 def main():
@@ -106,6 +113,67 @@ def main():
 
 
 def get_model(args):
+    if args.model_v == "VANV4GLV2":
+        model = VANV4GLV2(embed_dims=args.embed_dims,
+                          mlp_ratios=args.mlp_ratios,
+                          depths=args.depths,
+                          num_stages=args.num_stages,
+                          in_channels=args.in_channels,
+                          out_channels=args.out_channels,
+                          dropout_path_rate=args.dropout_path_rate,
+                          upsample=args.upsample,
+                          patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "VANV4GLV1":
+        model = VANV4GLV1(embed_dims=args.embed_dims,
+                          mlp_ratios=args.mlp_ratios,
+                          depths=args.depths,
+                          num_stages=args.num_stages,
+                          in_channels=args.in_channels,
+                          out_channels=args.out_channels,
+                          dropout_path_rate=args.dropout_path_rate,
+                          upsample=args.upsample,
+                          patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "VANV4GL":
+        model = VANV4GL(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "VANV4":
+        model = VANV4(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
+    if args.model_v == "VANV3":
+        model = VANV3(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
+        return model
+
     if args.model_v == "VANV2":
         model = VANV2(embed_dims=args.embed_dims,
                       mlp_ratios=args.mlp_ratios,
@@ -199,7 +267,6 @@ def main_worker(gpu, args):
         predictor=model,
         overlap=args.infer_overlap,
     )
-
     if args.model_inferer == 'none':
         model_inferer = None
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -209,8 +276,9 @@ def main_worker(gpu, args):
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
-               '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" + \
-               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v
+               '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
+               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v + \
+               "_" + args.fold
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
