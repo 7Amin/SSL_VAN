@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "ssl-van"
+version = "0.1.0"
+description = ""
+authors = ["Tassos Manganaris <tassos.manganaris@gmail.com>"]
+readme = "README.md"
+# packages = [{include = "ssl_van"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+simmim = {git = "https://github.com/Tass0sm/SimMIM.git"}
+torch = "^2.0.1+cpu"
+monai = "^1.1.0"
+
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cpu"
+default = false
+secondary = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
