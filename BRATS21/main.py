@@ -284,19 +284,22 @@ def main_worker(gpu, args):
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
     if args.checkpoint is not None and args.checkpoint:
-        checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
-        from collections import OrderedDict
+        temp = os.path.join(args.logdir, args.final_model_url)
+        if os.path.isfile(temp):
+            checkpoint = torch.load(temp, map_location="cpu")
+            from collections import OrderedDict
 
-        new_state_dict = OrderedDict()
-        for k, v in checkpoint["state_dict"].items():
-            new_state_dict[k.replace("backbone.", "")] = v
-        model.load_state_dict(new_state_dict, strict=False)
-        if "epoch" in checkpoint:
-            start_epoch = checkpoint["epoch"]
-        if "best_acc" in checkpoint:
-            best_acc = checkpoint["best_acc"]
-        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
-            args.checkpoint, start_epoch, best_acc))
+            new_state_dict = OrderedDict()
+            for k, v in checkpoint["state_dict"].items():
+                new_state_dict[k.replace("backbone.", "")] = v
+            model.load_state_dict(new_state_dict, strict=False)
+            if "epoch" in checkpoint:
+                start_epoch = checkpoint["epoch"]
+            if "best_acc" in checkpoint:
+                best_acc = checkpoint["best_acc"]
+            warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+                args.checkpoint, start_epoch, best_acc))
+
 
     model.cuda(args.gpu)
 
