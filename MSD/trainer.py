@@ -7,10 +7,7 @@ import numpy as np
 import torch
 import torch.nn.parallel
 import torch.utils.data.distributed
-#  TensorboardX is a library for visualizing and analyzing the training process of deep learning models using
-#  TensorBoard, a visualization tool that comes with TensorFlow and Pytorch. TensorboardX allows users to visualize and
-#  compare metrics such as loss, accuracy, and gradients, as well as view histograms of weights and biases in real-time
-#  during training
+
 
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast

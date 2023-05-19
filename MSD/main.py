@@ -29,7 +29,7 @@ from monai.utils.enums import MetricReduction
 parser = argparse.ArgumentParser(description="PyTorch Training")
 parser.add_argument("--checkpoint", action="store_true", help="start training from saved checkpoint")
 parser.add_argument("--base_data",
-                    default='/media/amin/SP PHD U3/CT_Segmentation_Images/3D/MSD/Abdomen/RawData/Training',
+                    default='/media/amin/Amin/MSD-data',
                     type=str, help="base direction of data")
 parser.add_argument("--json_list", default='../input_list/dataset_MSD_List.json',
                     type=str, help="direction of json file of luna16 dataset")
@@ -95,6 +95,12 @@ parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'i
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                    'VANV4GLV1', 'VANV4GLV2'])
+parser.add_argument("--task", default='Task01_BrainTumour', type=str, choices=["Task01_BrainTumour", "Task02_Heart",
+                                                                               "Task03_Liver", "Task04_Hippocampus",
+                                                                               "Task05_Prostate", "Task06_Lung",
+                                                                               "Task07_Pancreas",
+                                                                               "Task08_HepaticVessel", "Task09_Spleen",
+                                                                               "Task10_Colon"])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
