@@ -40,7 +40,7 @@ parser.add_argument(
     help="pretrained model name",
 )
 parser.add_argument("--fold", default=0, type=int, help="data fold")
-parser.add_argument("--data_dir",
+parser.add_argument("--base_data",
                     default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BraTS21",
                     type=str,
                     help="dataset directory")
