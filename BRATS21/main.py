@@ -272,7 +272,7 @@ def main_worker(gpu, args):
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
 
-    start_epoch = -1
+    start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
@@ -323,7 +323,7 @@ def main_worker(gpu, args):
 
     if args.lrschedule == "warmup_cosine":
         scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs, last_epoch=start_epoch
+            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs, last_epoch=start_epoch - 1
         )
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
