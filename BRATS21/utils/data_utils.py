@@ -82,7 +82,7 @@ def datafold_read(datalist, basedir, fold=0, key="training"):
 
 
 def get_loader(args):
-    data_dir = args.data_dir
+    data_dir = args.base_data
     datalist_json = args.json_list
     train_files, validation_files = datafold_read(datalist=datalist_json, basedir=data_dir, fold=args.fold)
     train_transform = transforms.Compose(
