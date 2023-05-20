@@ -323,7 +323,7 @@ def main_worker(gpu, args):
 
     if args.lrschedule == "warmup_cosine":
         scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs, last_epoch=start_epoch - 1
+            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
         )
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
