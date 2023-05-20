@@ -72,3 +72,34 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f"Total args.checkpoint {args.checkpoint}")
 /home/karimimonsefi.1/SSL_VAN/BTCV/main.py:291: UserWarning:  Best url model is 96-192-384-768_6-6-90-6_8-8-4-4_vae___VANV4GL_3__best.pt, final model url is 96-192-384-768_6-6-90-6_8-8-4-4_vae___VANV4GL_3__final.pt
   warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:307: UserWarning: => loaded checkpoint 'True' (epoch 3265) (bestacc 0.7292770743370056)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:307: UserWarning: => loaded checkpoint 'True' (epoch 3265) (bestacc 0.7292770743370056)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+input_list/dataset_BTCV_List.json
+input_list/dataset_BTCV_List.json
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 369, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 108, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 338, in main_worker
+    scheduler = LinearWarmupCosineAnnealingLR(
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/optimizers/lr_scheduler.py", line 50, in __init__
+    super(LinearWarmupCosineAnnealingLR, self).__init__(optimizer, last_epoch)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/optim/lr_scheduler.py", line 42, in __init__
+    raise KeyError("param 'initial_lr' is not specified "
+KeyError: "param 'initial_lr' is not specified in param_groups[0] when resuming an optimizer"
+
