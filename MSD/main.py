@@ -218,7 +218,7 @@ def main_worker(gpu, args):
     loader = get_loader(args)
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
-        warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+        warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs} and task is {args.task}")
     inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
     # todo should remove this

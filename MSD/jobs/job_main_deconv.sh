@@ -15,27 +15,28 @@ conda activate ssl_van_seg
 
 
 job=$1
+task=$2
 
 if [ $job -eq 1 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --checkpoint --task $task 
 
 elif [ $job -eq 2 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --checkpoint --task $task 
 
 elif [ $job -eq 3 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --checkpoint --task $task 
 
 
 elif [ $job -eq 4 ]
@@ -43,21 +44,21 @@ then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint --task $task 
 
 elif [ $job -eq 5 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint --task $task 
 
 elif [ $job -eq 6 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --checkpoint --task $task 
 
 
 elif [ $job -eq 7 ]
@@ -66,7 +67,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --checkpoint
+  --valid_loader valid_loader --checkpoint --task $task 
 
 elif [ $job -eq 8 ]
 then
@@ -74,7 +75,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --checkpoint
+  --valid_loader valid_loader --checkpoint --task $task 
 
 elif [ $job -eq 9 ]
 then
@@ -82,28 +83,28 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --checkpoint
+  --valid_loader valid_loader --checkpoint --task $task 
 
 elif [ $job -eq 21 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV2 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV2 --checkpoint --task $task 
 
 elif [ $job -eq 22 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV2 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV2 --checkpoint --task $task 
 
 elif [ $job -eq 23 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV2 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV2 --checkpoint --task $task 
 
 
 elif [ $job -eq 24 ]
@@ -112,7 +113,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV2 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 25 ]
 then
@@ -120,7 +121,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV2 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 26 ]
 then
@@ -128,7 +129,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV2 \
-  --checkpoint
+  --checkpoint --task $task 
 
 
 elif [ $job -eq 27 ]
@@ -137,7 +138,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV2 --checkpoint
+  --valid_loader valid_loader --model_v VANV2 --checkpoint --task $task 
 
 elif [ $job -eq 28 ]
 then
@@ -145,7 +146,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV2 --checkpoint
+  --valid_loader valid_loader --model_v VANV2 --checkpoint --task $task 
 
 elif [ $job -eq 29 ]
 then
@@ -153,7 +154,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV2 --checkpoint
+  --valid_loader valid_loader --model_v VANV2 --checkpoint --task $task 
 
 
 elif [ $job -eq 31 ]
@@ -161,21 +162,21 @@ then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV3 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV3 --checkpoint --task $task 
 
 elif [ $job -eq 32 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV3 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV3 --checkpoint --task $task 
 
 elif [ $job -eq 33 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV3 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV3 --checkpoint --task $task 
 
 
 elif [ $job -eq 34 ]
@@ -184,7 +185,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV3 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 35 ]
 then
@@ -192,7 +193,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV3 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 36 ]
 then
@@ -200,7 +201,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV3 \
-  --checkpoint
+  --checkpoint --task $task 
 
 
 elif [ $job -eq 37 ]
@@ -209,7 +210,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV3 --checkpoint
+  --valid_loader valid_loader --model_v VANV3 --checkpoint --task $task 
 
 elif [ $job -eq 38 ]
 then
@@ -217,7 +218,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV3 --checkpoint
+  --valid_loader valid_loader --model_v VANV3 --checkpoint --task $task 
 
 elif [ $job -eq 39 ]
 then
@@ -225,7 +226,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV3 --checkpoint
+  --valid_loader valid_loader --model_v VANV3 --checkpoint --task $task 
 
 
 elif [ $job -eq 41 ]
@@ -233,21 +234,21 @@ then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4 --checkpoint --task $task 
 
 elif [ $job -eq 42 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV4 --checkpoint --task $task 
 
 elif [ $job -eq 43 ]
 then
   PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV4 --checkpoint
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV4 --checkpoint --task $task 
 
 
 elif [ $job -eq 44 ]
@@ -256,7 +257,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 45 ]
 then
@@ -264,7 +265,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4 \
-  --checkpoint
+  --checkpoint --task $task 
 
 elif [ $job -eq 46 ]
 then
@@ -272,7 +273,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV4 \
-  --checkpoint
+  --checkpoint --task $task 
 
 
 elif [ $job -eq 47 ]
@@ -281,7 +282,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4 --checkpoint
+  --valid_loader valid_loader --model_v VANV4 --checkpoint --task $task 
 
 elif [ $job -eq 48 ]
 then
@@ -289,7 +290,7 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4 --checkpoint
+  --valid_loader valid_loader --model_v VANV4 --checkpoint --task $task 
 
 elif [ $job -eq 49 ]
 then
@@ -297,6 +298,6 @@ then
   --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 1500 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4 --checkpoint
+  --valid_loader valid_loader --model_v VANV4 --checkpoint --task $task 
 fi
 
