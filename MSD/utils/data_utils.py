@@ -63,12 +63,12 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
 
     json_data = json_data[task]
 
-    for d in json_data:
-        for k, v in d.items():
-            if isinstance(d[k], list):
-                d[k] = [os.path.join(basedir, iv) for iv in d[k]]
-            elif isinstance(d[k], str):
-                d[k] = os.path.join(basedir, d[k]) if len(d[k]) > 0 else d[k]
+    for t in ["training", "validation"]:
+        for k, v in json_data[t].items():
+            if isinstance(json_data[t][k], list):
+                json_data[t][k] = [os.path.join(basedir, iv) for iv in json_data[t][k]]
+            elif isinstance(json_data[t][k], str):
+                json_data[t][k] = os.path.join(basedir, json_data[t][k]) if len(json_data[t][k]) > 0 else json_data[t][k]
 
     tr = json_data['training']
     val = json_data['validation']
