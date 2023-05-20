@@ -64,11 +64,9 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
     json_data = json_data[task]
 
     for t in ["training", "validation"]:
-        for k, v in json_data[t].items():
-            if isinstance(json_data[t][k], list):
-                json_data[t][k] = [os.path.join(basedir, iv) for iv in json_data[t][k]]
-            elif isinstance(json_data[t][k], str):
-                json_data[t][k] = os.path.join(basedir, json_data[t][k]) if len(json_data[t][k]) > 0 else json_data[t][k]
+        for k in json_data[t]:
+            k["image"] = os.path.join(basedir, k["image"])
+            k["label"] = os.path.join(basedir, k["label"])
 
     tr = json_data['training']
     val = json_data['validation']
