@@ -26,8 +26,9 @@ from monai.transforms import (
     ToTensord,
 )
 
-from argparse import Namespace
-from simmim.data.data_simmim import SimMIMTransform
+import os
+
+from simmim_transform_wrapper import SimMIMTransformWrapperd
 
 
 def get_loader(args):
