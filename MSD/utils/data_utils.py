@@ -56,7 +56,7 @@ class Sampler(torch.utils.data.Sampler):
         self.epoch = epoch
 
 
-def datafold_read(datalist, basedir, fold=0, task="Task01_BrainTumour"):
+def data_read(datalist, basedir, task="Task01_BrainTumour"):
 
     with open(datalist) as f:
         json_data = json.load(f)
@@ -78,8 +78,7 @@ def datafold_read(datalist, basedir, fold=0, task="Task01_BrainTumour"):
 def get_loader(args):
     data_dir = args.base_data
     datalist_json = args.json_list
-    train_files, validation_files = datafold_read(datalist=datalist_json, basedir=data_dir,
-                                                  fold=args.fold, task=args.task)
+    train_files, validation_files = data_read(datalist=datalist_json, basedir=data_dir, task=args.task)
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
