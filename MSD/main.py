@@ -291,7 +291,8 @@ def main_worker(gpu, args):
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
-               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v
+               args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + \
+               args.model_v + "_" + args.task
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
