@@ -5,6 +5,7 @@ import os
 import numpy as np
 import torch
 
+import monai
 from monai import data, transforms
 from monai.transforms import AsDiscreted
 
@@ -123,14 +124,11 @@ def get_loader(args):
                 keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
             ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            # [args.roi_x, args.roi_y, args.roi_z]
             transforms.RandSpatialCropd(
-                keys=["image", "label"], roi_size=[128, 128, 128], random_size=False
+                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
             ),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
-            transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
-            transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
-            transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
+            # transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.RandScaleIntensityd(keys="image", factors=0.1, prob=args.RandScaleIntensityd_prob),
             transforms.RandShiftIntensityd(keys="image", offsets=0.1, prob=args.RandShiftIntensityd_prob),
@@ -145,6 +143,16 @@ def get_loader(args):
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
             transforms.Spacingd(
                 keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            ),
+            transforms.RandCropByPosNegLabeld(
+                keys=["image", "label"],
+                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                pos=1,
+                neg=1,
+                num_samples=4,
+                image_key="image",
+                label_key="label",
+                image_threshold=0,
             ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
@@ -219,6 +227,7 @@ def get_loader(args):
             sampler=train_sampler,
             pin_memory=True,
             persistent_workers=True,
+            collate_fn=monai.data.list_data_collate
         )
         val_ds = data.Dataset(data=validation_files, transform=val_transform)
         val_sampler = Sampler(val_ds, shuffle=False) if args.distributed else None
@@ -228,7 +237,8 @@ def get_loader(args):
             shuffle=False,
             num_workers=args.workers,
             sampler=val_sampler,
-            pin_memory=True
+            pin_memory=True,
+            collate_fn=monai.data.list_data_collate
         )
         loader = [train_loader, val_loader]
 
