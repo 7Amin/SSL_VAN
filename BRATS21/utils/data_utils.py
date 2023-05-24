@@ -124,9 +124,8 @@ def get_loader(args):
                 keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
             ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            # args.roi_x, args.roi_y, args.roi_z
             transforms.RandSpatialCropd(
-                keys=["image", "label"], roi_size=[64, 64, 64], random_size=False
+                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
             ),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             # transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
@@ -227,8 +226,7 @@ def get_loader(args):
             num_workers=args.workers,
             sampler=train_sampler,
             pin_memory=True,
-            persistent_workers=True,
-            collate_fn=monai.data.list_data_collate
+            persistent_workers=True
         )
         val_ds = data.Dataset(data=validation_files, transform=val_transform)
         val_sampler = Sampler(val_ds, shuffle=False) if args.distributed else None
@@ -238,8 +236,7 @@ def get_loader(args):
             shuffle=False,
             num_workers=args.workers,
             sampler=val_sampler,
-            pin_memory=True,
-            collate_fn=monai.data.list_data_collate
+            pin_memory=True
         )
         loader = [train_loader, val_loader]
 
