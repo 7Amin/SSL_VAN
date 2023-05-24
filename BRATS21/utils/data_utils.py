@@ -124,8 +124,9 @@ def get_loader(args):
                 keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
             ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            # args.roi_x, args.roi_y, args.roi_z
             transforms.RandSpatialCropd(
-                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
+                keys=["image", "label"], roi_size=[64, 64, 64], random_size=False
             ),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             # transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
