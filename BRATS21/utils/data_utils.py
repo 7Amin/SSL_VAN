@@ -89,22 +89,28 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
-            # transforms.RandSpatialCropd(
-            #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
-            # ),
-            transforms.RandCropByPosNegLabeld(
-                keys=["image", "label"],
-                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                pos=1,
-                neg=1,
-                num_samples=4,
-                image_key="image",
-                label_key="label",
-                image_threshold=0,
+            transforms.Spacingd(
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
             ),
-            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
+            transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
+
+
+            # transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+
+            transforms.RandSpatialCropd(
+                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
+            ),
+            # transforms.RandCropByPosNegLabeld(
+            #     keys=["image", "label"],
+            #     spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+            #     pos=1,
+            #     neg=1,
+            #     num_samples=4,
+            #     image_key="image",
+            #     label_key="label",
+            #     image_threshold=0,
+            # ),
+            # AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
@@ -119,7 +125,10 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
+            transforms.Spacingd(
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            ),
+            # AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
@@ -130,7 +139,11 @@ def get_loader(args):
             [
                 transforms.LoadImaged(keys=["image", "label"]),
                 transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-                AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
+                transforms.Spacingd(
+                    keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
+                    mode=("bilinear", "nearest")
+                ),
+                # AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
                 transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
                 transforms.RandCropByPosNegLabeld(
                     keys=["image", "label"],
@@ -150,7 +163,9 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
+            transforms.Spacingd(
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            ),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
