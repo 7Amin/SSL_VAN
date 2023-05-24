@@ -120,9 +120,9 @@ def get_loader(args):
             transforms.AsChannelFirstd(keys="image"),
             # ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            transforms.Spacingd(
-                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
-            ),
+            # transforms.Spacingd(
+            #     keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            # ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
             transforms.RandSpatialCropd(
                 keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
