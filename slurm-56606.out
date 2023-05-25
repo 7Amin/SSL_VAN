@@ -1,0 +1,1543 @@
+/var/spool/slurmd/job56606/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:108: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:216: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:218: UserWarning: Batch size is: 4 epochs 15000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:216: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:273: UserWarning: Total parameters count 33268423
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:276: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:284: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer__VANV4_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer__VANV4_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:273: UserWarning: Total parameters count 33268423
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:276: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:284: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer__VANV4_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer__VANV4_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:136: UserWarning: Writing Tensorboard logs to ./runs/BraTS21/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 0  Wed May 24 19:52:53 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 1  Wed May 24 19:52:53 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 0/125  loss: 2.3053  time 17.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 1/125  loss: 2.3017  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 2/125  loss: 2.3034  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 3/125  loss: 2.3016  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 4/125  loss: 2.3021  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 5/125  loss: 2.3026  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 6/125  loss: 2.3023  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 7/125  loss: 2.3027  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 8/125  loss: 2.3014  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 9/125  loss: 2.3018  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 10/125  loss: 2.3013  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 11/125  loss: 2.3014  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 12/125  loss: 2.3004  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 13/125  loss: 2.3004  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 14/125  loss: 2.3003  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 15/125  loss: 2.3004  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 16/125  loss: 2.3003  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 17/125  loss: 2.3000  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 18/125  loss: 2.2997  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 19/125  loss: 2.2998  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 20/125  loss: 2.2997  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 21/125  loss: 2.2996  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 22/125  loss: 2.2993  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 23/125  loss: 2.2991  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 24/125  loss: 2.2991  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 25/125  loss: 2.2987  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 26/125  loss: 2.2987  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 27/125  loss: 2.2986  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 28/125  loss: 2.2987  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 29/125  loss: 2.2983  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 30/125  loss: 2.2983  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 31/125  loss: 2.2980  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 32/125  loss: 2.2979  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 33/125  loss: 2.2978  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 34/125  loss: 2.2977  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 35/125  loss: 2.2977  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 36/125  loss: 2.2975  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 37/125  loss: 2.2974  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 38/125  loss: 2.2972  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 39/125  loss: 2.2973  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 40/125  loss: 2.2972  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 41/125  loss: 2.2974  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 42/125  loss: 2.2975  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 43/125  loss: 2.2973  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 44/125  loss: 2.2973  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 45/125  loss: 2.2974  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 46/125  loss: 2.2972  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 47/125  loss: 2.2972  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 48/125  loss: 2.2972  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 49/125  loss: 2.2971  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 50/125  loss: 2.2970  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 51/125  loss: 2.2969  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 52/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 53/125  loss: 2.2966  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 54/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 55/125  loss: 2.2968  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 56/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 57/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 58/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 59/125  loss: 2.2965  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 60/125  loss: 2.2963  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 61/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 62/125  loss: 2.2965  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 63/125  loss: 2.2965  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 64/125  loss: 2.2965  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 65/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 66/125  loss: 2.2964  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 67/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 68/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 69/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 70/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 71/125  loss: 2.2965  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 72/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 73/125  loss: 2.2966  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 74/125  loss: 2.2966  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 75/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 76/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 77/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 78/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 79/125  loss: 2.2965  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 80/125  loss: 2.2964  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 81/125  loss: 2.2965  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 82/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 83/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 84/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 85/125  loss: 2.2965  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 86/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 87/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 88/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 89/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 90/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 91/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 92/125  loss: 2.2963  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 93/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 94/125  loss: 2.2963  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 95/125  loss: 2.2964  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 96/125  loss: 2.2965  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 97/125  loss: 2.2965  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 98/125  loss: 2.2966  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 99/125  loss: 2.2967  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 100/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 101/125  loss: 2.2969  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 102/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 103/125  loss: 2.2969  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 104/125  loss: 2.2969  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 105/125  loss: 2.2968  time 0.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 106/125  loss: 2.2967  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 107/125  loss: 2.2968  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 108/125  loss: 2.2968  time 0.53s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 109/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 110/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 111/125  loss: 2.2968  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 112/125  loss: 2.2968  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 113/125  loss: 2.2968  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 114/125  loss: 2.2967  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 115/125  loss: 2.2967  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 116/125  loss: 2.2967  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 117/125  loss: 2.2968  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 118/125  loss: 2.2967  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 119/125  loss: 2.2968  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 120/125  loss: 2.2967  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 121/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 122/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 123/125  loss: 2.2966  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 0/15000 124/125  loss: 2.2967  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:150: UserWarning: Final training  0/14999  loss: 2.2967  time 76.72s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/utils.py:225: UserWarning: y_pred should be a binarized tensor.
+  warnings.warn(f"{name} should be a binarized tensor.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/utils.py:225: UserWarning: y_pred should be a binarized tensor.
+  warnings.warn(f"{name} should be a binarized tensor.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 0/126  acc 0.019946465268731117  time 4.84s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 1/126  acc 0.020400267094373703  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 2/126  acc 0.015945078805088997  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 3/126  acc 0.01775103621184826  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 4/126  acc 0.015362839214503765  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 5/126  acc 0.014547746628522873  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 6/126  acc 0.013843679800629616  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 7/126  acc 0.01422527339309454  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 8/126  acc 0.013527322560548782  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 9/126  acc 0.013000746257603168  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 10/126  acc 0.013211905024945736  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 11/126  acc 0.013834851793944836  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 12/126  acc 0.013376554474234581  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 13/126  acc 0.01374019868671894  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 14/126  acc 0.0138900401070714  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 15/126  acc 0.013860957697033882  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 16/126  acc 0.013465150259435177  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 17/126  acc 0.013319406658411026  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 18/126  acc 0.012911365367472172  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 19/126  acc 0.012959621846675873  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 20/126  acc 0.012520757503807545  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 21/126  acc 0.01228492520749569  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 22/126  acc 0.012119299732148647  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 23/126  acc 0.012087564915418625  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 24/126  acc 0.012441776692867279  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 25/126  acc 0.012300183065235615  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 26/126  acc 0.012284679338335991  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 27/126  acc 0.012496828101575375  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 28/126  acc 0.012632282450795174  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 29/126  acc 0.012973609380424023  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 30/126  acc 0.01294662430882454  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 31/126  acc 0.01290037389844656  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 32/126  acc 0.012884787283837795  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 33/126  acc 0.012768917717039585  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 34/126  acc 0.012814251706004143  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 35/126  acc 0.012660246342420578  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 36/126  acc 0.012588870711624622  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 37/126  acc 0.012564660049974918  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 38/126  acc 0.012603248469531536  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 39/126  acc 0.01252266950905323  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 40/126  acc 0.01293130498379469  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 41/126  acc 0.013009282760322094  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 42/126  acc 0.013076841831207275  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 43/126  acc 0.013084941543638706  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 44/126  acc 0.012981283478438854  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 45/126  acc 0.012954112142324448  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 46/126  acc 0.013010084629058838  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 47/126  acc 0.012859315611422062  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 48/126  acc 0.013100402429699898  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 49/126  acc 0.013171437196433544  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 50/126  acc 0.013173851184546947  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 51/126  acc 0.01306152530014515  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 52/126  acc 0.012915674597024918  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 53/126  acc 0.013086100108921528  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 54/126  acc 0.013205788098275661  time 0.54s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 55/126  acc 0.013314702548086643  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 56/126  acc 0.013402673415839672  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 57/126  acc 0.013417365029454231  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 58/126  acc 0.01337430439889431  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 59/126  acc 0.013358077965676785  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 60/126  acc 0.01324754860252142  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 61/126  acc 0.013277649879455566  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 62/126  acc 0.013213959522545338  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 63/126  acc 0.013314785435795784  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 64/126  acc 0.013349059969186783  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 65/126  acc 0.013236082158982754  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 66/126  acc 0.013378411531448364  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 67/126  acc 0.013271667994558811  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 68/126  acc 0.013146390207111835  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 69/126  acc 0.013087381608784199  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 70/126  acc 0.01306451577693224  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 71/126  acc 0.012988131493330002  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 72/126  acc 0.013010441325604916  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 73/126  acc 0.012996525503695011  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 74/126  acc 0.012942453846335411  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 75/126  acc 0.012931945733726025  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 76/126  acc 0.01281406357884407  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 77/126  acc 0.012855212204158306  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 78/126  acc 0.012832053005695343  time 0.54s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 79/126  acc 0.012730074115097523  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 80/126  acc 0.012748733162879944  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 81/126  acc 0.01277606375515461  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 82/126  acc 0.012899152003228664  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 83/126  acc 0.01292674895375967  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 84/126  acc 0.012901370413601398  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 85/126  acc 0.013029035180807114  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 86/126  acc 0.013001948595046997  time 0.54s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 87/126  acc 0.012960493564605713  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 88/126  acc 0.01306422334164381  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 89/126  acc 0.01294271182268858  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 90/126  acc 0.012882688082754612  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 91/126  acc 0.012949821539223194  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 92/126  acc 0.012910360470414162  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 93/126  acc 0.012908454053103924  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 94/126  acc 0.012812544591724873  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 95/126  acc 0.012759578414261341  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 96/126  acc 0.012755639851093292  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 97/126  acc 0.012699952349066734  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 98/126  acc 0.012697704136371613  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 99/126  acc 0.012650899589061737  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 100/126  acc 0.012636130675673485  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 101/126  acc 0.012698535807430744  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 102/126  acc 0.012730417773127556  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 103/126  acc 0.012642587535083294  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 104/126  acc 0.012650106102228165  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 105/126  acc 0.012642882764339447  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 106/126  acc 0.012686511501669884  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 107/126  acc 0.012721938081085682  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 108/126  acc 0.01276350487023592  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 109/126  acc 0.012788419611752033  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 110/126  acc 0.012764575891196728  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 111/126  acc 0.012745757587254047  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 112/126  acc 0.012695270590484142  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 113/126  acc 0.012722942046821117  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 114/126  acc 0.01271926611661911  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 115/126  acc 0.012702974490821362  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 116/126  acc 0.01273512002080679  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 117/126  acc 0.012732704170048237  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 118/126  acc 0.01271845307201147  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 119/126  acc 0.01273900456726551  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 120/126  acc 0.012679612264037132  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 121/126  acc 0.012642133049666882  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 122/126  acc 0.012604252435266972  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 123/126  acc 0.012572254054248333  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 124/126  acc 0.012630677781999111  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 0/15000 125/126  acc 0.012626868672668934  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:172: UserWarning: Final validation  0/14999  acc: 0.0126  time 73.48s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:177: UserWarning: new best (0.000000 --> 0.012627). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:113: UserWarning: Saving checkpoint ./runs/BraTS21/test_log/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer__VANV4_fold-0__final.pt
+  warnings.warn(f"Saving checkpoint {filename}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:188: UserWarning: Copying to best model new best model!!!!
+  warnings.warn("Copying to best model new best model!!!!")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 0  Wed May 24 19:55:30 2023  Epoch: 1
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 1  Wed May 24 19:55:30 2023  Epoch: 1
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 0/125  loss: 2.2932  time 3.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 1/125  loss: 2.2895  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 2/125  loss: 2.2881  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 3/125  loss: 2.2897  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 4/125  loss: 2.2902  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 5/125  loss: 2.2895  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 6/125  loss: 2.2892  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 7/125  loss: 2.2887  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 8/125  loss: 2.2894  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 9/125  loss: 2.2898  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 10/125  loss: 2.2897  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 11/125  loss: 2.2908  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 12/125  loss: 2.2916  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 13/125  loss: 2.2907  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 14/125  loss: 2.2908  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 15/125  loss: 2.2912  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 16/125  loss: 2.2907  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 17/125  loss: 2.2909  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 18/125  loss: 2.2910  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 19/125  loss: 2.2906  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 20/125  loss: 2.2907  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 21/125  loss: 2.2911  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 22/125  loss: 2.2911  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 23/125  loss: 2.2911  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 24/125  loss: 2.2910  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 25/125  loss: 2.2911  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 26/125  loss: 2.2913  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 27/125  loss: 2.2916  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 28/125  loss: 2.2915  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 29/125  loss: 2.2914  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 30/125  loss: 2.2907  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 31/125  loss: 2.2901  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 32/125  loss: 2.2904  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 33/125  loss: 2.2900  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 34/125  loss: 2.2901  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 35/125  loss: 2.2902  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 36/125  loss: 2.2900  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 37/125  loss: 2.2901  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 38/125  loss: 2.2896  time 0.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 39/125  loss: 2.2896  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 40/125  loss: 2.2897  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 41/125  loss: 2.2896  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 42/125  loss: 2.2895  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 43/125  loss: 2.2892  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 44/125  loss: 2.2891  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 45/125  loss: 2.2888  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 46/125  loss: 2.2887  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 47/125  loss: 2.2888  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 48/125  loss: 2.2883  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 49/125  loss: 2.2880  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 50/125  loss: 2.2877  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 51/125  loss: 2.2875  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 52/125  loss: 2.2873  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 53/125  loss: 2.2873  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 54/125  loss: 2.2869  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 55/125  loss: 2.2870  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 56/125  loss: 2.2869  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 57/125  loss: 2.2868  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 58/125  loss: 2.2864  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 59/125  loss: 2.2863  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 60/125  loss: 2.2862  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 61/125  loss: 2.2861  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 62/125  loss: 2.2859  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 63/125  loss: 2.2857  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 64/125  loss: 2.2856  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 65/125  loss: 2.2854  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 66/125  loss: 2.2854  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 67/125  loss: 2.2853  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 68/125  loss: 2.2851  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 69/125  loss: 2.2849  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 70/125  loss: 2.2846  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 71/125  loss: 2.2845  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 72/125  loss: 2.2843  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 73/125  loss: 2.2843  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 74/125  loss: 2.2842  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 75/125  loss: 2.2839  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 76/125  loss: 2.2835  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 77/125  loss: 2.2832  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 78/125  loss: 2.2829  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 79/125  loss: 2.2828  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 80/125  loss: 2.2826  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 81/125  loss: 2.2823  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 82/125  loss: 2.2820  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 83/125  loss: 2.2818  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 84/125  loss: 2.2817  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 85/125  loss: 2.2816  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 86/125  loss: 2.2816  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 87/125  loss: 2.2814  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 88/125  loss: 2.2812  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 89/125  loss: 2.2809  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 90/125  loss: 2.2807  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 91/125  loss: 2.2806  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 92/125  loss: 2.2803  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 93/125  loss: 2.2804  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 94/125  loss: 2.2803  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 95/125  loss: 2.2801  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 96/125  loss: 2.2800  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 97/125  loss: 2.2798  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 98/125  loss: 2.2797  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 99/125  loss: 2.2795  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 100/125  loss: 2.2795  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 101/125  loss: 2.2794  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 102/125  loss: 2.2793  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 103/125  loss: 2.2791  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 104/125  loss: 2.2788  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 105/125  loss: 2.2787  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 106/125  loss: 2.2786  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 107/125  loss: 2.2784  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 108/125  loss: 2.2782  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 109/125  loss: 2.2781  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 110/125  loss: 2.2780  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 111/125  loss: 2.2779  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 112/125  loss: 2.2777  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 113/125  loss: 2.2775  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 114/125  loss: 2.2773  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 115/125  loss: 2.2774  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 116/125  loss: 2.2773  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 117/125  loss: 2.2772  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 118/125  loss: 2.2769  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 119/125  loss: 2.2769  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 120/125  loss: 2.2767  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 121/125  loss: 2.2766  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 122/125  loss: 2.2764  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 123/125  loss: 2.2762  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 1/15000 124/125  loss: 2.2761  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:150: UserWarning: Final training  1/14999  loss: 2.2761  time 62.33s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 0/126  acc 0.022417496889829636  time 2.17s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 1/126  acc 0.023676816374063492  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 2/126  acc 0.01847403310239315  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 3/126  acc 0.020777322351932526  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 4/126  acc 0.01791941188275814  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 5/126  acc 0.0170194823294878  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 6/126  acc 0.016170665621757507  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 7/126  acc 0.016471877694129944  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 8/126  acc 0.015628330409526825  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 9/126  acc 0.015101239085197449  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 10/126  acc 0.015344787389039993  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 11/126  acc 0.016022183001041412  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 12/126  acc 0.015496687032282352  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 13/126  acc 0.015844853594899178  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 14/126  acc 0.015943551436066628  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 15/126  acc 0.015892965719103813  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 16/126  acc 0.015428448095917702  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 17/126  acc 0.015253696590662003  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 18/126  acc 0.014806640334427357  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 19/126  acc 0.014830941334366798  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 20/126  acc 0.01432579755783081  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 21/126  acc 0.014066273346543312  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 22/126  acc 0.013850553892552853  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 23/126  acc 0.01382408756762743  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 24/126  acc 0.014231872744858265  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 25/126  acc 0.014069064520299435  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 26/126  acc 0.014058087021112442  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 27/126  acc 0.01426723413169384  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 28/126  acc 0.014364986680448055  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 29/126  acc 0.014738992787897587  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 30/126  acc 0.01470306795090437  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 31/126  acc 0.01461678184568882  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 32/126  acc 0.014623811468482018  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 33/126  acc 0.014501609839498997  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 34/126  acc 0.014528359286487103  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 35/126  acc 0.014343910850584507  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 36/126  acc 0.014269380830228329  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 37/126  acc 0.014249744825065136  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 38/126  acc 0.014285579323768616  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 39/126  acc 0.014204815030097961  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 40/126  acc 0.014636324718594551  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 41/126  acc 0.014727972447872162  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 42/126  acc 0.01479406375437975  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 43/126  acc 0.014782640151679516  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 44/126  acc 0.014658761210739613  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 45/126  acc 0.014621776528656483  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 46/126  acc 0.014691956341266632  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 47/126  acc 0.014519783668220043  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 48/126  acc 0.014772675931453705  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 49/126  acc 0.014855560846626759  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 50/126  acc 0.014876059256494045  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 51/126  acc 0.014747745357453823  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 52/126  acc 0.01458385493606329  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 53/126  acc 0.014769289642572403  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 54/126  acc 0.014913070946931839  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 55/126  acc 0.01504036970436573  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 56/126  acc 0.01512598991394043  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 57/126  acc 0.015148913487792015  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 58/126  acc 0.015106852166354656  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 59/126  acc 0.01509108766913414  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 60/126  acc 0.014970546588301659  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 61/126  acc 0.01501465030014515  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 62/126  acc 0.014945224858820438  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 63/126  acc 0.015039632096886635  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 64/126  acc 0.015091529116034508  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 65/126  acc 0.014961103908717632  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 66/126  acc 0.015124909579753876  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 67/126  acc 0.015006915666162968  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 68/126  acc 0.0148664191365242  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 69/126  acc 0.014799119904637337  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 70/126  acc 0.014801167882978916  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 71/126  acc 0.014723666943609715  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 72/126  acc 0.014757429249584675  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 73/126  acc 0.014745507389307022  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 74/126  acc 0.014686170034110546  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 75/126  acc 0.014677011407911777  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 76/126  acc 0.014539816416800022  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 77/126  acc 0.01459093764424324  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 78/126  acc 0.014562762342393398  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 79/126  acc 0.01445488166064024  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 80/126  acc 0.014473463408648968  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 81/126  acc 0.014497023075819016  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 82/126  acc 0.014625131152570248  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 83/126  acc 0.014664864167571068  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 84/126  acc 0.014631437137722969  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 85/126  acc 0.014764214865863323  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 86/126  acc 0.01473755668848753  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 87/126  acc 0.01469048298895359  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 88/126  acc 0.014788499101996422  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 89/126  acc 0.014651915989816189  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 90/126  acc 0.014583490788936615  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 91/126  acc 0.0146449264138937  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 92/126  acc 0.014602871611714363  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 93/126  acc 0.01459812093526125  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 94/126  acc 0.0144908856600523  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 95/126  acc 0.01443847268819809  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 96/126  acc 0.01442995760589838  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 97/126  acc 0.01436713244765997  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 98/126  acc 0.014366693794727325  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 99/126  acc 0.01432427391409874  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 100/126  acc 0.014301316812634468  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 101/126  acc 0.014373566955327988  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 102/126  acc 0.01440225075930357  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 103/126  acc 0.01430567167699337  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 104/126  acc 0.01431281492114067  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 105/126  acc 0.014305186457931995  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 106/126  acc 0.01436131726950407  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 107/126  acc 0.01441157702356577  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 108/126  acc 0.014464026317000389  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 109/126  acc 0.014499894343316555  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 110/126  acc 0.014478257857263088  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 111/126  acc 0.01446485985070467  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 112/126  acc 0.014411909505724907  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 113/126  acc 0.014435121789574623  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 114/126  acc 0.014430017210543156  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 115/126  acc 0.014407217502593994  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 116/126  acc 0.014434720389544964  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 117/126  acc 0.014437694102525711  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 118/126  acc 0.01442659366875887  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 119/126  acc 0.014449107460677624  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 120/126  acc 0.014380534179508686  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 121/126  acc 0.014333918690681458  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 122/126  acc 0.014294661581516266  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 123/126  acc 0.014250439591705799  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 124/126  acc 0.01431047823280096  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 1/15000 125/126  acc 0.014307023026049137  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:172: UserWarning: Final validation  1/14999  acc: 0.0143  time 70.89s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:177: UserWarning: new best (0.012627 --> 0.014307). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 0  Wed May 24 19:57:49 2023  Epoch: 2
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:144: UserWarning: 1  Wed May 24 19:57:49 2023  Epoch: 2
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 0/125  loss: 2.2588  time 3.34s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 1/125  loss: 2.2566  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 2/125  loss: 2.2583  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 3/125  loss: 2.2610  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 4/125  loss: 2.2603  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 5/125  loss: 2.2602  time 0.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 6/125  loss: 2.2604  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 7/125  loss: 2.2603  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 8/125  loss: 2.2599  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 9/125  loss: 2.2603  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 10/125  loss: 2.2590  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 11/125  loss: 2.2579  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 12/125  loss: 2.2570  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 13/125  loss: 2.2557  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 14/125  loss: 2.2553  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 15/125  loss: 2.2555  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 16/125  loss: 2.2547  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 17/125  loss: 2.2542  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 18/125  loss: 2.2540  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 19/125  loss: 2.2540  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 20/125  loss: 2.2536  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 21/125  loss: 2.2534  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 22/125  loss: 2.2533  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 23/125  loss: 2.2531  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 24/125  loss: 2.2533  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 25/125  loss: 2.2534  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 26/125  loss: 2.2533  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 27/125  loss: 2.2535  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 28/125  loss: 2.2532  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 29/125  loss: 2.2526  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 30/125  loss: 2.2523  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 31/125  loss: 2.2523  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 32/125  loss: 2.2522  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 33/125  loss: 2.2516  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 34/125  loss: 2.2520  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 35/125  loss: 2.2518  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 36/125  loss: 2.2517  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 37/125  loss: 2.2515  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 38/125  loss: 2.2514  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 39/125  loss: 2.2514  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 40/125  loss: 2.2511  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 41/125  loss: 2.2510  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 42/125  loss: 2.2512  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 43/125  loss: 2.2508  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 44/125  loss: 2.2503  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 45/125  loss: 2.2503  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 46/125  loss: 2.2498  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 47/125  loss: 2.2499  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 48/125  loss: 2.2495  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 49/125  loss: 2.2498  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 50/125  loss: 2.2499  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 51/125  loss: 2.2500  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 52/125  loss: 2.2501  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 53/125  loss: 2.2498  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 54/125  loss: 2.2497  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 55/125  loss: 2.2497  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 56/125  loss: 2.2496  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 57/125  loss: 2.2496  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 58/125  loss: 2.2493  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 59/125  loss: 2.2493  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 60/125  loss: 2.2490  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 61/125  loss: 2.2486  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 62/125  loss: 2.2485  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 63/125  loss: 2.2484  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 64/125  loss: 2.2483  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 65/125  loss: 2.2484  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 66/125  loss: 2.2481  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 67/125  loss: 2.2480  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 68/125  loss: 2.2480  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 69/125  loss: 2.2481  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 70/125  loss: 2.2479  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 71/125  loss: 2.2477  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 72/125  loss: 2.2476  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 73/125  loss: 2.2474  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 74/125  loss: 2.2472  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 75/125  loss: 2.2471  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 76/125  loss: 2.2471  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 77/125  loss: 2.2469  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 78/125  loss: 2.2468  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 79/125  loss: 2.2468  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 80/125  loss: 2.2466  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 81/125  loss: 2.2465  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 82/125  loss: 2.2464  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 83/125  loss: 2.2463  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 84/125  loss: 2.2463  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 85/125  loss: 2.2462  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 86/125  loss: 2.2463  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 87/125  loss: 2.2463  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 88/125  loss: 2.2464  time 0.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 89/125  loss: 2.2463  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 90/125  loss: 2.2462  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 91/125  loss: 2.2462  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 92/125  loss: 2.2461  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 93/125  loss: 2.2460  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 94/125  loss: 2.2459  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 95/125  loss: 2.2458  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 96/125  loss: 2.2458  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 97/125  loss: 2.2458  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 98/125  loss: 2.2457  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 99/125  loss: 2.2456  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 100/125  loss: 2.2456  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 101/125  loss: 2.2454  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 102/125  loss: 2.2454  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 103/125  loss: 2.2454  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 104/125  loss: 2.2453  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 105/125  loss: 2.2453  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 106/125  loss: 2.2451  time 0.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 107/125  loss: 2.2452  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 108/125  loss: 2.2451  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 109/125  loss: 2.2450  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 110/125  loss: 2.2449  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 111/125  loss: 2.2447  time 0.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 112/125  loss: 2.2445  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 113/125  loss: 2.2445  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 114/125  loss: 2.2445  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 115/125  loss: 2.2444  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 116/125  loss: 2.2443  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 117/125  loss: 2.2442  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 118/125  loss: 2.2441  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 119/125  loss: 2.2441  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 120/125  loss: 2.2440  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 121/125  loss: 2.2438  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 122/125  loss: 2.2438  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 123/125  loss: 2.2438  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:57: UserWarning: Epoch 2/15000 124/125  loss: 2.2438  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:150: UserWarning: Final training  2/14999  loss: 2.2438  time 61.93s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 0/126  acc 0.022315427660942078  time 2.69s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 1/126  acc 0.02370280772447586  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 2/126  acc 0.01849113404750824  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 3/126  acc 0.020767636597156525  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 4/126  acc 0.017866436392068863  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 5/126  acc 0.016962656751275063  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 6/126  acc 0.016091754660010338  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 7/126  acc 0.016355043277144432  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 8/126  acc 0.015510286204516888  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 9/126  acc 0.014975063502788544  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 10/126  acc 0.0151744419708848  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 11/126  acc 0.015837857499718666  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 12/126  acc 0.015295660123229027  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 13/126  acc 0.01564151793718338  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 14/126  acc 0.015701964497566223  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 15/126  acc 0.01566280610859394  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 16/126  acc 0.01519010215997696  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 17/126  acc 0.015016024000942707  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 18/126  acc 0.014573161490261555  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 19/126  acc 0.014603222720324993  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 20/126  acc 0.014102150686085224  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 21/126  acc 0.0138466265052557  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 22/126  acc 0.01364060863852501  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 23/126  acc 0.013613549061119556  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 24/126  acc 0.014018552377820015  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 25/126  acc 0.013855968602001667  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 26/126  acc 0.013870883733034134  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 27/126  acc 0.014061818830668926  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 28/126  acc 0.014148969203233719  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 29/126  acc 0.014521290548145771  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 30/126  acc 0.0144714480265975  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 31/126  acc 0.014394568279385567  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 32/126  acc 0.01440335065126419  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 33/126  acc 0.014278900809586048  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 34/126  acc 0.014302391558885574  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 35/126  acc 0.014119219034910202  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 36/126  acc 0.014044634066522121  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 37/126  acc 0.014022286050021648  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 38/126  acc 0.014052419923245907  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 39/126  acc 0.013974137604236603  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 40/126  acc 0.014407563954591751  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 41/126  acc 0.014492760412395  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 42/126  acc 0.014547285623848438  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 43/126  acc 0.014539665542542934  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 44/126  acc 0.014417871832847595  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 45/126  acc 0.014382384717464447  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 46/126  acc 0.014448882080614567  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 47/126  acc 0.01427969429641962  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 48/126  acc 0.014532133936882019  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 49/126  acc 0.014609238132834435  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 50/126  acc 0.014630566351115704  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 51/126  acc 0.01450390461832285  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 52/126  acc 0.014343786984682083  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 53/126  acc 0.014531710185110569  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 54/126  acc 0.014668545685708523  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 55/126  acc 0.014791266061365604  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 56/126  acc 0.014874613843858242  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 57/126  acc 0.014897548593580723  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 58/126  acc 0.01485387608408928  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 59/126  acc 0.014850454404950142  time 0.75s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 60/126  acc 0.014728439971804619  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 61/126  acc 0.014771209098398685  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 62/126  acc 0.014708406291902065  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 63/126  acc 0.014799653552472591  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 64/126  acc 0.0148511603474617  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 65/126  acc 0.014719790779054165  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 66/126  acc 0.01487723644822836  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 67/126  acc 0.014758390374481678  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 68/126  acc 0.014619533903896809  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 69/126  acc 0.014552133157849312  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 70/126  acc 0.014552398584783077  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 71/126  acc 0.014475269243121147  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 72/126  acc 0.0145059023052454  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 73/126  acc 0.014496858231723309  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 74/126  acc 0.014438718557357788  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 75/126  acc 0.014428424648940563  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 76/126  acc 0.014296386390924454  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 77/126  acc 0.014347241260111332  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 78/126  acc 0.014318300411105156  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 79/126  acc 0.014212409034371376  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 80/126  acc 0.014229724183678627  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 81/126  acc 0.014252958819270134  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 82/126  acc 0.014381146989762783  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 83/126  acc 0.014420620165765285  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 84/126  acc 0.014385786838829517  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 85/126  acc 0.014522314071655273  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 86/126  acc 0.014496827498078346  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 87/126  acc 0.014447960071265697  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:96: UserWarning: Val 2/15000 88/126  acc 0.014544535428285599  time 0.55s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+slurmstepd: error: *** JOB 56606 ON a100-04 CANCELLED AT 2023-05-24T19:59:43 ***
