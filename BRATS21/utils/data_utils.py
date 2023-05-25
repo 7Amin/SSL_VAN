@@ -98,6 +98,16 @@ def get_loader(args):
             transforms.CropForegroundd(
                 keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
             ),
+            transforms.RandCropByPosNegLabeld(
+                keys=["image", "label"],
+                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                pos=1,
+                neg=1,
+                num_samples=4,
+                image_key="image",
+                label_key="label",
+                image_threshold=0,
+            ),
             # transforms.RandSpatialCropd(
             #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
             # ),
@@ -136,6 +146,16 @@ def get_loader(args):
                 transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
                 transforms.CropForegroundd(
                     keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
+                ),
+                transforms.RandCropByPosNegLabeld(
+                    keys=["image", "label"],
+                    spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+                    pos=1,
+                    neg=1,
+                    num_samples=4,
+                    image_key="image",
+                    label_key="label",
+                    image_threshold=0,
                 ),
                 # transforms.RandSpatialCropd(
                 #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
