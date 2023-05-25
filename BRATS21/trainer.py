@@ -35,9 +35,9 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
-            # warnings.warn("target {}".format(target.shape))
+            warnings.warn("target {}".format(target.shape))
             logits = model(data)
-            # warnings.warn("logits {}".format(logits.shape))
+            warnings.warn("logits {}".format(logits.shape))
             # loss = loss_func(logits, target_num_classes)
             loss = loss_func(logits, target)
         if args.amp:
