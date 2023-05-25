@@ -182,9 +182,9 @@ def run_training(
                 warnings.warn("Final validation  {}/{}  acc: {}  time {:.2f}s".format(epoch, args.max_epochs - 1,
                                                                                           val_acc,
                                                                                           time.time() - epoch_time))
-                Dice_TC = val_acc.avg[0]
-                Dice_WT = val_acc.avg[1]
-                Dice_ET = val_acc.avg[2]
+                Dice_TC = val_acc[0]
+                Dice_WT = val_acc[1]
+                Dice_ET = val_acc[2]
                 warnings.warn("Final validation {}/{}, Dice_TC: {}, Dice_WT: {},"
                               " Dice_ET: {}, time {:.2f}s".format(epoch, args.max_epochs, Dice_TC,
                                                                   Dice_WT, Dice_ET, time.time() - epoch_time))
