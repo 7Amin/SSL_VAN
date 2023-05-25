@@ -41,30 +41,32 @@ class Config:
         self.amp = False
         self.upsample = "deconv"
         self.fold = 0
-        self.valid_loader = "VAlid"
+        self.valid_loader = "noasdne"
 
 
 args = Config()
 _, train_ds, val_ds = get_loader(args)
-# val_ds = train_ds[120]
-slice_id = 65
+data = train_ds[120]
+# data = val_ds[120]
+# data = val_ds
+slice_id = 73
 num = 2
 # pick one image from DecathlonDataset to visualize and check the 4 channels
-print(f"image shape: {val_ds[num]['image'].shape}")
+print(f"image shape: {data[num]['image'].shape}")
 plt.figure("image", (24, 6))
 for i in range(4):
     plt.subplot(1, 4, i + 1)
     plt.title(f"image channel {i}")
-    plt.imshow(val_ds[num]["image"][i, :, :, slice_id].detach().cpu(),  cmap="gray")  #
+    plt.imshow(data[num]["image"][i, :, :, slice_id].detach().cpu() / 20.0,  cmap="gray")  #
 plt.show()
 # also visualize the 3 channels label corresponding to this image
-print(f"label shape: {val_ds[num]['label'].shape}")
+print(f"label shape: {data[num]['label'].shape}")
 plt.figure("label", (24, 6))
 for i in range(3):
     plt.subplot(1, 3, i + 1)
     plt.title(f"label channel {i}")
-    plt.imshow(val_ds[num]["label"][i, :, :, slice_id].detach().cpu())
+    plt.imshow(data[num]["label"][i, :, :, slice_id].detach().cpu())
 plt.show()
 
-train_size = tuple(val_ds[num]['image'].shape[1:])
+train_size = tuple(data[num]['image'].shape[1:])
 print(train_size)
