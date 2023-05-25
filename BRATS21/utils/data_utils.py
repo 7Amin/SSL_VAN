@@ -124,6 +124,9 @@ def get_loader(args):
             #     mode=("bilinear", "nearest")
             # ),
             # transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            transforms.ScaleIntensityRanged(
+                keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+            ),
             transforms.CropForegroundd(
                 keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
             ),
@@ -144,7 +147,7 @@ def get_loader(args):
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
-            transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+            # transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.RandScaleIntensityd(keys="image", factors=0.1, prob=args.RandScaleIntensityd_prob),
             transforms.RandShiftIntensityd(keys="image", offsets=0.1, prob=args.RandShiftIntensityd_prob),
             transforms.ToTensord(keys=["image", "label"]),
@@ -154,12 +157,15 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+            transforms.ScaleIntensityRanged(
+                keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+            ),
             # transforms.Spacingd(
             #     keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
             #     mode=("bilinear", "nearest")
             # ),
             # transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+            # transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
@@ -169,6 +175,9 @@ def get_loader(args):
             [
                 transforms.LoadImaged(keys=["image", "label"]),
                 transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+                transforms.ScaleIntensityRanged(
+                    keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+                ),
                 # transforms.Spacingd(
                 #     keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
                 #     mode=("bilinear", "nearest")
@@ -190,7 +199,7 @@ def get_loader(args):
                 # transforms.RandSpatialCropd(
                 #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
                 # ),
-                transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+                # transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
                 transforms.ToTensord(keys=["image", "label"]),
             ]
         )
@@ -199,7 +208,10 @@ def get_loader(args):
         [
             transforms.LoadImaged(keys=["image", "label"]),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+            transforms.ScaleIntensityRanged(
+                keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+            ),
+            # transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
