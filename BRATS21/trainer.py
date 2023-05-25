@@ -98,9 +98,16 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
-                avg_acc = np.mean(run_acc.avg)
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             avg_acc, time.time() - start_time))
+                Dice_TC = run_acc.avg[0]
+                Dice_WT = run_acc.avg[1]
+                Dice_ET = run_acc.avg[2]
+                warnings.warn("Val {}/{} {}/{}, Dice_TC: {}, Dice_WT: {},"
+                              " Dice_ET: {}, time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader), Dice_TC,
+                                                                  Dice_WT, Dice_ET, time.time() - start_time))
+
+                # avg_acc = np.mean(run_acc.avg)
+                # warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                #                                                              avg_acc, time.time() - start_time))
 
             start_time = time.time()
 
@@ -173,12 +180,19 @@ def run_training(
                 post_sigmoid=post_sigmoid,
                 post_pred=post_pred,
             )
-            val_acc = np.mean(val_acc)
+            # val_acc = np.mean(val_acc)
             if args.rank == 0:
-                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                                                                                          val_acc,
-                                                                                          time.time() - epoch_time))
-                val_avg_acc = val_acc
+                # warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+                #                                                                           val_acc,
+                #                                                                           time.time() - epoch_time))
+                Dice_TC = val_acc.avg[0]
+                Dice_WT = val_acc.avg[1]
+                Dice_ET = val_acc.avg[2]
+                warnings.warn("Val {}/{}, Dice_TC: {}, Dice_WT: {},"
+                              " Dice_ET: {}, time {:.2f}s".format(epoch, args.max_epochs, Dice_TC,
+                                                                  Dice_WT, Dice_ET, time.time() - epoch_time))
+                # val_avg_acc = val_acc
+                val_avg_acc = np.mean(val_acc)
                 if val_avg_acc > val_acc_max:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
