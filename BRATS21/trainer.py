@@ -31,14 +31,15 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         warnings.warn("target {}".format(target.shape))
         warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
-        target_num_classes = torch.argmax(target, dim=1, keepdim=True)
+        # target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
             # warnings.warn("target {}".format(target.shape))
             logits = model(data)
             # warnings.warn("logits {}".format(logits.shape))
-            loss = loss_func(logits, target_num_classes)
+            # loss = loss_func(logits, target_num_classes)
+            loss = loss_func(logits, target)
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
