@@ -31,6 +31,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         warnings.warn("target {}".format(target.shape))
         warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
+        target = target * 1.0
         # target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():
             param.grad = None

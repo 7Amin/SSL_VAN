@@ -118,7 +118,7 @@ def get_loader(args):
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
-            ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
+            transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
             # transforms.Spacingd(
             #     keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
             #     mode=("bilinear", "nearest")
