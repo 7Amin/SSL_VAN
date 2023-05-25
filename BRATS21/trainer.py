@@ -179,9 +179,9 @@ def run_training(
             )
             # val_acc = np.mean(val_acc)
             if args.rank == 0:
-                # warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                #                                                                           val_acc,
-                #                                                                           time.time() - epoch_time))
+                warnings.warn("Final validation  {}/{}  acc: {}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+                                                                                          val_acc,
+                                                                                          time.time() - epoch_time))
                 Dice_TC = val_acc.avg[0]
                 Dice_WT = val_acc.avg[1]
                 Dice_ET = val_acc.avg[2]
