@@ -94,24 +94,16 @@ def get_loader(args):
                 keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
                 mode=("bilinear", "nearest")
             ),
-            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            # transforms.RandSpatialCropd(
-            #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
+            # transforms.CropForegroundd(
+            #     keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
             # ),
-            transforms.RandCropByPosNegLabeld(
-                keys=["image", "label"],
-                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                pos=1,
-                neg=1,
-                num_samples=2,
-                image_key="image",
-                label_key="label",
-                image_threshold=0,
+            transforms.RandSpatialCropd(
+                keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
             ),
+            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
-            # transforms.RandRotate90d(keys=["image", "label"], prob=args.RandRotate90d_prob, max_k=3),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
             transforms.RandScaleIntensityd(keys="image", factors=0.1, prob=args.RandScaleIntensityd_prob),
             transforms.RandShiftIntensityd(keys="image", offsets=0.1, prob=args.RandShiftIntensityd_prob),
@@ -142,15 +134,8 @@ def get_loader(args):
                     mode=("bilinear", "nearest")
                 ),
                 transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-                transforms.RandCropByPosNegLabeld(
-                    keys=["image", "label"],
-                    spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                    pos=1,
-                    neg=1,
-                    num_samples=2,
-                    image_key="image",
-                    label_key="label",
-                    image_threshold=0,
+                transforms.RandSpatialCropd(
+                    keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
                 ),
                 transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
                 transforms.ToTensord(keys=["image", "label"]),
@@ -160,10 +145,10 @@ def get_loader(args):
     test_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
-            transforms.AsChannelFirstd(keys="image"),
             transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
             transforms.Spacingd(
-                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
+                mode=("bilinear", "nearest")
             ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
             transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
