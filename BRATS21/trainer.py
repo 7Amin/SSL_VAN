@@ -7,10 +7,7 @@ import numpy as np
 import torch
 import torch.nn.parallel
 import torch.utils.data.distributed
-#  TensorboardX is a library for visualizing and analyzing the training process of deep learning models using
-#  TensorBoard, a visualization tool that comes with TensorFlow and Pytorch. TensorboardX allows users to visualize and
-#  compare metrics such as loss, accuracy, and gradients, as well as view histograms of weights and biases in real-time
-#  during training
+
 
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
@@ -99,7 +96,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
 
             if args.rank == 0:
                 # avg_acc_1 = np.mean(run_acc)
-                avg_acc_1 = run_acc.avg
+                avg_acc_1 = run_acc
                 warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                              avg_acc_1, time.time() - start_time))
                 Dice_TC = run_acc.avg[0]
@@ -182,13 +179,13 @@ def run_training(
             )
             # val_acc = np.mean(val_acc)
             if args.rank == 0:
-                # warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                #                                                                           val_acc,
-                #                                                                           time.time() - epoch_time))
+                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+                                                                                          val_acc,
+                                                                                          time.time() - epoch_time))
                 Dice_TC = val_acc.avg[0]
                 Dice_WT = val_acc.avg[1]
                 Dice_ET = val_acc.avg[2]
-                warnings.warn("Val {}/{}, Dice_TC: {}, Dice_WT: {},"
+                warnings.warn("Final validation {}/{}, Dice_TC: {}, Dice_WT: {},"
                               " Dice_ET: {}, time {:.2f}s".format(epoch, args.max_epochs, Dice_TC,
                                                                   Dice_WT, Dice_ET, time.time() - epoch_time))
                 # val_avg_acc = val_acc

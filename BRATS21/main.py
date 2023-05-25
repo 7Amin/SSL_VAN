@@ -259,7 +259,7 @@ def main_worker(gpu, args):
         dice_loss = DiceCELoss(to_onehot_y=False, sigmoid=True)
     post_sigmoid = Activations(sigmoid=True)
     post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
-    dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
+    dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN_BATCH, get_not_nans=True)
     model_inferer = partial(
         sliding_window_inference,
         roi_size=inf_size,
