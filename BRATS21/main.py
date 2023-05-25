@@ -44,7 +44,7 @@ parser.add_argument("--base_data",
                     default="/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BraTS21",
                     type=str,
                     help="dataset directory")
-parser.add_argument("--a_min", default=-100.0, type=float, help="a_min in ScaleIntensityRanged")
+parser.add_argument("--a_min", default=-70.0, type=float, help="a_min in ScaleIntensityRanged")
 parser.add_argument("--a_max", default=500.0, type=float, help="a_max in ScaleIntensityRanged")
 parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
 parser.add_argument("--b_max", default=1.0, type=float, help="b_max in ScaleIntensityRanged")

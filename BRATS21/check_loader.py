@@ -16,15 +16,15 @@ class Config:
         self.a_max = 250.0
         self.b_min = 0.0
         self.b_max = 1.0
-        self.roi_x = 96
-        self.roi_y = 96
-        self.roi_z = 96
+        self.roi_x = 128
+        self.roi_y = 128
+        self.roi_z = 128
         self.batch_size = 2
         self.workers = 1
-        self.RandFlipd_prob = 0.99
-        self.RandRotate90d_prob = 0.99
-        self.RandScaleIntensityd_prob = 0.99
-        self.RandShiftIntensityd_prob = 0.99
+        self.RandFlipd_prob = 0.5
+        self.RandRotate90d_prob = 0.2
+        self.RandScaleIntensityd_prob = 0.2
+        self.RandShiftIntensityd_prob = 0.2
         self.test_mode = False
         self.distributed = False
         self.logdir = './runs/BraTS/test_log'
@@ -41,12 +41,12 @@ class Config:
         self.amp = False
         self.upsample = "deconv"
         self.fold = 0
-        self.valid_loader = "none"
+        self.valid_loader = "VAlid"
 
 
 args = Config()
 _, train_ds, val_ds = get_loader(args)
-val_ds = train_ds[120]
+# val_ds = train_ds[120]
 slice_id = 65
 num = 2
 # pick one image from DecathlonDataset to visualize and check the 4 channels
