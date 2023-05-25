@@ -50,7 +50,7 @@ data = train_ds[120]
 # data = val_ds[120]
 # data = val_ds
 slice_id = 73
-num = 2
+num = 0
 # pick one image from DecathlonDataset to visualize and check the 4 channels
 print(f"image shape: {data[num]['image'].shape}")
 plt.figure("image", (24, 6))

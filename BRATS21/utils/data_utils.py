@@ -133,7 +133,7 @@ def get_loader(args):
             transforms.RandCropByPosNegLabeld(
                 keys=["image", "label"],
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                pos=3,
+                pos=1,
                 neg=1,
                 num_samples=1,
                 image_key="image",
@@ -173,7 +173,7 @@ def get_loader(args):
                 transforms.RandCropByPosNegLabeld(
                     keys=["image", "label"],
                     spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                    pos=3,
+                    pos=1,
                     neg=1,
                     num_samples=2,
                     image_key="image",
