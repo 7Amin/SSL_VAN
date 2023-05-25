@@ -28,6 +28,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             data, target = batch_data
         else:
             data, target = batch_data["image"], batch_data["label"]
+        warnings.warn("target {}".format(target.shape))
+        warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
         target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():

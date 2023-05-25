@@ -127,16 +127,16 @@ def get_loader(args):
             # transforms.RandSpatialCropd(
             #     keys=["image", "label"], roi_size=[args.roi_x, args.roi_y, args.roi_z], random_size=False
             # ),
-            transforms.RandCropByPosNegLabeld(
-                keys=["image", "label"],
-                spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                pos=1,
-                neg=1,
-                num_samples=4,
-                image_key="image",
-                label_key="label",
-                image_threshold=0,
-            ),
+            # transforms.RandCropByPosNegLabeld(
+            #     keys=["image", "label"],
+            #     spatial_size=(args.roi_x, args.roi_y, args.roi_z),
+            #     pos=1,
+            #     neg=1,
+            #     num_samples=4,
+            #     image_key="image",
+            #     label_key="label",
+            #     image_threshold=0,
+            # ),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=0),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=1),
             transforms.RandFlipd(keys=["image", "label"], prob=args.RandFlipd_prob, spatial_axis=2),
