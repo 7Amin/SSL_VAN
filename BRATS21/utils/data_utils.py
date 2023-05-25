@@ -124,13 +124,13 @@ def get_loader(args):
             #     mode=("bilinear", "nearest")
             # ),
             transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
-            # transforms.CropForegroundd(
-            #     keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
-            # ),
+            transforms.CropForegroundd(
+                keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
+            ),
             transforms.RandCropByPosNegLabeld(
                 keys=["image", "label"],
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
-                pos=1,
+                pos=3,
                 neg=1,
                 num_samples=4,
                 image_key="image",
