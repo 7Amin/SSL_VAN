@@ -5,31 +5,66 @@ import tempfile
 import matplotlib.pyplot as plt
 from BRATS21.utils.data_utils import get_loader
 
+class Config:
+    def __init__(self):
+        self.base_data = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BraTS21'
+        self.json_list = '../input_list/dataset_BRATS21_List.json'
+        self.space_x = 1.5
+        self.space_y = 1.5
+        self.space_z = 2.0
+        self.a_min = -175.0
+        self.a_max = 250.0
+        self.b_min = 0.0
+        self.b_max = 1.0
+        self.roi_x = 96
+        self.roi_y = 96
+        self.roi_z = 96
+        self.batch_size = 2
+        self.workers = 1
+        self.RandFlipd_prob = 0.99
+        self.RandRotate90d_prob = 0.99
+        self.RandScaleIntensityd_prob = 0.99
+        self.RandShiftIntensityd_prob = 0.99
+        self.test_mode = False
+        self.distributed = False
+        self.logdir = './runs/BraTS/test_log'
+        self.gpu = 0
+        self.rank = 0
+        self.embed_dims = [64, 128, 256, 512]
+        self.mlp_ratios = [8, 8, 4, 4]
+        self.depths = [3, 4, 6, 3]
+        self.num_stages = 4
+        self.in_channels = 1
+        self.out_channels = 14
+        self.dropout_path_rate = 0.0
+        self.use_normal_dataset = True
+        self.amp = False
+        self.upsample = "deconv"
+        self.fold = 0
+        self.valid_loader = "none"
 
-loader = get_loader(args)
-val_loader = loader[1]
-for idx, batch_data in enumerate(val_loader):
-    if isinstance(batch_data, list):
-        data, target = batch_data
-    else:
-        data, target = batch_data["image"], batch_data["label"]
-    slice_id = 32
-    # pick one image from DecathlonDataset to visualize and check the 4 channels
-    print(f"image shape: {val_ds[2]['image'].shape}")
-    plt.figure("image", (24, 6))
-    for i in range(4):
-        plt.subplot(1, 4, i + 1)
-        plt.title(f"image channel {i}")
-        plt.imshow(val_ds[2]["image"][i, :, :, slice_id].detach().cpu(),  cmap="gray") #
-    plt.show()
-    # also visualize the 3 channels label corresponding to this image
-    print(f"label shape: {val_ds[2]['label'].shape}")
-    plt.figure("label", (24, 6))
-    for i in range(3):
-        plt.subplot(1, 3, i + 1)
-        plt.title(f"label channel {i}")
-        plt.imshow(val_ds[6]["label"][i, :, :, slice_id].detach().cpu())
-    plt.show()
 
-    train_size = tuple(val_ds[6]['image'].shape[1:])
-    print(train_size)
+args = Config()
+_, train_ds, val_ds = get_loader(args)
+val_ds = train_ds[100]
+slice_id = 65
+num = 2
+# pick one image from DecathlonDataset to visualize and check the 4 channels
+print(f"image shape: {val_ds[num]['image'].shape}")
+plt.figure("image", (24, 6))
+for i in range(4):
+    plt.subplot(1, 4, i + 1)
+    plt.title(f"image channel {i}")
+    plt.imshow(val_ds[num]["image"][i, :, :, slice_id].detach().cpu(),  cmap="gray")  #
+plt.show()
+# also visualize the 3 channels label corresponding to this image
+print(f"label shape: {val_ds[num]['label'].shape}")
+plt.figure("label", (24, 6))
+for i in range(3):
+    plt.subplot(1, 3, i + 1)
+    plt.title(f"label channel {i}")
+    plt.imshow(val_ds[num]["label"][i, :, :, slice_id].detach().cpu())
+plt.show()
+
+train_size = tuple(val_ds[num]['image'].shape[1:])
+print(train_size)

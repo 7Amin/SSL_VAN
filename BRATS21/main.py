@@ -60,8 +60,8 @@ parser.add_argument("--save_checkpoint", action="store_true", help="save checkpo
 parser.add_argument("--val_every", default=1, type=int, help="validation frequency")
 parser.add_argument("--RandFlipd_prob", default=0.5, type=float, help="RandFlipd aug probability")
 parser.add_argument("--RandRotate90d_prob", default=0.2, type=float, help="RandRotate90d aug probability")
-parser.add_argument("--RandScaleIntensityd_prob", default=0.1, type=float, help="RandScaleIntensityd aug probability")
-parser.add_argument("--RandShiftIntensityd_prob", default=0.1, type=float, help="RandShiftIntensityd aug probability")
+parser.add_argument("--RandScaleIntensityd_prob", default=0.2, type=float, help="RandScaleIntensityd aug probability")
+parser.add_argument("--RandShiftIntensityd_prob", default=0.2, type=float, help="RandShiftIntensityd aug probability")
 parser.add_argument("--workers", default=2, type=int, help="number of workers")
 parser.add_argument("--test_mode", default=False, type=bool, help="this runner is a test or not")
 parser.add_argument("--distributed", action="store_true", help="start distributed training")
@@ -212,7 +212,7 @@ def main_worker(gpu, args):
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
     args.test_mode = False
-    loader = get_loader(args)
+    loader, _, _ = get_loader(args)
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
