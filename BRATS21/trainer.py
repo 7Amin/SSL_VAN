@@ -97,8 +97,8 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
             if args.rank == 0:
                 # avg_acc_1 = np.mean(run_acc)
                 avg_acc_1 = run_acc
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             avg_acc_1, time.time() - start_time))
+                # warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                #                                                              avg_acc_1, time.time() - start_time))
                 Dice_TC = run_acc.avg[0]
                 Dice_WT = run_acc.avg[1]
                 Dice_ET = run_acc.avg[2]
@@ -179,9 +179,9 @@ def run_training(
             )
             # val_acc = np.mean(val_acc)
             if args.rank == 0:
-                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                                                                                          val_acc,
-                                                                                          time.time() - epoch_time))
+                # warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+                #                                                                           val_acc,
+                #                                                                           time.time() - epoch_time))
                 Dice_TC = val_acc.avg[0]
                 Dice_WT = val_acc.avg[1]
                 Dice_ET = val_acc.avg[2]
