@@ -283,7 +283,7 @@ elif [ $job -eq 47 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4 --upsample vae --checkpoint
 
@@ -291,7 +291,7 @@ elif [ $job -eq 48 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4 --upsample vae --checkpoint
 
@@ -299,7 +299,7 @@ elif [ $job -eq 49 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4 --upsample vae --checkpoint
 
@@ -357,7 +357,7 @@ elif [ $job -eq 427 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
 
@@ -365,7 +365,7 @@ elif [ $job -eq 428 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
 
@@ -373,7 +373,7 @@ elif [ $job -eq 429 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py  --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4GL --upsample vae --checkpoint --patch_count 2
 
