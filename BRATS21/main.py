@@ -253,10 +253,10 @@ def main_worker(gpu, args):
 
     if args.squared_dice:
         dice_loss = DiceCELoss(
-            to_onehot_y=True, sigmoid=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
+            to_onehot_y=False, sigmoid=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
         )
     else:
-        dice_loss = DiceCELoss(to_onehot_y=True, sigmoid=True)
+        dice_loss = DiceCELoss(to_onehot_y=False, sigmoid=True)
     post_sigmoid = Activations(sigmoid=True)
     post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
