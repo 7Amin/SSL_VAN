@@ -46,7 +46,7 @@ class Sampler(torch.utils.data.Sampler):
                     extra_ids = np.random.randint(low=0, high=len(indices), size=self.total_size - len(indices))
                     indices += [indices[ids] for ids in extra_ids]
             assert len(indices) == self.total_size
-        indices = indices[self.rank : self.total_size : self.num_replicas]
+        indices = indices[self.rank: self.total_size: self.num_replicas]
         self.num_samples = len(indices)
         return iter(indices)
 
