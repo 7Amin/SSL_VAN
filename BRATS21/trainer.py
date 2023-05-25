@@ -98,16 +98,16 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
+                # avg_acc_1 = np.mean(run_acc)
+                avg_acc_1 = run_acc.avg
+                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                             avg_acc_1, time.time() - start_time))
                 Dice_TC = run_acc.avg[0]
                 Dice_WT = run_acc.avg[1]
                 Dice_ET = run_acc.avg[2]
                 warnings.warn("Val {}/{} {}/{}, Dice_TC: {}, Dice_WT: {},"
                               " Dice_ET: {}, time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader), Dice_TC,
                                                                   Dice_WT, Dice_ET, time.time() - start_time))
-
-                # avg_acc = np.mean(run_acc.avg)
-                # warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                #                                                              avg_acc, time.time() - start_time))
 
             start_time = time.time()
 
