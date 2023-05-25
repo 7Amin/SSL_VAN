@@ -9,9 +9,9 @@ class Config:
     def __init__(self):
         self.base_data = '/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BraTS21'
         self.json_list = '../input_list/dataset_BRATS21_List.json'
-        self.space_x = 1.5
-        self.space_y = 1.5
-        self.space_z = 2.0
+        self.space_x = 1.0
+        self.space_y = 1.0
+        self.space_z = 1.0
         self.a_min = -175.0
         self.a_max = 250.0
         self.b_min = 0.0
@@ -46,7 +46,7 @@ class Config:
 
 args = Config()
 _, train_ds, val_ds = get_loader(args)
-val_ds = train_ds[100]
+val_ds = train_ds[120]
 slice_id = 65
 num = 2
 # pick one image from DecathlonDataset to visualize and check the 4 channels
