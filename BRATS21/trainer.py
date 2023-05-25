@@ -40,9 +40,11 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
             # loss = loss_func(logits, target_num_classes)
-            loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
-                   loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
-                   loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
+            # loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
+            #        loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
+            #        loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
+
+            loss = loss_func(logits, target)
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
