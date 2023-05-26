@@ -37,6 +37,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             warnings.warn("target {}".format(target.shape))
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
+            warnings.warn("logits value: {}".format(logits.detach().cpu().numpy()))
             # loss = loss_func(logits, target_num_classes)
             loss = (loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
                    loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
