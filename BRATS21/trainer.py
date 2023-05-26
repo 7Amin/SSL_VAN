@@ -16,6 +16,10 @@ from utils.utils import AverageMeter, distributed_all_gather
 
 from monai.data import decollate_batch
 
+def replace_nan(tensor, replace_value):
+    tensor[torch.isnan(tensor)] = replace_value
+    return tensor
+
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
     model.train()
@@ -30,29 +34,22 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
         # target = target * 1.0
-        data = (data - 1000.0) / 2000.0
+        data = data / 4000.0
         # target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
-            result = dict()
             warnings.warn("target {}".format(target.shape))
-            warnings.warn("target value: {}".format(target.detach().cpu().numpy()))
-            # with open(f'target_{epoch}_{idx}.json', "w") as outfile:
-            #     json.dump(target.detach().cpu().numpy(), outfile, indent=4)
-            result["target"] = target.detach().cpu().numpy().tolist()
+
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
-            warnings.warn("logits value: {}".format(logits.detach().cpu().numpy()))
-            result["logits"] = logits.detach().cpu().numpy().tolist()
-            with open(f'{epoch}_{idx}.json', "w") as outfile:
-                json.dump(result, outfile, indent=4)
             # loss = loss_func(logits, target_num_classes)
             loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
                    loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
                    loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
 
             # loss = loss_func(logits, target)
+
         if args.amp:
             scaler.scale(loss).backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
@@ -90,7 +87,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
             data, target = batch_data["image"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
             # target = target * 1.0
-            data = (data - 1000.0) / 2000.0
+            data = data / 4000.0
             with autocast(enabled=args.amp):
                 logits = model_inferer(data)
             val_labels_list = decollate_batch(target)
@@ -205,6 +202,7 @@ def run_training(
                                                                   Dice_WT, Dice_ET, time.time() - epoch_time))
                 # val_avg_acc = val_acc
                 val_avg_acc = np.mean(val_acc)
+                warnings.warn("Final validation ({:.6f})".format(val_avg_acc))
                 if val_avg_acc > val_acc_max:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
