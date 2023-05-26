@@ -48,9 +48,9 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             with open(f'{epoch}_{idx}.json', "w") as outfile:
                 json.dump(result, outfile, indent=4)
             # loss = loss_func(logits, target_num_classes)
-            loss = (loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
+            loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
                    loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
-                   loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :]) + 0.0001) / 3.0
+                   loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
 
             # loss = loss_func(logits, target)
         if args.amp:
