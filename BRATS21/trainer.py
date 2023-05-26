@@ -35,15 +35,18 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
+            result = dict()
             warnings.warn("target {}".format(target.shape))
             warnings.warn("target value: {}".format(target.detach().cpu().numpy()))
-            with open(f'target_{epoch}_{idx}.json', "w") as outfile:
-                json.dump(target.detach().cpu().numpy(), outfile, indent=4)
+            # with open(f'target_{epoch}_{idx}.json', "w") as outfile:
+            #     json.dump(target.detach().cpu().numpy(), outfile, indent=4)
+            result["target"] = target.detach().cpu().numpy().tolist()
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
             warnings.warn("logits value: {}".format(logits.detach().cpu().numpy()))
-            with open(f'logits{epoch}_{idx}.json', "w") as outfile:
-                json.dump(logits.detach().cpu().numpy(), outfile, indent=4)
+            result["logits"] = logits.detach().cpu().numpy().tolist()
+            with open(f'{epoch}_{idx}.json', "w") as outfile:
+                json.dump(result, outfile, indent=4)
             # loss = loss_func(logits, target_num_classes)
             loss = (loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
                    loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
