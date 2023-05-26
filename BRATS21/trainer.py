@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+import json
 import warnings
 
 import numpy as np
@@ -36,9 +37,13 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         with autocast(enabled=args.amp):
             warnings.warn("target {}".format(target.shape))
             warnings.warn("target value: {}".format(target.detach().cpu().numpy()))
+            with open(f'target_{epoch}_{idx}.json', "w") as outfile:
+                json.dump(target.detach().cpu().numpy(), outfile, indent=4)
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
             warnings.warn("logits value: {}".format(logits.detach().cpu().numpy()))
+            with open(f'logits{epoch}_{idx}.json', "w") as outfile:
+                json.dump(logits.detach().cpu().numpy(), outfile, indent=4)
             # loss = loss_func(logits, target_num_classes)
             loss = (loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
                    loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
