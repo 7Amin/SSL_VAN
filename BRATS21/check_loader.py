@@ -57,7 +57,7 @@ plt.figure("image", (24, 6))
 for i in range(4):
     plt.subplot(1, 4, i + 1)
     plt.title(f"image channel {i}")
-    plt.imshow(data[num]["image"][i, :, :, slice_id].detach().cpu() / 20.0,  cmap="gray")  #
+    plt.imshow((data[num]["image"][i, :, :, slice_id].detach().cpu() - 1000) / 2000.0,  cmap="gray")  #
 plt.show()
 # also visualize the 3 channels label corresponding to this image
 print(f"label shape: {data[num]['label'].shape}")

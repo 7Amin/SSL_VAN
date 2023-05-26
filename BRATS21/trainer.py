@@ -28,8 +28,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         warnings.warn("target {}".format(target.shape))
         warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
-        target = target * 1.0
-        data = data / 20.0
+        # target = target * 1.0
+        data = (data - 1000.0) / 2000.0
         # target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():
             param.grad = None
@@ -38,11 +38,11 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             logits = model(data)
             warnings.warn("logits {}".format(logits.shape))
             # loss = loss_func(logits, target_num_classes)
-            # loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
-            #        loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
-            #        loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
+            loss = loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
+                   loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
+                   loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])
 
-            loss = loss_func(logits, target)
+            # loss = loss_func(logits, target)
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
@@ -77,8 +77,8 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
         for idx, batch_data in enumerate(loader):
             data, target = batch_data["image"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
-            target = target * 1.0
-            data = data / 20.0
+            # target = target * 1.0
+            data = (data - 1000.0) / 2000.0
             with autocast(enabled=args.amp):
                 logits = model_inferer(data)
             val_labels_list = decollate_batch(target)

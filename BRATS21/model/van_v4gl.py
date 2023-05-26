@@ -21,8 +21,7 @@ class VANV4GL(nn.Module):
                 nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
                 nn.GELU(),
-                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
-                nn.Sigmoid()
+                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1)
                 )
 
     def forward(self, x):
