@@ -48,7 +48,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             #        loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
             #        loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])) / 10.1
 
-            loss = loss_func(logits, target) / 5.01
+            loss = loss_func(logits, target)
 
         if args.amp:
             scaler.scale(loss).backward()
