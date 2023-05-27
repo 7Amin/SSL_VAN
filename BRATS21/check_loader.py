@@ -49,7 +49,7 @@ _, train_ds, val_ds = get_loader(args)
 data = train_ds[120]
 # data = val_ds[120]
 # data = val_ds
-slice_id = 40
+slice_id = 92
 num = 0
 # pick one image from DecathlonDataset to visualize and check the 4 channels
 print(f"image shape: {data[num]['image'].shape}")

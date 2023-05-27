@@ -127,9 +127,9 @@ def get_loader(args):
             # transforms.ScaleIntensityRanged(
             #     keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             # ),
-            # transforms.CropForegroundd(
-            #     keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
-            # ),
+            transforms.CropForegroundd(
+                keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
+            ),
             transforms.RandCropByPosNegLabeld(
                 keys=["image", "label"],
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
