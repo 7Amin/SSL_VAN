@@ -87,7 +87,7 @@ parser.add_argument("--smooth_dr", default=1e-6, type=float, help="constant adde
 parser.add_argument("--smooth_nr", default=0.0, type=float, help="constant added to dice numerator to avoid zero")
 parser.add_argument("--norm_name", default="instance", type=str, help="normalization name")
 parser.add_argument("--optim_name", default="adamw", type=str, help="optimization algorithm")
-parser.add_argument("--optim_lr", default=0.0001, type=float, help="optimization learning rate")
+parser.add_argument("--optim_lr", default=0.00025, type=float, help="optimization learning rate")
 parser.add_argument("--reg_weight", default=1e-4, type=float, help="regularization weight")
 parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
@@ -99,7 +99,7 @@ parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=
 parser.add_argument("--model_v", default='VANV4GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                    'VANV4GLV1', 'VANV4GLV2'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
-parser.add_argument("--clip", default=10.0, type=int, help="Clips gradient norm of an iterable of parameters.")
+parser.add_argument("--clip", default=20.0, type=int, help="Clips gradient norm of an iterable of parameters.")
 
 
 def main():
