@@ -99,7 +99,7 @@ parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=
 parser.add_argument("--model_v", default='VANV4GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                    'VANV4GLV1', 'VANV4GLV2'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
-parser.add_argument("--clip", default=4.0, type=int, help="Clips gradient norm of an iterable of parameters.")
+parser.add_argument("--clip", default=10.0, type=int, help="Clips gradient norm of an iterable of parameters.")
 
 
 def main():
