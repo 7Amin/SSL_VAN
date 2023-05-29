@@ -1,6 +1,8 @@
 import os
 import shutil
 import tempfile
+import cv2
+import numpy as np
 
 import matplotlib.pyplot as plt
 from BRATS21.utils.data_utils import get_loader
@@ -12,8 +14,8 @@ class Config:
         self.space_x = 1.0
         self.space_y = 1.0
         self.space_z = 1.0
-        self.a_min = -175.0
-        self.a_max = 250.0
+        self.a_min = -100.0
+        self.a_max = 2000.0
         self.b_min = 0.0
         self.b_max = 1.0
         self.roi_x = 128
@@ -44,29 +46,66 @@ class Config:
         self.valid_loader = "noasdne"
 
 
+def convert_rgb(image):
+    width, height, c = image.shape
+    for y in range(height):
+        for x in range(width):
+            r, g, b = image[x, y]
+            if (r, g, b) == (255, 255, 255):
+                image[x, y] = (0, 0, 255)
+            elif (r, g, b) == (255, 255, 0):
+                image[x, y] = (255, 0, 0)
+            elif (r, g, b) == (255, 0, 255):
+                image[x, y] = (0, 0, 255)
+            elif (r, g, b) == (0, 255, 255):
+                image[x, y] = (0, 255, 0)
+    return image
+
+
 args = Config()
 _, train_ds, val_ds = get_loader(args)
 data = train_ds[120]
 # data = val_ds[120]
-# data = val_ds
-slice_id = 92
-num = 0
+data = val_ds
+slice_id = 62
+t = 4
+# num = 0
+num = 20
+
+
 # pick one image from DecathlonDataset to visualize and check the 4 channels
 print(f"image shape: {data[num]['image'].shape}")
-plt.figure("image", (24, 6))
-for i in range(4):
-    plt.subplot(1, 4, i + 1)
-    plt.title(f"image channel {i}")
-    plt.imshow((data[num]["image"][i, :, :, slice_id].detach().cpu() - 0) / 10.0,  cmap="gray")  #
-plt.show()
-# also visualize the 3 channels label corresponding to this image
+for o in range(t):
+    plt.figure("image", (24, 6))
+    for i in range(4):
+        # a = (((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + 0.0) / 1.0).numpy() * 255.0).astype(np.int32)
+        # a = a[50: 135 + 50, 30: 145 + 70]
+        # cv2.imwrite(f'input_slide_{o + 1}_channel_{i}.png', a)
+        plt.subplot(1, 4, i + 1)
+        plt.title(f"image channel {i} for slice {slice_id + (o + 1) * 5}")
+        plt.imshow((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + 5.0) / 20.0,  cmap="gray")
+    plt.savefig(f'slide_{o + 1}.png')
+    plt.show()
+
 print(f"label shape: {data[num]['label'].shape}")
-plt.figure("label", (24, 6))
-for i in range(3):
-    plt.subplot(1, 3, i + 1)
-    plt.title(f"label channel {i}")
-    plt.imshow(data[num]["label"][i, :, :, slice_id].detach().cpu())
-plt.show()
+
+for o in range(t):
+    plt.figure("label", (24, 6))
+    img = []
+    for i in range(3):
+        # a = (data[num]["label"][i, :, :, slice_id + (o + 1) * 5].detach().cpu().numpy() * 255.0).astype(np.int32)
+        # a = a[50: 135 + 50, 30: 145 + 70]
+        # img.append(np.expand_dims(a, axis=2))
+
+        plt.subplot(1, 3, i + 1)
+        plt.title(f"label channel {i} for slice {slice_id + (o + 1) * 5}")
+        plt.imshow(data[num]["label"][i, :, :, slice_id].detach().cpu())
+    # lab = np.concatenate((img[0], img[1], img[2]), axis=2)
+    # lab = convert_rgb(lab)
+    # cv2.imwrite(f'label_slide_{o + 1}.png', lab)
+    plt.savefig(f'label_3_slide_{o + 1}.png')
+    plt.show()
+
 
 train_size = tuple(data[num]['image'].shape[1:])
 print(train_size)
