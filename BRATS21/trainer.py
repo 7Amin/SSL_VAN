@@ -53,12 +53,12 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
 
         if args.amp:
             scaler.scale(loss).backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+            # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
             scaler.step(optimizer)
             scaler.update()
         else:
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+            # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
             optimizer.step()
         if args.distributed:
             loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)

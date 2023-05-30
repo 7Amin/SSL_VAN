@@ -98,7 +98,7 @@ parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'v
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VANV4GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                   'VANV4GLV1', 'VANV4GLV2', 'VANV5', 'VANV5GL'])
+                                                                       'VANV4GLV1', 'VANV4GLV2', 'VANV5', 'VANV5GL'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--clip", default=1000.0, type=int, help="Clips gradient norm of an iterable of parameters.")
 
