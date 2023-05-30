@@ -68,9 +68,11 @@ data = train_ds[120]
 # data = val_ds[120]
 data = val_ds
 slice_id = 62
-t = 4
+t = 10
 # num = 0
 num = 20
+scale_sum = 0.0
+scale_divide = 1.0
 
 
 # pick one image from DecathlonDataset to visualize and check the 4 channels
@@ -83,9 +85,13 @@ for o in range(t):
         # cv2.imwrite(f'input_slide_{o + 1}_channel_{i}.png', a)
         plt.subplot(1, 4, i + 1)
         plt.title(f"image channel {i} for slice {slice_id + (o + 1) * 5}")
-        plt.imshow((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + 5.0) / 20.0,  cmap="gray")
+        plt.imshow((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + scale_sum) / scale_divide,  cmap="gray")
+        d = ((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + scale_sum) / scale_divide).numpy()
+        print(f"for i = {i} => min is {d.min()} and max is {d.max()}")
+
     plt.savefig(f'slide_{o + 1}.png')
     plt.show()
+    print("-----------------------------")
 
 print(f"label shape: {data[num]['label'].shape}")
 
@@ -100,11 +106,16 @@ for o in range(t):
         plt.subplot(1, 3, i + 1)
         plt.title(f"label channel {i} for slice {slice_id + (o + 1) * 5}")
         plt.imshow(data[num]["label"][i, :, :, slice_id].detach().cpu())
+        d = data[num]["label"][i, :, :, slice_id].detach().cpu().numpy()
+        print(f"for i = {i} => min is {d.min()} and max is {d.max()}")
+
+
     # lab = np.concatenate((img[0], img[1], img[2]), axis=2)
     # lab = convert_rgb(lab)
     # cv2.imwrite(f'label_slide_{o + 1}.png', lab)
     plt.savefig(f'label_3_slide_{o + 1}.png')
     plt.show()
+    print("-----------------------------")
 
 
 train_size = tuple(data[num]['image'].shape[1:])
