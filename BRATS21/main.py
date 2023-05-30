@@ -16,6 +16,7 @@ from BRATS21.model.van_v4 import VANV4
 from BRATS21.model.van_v4gl import VANV4GL
 from BRATS21.model.van_v4gl_v1 import VANV4GLV1
 from BRATS21.model.van_v4gl_v2 import VANV4GLV2
+from BRATS21.model.van_v5gl import VANV5GL
 from BRATS21.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from BRATS21.trainer import run_training
 
@@ -97,7 +98,7 @@ parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'v
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VANV4GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                   'VANV4GLV1', 'VANV4GLV2'])
+                                                                   'VANV4GLV1', 'VANV4GLV2', 'VANV5', 'VANV5GL'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--clip", default=20.0, type=int, help="Clips gradient norm of an iterable of parameters.")
 
@@ -115,6 +116,19 @@ def main():
 
 
 def get_model(args):
+    if args.model_v == "VANV5GL":
+        model = VANV5GL(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
     if args.model_v == "VANV4GLV2":
         model = VANV4GLV2(embed_dims=args.embed_dims,
                           mlp_ratios=args.mlp_ratios,

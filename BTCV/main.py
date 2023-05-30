@@ -13,6 +13,7 @@ from BTCV.model.van import VAN
 from BTCV.model.van_v2 import VANV2
 from BTCV.model.van_v3 import VANV3
 from BTCV.model.van_v4 import VANV4
+from BTCV.model.van_v5gl import VANV5GL
 from BTCV.model.van_v4gl import VANV4GL
 from BTCV.model.van_v4gl_v1 import VANV4GLV1
 from BTCV.model.van_v4gl_v2 import VANV4GLV2
@@ -111,6 +112,19 @@ def main():
 
 
 def get_model(args):
+    if args.model_v == "VANV5GL":
+        model = VANV5GL(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
     if args.model_v == "VANV4GLV2":
         model = VANV4GLV2(embed_dims=args.embed_dims,
                           mlp_ratios=args.mlp_ratios,
