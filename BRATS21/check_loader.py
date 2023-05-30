@@ -64,13 +64,13 @@ def convert_rgb(image):
 
 args = Config()
 _, train_ds, val_ds = get_loader(args)
-data = train_ds[120]
+data = train_ds[145]
 # data = val_ds[120]
-data = val_ds
+# data = val_ds
 slice_id = 62
 t = 10
-# num = 0
-num = 20
+num = 0
+# num = 20
 scale_sum = 0.0
 scale_divide = 1.0
 
@@ -89,7 +89,7 @@ for o in range(t):
         d = ((data[num]["image"][i, :, :, slice_id + (o + 1) * 5].detach().cpu() + scale_sum) / scale_divide).numpy()
         print(f"for i = {i} => min is {d.min()} and max is {d.max()}")
 
-    plt.savefig(f'slide_{o + 1}.png')
+    # plt.savefig(f'slide_{o + 1}.png')
     plt.show()
     print("-----------------------------")
 
@@ -105,15 +105,15 @@ for o in range(t):
 
         plt.subplot(1, 3, i + 1)
         plt.title(f"label channel {i} for slice {slice_id + (o + 1) * 5}")
-        plt.imshow(data[num]["label"][i, :, :, slice_id].detach().cpu())
-        d = data[num]["label"][i, :, :, slice_id].detach().cpu().numpy()
+        plt.imshow(data[num]["label"][i, :, :, slice_id + (o + 1) * 5].detach().cpu())
+        d = data[num]["label"][i, :, :, slice_id + (o + 1) * 5].detach().cpu().numpy()
         print(f"for i = {i} => min is {d.min()} and max is {d.max()}")
 
 
     # lab = np.concatenate((img[0], img[1], img[2]), axis=2)
     # lab = convert_rgb(lab)
     # cv2.imwrite(f'label_slide_{o + 1}.png', lab)
-    plt.savefig(f'label_3_slide_{o + 1}.png')
+    # plt.savefig(f'label_3_slide_{o + 1}.png')
     plt.show()
     print("-----------------------------")
 
