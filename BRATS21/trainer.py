@@ -30,20 +30,17 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             data, target = batch_data
         else:
             data, target = batch_data["image"], batch_data["label"]
-        warnings.warn("target {}".format(target.shape))
-        warnings.warn("data {}".format(data.shape))
+        # warnings.warn("target {}".format(target.shape))
+        # warnings.warn("data {}".format(data.shape))
         data, target = data.cuda(args.rank), target.cuda(args.rank)
         # target = target * 1.0
-
-
         # target_num_classes = torch.argmax(target, dim=1, keepdim=True)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
-            warnings.warn("target {}".format(target.shape))
-
+            # warnings.warn("target {}".format(target.shape))
             logits = model(data)
-            warnings.warn("logits {}".format(logits.shape))
+            # warnings.warn("logits {}".format(logits.shape))
             # loss = loss_func(logits, target_num_classes)
             # loss = (loss_func(logits[:, 0, :, :, :], target[:, 0, :, :, :]) + \
             #        loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
@@ -82,15 +79,15 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
     model.eval()
     start_time = time.time()
     run_acc = AverageMeter()
-
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
             data, target = batch_data["image"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
-            # target = target * 1.0
-            # data = (data + 5.0) / 20.0
             with autocast(enabled=args.amp):
-                logits = model_inferer(data)
+                if model_inferer is not None:
+                    logits = model_inferer(data)
+                else:
+                    logits = model(data)
             val_labels_list = decollate_batch(target)
             val_outputs_list = decollate_batch(logits)
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
