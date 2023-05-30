@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=BTCVvae
-#SBATCH --time=05:59:59
+#SBATCH --time=23:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
-#SBATCH -p a100
+#SBATCH -p a100-long
 #SBATCH --gpus-per-node=2
 #SBATCH -G 2
 #SBATCH --mem=80gb
@@ -582,7 +582,6 @@ then
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV5GL --upsample vae --checkpoint \
   --patch_count 2
-
 
 elif [ $job -eq 524 ]
 then
