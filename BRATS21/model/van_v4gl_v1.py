@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from BTCV.model.van_v4 import VANV4
+from BRATS21.model.van_v4 import VANV4
 
 
 class VANV4GLV1(nn.Module):
