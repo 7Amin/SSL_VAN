@@ -51,9 +51,6 @@ class VANV5(nn.Module):
                           out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
-                nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(out_channels),
-                nn.LeakyReLU(),
                 )
 
         if upsample == "deconv":
