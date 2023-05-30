@@ -1,5 +1,18 @@
 # SSL_VAN
 
+## TODOs
+
+1. Implement SSL VAN models
+2. 
+
+## Dependencies:
+
+Python dependencies are recorded in the pyproject.toml
+Other dependencies for MONAI are specified here: https://docs.monai.io/en/latest/installation.html#installing-the-recommended-dependencies
+
+## For 
+
+## Other:
 
 LUNA16: LUng Nodule Analysis 2016
 https://luna16.grand-challenge.org/

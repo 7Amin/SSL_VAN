@@ -28,7 +28,7 @@ class SimMIMTransformWrapper(Transform):
 
     backend = [TransformBackends.TORCH, TransformBackends.NUMPY]
 
-    def __init__(self) -> None:
+    def __init__(self, roi_size, phi_x, m) -> None:
 
         config = Namespace(**{
             "DATA_IMG_SIZE": None,
@@ -45,9 +45,32 @@ class SimMIMTransformWrapper(Transform):
             })
         })
 
+        self.roi_x = roi_size[0]
+        self.roi_y = roi_size[1]
+        self.roi_z = roi_size[2]
+        self.phi_x = phi_x
+        self.m = m
         self.simmim = sm.SimMIMTransform(config)
 
     def __call__(self, img: NdarrayOrTensor) -> tuple[NdarrayOrTensor, NdarrayOrTensor]:
+        mask_points = (np.random.rand(self.roi_x) < self.phi_x) * 1
+
+        for i, x in enumerate(mask_points):
+            if x == 1:
+                for j in range(i, i - self.m, -1):
+                    mask_points[j] = 1
+
+        # get groups of all consecutive elements with one value
+        mask_indices = np.where(abs(np.diff(mask_points)) == 1)[0]+1
+        mask_groups = np.split(mask_points, mask_indices)
+        mask_indices = np.array([0, *mask_indices])
+
+        for i, g in zip(mask_indices, mask_groups):
+            g_size = len(g)
+            g_slice = img[0, i, :, :]
+            _, g_mask = self.simmim(g_slice)
+            # TODO Scale and Concatenate Masks, return below
+
         img, mask = self.simmim(img)
         return img, mask
 
@@ -60,6 +83,7 @@ class SimMIMTransformWrapperd(MapTransform):
 
     def __init__(
             self,
+            roi_size, phi_x, m,
             keys: KeysCollection,
             factor_key: Optional[str] = None,
             meta_keys: Optional[KeysCollection] = None,
@@ -72,7 +96,7 @@ class SimMIMTransformWrapperd(MapTransform):
         if len(self.keys) != len(self.meta_keys):
             raise ValueError("meta_keys should have the same length as keys.")
         self.meta_key_postfix = ensure_tuple_rep(meta_key_postfix, len(self.keys))
-        self.simmim = SimMIMTransformWrapper()
+        self.simmim = SimMIMTransformWrapper(roi_size, phi_x, m)
 
     def __call__(self, data) -> Dict[Hashable, NdarrayOrTensor]:
         d = dict(data)
