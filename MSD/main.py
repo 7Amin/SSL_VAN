@@ -104,6 +104,29 @@ parser.add_argument("--task", default='Task01_BrainTumour', type=str, choices=["
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
+def get_out_channels(args):
+    if args.task == "Task01_BrainTumour":
+        args.out_channels = 4
+    elif args.task == "Task02_Heart":
+        args.out_channels = 2
+    elif args.task == "Task03_Liver":
+        args.out_channels = 3
+    elif args.task == "Task04_Hippocampus":
+        args.out_channels = 3
+    elif args.task == "Task05_Prostate":
+        args.out_channels = 3
+    elif args.task == "Task06_Lung":
+        args.out_channels = 2
+    elif args.task == "Task07_Pancreas":
+        args.out_channels = 3
+    elif args.task == "Task08_HepaticVessel":
+        args.out_channels = 3
+    elif args.task == "Task09_Spleen":
+        args.out_channels = 2
+    elif args.task == "Task10_Colon":
+        args.out_channels = 2
+
+
 def main():
     args = parser.parse_args()
     args.amp = not args.noamp
