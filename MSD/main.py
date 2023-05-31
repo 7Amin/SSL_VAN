@@ -95,7 +95,7 @@ parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv',
 parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                   'VANV4GLV1', 'VANV4GLV2'])
+                                                                   'VANV4GLV1', 'VANV4GLV2', "VANV5GL"])
 parser.add_argument("--task", default='Task01_BrainTumour', type=str, choices=["Task01_BrainTumour", "Task02_Heart",
                                                                                "Task03_Liver", "Task04_Hippocampus",
                                                                                "Task05_Prostate", "Task06_Lung",
