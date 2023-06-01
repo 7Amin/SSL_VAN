@@ -47,18 +47,18 @@ class VANV4GL(nn.Module):
                     model = getattr(self, f"van{i}_{j}_{k}")
                     t2 = model(t2)
                     if k == 0:
-                        res_t2s = t2
+                        res_t2s = t2.clone()
                     else:
                         res_t2s = torch.cat((res_t2s, t2), dim=4)
                 if j == 0:
-                    res_t1s = res_t2s
+                    res_t1s = res_t2s.clone()
                     res_t2s = None
                 else:
                     res_t1s = torch.cat((res_t1s, res_t2s), dim=3)
                     res_t2s = None
 
             if i == 0:
-                res_t0s = res_t1s
+                res_t0s = res_t1s.clone()
                 res_t1s = None
             else:
                 res_t0s = torch.cat((res_t0s, res_t1s), dim=2)
