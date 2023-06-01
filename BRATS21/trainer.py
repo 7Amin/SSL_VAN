@@ -52,28 +52,27 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             warnings.warn(
                 "Loss is Nan: Epoch {}/{} {}/{} time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                      time.time() - start_time))
-            continue
-
-        if args.amp:
-            scaler.scale(loss).backward()
-            # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
-            scaler.step(optimizer)
-            scaler.update()
         else:
-            loss.backward()
-            # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
-            optimizer.step()
-        if args.distributed:
-            loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)
-            run_loss.update(
-                np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0), n=args.batch_size * args.world_size
-            )
-        else:
-            run_loss.update(loss.item(), n=args.batch_size)
-        if args.rank == 0:
-            warnings.warn(
-                "Epoch {}/{} {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                       run_loss.avg, time.time() - start_time))
+            if args.amp:
+                scaler.scale(loss).backward()
+                # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+                scaler.step(optimizer)
+                scaler.update()
+            else:
+                loss.backward()
+                # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+                optimizer.step()
+            if args.distributed:
+                loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)
+                run_loss.update(
+                    np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0), n=args.batch_size * args.world_size
+                )
+            else:
+                run_loss.update(loss.item(), n=args.batch_size)
+            if args.rank == 0:
+                warnings.warn(
+                    "Epoch {}/{} {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                           run_loss.avg, time.time() - start_time))
 
         start_time = time.time()
     for param in model.parameters():
