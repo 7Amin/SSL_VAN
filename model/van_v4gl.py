@@ -1,19 +1,19 @@
 import torch
 import torch.nn as nn
 
-from BTCV.model.van_v4 import VANV4
+from model.van_v4 import VANV4
 
 
-class VANV4GLV1(nn.Module):
+class VANV4GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv", patch_count=2):
-        super(VANV4GLV1, self).__init__()
+        super(VANV4GL, self).__init__()
         self.patch_count = patch_count
         for i in range(patch_count):
             for j in range(patch_count):
                 for k in range(patch_count):
-                    setattr(self, f"van{i}_{j}_{k}", VANV4(embed_dims[:-1], mlp_ratios[:-1], depths[:-1],
-                                                           num_stages - 1, in_channels, out_channels,
+                    setattr(self, f"van{i}_{j}_{k}", VANV4(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
+                                                           num_stages - 2, in_channels, out_channels,
                                                            dropout_path_rate, upsample))
         self.van = VANV4(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
@@ -21,7 +21,7 @@ class VANV4GLV1(nn.Module):
                 nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
                 nn.GELU(),
-                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1)
+                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
                 )
 
     def forward(self, x):

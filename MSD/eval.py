@@ -10,7 +10,7 @@ from torch.cuda.amp import autocast
 
 
 from MSD.utils.data_utils import get_loader
-from MSD.model.van import VAN
+from model.van import VAN
 from utils.utils import AverageMeter
 from utils.plot_images import plot_ans_save_segmentation, sample_stack
 

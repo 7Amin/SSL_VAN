@@ -10,9 +10,9 @@ from torch.cuda.amp import autocast
 
 
 from BRATS21.utils.data_utils import get_loader
-from BRATS21.model.van import VAN
+from model.van import VAN
 from utils.utils import AverageMeter
-from utils.plot_images import plot_ans_save_segmentation, sample_stack
+from utils.plot_images import plot_ans_save_segmentation
 
 from monai.metrics import DiceMetric
 from monai.transforms import AsDiscrete

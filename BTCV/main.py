@@ -9,14 +9,14 @@ import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from BTCV.utils.data_utils import get_loader
-from BTCV.model.van import VAN
-from BTCV.model.van_v2 import VANV2
-from BTCV.model.van_v3 import VANV3
-from BTCV.model.van_v4 import VANV4
-from BTCV.model.van_v5gl import VANV5GL
-from BTCV.model.van_v4gl import VANV4GL
-from BTCV.model.van_v4gl_v1 import VANV4GLV1
-from BTCV.model.van_v4gl_v2 import VANV4GLV2
+from model.van import VAN
+from model.van_v2 import VANV2
+from model.van_v3 import VANV3
+from model.van_v4 import VANV4
+from model.van_v5gl import VANV5GL
+from model.van_v4gl import VANV4GL
+from model.van_v4gl_v1 import VANV4GLV1
+from model.van_v4gl_v2 import VANV4GLV2
 from BTCV.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from BTCV.trainer import run_training
 

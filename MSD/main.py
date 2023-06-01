@@ -9,14 +9,14 @@ import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from MSD.utils.data_utils import get_loader
-from MSD.model.van import VAN
-from MSD.model.van_v2 import VANV2
-from MSD.model.van_v3 import VANV3
-from MSD.model.van_v4 import VANV4
-from MSD.model.van_v4gl import VANV4GL
-from MSD.model.van_v5gl import VANV5GL
-from MSD.model.van_v4gl_v1 import VANV4GLV1
-from MSD.model.van_v4gl_v2 import VANV4GLV2
+from model.van import VAN
+from model.van_v2 import VANV2
+from model.van_v3 import VANV3
+from model.van_v4 import VANV4
+from model.van_v4gl import VANV4GL
+from model.van_v5gl import VANV5GL
+from model.van_v4gl_v1 import VANV4GLV1
+from model.van_v4gl_v2 import VANV4GLV2
 from MSD.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from MSD.trainer import run_training
 
