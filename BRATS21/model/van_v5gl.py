@@ -22,7 +22,6 @@ class VANV5GL(nn.Module):
                 nn.InstanceNorm3d(out_channels),
                 nn.GELU(),
                 nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
-                nn.InstanceNorm3d(out_channels),
                 )
 
     def forward(self, x):

@@ -18,9 +18,9 @@ class Config:
         self.a_max = 2000.0
         self.b_min = 0.0
         self.b_max = 1.0
-        self.roi_x = 128
-        self.roi_y = 128
-        self.roi_z = 128
+        self.roi_x = 96
+        self.roi_y = 96
+        self.roi_z = 96
         self.batch_size = 2
         self.workers = 1
         self.RandFlipd_prob = 0.5
@@ -89,15 +89,18 @@ def get_out_channels(args):
 args = Config()
 get_out_channels(args)
 _, train_ds, val_ds = get_loader(args)
-data = train_ds[20]
+data = train_ds[18]
 # data = val_ds[10]
 # data = val_ds
-slice_id = 35
-t = 10
+slice_id = 12
+t = 15
 num = 0
 # num = 20
 scale_sum = 0.0
 scale_divide = 1.0
+# for i in range(101):
+#     print(i)
+#     print(train_ds[0][0]["image"].shape)
 
 print(f"label shape: {data[num]['label'].shape}")
 
@@ -139,7 +142,6 @@ for o in range(t):
     # plt.savefig(f'slide_{o + 1}.png')
     plt.show()
     print("-----------------------------")
-
 
 
 train_size = tuple(data[num]['image'].shape[1:])
