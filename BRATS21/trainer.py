@@ -68,8 +68,9 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             if args.rank == 0:
                 warnings.warn(
                     "Epoch {}/{} {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                           run_loss.avg, time.time() - start_time))
-
+                                                                     run_loss.avg, time.time() - start_time))
+        else:
+            break
         start_time = time.time()
     for param in model.parameters():
         param.grad = None
