@@ -49,11 +49,11 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
 
             loss = loss_func(logits, target)
 
-        if torch.isnan(loss):
-            loss = prev_loss
-            warnings.warn(
-                "Epoch {}/{} {}/{} NAN LOSS time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                       time.time() - start_time))
+        # if torch.isnan(loss):
+        #     loss = prev_loss
+        #     warnings.warn(
+        #         "Epoch {}/{} {}/{} NAN LOSS time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+        #                                                                time.time() - start_time))
         if args.amp:
             scaler.scale(loss).backward()
             # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
