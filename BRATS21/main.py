@@ -316,7 +316,6 @@ def main_worker(gpu, args):
             warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
                 args.checkpoint, start_epoch, best_acc))
 
-
     model.cuda(args.gpu)
 
     if args.distributed:
