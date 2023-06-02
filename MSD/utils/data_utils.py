@@ -19,7 +19,7 @@ class Sampler(torch.utils.data.Sampler):
             if not torch.distributed.is_available():
                 raise RuntimeError("Requires distributed package to be available")
             rank = torch.distributed.get_rank()
-        self.shuffle = shuffle
+        self.shuffle = False
         self.make_even = make_even
         self.dataset = dataset
         self.num_replicas = num_replicas
@@ -176,7 +176,7 @@ def get_loader(args):
         train_loader = data.DataLoader(
             train_ds,
             batch_size=args.batch_size,
-            shuffle=(train_sampler is None),
+            shuffle=False,  #(train_sampler is None),
             num_workers=args.workers,
             sampler=train_sampler,
             pin_memory=True,
