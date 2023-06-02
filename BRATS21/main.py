@@ -93,7 +93,7 @@ parser.add_argument("--reg_weight", default=1e-5, type=float, help="regularizati
 parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
-parser.add_argument("--warmup_epochs", default=500, type=int, help="number of warmup epochs")
+parser.add_argument("--warmup_epochs", default=300, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
