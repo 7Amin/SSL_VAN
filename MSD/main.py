@@ -124,7 +124,7 @@ def get_out_channels(args):
         args.out_channels = 3
     elif args.task == "Task09_Spleen":  # OK
         args.out_channels = 2
-    elif args.task == "Task10_Colon":
+    elif args.task == "Task10_Colon":  # OK
         args.out_channels = 2
 
 
