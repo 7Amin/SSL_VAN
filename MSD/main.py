@@ -110,7 +110,7 @@ def get_out_channels(args):
         args.out_channels = 4
     elif args.task == "Task02_Heart":
         args.out_channels = 2
-    elif args.task == "Task03_Liver":
+    elif args.task == "Task03_Liver":  # OK
         args.out_channels = 3
     elif args.task == "Task04_Hippocampus":
         args.out_channels = 3
