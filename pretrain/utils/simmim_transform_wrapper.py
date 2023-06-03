@@ -1,4 +1,5 @@
 import numpy as np
+from skimage.transform import resize
 from typing import Callable, Dict, Hashable, Mapping, Optional, Sequence, Tuple, Union
 import simmim.data.data_simmim as sm
 
@@ -65,15 +66,26 @@ class SimMIMTransformWrapper(Transform):
         mask_groups = np.split(mask_points, mask_indices)
         mask_indices = np.array([0, *mask_indices])
 
+        g_masks = []
+
         for i, g in zip(mask_indices, mask_groups):
-            g_size = len(g)
+            g_val = g[0]
+            g_size_x = len(g)
+            g_size_y = img.shape[2]
+            g_size_z = img.shape[3]
             g_slice = img[0, i, :, :]
-            _, g_mask = self.simmim(g_slice)
-            # TODO Scale and Concatenate Masks, return below
 
-        img, mask = self.simmim(img)
+            if g_val == 1:
+                _, g_mask = self.simmim(g_slice)
+                g_mask = resize(g_mask, (1, g_size_y, g_size_z), order=0)
+                g_mask = np.repeat(g_mask, g_size_x, axis=0)
+            else:
+                g_mask = np.ones((g_size_x, g_size_y, g_size_z))
+
+            g_masks.append(g_mask)
+
+        mask = np.concatenate(g_masks)
         return img, mask
-
 
 class SimMIMTransformWrapperd(MapTransform):
     """Dictionary wrapper for SimMIMTransformWrapper
