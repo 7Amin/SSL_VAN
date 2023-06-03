@@ -97,8 +97,7 @@ parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'va
 parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                    'VANV4GLV1', 'VANV4GLV2', "VANV5GL"])
 parser.add_argument("--task", default='Task01_BrainTumour', type=str, choices=["Task01_BrainTumour", "Task02_Heart",
-                                                                               "Task03_Liver", "Task04_Hippocampus",
-                                                                               "Task05_Prostate", "Task06_Lung",
+                                                                               "Task03_Liver", "Task06_Lung",
                                                                                "Task07_Pancreas",
                                                                                "Task08_HepaticVessel", "Task09_Spleen",
                                                                                "Task10_Colon"])
@@ -111,10 +110,6 @@ def get_out_channels(args):
     elif args.task == "Task02_Heart":
         args.out_channels = 2
     elif args.task == "Task03_Liver":  # OK
-        args.out_channels = 3
-    elif args.task == "Task04_Hippocampus":
-        args.out_channels = 3
-    elif args.task == "Task05_Prostate":
         args.out_channels = 3
     elif args.task == "Task06_Lung":  # OK
         args.out_channels = 2
