@@ -107,9 +107,9 @@ parser.add_argument("--patch_count", default=2, type=int, help="split image to p
 def get_out_channels(args):
     if args.task == "Task01_BrainTumour":
         args.out_channels = 4
-    elif args.task == "Task02_Heart":
+    elif args.task == "Task02_Heart":  # OK
         args.out_channels = 2
-    elif args.task == "Task03_Liver":  # OK
+    elif args.task == "Task03_Liver":  # OK !!!
         args.out_channels = 3
     elif args.task == "Task06_Lung":  # OK
         args.out_channels = 2
