@@ -190,7 +190,8 @@ def run_training(
                             filename=args.final_model_url
                         )
             if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
-                save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename=args.final_model_url)
+                save_checkpoint(model, epoch, args, best_acc=val_acc_max, optimizer=optimizer,
+                                scheduler=scheduler, filename=args.final_model_url)
                 if b_new_best:
                     warnings.warn("Copying to best model new best model!!!!")
                     shutil.copyfile(os.path.join(args.logdir, args.final_model_url),
