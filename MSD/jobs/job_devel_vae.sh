@@ -636,5 +636,81 @@ then
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV5GL --upsample vae --checkpoint --task $task  --patch_count 2
+
+
+elif [ $job -eq 621 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV6GL --upsample vae --checkpoint --task $task  \
+  --patch_count 2
+
+elif [ $job -eq 622 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_v VANV6GL --upsample vae --checkpoint --task $task  \
+  --patch_count 2
+
+elif [ $job -eq 623 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV6GL --upsample vae --checkpoint --task $task  \
+  --patch_count 2
+
+
+elif [ $job -eq 624 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV6GL \
+  --upsample vae --checkpoint --task $task  --patch_count 2
+
+elif [ $job -eq 625 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV6GL \
+  --upsample vae --checkpoint --task $task  --patch_count 2
+
+elif [ $job -eq 626 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --model_v VANV6GL \
+  --upsample vae --checkpoint --task $task  --patch_count 2
+
+
+elif [ $job -eq 627 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --valid_loader valid_loader --model_v VANV6GL --upsample vae --checkpoint --task $task  --patch_count 2
+
+elif [ $job -eq 628 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 6 6 90 6 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --valid_loader valid_loader --model_v VANV6GL --upsample vae --checkpoint --task $task  --patch_count 2
+
+elif [ $job -eq 629 ]
+then
+  PYTHONPATH=. python3 MSD/main.py  --workers 8 --base_data ../images/MSD \
+  --json_list input_list/dataset_MSD_List.json --save_checkpoint --max_epochs 15000 \
+  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --valid_loader valid_loader --model_v VANV6GL --upsample vae --checkpoint --task $task  --patch_count 2
+
 fi
 
