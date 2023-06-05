@@ -13,8 +13,9 @@ from model.van import VAN
 from model.van_v2 import VANV2
 from model.van_v3 import VANV3
 from model.van_v4 import VANV4
-from model.van_v5gl import VANV5GL
 from model.van_v4gl import VANV4GL
+from model.van_v5gl import VANV5GL
+from model.van_v6gl import VANV6GL
 from model.van_v4gl_v1 import VANV4GLV1
 from model.van_v4gl_v2 import VANV4GLV2
 from BTCV.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
@@ -96,7 +97,7 @@ parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'v
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VANV4', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                   'VANV4GLV1', 'VANV4GLV2', 'VANV5GL'])
+                                                                   'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL"])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
@@ -113,6 +114,19 @@ def main():
 
 
 def get_model(args):
+    if args.model_v == "VANV6GL":
+        model = VANV6GL(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
     if args.model_v == "VANV5GL":
         model = VANV5GL(embed_dims=args.embed_dims,
                         mlp_ratios=args.mlp_ratios,
