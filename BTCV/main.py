@@ -39,7 +39,8 @@ parser.add_argument(
 )
 parser.add_argument(
     "--pretrained_model_name",
-    default="VAN.epoch.b4_5000ep_f48_lr2e-4_pretrained.pt",
+    # default="64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2__best.pt",
+    default="64-128-256-512_3-4-6-3_8-8-4-4_vae___VANV4__best.pt",
     type=str,
     help="pretrained model name",
 )
@@ -91,10 +92,10 @@ parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=50, type=int, help="number of warmup epochs")
-parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
-parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
-parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
+parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'vae'])
+parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
+parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
+parser.add_argument("--model_v", default='VANV4', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                    'VANV4GLV1', 'VANV4GLV2', 'VANV5GL'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
@@ -211,6 +212,44 @@ def get_model(args):
     return None
 
 
+def load_pre_trained(args, model):
+    model_url = args.pretrained_dir + args.pretrained_model_name
+    from collections import OrderedDict
+    model_dict = torch.load(model_url)
+    new_state_dict = OrderedDict()
+    state_dict = model_dict["state_dict"]
+
+    if "VANV4GL" in args.model_v or "VANV4GLV1" in args.model_v\
+            or "VANV4GLV2" in args.model_v or "VANV5GL" in args.model_v:
+        for key in list(state_dict.keys()):
+            if "van" in key:
+                new_state_dict[key] = state_dict.pop(key)
+        model.load_state_dict(state_dict, strict=False)
+        warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+
+    elif args.model_v in ['VANV4']:
+        for key in list(state_dict.keys()):
+            if not ("final_conv1" in key):
+                new_state_dict[key] = state_dict.pop(key)
+        model.load_state_dict(state_dict, strict=False)
+        warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+
+    elif args.model_v in ['VANV2', 'VANV3']:
+        for key in list(state_dict.keys()):
+            if not ("final_conv2" in key):
+                new_state_dict[key] = state_dict.pop(key)
+        model.load_state_dict(state_dict, strict=False)
+        warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+
+    elif args.model_v in ['VAN']:
+        for key in list(state_dict.keys()):
+            if "van3d" in key:
+                new_state_dict[key] = state_dict.pop(key)
+        model.load_state_dict(state_dict, strict=False)
+        warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+    return model
+
+
 def main_worker(gpu, args):
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
@@ -240,23 +279,7 @@ def main_worker(gpu, args):
 
     if args.use_ssl_pretrained:
         try:
-            model_dict = torch.load("./pretrained_models/model_van.pt")
-            state_dict = model_dict["state_dict"]
-            # fix potential differences in state dict keys from pre-training to
-            # fine-tuning
-            if "module." in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'module.' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("module.", "")] = state_dict.pop(key)
-            if "swin_vit" in list(state_dict.keys())[0]:
-                warnings.warn("Tag 'swin_vit' found in state dict - fixing!")
-                for key in list(state_dict.keys()):
-                    state_dict[key.replace("swin_vit", "swinViT")] = state_dict.pop(key)
-            # We now load model weights, setting param `strict` to False, i.e.:
-            # this load the encoder weights (Swin-ViT, SSL pre-trained), but leaves
-            # the decoder weights untouched (CNN UNet decoder).
-            model.load_state_dict(state_dict, strict=False)
-            warnings.warn("Using pretrained self-supervised Swin UNETR backbone weights !")
+            model = load_pre_trained(args, model)
         except ValueError:
             raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
 
