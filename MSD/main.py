@@ -262,28 +262,28 @@ def load_pre_trained(args, model):
         for key in list(state_dict.keys()):
             if "van" in key:
                 new_state_dict[key] = state_dict.pop(key)
-        model.load_state_dict(state_dict, strict=False)
+        model.load_state_dict(new_state_dict, strict=False)
         warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
 
     elif args.model_v in ['VANV4']:
         for key in list(state_dict.keys()):
             if not ("final_conv1" in key):
                 new_state_dict[key] = state_dict.pop(key)
-        model.load_state_dict(state_dict, strict=False)
+        model.load_state_dict(new_state_dict, strict=False)
         warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
 
     elif args.model_v in ['VANV2', 'VANV3']:
         for key in list(state_dict.keys()):
             if not ("final_conv2" in key):
                 new_state_dict[key] = state_dict.pop(key)
-        model.load_state_dict(state_dict, strict=False)
+        model.load_state_dict(new_state_dict, strict=False)
         warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
 
     elif args.model_v in ['VAN']:
         for key in list(state_dict.keys()):
             if "van3d" in key:
                 new_state_dict[key] = state_dict.pop(key)
-        model.load_state_dict(state_dict, strict=False)
+        model.load_state_dict(new_state_dict, strict=False)
         warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
     return model
 
