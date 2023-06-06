@@ -28,7 +28,7 @@ from monai.transforms import (
 
 import os
 
-from simmim_transform_wrapper import SimMIMTransformWrapperd
+from .simmim_transform_wrapper import SimMIMTransformWrapperd
 
 
 def get_loader(args):

@@ -85,7 +85,8 @@ class SimMIMTransformWrapper(Transform):
             g_masks.append(g_mask)
 
         mask = np.concatenate(g_masks)
-        return img, mask
+        return img, mask, mask_points
+
 
 class SimMIMTransformWrapperd(MapTransform):
     """Dictionary wrapper for SimMIMTransformWrapper
@@ -116,8 +117,9 @@ class SimMIMTransformWrapperd(MapTransform):
             d, self.factor_key, self.meta_keys, self.meta_key_postfix
         ):
             meta_key = meta_key or f"{key}_{meta_key_postfix}"
-            img, mask = self.simmim(d[key])
+            img, mask, mask_points = self.simmim(d[key])
             d[key] = img
             d["mask"] = mask
+            d["mask_points"] = mask_points
 
         return d
