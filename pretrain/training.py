@@ -7,6 +7,7 @@ import torch
 import torch.nn.parallel
 import torch.utils.data.distributed
 from pretrain.utils.utils import load_clusters
+from pretrain.utils.mask import apply_mask
 
 
 from tensorboardX import SummaryWriter
@@ -34,12 +35,12 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             temp = temp.reshape((data_numpy.shape[0], data_numpy.shape[1]))
             target[:, :, index] = temp
 
+        data = apply_mask(data, args)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
             logits = model(data)
             loss = loss_func(logits, target)
-            #
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
