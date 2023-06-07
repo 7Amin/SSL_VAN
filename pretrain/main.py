@@ -10,14 +10,19 @@ import torch
 import torch.multiprocessing as mp
 import torch.distributed as dist
 
-from clustering.utils.data_utils import get_loader
-from BTCV.model.van import VAN
-from BTCV.model.van_v2 import VANV2
-from BTCV.model.van_v3 import VANV3
-from BTCV.model.van_v4 import VANV4
-from clustering.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
-from clustering.training_van import run_training
-from clustering.losses.loss import ClusteringLoss
+from pretrain.utils.data_utils import get_loader
+from models.van import VAN
+from models.van_v2 import VANV2
+from models.van_v3 import VANV3
+from models.van_v4 import VANV4
+from models.van_v4gl import VANV4GL
+from models.van_v5gl import VANV5GL
+from models.van_v6gl import VANV6GL
+from models.van_v4gl_v1 import VANV4GLV1
+from models.van_v4gl_v2 import VANV4GLV2
+from pretrain.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
+from pretrain.training import run_training
+from pretrain.losses.loss import ClusteringLoss
 
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
@@ -153,7 +158,6 @@ def get_model(args):
         return model
 
     return None
-
 
 
 def main_worker(gpu, args):

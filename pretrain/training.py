@@ -1,5 +1,4 @@
 import os
-import shutil
 import time
 import warnings
 
@@ -7,7 +6,7 @@ import numpy as np
 import torch
 import torch.nn.parallel
 import torch.utils.data.distributed
-from clustering.utils.utils import load_clusters
+from pretrain.utils.utils import load_clusters
 
 
 from tensorboardX import SummaryWriter
