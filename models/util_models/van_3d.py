@@ -8,7 +8,7 @@ from torch.nn.modules.utils import _pair as to_2tuple
 from mmcv.cnn import build_norm_layer
 import math
 import warnings
-from util_models.attentions.LKA3D import SpatialAttention3D
+from models.util_models.attentions.LKA3D import SpatialAttention3D
 
 
 class DWConv3D(nn.Module):

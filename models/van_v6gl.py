@@ -1,21 +1,21 @@
 import torch
 import torch.nn as nn
 
-from model.van_v5 import VANV5
+from models.van_v6 import VANV6
 
 
-class VANV5GL(nn.Module):
+class VANV6GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv", patch_count=2):
-        super(VANV5GL, self).__init__()
+        super(VANV6GL, self).__init__()
         self.patch_count = patch_count
         for i in range(patch_count):
             for j in range(patch_count):
                 for k in range(patch_count):
-                    setattr(self, f"van{i}_{j}_{k}", VANV5(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
+                    setattr(self, f"van{i}_{j}_{k}", VANV6(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
                                                            num_stages - 2, in_channels, out_channels,
                                                            dropout_path_rate, upsample))
-        self.van = VANV5(embed_dims, mlp_ratios, depths, num_stages, in_channels,
+        self.van = VANV6(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
         self.conv = nn.Sequential(
                 nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),

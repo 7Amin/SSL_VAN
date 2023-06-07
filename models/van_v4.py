@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from util_models.van_3d import VAN3D
+from models.util_models.van_3d import VAN3D
 
 
 class VANV4(nn.Module):
