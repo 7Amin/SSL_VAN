@@ -241,11 +241,11 @@ def main_worker(gpu, args):
             if "best_acc" in checkpoint:
                 best_acc = checkpoint["best_acc"]
             if 'optimizer' in checkpoint:
-                optimizer_state = checkpoint['optimizer'].state_dict()
+                optimizer_state = checkpoint['optimizer']
                 optimizer_state_cuda = {k: v.to('cuda') for k, v in optimizer_state.items()}
                 optimizer.load_state_dict(optimizer_state_cuda)
             if 'scheduler' in checkpoint:
-                scheduler_state = checkpoint['scheduler'].state_dict()
+                scheduler_state = checkpoint['scheduler']
                 scheduler_state_cuda = {k: v.to('cuda') for k, v in scheduler_state.items()}
                 scheduler.load_state_dict(scheduler_state_cuda)
             warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
