@@ -272,9 +272,9 @@ def main_worker(gpu, args):
                 start_epoch = checkpoint["epoch"]
             if "best_acc" in checkpoint:
                 best_acc = checkpoint["best_acc"]
-            if 'optimizer' in checkpoint:
-                optimizer_temp = checkpoint['optimizer']
-                optimizer.load_state_dict(optimizer_temp)
+            # if 'optimizer' in checkpoint:
+            #     optimizer_temp = checkpoint['optimizer']
+            #     optimizer.load_state_dict(optimizer_temp)
             if 'scheduler' in checkpoint:
                 scheduler_temp = checkpoint['scheduler']
                 scheduler.load_state_dict(scheduler_temp)
