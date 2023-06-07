@@ -37,7 +37,7 @@ parser.add_argument(
 )
 parser.add_argument(
     "--pretrained_model_name",
-    default="64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2_fold-0__final.pt",
+    default="64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2_fold-0__best.pt",
     type=str,
     help="pretrained model name",
 )
@@ -336,32 +336,6 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
-    if args.checkpoint is not None and args.checkpoint:
-        temp = os.path.join(args.logdir, args.final_model_url)
-        if os.path.isfile(temp):
-            checkpoint = torch.load(temp, map_location="cpu")
-            from collections import OrderedDict
-
-            new_state_dict = OrderedDict()
-            for k, v in checkpoint["state_dict"].items():
-                new_state_dict[k.replace("backbone.", "")] = v
-            model.load_state_dict(new_state_dict, strict=False)
-            if "epoch" in checkpoint:
-                start_epoch = checkpoint["epoch"]
-            if "best_acc" in checkpoint:
-                best_acc = checkpoint["best_acc"]
-            warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
-                args.checkpoint, start_epoch, best_acc))
-
-    model.cuda(args.gpu)
-
-    if args.distributed:
-        torch.cuda.set_device(args.gpu)
-        if args.norm_name == "batch":
-            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
-        model.cuda(args.gpu)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
-                                                          find_unused_parameters=True)
     if args.optim_name == "adam":
         optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
     elif args.optim_name == "adamw":
@@ -383,6 +357,39 @@ def main_worker(gpu, args):
             scheduler.step(epoch=start_epoch)
     else:
         scheduler = None
+    if args.checkpoint is not None and args.checkpoint:
+        temp = os.path.join(args.logdir, args.final_model_url)
+        if os.path.isfile(temp):
+            checkpoint = torch.load(temp, map_location="cpu")
+            from collections import OrderedDict
+
+            new_state_dict = OrderedDict()
+            for k, v in checkpoint["state_dict"].items():
+                new_state_dict[k.replace("backbone.", "")] = v
+            model.load_state_dict(new_state_dict, strict=False)
+            if "epoch" in checkpoint:
+                start_epoch = checkpoint["epoch"]
+            if "best_acc" in checkpoint:
+                best_acc = checkpoint["best_acc"]
+            if 'optimizer' in checkpoint:
+                optimizer_temp = checkpoint['optimizer']
+                optimizer.load_state_dict(optimizer_temp)
+            if 'scheduler' in checkpoint:
+                scheduler_temp = checkpoint['scheduler']
+                scheduler.load_state_dict(scheduler_temp)
+            warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+                args.checkpoint, start_epoch, best_acc))
+
+    model.cuda(args.gpu)
+
+    if args.distributed:
+        torch.cuda.set_device(args.gpu)
+        if args.norm_name == "batch":
+            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
+        model.cuda(args.gpu)
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
+                                                          find_unused_parameters=True)
+
     semantic_classes = ["Dice_Val_TC", "Dice_Val_WT", "Dice_Val_ET"]
     accuracy = run_training(
         model=model,
