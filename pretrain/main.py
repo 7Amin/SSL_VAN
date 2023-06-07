@@ -2,24 +2,13 @@ import argparse
 import os
 import warnings
 import numpy as np
-import json
-import joblib
-from functools import partial
 
 import torch
 import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from pretrain.utils.data_utils import get_loader
-from models.van import VAN
-from models.van_v2 import VANV2
-from models.van_v3 import VANV3
-from models.van_v4 import VANV4
-from models.van_v4gl import VANV4GL
-from models.van_v5gl import VANV5GL
-from models.van_v6gl import VANV6GL
-from models.van_v4gl_v1 import VANV4GLV1
-from models.van_v4gl_v2 import VANV4GLV2
+from commons.model_factory import get_model
 from pretrain.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 from pretrain.training import run_training
 from pretrain.losses.loss import ClusteringLoss
@@ -112,54 +101,6 @@ def main():
         main_worker(gpu=0, args=args)
 
 
-def get_model(args):
-    if args.model_v == "VANV4":
-        model = VANV4(embed_dims=args.embed_dims,
-                      mlp_ratios=args.mlp_ratios,
-                      depths=args.depths,
-                      num_stages=args.num_stages,
-                      in_channels=args.in_channels,
-                      out_channels=args.out_channels,
-                      dropout_path_rate=args.dropout_path_rate,
-                      upsample=args.upsample)
-        return model
-
-    if args.model_v == "VANV3":
-        model = VANV3(embed_dims=args.embed_dims,
-                      mlp_ratios=args.mlp_ratios,
-                      depths=args.depths,
-                      num_stages=args.num_stages,
-                      in_channels=args.in_channels,
-                      out_channels=args.out_channels,
-                      dropout_path_rate=args.dropout_path_rate,
-                      upsample=args.upsample)
-        return model
-
-    if args.model_v == "VANV2":
-        model = VANV2(embed_dims=args.embed_dims,
-                      mlp_ratios=args.mlp_ratios,
-                      depths=args.depths,
-                      num_stages=args.num_stages,
-                      in_channels=args.in_channels,
-                      out_channels=args.out_channels,
-                      dropout_path_rate=args.dropout_path_rate,
-                      upsample=args.upsample)
-        return model
-
-    if args.model_v == "VAN":
-        model = VAN(embed_dims=args.embed_dims,
-                    mlp_ratios=args.mlp_ratios,
-                    depths=args.depths,
-                    num_stages=args.num_stages,
-                    in_channels=args.in_channels,
-                    out_channels=args.out_channels,
-                    dropout_path_rate=args.dropout_path_rate,
-                    upsample=args.upsample)
-        return model
-
-    return None
-
-
 def main_worker(gpu, args):
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
@@ -181,7 +122,6 @@ def main_worker(gpu, args):
 
     clustering_loss = ClusteringLoss(args.embedding_dim, args.max_cluster_size)
 
-
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
 
@@ -197,30 +137,6 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
-    if args.checkpoint is not None and args.checkpoint:
-        checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
-        from collections import OrderedDict
-
-        new_state_dict = OrderedDict()
-        for k, v in checkpoint["state_dict"].items():
-            new_state_dict[k.replace("backbone.", "")] = v
-        model.load_state_dict(new_state_dict, strict=False)
-        if "epoch" in checkpoint:
-            start_epoch = checkpoint["epoch"]
-        if "best_acc" in checkpoint:
-            best_acc = checkpoint["best_acc"]
-        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
-            args.checkpoint, start_epoch, best_acc))
-
-    model.cuda(args.gpu)
-
-    if args.distributed:
-        torch.cuda.set_device(args.gpu)
-        if args.norm_name == "batch":
-            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
-        model.cuda(args.gpu)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
-                                                          find_unused_parameters=True)
     if args.optim_name == "adam":
         optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
     elif args.optim_name == "adamw":
@@ -242,6 +158,37 @@ def main_worker(gpu, args):
             scheduler.step(epoch=start_epoch)
     else:
         scheduler = None
+    if args.checkpoint is not None and args.checkpoint:
+        checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
+        from collections import OrderedDict
+
+        new_state_dict = OrderedDict()
+        for k, v in checkpoint["state_dict"].items():
+            new_state_dict[k.replace("backbone.", "")] = v
+        model.load_state_dict(new_state_dict, strict=False)
+        if "epoch" in checkpoint:
+            start_epoch = checkpoint["epoch"]
+        if "best_acc" in checkpoint:
+            best_acc = checkpoint["best_acc"]
+        if 'optimizer' in checkpoint:
+            optimizer_temp = checkpoint['optimizer']
+            optimizer.load_state_dict(optimizer_temp)
+        if 'scheduler' in checkpoint:
+            scheduler_temp = checkpoint['scheduler']
+            scheduler.load_state_dict(scheduler_temp)
+        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+            args.checkpoint, start_epoch, best_acc))
+
+    model.cuda(args.gpu)
+
+    if args.distributed:
+        torch.cuda.set_device(args.gpu)
+        if args.norm_name == "batch":
+            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
+        model.cuda(args.gpu)
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
+                                                          find_unused_parameters=True)
+
     loss_value = run_training(
         model=model,
         train_loader=loader[0],
