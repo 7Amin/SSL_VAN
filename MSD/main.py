@@ -358,6 +358,27 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
+    if args.optim_name == "adam":
+        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
+    elif args.optim_name == "adamw":
+        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
+    elif args.optim_name == "sgd":
+        optimizer = torch.optim.SGD(
+            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
+        )
+    else:
+        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
+
+    if args.lrschedule == "warmup_cosine":
+        scheduler = LinearWarmupCosineAnnealingLR(
+            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
+        )
+    elif args.lrschedule == "cosine_anneal":
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
+        if args.checkpoint is not None and args.checkpoint:
+            scheduler.step(epoch=start_epoch)
+    else:
+        scheduler = None
     if args.checkpoint is not None and args.checkpoint:
         temp = os.path.join(args.logdir, args.final_model_url)
         if os.path.isfile(temp):
@@ -372,6 +393,12 @@ def main_worker(gpu, args):
                 start_epoch = checkpoint["epoch"]
             if "best_acc" in checkpoint:
                 best_acc = checkpoint["best_acc"]
+            if 'optimizer' in checkpoint:
+                optimizer_temp = checkpoint['optimizer']
+                optimizer.load_state_dict(optimizer_temp)
+            if 'scheduler' in checkpoint:
+                scheduler_temp = checkpoint['scheduler']
+                scheduler.load_state_dict(scheduler_temp)
             warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
                 args.checkpoint, start_epoch, best_acc))
 
@@ -384,28 +411,7 @@ def main_worker(gpu, args):
         model.cuda(args.gpu)
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
                                                           find_unused_parameters=True)
-    if args.optim_name == "adam":
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "adamw":
-        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "sgd":
-        optimizer = torch.optim.SGD(
-            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
-        )
-    else:
-        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
 
-
-    if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        )
-    elif args.lrschedule == "cosine_anneal":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None and args.checkpoint:
-            scheduler.step(epoch=start_epoch)
-    else:
-        scheduler = None
     accuracy = run_training(
         model=model,
         train_loader=loader[0],
