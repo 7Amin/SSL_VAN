@@ -243,9 +243,11 @@ def main_worker(gpu, args):
             if 'optimizer' in checkpoint:
                 optimizer_temp = checkpoint['optimizer']
                 optimizer.load_state_dict(optimizer_temp)
+                optimizer.cuda(args.gpu)
             if 'scheduler' in checkpoint:
                 scheduler_temp = checkpoint['scheduler']
                 scheduler.load_state_dict(scheduler_temp)
+                scheduler.cuda(args.gpu)
             warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
                 args.checkpoint, start_epoch, best_acc))
 
