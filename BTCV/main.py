@@ -79,7 +79,6 @@ parser.add_argument("--in_channels", default=1, type=int, help="number of input 
 parser.add_argument("--out_channels", default=14, type=int, help="number of output channels")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
 parser.add_argument("--logdir", default="./runs/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
-parser.add_argument("--resume_ckpt", action="store_true", help="resume training from pretrained checkpoint")
 parser.add_argument("--use_ssl_pretrained", action="store_true", help="use self-supervised pretrained weights")
 parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")
 parser.add_argument("--squared_dice", action="store_true", help="use squared Dice")
@@ -282,14 +281,7 @@ def main_worker(gpu, args):
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
     inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
-    # todo should remove this
-    pretrained_dir = args.pretrained_dir
     model = get_model(args)
-
-    if args.resume_ckpt:
-        model_dict = torch.load(os.path.join(pretrained_dir, args.pretrained_model_name))["state_dict"]
-        model.load_state_dict(model_dict)
-        print("Use pretrained weights")
 
     if args.use_ssl_pretrained:
         try:
