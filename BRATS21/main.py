@@ -11,7 +11,7 @@ import torch.distributed as dist
 from BRATS21.utils.data_utils import get_loader
 from commons.model_factory import get_model
 from commons.pre_trained_loader import load_pre_trained
-from BRATS21.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
+from commons.optimizer import get_optimizer, get_lr_schedule
 from BRATS21.trainer import run_training
 
 from monai.inferers import sliding_window_inference
@@ -168,27 +168,9 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
-    if args.optim_name == "adam":
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "adamw":
-        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "sgd":
-        optimizer = torch.optim.SGD(
-            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
-        )
-    else:
-        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
+    optimizer = get_optimizer(model, args)
+    scheduler = get_lr_schedule(args, optimizer, start_epoch)
 
-    if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        )
-    elif args.lrschedule == "cosine_anneal":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None and args.checkpoint:
-            scheduler.step(epoch=start_epoch)
-    else:
-        scheduler = None
     if args.checkpoint is not None and args.checkpoint:
         temp = os.path.join(args.logdir, args.final_model_url)
         if os.path.isfile(temp):
@@ -203,9 +185,10 @@ def main_worker(gpu, args):
                 start_epoch = checkpoint["epoch"]
             if "best_acc" in checkpoint:
                 best_acc = checkpoint["best_acc"]
-            # if 'optimizer' in checkpoint:
-            #     optimizer_temp = checkpoint['optimizer']
-            #     optimizer.load_state_dict(optimizer_temp)
+            if 'optimizer' in checkpoint:
+                optimizer = get_optimizer(model, args)
+                # optimizer_temp = checkpoint['optimizer']
+                # optimizer.load_state_dict(optimizer_temp)
             if 'scheduler' in checkpoint:
                 scheduler_temp = checkpoint['scheduler']
                 scheduler.load_state_dict(scheduler_temp)

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 from monai.utils import ensure_tuple_rep
-from models.util_models.van_3d import VAN3D
+from commons.models.util_models.van_3d import VAN3D
 
 
 class VAN(nn.Module):

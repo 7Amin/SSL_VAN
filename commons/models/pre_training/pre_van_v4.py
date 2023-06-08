@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 
-from models.util_models.van_3d import VAN3D
+from commons.models.util_models.van_3d import VAN3D
 
 
-class VANV4(nn.Module):
+class PREVANV4(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv"):
-        super(VANV4, self).__init__()
+        super(PREVANV4, self).__init__()
         self.van3d = VAN3D(in_chans=in_channels, drop_path_rate=dropout_path_rate, embed_dims=embed_dims,
                            mlp_ratios=mlp_ratios, depths=depths, num_stages=num_stages)
 
@@ -46,7 +46,7 @@ class VANV4(nn.Module):
                 nn.LeakyReLU(),
                 )
 
-        self.final_conv1 = nn.Sequential(
+        self.proj = nn.Sequential(
                 nn.Conv3d(out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
                           out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
@@ -101,6 +101,6 @@ class VANV4(nn.Module):
         x = self.final_conv0(x)
         x = final_upsample(x)
         x = torch.cat((first_x, x), dim=1)
-        x = self.final_conv1(x)
+        x = self.proj(x)
 
         return x

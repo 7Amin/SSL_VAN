@@ -1,12 +1,12 @@
-from models.van import VAN
-from models.van_v2 import VANV2
-from models.van_v3 import VANV3
-from models.van_v4 import VANV4
-from models.van_v4gl import VANV4GL
-from models.van_v5gl import VANV5GL
-from models.van_v6gl import VANV6GL
-from models.van_v4gl_v1 import VANV4GLV1
-from models.van_v4gl_v2 import VANV4GLV2
+from commons.models.van import VAN
+from commons.models.van_v2 import VANV2
+from commons.models.van_v3 import VANV3
+from commons.models.van_v4 import VANV4
+from commons.models.van_v4gl import VANV4GL
+from commons.models.van_v5gl import VANV5GL
+from commons.models.van_v6gl import VANV6GL
+from commons.models.van_v4gl_v1 import VANV4GLV1
+from commons.models.van_v4gl_v2 import VANV4GLV2
 
 
 def get_model(args):

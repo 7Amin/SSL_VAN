@@ -10,7 +10,7 @@ def load_pre_trained(args, model):
     state_dict = model_dict["state_dict"]
 
     if "VANV4GL" in args.model_v or "VANV4GLV1" in args.model_v\
-            or "VANV4GLV2" in args.model_v or "VANV5GL" in args.model_v:
+            or "VANV4GLV2" in args.model_v or "VANV5GL" in args.model_v or "VANV6GL" in args.model_v:
         for key in list(state_dict.keys()):
             if "van" in key:
                 new_state_dict[key] = state_dict.pop(key)

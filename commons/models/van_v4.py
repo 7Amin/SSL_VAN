@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 
-from models.util_models.van_3d import VAN3D
+from commons.models.util_models.van_3d import VAN3D
 
 
-class VANV6(nn.Module):
+class VANV4(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv"):
-        super(VANV6, self).__init__()
+        super(VANV4, self).__init__()
         self.van3d = VAN3D(in_chans=in_channels, drop_path_rate=dropout_path_rate, embed_dims=embed_dims,
                            mlp_ratios=mlp_ratios, depths=depths, num_stages=num_stages)
 
@@ -38,21 +38,23 @@ class VANV6(nn.Module):
             )
 
         self.final_conv0 = nn.Sequential(
-                nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
-                          kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 2 ** num_stages),
+                nn.Conv3d(embed_dims[-1] // 2 ** num_stages, out_channels, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
-                nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
-                          kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 2 ** num_stages),
+                nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
                 )
 
         self.final_conv1 = nn.Sequential(
-                nn.Conv3d(embed_dims[-1] // 2 ** num_stages + embed_dims[-1] // 2 ** (num_stages - 1),
+                nn.Conv3d(out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
                           out_channels, kernel_size=3, stride=1, padding=1),
                 nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
+                nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(out_channels),
+                nn.LeakyReLU(),
+                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
                 )
 
         if upsample == "deconv":
@@ -72,9 +74,8 @@ class VANV6(nn.Module):
                     nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
                 setattr(self, f"upsample{i}", upsample)
             upsample = nn.Sequential(
-                nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
-                          kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(embed_dims[-1] // 2 ** num_stages),
+                nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
+                nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
                 nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
             setattr(self, f"final_upsample", upsample)

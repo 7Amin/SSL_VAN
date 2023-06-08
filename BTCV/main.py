@@ -11,7 +11,7 @@ import torch.distributed as dist
 from BTCV.utils.data_utils import get_loader
 from commons.model_factory import get_model
 from commons.pre_trained_loader import load_pre_trained
-from BTCV.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
+from commons.optimizer import get_optimizer, get_lr_schedule
 from BTCV.trainer import run_training
 
 from monai.inferers import sliding_window_inference
@@ -175,34 +175,9 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
-    if args.optim_name == "adam":
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "adamw":
-        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "sgd":
-        optimizer = torch.optim.SGD(
-            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
-        )
-    else:
-        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
+    optimizer = get_optimizer(model, args)
+    scheduler = get_lr_schedule(args, optimizer, start_epoch)
 
-    # The argument --warmup_epochs is an integer that represents the number of warm-up epochs used in training a
-    # machine learning model. During warm-up, the learning rate is gradually increased from a very small value to
-    # its full value over a certain number of epochs. This helps to prevent the model from getting stuck in local
-    # minima and can improve convergence speed and stability.
-    # 1 - Set the initial learning rate to a small value, say 0.001.
-    # 2 - Gradually increase the learning rate over the first 10 epochs to its full value, say 0.01.
-    # 3 - Continue training with a constant learning rate of 0.01 for the remaining epochs.
-    if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        )
-    elif args.lrschedule == "cosine_anneal":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None and args.checkpoint:
-            scheduler.step(epoch=start_epoch)
-    else:
-        scheduler = None
     if args.checkpoint is not None and args.checkpoint:
         temp = os.path.join(args.logdir, args.final_model_url)
         if os.path.isfile(temp):
@@ -217,9 +192,10 @@ def main_worker(gpu, args):
                 start_epoch = checkpoint["epoch"]
             if "best_acc" in checkpoint:
                 best_acc = checkpoint["best_acc"]
-            # if 'optimizer' in checkpoint:
-            #     optimizer_temp = checkpoint['optimizer']
-            #     optimizer.load_state_dict(optimizer_temp)
+            if 'optimizer' in checkpoint:
+                optimizer = get_optimizer(model, args)
+                # optimizer_temp = checkpoint['optimizer']
+                # optimizer.load_state_dict(optimizer_temp)
             if 'scheduler' in checkpoint:
                 scheduler_temp = checkpoint['scheduler']
                 scheduler.load_state_dict(scheduler_temp)
