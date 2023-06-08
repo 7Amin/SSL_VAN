@@ -2,11 +2,13 @@ import torch
 import torch.nn as nn
 
 from commons.models.van_v5 import VANV5
+from commons.models.pre_training.pretrain_projection import Projection
 
 
 class PREVANV5GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
-                 upsample="deconv", patch_count=2):
+                 upsample="deconv", patch_count=2, cluster_num=400, class_size=600, embed_dim=256, x_dim=96, y_dim=96,
+                 z_dim=96):
         super(PREVANV5GL, self).__init__()
         self.patch_count = patch_count
         for i in range(patch_count):
@@ -17,12 +19,8 @@ class PREVANV5GL(nn.Module):
                                                            dropout_path_rate, upsample))
         self.van = VANV5(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
-        self.conv = nn.Sequential(
-                nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
-                nn.InstanceNorm3d(out_channels),
-                nn.GELU(),
-                nn.Conv3d(out_channels, out_channels, kernel_size=1, stride=1),
-                )
+        self.proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                               cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
 
     def forward(self, x):
         #  x is b, c, seq, w, h
@@ -66,6 +64,6 @@ class PREVANV5GL(nn.Module):
 
         # print(f"res_t0s.shape is {res_t0s.shape}")
         x = self.van(x) + res_t0s
-        x = self.conv(x)
+        x = self.proj(x)
         # print(f"x.shape is {x.shape}")
         return x

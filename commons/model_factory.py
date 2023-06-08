@@ -137,7 +137,13 @@ def get_pre_trained_model(args):
                            out_channels=args.out_channels,
                            dropout_path_rate=args.dropout_path_rate,
                            upsample=args.upsample,
-                           patch_count=args.patch_count)
+                           patch_count=args.patch_count,
+                           cluster_num=args.cluster_num,
+                           class_size=args.class_size,
+                           embed_dim=args.embed_dim,
+                           x_dim=args.roi_x,
+                           y_dim=args.roi_y,
+                           z_dim=args.roi_z)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -150,7 +156,13 @@ def get_pre_trained_model(args):
                            out_channels=args.out_channels,
                            dropout_path_rate=args.dropout_path_rate,
                            upsample=args.upsample,
-                           patch_count=args.patch_count)
+                           patch_count=args.patch_count,
+                           cluster_num=args.cluster_num,
+                           class_size=args.class_size,
+                           embed_dim=args.embed_dim,
+                           x_dim=args.roi_x,
+                           y_dim=args.roi_y,
+                           z_dim=args.roi_z)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -163,7 +175,13 @@ def get_pre_trained_model(args):
                            out_channels=args.out_channels,
                            dropout_path_rate=args.dropout_path_rate,
                            upsample=args.upsample,
-                           patch_count=args.patch_count)
+                           patch_count=args.patch_count,
+                           cluster_num=args.cluster_num,
+                           class_size=args.class_size,
+                           embed_dim=args.embed_dim,
+                           x_dim=args.roi_x,
+                           y_dim=args.roi_y,
+                           z_dim=args.roi_z)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -175,7 +193,13 @@ def get_pre_trained_model(args):
                          in_channels=args.in_channels,
                          out_channels=args.out_channels,
                          dropout_path_rate=args.dropout_path_rate,
-                         upsample=args.upsample)
+                         upsample=args.upsample,
+                         cluster_num=args.cluster_num,
+                         class_size=args.class_size,
+                         embed_dim=args.embed_dim,
+                         x_dim=args.roi_x,
+                         y_dim=args.roi_y,
+                         z_dim=args.roi_z)
         return model
 
     return None
