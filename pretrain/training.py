@@ -15,7 +15,24 @@ from torch.cuda.amp import GradScaler, autocast
 from utils.utils import AverageMeter, distributed_all_gather
 
 
-def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters):
+def get_target(data, clusters, embed_dim, embed_number_values):
+    data_numpy = data.detach.numpy()
+    b, z, x, y = data.shape
+    merged_array = np.reshape(data_numpy, (b * z, x * y))
+    target = np.zeros((b, z, len(clusters), embed_dim))
+    for index, cluster in enumerate(clusters):
+        temp = cluster.predict(merged_array)
+        temp = temp.reshape((b, z))
+        warnings.warn("temp shape".format(temp.shape))
+        for i in range(b):
+            for j in range(z):
+                embed_value = embed_number_values(temp[i][j])
+                target[i, j, index] = embed_value
+
+    return target
+
+
+def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim, embed_number_values):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
@@ -25,16 +42,9 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         else:
             data, _ = batch_data["image"], batch_data["label"]
         data = data.cuda(args.rank)
-        data_numpy = data.numpy()
-        merged_array = np.reshape(data_numpy,
-                                  (data_numpy.shape[0] * data_numpy.shape[1],
-                                   data_numpy.shape[2] * data_numpy.shape[3]))
-        target = np.zeros((data_numpy.shape[0], data_numpy.shape[1], len(clusters)))
-        for index, cluster in enumerate(clusters):
-            temp = cluster.predict(merged_array)
-            temp = temp.reshape((data_numpy.shape[0], data_numpy.shape[1]))
-            target[:, :, index] = temp
+        target = get_target(data, clusters, embed_dim, embed_number_values)
 
+        data = data.unsqueeze(1)  # add channel to data
         data = apply_mask(data, args)
         for param in model.parameters():
             param.grad = None
@@ -86,6 +96,8 @@ def run_training(
     args,
     scheduler=None,
     start_epoch=0,
+    embed_dim=512,
+    embed_number_values=None
 ):
     writer = None
     if args.logdir is not None and args.rank == 0:
@@ -105,7 +117,7 @@ def run_training(
         epoch_time = time.time()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func,
-            args=args, clusters=clusters
+            args=args, clusters=clusters, embed_dim=embed_dim, embed_number_values=embed_number_values
         )
         if args.rank == 0:
             warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,

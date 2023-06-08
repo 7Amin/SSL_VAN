@@ -2,6 +2,7 @@ import argparse
 import os
 import warnings
 import numpy as np
+import json
 
 import torch
 import torch.multiprocessing as mp
@@ -33,8 +34,8 @@ parser.add_argument(
     type=str,
     help="pretrained model name",
 )
-parser.add_argument("--a_min", default=-175.0, type=float, help="a_min in ScaleIntensityRanged")
-parser.add_argument("--a_max", default=250.0, type=float, help="a_max in ScaleIntensityRanged")
+parser.add_argument("--a_min", default=-1000, type=float, help="a_min in ScaleIntensityRanged")
+parser.add_argument("--a_max", default=1000, type=float, help="a_max in ScaleIntensityRanged")
 parser.add_argument("--b_min", default=0.0, type=float, help="b_min in ScaleIntensityRanged")
 parser.add_argument("--b_max", default=1.0, type=float, help="b_max in ScaleIntensityRanged")
 parser.add_argument("--sw_batch_size", default=4, type=int, help="number of sliding window batch size")
@@ -86,12 +87,13 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                       'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL"])
+parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL',
+                                                                          'PREVANV4GL', 'PREVANV4'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--mask_length", default=10, type=int, help="an integer value")
 parser.add_argument("--phi_1", default=0.8, type=float, help="see paper")
 parser.add_argument("--phi_2", default=0.5, type=float, help="see paper")
+parser.add_argument("--embed_dim", default=256, type=int, help="output embed dimension")
 
 
 def main():
@@ -104,6 +106,13 @@ def main():
         mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
     else:
         main_worker(gpu=0, args=args)
+
+
+def load_number_embedding_values():
+    url = "../number_embedding/embedded_values.json"
+    with open(url, 'r') as file:
+        res = json.load(file)
+    return res
 
 
 def main_worker(gpu, args):
@@ -193,6 +202,7 @@ def main_worker(gpu, args):
         model.cuda(args.gpu)
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
                                                           find_unused_parameters=True)
+    embed_number_values = load_number_embedding_values()
 
     loss_value = run_training(
         model=model,
@@ -202,6 +212,8 @@ def main_worker(gpu, args):
         args=args,
         scheduler=scheduler,
         start_epoch=start_epoch,
+        embed_dim=args.embed_dim,
+        embed_number_values=embed_number_values
     )
     return loss_value
 

@@ -51,7 +51,7 @@ def get_loader(args):
     datadir1 = "/media/amin/SP PHD U3/CT_Segmentation_Images/3D/LUNA_16"
     datadir2 = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIAcovid19"
     datadir3 = "/media/amin/Amin/CT_Segmentation_Images/3D/HNSCC"
-    datadir4 = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIA_CT_Colonography_Trial"
+    datadir4 = "/media/amin/Amin/CT_Segmentation_Images/3D/TCIA_CT_Colonography_Trial/images"
     datadir5 = "/media/amin/SP PHD U3/CT_Segmentation_Images/3D/TCIA_LIDC"
 
     if args.mode == "server":
