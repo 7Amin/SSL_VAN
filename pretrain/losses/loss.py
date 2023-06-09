@@ -32,6 +32,7 @@ class ClusteringLoss(nn.Module):
         super(ClusteringLoss, self).__init__()
 
     def forward(self, outputs, targets, mask, apply_mask=True):
+        tai = 0.1
         target_shape = targets.shape  # (b, seq, cluster_number, embedding_dim)
         pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size, embedding_dim)
 
@@ -43,6 +44,7 @@ class ClusteringLoss(nn.Module):
         similarity = F.cosine_similarity(targets_reshaped.unsqueeze(1), outputs_reshaped, dim=-1)
         similarity = similarity.view(*target_shape[:-1], pred_shape[-2])  # (b, seq, cluster_number, max_cluster_size)
 
+        similarity = similarity * tai
         # apply softmax along the embedding dimension
         probabilities = F.softmax(similarity, dim=-1)
 
