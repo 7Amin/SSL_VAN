@@ -90,6 +90,7 @@ parser.add_argument("--model_inferer", default='inferer', type=str, choices=['no
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL',
                                                                           'PREVANV4GL', 'PREVANV4'])
+parser.add_argument("--mode", default='server', type=str, choices=['server', 'test'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--mask_length", default=10, type=int, help="an integer value")
 parser.add_argument("--phi_1", default=0.8, type=float, help="see paper")
