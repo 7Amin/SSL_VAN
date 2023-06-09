@@ -32,7 +32,6 @@ class ClusteringLoss(nn.Module):
         super(ClusteringLoss, self).__init__()
 
     def forward(self, outputs, targets, mask, apply_mask=True):
-        b, seq, cluster_number, max_cluster_size, embedding_dim = outputs.shape
         target_shape = targets.shape  # (b, seq, cluster_number, embedding_dim)
         pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size, embedding_dim)
 
@@ -46,6 +45,10 @@ class ClusteringLoss(nn.Module):
 
         # apply softmax along the embedding dimension
         probabilities = F.softmax(similarity, dim=-1)
+
+        if apply_mask:
+            expanded_mask = mask.unsqueeze(-1).unsqueeze(-1).bool()
+            probabilities = torch.masked_select(probabilities, expanded_mask)
 
         # Calculate negative log-likelihood loss
         loss = -torch.log(probabilities + 1e-8).mean()
@@ -62,19 +65,22 @@ def get_loss(loss_name, args):
         return torch.nn.L1Loss().to(args.device)
     if loss_name == 'MSELoss':
         return torch.nn.MSELoss().to(args.device)
+    if loss_name == "ClusteringLoss":
+        return ClusteringLoss()
 
 
-def test():
-    embedding_dim = 5
-    max_cluster_size = 15
-    b = 4
-    seq = 96
-    cluster_number = 25
-    loss_func = ClusteringLoss()
-    target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
-    output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
-    loss_value = loss_func(output_matrix, target_matrix)
-    print(loss_value)
-
-
-test()
+# def test():
+#     embedding_dim = 5
+#     max_cluster_size = 15
+#     b = 4
+#     seq = 96
+#     cluster_number = 25
+#     loss_func = ClusteringLoss()
+#     target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
+#     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
+#     mask_matrix = torch.randint(0, 2, size=(b, seq))
+#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, False)
+#     print(loss_value)
+#
+#
+# test()
