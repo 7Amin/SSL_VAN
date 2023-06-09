@@ -10,7 +10,7 @@ import torch.distributed as dist
 
 from pretrain.utils.data_utils import get_loader
 from commons.model_factory import get_model
-from pretrain.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
+from commons.optimizer import get_optimizer, get_lr_schedule
 from pretrain.training import run_training
 from pretrain.losses.loss import ClusteringLoss
 
@@ -69,7 +69,8 @@ parser.add_argument("--out_channels", default=14, type=int, help="number of outp
 parser.add_argument("--embedding_dim", default=128, type=int, help="embed value for clustering representor")
 parser.add_argument("--max_cluster_size", default=512, type=int, help="maximum number of cluster size in clustering")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
-parser.add_argument("--logdir", default="./runs/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
+parser.add_argument("--logdir", default="./runs/pre_train_1/test_log", type=str,
+                    help="directory to save the tensorboard logs")
 parser.add_argument("--resume_ckpt", action="store_true", help="resume training from pretrained checkpoint")
 parser.add_argument("--use_ssl_pretrained", action="store_true", help="use self-supervised pretrained weights")
 parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")
@@ -154,27 +155,9 @@ def main_worker(gpu, args):
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
-    if args.optim_name == "adam":
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "adamw":
-        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
-    elif args.optim_name == "sgd":
-        optimizer = torch.optim.SGD(
-            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
-        )
-    else:
-        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
+    optimizer = get_optimizer(model, args)
+    scheduler = get_lr_schedule(args, optimizer, start_epoch)
 
-    if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        )
-    elif args.lrschedule == "cosine_anneal":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None and args.checkpoint:
-            scheduler.step(epoch=start_epoch)
-    else:
-        scheduler = None
     if args.checkpoint is not None and args.checkpoint:
         checkpoint = torch.load(os.path.join(args.logdir, args.final_model_url), map_location="cpu")
         from collections import OrderedDict
@@ -187,7 +170,8 @@ def main_worker(gpu, args):
             start_epoch = checkpoint["epoch"]
         if "best_acc" in checkpoint:
             best_acc = checkpoint["best_acc"]
-        # if 'optimizer' in checkpoint:
+        if 'optimizer' in checkpoint:
+            optimizer = get_optimizer(model, args)
         #     optimizer_temp = checkpoint['optimizer']
         #     optimizer.load_state_dict(optimizer_temp)
         if 'scheduler' in checkpoint:
