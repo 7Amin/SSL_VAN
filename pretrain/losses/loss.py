@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+import torch.nn.functional as F
 import numpy as np
 
 
@@ -27,32 +28,29 @@ def get_IoU(predictions, targets, args):
 
 
 class ClusteringLoss(nn.Module):
-    def __init__(self, embedding_dim, max_cluster_size):
+    def __init__(self):
         super(ClusteringLoss, self).__init__()
-        self.max_cluster_size = max_cluster_size
-        self.embedding_dim = embedding_dim
-        self.embedding = nn.Embedding(max_cluster_size, embedding_dim)
 
-    def forward(self, outputs, targets):
-        b, seq, cluster_number = targets.shape
-        targets_new = targets.unsqueeze(-1)
-        targets_new = targets_new.view(b * seq * cluster_number, 1)
-        targets_new = self.embedding(targets_new)
-        targets_new = targets_new.view(b, seq, cluster_number, self.embedding_dim)
+    def forward(self, outputs, targets, mask, apply_mask=True):
+        b, seq, cluster_number, max_cluster_size, embedding_dim = outputs.shape
+        target_shape = targets.shape  # (b, seq, cluster_number, embedding_dim)
+        pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size, embedding_dim)
 
-        cos_sim = torch.nn.functional.cosine_similarity(outputs, targets_new.unsqueeze(3), dim=-1)
+        targets_reshaped = targets.view(-1, target_shape[-1])  # (b * seq * cluster_number, embedding_dim)
+        # (b * seq * cluster_number, max_cluster_size, embedding_dim)
+        outputs_reshaped = outputs.view(-1, pred_shape[-2], pred_shape[-1])
+
+        # Calculate cosine similarity
+        similarity = F.cosine_similarity(targets_reshaped.unsqueeze(1), outputs_reshaped, dim=-1)
+        similarity = similarity.view(*target_shape[:-1], pred_shape[-2])  # (b, seq, cluster_number, max_cluster_size)
 
         # apply softmax along the embedding dimension
-        softmax_cos_sim = torch.nn.functional.softmax(cos_sim, dim=-1)
-        # res = softmax_cos_sim[b, seq, cluster_number, targets]
-        res = softmax_cos_sim[np.arange(b)[:, np.newaxis, np.newaxis],
-                              np.arange(seq)[:, np.newaxis],
-                              np.arange(cluster_number),
-                              targets]
-        res = torch.log(res)
-        res = res.sum(dim=(-2, -1)) / (seq * cluster_number * -1.0)
+        probabilities = F.softmax(similarity, dim=-1)
 
-        return res
+        # Calculate negative log-likelihood loss
+        loss = -torch.log(probabilities + 1e-8).mean()
+
+        return loss
 
 
 def get_loss(loss_name, args):
@@ -66,17 +64,17 @@ def get_loss(loss_name, args):
         return torch.nn.MSELoss().to(args.device)
 
 
-# def test():
-#     embedding_dim = 5
-#     max_cluster_size = 15
-#     b = 4
-#     seq = 96
-#     cluster_number = 25
-#     loss_func = ClusteringLoss(embedding_dim, max_cluster_size)
-#     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
-#     target_matrix = torch.randint(0, max_cluster_size, (b, seq, cluster_number))
-#     loss_value = loss_func(output_matrix, target_matrix)
-#     print(loss_value)
-#
-#
-# test()
+def test():
+    embedding_dim = 5
+    max_cluster_size = 15
+    b = 4
+    seq = 96
+    cluster_number = 25
+    loss_func = ClusteringLoss()
+    target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
+    output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
+    loss_value = loss_func(output_matrix, target_matrix)
+    print(loss_value)
+
+
+test()
