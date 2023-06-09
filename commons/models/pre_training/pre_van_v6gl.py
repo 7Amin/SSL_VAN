@@ -19,8 +19,8 @@ class PREVANV6GL(nn.Module):
                                                            dropout_path_rate, upsample))
         self.van = VANV6(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
-        self.proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
-                               cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        self.pre_train_proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                         cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
 
     def forward(self, x):
         #  x is b, c, seq, w, h
@@ -63,5 +63,5 @@ class PREVANV6GL(nn.Module):
                 res_t1s = None
 
         x = self.van(x) + res_t0s
-        x = self.proj(x)
+        x = self.pre_train_proj(x)
         return x

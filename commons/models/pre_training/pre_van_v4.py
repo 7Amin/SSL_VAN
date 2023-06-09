@@ -47,9 +47,9 @@ class PREVANV4(nn.Module):
                 nn.LeakyReLU(),
                 )
 
-        self.proj = Projection(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
-                               x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
-                               cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        self.pre_train_proj = Projection(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
+                                         x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                         cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
 
         if upsample == "deconv":
             for i in range(num_stages):
@@ -95,6 +95,6 @@ class PREVANV4(nn.Module):
         x = self.final_conv0(x)
         x = final_upsample(x)
         x = torch.cat((first_x, x), dim=1)
-        x = self.proj(x)
+        x = self.pre_train_proj(x)
 
         return x
