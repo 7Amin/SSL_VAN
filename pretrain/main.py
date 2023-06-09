@@ -96,6 +96,7 @@ parser.add_argument("--phi_2", default=0.5, type=float, help="see paper")
 parser.add_argument("--embed_dim", default=256, type=int, help="output embed dimension")
 parser.add_argument("--class_size", default=600, type=int, help="size of class per cluster")
 parser.add_argument("--cluster_num", default=400, type=int, help="number of clusters")
+parser.add_argument("--apply_mask", default=True, type=bool, help="applying mask for calculating loss")
 
 
 def main():
@@ -136,7 +137,7 @@ def main_worker(gpu, args):
 
     model = get_model(args)
 
-    clustering_loss = ClusteringLoss(args.embedding_dim, args.max_cluster_size)
+    clustering_loss = ClusteringLoss()
 
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")

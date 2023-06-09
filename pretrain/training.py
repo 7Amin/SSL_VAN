@@ -45,12 +45,12 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         target = get_target(data, clusters, embed_dim, embed_number_values)
 
         data = data.unsqueeze(1)  # add channel to data
-        data = apply_mask(data, args)
+        data, mask = apply_mask(data, args)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
             logits = model(data)
-            loss = loss_func(logits, target)
+            loss = loss_func(outputs=logits, targets=target, mask=mask, apply_mask=args.apply_mask)
         if args.amp:
             scaler.scale(loss).backward()
             scaler.step(optimizer)
