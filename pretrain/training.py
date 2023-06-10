@@ -41,9 +41,10 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             data, _ = batch_data
         else:
             data = batch_data["image"]
-        data = data.cuda(args.rank)
-        target = get_target(data, clusters, embed_dim, embed_number_values)
 
+        target = get_target(data, clusters, embed_dim, embed_number_values)
+        data = data.cuda(args.rank)
+        target = target.cuda(args.rank)
         data = data.unsqueeze(1)  # add channel to data
         data, mask = apply_mask(data, args)
         for param in model.parameters():
