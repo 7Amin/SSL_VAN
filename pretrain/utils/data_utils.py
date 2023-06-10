@@ -90,7 +90,7 @@ def get_loader(args):
     train_transforms = Compose(
         [
             LoadImaged(keys=["image"]),
-            # AddChanneld(keys=["image"]),
+            AddChanneld(keys=["image"]),
             Orientationd(keys=["image"], axcodes="RAS"),
             ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
