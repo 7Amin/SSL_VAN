@@ -16,7 +16,7 @@ from utils.utils import AverageMeter, distributed_all_gather
 
 
 def get_target(data, clusters, embed_dim, embed_number_values):
-    data_numpy = data.detach.numpy()
+    data_numpy = data.detach().numpy()
     b, z, x, y = data.shape
     merged_array = np.reshape(data_numpy, (b * z, x * y))
     target = np.zeros((b, z, len(clusters), embed_dim))
