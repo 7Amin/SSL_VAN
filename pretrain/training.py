@@ -18,7 +18,7 @@ from utils.utils import AverageMeter, distributed_all_gather
 def get_target(data, clusters, embed_dim, embed_number_values):
     data_numpy = data.detach().numpy()
     b, z, x, y = data.shape
-    merged_array = np.reshape(data_numpy, (b * z, x * y))
+    merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.float32)
     target = np.zeros((b, z, len(clusters), embed_dim))
     for index, cluster in enumerate(clusters):
         temp = cluster.predict(merged_array)
@@ -43,7 +43,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             data = batch_data["image"]
 
         print(data.shape)
-        data = data.float()
+        # data = data.float()
         data = data.squeeze()
         print(data.shape)
         target = get_target(data, clusters, embed_dim, embed_number_values)
