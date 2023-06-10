@@ -114,7 +114,7 @@ def main():
 
 
 def load_number_embedding_values():
-    url = "../number_embedding/embedded_values.json"
+    url = "./number_embedding/embedded_values.json"
     with open(url, 'r') as file:
         res = json.load(file)
     return res
