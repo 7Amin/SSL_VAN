@@ -40,7 +40,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         if isinstance(batch_data, list):
             data, _ = batch_data
         else:
-            data, _ = batch_data["image"], batch_data["label"]
+            data = batch_data["image"]
         data = data.cuda(args.rank)
         target = get_target(data, clusters, embed_dim, embed_number_values)
 
