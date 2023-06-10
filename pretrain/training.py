@@ -38,10 +38,12 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
     run_loss = AverageMeter()
     for idx, batch_data in enumerate(loader):
         if isinstance(batch_data, list):
-            data, _ = batch_data
+            data = batch_data
         else:
             data = batch_data["image"]
 
+        print(data)
+        print(data.shape)
         target = get_target(data, clusters, embed_dim, embed_number_values)
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
