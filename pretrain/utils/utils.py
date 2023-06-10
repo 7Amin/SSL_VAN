@@ -74,7 +74,11 @@ def load_clusters(json_path='./cluster_paths.json'):
     res = []
     f = open(json_path)
     models_path = json.load(f)
+    print(json_path)
     for model_path in models_path:
-        loaded_model = joblib.load(model_path)
+        loaded_model = joblib.load(model_path['url'])
         res.append(loaded_model)
     return res
+
+
+# load_clusters('./../../cluster_paths.json')
