@@ -196,7 +196,7 @@ def main_worker(gpu, args):
 
     loss_value = run_training(
         model=model,
-        train_loader=loader[0],
+        train_loader=loader,
         optimizer=optimizer,
         loss_func=clustering_loss,
         args=args,
