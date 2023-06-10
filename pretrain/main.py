@@ -9,7 +9,7 @@ import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from pretrain.utils.data_utils import get_loader
-from commons.model_factory import get_model
+from commons.model_factory import get_pre_trained_model
 from commons.optimizer import get_optimizer, get_lr_schedule
 from pretrain.training import run_training
 from pretrain.losses.loss import ClusteringLoss
@@ -137,7 +137,7 @@ def main_worker(gpu, args):
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
 
-    model = get_model(args)
+    model = get_pre_trained_model(args)
 
     clustering_loss = ClusteringLoss()
 
