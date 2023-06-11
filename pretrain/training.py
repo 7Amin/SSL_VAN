@@ -15,12 +15,15 @@ from torch.cuda.amp import GradScaler, autocast
 from utils.utils import AverageMeter, distributed_all_gather
 
 
-def get_target(data, clusters, embed_dim, embed_number_values):
+def get_target(data, clusters, embed_dim, embed_number_values, args):
     data_numpy = data.detach().numpy()
     b, z, x, y = data.shape
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
-    target = np.zeros((b, z, len(clusters), embed_dim))
+
+    target = np.zeros((b, z, args.cluster_num, embed_dim))
     for index, cluster in enumerate(clusters):
+        if index >= args.cluster_num:
+            continue
         temp = cluster.predict(merged_array)
         temp = temp.reshape((b, z))
         for i in range(b):
@@ -42,7 +45,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         else:
             data = batch_data["image"]
         data = data.squeeze(dim=1)
-        target = get_target(data, clusters, embed_dim, embed_number_values)
+        target = get_target(data, clusters, embed_dim, embed_number_values, args)
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
         data = data.unsqueeze(1)
