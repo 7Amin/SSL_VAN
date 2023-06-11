@@ -41,7 +41,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             data = batch_data
         else:
             data = batch_data["image"]
-        data = data.squeeze()
+        data = data.squeeze(dim=1)
         target = get_target(data, clusters, embed_dim, embed_number_values)
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
