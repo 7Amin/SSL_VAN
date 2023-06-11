@@ -29,7 +29,7 @@ def get_target(data, clusters, embed_dim, embed_number_values):
         warnings.warn("temp shape".format(temp.shape))
         for i in range(b):
             for j in range(z):
-                embed_value = embed_number_values(temp[i][j])
+                embed_value = embed_number_values[int(temp[i][j])]
                 target[i, j, index] = embed_value
 
     return target
