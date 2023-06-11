@@ -19,21 +19,17 @@ def get_target(data, clusters, embed_dim, embed_number_values):
     data_numpy = data.detach().numpy()
     b, z, x, y = data.shape
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
-    print(merged_array.dtype)
     target = np.zeros((b, z, len(clusters), embed_dim))
     for index, cluster in enumerate(clusters):
-        print(cluster)
-        print(index)
         temp = cluster.predict(merged_array)
         temp = temp.reshape((b, z))
         for i in range(b):
             for j in range(z):
                 key_ = str(int(temp[i][j]))
-                print(key_)
                 embed_value = embed_number_values[key_]
                 target[i, j, index] = embed_value
 
-    return torch.from_numpy(target)
+    return torch.from_numpy(target).float()
 
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim, embed_number_values):
@@ -45,12 +41,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             data = batch_data
         else:
             data = batch_data["image"]
-
-        print(data.shape)
-        # data = data.float()
         data = data.squeeze()
-        print(data.shape)
-        # print(data.dtype)
         target = get_target(data, clusters, embed_dim, embed_number_values)
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
