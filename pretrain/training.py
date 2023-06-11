@@ -23,7 +23,7 @@ def get_target(data, clusters, embed_dim, embed_number_values, args):
     target = np.zeros((b, z, args.cluster_num, embed_dim))
     for index, cluster in enumerate(clusters):
         if index >= args.cluster_num:
-            continue
+            break
         temp = cluster.predict(merged_array)
         temp = temp.reshape((b, z))
         for i in range(b):
