@@ -21,21 +21,19 @@ def get_target(data, clusters, embed_dim, embed_number_values):
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
     print(merged_array.dtype)
     target = np.zeros((b, z, len(clusters), embed_dim))
-    print(embed_number_values)
     for index, cluster in enumerate(clusters):
         print(cluster)
         print(index)
         temp = cluster.predict(merged_array)
         temp = temp.reshape((b, z))
-        warnings.warn("temp shape".format(temp.shape))
         for i in range(b):
             for j in range(z):
-                key_ = int(temp[i][j])
+                key_ = str(int(temp[i][j]))
                 print(key_)
                 embed_value = embed_number_values[key_]
                 target[i, j, index] = embed_value
 
-    return target
+    return torch.from_numpy(target)
 
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim, embed_number_values):
@@ -49,7 +47,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             data = batch_data["image"]
 
         print(data.shape)
-        # print(data.dtype)
         # data = data.float()
         data = data.squeeze()
         print(data.shape)

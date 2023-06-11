@@ -113,8 +113,7 @@ def main():
         main_worker(gpu=0, args=args)
 
 
-def load_number_embedding_values():
-    url = "./number_embedding/embedded_values.json"
+def load_number_embedding_values(url="./number_embedding/embedded_values.json"):
     with open(url, 'r') as file:
         res = json.load(file)
     return res
