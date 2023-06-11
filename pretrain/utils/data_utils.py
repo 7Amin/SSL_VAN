@@ -101,7 +101,7 @@ def get_loader(args):
             RandSpatialCropSamplesd(
                 keys=["image"],
                 roi_size=[args.roi_x, args.roi_y, args.roi_z],
-                num_samples=4,
+                num_samples=1,
                 random_center=True,
                 random_size=False,
             ),
