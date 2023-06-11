@@ -25,11 +25,19 @@ class Projection(nn.Module):
 
     def forward(self, x):
         # b, c, z, x, y
+        print(x.shape)
         x = self.conv1(x)
+        print(x.shape)
         x = x.view(0, 3, 2, 1, 4)
+        print(x.shape)
         x = self.conv2(x)
+        print(x.shape)
         x = x.view(0, 4, 2, 3, 1)
+        print(x.shape)
         x = self.conv3(x)
+        print(x.shape)
         x = x.view(0, 2, 3, 4, 1)
+        print(x.shape)
         x = self.conv4(x)
+        print(x.shape)
         return x
