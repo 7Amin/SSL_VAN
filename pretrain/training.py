@@ -21,6 +21,7 @@ def get_target(data, clusters, embed_dim, embed_number_values):
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
     print(merged_array.dtype)
     target = np.zeros((b, z, len(clusters), embed_dim))
+    print(embed_number_values)
     for index, cluster in enumerate(clusters):
         print(cluster)
         print(index)
@@ -29,7 +30,9 @@ def get_target(data, clusters, embed_dim, embed_number_values):
         warnings.warn("temp shape".format(temp.shape))
         for i in range(b):
             for j in range(z):
-                embed_value = embed_number_values[int(temp[i][j])]
+                key_ = int(temp[i][j])
+                print(key_)
+                embed_value = embed_number_values[key_]
                 target[i, j, index] = embed_value
 
     return target
