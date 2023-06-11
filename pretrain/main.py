@@ -97,7 +97,7 @@ parser.add_argument("--phi_1", default=0.8, type=float, help="see paper")
 parser.add_argument("--phi_2", default=0.5, type=float, help="see paper")
 parser.add_argument("--embed_dim", default=256, type=int, help="output embed dimension")
 parser.add_argument("--class_size", default=500, type=int, help="size of class per cluster")
-parser.add_argument("--cluster_num", default=200, type=int, help="number of clusters")
+parser.add_argument("--cluster_num", default=20, type=int, help="number of clusters")
 parser.add_argument("--apply_mask", default=True, type=bool, help="applying mask for calculating loss")
 
 
