@@ -24,20 +24,22 @@ class Projection(nn.Module):
         self.conv4 = nn.Conv3d(z_dim, z_dim, kernel_size=1, stride=1)
 
     def forward(self, x):
+        print("start proj")
         # b, c, z, x, y
         print(x.shape)
         x = self.conv1(x)
         print(x.shape)
-        x = x.view(0, 3, 2, 1, 4)
+        x = x.permute(0, 3, 2, 1, 4)
         print(x.shape)
         x = self.conv2(x)
         print(x.shape)
-        x = x.view(0, 4, 2, 3, 1)
+        x = x.permute(0, 4, 2, 3, 1)
         print(x.shape)
         x = self.conv3(x)
         print(x.shape)
-        x = x.view(0, 2, 3, 4, 1)
+        x = x.permute(0, 2, 3, 4, 1)
         print(x.shape)
         x = self.conv4(x)
         print(x.shape)
+        print("end proj")
         return x

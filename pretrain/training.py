@@ -46,8 +46,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
         data = data.unsqueeze(1)
-        print(data.shape)
-        print(target.shape)
+        # print(data.shape)
+        # print(target.shape)
         data, mask = apply_mask(data, args)
         for param in model.parameters():
             param.grad = None
