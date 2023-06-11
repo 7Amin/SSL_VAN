@@ -14,29 +14,58 @@ from monai.transforms import (
     SpatialPadd,
     ToTensord,
 )
-from monai.transforms import Randomizable
-from typing import Optional
-import random
 import numpy as np
 import torch
+import json
+import math
 import os
 
 
-class RandomSelect(Randomizable):
-    def __init__(self, prob: float, percent: Optional[float] = None):
-        self.prob = prob
-        self.percent = percent
+class Sampler(torch.utils.data.Sampler):
+    def __init__(self, dataset, num_replicas=None, rank=None, shuffle=True, make_even=True):
+        if num_replicas is None:
+            if not torch.distributed.is_available():
+                raise RuntimeError("Requires distributed package to be available")
+            num_replicas = torch.distributed.get_world_size()
+        if rank is None:
+            if not torch.distributed.is_available():
+                raise RuntimeError("Requires distributed package to be available")
+            rank = torch.distributed.get_rank()
+        self.shuffle = shuffle
+        self.make_even = make_even
+        self.dataset = dataset
+        self.num_replicas = num_replicas
+        self.rank = rank
+        self.epoch = 0
+        self.num_samples = int(math.ceil(len(self.dataset) * 1.0 / self.num_replicas))
+        self.total_size = self.num_samples * self.num_replicas
+        indices = list(range(len(self.dataset)))
+        self.valid_length = len(indices[self.rank: self.total_size: self.num_replicas])
 
-    def randomize(self, data):
-        self._do_transform = self.R.random() < self.prob
-        if self._do_transform and self.percent is not None:
-            data_shape = data["image"].shape
-            self.indices = np.random.choice(data_shape[0], int(data_shape[0] * self.percent), replace=False)
+    def __iter__(self):
+        if self.shuffle:
+            g = torch.Generator()
+            g.manual_seed(self.epoch)
+            indices = torch.randperm(len(self.dataset), generator=g).tolist()
+        else:
+            indices = list(range(len(self.dataset)))
+        if self.make_even:
+            if len(indices) < self.total_size:
+                if self.total_size - len(indices) < len(indices):
+                    indices += indices[: (self.total_size - len(indices))]
+                else:
+                    extra_ids = np.random.randint(low=0, high=len(indices), size=self.total_size - len(indices))
+                    indices += [indices[ids] for ids in extra_ids]
+            assert len(indices) == self.total_size
+        indices = indices[self.rank : self.total_size : self.num_replicas]
+        self.num_samples = len(indices)
+        return iter(indices)
 
-    def __call__(self, data):
-        if self._do_transform and self.percent is not None:
-            data["image"] = data["image"][self.indices]
-        return data
+    def __len__(self):
+        return self.num_samples
+
+    def set_epoch(self, epoch):
+        self.epoch = epoch
 
 
 def get_loader(args):
@@ -95,7 +124,6 @@ def get_loader(args):
             ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
-            # RandomSelect(prob=1.0, percent=0.1),
             SpatialPadd(keys="image", spatial_size=[args.roi_x, args.roi_y, args.roi_z]),
             CropForegroundd(keys=["image"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]),
             RandSpatialCropSamplesd(
@@ -111,13 +139,14 @@ def get_loader(args):
 
     train_ds = Dataset(data=datalist, transform=train_transforms)
 
-    if args.distributed:
-        train_sampler = DistributedSampler(dataset=train_ds, even_divisible=True, shuffle=True)
-    else:
-        train_sampler = None
+    # if args.distributed:
+    #     train_sampler = DistributedSampler(dataset=train_ds, even_divisible=True, shuffle=True)
+    # else:
+    #     train_sampler = None
+    train_sampler = Sampler(train_ds) if args.distributed else None
     train_loader = DataLoader(
-        train_ds, batch_size=args.batch_size, num_workers=args.workers, sampler=train_sampler, drop_last=True
-        # , shuffle=True
+        train_ds, batch_size=args.batch_size, num_workers=args.workers, sampler=train_sampler, drop_last=True,
+        shuffle=(train_sampler is None)
     )
     print("loader is ready")
     return train_loader
