@@ -70,13 +70,14 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
 
     tr = json_data['training']
     val = json_data['validation']
-    return tr, val
+    test = tr + val
+    return tr, val, test
 
 
 def get_loader(args):
     data_dir = args.base_data
     datalist_json = args.json_list
-    train_files, validation_files = data_read(datalist=datalist_json, basedir=data_dir, task=args.task)
+    train_files, validation_files, test_files = data_read(datalist=datalist_json, basedir=data_dir, task=args.task)
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
@@ -162,14 +163,14 @@ def get_loader(args):
 
     if args.test_mode:
 
-        val_ds = data.Dataset(data=validation_files, transform=test_transform)
-        val_sampler = Sampler(val_ds, shuffle=False) if args.distributed else None
+        test_ds = data.Dataset(data=test_files, transform=test_transform)
+        test_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
         test_loader = data.DataLoader(
-            val_ds,
+            test_ds,
             batch_size=1,
             shuffle=False,
             num_workers=args.workers,
-            sampler=val_sampler,
+            sampler=test_sampler,
             pin_memory=True
         )
 
