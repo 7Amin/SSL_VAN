@@ -148,9 +148,14 @@ def get_loader(args):
     test_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
-            transforms.ConvertToMultiChannelBasedOnBratsClassesd(keys="label"),
-            AsDiscreted(keys=["label"], threshold_values=True, logit_thresh=0.5, n_classes=args.out_channels),
-            transforms.NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+            transforms.AddChanneld(keys=["image", "label"]),
+            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            transforms.Spacingd(
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            ),
+            transforms.ScaleIntensityRanged(
+                keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+            ),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )

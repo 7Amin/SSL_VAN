@@ -13,6 +13,7 @@ from commons.model_factory import get_model
 from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
 from MSD.trainer import run_training
+from MSD.tester import run_testing
 
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceCELoss
@@ -236,22 +237,32 @@ def main_worker(gpu, args):
         model.cuda(args.gpu)
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
                                                           find_unused_parameters=True)
-
-    accuracy = run_training(
-        model=model,
-        train_loader=loader[0],
-        val_loader=loader[1],
-        optimizer=optimizer,
-        loss_func=dice_loss,
-        acc_func=dice_acc,
-        args=args,
-        model_inferer=model_inferer,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        post_label=post_label,
-        post_pred=post_pred,
-        val_acc_max=best_acc,
-    )
+    if args.test_mode:
+        accuracy = run_testing(
+            model=model,
+            val_loader=loader,
+            acc_func=dice_acc,
+            args=args,
+            model_inferer=model_inferer,
+            post_label=post_label,
+            post_pred=post_pred,
+        )
+    else:
+        accuracy = run_training(
+            model=model,
+            train_loader=loader[0],
+            val_loader=loader[1],
+            optimizer=optimizer,
+            loss_func=dice_loss,
+            acc_func=dice_acc,
+            args=args,
+            model_inferer=model_inferer,
+            scheduler=scheduler,
+            start_epoch=start_epoch,
+            post_label=post_label,
+            post_pred=post_pred,
+            val_acc_max=best_acc,
+        )
     return accuracy
 
 
