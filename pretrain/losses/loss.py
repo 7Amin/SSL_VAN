@@ -54,6 +54,7 @@ class ClusteringLoss(nn.Module):
 
         # Calculate negative log-likelihood loss
         loss = -torch.log(probabilities + 1e-8).mean()
+        loss.requires_grad = True
 
         return loss
 
