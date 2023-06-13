@@ -2,7 +2,7 @@
 #SBATCH --job-name=MSDdeconv
 #SBATCH --time=05:59:59
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=64
+#SBATCH --ntasks-per-node=96
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
 #SBATCH -G 2

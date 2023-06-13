@@ -2,7 +2,7 @@
 #SBATCH --job-name=MSDvae
 #SBATCH --time=01:59:59
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=64
+#SBATCH --ntasks-per-node=96
 #SBATCH -p devel
 #SBATCH --gpus-per-node=2
 #SBATCH -G 2
