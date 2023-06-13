@@ -56,7 +56,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             param.grad = None
         with autocast(enabled=args.amp):
             logits = model(data)
-            print(logits)
             loss = loss_func(outputs=logits, targets=target, mask=mask, apply_mask=args.apply_mask)
         if args.amp:
             scaler.scale(loss).backward()
