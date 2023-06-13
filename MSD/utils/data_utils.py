@@ -173,7 +173,8 @@ def get_loader(args):
             sampler=test_sampler,
             pin_memory=True
         )
-
+        train_ds = None
+        val_ds = None
         loader = test_loader
     else:
         train_ds = data.Dataset(data=train_files, transform=train_transform)
