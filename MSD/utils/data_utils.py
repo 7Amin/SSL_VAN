@@ -63,14 +63,17 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
 
     json_data = json_data[task]
 
-    for t in ["training", "validation"]:
+    for t in ["training", "validation", 'test']:
         for k in json_data[t]:
-            k["image"] = os.path.join(basedir, task, k["image"])
-            k["label"] = os.path.join(basedir, task, k["label"])
+            if t != 'test':
+                k["image"] = os.path.join(basedir, task, k["image"])
+                k["label"] = os.path.join(basedir, task, k["label"])
+            else:
+                k["image"] = os.path.join(basedir, task, k["image"])
 
     tr = json_data['training']
     val = json_data['validation']
-    test = tr + val
+    test = json_data['test']
     return tr, val, test
 
 
@@ -148,16 +151,16 @@ def get_loader(args):
 
     test_transform = transforms.Compose(
         [
-            transforms.LoadImaged(keys=["image", "label"]),
-            transforms.AddChanneld(keys=["image", "label"]),
-            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            transforms.LoadImaged(keys=["image"]),
+            transforms.AddChanneld(keys=["image"]),
+            transforms.Orientationd(keys=["image"], axcodes="RAS"),
             transforms.Spacingd(
-                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+                keys=["image"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
             ),
             transforms.ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
-            transforms.ToTensord(keys=["image", "label"]),
+            transforms.ToTensord(keys=["image"]),
         ]
     )
 
