@@ -66,11 +66,11 @@ def apply_mask(data, args):
 # mask = create_mask(phi_1, phi_2, mask_length, tensor_size)
 # print(mask.shape)
 #
-# data = torch.randn(6, 4, 20, 64, 32).to('cuda')
-# class ARGS:
-#     def __init__(self):
-#         self.phi_1 = 0.7
-#         self.phi_2 = 0.3
-#         self.mask_length = 4
-# a, b = apply_mask(data, ARGS())
+data = torch.randn(6, 4, 20, 64, 32).to('cuda')
+class ARGS:
+    def __init__(self):
+        self.phi_1 = 0.7
+        self.phi_2 = 0.3
+        self.mask_length = 4
+a, b = apply_mask(data, ARGS())
 # print(a.shape)

@@ -99,19 +99,19 @@ def get_loss(loss_name, args):
     if loss_name == "ClusteringLoss":
         return ClusteringLoss()
 
-
-def test():
-    embedding_dim = 5
-    max_cluster_size = 15
-    b = 4
-    seq = 96
-    cluster_number = 25
-    loss_func = ClusteringLoss2()
-    target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
-    output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
-    mask_matrix = torch.randint(0, 2, size=(b, seq))
-    loss_value = loss_func(output_matrix, target_matrix, mask_matrix, False)
-    print(loss_value)
-
-
-test()
+#
+# def test():
+#     embedding_dim = 5
+#     max_cluster_size = 15
+#     b = 4
+#     seq = 96
+#     cluster_number = 25
+#     loss_func = ClusteringLoss2()
+#     target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
+#     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
+#     mask_matrix = torch.randint(0, 2, size=(b, seq))
+#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, False)
+#     print(loss_value)
+#
+#
+# test()
