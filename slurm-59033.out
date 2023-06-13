@@ -354,3 +354,30 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
 /home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 1/15000 5/14  acc 0.20158684253692627  time 15.43s
   warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 273, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 128, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 251, in main_worker
+    accuracy = run_training(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 161, in run_training
+    val_avg_acc = val_epoch(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 74, in val_epoch
+    logits = model_inferer(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/inferers/utils.py", line 248, in sliding_window_inference
+    output_image_list[ss] = (output_image_list[ss] / count_map_list.pop(0)).to(compute_dtype)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.93 GiB (GPU 1; 39.42 GiB total capacity; 25.37 GiB already allocated; 1.16 GiB free; 36.57 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
