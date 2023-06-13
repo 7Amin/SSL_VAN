@@ -52,6 +52,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         # print(data.shape)
         # print(target.shape)
         data, mask = apply_mask(data, args)
+        data = data.requires_grad_(True)
+        target = target.requires_grad_(True)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
