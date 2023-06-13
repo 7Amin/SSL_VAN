@@ -5,6 +5,28 @@ import json
 from number_embedding.model import NumberEmbedding
 
 
+def calculate_accuracy(model, cluster_range=600):
+    model.eval()
+    total_examples = 0
+    correct_predictions = 0
+    batch_size = cluster_range
+    input_data = []
+    for i in range(cluster_range):
+        input_data.append(i)
+    input_data = np.array(input_data)
+    input_data = torch.from_numpy(input_data)
+    labels = torch.nn.functional.one_hot(input_data, cluster_range).float()
+    with torch.no_grad():
+        output, embed = model(input_data)  # Forward pass
+        _, predicted = torch.max(output, dim=1)  # Get the predicted numbers
+
+        total_examples += batch_size
+        correct_predictions += torch.sum(torch.eq(predicted, labels)).item()
+
+    accuracy = correct_predictions / total_examples
+    return accuracy
+
+
 def train(batch_size=100, cluster_range=600, dim=128, epoch_number=1000):
     model = NumberEmbedding(dim=dim, output_size=cluster_range)
     loss_fn = torch.nn.CrossEntropyLoss()
@@ -24,11 +46,13 @@ def train(batch_size=100, cluster_range=600, dim=128, epoch_number=1000):
         loss.backward()
         optimizer.step()
         last_loss = loss.item()
-        print('  batch {} loss: {}'.format(e + 1, last_loss))
+        print('Epoch number {} loss: {}'.format(e + 1, last_loss))
 
     input_data = []
     for i in range(cluster_range):
         input_data.append(i)
+    accuracy = calculate_accuracy(model, cluster_range=600)
+    print(f"Accuracy: {accuracy}")
     input_data = np.array(input_data)
     input_data = torch.from_numpy(input_data)
     _, embed = model(input_data)
@@ -39,7 +63,7 @@ def train(batch_size=100, cluster_range=600, dim=128, epoch_number=1000):
 
     res = {k: [float(val) for val in v] for k, v in res.items()}
 
-    with open('embedded_values.json', "w") as outfile:
+    with open('embedded_values_2.json', "w") as outfile:
         json.dump(res, outfile, indent=4)
 
     return last_loss
