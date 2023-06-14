@@ -33,6 +33,8 @@ class ClusteringLoss(nn.Module):
 
     def forward(self, outputs, targets, mask, apply_mask=True):
         tai = 0.1
+        outputs = outputs.double()
+        targets = targets.double()
         target_shape = targets.shape  # (b, seq, cluster_number, embedding_dim)
         pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size, embedding_dim)
 
@@ -53,7 +55,8 @@ class ClusteringLoss(nn.Module):
             probabilities = torch.masked_select(probabilities, expanded_mask)
 
         # Calculate negative log-likelihood loss
-        loss = -torch.log(probabilities + 1e-8).mean()
+        # loss = -torch.log(probabilities + 1e-12).mean()
+        loss = -torch.log(probabilities).mean()
         loss.requires_grad_(True)
 
         return loss
@@ -72,21 +75,24 @@ def get_loss(loss_name, args):
         return ClusteringLoss()
 
 
-# def test():
-#     embedding_dim = 2
-#     max_cluster_size = 2
+# def test(apply_mask=True):
+#     embedding_dim = 256
+#     max_cluster_size = 500
 #     b = 1
-#     seq = 1
-#     cluster_number = 2
+#     seq = 96
+#     cluster_number = 20
 #     loss_func = ClusteringLoss()
 #     target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
 #     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
 #     mask_matrix = torch.randint(0, 2, size=(b, seq))
-#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, True)
-#     print(loss_value)
+#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, apply_mask)
+#     print('loss: {:.9f}'.format(loss_value))
 #
 #
 # i = 0
+# apply_mask = True
 # while i < 20:
-#     test()
+#     print(apply_mask)
+#     test(apply_mask)
+#     apply_mask = not apply_mask
 #     i = i + 1

@@ -32,7 +32,7 @@ def get_target(data, clusters, embed_dim, embed_number_values, args):
                 embed_value = embed_number_values[key_]
                 target[i, j, index] = embed_value
 
-    return torch.from_numpy(target).float()
+    return torch.from_numpy(target).double()
 
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim, embed_number_values):
