@@ -6,7 +6,7 @@
 #SBATCH -p a100-long
 #SBATCH --gpus-per-node=2
 #SBATCH -G 2
-#SBATCH --mem160gb
+#SBATCH --mem=160gb
 
 cd SSL_VAN
 module spider cuda
