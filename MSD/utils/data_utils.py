@@ -69,7 +69,7 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
                 k["image"] = os.path.join(basedir, task, k["image"])
                 k["label"] = os.path.join(basedir, task, k["label"])
             else:
-                k["image"] = os.path.join(basedir, task, k["image"])
+                k["image"] = os.path.join(basedir, task, k)
 
     tr = json_data['training']
     val = json_data['validation']
