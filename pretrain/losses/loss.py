@@ -59,34 +59,6 @@ class ClusteringLoss(nn.Module):
         return loss
 
 
-class ClusteringLoss2(nn.Module):
-    def __init__(self):
-        super(ClusteringLoss2, self).__init__()
-
-    def forward(self, outputs, targets, mask, apply_mask=True):
-        target_shape = targets.shape  # (b, seq, cluster_number, embedding_dim)
-        pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size, embedding_dim)
-        targets_reshaped = targets.view(-1, target_shape[-1])  # (b * seq * cluster_number, embedding_dim)
-        # (b * seq * cluster_number, max_cluster_size, embedding_dim)
-        outputs_reshaped = outputs.view(-1, pred_shape[-2], pred_shape[-1])
-        # Compute cosine similarity
-        similarity = F.cosine_similarity(targets_reshaped.unsqueeze(1), outputs_reshaped, dim=-1)
-        similarity = similarity.view(*target_shape[:-1], pred_shape[-2])  # (b, seq, cluster_number, max_cluster_size)  # (b, seq, cluster_number, max_cluster_size)
-
-        if apply_mask:
-            expanded_mask = mask.unsqueeze(-1).unsqueeze(-1).bool()
-            similarity = torch.masked_select(similarity, expanded_mask)
-        # Reshape tensors for cross-entropy loss
-        similarity = similarity.view(-1, pred_shape[-2])  # (b * seq * cluster_number, max_cluster_size)
-        target_shape = targets.view(-1)  # (b * seq * cluster_number)
-
-        # Calculate the cross-entropy loss
-        loss_fn = nn.CrossEntropyLoss()
-        loss = loss_fn(similarity, target_shape)
-
-        return loss
-
-
 def get_loss(loss_name, args):
     if loss_name == 'CrossEntropyLoss':
         return torch.nn.CrossEntropyLoss().to(args.device)
@@ -99,19 +71,22 @@ def get_loss(loss_name, args):
     if loss_name == "ClusteringLoss":
         return ClusteringLoss()
 
-#
+
 # def test():
-#     embedding_dim = 5
-#     max_cluster_size = 15
-#     b = 4
-#     seq = 96
-#     cluster_number = 25
-#     loss_func = ClusteringLoss2()
+#     embedding_dim = 2
+#     max_cluster_size = 2
+#     b = 1
+#     seq = 1
+#     cluster_number = 2
+#     loss_func = ClusteringLoss()
 #     target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
 #     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
 #     mask_matrix = torch.randint(0, 2, size=(b, seq))
-#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, False)
+#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, True)
 #     print(loss_value)
 #
 #
-# test()
+# i = 0
+# while i < 20:
+#     test()
+#     i = i + 1

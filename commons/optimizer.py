@@ -3,7 +3,6 @@ from commons.lr_scheduler import LinearWarmupCosineAnnealingLR
 
 
 def get_optimizer(model, args):
-    optimizer = None
     if args.optim_name == "adam":
         optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
     elif args.optim_name == "adamw":

@@ -93,8 +93,8 @@ parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVA
 parser.add_argument("--mode", default='server', type=str, choices=['server', 'test'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--mask_length", default=5, type=int, help="an integer value")
-parser.add_argument("--phi_1", default=0.5, type=float, help="see paper")
-parser.add_argument("--phi_2", default=0.5, type=float, help="see paper")
+parser.add_argument("--phi_1", default=0.1, type=float, help="see paper")
+parser.add_argument("--phi_2", default=0.7, type=float, help="see paper")
 parser.add_argument("--embed_dim", default=256, type=int, help="output embed dimension")
 parser.add_argument("--class_size", default=500, type=int, help="size of class per cluster")
 parser.add_argument("--cluster_num", default=20, type=int, help="number of clusters")
@@ -156,7 +156,8 @@ def main_worker(gpu, args):
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
     optimizer = get_optimizer(model, args)
-    scheduler = get_lr_schedule(args, optimizer, start_epoch)
+    # scheduler = get_lr_schedule(args, optimizer, start_epoch)
+    scheduler = None
 
     if args.checkpoint is not None and args.checkpoint:
         temp = os.path.join(args.logdir, args.final_model_url)
@@ -176,9 +177,9 @@ def main_worker(gpu, args):
                 optimizer = get_optimizer(model, args)
                 # optimizer_temp = checkpoint['optimizer']
                 # optimizer.load_state_dict(optimizer_temp)
-            if 'scheduler' in checkpoint:
-                scheduler_temp = checkpoint['scheduler']
-                scheduler.load_state_dict(scheduler_temp)
+            # if 'scheduler' in checkpoint:
+            #     scheduler_temp = checkpoint['scheduler']
+            #     scheduler.load_state_dict(scheduler_temp)
             warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
                 args.checkpoint, start_epoch, best_acc))
 

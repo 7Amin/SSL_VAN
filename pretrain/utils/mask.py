@@ -17,6 +17,7 @@ def create_mask(phi_1, phi_2, mask_length, tensor_size):
     for selected_image in selected_images:
         # print(f"selected_image: {selected_image}")
         for image_idx in range(max(0, selected_image - mask_length + 1), selected_image + 1):
+            mask_tensor[0][image_idx] = 1
             # Select a patch size randomly
             patch_size = np.random.choice(PATCHES)
             # print(f"image_idx: {image_idx}, patch_size: {patch_size}")
@@ -57,20 +58,19 @@ def apply_mask(data, args):
     return data * masks_tensor, mask_vectors
 
 
-# Test the create_mask function
-# phi_1 = 0.3
-# phi_2 = 0.7
-# mask_length = 5
-# tensor_size = (20, 256, 64)
+# phi_1 = 0.2
+# phi_2 = 0.5
+# mask_length = 2
+# tensor_size = (20, 2, 2)
 #
-# mask = create_mask(phi_1, phi_2, mask_length, tensor_size)
+# mask, _ = create_mask(phi_1, phi_2, mask_length, tensor_size)
 # print(mask.shape)
-#
-data = torch.randn(6, 4, 20, 64, 32).to('cuda')
-class ARGS:
-    def __init__(self):
-        self.phi_1 = 0.7
-        self.phi_2 = 0.3
-        self.mask_length = 4
-a, b = apply_mask(data, ARGS())
+# #
+# data = torch.randn(1, 1, 20, 2, 2).to('cuda')
+# class ARGS:
+#     def __init__(self):
+#         self.phi_1 = 0.2
+#         self.phi_2 = 0.3
+#         self.mask_length = 2
+# a, b = apply_mask(data, ARGS())
 # print(a.shape)
