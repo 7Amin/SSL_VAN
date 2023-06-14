@@ -49,11 +49,12 @@ class ClusteringLoss(nn.Module):
         similarity = similarity * tai
         # apply softmax along the embedding dimension
         probabilities = F.softmax(similarity, dim=-1)
+        # print(probabilities.shape)
 
         if apply_mask:
             expanded_mask = mask.unsqueeze(-1).unsqueeze(-1).bool()
             probabilities = torch.masked_select(probabilities, expanded_mask)
-
+        # print(probabilities.shape)
         # Calculate negative log-likelihood loss
         # loss = -torch.log(probabilities + 1e-12).mean()
         loss = -torch.log(probabilities).mean()
@@ -94,5 +95,5 @@ def get_loss(loss_name, args):
 # while i < 20:
 #     print(apply_mask)
 #     test(apply_mask)
-#     apply_mask = not apply_mask
+#     # apply_mask = not apply_mask
 #     i = i + 1
