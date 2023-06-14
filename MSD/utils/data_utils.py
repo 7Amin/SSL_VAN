@@ -62,19 +62,20 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
         json_data = json.load(f)
 
     json_data = json_data[task]
-
+    test_urls = []
     for t in ["training", "validation", 'test']:
         for k in json_data[t]:
             if t != 'test':
                 k["image"] = os.path.join(basedir, task, k["image"])
                 k["label"] = os.path.join(basedir, task, k["label"])
             else:
-                k["image"] = os.path.join(basedir, task, k)
+                test_urls.append({
+                    "image": os.path.join(basedir, task, k)
+                })
 
     tr = json_data['training']
     val = json_data['validation']
-    test = json_data['test']
-    return tr, val, test
+    return tr, val, test_urls
 
 
 def get_loader(args):
