@@ -101,7 +101,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
             if args.rank == 0:
                 avg_acc = np.mean(run_acc.avg)
                 warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             run_acc, time.time() - start_time))
+                                                                             run_acc.avg, time.time() - start_time))
                 warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                              avg_acc, time.time() - start_time))
             start_time = time.time()
