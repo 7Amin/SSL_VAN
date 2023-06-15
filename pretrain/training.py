@@ -35,7 +35,8 @@ def get_target(data, clusters, embed_dim, embed_number_values, args):
     return torch.from_numpy(target).double()
 
 
-def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim, embed_number_values):
+def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim,
+                embed_number_values, scheduler):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
@@ -77,6 +78,11 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             warnings.warn(
                 "Epoch {}/{} {}/{}  loss: {:.9f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                        run_loss.avg, time.time() - start_time))
+            if idx % 250 == 249:
+                save_checkpoint(
+                    model, epoch - 1, args, best_acc=run_loss.avg, optimizer=optimizer, scheduler=scheduler,
+                    filename=args.final_model_url
+                )
 
         start_time = time.time()
     for param in model.parameters():
@@ -125,7 +131,8 @@ def run_training(
         epoch_time = time.time()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func,
-            args=args, clusters=clusters, embed_dim=embed_dim, embed_number_values=embed_number_values
+            args=args, clusters=clusters, embed_dim=embed_dim, embed_number_values=embed_number_values,
+            scheduler=scheduler
         )
         if args.rank == 0:
             warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
