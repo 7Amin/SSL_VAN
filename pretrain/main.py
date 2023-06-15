@@ -150,8 +150,8 @@ def main_worker(gpu, args):
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v + \
-               "_" + args.cluster_num + "_" + args.class_size + "_" + args.embed_dim + "_" + str(args.apply_mask) + \
-               "_" + args.mask_length
+               "_" + str(args.cluster_num) + "_" + str(args.class_size) + "_" + str(args.embed_dim) + "_" + \
+               str(args.apply_mask) + "_" + str(args.mask_length)
 
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
