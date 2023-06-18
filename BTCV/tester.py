@@ -96,8 +96,8 @@ def run_testing(
         model,
         val_loader,
         acc_func=acc_func,
-        model_inferer=model_inferer,
         args=args,
+        model_inferer=model_inferer,
         post_label=post_label,
         post_pred=post_pred,
     )

@@ -149,8 +149,24 @@ def get_loader(args):
 
 
     if args.test_mode:
+        test_transform = transforms.Compose(
+            [
+                transforms.LoadImaged(keys=["image", "label"]),
+                transforms.AddChanneld(keys=["image", "label"]),
+                transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+                transforms.Spacingd(
+                    keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z),
+                    mode=("bilinear", "nearest")
+                ),
+                transforms.ScaleIntensityRanged(
+                    keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+                ),
+                transforms.CropForegroundd(keys=["image", "label"], source_key="image"),
+                transforms.ToTensord(keys=["image", "label"]),
+            ]
+        )
         test_files = load_decathlon_datalist(datalist_json, True, "validation", base_dir=data_dir)
-        test_ds = data.Dataset(data=test_files, transform=val_transform)
+        test_ds = data.Dataset(data=test_files, transform=test_transform)
         test_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
         test_loader = data.DataLoader(
             test_ds,
