@@ -28,6 +28,7 @@ def test_eval(model, loader, args, model_inferer=None, post_pred=None):
                     logits = model_inferer(data)
                 else:
                     logits = model(data)
+            print(logits.shape)
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             res.append(test_output_convert)
@@ -48,8 +49,8 @@ def run_testing(
     res = test_eval(
         model,
         val_loader,
-        model_inferer=model_inferer,
         args=args,
+        model_inferer=model_inferer,
         post_pred=post_pred,
     )
     if args.rank == 0:
