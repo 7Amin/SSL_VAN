@@ -78,8 +78,9 @@ parser.add_argument("--squared_dice", action="store_true", help="use squared Dic
 parser.add_argument("--smooth_dr", default=1e-6, type=float, help="constant added to dice denominator to avoid nan")
 parser.add_argument("--smooth_nr", default=0.0, type=float, help="constant added to dice numerator to avoid zero")
 parser.add_argument("--norm_name", default="instance", type=str, help="normalization name")
-parser.add_argument("--optim_name", default="sgd", type=str, help="optimization algorithm")
-parser.add_argument("--optim_lr", default=1e-4, type=float, help="optimization learning rate")
+parser.add_argument("--optim_name", default="sgd", choices=['adam', 'adamw', 'sgd'],
+                    type=str, help="optimization algorithm")
+parser.add_argument("--optim_lr", default=1e-2, type=float, help="optimization learning rate")
 parser.add_argument("--reg_weight", default=1e-5, type=float, help="regularization weight")
 parser.add_argument("--momentum", default=0.99, type=float, help="momentum")
 parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="type of learning rate scheduler")
