@@ -9,7 +9,7 @@ import torch.multiprocessing as mp
 import torch.distributed as dist
 
 from BTCV.utils.data_utils import get_loader
-from commons.model_factory import get_model
+from commons.model_factory import get_model, load_model
 from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
 from BTCV.trainer import run_training
@@ -180,28 +180,10 @@ def main_worker(gpu, args):
     scheduler = get_lr_schedule(args, optimizer, start_epoch)
 
     if args.checkpoint is not None and args.checkpoint:
-        temp = os.path.join(args.logdir, args.final_model_url)
-        if os.path.isfile(temp):
-            checkpoint = torch.load(temp, map_location="cpu")
-            from collections import OrderedDict
-
-            new_state_dict = OrderedDict()
-            for k, v in checkpoint["state_dict"].items():
-                new_state_dict[k.replace("backbone.", "")] = v
-            model.load_state_dict(new_state_dict, strict=False)
-            if "epoch" in checkpoint:
-                start_epoch = checkpoint["epoch"]
-            if "best_acc" in checkpoint:
-                best_acc = checkpoint["best_acc"]
-            if 'optimizer' in checkpoint:
-                optimizer = get_optimizer(model, args)
-                # optimizer_temp = checkpoint['optimizer']
-                # optimizer.load_state_dict(optimizer_temp)
-            if 'scheduler' in checkpoint:
-                scheduler_temp = checkpoint['scheduler']
-                scheduler.load_state_dict(scheduler_temp)
-            warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
-                args.checkpoint, start_epoch, best_acc))
+        model, optimizer, scheduler, best_acc, start_epoch = load_model(args, model, optimizer, scheduler, best_acc,
+                                                                        start_epoch)
+        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+            args.checkpoint, start_epoch, best_acc))
 
     model.cuda(args.gpu)
 

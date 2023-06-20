@@ -13,6 +13,11 @@ from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
 from commons.models.pre_training.pre_van_v5gl import PREVANV5GL
 from commons.models.pre_training.pre_van_v6gl import PREVANV6GL
 
+from commons.optimizer import get_optimizer
+
+import torch
+import os
+
 
 def get_model(args):
     if args.model_v == "VANV6GL":
@@ -203,3 +208,30 @@ def get_pre_trained_model(args):
         return model
 
     return None
+
+
+def load_model(args, model, optimizer, scheduler, best_acc, start_epoch):
+    temp = os.path.join(args.logdir, args.final_model_url)
+    if args.test_mode:
+        temp = os.path.join(args.logdir, args.best_model_url)
+    if os.path.isfile(temp):
+        checkpoint = torch.load(temp, map_location="cpu")
+        from collections import OrderedDict
+
+        new_state_dict = OrderedDict()
+        for k, v in checkpoint["state_dict"].items():
+            new_state_dict[k.replace("backbone.", "")] = v
+        model.load_state_dict(new_state_dict, strict=False)
+        if "epoch" in checkpoint:
+            start_epoch = checkpoint["epoch"]
+        if "best_acc" in checkpoint:
+            best_acc = checkpoint["best_acc"]
+        if 'optimizer' in checkpoint:
+            optimizer = get_optimizer(model, args)
+            # optimizer_temp = checkpoint['optimizer']
+            # optimizer.load_state_dict(optimizer_temp)
+        if 'scheduler' in checkpoint:
+            scheduler_temp = checkpoint['scheduler']
+            scheduler.load_state_dict(scheduler_temp)
+
+    return model, optimizer, scheduler, best_acc, start_epoch
