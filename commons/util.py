@@ -3,7 +3,7 @@ import warnings
 
 
 def fix_outputs_url(args, base_url):
-    output_url = "output_" + str(args.test_mode) + "_" + str(args.val_mode) + "/"
+    output_url = os.path.join(args.logdir, "output_" + str(args.test_mode) + "_" + str(args.val_mode) + "/")
     if not os.path.exists(output_url):
         os.mkdir(output_url)
     output_url = output_url + base_url
