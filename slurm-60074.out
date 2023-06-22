@@ -1,0 +1,232 @@
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Collecting monai@ git+https://github.com/Project-MONAI/MONAI.git@a23c7f54f899c183052db4b8ecd6a21c190b2c18 (from -r ./requirements.txt (line 59))
+  Using cached monai-0.9.0rc3+6.ga23c7f54-py3-none-any.whl
+Requirement already satisfied: absl-py==1.4.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: addict==2.4.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 2)) (2.4.0)
+Requirement already satisfied: anyio==3.6.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 3)) (3.6.2)
+Requirement already satisfied: argon2-cffi==21.3.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 4)) (21.3.0)
+Requirement already satisfied: argon2-cffi-bindings==21.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 5)) (21.2.0)
+Requirement already satisfied: arrow==1.2.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 6)) (1.2.3)
+Requirement already satisfied: asttokens==2.2.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 7)) (2.2.1)
+Requirement already satisfied: attrs==22.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 8)) (22.2.0)
+Requirement already satisfied: backcall==0.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 9)) (0.2.0)
+Requirement already satisfied: beautifulsoup4==4.11.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 10)) (4.11.2)
+Requirement already satisfied: bleach==6.0.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 11)) (6.0.0)
+Requirement already satisfied: cachetools==5.3.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 12)) (5.3.0)
+Requirement already satisfied: certifi==2022.12.7 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 13)) (2022.12.7)
+Requirement already satisfied: cffi==1.15.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 14)) (1.15.1)
+Collecting charset-normalizer==3.0.1 (from -r ./requirements.txt (line 15))
+  Using cached charset_normalizer-3.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (198 kB)
+Requirement already satisfied: comm==0.1.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 16)) (0.1.2)
+Collecting cryptography==39.0.2 (from -r ./requirements.txt (line 17))
+  Using cached cryptography-39.0.2-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+Requirement already satisfied: debugpy==1.6.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 18)) (1.6.6)
+Requirement already satisfied: decorator==5.1.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 19)) (5.1.1)
+Requirement already satisfied: defusedxml==0.7.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 20)) (0.7.1)
+Requirement already satisfied: Deprecated==1.2.13 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 21)) (1.2.13)
+Requirement already satisfied: executing==1.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 22)) (1.2.0)
+Requirement already satisfied: fastjsonschema==2.16.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 23)) (2.16.3)
+Requirement already satisfied: filelock==3.9.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 24)) (3.9.0)
+Requirement already satisfied: fqdn==1.5.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 25)) (1.5.1)
+Requirement already satisfied: google-auth==2.16.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 26)) (2.16.1)
+Requirement already satisfied: google-auth-oauthlib==0.4.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 27)) (0.4.6)
+Requirement already satisfied: grpcio==1.51.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 28)) (1.51.3)
+Requirement already satisfied: huggingface-hub==0.12.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 29)) (0.12.1)
+Requirement already satisfied: idna==3.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 30)) (3.4)
+Requirement already satisfied: importlib-metadata==6.0.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 31)) (6.0.0)
+Requirement already satisfied: ipykernel==6.21.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 32)) (6.21.2)
+Requirement already satisfied: ipython==8.10.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 33)) (8.10.0)
+Requirement already satisfied: ipython-genutils==0.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 34)) (0.2.0)
+Requirement already satisfied: ipywidgets==8.0.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 35)) (8.0.4)
+Requirement already satisfied: isoduration==20.11.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 36)) (20.11.0)
+Requirement already satisfied: jedi==0.18.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 37)) (0.18.2)
+Requirement already satisfied: jeepney==0.8.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 38)) (0.8.0)
+Requirement already satisfied: Jinja2==3.1.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 39)) (3.1.2)
+Requirement already satisfied: jsonpointer==2.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 40)) (2.3)
+Requirement already satisfied: jsonschema==4.17.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 41)) (4.17.3)
+Requirement already satisfied: jupyter==1.0.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 42)) (1.0.0)
+Requirement already satisfied: jupyter-console==6.6.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 43)) (6.6.2)
+Requirement already satisfied: jupyter-events==0.6.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 44)) (0.6.3)
+Requirement already satisfied: jupyter_client==8.0.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 45)) (8.0.3)
+Requirement already satisfied: jupyter_core==5.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 46)) (5.2.0)
+Requirement already satisfied: jupyter_server==2.3.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 47)) (2.3.0)
+Requirement already satisfied: jupyter_server_terminals==0.4.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 48)) (0.4.4)
+Requirement already satisfied: jupyterlab-pygments==0.2.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 49)) (0.2.2)
+Requirement already satisfied: jupyterlab-widgets==3.0.5 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 50)) (3.0.5)
+Requirement already satisfied: keyring==23.4.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 51)) (23.4.1)
+Requirement already satisfied: keyrings.alt==3.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 52)) (3.1)
+Requirement already satisfied: lxml==4.9.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 53)) (4.9.2)
+Requirement already satisfied: Markdown==3.4.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 54)) (3.4.1)
+Requirement already satisfied: MarkupSafe==2.1.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 55)) (2.1.2)
+Requirement already satisfied: matplotlib-inline==0.1.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 56)) (0.1.6)
+Requirement already satisfied: mistune==2.0.5 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 57)) (2.0.5)
+Requirement already satisfied: mmcv==1.7.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 58)) (1.7.1)
+Requirement already satisfied: nbclassic==0.5.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 60)) (0.5.2)
+Requirement already satisfied: nbclient==0.7.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 61)) (0.7.2)
+Requirement already satisfied: nbconvert==7.2.9 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 62)) (7.2.9)
+Requirement already satisfied: nbformat==5.7.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 63)) (5.7.3)
+Requirement already satisfied: nest-asyncio==1.5.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 64)) (1.5.6)
+Requirement already satisfied: nibabel==5.0.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 65)) (5.0.1)
+Requirement already satisfied: notebook==6.5.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 66)) (6.5.2)
+Requirement already satisfied: notebook_shim==0.2.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 67)) (0.2.2)
+Requirement already satisfied: numpy==1.24.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 68)) (1.24.2)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 69)) (11.10.3.66)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 70)) (11.7.99)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 71)) (11.7.99)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 72)) (8.5.0.96)
+Requirement already satisfied: oauthlib==3.2.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 73)) (3.2.2)
+Requirement already satisfied: opencv-python==4.7.0.72 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 74)) (4.7.0.72)
+Requirement already satisfied: packaging==23.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 75)) (23.0)
+Requirement already satisfied: pandas==1.5.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 76)) (1.5.3)
+Requirement already satisfied: pandocfilters==1.5.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 77)) (1.5.0)
+Requirement already satisfied: parso==0.8.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 78)) (0.8.3)
+Requirement already satisfied: pexpect==4.8.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 79)) (4.8.0)
+Requirement already satisfied: pickleshare==0.7.5 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 80)) (0.7.5)
+Requirement already satisfied: Pillow==9.4.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 81)) (9.4.0)
+Requirement already satisfied: platformdirs==3.0.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 82)) (3.0.0)
+Requirement already satisfied: prometheus-client==0.16.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 83)) (0.16.0)
+Requirement already satisfied: prompt-toolkit==3.0.37 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 84)) (3.0.37)
+Requirement already satisfied: protobuf==3.20.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 85)) (3.20.3)
+Requirement already satisfied: psutil==5.9.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 86)) (5.9.4)
+Requirement already satisfied: ptyprocess==0.7.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 87)) (0.7.0)
+Requirement already satisfied: pure-eval==0.2.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 88)) (0.2.2)
+Requirement already satisfied: pyasn1==0.4.8 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 89)) (0.4.8)
+Requirement already satisfied: pyasn1-modules==0.2.8 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 90)) (0.2.8)
+Requirement already satisfied: pycparser==2.21 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 91)) (2.21)
+Requirement already satisfied: pydicom==2.3.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 92)) (2.3.1)
+Requirement already satisfied: Pygments==2.14.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 93)) (2.14.0)
+Requirement already satisfied: pyrsistent==0.19.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 94)) (0.19.3)
+Requirement already satisfied: python-dateutil==2.8.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 95)) (2.8.2)
+Requirement already satisfied: python-json-logger==2.0.7 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 96)) (2.0.7)
+Requirement already satisfied: pytz==2022.7.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 97)) (2022.7.1)
+Requirement already satisfied: PyYAML==6.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 98)) (6.0)
+Requirement already satisfied: pyzmq==25.0.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 99)) (25.0.0)
+Requirement already satisfied: qtconsole==5.4.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 100)) (5.4.0)
+Requirement already satisfied: QtPy==2.3.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 101)) (2.3.0)
+Requirement already satisfied: requests==2.28.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 102)) (2.28.2)
+Requirement already satisfied: requests-oauthlib==1.3.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 103)) (1.3.1)
+Requirement already satisfied: rfc3339-validator==0.1.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 104)) (0.1.4)
+Requirement already satisfied: rfc3986-validator==0.1.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 105)) (0.1.1)
+Requirement already satisfied: rsa==4.9 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 106)) (4.9)
+Requirement already satisfied: scipy==1.10.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 107)) (1.10.1)
+Requirement already satisfied: SecretStorage==3.3.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 108)) (3.3.3)
+Requirement already satisfied: Send2Trash==1.8.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 109)) (1.8.0)
+Requirement already satisfied: six==1.16.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 110)) (1.16.0)
+Requirement already satisfied: sniffio==1.3.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 111)) (1.3.0)
+Requirement already satisfied: soupsieve==2.4 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 112)) (2.4)
+Requirement already satisfied: stack-data==0.6.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 113)) (0.6.2)
+Requirement already satisfied: synapseclient==2.7.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 114)) (2.7.0)
+Requirement already satisfied: tensorboard==2.12.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 115)) (2.12.0)
+Requirement already satisfied: tensorboard-data-server==0.7.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 116)) (0.7.0)
+Requirement already satisfied: tensorboard-plugin-wit==1.8.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 117)) (1.8.1)
+Requirement already satisfied: tensorboardX==2.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 118)) (2.6)
+Requirement already satisfied: terminado==0.17.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 119)) (0.17.1)
+Requirement already satisfied: timm==0.6.12 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 120)) (0.6.12)
+Requirement already satisfied: tinycss2==1.2.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 121)) (1.2.1)
+Requirement already satisfied: torch==1.13.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 122)) (1.13.1)
+Requirement already satisfied: torchsummary==1.5.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 123)) (1.5.1)
+Requirement already satisfied: torchvision==0.14.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 124)) (0.14.1)
+Requirement already satisfied: tornado==6.2 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 125)) (6.2)
+Requirement already satisfied: tqdm==4.64.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 126)) (4.64.1)
+Requirement already satisfied: traitlets==5.9.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 127)) (5.9.0)
+Requirement already satisfied: typing_extensions==4.5.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 128)) (4.5.0)
+Requirement already satisfied: uri-template==1.2.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 129)) (1.2.0)
+Requirement already satisfied: urllib3==1.26.14 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 130)) (1.26.14)
+Requirement already satisfied: wcwidth==0.2.6 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 131)) (0.2.6)
+Requirement already satisfied: webcolors==1.12 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 132)) (1.12)
+Requirement already satisfied: webencodings==0.5.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 133)) (0.5.1)
+Requirement already satisfied: websocket-client==1.5.1 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 134)) (1.5.1)
+Requirement already satisfied: Werkzeug==2.2.3 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 135)) (2.2.3)
+Requirement already satisfied: widgetsnbextension==4.0.5 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 136)) (4.0.5)
+Requirement already satisfied: wrapt==1.15.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 137)) (1.15.0)
+Requirement already satisfied: xmltodict==0.13.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 138)) (0.13.0)
+Requirement already satisfied: yapf==0.32.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 139)) (0.32.0)
+Requirement already satisfied: zipp==3.15.0 in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from -r ./requirements.txt (line 140)) (3.15.0)
+Requirement already satisfied: setuptools in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from nibabel==5.0.1->-r ./requirements.txt (line 65)) (67.8.0)
+Requirement already satisfied: wheel in /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages (from nvidia-cublas-cu11==11.10.3.66->-r ./requirements.txt (line 69)) (0.38.4)
+Installing collected packages: charset-normalizer, cryptography
+  Attempting uninstall: charset-normalizer
+    Found existing installation: charset-normalizer 2.0.4
+    Uninstalling charset-normalizer-2.0.4:
+      Successfully uninstalled charset-normalizer-2.0.4
+  Attempting uninstall: cryptography
+    Found existing installation: cryptography 39.0.1
+    Uninstalling cryptography-39.0.1:
+      Successfully uninstalled cryptography-39.0.1
+Successfully installed charset-normalizer-3.0.1 cryptography-39.0.2
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/pretrain/main.py", line 14, in <module>
+    from pretrain.training import run_training
+  File "/home/karimimonsefi.1/SSL_VAN/pretrain/training.py", line 9, in <module>
+    from pretrain.utils.utils import load_clusters
+  File "/home/karimimonsefi.1/SSL_VAN/pretrain/utils/utils.py", line 2, in <module>
+    import scipy.ndimage as ndimage
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/ndimage/__init__.py", line 154, in <module>
+    from ._interpolation import *  # noqa: F401 F403
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/ndimage/_interpolation.py", line 37, in <module>
+    from scipy import special
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/__init__.py", line 200, in __getattr__
+    return _importlib.import_module(f'scipy.{name}')
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/special/__init__.py", line 671, in <module>
+    from . import _orthogonal
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/special/_orthogonal.py", line 81, in <module>
+    from scipy import linalg
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/__init__.py", line 200, in __getattr__
+    return _importlib.import_module(f'scipy.{name}')
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/linalg/__init__.py", line 209, in <module>
+    from ._matfuncs import *
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/linalg/_matfuncs.py", line 19, in <module>
+    from ._matfuncs_sqrtm import sqrtm
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/linalg/_matfuncs_sqrtm.py", line 24, in <module>
+    from ._matfuncs_sqrtm_triu import within_block_loop
+ImportError: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/scipy/linalg/_matfuncs_sqrtm_triu.cpython-39-x86_64-linux-gnu.so)
