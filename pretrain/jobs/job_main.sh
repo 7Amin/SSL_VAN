@@ -10,7 +10,7 @@
 
 module spider cuda
 conda activate ssl_van_seg
-#pip3 install -r ./requirements.txt
+pip3 install -r ./requirements.txt
 
 
 job=$1
