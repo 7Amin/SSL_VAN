@@ -12,6 +12,7 @@ from BRATS21.utils.data_utils import get_loader
 from commons.model_factory import get_model, load_model
 from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
+from commons.util import fix_outputs_url
 from BRATS21.trainer import run_training
 
 from monai.inferers import sliding_window_inference
@@ -59,6 +60,7 @@ parser.add_argument("--RandScaleIntensityd_prob", default=0.2, type=float, help=
 parser.add_argument("--RandShiftIntensityd_prob", default=0.2, type=float, help="RandShiftIntensityd aug probability")
 parser.add_argument("--workers", default=2, type=int, help="number of workers")
 parser.add_argument("--test_mode", default=False, type=bool, help="this runner is a test or not")
+parser.add_argument("--val_mode", default=False, action="store_true", help="this runner is a validation or not")
 parser.add_argument("--distributed", action="store_true", help="start distributed training")
 parser.add_argument("--use_normal_dataset", action="store_true", help="use monai Dataset class")
 parser.add_argument("--noamp", action="store_true", help="do NOT use amp for training")
@@ -126,7 +128,6 @@ def main_worker(gpu, args):
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
-    inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
     model = get_model(args)
 
@@ -147,7 +148,7 @@ def main_worker(gpu, args):
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN_BATCH, get_not_nans=True)
     model_inferer = partial(
         sliding_window_inference,
-        roi_size=inf_size,
+        roi_size=[args.roi_x, args.roi_y, args.roi_z],
         sw_batch_size=args.sw_batch_size,
         predictor=model,
         overlap=args.infer_overlap,
@@ -164,8 +165,8 @@ def main_worker(gpu, args):
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v + \
                "_fold-" + str(args.fold)
-    args.best_model_url = base_url + "_" + "_best.pt"
-    args.final_model_url = base_url + "_" + "_final.pt"
+
+    fix_outputs_url(args, base_url)
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
     optimizer = get_optimizer(model, args)

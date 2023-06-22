@@ -184,7 +184,8 @@ def get_loader(args):
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
-
+    train_ds = None
+    val_ds = None
     if args.valid_loader == 'none':
         val_transform = transforms.Compose(
             [
@@ -229,6 +230,18 @@ def get_loader(args):
         )
 
         loader = test_loader
+    # elif args.val_mode:
+    #     extra_val_ds = data.Dataset(data=extra_val, transform=val_transform)
+    #     val_sampler = Sampler(extra_val_ds, shuffle=False) if args.distributed else None
+    #     extra_val_loader = data.DataLoader(
+    #         extra_val_ds,
+    #         batch_size=1,
+    #         shuffle=False,
+    #         num_workers=args.workers,
+    #         sampler=val_sampler,
+    #         pin_memory=True
+    #     )
+    #     loader = extra_val_loader
     else:
         train_ds = data.Dataset(data=train_files, transform=train_transform)
 
