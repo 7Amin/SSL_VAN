@@ -7,7 +7,7 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
-from monai.networks.nets import SwinUNETR, UNETR, DynUNet
+from monai.networks.nets import SwinUNETR, UNETR, DynUNet, SegResNetVAE
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
@@ -21,6 +21,18 @@ import os
 
 
 def get_model(args):
+    if args.model_v == "SegResNetVAE":
+        model = SegResNetVAE((args.roi_x, args.roi_y, args.roi_z),
+                             vae_estimate_std=False,
+                             vae_default_std=0.3,
+                             vae_nz=256,
+                             spatial_dims=3,
+                             init_filters=8,
+                             in_channels=args.in_channels,
+                             out_channels=args.out_channels,
+                             )
+        return model
+
     if args.model_v == "nnUNet":
         strides = [[1, 1, 1], [2, 2, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 1]]
         model = DynUNet(

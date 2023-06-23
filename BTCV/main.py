@@ -94,7 +94,7 @@ parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=
 parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                        'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL",
                                                                        'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
-                                                                       'UNETR16', 'UNETR32', 'nnUNet'])
+                                                                       'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
 
