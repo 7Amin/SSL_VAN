@@ -32,7 +32,7 @@ def get_model(args):
             upsample_kernel_size=strides[1:],
             norm_name="instance",
             deep_supervision=True,
-            deep_supr_num=3,
+            deep_supr_num=1,
         )
         return model
 
