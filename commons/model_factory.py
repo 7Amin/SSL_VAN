@@ -79,20 +79,7 @@ def get_model(args):
             drop_rate=0.0,
             attn_drop_rate=0.0,
             dropout_path_rate=0.0,
-            use_checkpoint=True,
-        )
-        return model
-
-    if args.model_v == "SwinUNETR24":
-        model = SwinUNETR(
-            img_size=(args.roi_x, args.roi_y, args.roi_z),
-            in_channels=args.in_channels,
-            out_channels=args.out_channels,
-            feature_size=24,
-            drop_rate=0.0,
-            attn_drop_rate=0.0,
-            dropout_path_rate=0.0,
-            use_checkpoint=True,
+            # use_checkpoint=True,
         )
         return model
 
@@ -105,7 +92,20 @@ def get_model(args):
             drop_rate=0.0,
             attn_drop_rate=0.0,
             dropout_path_rate=0.0,
-            use_checkpoint=True,
+            # use_checkpoint=True,
+        )
+        return model
+
+    if args.model_v == "SwinUNETR24":
+        model = SwinUNETR(
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            feature_size=24,
+            drop_rate=0.0,
+            attn_drop_rate=0.0,
+            dropout_path_rate=0.0,
+            # use_checkpoint=True,
         )
         return model
 
