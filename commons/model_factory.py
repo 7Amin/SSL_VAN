@@ -7,7 +7,7 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
-from monai.networks.nets import SwinUNETR
+from monai.networks.nets import SwinUNETR, UNETR
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
@@ -21,6 +21,40 @@ import os
 
 
 def get_model(args):
+    if args.model_v == "UNETR16":
+        model = UNETR(
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            feature_size=16,
+            hidden_size=768,
+            mlp_dim=3072,
+            num_heads=12,
+            pos_embed='perceptron',
+            norm_name='instance',
+            conv_block=True,
+            res_block=True,
+            dropout_rate=0.0
+        )
+        return model
+
+    if args.model_v == "UNETR32":
+        model = UNETR(
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            feature_size=32,
+            hidden_size=768,
+            mlp_dim=3072,
+            num_heads=12,
+            pos_embed='perceptron',
+            norm_name='instance',
+            conv_block=True,
+            res_block=True,
+            dropout_rate=0.0
+        )
+        return model
+
     if args.model_v == "SwinUNETR48":
         model = SwinUNETR(
             img_size=(args.roi_x, args.roi_y, args.roi_z),
