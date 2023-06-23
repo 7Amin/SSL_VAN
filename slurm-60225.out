@@ -90,3 +90,80 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
 input_list/dataset_BTCV_List.json
 input_list/dataset_BTCV_List.json
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/utils/data/_utils/pin_memory.py", line 49, in _pin_memory_loop
+    do_one_step()
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/utils/data/_utils/pin_memory.py", line 26, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 305, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/connection.py", line 508, in Client
+    answer_challenge(c, authkey)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/connection.py", line 757, in answer_challenge
+    response = connection.recv_bytes(256)        # reject large message
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 232, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 108, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 210, in main_worker
+    accuracy = run_training(
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py", line 152, in run_training
+    train_loss = train_epoch(
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py", line 36, in train_epoch
+    logits = model(data)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1040, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1000, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/networks/nets/swin_unetr.py", line 280, in forward
+    hidden_states_out = self.swinViT(x_in, self.normalize)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/networks/nets/swin_unetr.py", line 970, in forward
+    x0_out = self.proj_out(x0, normalize)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/networks/nets/swin_unetr.py", line 957, in proj_out
+    x = rearrange(x, "n c d h w -> n d h w c")
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/module.py", line 388, in __call__
+    raise self._exception
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/module.py", line 340, in optional_import
+    pkg = __import__(module)  # top level module
+monai.utils.module.OptionalImportError: from einops import rearrange (No module named 'einops').
+
+For details about installing the optional dependencies, please visit:
+    https://docs.monai.io/en/latest/installation.html#installing-the-recommended-dependencies
+
