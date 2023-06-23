@@ -7,6 +7,7 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
+from monai.networks.nets import SwinUNETR
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
@@ -20,6 +21,45 @@ import os
 
 
 def get_model(args):
+    if args.model_v == "SwinUNETR48":
+        model = SwinUNETR(
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            feature_size=48,
+            drop_rate=0.0,
+            attn_drop_rate=0.0,
+            dropout_path_rate=0.0,
+            use_checkpoint=True,
+        )
+        return model
+
+    if args.model_v == "SwinUNETR24":
+        model = SwinUNETR(
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            feature_size=24,
+            drop_rate=0.0,
+            attn_drop_rate=0.0,
+            dropout_path_rate=0.0,
+            use_checkpoint=True,
+        )
+        return model
+
+    if args.model_v == "SwinUNETR36":
+        model = SwinUNETR(
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            feature_size=36,
+            drop_rate=0.0,
+            attn_drop_rate=0.0,
+            dropout_path_rate=0.0,
+            use_checkpoint=True,
+        )
+        return model
+
     if args.model_v == "VANV6GL":
         model = VANV6GL(embed_dims=args.embed_dims,
                         mlp_ratios=args.mlp_ratios,
