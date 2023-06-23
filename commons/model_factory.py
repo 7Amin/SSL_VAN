@@ -7,7 +7,7 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
-from monai.networks.nets import SwinUNETR, UNETR
+from monai.networks.nets import SwinUNETR, UNETR, DynUNet
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
@@ -21,6 +21,21 @@ import os
 
 
 def get_model(args):
+    if args.model_v == "nnUNet":
+        strides = [[1, 1, 1], [2, 2, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 1]]
+        model = DynUNet(
+            spatial_dims=3,
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            kernel_size=[[3, 3, 1], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]],
+            strides=strides,
+            upsample_kernel_size=strides[1:],
+            norm_name="instance",
+            deep_supervision=True,
+            deep_supr_num=3,
+        )
+        return model
+
     if args.model_v == "UNETR16":
         model = UNETR(
             in_channels=args.in_channels,
