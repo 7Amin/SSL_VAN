@@ -27,6 +27,7 @@ def get_model(args):
         model = BasicUNetPlusPlus(in_channels=args.in_channels,
                                   out_channels=args.out_channels
                                   )
+
         return model
 
     if args.model_v == "Unetpp":
