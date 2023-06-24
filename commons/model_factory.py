@@ -8,6 +8,7 @@ from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
 from commons.models.unet_p_p import UNetPlusPlus
+from commons.models.basic_unet_plus_plus import BasicUNetPlusPlus
 from commons.models.seg_res_net_vae import SegResNetVAE
 from monai.networks.nets import SwinUNETR, UNETR, DynUNet, AttentionUnet
 # from monai.networks.nets import BasicUNetPlusPlus
@@ -25,12 +26,12 @@ import os
 
 def get_model(args):
 
-    # if args.model_v == "BasicUNetPlusPlus":
-    #     model = BasicUNetPlusPlus(in_channels=args.in_channels,
-    #                               out_channels=args.out_channels
-    #                               )
-    #
-    #     return model
+    if args.model_v == "BasicUNetPlusPlus":
+        model = BasicUNetPlusPlus(in_channels=args.in_channels,
+                                  out_channels=args.out_channels
+                                  )
+
+        return model
 
     if args.model_v == "Unetpp":
         model = UNetPlusPlus(in_channels=args.in_channels,
