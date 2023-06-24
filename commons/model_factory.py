@@ -61,8 +61,8 @@ def get_model(args):
         model = AttentionUnet(spatial_dims=3,
                               in_channels=args.in_channels,
                               out_channels=args.out_channels,
-                              channels=[16, 32, 64, 128, 256],
-                              strides=[1, 1, 1, 1, 1],
+                              channels=[16, 32, 64, 128],
+                              strides=[1, 1, 1, 1],
                               )
         return model
 
