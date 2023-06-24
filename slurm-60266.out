@@ -1,0 +1,97 @@
+/var/spool/slurmd/job60266/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:107: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:321: FutureWarning: monai.transforms.io.dictionary LoadImaged.__init__:image_only: Current default value of argument `image_only=False` has been deprecated since version 1.1. It will be changed to `image_only=True` in version 1.3.
+  warn_deprecated(argname, msg, warning_category)
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:111: FutureWarning: <class 'monai.transforms.utility.dictionary.AddChanneld'>: Class `AddChanneld` has been deprecated since version 0.8. It will be removed in version 1.3. please use MetaTensor data type and monai.transforms.EnsureChannelFirstd instead with `channel_dim='no_channel'`.
+  warn_deprecated(obj, msg, warning_category)
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:221: FutureWarning: monai.transforms.utility.dictionary EnsureChannelFirstd.__init__:meta_keys: Argument `meta_keys` has been deprecated since version 0.9. not needed if image is type `MetaTensor`.
+  warn_deprecated(argname, msg, warning_category)
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:127: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:129: UserWarning: Batch size is: 2 epochs 15000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:321: FutureWarning: monai.transforms.io.dictionary LoadImaged.__init__:image_only: Current default value of argument `image_only=False` has been deprecated since version 1.1. It will be changed to `image_only=True` in version 1.3.
+  warn_deprecated(argname, msg, warning_category)
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:111: FutureWarning: <class 'monai.transforms.utility.dictionary.AddChanneld'>: Class `AddChanneld` has been deprecated since version 0.8. It will be removed in version 1.3. please use MetaTensor data type and monai.transforms.EnsureChannelFirstd instead with `channel_dim='no_channel'`.
+  warn_deprecated(obj, msg, warning_category)
+/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/utils/deprecate_utils.py:221: FutureWarning: monai.transforms.utility.dictionary EnsureChannelFirstd.__init__:meta_keys: Argument `meta_keys` has been deprecated since version 0.9. not needed if image is type `MetaTensor`.
+  warn_deprecated(argname, msg, warning_category)
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:127: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+input_list/dataset_BTCV_List.json
+input_list/dataset_BTCV_List.json
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 233, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 109, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/BTCV/main.py", line 152, in main_worker
+    post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
+  File "/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib/python3.9/site-packages/monai/transforms/post/array.py", line 180, in __init__
+    raise ValueError("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+ValueError: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+
