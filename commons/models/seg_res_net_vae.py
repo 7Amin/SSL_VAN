@@ -331,8 +331,8 @@ class SegResNetVAE(SegResNet):
         vae_input = x
         x = self.decode(x, down_x)
 
-        if self.training:
-            vae_loss = self._get_vae_loss(net_input, vae_input)
-            return x, vae_loss
+        # if self.training:
+        #     vae_loss = self._get_vae_loss(net_input, vae_input)
+        #     return x, vae_loss
 
         return x
