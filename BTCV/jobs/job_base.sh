@@ -27,7 +27,7 @@ elif [ $job -eq 736 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log --save_checkpoint --max_epochs 15000 \
-  --distributed --use_normal_dataset --batch_size 2 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v SwinUNETR36 --checkpoint
 
 elif [ $job -eq 748 ]
