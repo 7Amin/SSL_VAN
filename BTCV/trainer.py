@@ -34,8 +34,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             param.grad = None
         with autocast(enabled=args.amp):
             logits = model(data)
-            if isinstance(logits, tuple):
-                logits = logits[0]
+            # if isinstance(logits, tuple):
+            #     logits = logits[0]
             warnings.warn("logits shape {}".format(logits.shape))
             warnings.warn("target shape {}".format(target.shape))
             loss = loss_func(logits, target)
