@@ -10,7 +10,7 @@ from commons.models.van_v4gl_v2 import VANV4GLV2
 from commons.models.unet_p_p import UNetPlusPlus
 from commons.models.basic_unet_plus_plus import BasicUNetPlusPlus
 from commons.models.seg_res_net_vae import SegResNetVAE
-from monai.networks.nets import SwinUNETR, UNETR, DynUNet, AttentionUnet
+from monai.networks.nets import SwinUNETR, UNETR, DynUNet, AttentionUnet, DiNTS, TopologyInstance, TopologySearch
 # from monai.networks.nets import BasicUNetPlusPlus
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
@@ -25,6 +25,24 @@ import os
 
 
 def get_model(args):
+
+    if args.model_v == "DiNTS_Instance":
+        topol = TopologyInstance()
+        model = DiNTS(dints_space=topol,
+                      in_channels=args.in_channels,
+                      num_classes=args.out_channels
+                      )
+
+        return model
+
+    if args.model_v == "DiNTS_Search":
+        topol = TopologySearch()
+        model = DiNTS(dints_space=topol,
+                      in_channels=args.in_channels,
+                      num_classes=args.out_channels
+                      )
+
+        return model
 
     if args.model_v == "BasicUNetPlusPlus":
         model = BasicUNetPlusPlus(in_channels=args.in_channels,
