@@ -7,7 +7,8 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
-from monai.networks.nets import SwinUNETR, UNETR, DynUNet, SegResNetVAE
+from commons.models.unet_p_p import UNetPlusPlus
+from monai.networks.nets import SwinUNETR, UNETR, DynUNet, SegResNetVAE, AttentionUnet
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
@@ -21,6 +22,22 @@ import os
 
 
 def get_model(args):
+
+    if args.model_v == "Unetpp":
+        model = UNetPlusPlus(in_channels=args.in_channels,
+                             out_channels=args.out_channels
+                             )
+        return model
+
+    if args.model_v == "AttentionUnet":
+        model = AttentionUnet(spatial_dims=3,
+                              in_channels=args.in_channels,
+                              out_channels=args.out_channels,
+                              channels=[16, 32, 64, 128, 256, 512],
+                              strides=[1, 2, 2, 2, 2, 2],
+                              )
+        return model
+
     if args.model_v == "SegResNetVAE":
         model = SegResNetVAE((args.roi_x, args.roi_y, args.roi_z),
                              vae_estimate_std=False,
