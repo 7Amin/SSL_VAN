@@ -15,5 +15,5 @@ def load_pre_trained(args, model):
                 new_state_dict[key] = state_dict.pop(key)
         model.load_state_dict(new_state_dict, strict=False)
         warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
-
+    args.model_v = args.model_v + "_pre"
     return model

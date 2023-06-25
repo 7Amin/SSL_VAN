@@ -31,12 +31,11 @@ parser.add_argument("--base_data",
 parser.add_argument("--json_list", default='../input_list/dataset_BTCV_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
-    "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"
+    "--pretrained_dir", default="./runs/pre_train_1/test_log/", type=str, help="pretrained checkpoint directory"
 )
 parser.add_argument(
     "--pretrained_model_name",
-    # default="64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2__best.pt",
-    default="64-128-256-512_3-4-6-3_8-8-4-4_vae___VANV4__best.pt",
+    default="pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4_20_500_256_True_5__final.pt",
     type=str,
     help="pretrained model name",
 )
