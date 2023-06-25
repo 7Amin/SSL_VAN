@@ -26,15 +26,6 @@ import os
 
 
 def get_model(args):
-    if args.model_v == "DiNTS_Construction":
-        topol = TopologyConstruction()
-        model = DiNTS(dints_space=topol,
-                      in_channels=args.in_channels,
-                      num_classes=args.out_channels
-                      )
-
-        return model
-
     if args.model_v == "DiNTS_Instance":
         topol = TopologyInstance()
         model = DiNTS(dints_space=topol,
