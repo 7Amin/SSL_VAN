@@ -10,9 +10,9 @@ from commons.models.van_v4gl_v2 import VANV4GLV2
 from commons.models.unet_p_p import UNetPlusPlus
 from commons.models.basic_unet_plus_plus import BasicUNetPlusPlus
 from commons.models.seg_res_net_vae import SegResNetVAE
-from monai.networks.nets import SwinUNETR, UNETR, DynUNet, AttentionUnet, DiNTS, TopologyInstance, TopologySearch, \
-    TopologyConstruction
-# from monai.networks.nets import BasicUNetPlusPlus
+from commons.models.attention_unet import AttentionUnet
+from monai.networks.nets import SwinUNETR, UNETR, DynUNet, DiNTS, TopologyInstance, TopologySearch
+# from monai.networks.nets import BasicUNetPlusPlus AttentionUnet
 
 from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
