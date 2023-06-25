@@ -3,6 +3,8 @@ import warnings
 
 import numpy as np
 import torch
+import nibabel as nib
+import scipy.ndimage as ndi
 import torch.nn.parallel
 import torch.utils.data.distributed
 
@@ -12,13 +14,17 @@ from monai.transforms import Activations, AsDiscrete
 from monai.data import decollate_batch
 
 
+def convert_tensor_to_nii():
+    pass
+
+
 def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
     model.eval()
     run_acc = AverageMeter()
     start_time = time.time()
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            warnings.warn(batch_data)
+            print(batch_data)
             if isinstance(batch_data, list):
                 data, target = batch_data
             else:
