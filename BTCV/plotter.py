@@ -3,12 +3,13 @@ import torchio as tio
 import nibabel as nib
 import matplotlib.pyplot as plt
 
-image_name = '0036.nii.gz'
+image_name = '0037.nii.gz'
 
 # Load the original image
 original_path = f'/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training/img/img{image_name}'
 original_img = nib.load(original_path)
 original_data = original_img.get_fdata()
+original_data = np.expand_dims(original_data, axis=0)
 
 # Load the predicted data
 predicted_path = f'/home/amin/CETI/medical_image/SSL_VAN/runs/BTCV_new/test_log/output_True_False' \
@@ -21,6 +22,7 @@ predicted_data = predicted_img.get_fdata()
 target_path = f'/media/amin/SP PHD U3/CT_Segmentation_Images/3D/BTCV/Abdomen/RawData/Training/label/label{image_name}'
 target_img = nib.load(target_path)
 target_data = target_img.get_fdata()
+target_data = np.expand_dims(target_data, axis=0)
 
 
 # Define the desired spacing
