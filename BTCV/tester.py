@@ -44,6 +44,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             acc_func.reset()
             acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc, not_nans = acc_func.aggregate()
+            warnings.warn("acc {}".format(acc))
+            warnings.warn("not_nans {}".format(not_nans))
             acc = acc.cuda(args.rank)
 
             if args.distributed:
