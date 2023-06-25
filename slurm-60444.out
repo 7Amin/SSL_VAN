@@ -1,0 +1,263 @@
+/var/spool/slurmd/job60444/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:128: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:130: UserWarning: Batch size is: 1 epochs 15000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:164: UserWarning: Total parameters count 56787848
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:167: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log/output_True_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log/output_True_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:181: UserWarning: => loaded checkpoint 'True' (epoch 6110) (bestacc 0.8404808044433594)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+input_list/dataset_BTCV_List.json
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 314, 214, 234])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:47: UserWarning: test_output_image_convert 13.0
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].max()))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.998  0.958  0.939  0.934  1.000  0.667  0.965  0.896  0.920  0.899
+  0.727  0.730  0.702  0.689]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 0/6,
+ Dice_background: 0.9978408813476562,
+ Dice_spleen: 0.9583805203437805,
+ Dice_rkid: 0.93902188539505,
+ Dice_lkid: 0.933877170085907,
+ Dice_gall: 1.0,
+ Dice_eso: 0.6674612760543823,
+ Dice_liver: 0.964862048625946,
+ Dice_sto: 0.8957391977310181,
+ Dice_aorta: 0.9200090169906616,
+ Dice_IVC: 0.8993058800697327,
+ Dice_veins: 0.727262020111084,
+ Dice_pancreas: 0.7302868366241455,
+ Dice_rad: 0.7024743556976318,
+ Dice_lad: 0.6885919570922852
+ time 8.03s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 0/6  acc 0.858936607837677  time 8.03s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 255, 223, 276])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.998  0.961  0.960  0.959  0.753  0.827  0.974  0.939  0.920  0.852
+  0.730  0.768  0.745  0.732]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 1/6,
+ Dice_background: 0.9977713227272034,
+ Dice_spleen: 0.959724485874176,
+ Dice_rkid: 0.9497119188308716,
+ Dice_lkid: 0.9464110732078552,
+ Dice_gall: 0.8766086101531982,
+ Dice_eso: 0.7470686435699463,
+ Dice_liver: 0.969215989112854,
+ Dice_sto: 0.9173745512962341,
+ Dice_aorta: 0.9200496673583984,
+ Dice_IVC: 0.8758593201637268,
+ Dice_veins: 0.7287120819091797,
+ Dice_pancreas: 0.7490953207015991,
+ Dice_rad: 0.7235363721847534,
+ Dice_lad: 0.7105454206466675
+ time 2.62s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 1/6  acc 0.8622631430625916  time 2.62s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 238, 190, 246])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.996  0.960  0.949  0.952  0.900  0.730  0.972  0.737  0.902  0.875
+  0.715  0.818  0.712  0.539]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 2/6,
+ Dice_background: 0.9973459839820862,
+ Dice_spleen: 0.9599583745002747,
+ Dice_rkid: 0.9494881629943848,
+ Dice_lkid: 0.9482242465019226,
+ Dice_gall: 0.8843756318092346,
+ Dice_eso: 0.7413680553436279,
+ Dice_liver: 0.9701554775238037,
+ Dice_sto: 0.8573806881904602,
+ Dice_aorta: 0.914081871509552,
+ Dice_IVC: 0.875645101070404,
+ Dice_veins: 0.7242805361747742,
+ Dice_pancreas: 0.7722292542457581,
+ Dice_rad: 0.719580352306366,
+ Dice_lad: 0.6533147692680359
+ time 1.59s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 2/6  acc 0.8548162579536438  time 1.59s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 323, 279, 248])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.994  0.953  0.940  0.942  0.570  0.727  0.964  0.585  0.905  0.837
+  0.775  0.849  0.598  0.470]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 3/6,
+ Dice_background: 0.9966192841529846,
+ Dice_spleen: 0.9583206176757812,
+ Dice_rkid: 0.947205126285553,
+ Dice_lkid: 0.9465674161911011,
+ Dice_gall: 0.8058673143386841,
+ Dice_eso: 0.7376720905303955,
+ Dice_liver: 0.968704879283905,
+ Dice_sto: 0.7891951203346252,
+ Dice_aorta: 0.9117653369903564,
+ Dice_IVC: 0.8660928606987,
+ Dice_veins: 0.7369860410690308,
+ Dice_pancreas: 0.791354775428772,
+ Dice_rad: 0.6892929077148438,
+ Dice_lad: 0.6075834035873413
+ time 4.59s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 3/6  acc 0.8395162224769592  time 4.59s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 333, 228, 224])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.998  0.965  0.931  0.928  0.811  0.708  0.967  0.892  0.902  0.849
+  0.756  0.839  0.677  0.667]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 4/6,
+ Dice_background: 0.9968932867050171,
+ Dice_spleen: 0.959642767906189,
+ Dice_rkid: 0.9439470171928406,
+ Dice_lkid: 0.9429202079772949,
+ Dice_gall: 0.8068529367446899,
+ Dice_eso: 0.7317568063735962,
+ Dice_liver: 0.9684359431266785,
+ Dice_sto: 0.8097516894340515,
+ Dice_aorta: 0.9097973704338074,
+ Dice_IVC: 0.8626686334609985,
+ Dice_veins: 0.7406994104385376,
+ Dice_pancreas: 0.8008949160575867,
+ Dice_rad: 0.6867710947990417,
+ Dice_lad: 0.6194783449172974
+ time 2.51s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 4/6  acc 0.8414650559425354  time 2.51s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:46: UserWarning: test_output_image_convert torch.Size([1, 254, 210, 292])
+  warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:59: UserWarning: acc [ 0.998  0.919  0.965  0.961  0.674  0.741  0.973  0.869  0.862  0.802
+  0.820  0.848  0.670  0.757]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:80: UserWarning: test 5/6,
+ Dice_background: 0.9969958662986755,
+ Dice_spleen: 0.9528753161430359,
+ Dice_rkid: 0.9474330544471741,
+ Dice_lkid: 0.9459633827209473,
+ Dice_gall: 0.784689724445343,
+ Dice_eso: 0.7333077788352966,
+ Dice_liver: 0.9692202210426331,
+ Dice_sto: 0.8196906447410583,
+ Dice_aorta: 0.9017547965049744,
+ Dice_IVC: 0.8526341319084167,
+ Dice_veins: 0.7538511753082275,
+ Dice_pancreas: 0.808707058429718,
+ Dice_rad: 0.6839408278465271,
+ Dice_lad: 0.6423847675323486
+ time 3.12s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:88: UserWarning: Test 5/6  acc 0.8423891663551331  time 3.12s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:120: UserWarning: Final test acc: 0.8424  time 22.47s
+  warnings.warn("Final test acc: {:.4f}  time {:.2f}s".format(test_avg_acc, time.time() - epoch_time))
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512,  94,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.9199, 0.9199, 5.0000, 0.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([3071], dtype=torch.int32), 'glmin': tensor([-3024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -235.0401],
+         [   0.0000,    1.5000,    0.0000, -235.0401],
+         [   0.0000,    0.0000,    2.0000, -232.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.9199,    0.0000,    0.0000,  235.0401],
+         [   0.0000,    0.9199,    0.0000, -235.0401],
+         [   0.0000,    0.0000,    5.0000, -232.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512,  94]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0035.nii.gz']}
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512, 184,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.7461, 0.7461, 3.0000, 1.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([1421], dtype=torch.int32), 'glmin': tensor([-1024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -190.6270],
+         [   0.0000,    1.5000,    0.0000, -190.6270],
+         [   0.0000,    0.0000,    2.0000, -274.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.7461,    0.0000,    0.0000,  190.6270],
+         [   0.0000,    0.7461,    0.0000, -190.6270],
+         [   0.0000,    0.0000,    3.0000, -274.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512, 184]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0036.nii.gz']}
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512,  99,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.7031, 0.7031, 5.0000, 0.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([3071], dtype=torch.int32), 'glmin': tensor([-3024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -179.6484],
+         [   0.0000,    1.5000,    0.0000, -179.6484],
+         [   0.0000,    0.0000,    2.0000, -245.0000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.7031,    0.0000,    0.0000,  179.6484],
+         [   0.0000,    0.7031,    0.0000, -179.6484],
+         [   0.0000,    0.0000,    5.0000, -245.0000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512,  99]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0037.nii.gz']}
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512, 100,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.9766, 0.9766, 5.0000, 0.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([2400], dtype=torch.int32), 'glmin': tensor([-3024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -249.5116],
+         [   0.0000,    1.5000,    0.0000, -249.5116],
+         [   0.0000,    0.0000,    2.0000, -247.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.9766,    0.0000,    0.0000,  249.5116],
+         [   0.0000,    0.9766,    0.0000, -249.5116],
+         [   0.0000,    0.0000,    5.0000, -247.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512, 100]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0038.nii.gz']}
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512,  90,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.9760, 0.9760, 5.0000, 0.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([1541], dtype=torch.int32), 'glmin': tensor([-1024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -249.3680],
+         [   0.0000,    1.5000,    0.0000, -249.3680],
+         [   0.0000,    0.0000,    2.0000, -222.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.9760,    0.0000,    0.0000,  249.3680],
+         [   0.0000,    0.9760,    0.0000, -249.3680],
+         [   0.0000,    0.0000,    5.0000, -222.5000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512,  90]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0039.nii.gz']}
+{'sizeof_hdr': tensor([348], dtype=torch.int32), 'extents': tensor([0], dtype=torch.int32), 'session_error': tensor([0], dtype=torch.int16), 'dim_info': tensor([0], dtype=torch.uint8), 'dim': tensor([[  3, 512, 512, 195,   1,   1,   1,   1]], dtype=torch.int16), 'intent_p1': tensor([0.]), 'intent_p2': tensor([0.]), 'intent_p3': tensor([0.]), 'intent_code': tensor([0], dtype=torch.int16), 'datatype': tensor([4], dtype=torch.int16), 'bitpix': tensor([16], dtype=torch.int16), 'slice_start': tensor([0], dtype=torch.int16), 'pixdim': tensor([[1.0000, 0.7422, 0.7422, 3.0000, 0.0000, 0.0000, 0.0000, 0.0000]]), 'vox_offset': tensor([0.]), 'scl_slope': tensor([nan]), 'scl_inter': tensor([nan]), 'slice_end': tensor([0], dtype=torch.int16), 'slice_code': tensor([0], dtype=torch.uint8), 'xyzt_units': tensor([10], dtype=torch.uint8), 'cal_max': tensor([0.]), 'cal_min': tensor([0.]), 'slice_duration': tensor([0.]), 'toffset': tensor([0.]), 'glmax': tensor([2976], dtype=torch.int32), 'glmin': tensor([-1024], dtype=torch.int32), 'qform_code': tensor([0], dtype=torch.int16), 'sform_code': tensor([0], dtype=torch.int16), 'quatern_b': tensor([0.]), 'quatern_c': tensor([0.]), 'quatern_d': tensor([0.]), 'qoffset_x': tensor([0.]), 'qoffset_y': tensor([0.]), 'qoffset_z': tensor([0.]), 'srow_x': tensor([[0., 0., 0., 0.]]), 'srow_y': tensor([[0., 0., 0., 0.]]), 'srow_z': tensor([[0., 0., 0., 0.]]), 'affine': tensor([[[   1.5000,    0.0000,    0.0000, -189.6289],
+         [   0.0000,    1.5000,    0.0000, -189.6289],
+         [   0.0000,    0.0000,    2.0000, -291.0000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]]), 'original_affine': tensor([[[  -0.7422,    0.0000,    0.0000,  189.6289],
+         [   0.0000,    0.7422,    0.0000, -189.6289],
+         [   0.0000,    0.0000,    3.0000, -291.0000],
+         [   0.0000,    0.0000,    0.0000,    1.0000]]], dtype=torch.float64), 'as_closest_canonical': tensor([False]), 'spatial_shape': tensor([[512, 512, 195]], dtype=torch.int16), 'original_channel_dim': ['no_channel'], 'filename_or_obj': ['../images/BTCV/Abdomen/RawData/Training/img/img0040.nii.gz']}
