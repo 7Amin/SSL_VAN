@@ -18,7 +18,7 @@ from monai.data import decollate_batch
 def convert_tensor_to_nii(image_name, args, images):
     for image in images:
         image = torch.squeeze(image).cpu().numpy().astype(np.uint8)
-        warnings.warn("image {}".format(image.shape))
+        warnings.warn("image shape{}".format(image.shape))
         nifti_img = nib.Nifti1Image(image, affine=np.eye(4))
         url = os.path.join(args.output_url, image_name)
         nib.save(nifti_img, url)
