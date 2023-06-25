@@ -62,7 +62,7 @@ def get_model(args):
                               in_channels=args.in_channels,
                               out_channels=args.out_channels,
                               channels=[16, 32, 64, 128],
-                              strides=[1, 1, 1, 1],
+                              strides=[2, 2, 2, 2],
                               )
         return model
 
