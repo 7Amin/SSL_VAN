@@ -16,7 +16,7 @@ from monai.data import decollate_batch
 
 def convert_tensor_to_nii(image_name, args, images):
     for image in images:
-        image = image.cpu().numpy().astype(np.uint8)
+        image = torch.squeeze(image).cpu().numpy().astype(np.uint8)
         warnings.warn("image {}".format(image.shape))
 
 
