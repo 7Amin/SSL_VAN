@@ -24,7 +24,9 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
     start_time = time.time()
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            print(batch_data['image_meta_dict']['filename_or_obj'])
+            image_name = batch_data['image_meta_dict']['filename_or_obj'][0].split('/')[-1]
+            # print(image_name)
+            warnings.warn("image_name {}".format(image_name))
             if isinstance(batch_data, list):
                 data, target = batch_data
             else:
@@ -88,7 +90,6 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                 warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
                                                                         avg_acc, time.time() - start_time))
             start_time = time.time()
-            break
     return run_acc.avg
 
 
