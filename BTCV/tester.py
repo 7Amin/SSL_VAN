@@ -84,7 +84,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
 
 def run_testing(
     model,
-    val_loader,
+    test_loader,
     acc_func,
     args,
     model_inferer=None,
@@ -92,9 +92,9 @@ def run_testing(
     post_pred=None,
 ):
     epoch_time = time.time()
-    val_avg_acc = test_eval(
+    test_avg_acc = test_eval(
         model,
-        val_loader,
+        test_loader,
         acc_func=acc_func,
         args=args,
         model_inferer=model_inferer,
@@ -102,9 +102,9 @@ def run_testing(
         post_pred=post_pred,
     )
 
-    val_avg_acc = np.mean(val_avg_acc)
+    test_avg_acc = np.mean(test_avg_acc)
 
     if args.rank == 0:
-        warnings.warn("Final validation acc: {:.4f}  time {:.2f}s".format(val_avg_acc, time.time() - epoch_time))
+        warnings.warn("Final test acc: {:.4f}  time {:.2f}s".format(test_avg_acc, time.time() - epoch_time))
 
-    return val_avg_acc
+    return test_avg_acc
