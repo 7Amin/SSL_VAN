@@ -171,7 +171,6 @@ def main_worker(gpu, args):
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v
 
     fix_outputs_url(args, base_url)
-    warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
     best_acc = 0.0
     optimizer = get_optimizer(model, args)
     scheduler = get_lr_schedule(args, optimizer, start_epoch)

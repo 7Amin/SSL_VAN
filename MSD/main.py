@@ -199,7 +199,6 @@ def main_worker(gpu, args):
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + \
                args.model_v + "_" + args.task
     fix_outputs_url(args, base_url)
-
     best_acc = 0.0
     optimizer = get_optimizer(model, args)
     scheduler = get_lr_schedule(args, optimizer, start_epoch)
