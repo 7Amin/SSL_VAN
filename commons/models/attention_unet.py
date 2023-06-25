@@ -136,8 +136,8 @@ class AttentionBlock(nn.Module):
     def forward(self, g: torch.Tensor, x: torch.Tensor) -> torch.Tensor:
         g1 = self.W_g(g)
         x1 = self.W_x(x)
-        print(f"g1 shape : {g1}")
-        print(f"x1 shape : {x1}")
+        print(f"g1 shape : {g1.shape}")
+        print(f"x1 shape : {x1.shape}")
         psi: torch.Tensor = self.relu(g1 + x1)
         psi = self.psi(psi)
 
