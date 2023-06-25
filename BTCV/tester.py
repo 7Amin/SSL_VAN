@@ -42,6 +42,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
             warnings.warn("test_labels_convert shape {}".format(test_labels_list[0].shape))
             acc_func.reset()
+            warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
             acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc, not_nans = acc_func.aggregate()
             warnings.warn("acc {}".format(acc))
