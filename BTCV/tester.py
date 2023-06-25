@@ -48,7 +48,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     run_acc.update(al)
             else:
                 run_acc.update(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0))
-            warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=100.0)))
+            warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
 
             if args.rank == 0:
                 Dice_background = run_acc.avg[0]
