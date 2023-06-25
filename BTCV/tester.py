@@ -18,6 +18,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
     start_time = time.time()
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
+            print(batch_data)
             if isinstance(batch_data, list):
                 data, target = batch_data
             else:
@@ -37,6 +38,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             test_output_image_convert = [post_post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+            warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].max()))
             acc_func.reset()
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc = acc.cuda(args.rank)
