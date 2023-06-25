@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=BTCVTEST
+#SBATCH --job-name=BTCV_TEST
 #SBATCH --time=05:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
