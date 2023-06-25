@@ -39,8 +39,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             test_labels_convert = [post_label(test_label_tensor) for test_label_tensor in test_labels_list]
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
-            warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
-            warnings.warn("test_labels_convert shape {}".format(test_labels_list[0].shape))
+            # warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
+            # warnings.warn("test_labels_convert shape {}".format(test_labels_list[0].shape))
             acc_func.reset()
             # warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
@@ -78,9 +78,9 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
 
                 Dice_rad = run_acc.avg[12]
                 Dice_lad = run_acc.avg[13]
-                warnings.warn("test {}/{}, Dice_background: {}, Dice_spleen: {}, Dice_rkid: {}, Dice_lkid: {},"
-                              " Dice_gall: {}, Dice_eso: {}, Dice_liver: {}, Dice_sto: {}, Dice_aorta: {},"
-                              " Dice_IVC: {}, Dice_veins: {}, Dice_pancreas: {}, Dice_rad: {}, Dice_lad: {}"
+                warnings.warn("test {}/{}, Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+                              " Dice_gall: {},\n Dice_eso: {},\n Dice_liver: {},\n Dice_sto: {},\n Dice_aorta: {},\n"
+                              " Dice_IVC: {},\n Dice_veins: {},\n Dice_pancreas: {},\n Dice_rad: {},\n Dice_lad: {}\n"
                               " time {:.2f}s"
                               .format(idx, len(loader), Dice_background, Dice_spleen, Dice_rkid, Dice_lkid, Dice_gall,
                                       Dice_eso, Dice_liver, Dice_sto, Dice_aorta, Dice_IVC, Dice_veins, Dice_pancreas,
