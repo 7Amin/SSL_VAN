@@ -34,6 +34,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             test_labels_convert = [post_label(test_label_tensor) for test_label_tensor in test_labels_list]
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
+            warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
+            warnings.warn("test_labels_convert shape {}".format(test_labels_convert[0].shape))
             acc_func.reset()
             acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc, not_nans = acc_func.aggregate()
