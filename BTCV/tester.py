@@ -18,7 +18,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
     start_time = time.time()
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            print(batch_data)
+            warnings.warn(batch_data)
             if isinstance(batch_data, list):
                 data, target = batch_data
             else:
