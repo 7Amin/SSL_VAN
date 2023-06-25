@@ -45,7 +45,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             # warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             # acc, not_nans = acc_func.aggregate()
-            warnings.warn("acc {}".format(acc))
+
             # warnings.warn("not_nans {}".format(not_nans))
             acc = acc.cuda(args.rank)
 
@@ -58,6 +58,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
 
             else:
                 run_acc.update(acc.cpu().numpy())
+            warnings.warn("acc {}".format(acc.cpu().numpy()))
 
             if args.rank == 0:
                 Dice_background = run_acc.avg[0]
