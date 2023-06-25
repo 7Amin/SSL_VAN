@@ -78,7 +78,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
 
                 Dice_rad = run_acc.avg[12]
                 Dice_lad = run_acc.avg[13]
-                warnings.warn("test {}/{}, Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+                warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
                               " Dice_gall: {},\n Dice_eso: {},\n Dice_liver: {},\n Dice_sto: {},\n Dice_aorta: {},\n"
                               " Dice_IVC: {},\n Dice_veins: {},\n Dice_pancreas: {},\n Dice_rad: {},\n Dice_lad: {}\n"
                               " time {:.2f}s"
