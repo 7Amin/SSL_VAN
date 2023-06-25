@@ -14,8 +14,10 @@ from monai.transforms import Activations, AsDiscrete
 from monai.data import decollate_batch
 
 
-def convert_tensor_to_nii():
-    pass
+def convert_tensor_to_nii(image_name, args, images):
+    for image in images:
+        image = image.cpu().numpy().astype(np.uint8)
+        warnings.warn("image {}".format(image.shape))
 
 
 def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
@@ -45,6 +47,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             test_output_image_convert = [post_post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
+            convert_tensor_to_nii(image_name, args, convert_tensor_to_nii)
             warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
             warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].max()))
             acc_func.reset()
