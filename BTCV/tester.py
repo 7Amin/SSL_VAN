@@ -42,22 +42,22 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
             warnings.warn("test_labels_convert shape {}".format(test_labels_list[0].shape))
             acc_func.reset()
-            warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
-            acc_func(y_pred=test_output_convert, y=test_labels_convert)
-            acc, not_nans = acc_func.aggregate()
+            # warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
+            acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
+            # acc, not_nans = acc_func.aggregate()
             warnings.warn("acc {}".format(acc))
-            warnings.warn("not_nans {}".format(not_nans))
+            # warnings.warn("not_nans {}".format(not_nans))
             acc = acc.cuda(args.rank)
 
             if args.distributed:
-                acc_list, not_nans_list = distributed_all_gather(
-                    [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
+                acc_list = distributed_all_gather(
+                    [acc], out_numpy=True, is_valid=idx < loader.sampler.valid_length
                 )
-                for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(al, n=nl)
+                for al, nl in zip(acc_list):
+                    run_acc.update(al)
 
             else:
-                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
+                run_acc.update(acc.cpu().numpy())
 
             if args.rank == 0:
                 Dice_background = run_acc.avg[0]
