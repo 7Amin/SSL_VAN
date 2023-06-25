@@ -100,7 +100,7 @@ def run_testing(
 ):
     epoch_time = time.time()
     post_sigmoid = Activations(sigmoid=True)
-    post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
+    post_pred = AsDiscrete(argmax=True, logit_thresh=0.5)
     test_avg_acc = test_eval(
         model,
         test_loader,
