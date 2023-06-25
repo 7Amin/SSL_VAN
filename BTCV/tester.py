@@ -3,6 +3,7 @@ import warnings
 
 import numpy as np
 import torch
+import os
 import nibabel as nib
 import scipy.ndimage as ndi
 import torch.nn.parallel
@@ -18,6 +19,10 @@ def convert_tensor_to_nii(image_name, args, images):
     for image in images:
         image = torch.squeeze(image).cpu().numpy().astype(np.uint8)
         warnings.warn("image {}".format(image.shape))
+        nifti_img = nib.Nifti1Image(image, affine=np.eye(4))
+        url = os.path.join(args.output_url, image_name)
+        nib.save(nifti_img, url)
+        warnings.warn("saved at {}".format(url))
 
 
 def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
@@ -48,8 +53,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             test_output_image_convert = [post_post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             convert_tensor_to_nii(image_name, args, test_output_image_convert)
-            warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
-            warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].max()))
+            # warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
+            # warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].max()))
             acc_func.reset()
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc = acc.cuda(args.rank)
