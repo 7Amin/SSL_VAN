@@ -12,7 +12,7 @@ from monai.transforms import Activations, AsDiscrete
 from monai.data import decollate_batch
 
 
-def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None):
+def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
     model.eval()
     run_acc = AverageMeter()
     start_time = time.time()
@@ -30,25 +30,16 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     logits = model(data)
             if not logits.is_cuda:
                 target = target.cpu()
-            # test_labels_list = decollate_batch(target)
-            # test_outputs_list = decollate_batch(logits)
-            # test_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in test_outputs_list]
-            # acc_func.reset()
-            # acc_func(y_pred=test_output_convert, y=test_labels_list)
             test_labels_list = decollate_batch(target)
             test_labels_convert = [post_label(test_label_tensor) for test_label_tensor in test_labels_list]
+
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
-            # warnings.warn("test_output_convert shape {}".format(test_output_convert[0].shape))
-            # warnings.warn("test_labels_convert shape {}".format(test_labels_list[0].shape))
+            test_output_image_convert = [post_post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
+            warnings.warn("test_output_image_convert {}".format(test_output_image_convert[0].shape))
             acc_func.reset()
-            # warnings.warn("acc_func {}".format(acc_func(y_pred=test_output_convert, y=test_labels_convert)))
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
-            # acc, not_nans = acc_func.aggregate()
-
-            # warnings.warn("not_nans {}".format(not_nans))
             acc = acc.cuda(args.rank)
-
             if args.distributed:
                 acc_list = distributed_all_gather(
                     [acc], out_numpy=True, is_valid=idx < loader.sampler.valid_length
@@ -103,7 +94,7 @@ def run_testing(
 ):
     epoch_time = time.time()
     # post_sigmoid = Activations(sigmoid=True)
-    # post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
+    post_post_pred = AsDiscrete(argmax=True, n_classes=args.out_channels)
     test_avg_acc = test_eval(
         model,
         test_loader,
@@ -111,7 +102,8 @@ def run_testing(
         args=args,
         model_inferer=model_inferer,
         post_label=post_label,
-        post_pred=post_pred
+        post_pred=post_pred,
+        post_post_pred=post_post_pred
     )
 
     test_avg_acc = np.mean(test_avg_acc)
