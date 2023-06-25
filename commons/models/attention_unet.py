@@ -136,6 +136,8 @@ class AttentionBlock(nn.Module):
     def forward(self, g: torch.Tensor, x: torch.Tensor) -> torch.Tensor:
         g1 = self.W_g(g)
         x1 = self.W_x(x)
+        print(f"g1 shape : {g1}")
+        print(f"x1 shape : {x1}")
         psi: torch.Tensor = self.relu(g1 + x1)
         psi = self.psi(psi)
 
@@ -146,7 +148,7 @@ class AttentionLayer(nn.Module):
     def __init__(self, spatial_dims: int, in_channels: int, out_channels: int, submodule: nn.Module, dropout=0.0):
         super().__init__()
         self.attention = AttentionBlock(
-            spatial_dims=spatial_dims, f_g=in_channels, f_l=in_channels, f_int=in_channels
+            spatial_dims=spatial_dims, f_g=in_channels, f_l=in_channels, f_int=in_channels // 2
         )
         self.upconv = UpConv(spatial_dims=spatial_dims, in_channels=out_channels, out_channels=in_channels, strides=2)
         self.merge = Convolution(
