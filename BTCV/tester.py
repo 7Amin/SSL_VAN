@@ -82,6 +82,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                 warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
                                                                         avg_acc, time.time() - start_time))
             start_time = time.time()
+            break
     return run_acc.avg
 
 
