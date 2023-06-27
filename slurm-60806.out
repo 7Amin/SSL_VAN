@@ -1,0 +1,248 @@
+/var/spool/slurmd/job60806/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Collecting monai@ git+https://github.com/Project-MONAI/MONAI.git@a23c7f54f899c183052db4b8ecd6a21c190b2c18
+  Using cached monai-0.9.0rc3+6.ga23c7f54-py3-none-any.whl
+Requirement already satisfied: absl-py==1.4.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: addict==2.4.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 2)) (2.4.0)
+Requirement already satisfied: anyio==3.6.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 3)) (3.6.2)
+Requirement already satisfied: argon2-cffi==21.3.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 4)) (21.3.0)
+Requirement already satisfied: argon2-cffi-bindings==21.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 5)) (21.2.0)
+Requirement already satisfied: arrow==1.2.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 6)) (1.2.3)
+Requirement already satisfied: asttokens==2.2.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 7)) (2.2.1)
+Requirement already satisfied: attrs==22.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 8)) (22.2.0)
+Requirement already satisfied: backcall==0.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 9)) (0.2.0)
+Requirement already satisfied: beautifulsoup4==4.11.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 10)) (4.11.2)
+Collecting einops
+  Downloading einops-0.6.1-py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 1.6 MB/s eta 0:00:00
+Requirement already satisfied: bleach==6.0.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 12)) (6.0.0)
+Requirement already satisfied: cachetools==5.3.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 13)) (5.3.0)
+Requirement already satisfied: certifi==2022.12.7 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 14)) (2022.12.7)
+Requirement already satisfied: cffi==1.15.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 15)) (1.15.1)
+Requirement already satisfied: charset-normalizer==3.0.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 16)) (3.0.1)
+Requirement already satisfied: comm==0.1.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 17)) (0.1.2)
+Requirement already satisfied: cryptography==39.0.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 18)) (39.0.2)
+Requirement already satisfied: debugpy==1.6.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 19)) (1.6.6)
+Requirement already satisfied: decorator==5.1.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 20)) (5.1.1)
+Requirement already satisfied: defusedxml==0.7.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 21)) (0.7.1)
+Requirement already satisfied: Deprecated==1.2.13 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 22)) (1.2.13)
+Requirement already satisfied: executing==1.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 23)) (1.2.0)
+Requirement already satisfied: fastjsonschema==2.16.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 24)) (2.16.3)
+Requirement already satisfied: filelock==3.9.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 25)) (3.9.0)
+Requirement already satisfied: fqdn==1.5.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 26)) (1.5.1)
+Requirement already satisfied: google-auth==2.16.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 27)) (2.16.1)
+Requirement already satisfied: google-auth-oauthlib==0.4.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 28)) (0.4.6)
+Requirement already satisfied: grpcio==1.51.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 29)) (1.51.3)
+Requirement already satisfied: huggingface-hub==0.12.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 30)) (0.12.1)
+Requirement already satisfied: idna==3.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 31)) (3.4)
+Requirement already satisfied: importlib-metadata==6.0.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 32)) (6.0.0)
+Requirement already satisfied: ipykernel==6.21.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 33)) (6.21.2)
+Requirement already satisfied: ipython==8.10.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 34)) (8.10.0)
+Requirement already satisfied: ipython-genutils==0.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 35)) (0.2.0)
+Requirement already satisfied: ipywidgets==8.0.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 36)) (8.0.4)
+Requirement already satisfied: isoduration==20.11.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 37)) (20.11.0)
+Requirement already satisfied: jedi==0.18.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 38)) (0.18.2)
+Requirement already satisfied: jeepney==0.8.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 39)) (0.8.0)
+Requirement already satisfied: Jinja2==3.1.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 40)) (3.1.2)
+Requirement already satisfied: jsonpointer==2.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 41)) (2.3)
+Requirement already satisfied: jsonschema==4.17.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 42)) (4.17.3)
+Requirement already satisfied: jupyter==1.0.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 43)) (1.0.0)
+Requirement already satisfied: jupyter-console==6.6.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 44)) (6.6.2)
+Requirement already satisfied: jupyter-events==0.6.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 45)) (0.6.3)
+Requirement already satisfied: jupyter_client==8.0.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 46)) (8.0.3)
+Requirement already satisfied: jupyter_core==5.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 47)) (5.2.0)
+Requirement already satisfied: jupyter_server==2.3.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 48)) (2.3.0)
+Requirement already satisfied: jupyter_server_terminals==0.4.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 49)) (0.4.4)
+Requirement already satisfied: jupyterlab-pygments==0.2.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 50)) (0.2.2)
+Requirement already satisfied: jupyterlab-widgets==3.0.5 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 51)) (3.0.5)
+Requirement already satisfied: keyring==23.4.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 52)) (23.4.1)
+Requirement already satisfied: keyrings.alt==3.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 53)) (3.1)
+Requirement already satisfied: lxml==4.9.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 54)) (4.9.2)
+Requirement already satisfied: Markdown==3.4.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 55)) (3.4.1)
+Requirement already satisfied: MarkupSafe==2.1.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 56)) (2.1.2)
+Requirement already satisfied: matplotlib-inline==0.1.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 57)) (0.1.6)
+Requirement already satisfied: mistune==2.0.5 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 58)) (2.0.5)
+Requirement already satisfied: mmcv==1.7.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 59)) (1.7.1)
+Requirement already satisfied: nbclassic==0.5.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 61)) (0.5.2)
+Requirement already satisfied: nbclient==0.7.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 62)) (0.7.2)
+Requirement already satisfied: nbconvert==7.2.9 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 63)) (7.2.9)
+Requirement already satisfied: nbformat==5.7.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 64)) (5.7.3)
+Requirement already satisfied: nest-asyncio==1.5.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 65)) (1.5.6)
+Requirement already satisfied: nibabel==5.0.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 66)) (5.0.1)
+Requirement already satisfied: notebook==6.5.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 67)) (6.5.2)
+Requirement already satisfied: notebook_shim==0.2.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 68)) (0.2.2)
+Requirement already satisfied: numpy==1.24.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 69)) (1.24.2)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 70)) (11.10.3.66)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 71)) (11.7.99)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 72)) (11.7.99)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 73)) (8.5.0.96)
+Requirement already satisfied: oauthlib==3.2.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 74)) (3.2.2)
+Requirement already satisfied: opencv-python==4.7.0.72 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 75)) (4.7.0.72)
+Requirement already satisfied: packaging==23.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 76)) (23.0)
+Requirement already satisfied: pandas==1.5.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 77)) (1.5.3)
+Requirement already satisfied: pandocfilters==1.5.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 78)) (1.5.0)
+Requirement already satisfied: parso==0.8.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 79)) (0.8.3)
+Requirement already satisfied: pexpect==4.8.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 80)) (4.8.0)
+Requirement already satisfied: pickleshare==0.7.5 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 81)) (0.7.5)
+Requirement already satisfied: Pillow==9.4.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 82)) (9.4.0)
+Requirement already satisfied: platformdirs==3.0.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 83)) (3.0.0)
+Requirement already satisfied: prometheus-client==0.16.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 84)) (0.16.0)
+Requirement already satisfied: prompt-toolkit==3.0.37 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 85)) (3.0.37)
+Requirement already satisfied: protobuf==3.20.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 86)) (3.20.3)
+Requirement already satisfied: psutil==5.9.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 87)) (5.9.4)
+Requirement already satisfied: ptyprocess==0.7.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 88)) (0.7.0)
+Requirement already satisfied: pure-eval==0.2.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 89)) (0.2.2)
+Requirement already satisfied: pyasn1==0.4.8 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 90)) (0.4.8)
+Requirement already satisfied: pyasn1-modules==0.2.8 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 91)) (0.2.8)
+Requirement already satisfied: pycparser==2.21 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 92)) (2.21)
+Requirement already satisfied: pydicom==2.3.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 93)) (2.3.1)
+Requirement already satisfied: Pygments==2.14.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 94)) (2.14.0)
+Requirement already satisfied: pyrsistent==0.19.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 95)) (0.19.3)
+Requirement already satisfied: python-dateutil==2.8.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 96)) (2.8.2)
+Requirement already satisfied: python-json-logger==2.0.7 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 97)) (2.0.7)
+Requirement already satisfied: pytz==2022.7.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 98)) (2022.7.1)
+Requirement already satisfied: PyYAML==6.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 99)) (6.0)
+Requirement already satisfied: pyzmq==25.0.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 100)) (25.0.0)
+Requirement already satisfied: qtconsole==5.4.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 101)) (5.4.0)
+Requirement already satisfied: QtPy==2.3.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 102)) (2.3.0)
+Requirement already satisfied: requests==2.28.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 103)) (2.28.2)
+Requirement already satisfied: requests-oauthlib==1.3.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 104)) (1.3.1)
+Requirement already satisfied: rfc3339-validator==0.1.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 105)) (0.1.4)
+Requirement already satisfied: rfc3986-validator==0.1.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 106)) (0.1.1)
+Requirement already satisfied: rsa==4.9 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 107)) (4.9)
+Requirement already satisfied: scipy==1.10.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 108)) (1.10.1)
+Requirement already satisfied: SecretStorage==3.3.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 109)) (3.3.3)
+Requirement already satisfied: Send2Trash==1.8.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 110)) (1.8.0)
+Requirement already satisfied: six==1.16.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 111)) (1.16.0)
+Requirement already satisfied: sniffio==1.3.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 112)) (1.3.0)
+Requirement already satisfied: soupsieve==2.4 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 113)) (2.4)
+Requirement already satisfied: stack-data==0.6.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 114)) (0.6.2)
+Requirement already satisfied: synapseclient==2.7.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 115)) (2.7.0)
+Requirement already satisfied: tensorboard==2.12.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 116)) (2.12.0)
+Requirement already satisfied: tensorboard-data-server==0.7.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 117)) (0.7.0)
+Requirement already satisfied: tensorboard-plugin-wit==1.8.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 118)) (1.8.1)
+Requirement already satisfied: tensorboardX==2.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 119)) (2.6)
+Requirement already satisfied: terminado==0.17.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 120)) (0.17.1)
+Requirement already satisfied: timm==0.6.12 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 121)) (0.6.12)
+Requirement already satisfied: tinycss2==1.2.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 122)) (1.2.1)
+Requirement already satisfied: torch==1.13.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 123)) (1.13.1)
+Requirement already satisfied: torchsummary==1.5.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 124)) (1.5.1)
+Requirement already satisfied: torchvision==0.14.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 125)) (0.14.1)
+Requirement already satisfied: tornado==6.2 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 126)) (6.2)
+Requirement already satisfied: tqdm==4.64.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 127)) (4.64.1)
+Requirement already satisfied: traitlets==5.9.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 128)) (5.9.0)
+Requirement already satisfied: typing_extensions==4.5.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 129)) (4.5.0)
+Requirement already satisfied: uri-template==1.2.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 130)) (1.2.0)
+Requirement already satisfied: urllib3==1.26.14 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 131)) (1.26.14)
+Requirement already satisfied: wcwidth==0.2.6 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 132)) (0.2.6)
+Requirement already satisfied: webcolors==1.12 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 133)) (1.12)
+Requirement already satisfied: webencodings==0.5.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 134)) (0.5.1)
+Requirement already satisfied: websocket-client==1.5.1 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 135)) (1.5.1)
+Requirement already satisfied: Werkzeug==2.2.3 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 136)) (2.2.3)
+Requirement already satisfied: widgetsnbextension==4.0.5 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 137)) (4.0.5)
+Requirement already satisfied: wrapt==1.15.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 138)) (1.15.0)
+Requirement already satisfied: xmltodict==0.13.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 139)) (0.13.0)
+Requirement already satisfied: yapf==0.32.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 140)) (0.32.0)
+Requirement already satisfied: zipp==3.15.0 in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from -r ./requirements.txt (line 141)) (3.15.0)
+Requirement already satisfied: setuptools in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from nibabel==5.0.1->-r ./requirements.txt (line 66)) (65.6.3)
+Requirement already satisfied: wheel in /home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages (from nvidia-cublas-cu11==11.10.3.66->-r ./requirements.txt (line 70)) (0.37.1)
+Installing collected packages: einops
+Successfully installed einops-0.6.1
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:107: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:127: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:129: UserWarning: Batch size is: 2 epochs 4000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:127: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:163: UserWarning: Total parameters count 15703304
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:166: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:163: UserWarning: Total parameters count 15703304
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:166: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:180: UserWarning: => loaded checkpoint 'True' (epoch 296) (bestacc 0.29171642661094666)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:180: UserWarning: => loaded checkpoint 'True' (epoch 296) (bestacc 0.29171642661094666)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
