@@ -1,3 +1,15 @@
+import os.path
+
+import torch
+import torch.nn.parallel
+import torch.utils.data.distributed
+import numpy as np
+import nibabel as nib
+import matplotlib.pyplot as plt
+
+from BTCV.utils.data_utils import get_loader
+
+
 colors = [
     (0, 0, 0),         # Black
     (255, 0, 0),       # Red
@@ -16,24 +28,51 @@ colors = [
     # (255, 165, 0)      # Orange
 ]
 
-import os
-import time
-import warnings
+models = [
+    {
+        "name": "VANV4_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4",
+        "status": True,
+    },
+    {
+        "name": "VANV4GL_2_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2",
+        "status": True,
+    },
+    {
+        "name": "VANV5GL_2_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2",
+        "status": True,
+    },
+    {
+        "name": "VANV6GL_2_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV6GL_2",
+        "status": True,
+    },
+    {
+        "name": "VANV4_M",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV4",
+        "status": True,
+    },
+    {
+        "name": "VANV4GL_2_M",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2",
+        "status": True,
+    },
+    {
+        "name": "VANV5GL_2_M",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2",
+        "status": True,
+    },
+    {
+        "name": "VANV6GL_2_M",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV6GL_2",
+        "status": True,
+    },
+]
 
-import numpy as np
-import torch
-import torch.nn.parallel
-import torch.utils.data.distributed
-import numpy as np
-import nibabel as nib
-import matplotlib.pyplot as plt
-import scipy.ndimage as ndi
 
-
-from BTCV.utils.data_utils import get_loader
-
-
-def plot_data(predicted_data, original_data, target_data, image_name):
+def plot_data(predicted_data, original_data, target_data, image_name, base_url):
     slice_indices = []
     base = 130
     for i in range(20):
@@ -66,15 +105,15 @@ def plot_data(predicted_data, original_data, target_data, image_name):
         axes[1, i].imshow(image_targ)
         axes[1, i].set_title('Target - Slice {}'.format(idx))
 
-    plt.savefig(image_name.replace('.', '_') + ".png")
+    plt.savefig(base_url + image_name.replace('.', '_') + ".png")
     plt.show()
 
 
 def main_worker(gpu, args):
-    np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
-    args.gpu = gpu
-    torch.cuda.set_device(args.gpu)
-    torch.backends.cudnn.benchmark = True
+    for model in models:
+        base = "./res/" + model["name"] + "/"
+        if not os.path.exists(base):
+            os.mkdir(base)
     loader = get_loader(args)
     for idx, batch_data in enumerate(loader):
         if isinstance(batch_data, list):
@@ -83,11 +122,11 @@ def main_worker(gpu, args):
             data, target = batch_data["image"], batch_data["label"]
         url = batch_data['image_meta_dict']['filename_or_obj'][0].split('/')[-1]
         predicted_path = f'/home/amin/CETI/medical_image/SSL_VAN/runs/BTCV_new/test_log/output_True_False' \
-                         f'/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV6GL_2/{url}'
+                         f'/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_{args.model}/{url}'
         predicted_img = nib.load(predicted_path)
         predicted_data = predicted_img.get_fdata().astype(np.uint8)
         plot_data(predicted_data, data[0][0].cpu().numpy(),
-                  target[0][0].cpu().numpy().astype(np.uint8), url)
+                  target[0][0].cpu().numpy().astype(np.uint8), url, base_url="")
         print(url)
 
 
@@ -127,6 +166,7 @@ class Config:
         self.amp = False
         self.upsample = "deconv"
         self.valid_loader = ""
+        self.model = "VANV6GL_2"
 
 
 acc = main_worker(gpu=0, args=Config())
