@@ -8,7 +8,7 @@ class NumberEmbedding(nn.Module):
         self.embedding = nn.Embedding(output_size, dim)
         self.linear1 = nn.Sequential(
             nn.Linear(dim, dim),
-            nn.GELU()
+            nn.ReLU()
         )
 
         self.linear2 = nn.Sequential(

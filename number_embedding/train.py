@@ -63,10 +63,10 @@ def train(batch_size=100, cluster_range=600, dim=128, epoch_number=1000):
 
     res = {k: [float(val) for val in v] for k, v in res.items()}
 
-    with open('embedded_values_2.json', "w") as outfile:
+    with open('embedded_values.json', "w") as outfile:
         json.dump(res, outfile, indent=4)
 
     return last_loss
 
 
-train(batch_size=512, cluster_range=600, dim=256, epoch_number=1000)
+train(batch_size=512, cluster_range=600, dim=128, epoch_number=1000)
