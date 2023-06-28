@@ -96,9 +96,9 @@ parser.add_argument("--patch_count", default=2, type=int, help="split image to p
 parser.add_argument("--mask_length", default=5, type=int, help="an integer value")
 parser.add_argument("--phi_1", default=0.1, type=float, help="see paper")
 parser.add_argument("--phi_2", default=0.7, type=float, help="see paper")
-parser.add_argument("--embed_dim", default=256, type=int, help="output embed dimension")
+parser.add_argument("--embed_dim", default=128, type=int, help="output embed dimension")
 parser.add_argument("--class_size", default=500, type=int, help="size of class per cluster")
-parser.add_argument("--cluster_num", default=20, type=int, help="number of clusters")
+parser.add_argument("--cluster_num", default=1, type=int, help="number of clusters")
 parser.add_argument("--apply_mask", default=True, type=bool, help="applying mask for calculating loss")
 
 
