@@ -1,0 +1,1480 @@
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:136: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:138: UserWarning: Batch size is: 1 epochs 15000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:145: UserWarning: Total parameters count 35225682
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:148: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:159: UserWarning:  Best url model is pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4_20_500_256_True_5__best.pt, final model url is pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4_20_500_256_True_5__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:168: UserWarning: => loaded checkpoint 'True' (epoch 26) (bestacc 6.214608146290402)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:121: UserWarning: Writing Tensorboard logs to ./runs/pre_train_1/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:131: UserWarning: 0  Wed Jun 28 09:54:47 2023  Epoch: 26
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.8849999904632568
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 0/4500  loss: 6.214608126  time 40.53s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 1/4500  loss: 6.214614042  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 2/4500  loss: 6.214621046  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 3/4500  loss: 6.214620104  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 4/4500  loss: 6.214618629  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 5/4500  loss: 6.214617740  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 6/4500  loss: 6.214617108  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 7/4500  loss: 6.214616438  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 8/4500  loss: 6.214615877  time 1.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.10849999636411667, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 9/4500  loss: 6.214615407  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 10/4500  loss: 6.214615119  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 11/4500  loss: 6.214614798  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 12/4500  loss: 6.214614531  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5049999952316284
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 13/4500  loss: 6.214614255  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 14/4500  loss: 6.214614010  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 15/4500  loss: 6.214613835  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 16/4500  loss: 6.214613641  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.09000000357627869, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 17/4500  loss: 6.214613425  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 18/4500  loss: 6.214613315  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5149999856948853
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 19/4500  loss: 6.214613172  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 20/4500  loss: 6.214613056  time 1.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.7870000004768372, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 21/4500  loss: 6.214612927  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 22/4500  loss: 6.214612819  time 1.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 23/4500  loss: 6.214612709  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 24/4500  loss: 6.214612670  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 25/4500  loss: 6.214612564  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 26/4500  loss: 6.214612473  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 27/4500  loss: 6.214612420  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 28/4500  loss: 6.214612351  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 29/4500  loss: 6.214612292  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 30/4500  loss: 6.214612262  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 31/4500  loss: 6.214612202  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 32/4500  loss: 6.214612139  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.44449999928474426, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 33/4500  loss: 6.214612090  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 34/4500  loss: 6.214612049  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5059999823570251
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 35/4500  loss: 6.214611997  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 36/4500  loss: 6.214611981  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.8105000257492065
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 37/4500  loss: 6.214611923  time 1.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5239999890327454
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 38/4500  loss: 6.214611864  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 39/4500  loss: 6.214611829  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 40/4500  loss: 6.214611823  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 41/4500  loss: 6.214611779  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 42/4500  loss: 6.214611745  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 43/4500  loss: 6.214611719  time 1.16s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 44/4500  loss: 6.214611680  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.515999972820282
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 45/4500  loss: 6.214611648  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 46/4500  loss: 6.214611634  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5705000162124634
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 47/4500  loss: 6.214611589  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 48/4500  loss: 6.214611547  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 49/4500  loss: 6.214611510  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 50/4500  loss: 6.214611477  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 51/4500  loss: 6.214611443  time 1.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 52/4500  loss: 6.214611423  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 53/4500  loss: 6.214611414  time 1.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 54/4500  loss: 6.214611388  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 55/4500  loss: 6.214611363  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 56/4500  loss: 6.214611350  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 57/4500  loss: 6.214611330  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 58/4500  loss: 6.214611313  time 1.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 59/4500  loss: 6.214611284  time 3.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 60/4500  loss: 6.214611261  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 61/4500  loss: 6.214611239  time 3.21s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 62/4500  loss: 6.214611221  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6995000243186951, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 63/4500  loss: 6.214611204  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.7139999866485596, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 64/4500  loss: 6.214611189  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 65/4500  loss: 6.214611176  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 66/4500  loss: 6.214611160  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 67/4500  loss: 6.214611148  time 3.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 68/4500  loss: 6.214611128  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 69/4500  loss: 6.214611118  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 70/4500  loss: 6.214611104  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 71/4500  loss: 6.214611096  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 72/4500  loss: 6.214611096  time 1.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 73/4500  loss: 6.214611082  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.9620000123977661, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 74/4500  loss: 6.214611065  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.5414999723434448, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 75/4500  loss: 6.214611051  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 76/4500  loss: 6.214611041  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 77/4500  loss: 6.214611050  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 78/4500  loss: 6.214611055  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 79/4500  loss: 6.214611042  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5249999761581421
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 80/4500  loss: 6.214611030  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 81/4500  loss: 6.214611017  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 82/4500  loss: 6.214611002  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5024999976158142
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 83/4500  loss: 6.214610993  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.7879999876022339
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 84/4500  loss: 6.214610977  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 85/4500  loss: 6.214610968  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 86/4500  loss: 6.214610956  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 87/4500  loss: 6.214610947  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 88/4500  loss: 6.214610935  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 89/4500  loss: 6.214610930  time 2.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 90/4500  loss: 6.214610919  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 91/4500  loss: 6.214610911  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 92/4500  loss: 6.214610906  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.8209999799728394, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 93/4500  loss: 6.214610900  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 94/4500  loss: 6.214610894  time 1.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 95/4500  loss: 6.214610888  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 96/4500  loss: 6.214610889  time 1.19s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 97/4500  loss: 6.214610882  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 98/4500  loss: 6.214610874  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 99/4500  loss: 6.214610877  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 100/4500  loss: 6.214610869  time 1.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 101/4500  loss: 6.214610861  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 102/4500  loss: 6.214610851  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.9254999756813049, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 103/4500  loss: 6.214610842  time 1.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 104/4500  loss: 6.214610833  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 105/4500  loss: 6.214610830  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 106/4500  loss: 6.214610819  time 5.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 107/4500  loss: 6.214610814  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6880000233650208, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 108/4500  loss: 6.214610814  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 109/4500  loss: 6.214610805  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 110/4500  loss: 6.214610798  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.8015000224113464
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 111/4500  loss: 6.214610788  time 1.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 112/4500  loss: 6.214610782  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 113/4500  loss: 6.214610776  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 114/4500  loss: 6.214610769  time 1.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 115/4500  loss: 6.214610759  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.8600000143051147
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 116/4500  loss: 6.214610749  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 117/4500  loss: 6.214610759  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 118/4500  loss: 6.214610752  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 119/4500  loss: 6.214610745  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 120/4500  loss: 6.214610740  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 121/4500  loss: 6.214610735  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 122/4500  loss: 6.214610733  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5189999938011169
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 123/4500  loss: 6.214610729  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 124/4500  loss: 6.214610725  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 125/4500  loss: 6.214610722  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 126/4500  loss: 6.214610721  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 127/4500  loss: 6.214610719  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 128/4500  loss: 6.214610718  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 129/4500  loss: 6.214610713  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 130/4500  loss: 6.214610708  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6470000147819519, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 131/4500  loss: 6.214610700  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 132/4500  loss: 6.214610692  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 133/4500  loss: 6.214610687  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 134/4500  loss: 6.214610682  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 135/4500  loss: 6.214610678  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 136/4500  loss: 6.214610676  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.659500002861023, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 137/4500  loss: 6.214610671  time 1.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 138/4500  loss: 6.214610664  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 139/4500  loss: 6.214610659  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.7020000219345093
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 140/4500  loss: 6.214610651  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 141/4500  loss: 6.214610646  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 142/4500  loss: 6.214610643  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 143/4500  loss: 6.214610635  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 144/4500  loss: 6.214610629  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 145/4500  loss: 6.214610627  time 3.25s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.9860000014305115, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 146/4500  loss: 6.214610626  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 147/4500  loss: 6.214610623  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 148/4500  loss: 6.214610616  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.11299999803304672, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 149/4500  loss: 6.214610611  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 150/4500  loss: 6.214610605  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 151/4500  loss: 6.214610599  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 152/4500  loss: 6.214610595  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5024999976158142
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 153/4500  loss: 6.214610590  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 154/4500  loss: 6.214610585  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.008500000461935997
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 155/4500  loss: 6.214610579  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 156/4500  loss: 6.214610578  time 1.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 157/4500  loss: 6.214610576  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 158/4500  loss: 6.214610571  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 159/4500  loss: 6.214610569  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 160/4500  loss: 6.214610575  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 161/4500  loss: 6.214610573  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 162/4500  loss: 6.214610567  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 163/4500  loss: 6.214610562  time 1.17s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 164/4500  loss: 6.214610563  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5080000162124634
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 165/4500  loss: 6.214610560  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 166/4500  loss: 6.214610556  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 167/4500  loss: 6.214610553  time 1.23s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 168/4500  loss: 6.214610549  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 169/4500  loss: 6.214610548  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 170/4500  loss: 6.214610545  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 171/4500  loss: 6.214610541  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 172/4500  loss: 6.214610536  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 173/4500  loss: 6.214610537  time 1.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 174/4500  loss: 6.214610530  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6965000033378601, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 175/4500  loss: 6.214610529  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.8050000071525574, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 176/4500  loss: 6.214610525  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 177/4500  loss: 6.214610522  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 178/4500  loss: 6.214610518  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 179/4500  loss: 6.214610515  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 180/4500  loss: 6.214610511  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 181/4500  loss: 6.214610507  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 182/4500  loss: 6.214610504  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 183/4500  loss: 6.214610499  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 184/4500  loss: 6.214610499  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6265000104904175, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 185/4500  loss: 6.214610495  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 186/4500  loss: 6.214610492  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 187/4500  loss: 6.214610489  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 188/4500  loss: 6.214610485  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 189/4500  loss: 6.214610480  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 190/4500  loss: 6.214610476  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 191/4500  loss: 6.214610471  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 192/4500  loss: 6.214610472  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.5149999856948853, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 193/4500  loss: 6.214610468  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 194/4500  loss: 6.214610465  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 195/4500  loss: 6.214610462  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 196/4500  loss: 6.214610459  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 197/4500  loss: 6.214610455  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 198/4500  loss: 6.214610449  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 199/4500  loss: 6.214610446  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 200/4500  loss: 6.214610442  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 201/4500  loss: 6.214610437  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 202/4500  loss: 6.214610434  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 203/4500  loss: 6.214610431  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 204/4500  loss: 6.214610428  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 205/4500  loss: 6.214610428  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 206/4500  loss: 6.214610425  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.7615000009536743, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 207/4500  loss: 6.214610420  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 208/4500  loss: 6.214610418  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 209/4500  loss: 6.214610417  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 210/4500  loss: 6.214610414  time 1.21s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 211/4500  loss: 6.214610410  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 212/4500  loss: 6.214610409  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 213/4500  loss: 6.214610405  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 214/4500  loss: 6.214610405  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 215/4500  loss: 6.214610404  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 216/4500  loss: 6.214610401  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 217/4500  loss: 6.214610398  time 1.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 218/4500  loss: 6.214610395  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 219/4500  loss: 6.214610392  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.8500000238418579
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 220/4500  loss: 6.214610387  time 1.17s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 221/4500  loss: 6.214610384  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 222/4500  loss: 6.214610381  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 223/4500  loss: 6.214610377  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 224/4500  loss: 6.214610374  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 225/4500  loss: 6.214610371  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 226/4500  loss: 6.214610369  time 1.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 227/4500  loss: 6.214610366  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6504999995231628, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 228/4500  loss: 6.214610366  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 229/4500  loss: 6.214610362  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 230/4500  loss: 6.214610358  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 231/4500  loss: 6.214610356  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 232/4500  loss: 6.214610352  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 233/4500  loss: 6.214610351  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5095000267028809
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 234/4500  loss: 6.214610349  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 235/4500  loss: 6.214610349  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 236/4500  loss: 6.214610348  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 237/4500  loss: 6.214610347  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 238/4500  loss: 6.214610343  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 239/4500  loss: 6.214610340  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 240/4500  loss: 6.214610336  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 241/4500  loss: 6.214610333  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 242/4500  loss: 6.214610330  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.8675000071525574, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 243/4500  loss: 6.214610329  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 244/4500  loss: 6.214610326  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 245/4500  loss: 6.214610323  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 246/4500  loss: 6.214610320  time 1.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 247/4500  loss: 6.214610317  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 248/4500  loss: 6.214610314  time 1.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.5690000057220459, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 249/4500  loss: 6.214610313  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:103: UserWarning: Saving checkpoint ./runs/pre_train_1/test_log/pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4_20_500_256_True_5__final.pt
+  warnings.warn(f"Saving checkpoint {filename}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 250/4500  loss: 6.214610311  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5040000081062317
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 251/4500  loss: 6.214610309  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 252/4500  loss: 6.214610308  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 253/4500  loss: 6.214610307  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 254/4500  loss: 6.214610307  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 255/4500  loss: 6.214610304  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 256/4500  loss: 6.214610301  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5024999976158142
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 257/4500  loss: 6.214610299  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 258/4500  loss: 6.214610298  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 259/4500  loss: 6.214610295  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 260/4500  loss: 6.214610293  time 1.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 261/4500  loss: 6.214610292  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 262/4500  loss: 6.214610289  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 263/4500  loss: 6.214610288  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 264/4500  loss: 6.214610288  time 1.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 265/4500  loss: 6.214610286  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 266/4500  loss: 6.214610284  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 267/4500  loss: 6.214610282  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 268/4500  loss: 6.214610281  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 269/4500  loss: 6.214610280  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 270/4500  loss: 6.214610280  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 271/4500  loss: 6.214610277  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 272/4500  loss: 6.214610275  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 273/4500  loss: 6.214610273  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 274/4500  loss: 6.214610271  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 275/4500  loss: 6.214610269  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 276/4500  loss: 6.214610267  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 277/4500  loss: 6.214610265  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 278/4500  loss: 6.214610263  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 279/4500  loss: 6.214610262  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 280/4500  loss: 6.214610258  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 281/4500  loss: 6.214610255  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 282/4500  loss: 6.214610254  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 283/4500  loss: 6.214610253  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 284/4500  loss: 6.214610250  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 285/4500  loss: 6.214610247  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 286/4500  loss: 6.214610246  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 287/4500  loss: 6.214610244  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 288/4500  loss: 6.214610242  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 289/4500  loss: 6.214610241  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 290/4500  loss: 6.214610240  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 291/4500  loss: 6.214610239  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 292/4500  loss: 6.214610239  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 293/4500  loss: 6.214610238  time 1.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 294/4500  loss: 6.214610236  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5109999775886536
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 295/4500  loss: 6.214610233  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 296/4500  loss: 6.214610233  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 297/4500  loss: 6.214610232  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 298/4500  loss: 6.214610229  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6019999980926514, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 299/4500  loss: 6.214610229  time 1.18s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.6399999856948853, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 300/4500  loss: 6.214610228  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 301/4500  loss: 6.214610226  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 302/4500  loss: 6.214610226  time 1.02s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 303/4500  loss: 6.214610224  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 304/4500  loss: 6.214610223  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 305/4500  loss: 6.214610222  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 306/4500  loss: 6.214610219  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.9994999766349792, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 307/4500  loss: 6.214610217  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 308/4500  loss: 6.214610217  time 1.01s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 309/4500  loss: 6.214610215  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 310/4500  loss: 6.214610214  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 311/4500  loss: 6.214610214  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 312/4500  loss: 6.214610211  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 313/4500  loss: 6.214610210  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 314/4500  loss: 6.214610208  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 315/4500  loss: 6.214610205  time 1.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 316/4500  loss: 6.214610202  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 317/4500  loss: 6.214610201  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 318/4500  loss: 6.214610200  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.7889999747276306, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 319/4500  loss: 6.214610199  time 1.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 320/4500  loss: 6.214610198  time 1.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5945000052452087
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 321/4500  loss: 6.214610196  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 322/4500  loss: 6.214610193  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 323/4500  loss: 6.214610192  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 324/4500  loss: 6.214610190  time 1.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 325/4500  loss: 6.214610188  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 326/4500  loss: 6.214610186  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 327/4500  loss: 6.214610185  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 328/4500  loss: 6.214610184  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 329/4500  loss: 6.214610184  time 1.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.7490000128746033
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 330/4500  loss: 6.214610182  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 331/4500  loss: 6.214610180  time 1.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 332/4500  loss: 6.214610180  time 1.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 333/4500  loss: 6.214610179  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 334/4500  loss: 6.214610178  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 335/4500  loss: 6.214610177  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 336/4500  loss: 6.214610175  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.5849999785423279, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 337/4500  loss: 6.214610176  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5040000081062317
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 338/4500  loss: 6.214610174  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 339/4500  loss: 6.214610172  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 340/4500  loss: 6.214610171  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 341/4500  loss: 6.214610169  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 0.578499972820282, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 342/4500  loss: 6.214610169  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 343/4500  loss: 6.214610168  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 344/4500  loss: 6.214610167  time 1.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 345/4500  loss: 6.214610166  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 346/4500  loss: 6.214610164  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.0
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 347/4500  loss: 6.214610163  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 348/4500  loss: 6.214610162  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 349/4500  loss: 6.214610161  time 1.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.7929999828338623
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 350/4500  loss: 6.214610158  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:50: UserWarning: max value 1.0, min value 0.5
+  warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
+/home/karimimonsefi.1/SSL_VAN/pretrain/training.py:79: UserWarning: Epoch 26/15000 351/4500  loss: 6.214610158  time 1.02s
+  warnings.warn(
