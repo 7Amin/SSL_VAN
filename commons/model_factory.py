@@ -2,6 +2,7 @@ from commons.models.van import VAN
 from commons.models.van_v2 import VANV2
 from commons.models.van_v3 import VANV3
 from commons.models.van_v4 import VANV4
+from commons.models.van_v4_1 import VANV41
 from commons.models.van_v4gl import VANV4GL
 from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
@@ -229,6 +230,17 @@ def get_model(args):
                         upsample=args.upsample,
                         patch_count=args.patch_count)
         args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "VANV41":
+        model = VANV41(embed_dims=args.embed_dims,
+                       mlp_ratios=args.mlp_ratios,
+                       depths=args.depths,
+                       num_stages=args.num_stages,
+                       in_channels=args.in_channels,
+                       out_channels=args.out_channels,
+                       dropout_path_rate=args.dropout_path_rate,
+                       upsample=args.upsample)
         return model
 
     if args.model_v == "VANV4":
