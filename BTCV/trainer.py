@@ -29,15 +29,15 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         else:
             data, target = batch_data["image"], batch_data["label"]
         data, target = data.cuda(args.rank), target.cuda(args.rank)
-        warnings.warn("input shape {}".format(data.shape))
+        # warnings.warn("input shape {}".format(data.shape))
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
             logits = model(data)
             # if isinstance(logits, tuple):
             #     logits = logits[0]
-            warnings.warn("logits shape {}".format(logits.shape))
-            warnings.warn("target shape {}".format(target.shape))
+            # warnings.warn("logits shape {}".format(logits.shape))
+            # warnings.warn("target shape {}".format(target.shape))
             loss = loss_func(logits, target)
 
         if args.amp:
