@@ -7,7 +7,7 @@ from commons.models.util_models.van_3d import VAN3D
 class VANV41(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv"):
-        super(VANV4, self).__init__()
+        super(VANV41, self).__init__()
         self.van3d = VAN3D(in_chans=in_channels, drop_path_rate=dropout_path_rate, embed_dims=embed_dims,
                            mlp_ratios=mlp_ratios, depths=depths, num_stages=num_stages)
 
