@@ -101,5 +101,4 @@ then
   --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint --max_epochs 1000 \
   --distributed --use_normal_dataset --batch_size 1 --roi_x 128 --roi_y 128 --roi_z 128 --val_every 10 --model_inferer inferer \
   --valid_loader valid_loader --model_v DiNTS_Instance --checkpoint
-
 fi
