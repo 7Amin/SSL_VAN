@@ -73,6 +73,7 @@ parser.add_argument("--depths", default=[3, 4, 6, 3], nargs='+', type=int, help=
 parser.add_argument("--mlp_ratios", default=[8, 8, 4, 4], nargs='+', type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--in_channels", default=4, type=int, help="number of input channels")
 parser.add_argument("--out_channels", default=3, type=int, help="number of output channels")
+parser.add_argument("--num_samples", default=4, type=int, help="number of samples per case")
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
 parser.add_argument("--logdir", default="./runs/BraTS21/test_log", type=str,
                     help="directory to save the tensorboard logs")
