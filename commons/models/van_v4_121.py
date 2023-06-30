@@ -82,11 +82,12 @@ class VANV4121(nn.Module):
                 nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
             setattr(self, f"upsample{i}", upsample)
         upsample = nn.Sequential(
-            nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
-            nn.BatchNorm3d(out_channels),
+            nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages,
+                      kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(embed_dims[-1] // 2 ** num_stages),
             nn.LeakyReLU(),
-            nn.Conv3d(out_channels, out_channels, kernel_size=3, stride=1, padding=1),
-            nn.BatchNorm3d(out_channels),
+            nn.Conv3d(embed_dims[-1] // 2 ** num_stages, embed_dims[-1] // 2 ** num_stages, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(embed_dims[-1] // 2 ** num_stages),
             nn.LeakyReLU(),
             nn.Upsample(scale_factor=2, mode="trilinear", align_corners=False))
         setattr(self, f"final_upsample", upsample)
