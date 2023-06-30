@@ -22,7 +22,7 @@ class Config:
 
 
 args = Config()
-args.model_v = "VANV5GL"
+args.model_v = "VANV4121GL"
 model = get_model(args)
 input_tensor = torch.randn((1, 1, 96, 96, 96))
 flops, params = profile(model, inputs=(input_tensor,))
