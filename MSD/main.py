@@ -90,8 +90,13 @@ parser.add_argument("--warmup_epochs", default=500, type=int, help="number of wa
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VAN', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
-                                                                   'VANV4GLV1', 'VANV4GLV2', "VANV5GL", "VANV6GL"])
+parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
+                                                                       'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL",
+                                                                       'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
+                                                                       'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE',
+                                                                       'Unetpp', 'AttentionUnet', 'BasicUNetPlusPlus',
+                                                                       'DiNTS_Search', 'DiNTS_Instance', 'VANV41',
+                                                                       'VANV411', 'VANV412', 'VANV4121GL'])
 parser.add_argument("--task", default='Task01_BrainTumour', type=str, choices=["Task01_BrainTumour", "Task02_Heart",
                                                                                "Task03_Liver", "Task06_Lung",
                                                                                "Task07_Pancreas",
