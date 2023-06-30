@@ -44,3 +44,5 @@ export MASTER_ADDR=localhost
 export MASTER_PORT=12345
 export TORCH_DISTRIBUTED_DEBUG=DETAIL
 
+export LD_LIBRARY_PATH=/home/karimimonsefi.1/miniconda3/envs/ssl_van_seg/lib:$LD_LIBRARY_PATH
+
