@@ -10,6 +10,7 @@ from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
+from commons.models.van_v4_121gl import VANV4121GL
 from commons.models.unet_p_p import UNetPlusPlus
 from commons.models.basic_unet_plus_plus import BasicUNetPlusPlus
 from commons.models.seg_res_net_vae import SegResNetVAE
@@ -265,6 +266,17 @@ def get_model(args):
                         out_channels=args.out_channels,
                         dropout_path_rate=args.dropout_path_rate,
                         upsample=args.upsample)
+        return model
+
+    if args.model_v == "VANV4121GL":
+        model = VANV4121GL(embed_dims=args.embed_dims,
+                           mlp_ratios=args.mlp_ratios,
+                           depths=args.depths,
+                           num_stages=args.num_stages,
+                           in_channels=args.in_channels,
+                           out_channels=args.out_channels,
+                           dropout_path_rate=args.dropout_path_rate,
+                           upsample=args.upsample)
         return model
 
     if args.model_v == "VANV4":
