@@ -32,102 +32,126 @@ models = [
     {
         "name": "VANV4_S",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4",
-        "status": True,
     },
     {
         "name": "VANV4GL_2_S",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2",
-        "status": True,
-    },
-    {
-        "name": "VANV5GL_2_S",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2",
-        "status": True,
     },
     {
         "name": "VANV6GL_2_S",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV6GL_2",
-        "status": True,
-    },
-    {
-        "name": "VANV4_M",
-        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV4",
-        "status": True,
-    },
-    {
-        "name": "VANV4GL_2_M",
-        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV4GL_2",
-        "status": True,
-    },
-    {
-        "name": "VANV5GL_2_M",
-        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV5GL_2",
-        "status": True,
     },
     {
         "name": "VANV6GL_2_M",
         "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV6GL_2",
-        "status": True,
+    },
+    {
+        "name": "AttentionUnet",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_AttentionUnet",
+    },
+    {
+        "name": "DiNTS_Instance",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Instance",
+    },
+    {
+        "name": "DiNTS_Search",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search",
+    },
+    {
+        "name": "nnUNet",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet",
+    },
+    {
+        "name": "SegResNetVAE",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE",
+    },
+    {
+        "name": "SwinUNETR24",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24",
+    },
+    {
+        "name": "SwinUNETR36",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR36",
+    },
+    {
+        "name": "SwinUNETR48",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48",
+    },
+    {
+        "name": "Unetpp",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp",
+    },
+    {
+        "name": "UNETR16",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR16",
+    },
+    {
+        "name": "UNETR32",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32",
     },
 ]
 
 
-def plot_data(predicted_data, original_data, target_data, image_name, base_url):
-    slice_indices = []
-    base = 130
-    for i in range(20):
-        slice_indices.append(i * 4 + base)
-    num_slices = len(slice_indices)
+def colorizing(data_shape, predicted_data, target_data, original_data):
+    image_pred = np.zeros((data_shape[0], data_shape[1], 3))
+    image_targ = np.zeros((data_shape[0], data_shape[1], 3))
+    original_slice = np.expand_dims((original_data * 255.0).astype(np.uint8), axis=2)
+    original_slice = np.concatenate((original_slice, original_slice, original_slice), axis=2)
+
+    for k in range(data_shape[0]):
+        for j in range(data_shape[1]):
+            image_pred[k][j] = original_slice[k][j]
+            image_targ[k][j] = original_slice[k][j]
+            if target_data[k][j] != 0:
+                image_targ[k][j] = colors[target_data[k][j]]
+            if predicted_data[k][j] != 0:
+                image_pred[k][j] = colors[predicted_data[k][j]]
+
+    image_pred = image_pred.astype(np.uint8)
+    return image_pred, image_targ
+
+
+def plot_data(predicted_data, original_data, target_data, base_url):
     data_shape = original_data.shape
-    fig, axes = plt.subplots(2, num_slices, figsize=(5 * num_slices, 10))
-
-    for i, idx in enumerate(slice_indices):
-        image_pred = np.zeros((data_shape[0], data_shape[1], 3))
-        image_targ = np.zeros((data_shape[0], data_shape[1], 3))
-        predicted_slice = predicted_data[:, :, idx]
-        target_slice = target_data[:, :, idx]
-        original_slice = np.expand_dims((original_data[:, :, idx] * 255.0).astype(np.uint8), axis=2)
-        original_slice = np.concatenate((original_slice, original_slice, original_slice), axis=2)
-        for k in range(data_shape[0]):
-            for j in range(data_shape[1]):
-                image_pred[k][j] = original_slice[k][j]
-                image_targ[k][j] = original_slice[k][j]
-                if target_slice[k][j] != 0:
-                    image_targ[k][j] = colors[target_slice[k][j]]
-                if predicted_slice[k][j] != 0:
-                    image_pred[k][j] = colors[predicted_slice[k][j]]
-
-        image_pred = image_pred.astype(np.uint8)
-        axes[0, i].imshow(image_pred)
-        axes[0, i].set_title('Predicted - Slice {}'.format(idx))
+    for i in range(data_shape[2] // 3, data_shape[2] * 2 // 3):
+        data_shape = original_data.shape
+        fig, axes = plt.subplots(2, 1, figsize=(5 * 1, 10))
+        image_pred, image_targ = colorizing(data_shape, predicted_data[:, :, i],
+                                            target_data[:, :, i], original_data[:, :, i])
+        axes[0].imshow(image_pred)
+        axes[0].set_title('Predicted - Slice {}'.format(i))
 
         image_targ = image_targ.astype(np.uint8)
-        axes[1, i].imshow(image_targ)
-        axes[1, i].set_title('Target - Slice {}'.format(idx))
+        axes[1].imshow(image_targ)
+        axes[1].set_title('Target - Slice {}'.format(i))
 
-    plt.savefig(base_url + image_name.replace('.', '_') + ".png")
-    plt.show()
+        plt.savefig(base_url + f"/{i}" + ".png")
+        print(base_url + f"/{i}" + ".png")
+        # plt.show()
 
 
 def main_worker(gpu, args):
+    loader = get_loader(args)
     for model in models:
         base = "./res/" + model["name"] + "/"
         if not os.path.exists(base):
             os.mkdir(base)
-    loader = get_loader(args)
-    for idx, batch_data in enumerate(loader):
-        if isinstance(batch_data, list):
-            data, target = batch_data
-        else:
-            data, target = batch_data["image"], batch_data["label"]
-        url = batch_data['image_meta_dict']['filename_or_obj'][0].split('/')[-1]
-        predicted_path = f'/home/amin/CETI/medical_image/SSL_VAN/runs/BTCV_new/test_log/output_True_False' \
-                         f'/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_{args.model}/{url}'
-        predicted_img = nib.load(predicted_path)
-        predicted_data = predicted_img.get_fdata().astype(np.uint8)
-        plot_data(predicted_data, data[0][0].cpu().numpy(),
-                  target[0][0].cpu().numpy().astype(np.uint8), url, base_url="")
-        print(url)
+
+        for idx, batch_data in enumerate(loader):
+            if isinstance(batch_data, list):
+                data, target = batch_data
+            else:
+                data, target = batch_data["image"], batch_data["label"]
+            url = batch_data['image_meta_dict']['filename_or_obj'][0].split('/')[-1]
+            if not os.path.exists(base + url):
+                os.mkdir(base + url)
+            predicted_path = f'/home/amin/CETI/medical_image/SSL_VAN/runs/BTCV_new/test_log/output_True_False/' \
+                             f'{model["url"]}/{url}'
+            predicted_img = nib.load(predicted_path)
+            predicted_data = predicted_img.get_fdata().astype(np.uint8)
+            plot_data(predicted_data, data[0][0].cpu().numpy(),
+                      target[0][0].cpu().numpy().astype(np.uint8), base_url=base + url)
+            print(base + url)
 
 
 class Config:
@@ -166,7 +190,6 @@ class Config:
         self.amp = False
         self.upsample = "deconv"
         self.valid_loader = ""
-        self.model = "VANV6GL_2"
 
 
 acc = main_worker(gpu=0, args=Config())
