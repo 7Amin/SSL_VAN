@@ -9,19 +9,34 @@ class Projection(nn.Module):
         self.conv1 = nn.Sequential(
             nn.Conv3d(input_dim, cluster_num, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm3d(cluster_num),
-            nn.GELU())
+            nn.GELU(),
+            nn.Conv3d(cluster_num, cluster_num, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(cluster_num),
+            nn.GELU()
+        )
 
         self.conv2 = nn.Sequential(
             nn.Conv3d(x_dim, class_size, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm3d(class_size),
-            nn.GELU())
+            nn.GELU(),
+            nn.Conv3d(class_size, class_size, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(class_size),
+            nn.GELU(),
+        )
 
         self.conv3 = nn.Sequential(
             nn.Conv3d(y_dim, embed_dim, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm3d(embed_dim),
-            nn.GELU())
+            nn.GELU(),
+            nn.Conv3d(embed_dim, embed_dim, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(embed_dim),
+            nn.GELU(),
+        )
 
         self.conv4 = nn.Sequential(
+            nn.Conv3d(z_dim, z_dim, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm3d(z_dim),
+            nn.GELU(),
             nn.Conv3d(z_dim, z_dim, kernel_size=1, stride=1),
             nn.ReLU())
 

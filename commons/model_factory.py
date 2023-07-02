@@ -23,6 +23,10 @@ from commons.models.pre_training.pre_van_v4 import PREVANV4
 from commons.models.pre_training.pre_van_v4gl import PREVANV4GL
 from commons.models.pre_training.pre_van_v5gl import PREVANV5GL
 from commons.models.pre_training.pre_van_v6gl import PREVANV6GL
+from commons.models.pre_training.pre_van_v4_12 import PREVANV412
+from commons.models.pre_training.pre_van_v4_121gl import PREVANV4121GL
+from commons.models.pre_training.pre_van_v4_122gl import PREVANV4122GL
+
 
 from commons.optimizer import get_optimizer
 
@@ -339,6 +343,61 @@ def get_model(args):
 
 
 def get_pre_trained_model(args):
+    if args.model_v == "PREVANV4122GL":
+        model = PREVANV4122GL(embed_dims=args.embed_dims,
+                              mlp_ratios=args.mlp_ratios,
+                              depths=args.depths,
+                              num_stages=args.num_stages,
+                              in_channels=args.in_channels,
+                              out_channels=args.out_channels,
+                              dropout_path_rate=args.dropout_path_rate,
+                              upsample=args.upsample,
+                              patch_count=args.patch_count,
+                              cluster_num=args.cluster_num,
+                              class_size=args.class_size,
+                              embed_dim=args.embed_dim,
+                              x_dim=args.roi_x,
+                              y_dim=args.roi_y,
+                              z_dim=args.roi_z)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "PREVANV4121GL":
+        model = PREVANV4121GL(embed_dims=args.embed_dims,
+                              mlp_ratios=args.mlp_ratios,
+                              depths=args.depths,
+                              num_stages=args.num_stages,
+                              in_channels=args.in_channels,
+                              out_channels=args.out_channels,
+                              dropout_path_rate=args.dropout_path_rate,
+                              upsample=args.upsample,
+                              patch_count=args.patch_count,
+                              cluster_num=args.cluster_num,
+                              class_size=args.class_size,
+                              embed_dim=args.embed_dim,
+                              x_dim=args.roi_x,
+                              y_dim=args.roi_y,
+                              z_dim=args.roi_z)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "PREVANV412":
+        model = PREVANV412(embed_dims=args.embed_dims,
+                           mlp_ratios=args.mlp_ratios,
+                           depths=args.depths,
+                           num_stages=args.num_stages,
+                           in_channels=args.in_channels,
+                           out_channels=args.out_channels,
+                           dropout_path_rate=args.dropout_path_rate,
+                           upsample=args.upsample,
+                           cluster_num=args.cluster_num,
+                           class_size=args.class_size,
+                           embed_dim=args.embed_dim,
+                           x_dim=args.roi_x,
+                           y_dim=args.roi_y,
+                           z_dim=args.roi_z)
+        return model
+
     if args.model_v == "PREVANV6GL":
         model = PREVANV6GL(embed_dims=args.embed_dims,
                            mlp_ratios=args.mlp_ratios,

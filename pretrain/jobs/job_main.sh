@@ -29,6 +29,27 @@ PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs
   --embed_dims 64 128 256 512 --depths 3 4 6 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
   --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4GL
 
+elif [ $job -eq 4127 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 64 128 256 512 --depths 3 4 6 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV412
+
+elif [ $job -eq 41217 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 64 128 256 512 --depths 3 4 6 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4121GL
+
+elif [ $job -eq 41227 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 64 128 256 512 --depths 3 4 6 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4122GL
+
 elif [ $job -eq 527 ]
 then
 PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
@@ -57,6 +78,27 @@ PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs
   --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
   --embed_dims 96 192 384 768 --depths 3 3 24 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
   --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4GL
+
+elif [ $job -eq 4129 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 96 192 384 768 --depths 3 3 24 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV412
+
+elif [ $job -eq 41219 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 96 192 384 768 --depths 3 3 24 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4121GL
+
+elif [ $job -eq 41229 ]
+then
+PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 15000 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 96 192 384 768 --depths 3 3 24 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4122GL
 
 elif [ $job -eq 529 ]
 then
