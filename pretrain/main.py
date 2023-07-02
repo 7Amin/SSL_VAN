@@ -89,8 +89,9 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL',
-                                                                          'PREVANV4GL', 'PREVANV4'])
+parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL', 'PREVANV412',
+                                                                          'PREVANV4GL', 'PREVANV4', 'PREVANV4121GL',
+                                                                          'PREVANV4122GL'])
 parser.add_argument("--mode", default='test', type=str, choices=['server', 'test'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--mask_length", default=5, type=int, help="an integer value")
