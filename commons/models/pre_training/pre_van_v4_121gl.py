@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from commons.models.van_v4_121gl import VANV4121GL
+from commons.models.van_v4_121 import VANV4121
 from commons.models.pre_training.pretrain_projection import Projection
 
 
@@ -14,11 +14,11 @@ class PREVANV4121GL(nn.Module):
         for i in range(patch_count):
             for j in range(patch_count):
                 for k in range(patch_count):
-                    setattr(self, f"van{i}_{j}_{k}", VANV4121GL(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
-                                                                num_stages - 2, in_channels, out_channels,
-                                                                dropout_path_rate, upsample))
-        self.van = VANV4121GL(embed_dims, mlp_ratios, depths, num_stages, in_channels,
-                              out_channels, dropout_path_rate, upsample)
+                    setattr(self, f"van{i}_{j}_{k}", VANV4121(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
+                                                              num_stages - 2, in_channels, out_channels,
+                                                              dropout_path_rate, upsample))
+        self.van = VANV4121(embed_dims, mlp_ratios, depths, num_stages, in_channels,
+                            out_channels, dropout_path_rate, upsample)
         self.pre_train_proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
                                          cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
 

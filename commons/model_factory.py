@@ -345,25 +345,6 @@ def get_model(args):
 def get_pre_trained_model(args):
     warnings.warn(f'embed_dims factory = {args.embed_dims}')
 
-    if args.model_v == "PREVANV4122GL":
-        model = PREVANV4122GL(embed_dims=args.embed_dims,
-                              mlp_ratios=args.mlp_ratios,
-                              depths=args.depths,
-                              num_stages=args.num_stages,
-                              in_channels=args.in_channels,
-                              out_channels=args.out_channels,
-                              dropout_path_rate=args.dropout_path_rate,
-                              upsample=args.upsample,
-                              patch_count=args.patch_count,
-                              cluster_num=args.cluster_num,
-                              class_size=args.class_size,
-                              embed_dim=args.embed_dim,
-                              x_dim=args.roi_x,
-                              y_dim=args.roi_y,
-                              z_dim=args.roi_z)
-        args.model_v = args.model_v + "_" + str(args.patch_count)
-        return model
-
     if args.model_v == "PREVANV4121GL":
         model = PREVANV4121GL(embed_dims=args.embed_dims,
                               mlp_ratios=args.mlp_ratios,
