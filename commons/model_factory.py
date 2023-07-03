@@ -343,7 +343,7 @@ def get_model(args):
 
 
 def get_pre_trained_model(args):
-    warnings.warn(f'embed_dims GL = {args.embed_dims}')
+    warnings.warn(f'embed_dims factory = {args.embed_dims}')
 
     if args.model_v == "PREVANV4122GL":
         model = PREVANV4122GL(embed_dims=args.embed_dims,
