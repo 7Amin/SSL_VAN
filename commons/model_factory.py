@@ -29,7 +29,7 @@ from commons.models.pre_training.pre_van_v4_122gl import PREVANV4122GL
 
 
 from commons.optimizer import get_optimizer
-
+import warnings
 import torch
 import os
 
@@ -343,6 +343,7 @@ def get_model(args):
 
 
 def get_pre_trained_model(args):
+    warnings.warn(f'embed_dims GL = {args.embed_dims}')
 
     if args.model_v == "PREVANV4122GL":
         model = PREVANV4122GL(embed_dims=args.embed_dims,
