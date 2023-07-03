@@ -25,7 +25,6 @@ from commons.models.pre_training.pre_van_v5gl import PREVANV5GL
 from commons.models.pre_training.pre_van_v6gl import PREVANV6GL
 from commons.models.pre_training.pre_van_v4_12 import PREVANV412
 from commons.models.pre_training.pre_van_v4_121gl import PREVANV4121GL
-from commons.models.pre_training.pre_van_v4_122gl import PREVANV4122GL
 
 
 from commons.optimizer import get_optimizer
