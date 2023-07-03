@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+import warnings
 from commons.models.van_v4_121 import VANV4121
 
 
@@ -8,7 +8,7 @@ class VANV4122GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv", patch_count=2):
         super(VANV4122GL, self).__init__()
-        print(f'embed_dims GL = {embed_dims}')
+        warnings.warn(f'embed_dims GL = {embed_dims}')
         self.patch_count = patch_count
         for i in range(patch_count):
             for j in range(patch_count):
