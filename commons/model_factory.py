@@ -343,6 +343,7 @@ def get_model(args):
 
 
 def get_pre_trained_model(args):
+
     if args.model_v == "PREVANV4122GL":
         model = PREVANV4122GL(embed_dims=args.embed_dims,
                               mlp_ratios=args.mlp_ratios,
