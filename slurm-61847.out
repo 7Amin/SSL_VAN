@@ -63,11 +63,11 @@ Traceback (most recent call last):
     main_worker(gpu=0, args=args)
   File "/home/karimimonsefi.1/SSL_VAN/pretrain/main.py", line 141, in main_worker
     model = get_pre_trained_model(args)
-  File "/home/karimimonsefi.1/SSL_VAN/commons/model_factory.py", line 366, in get_pre_trained_model
-    model = PREVANV4121GL(embed_dims=args.embed_dims,
-  File "/home/karimimonsefi.1/SSL_VAN/commons/models/pre_training/pre_van_v4_121gl.py", line 17, in __init__
-    setattr(self, f"van{i}_{j}_{k}", VANV4121GL(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
-  File "/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_121gl.py", line 15, in __init__
+  File "/home/karimimonsefi.1/SSL_VAN/commons/model_factory.py", line 347, in get_pre_trained_model
+    model = PREVANV4122GL(embed_dims=args.embed_dims,
+  File "/home/karimimonsefi.1/SSL_VAN/commons/models/pre_training/pre_van_v4_122gl.py", line 17, in __init__
+    setattr(self, f"van{i}_{j}_{k}", VANV4122GL(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
+  File "/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_122gl.py", line 15, in __init__
     setattr(self, f"van{i}_{j}_{k}", VANV4121(embed_dims[:-2], mlp_ratios[:-2], depths[:-2],
   File "/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_121.py", line 42, in __init__
     nn.Conv3d(in_channels, embed_dims[-1] // 2 ** num_stages,
