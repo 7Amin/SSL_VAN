@@ -13,7 +13,7 @@ from commons.model_factory import get_pre_trained_model, load_model
 from commons.optimizer import get_optimizer
 from pretrain.training import run_training
 from pretrain.training_2 import run_training_2
-from pretrain.losses.loss import ClusteringLoss
+from pretrain.losses.loss import ClusteringLoss, ClusteringLoss2
 
 
 parser = argparse.ArgumentParser(description="PyTorch Training")
@@ -143,6 +143,7 @@ def main_worker(gpu, args):
     model = get_pre_trained_model(args)
 
     clustering_loss = ClusteringLoss()
+    clustering_loss2 = ClusteringLoss2()
 
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
@@ -199,7 +200,7 @@ def main_worker(gpu, args):
             model=model,
             train_loader=loader,
             optimizer=optimizer,
-            loss_func=clustering_loss,
+            loss_func=clustering_loss2,
             args=args,
             scheduler=scheduler,
             start_epoch=start_epoch,
