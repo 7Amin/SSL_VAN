@@ -15,13 +15,12 @@ from torch.cuda.amp import GradScaler, autocast
 from utils.utils import AverageMeter, distributed_all_gather
 
 
-def get_target(data, clusters, embed_dim, embed_number_values, args):
-    b, x, y, z = data.shape
-    new_data = data.veiw(0, 3, 1, 2)
-    data_numpy = new_data.detach().numpy()
+def get_target(data, clusters, args):
+    data_numpy = data.detach().numpy()
+    b, z, x, y = data.shape
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
 
-    target = np.zeros((b, z, args.cluster_num, embed_dim))
+    target = np.zeros((b, z, args.cluster_num))
     for index, cluster in enumerate(clusters):
         if index >= args.cluster_num:
             break
@@ -29,15 +28,12 @@ def get_target(data, clusters, embed_dim, embed_number_values, args):
         temp = temp.reshape((b, z))
         for i in range(b):
             for j in range(z):
-                key_ = str(int(temp[i][j]))
-                embed_value = embed_number_values[key_]
-                target[i, j, index] = embed_value
+                target[i, j, index] = temp[i][j]
 
     return torch.from_numpy(target).double()
 
 
-def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim,
-                embed_number_values, scheduler):
+def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, scheduler):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
@@ -47,7 +43,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
         else:
             data = batch_data["image"]
         data = data.squeeze(dim=1)
-        target = get_target(data, clusters, embed_dim, embed_number_values, args)
+        target = get_target(data, clusters, args)
         # warnings.warn("max value {}, min value {}".format(data.max(), data.min()))
         data = data.cuda(args.rank)
         target = target.cuda(args.rank)
@@ -104,7 +100,7 @@ def save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0,
     warnings.warn(f"Saving checkpoint {filename}")
 
 
-def run_training(
+def run_training_2(
     model,
     train_loader,
     optimizer,
@@ -112,8 +108,6 @@ def run_training(
     args,
     scheduler=None,
     start_epoch=0,
-    embed_dim=512,
-    embed_number_values=None
 ):
     writer = None
     if args.logdir is not None and args.rank == 0:
@@ -133,8 +127,7 @@ def run_training(
         epoch_time = time.time()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func,
-            args=args, clusters=clusters, embed_dim=embed_dim, embed_number_values=embed_number_values,
-            scheduler=scheduler
+            args=args, clusters=clusters, scheduler=scheduler
         )
         if args.rank == 0:
             warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,

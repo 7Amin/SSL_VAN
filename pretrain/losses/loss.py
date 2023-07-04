@@ -63,6 +63,49 @@ class ClusteringLoss(nn.Module):
         return loss
 
 
+class ClusteringLoss2(nn.Module):
+    def __init__(self):
+        super(ClusteringLoss2, self).__init__()
+
+    def forward(self, outputs, targets, mask, apply_mask=True):
+        tai = 0.1
+        outputs = outputs.double()
+        targets = targets.double()
+        b, seq, cluster_number = targets.shape  # (b, seq, cluster_number)
+        pred_shape = outputs.shape  # (b, seq, cluster_number, max_cluster_size)
+        max_cluster_size = outputs.shape[-1]
+
+        targets_reshaped = targets.view(-1)  # (b * seq * cluster_number)
+        targets_reshaped = torch.nn.functional.one_hot(targets_reshaped.long(), num_classes=max_cluster_size)
+        targets_reshaped = targets_reshaped.view(pred_shape)
+        # targets_reshaped = targets_reshaped ^ torch.ones_like(targets_reshaped)
+
+        # (b * seq * cluster_number, max_cluster_size)
+        outputs_reshaped = outputs.view(-1, max_cluster_size)
+
+        outputs_reshaped = outputs_reshaped.view(pred_shape)  # (b, seq, cluster_number, max_cluster_size)
+
+        outputs_reshaped = outputs_reshaped * tai
+        # apply softmax along the embedding dimension
+        probabilities = F.softmax(outputs_reshaped, dim=-1)
+        # print(probabilities.shape)
+
+        if apply_mask:
+            expanded_mask = mask.unsqueeze(-1).unsqueeze(-1).bool()
+            probabilities = torch.masked_select(probabilities, expanded_mask)
+            targets_reshaped = torch.masked_select(targets_reshaped, expanded_mask)
+        # print(probabilities.shape)
+        # Calculate negative log-likelihood loss
+        # loss = -torch.log(probabilities + 1e-12).mean()
+        res = targets_reshaped * probabilities
+
+        res = res.view(b, -1, cluster_number, max_cluster_size).sum(-1)
+        loss = -torch.log(res).mean()
+        loss.requires_grad_(True)
+
+        return loss
+
+
 def get_loss(loss_name, args):
     if loss_name == 'CrossEntropyLoss':
         return torch.nn.CrossEntropyLoss().to(args.device)
@@ -85,6 +128,29 @@ def get_loss(loss_name, args):
 #     loss_func = ClusteringLoss()
 #     target_matrix = torch.randn(b, seq, cluster_number, embedding_dim)
 #     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size, embedding_dim)
+#     mask_matrix = torch.randint(0, 2, size=(b, seq))
+#     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, apply_mask)
+#     print('loss: {:.9f}'.format(loss_value))
+#
+#
+# i = 0
+# apply_mask = True
+# while i < 20:
+#     print(apply_mask)
+#     test(apply_mask)
+#     # apply_mask = not apply_mask
+#     i = i + 1
+
+
+# def test(apply_mask=True):
+#     max_cluster_size = 500
+#     b = 1
+#     seq = 96
+#     cluster_number = 20
+#     loss_func = ClusteringLoss2()
+#
+#     target_matrix = torch.randint(0, max_cluster_size-1, size=(b, seq, cluster_number))
+#     output_matrix = torch.randn(b, seq, cluster_number, max_cluster_size)
 #     mask_matrix = torch.randint(0, 2, size=(b, seq))
 #     loss_value = loss_func(output_matrix, target_matrix, mask_matrix, apply_mask)
 #     print('loss: {:.9f}'.format(loss_value))

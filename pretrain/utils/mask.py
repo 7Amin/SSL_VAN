@@ -5,14 +5,15 @@ import random
 
 
 def create_mask(phi_1, phi_2, mask_length, tensor_size):
-    # tensor_size is z, x, y
-    selected_images = np.random.choice(tensor_size[0], int(phi_1 * tensor_size[0]), replace=False)
-    mask_tensor = torch.zeros(tensor_size[0])
+    # tensor_size is x, y, z
+    x, y, z = tensor_size
+    selected_images = np.random.choice(z, int(phi_1 * z), replace=False)
+    mask_tensor = torch.zeros(z)
 
     # Set the values at the specified indices to 1
     mask_tensor[selected_images] = 1
     mask_tensor = mask_tensor.unsqueeze(0)
-    mask = torch.ones(tensor_size[0], tensor_size[1], tensor_size[2])
+    mask = torch.ones(x, y, z)
     masked_images_index = []
     for selected_image in selected_images:
         # print(f"selected_image: {selected_image}")
@@ -21,11 +22,11 @@ def create_mask(phi_1, phi_2, mask_length, tensor_size):
             # Select a patch size randomly
             patch_size = np.random.choice(PATCHES)
             # print(f"image_idx: {image_idx}, patch_size: {patch_size}")
-            if (tensor_size[1] < patch_size or tensor_size[2] < patch_size) and not (image_idx in masked_images_index):
-                mask[image_idx] = 0
+            if (x < patch_size or y < patch_size) and not (image_idx in masked_images_index):
+                mask[:, :, image_idx] = 0
             elif not (image_idx in masked_images_index):
-                num_patches_x = tensor_size[1] // patch_size
-                num_patches_y = tensor_size[2] // patch_size
+                num_patches_x = x // patch_size
+                num_patches_y = y // patch_size
 
                 for patch_idx_x in range(num_patches_x):
                     for patch_idx_y in range(num_patches_y):
@@ -34,7 +35,7 @@ def create_mask(phi_1, phi_2, mask_length, tensor_size):
                             patch_start_y = patch_idx_y * patch_size
                             patch_end_x = (patch_idx_x + 1) * patch_size
                             patch_end_y = (patch_idx_y + 1) * patch_size
-                            mask[image_idx, patch_start_x:patch_end_x, patch_start_y:patch_end_y] = 0
+                            mask[patch_start_x:patch_end_x, patch_start_y:patch_end_y, image_idx] = 0
             # else:
             #     # print(image_idx)
             masked_images_index.append(image_idx)
@@ -43,11 +44,11 @@ def create_mask(phi_1, phi_2, mask_length, tensor_size):
 
 def apply_mask(data, args):
     masks = []
-    batch, c, z, x, y = data.shape
+    batch, c, x, y, z = data.shape
     mask_vectors = []
     for _ in range(batch):
         mask_channels = []
-        mask, mask_vector = create_mask(args.phi_1, args.phi_2, args.mask_length, (z, x, y))
+        mask, mask_vector = create_mask(args.phi_1, args.phi_2, args.mask_length, (x, y, z))
         for _t in range(c):
             mask_channels.append(mask)
         mask_vectors.append(mask_vector)
@@ -61,7 +62,7 @@ def apply_mask(data, args):
 # phi_1 = 0.2
 # phi_2 = 0.5
 # mask_length = 2
-# tensor_size = (20, 2, 2)
+# tensor_size = (20, 10, 15)
 #
 # mask, _ = create_mask(phi_1, phi_2, mask_length, tensor_size)
 # print(mask.shape)

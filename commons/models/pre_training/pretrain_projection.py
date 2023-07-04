@@ -16,7 +16,7 @@ class Projection(nn.Module):
         )
 
         self.conv2 = nn.Sequential(
-            nn.Conv3d(x_dim, class_size, kernel_size=3, stride=1, padding=1),
+            nn.Conv3d(y_dim, class_size, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm3d(class_size),
             nn.GELU(),
             nn.Conv3d(class_size, class_size, kernel_size=3, stride=1, padding=1),
@@ -25,7 +25,7 @@ class Projection(nn.Module):
         )
 
         self.conv3 = nn.Sequential(
-            nn.Conv3d(y_dim, embed_dim, kernel_size=3, stride=1, padding=1),
+            nn.Conv3d(x_dim, embed_dim, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm3d(embed_dim),
             nn.GELU(),
             nn.Conv3d(embed_dim, embed_dim, kernel_size=3, stride=1, padding=1),
@@ -42,7 +42,7 @@ class Projection(nn.Module):
 
     def forward(self, x):
         # print("start proj")
-        # b, c, z, x, y
+        # b, c, x, y, z
         # print(x.shape)
         x = self.conv1(x)
         # print(x.shape)
@@ -52,12 +52,12 @@ class Projection(nn.Module):
         # print(x.shape)
         x = self.conv2(x)
         # print(x.shape)
-        x = x.permute(0, 4, 2, 3, 1)
+        x = x.permute(0, 2, 1, 3, 4)
         # x = x.transpose(1, 4).transpose(3, 4).transpose(2, 3).contiguous()
         # print(x.shape)
         x = self.conv3(x)
         # print(x.shape)
-        x = x.permute(0, 2, 3, 4, 1)
+        x = x.permute(0, 4, 3, 2, 1)
         # x = x.transpose(4, 1).transpose(1, 2).transpose(2, 3).contiguous()
         # print(x.shape)
         x = self.conv4(x)

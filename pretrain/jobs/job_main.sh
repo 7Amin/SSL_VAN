@@ -15,7 +15,16 @@ conda activate ssl_van_seg
 
 job=$1
 
-if [ $job -eq 47 ]
+# for test
+if [ $job -eq -1 ]
+then
+  PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 100 --use_normal_dataset --batch_size 1 --num_stages 4 \
+  --embed_dims 64 128 256 512 --depths 3 4 6 3 --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 64 --roi_z 32 --val_every 1 \
+  --upsample vae  --checkpoint --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4
+
+
+elif [ $job -eq 47 ]
 then
   PYTHONPATH=. python3 pretrain/main.py --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
   --save_checkpoint --max_epochs 100 --use_normal_dataset --batch_size 1 --num_stages 4 \

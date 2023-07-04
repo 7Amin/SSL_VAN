@@ -12,6 +12,7 @@ from pretrain.utils.data_utils import get_loader
 from commons.model_factory import get_pre_trained_model, load_model
 from commons.optimizer import get_optimizer
 from pretrain.training import run_training
+from pretrain.training_2 import run_training_2
 from pretrain.losses.loss import ClusteringLoss
 
 
@@ -101,6 +102,7 @@ parser.add_argument("--embed_dim", default=128, type=int, help="output embed dim
 parser.add_argument("--class_size", default=500, type=int, help="size of class per cluster")
 parser.add_argument("--cluster_num", default=1, type=int, help="number of clusters")
 parser.add_argument("--apply_mask", default=True, type=bool, help="applying mask for calculating loss")
+parser.add_argument("--pretrain_v", default=1, type=int, choices=[1, 2], help="chose version of pretraining")
 
 
 def main():
@@ -153,7 +155,7 @@ def main_worker(gpu, args):
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v + \
                "_" + str(args.cluster_num) + "_" + str(args.class_size) + "_" + str(args.embed_dim) + "_" + \
-               str(args.apply_mask) + "_" + str(args.mask_length)
+               str(args.apply_mask) + "_" + str(args.mask_length) + "_pre_version" + str(args.pretrain_v)
 
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
@@ -179,18 +181,29 @@ def main_worker(gpu, args):
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
                                                           find_unused_parameters=True)
     embed_number_values = load_number_embedding_values()
-
-    loss_value = run_training(
-        model=model,
-        train_loader=loader,
-        optimizer=optimizer,
-        loss_func=clustering_loss,
-        args=args,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        embed_dim=args.embed_dim,
-        embed_number_values=embed_number_values
-    )
+    loss_value = 0.0
+    if args.pretrain_v == 1:
+        loss_value = run_training(
+            model=model,
+            train_loader=loader,
+            optimizer=optimizer,
+            loss_func=clustering_loss,
+            args=args,
+            scheduler=scheduler,
+            start_epoch=start_epoch,
+            embed_dim=args.embed_dim,
+            embed_number_values=embed_number_values
+        )
+    elif args.pretrain_v == 2:
+        loss_value = run_training_2(
+            model=model,
+            train_loader=loader,
+            optimizer=optimizer,
+            loss_func=clustering_loss,
+            args=args,
+            scheduler=scheduler,
+            start_epoch=start_epoch,
+        )
     return loss_value
 
 
