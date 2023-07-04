@@ -17,7 +17,7 @@ from utils.utils import AverageMeter, distributed_all_gather
 
 def get_target(data, clusters, embed_dim, embed_number_values, args):
     b, x, y, z = data.shape
-    new_data = data.view(0, 3, 1, 2)
+    new_data = data.permute(0, 3, 1, 2)
     data_numpy = new_data.detach().numpy()
     merged_array = np.reshape(data_numpy, (b * z, x * y)).astype(np.double)
 
