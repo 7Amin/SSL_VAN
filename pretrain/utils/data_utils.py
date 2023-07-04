@@ -120,7 +120,7 @@ def get_loader(args):
         [
             LoadImaged(keys=["image"]),
             AddChanneld(keys=["image"]),
-            Orientationd(keys=["image"], axcodes="RAS"),
+            Orientationd(keys=["image"], axcodes="ASR"),
             ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
