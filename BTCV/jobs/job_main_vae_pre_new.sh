@@ -53,12 +53,11 @@ then
   --valid_loader valid_loader --model_v VANV412 --upsample vae --checkpoint \
   --pretrained_model_name pre_train_96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_PREVANV412_1_500_128_True_5__final.pt
 
-
 elif [ $job -eq 41217 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log --save_checkpoint --max_epochs 4000 \
-  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 5 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4121GL --upsample vae --checkpoint \
   --pretrained_model_name pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4121GL_2_1_500_128_True_5__final.pt
@@ -76,7 +75,7 @@ elif [ $job -eq 41227 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log --save_checkpoint --max_epochs 4000 \
-  --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 5 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --checkpoint \
   --pretrained_model_name pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4121GL_2_1_500_128_True_5__final.pt
