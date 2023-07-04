@@ -13,7 +13,7 @@ cd SSL_VAN
 module spider cuda
 conda activate ssl_van_seg
 
-n_clusters_range=$(seq 150 500)
+n_clusters_range=$(seq 80 500)
 
 num_runs=400
 
