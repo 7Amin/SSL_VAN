@@ -37,7 +37,7 @@ def get_target(data, clusters, embed_dim, embed_number_values, args):
 
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, clusters, embed_dim,
-                embed_number_values, scheduler):
+                embed_number_values, scheduler, best_loss):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
@@ -81,10 +81,16 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
                 "Epoch {}/{} {}/{}  loss: {:.9f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                        run_loss.avg, time.time() - start_time))
             if idx % 250 == 249:
-                save_checkpoint(
-                    model, epoch - 1, args, best_acc=run_loss.avg, optimizer=optimizer, scheduler=scheduler,
-                    filename=args.final_model_url
-                )
+                warnings.warn(
+                    "SAVED => Epoch {}/{} {}/{}  loss: {:.9f}  time {:.2f}s".format(epoch, args.max_epochs, idx,
+                                                                                    len(loader), run_loss.avg,
+                                                                                    time.time() - start_time))
+                if best_loss > run_loss.avg:
+                    best_loss = run_loss.avg
+                    save_checkpoint(
+                        model, epoch - 1, args, best_acc=run_loss.avg, optimizer=optimizer, scheduler=scheduler,
+                        filename=args.final_model_url
+                    )
 
         start_time = time.time()
     for param in model.parameters():
@@ -113,7 +119,8 @@ def run_training(
     scheduler=None,
     start_epoch=0,
     embed_dim=512,
-    embed_number_values=None
+    embed_number_values=None,
+    best_loss=1000000.0
 ):
     writer = None
     if args.logdir is not None and args.rank == 0:
@@ -134,16 +141,18 @@ def run_training(
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func,
             args=args, clusters=clusters, embed_dim=embed_dim, embed_number_values=embed_number_values,
-            scheduler=scheduler
+            scheduler=scheduler, best_loss=best_loss
         )
         if args.rank == 0:
             warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
                                                                                      train_loss,
                                                                                      time.time() - epoch_time))
-            save_checkpoint(
-                model, epoch, args, best_acc=train_loss, optimizer=optimizer, scheduler=scheduler,
-                filename=args.final_model_url
-            )
+            if best_loss > train_loss:
+                best_loss = train_loss
+                save_checkpoint(
+                    model, epoch, args, best_acc=train_loss, optimizer=optimizer, scheduler=scheduler,
+                    filename=args.final_model_url
+                )
         if args.rank == 0 and writer is not None:
             writer.add_scalar("train_loss", train_loss, epoch)
 

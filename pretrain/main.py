@@ -193,7 +193,8 @@ def main_worker(gpu, args):
             scheduler=scheduler,
             start_epoch=start_epoch,
             embed_dim=args.embed_dim,
-            embed_number_values=embed_number_values
+            embed_number_values=embed_number_values,
+            best_loss=best_acc
         )
     elif args.pretrain_v == 2:
         loss_value = run_training_2(
@@ -204,6 +205,7 @@ def main_worker(gpu, args):
             args=args,
             scheduler=scheduler,
             start_epoch=start_epoch,
+            best_loss=best_acc
         )
     return loss_value
 
