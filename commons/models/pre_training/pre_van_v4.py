@@ -53,7 +53,8 @@ class PREVANV4(nn.Module):
                                              x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
                                              cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
         else:
-            self.pre_train_proj = Projection2(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+            self.pre_train_proj = Projection2(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
+                                              x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
                                               cluster_num=cluster_num, class_size=class_size)
 
         if upsample == "deconv":
