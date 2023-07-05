@@ -161,16 +161,16 @@ def main_worker(gpu, args):
     args.best_model_url = base_url + "_" + "_best.pt"
     args.final_model_url = base_url + "_" + "_final.pt"
     warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
-    best_acc = 0.0
+    best_loss = 100000000000.0
     optimizer = get_optimizer(model, args)
     # scheduler = get_lr_schedule(args, optimizer, start_epoch)
     scheduler = None
 
     if args.checkpoint is not None and args.checkpoint:
-        model, optimizer, scheduler, best_acc, start_epoch = load_model(args, model, optimizer, scheduler, best_acc,
-                                                                        start_epoch)
-        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
-            args.checkpoint, start_epoch, best_acc))
+        model, optimizer, scheduler, best_loss, start_epoch = load_model(args, model, optimizer, scheduler, best_loss,
+                                                                         start_epoch)
+        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (best_loss {})".format(
+            args.checkpoint, start_epoch, best_loss))
 
     model.cuda(args.gpu)
 
@@ -194,7 +194,7 @@ def main_worker(gpu, args):
             start_epoch=start_epoch,
             embed_dim=args.embed_dim,
             embed_number_values=embed_number_values,
-            best_loss=best_acc
+            best_loss=best_loss
         )
     elif args.pretrain_v == 2:
         loss_value = run_training_2(
@@ -205,7 +205,7 @@ def main_worker(gpu, args):
             args=args,
             scheduler=scheduler,
             start_epoch=start_epoch,
-            best_loss=best_acc
+            best_loss=best_loss
         )
     return loss_value
 
