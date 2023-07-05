@@ -78,9 +78,9 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
                                                                        run_loss.avg, time.time() - start_time))
             if idx % 250 == 249:
                 warnings.warn(
-                    "SAVED => Epoch {}/{} {}/{}  loss: {:.9f}  time {:.2f}s".format(epoch, args.max_epochs, idx,
-                                                                                    len(loader), run_loss.avg,
-                                                                                    time.time() - start_time))
+                    "SAVED => Epoch {}/{} {}/{}  loss: {:.9f}, last best: {:.9f},  time {:.2f}s"
+                    .format(epoch, args.max_epochs, idx, len(loader), run_loss.avg, best_loss,
+                            time.time() - start_time))
                 if best_loss > run_loss.avg:
                     best_loss = run_loss.avg
                     save_checkpoint(
@@ -137,9 +137,8 @@ def run_training_2(
             args=args, clusters=clusters, scheduler=scheduler, best_loss=best_loss
         )
         if args.rank == 0:
-            warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
-                                                                                     train_loss,
-                                                                                     time.time() - epoch_time))
+            warnings.warn("Final training  {}/{}  loss: {:.4f} last best: {:.9f} time {:.2f}s"
+                          .format(epoch, args.max_epochs - 1, train_loss, best_loss, time.time() - epoch_time))
             if best_loss > train_loss:
                 best_loss = train_loss
                 save_checkpoint(
