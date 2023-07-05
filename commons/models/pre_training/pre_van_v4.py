@@ -3,11 +3,13 @@ import torch.nn as nn
 
 from commons.models.util_models.van_3d import VAN3D
 from commons.models.pre_training.pretrain_projection import Projection
+from commons.models.pre_training.pretrain_projection_2 import Projection2
 
 
 class PREVANV4(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
-                 upsample="deconv", cluster_num=400, class_size=600, embed_dim=256, x_dim=96, y_dim=96, z_dim=96):
+                 upsample="deconv", cluster_num=400, class_size=600, embed_dim=256, x_dim=96, y_dim=96, z_dim=96,
+                 args=None):
         super(PREVANV4, self).__init__()
         self.van3d = VAN3D(in_chans=in_channels, drop_path_rate=dropout_path_rate, embed_dims=embed_dims,
                            mlp_ratios=mlp_ratios, depths=depths, num_stages=num_stages)
@@ -46,10 +48,13 @@ class PREVANV4(nn.Module):
                 nn.InstanceNorm3d(out_channels),
                 nn.LeakyReLU(),
                 )
-
-        self.pre_train_proj = Projection(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
-                                         x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
-                                         cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        if args.pretrain_v == 1:
+            self.pre_train_proj = Projection(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
+                                             x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                             cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        else:
+            self.pre_train_proj = Projection2(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                              cluster_num=cluster_num, class_size=class_size)
 
         if upsample == "deconv":
             for i in range(num_stages):

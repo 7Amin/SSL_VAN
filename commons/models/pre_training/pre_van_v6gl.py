@@ -3,12 +3,13 @@ import torch.nn as nn
 
 from commons.models.van_v6 import VANV6
 from commons.models.pre_training.pretrain_projection import Projection
+from commons.models.pre_training.pretrain_projection_2 import Projection2
 
 
 class PREVANV6GL(nn.Module):
     def __init__(self, embed_dims, mlp_ratios, depths, num_stages, in_channels, out_channels, dropout_path_rate,
                  upsample="deconv", patch_count=2, cluster_num=400, class_size=600, embed_dim=256, x_dim=96, y_dim=96,
-                 z_dim=96):
+                 z_dim=96, args=None):
         super(PREVANV6GL, self).__init__()
         self.patch_count = patch_count
         for i in range(patch_count):
@@ -19,8 +20,12 @@ class PREVANV6GL(nn.Module):
                                                            dropout_path_rate, upsample))
         self.van = VANV6(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
-        self.pre_train_proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
-                                         cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        if args.pretrain_v == 1:
+            self.pre_train_proj = Projection(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                             cluster_num=cluster_num, class_size=class_size, embed_dim=embed_dim)
+        else:
+            self.pre_train_proj = Projection2(input_dim=out_channels, x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+                                              cluster_num=cluster_num, class_size=class_size)
 
     def forward(self, x):
         #  x is b, c, seq, w, h

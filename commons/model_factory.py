@@ -359,7 +359,8 @@ def get_pre_trained_model(args):
                               embed_dim=args.embed_dim,
                               x_dim=args.roi_x,
                               y_dim=args.roi_y,
-                              z_dim=args.roi_z)
+                              z_dim=args.roi_z,
+                              args=args)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -377,7 +378,8 @@ def get_pre_trained_model(args):
                            embed_dim=args.embed_dim,
                            x_dim=args.roi_x,
                            y_dim=args.roi_y,
-                           z_dim=args.roi_z)
+                           z_dim=args.roi_z,
+                           args=args)
         return model
 
     if args.model_v == "PREVANV6GL":
@@ -395,7 +397,8 @@ def get_pre_trained_model(args):
                            embed_dim=args.embed_dim,
                            x_dim=args.roi_x,
                            y_dim=args.roi_y,
-                           z_dim=args.roi_z)
+                           z_dim=args.roi_z,
+                           args=args)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -414,7 +417,8 @@ def get_pre_trained_model(args):
                            embed_dim=args.embed_dim,
                            x_dim=args.roi_x,
                            y_dim=args.roi_y,
-                           z_dim=args.roi_z)
+                           z_dim=args.roi_z,
+                           args=args)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -433,7 +437,8 @@ def get_pre_trained_model(args):
                            embed_dim=args.embed_dim,
                            x_dim=args.roi_x,
                            y_dim=args.roi_y,
-                           z_dim=args.roi_z)
+                           z_dim=args.roi_z,
+                           args=args)
         args.model_v = args.model_v + "_" + str(args.patch_count)
         return model
 
@@ -451,7 +456,8 @@ def get_pre_trained_model(args):
                          embed_dim=args.embed_dim,
                          x_dim=args.roi_x,
                          y_dim=args.roi_y,
-                         z_dim=args.roi_z)
+                         z_dim=args.roi_z,
+                         args=args)
         return model
 
     return None
