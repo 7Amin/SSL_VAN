@@ -168,3 +168,640 @@ loader is ready
 2023-07-05 17:53:16 | INFO | learn_kmeans | for batch number 12 the res size is 2496
 2023-07-05 17:53:16 | INFO | learn_kmeans | for batch number 13 the res size is 2688
 2023-07-05 17:53:16 | INFO | learn_kmeans | for batch number 14 the res size is 2880
+2023-07-05 17:56:34 | INFO | learn_kmeans | for batch number 15 the res size is 3072
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 16 the res size is 3264
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 17 the res size is 3456
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 18 the res size is 3648
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 19 the res size is 3840
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 20 the res size is 4032
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 21 the res size is 4224
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 22 the res size is 4416
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 23 the res size is 4608
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 24 the res size is 4800
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 25 the res size is 4992
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 26 the res size is 5184
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 27 the res size is 5376
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 28 the res size is 5568
+2023-07-05 17:56:36 | INFO | learn_kmeans | for batch number 29 the res size is 5760
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 30 the res size is 5952
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 31 the res size is 6144
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 32 the res size is 6336
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 33 the res size is 6528
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 34 the res size is 6720
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 35 the res size is 6912
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 36 the res size is 7104
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 37 the res size is 7296
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 38 the res size is 7488
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 39 the res size is 7680
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 40 the res size is 7872
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 41 the res size is 8064
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 42 the res size is 8256
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 43 the res size is 8448
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 44 the res size is 8640
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 45 the res size is 8832
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 46 the res size is 9024
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 47 the res size is 9216
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 48 the res size is 9408
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 49 the res size is 9600
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 50 the res size is 9792
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 51 the res size is 9984
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 52 the res size is 10176
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 53 the res size is 10368
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 54 the res size is 10560
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 55 the res size is 10752
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 56 the res size is 10944
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 57 the res size is 11136
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 58 the res size is 11328
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 59 the res size is 11520
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 60 the res size is 11712
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 61 the res size is 11904
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 62 the res size is 12096
+2023-07-05 17:57:16 | INFO | learn_kmeans | for batch number 63 the res size is 12288
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 146, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 82, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 305, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/resource_sharer.py", line 58, in detach
+    return reduction.recv_handle(conn)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 189, in recv_handle
+    return recvfds(s, 1)[0]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 164, in recvfds
+    raise RuntimeError('received %d items of ancdata' %
+RuntimeError: received 0 items of ancdata
+2023-07-05 18:05:13 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=64, distributed=False, mode='server', num_samples=1, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=300, seed=42, init='k-means++', max_iter=350, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0, num_runs=400)
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
+2023-07-05 18:16:25 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-07-05 18:16:36 | INFO | learn_kmeans | for batch number 1 the res size is 384
+2023-07-05 18:16:48 | INFO | learn_kmeans | for batch number 2 the res size is 576
+2023-07-05 18:16:48 | INFO | learn_kmeans | for batch number 3 the res size is 768
+2023-07-05 18:17:57 | INFO | learn_kmeans | for batch number 4 the res size is 960
+2023-07-05 18:17:57 | INFO | learn_kmeans | for batch number 5 the res size is 1152
+2023-07-05 18:17:57 | INFO | learn_kmeans | for batch number 6 the res size is 1344
+2023-07-05 18:17:57 | INFO | learn_kmeans | for batch number 7 the res size is 1536
+2023-07-05 18:18:28 | INFO | learn_kmeans | for batch number 8 the res size is 1728
+2023-07-05 18:18:28 | INFO | learn_kmeans | for batch number 9 the res size is 1920
+2023-07-05 18:18:28 | INFO | learn_kmeans | for batch number 10 the res size is 2112
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 11 the res size is 2304
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 12 the res size is 2496
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 13 the res size is 2688
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 14 the res size is 2880
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 15 the res size is 3072
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 16 the res size is 3264
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 17 the res size is 3456
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 18 the res size is 3648
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 19 the res size is 3840
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 20 the res size is 4032
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 21 the res size is 4224
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 22 the res size is 4416
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 23 the res size is 4608
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 24 the res size is 4800
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 25 the res size is 4992
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 26 the res size is 5184
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 27 the res size is 5376
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 28 the res size is 5568
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 29 the res size is 5760
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 30 the res size is 5952
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 31 the res size is 6144
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 32 the res size is 6336
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 33 the res size is 6528
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 34 the res size is 6720
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 35 the res size is 6912
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 36 the res size is 7104
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 37 the res size is 7296
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 38 the res size is 7488
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 39 the res size is 7680
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 40 the res size is 7872
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 41 the res size is 8064
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 42 the res size is 8256
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 43 the res size is 8448
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 44 the res size is 8640
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 45 the res size is 8832
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 46 the res size is 9024
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 47 the res size is 9216
+2023-07-05 18:19:38 | INFO | learn_kmeans | for batch number 48 the res size is 9408
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 49 the res size is 9600
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 50 the res size is 9792
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 51 the res size is 9984
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 52 the res size is 10176
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 53 the res size is 10368
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 54 the res size is 10560
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 55 the res size is 10752
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 56 the res size is 10944
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 57 the res size is 11136
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 58 the res size is 11328
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 59 the res size is 11520
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 60 the res size is 11712
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 61 the res size is 11904
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 62 the res size is 12096
+2023-07-05 18:19:39 | INFO | learn_kmeans | for batch number 63 the res size is 12288
+2023-07-05 18:25:01 | INFO | learn_kmeans | for batch number 64 the res size is 12480
+2023-07-05 18:25:01 | INFO | learn_kmeans | for batch number 65 the res size is 12672
+2023-07-05 18:26:05 | INFO | learn_kmeans | for batch number 66 the res size is 12864
+2023-07-05 18:26:05 | INFO | learn_kmeans | for batch number 67 the res size is 13056
+2023-07-05 18:26:05 | INFO | learn_kmeans | for batch number 68 the res size is 13248
+2023-07-05 18:26:05 | INFO | learn_kmeans | for batch number 69 the res size is 13440
+2023-07-05 18:26:05 | INFO | learn_kmeans | for batch number 70 the res size is 13632
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 71 the res size is 13824
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 72 the res size is 14016
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 73 the res size is 14208
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 74 the res size is 14400
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 75 the res size is 14592
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 76 the res size is 14784
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 77 the res size is 14976
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 78 the res size is 15168
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 79 the res size is 15360
+2023-07-05 18:28:31 | INFO | learn_kmeans | for batch number 80 the res size is 15552
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 81 the res size is 15744
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 82 the res size is 15936
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 83 the res size is 16128
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 84 the res size is 16320
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 85 the res size is 16512
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 86 the res size is 16704
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 87 the res size is 16896
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 88 the res size is 17088
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 89 the res size is 17280
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 90 the res size is 17472
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 91 the res size is 17664
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 92 the res size is 17856
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 93 the res size is 18048
+2023-07-05 18:28:32 | INFO | learn_kmeans | for batch number 94 the res size is 18240
+2023-07-05 18:29:21 | INFO | learn_kmeans | for batch number 95 the res size is 18432
+2023-07-05 18:29:21 | INFO | learn_kmeans | for batch number 96 the res size is 18624
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 97 the res size is 18816
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 98 the res size is 19008
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 99 the res size is 19200
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 100 the res size is 19392
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 101 the res size is 19584
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 102 the res size is 19776
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 103 the res size is 19968
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 104 the res size is 20160
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 105 the res size is 20352
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 106 the res size is 20544
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 107 the res size is 20736
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 108 the res size is 20928
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 109 the res size is 21120
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 110 the res size is 21312
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 111 the res size is 21504
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 112 the res size is 21696
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 113 the res size is 21888
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 114 the res size is 22080
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 115 the res size is 22272
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 116 the res size is 22464
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 117 the res size is 22656
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 118 the res size is 22848
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 119 the res size is 23040
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 120 the res size is 23232
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 121 the res size is 23424
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 122 the res size is 23616
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 123 the res size is 23808
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 124 the res size is 24000
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 125 the res size is 24192
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 126 the res size is 24384
+2023-07-05 18:29:22 | INFO | learn_kmeans | for batch number 127 the res size is 24576
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 128 the res size is 24768
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 129 the res size is 24960
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 130 the res size is 25152
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 131 the res size is 25344
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 132 the res size is 25536
+2023-07-05 18:30:25 | INFO | learn_kmeans | for batch number 133 the res size is 25728
+2023-07-05 18:31:46 | INFO | learn_kmeans | for batch number 134 the res size is 25920
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 135 the res size is 26112
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 136 the res size is 26304
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 137 the res size is 26496
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 138 the res size is 26688
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 139 the res size is 26880
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 140 the res size is 27072
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 141 the res size is 27264
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 142 the res size is 27456
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 143 the res size is 27648
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 144 the res size is 27840
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 145 the res size is 28032
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 146 the res size is 28224
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 147 the res size is 28416
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 148 the res size is 28608
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 149 the res size is 28800
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 150 the res size is 28992
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 151 the res size is 29184
+2023-07-05 18:33:41 | INFO | learn_kmeans | for batch number 152 the res size is 29376
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 153 the res size is 29568
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 154 the res size is 29760
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 155 the res size is 29952
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 156 the res size is 30144
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 157 the res size is 30336
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 158 the res size is 30528
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 159 the res size is 30720
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 160 the res size is 30912
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 161 the res size is 31104
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 162 the res size is 31296
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 163 the res size is 31488
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 164 the res size is 31680
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 165 the res size is 31872
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 166 the res size is 32064
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 167 the res size is 32256
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 168 the res size is 32448
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 169 the res size is 32640
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 170 the res size is 32832
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 171 the res size is 33024
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 172 the res size is 33216
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 173 the res size is 33408
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 174 the res size is 33600
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 175 the res size is 33792
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 176 the res size is 33984
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 177 the res size is 34176
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 178 the res size is 34368
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 179 the res size is 34560
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 180 the res size is 34752
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 181 the res size is 34944
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 182 the res size is 35136
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 183 the res size is 35328
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 184 the res size is 35520
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 185 the res size is 35712
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 186 the res size is 35904
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 187 the res size is 36096
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 188 the res size is 36288
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 189 the res size is 36480
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 190 the res size is 36672
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 191 the res size is 36864
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 192 the res size is 37056
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 193 the res size is 37248
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 194 the res size is 37440
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 195 the res size is 37632
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 196 the res size is 37824
+2023-07-05 18:34:07 | INFO | learn_kmeans | for batch number 197 the res size is 38016
+2023-07-05 18:34:34 | INFO | learn_kmeans | for batch number 198 the res size is 38208
+2023-07-05 18:34:34 | INFO | learn_kmeans | for batch number 199 the res size is 38400
+2023-07-05 18:34:34 | INFO | learn_kmeans | for batch number 200 the res size is 38592
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 201 the res size is 38784
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 202 the res size is 38976
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 203 the res size is 39168
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 204 the res size is 39360
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 205 the res size is 39552
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 206 the res size is 39744
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 207 the res size is 39936
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 208 the res size is 40128
+2023-07-05 18:34:41 | INFO | learn_kmeans | for batch number 209 the res size is 40320
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 210 the res size is 40512
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 211 the res size is 40704
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 212 the res size is 40896
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 213 the res size is 41088
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 214 the res size is 41280
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 215 the res size is 41472
+2023-07-05 18:34:52 | INFO | learn_kmeans | for batch number 216 the res size is 41664
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 217 the res size is 41856
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 218 the res size is 42048
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 219 the res size is 42240
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 220 the res size is 42432
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 221 the res size is 42624
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 222 the res size is 42816
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 223 the res size is 43008
+2023-07-05 18:34:56 | INFO | learn_kmeans | for batch number 224 the res size is 43200
+2023-07-05 18:34:56 | INFO | learn_kmeans | data is ready and size is 43392
+2023-07-05 18:34:56 | INFO | learn_kmeans | model is defined
+2023-07-05 18:34:56 | INFO | learn_kmeans | training is started
+Init 1/50 with method k-means++
+Inertia for init 1/50: 117557.56805243225
+Init 2/50 with method k-means++
+Inertia for init 2/50: 115316.30623441692
+Init 3/50 with method k-means++
+Inertia for init 3/50: 118710.24547568185
+Init 4/50 with method k-means++
+Inertia for init 4/50: 115065.83140083966
+Init 5/50 with method k-means++
+Inertia for init 5/50: 121466.75926936409
+Init 6/50 with method k-means++
+Inertia for init 6/50: 114239.4974987885
+Init 7/50 with method k-means++
+Inertia for init 7/50: 119948.97103639985
+Init 8/50 with method k-means++
+Inertia for init 8/50: 114806.10212685511
+Init 9/50 with method k-means++
+Inertia for init 9/50: 114487.89805652633
+Init 10/50 with method k-means++
+Inertia for init 10/50: 114115.49908379787
+Init 11/50 with method k-means++
+Inertia for init 11/50: 111882.81701094817
+Init 12/50 with method k-means++
+Inertia for init 12/50: 117077.56749881835
+Init 13/50 with method k-means++
+Inertia for init 13/50: 113175.77224385653
+Init 14/50 with method k-means++
+Inertia for init 14/50: 116938.0832717087
+Init 15/50 with method k-means++
+Inertia for init 15/50: 117187.14994486002
+Init 16/50 with method k-means++
+Inertia for init 16/50: 118134.58069173786
+Init 17/50 with method k-means++
+Inertia for init 17/50: 119302.12943718533
+Init 18/50 with method k-means++
+Inertia for init 18/50: 116038.9236935123
+Init 19/50 with method k-means++
+Inertia for init 19/50: 115891.7743254028
+Init 20/50 with method k-means++
+Inertia for init 20/50: 113359.21974762806
+Init 21/50 with method k-means++
+Inertia for init 21/50: 114326.63691670344
+Init 22/50 with method k-means++
+Inertia for init 22/50: 121487.28932455617
+Init 23/50 with method k-means++
+Inertia for init 23/50: 115005.93803945997
+Init 24/50 with method k-means++
+Inertia for init 24/50: 115288.39494425557
+Init 25/50 with method k-means++
+Inertia for init 25/50: 111637.25763497587
+Init 26/50 with method k-means++
+Inertia for init 26/50: 121489.65716590405
+Init 27/50 with method k-means++
+Inertia for init 27/50: 118539.13638144809
+Init 28/50 with method k-means++
+Inertia for init 28/50: 115276.78747184179
+Init 29/50 with method k-means++
+Inertia for init 29/50: 118757.6513220374
+Init 30/50 with method k-means++
+Inertia for init 30/50: 116279.3578759436
+Init 31/50 with method k-means++
+Inertia for init 31/50: 111113.58526599326
+Init 32/50 with method k-means++
+Inertia for init 32/50: 118140.0203592349
+Init 33/50 with method k-means++
+Inertia for init 33/50: 118331.1680190472
+Init 34/50 with method k-means++
+Inertia for init 34/50: 116491.66996972752
+Init 35/50 with method k-means++
+Inertia for init 35/50: 114465.88077260314
+Init 36/50 with method k-means++
+Inertia for init 36/50: 115096.65652727138
+Init 37/50 with method k-means++
+Inertia for init 37/50: 113974.83288315024
+Init 38/50 with method k-means++
+Inertia for init 38/50: 119864.62984748455
+Init 39/50 with method k-means++
+Inertia for init 39/50: 111797.40895789702
+Init 40/50 with method k-means++
+Inertia for init 40/50: 121564.50931688507
+Init 41/50 with method k-means++
+Inertia for init 41/50: 115598.36692130302
+Init 42/50 with method k-means++
+Inertia for init 42/50: 113781.9069728347
+Init 43/50 with method k-means++
+Inertia for init 43/50: 112219.19091560534
+Init 44/50 with method k-means++
+Inertia for init 44/50: 113844.9164963803
+Init 45/50 with method k-means++
+Inertia for init 45/50: 116735.44183482368
+Init 46/50 with method k-means++
+Inertia for init 46/50: 115225.46510786089
+Init 47/50 with method k-means++
+Inertia for init 47/50: 120122.48904114949
+Init 48/50 with method k-means++
+Inertia for init 48/50: 114764.3006441362
+Init 49/50 with method k-means++
+Inertia for init 49/50: 117957.65025836808
+Init 50/50 with method k-means++
+Inertia for init 50/50: 116846.03150678395
+Minibatch step 1/759360: mean batch inertia: 113.14195819677964
+Minibatch step 2/759360: mean batch inertia: 104.97127605955968, ewa inertia: 104.97127605955968
+Minibatch step 3/759360: mean batch inertia: 114.9276292875722, ewa inertia: 104.98045390227902
+Minibatch step 4/759360: mean batch inertia: 118.7302761831824, ewa inertia: 104.99312859384763
+Minibatch step 5/759360: mean batch inertia: 176.14379942549925, ewa inertia: 105.05871582757808
+Minibatch step 6/759360: mean batch inertia: 134.4888683796171, ewa inertia: 105.0858447677777
+Minibatch step 7/759360: mean batch inertia: 174.21814247275591, ewa inertia: 105.14957144968952
+Minibatch step 8/759360: mean batch inertia: 159.35830404022653, ewa inertia: 105.19954147489223
+Minibatch step 9/759360: mean batch inertia: 119.4760592625423, ewa inertia: 105.21270167841598
+Minibatch step 10/759360: mean batch inertia: 125.6591726698261, ewa inertia: 105.23154939209459
+Minibatch step 11/759360: mean batch inertia: 139.61846001721432, ewa inertia: 105.26324750987868
+Minibatch step 12/759360: mean batch inertia: 175.14180174206578, ewa inertia: 105.3276620967772
+Minibatch step 13/759360: mean batch inertia: 138.7759771951529, ewa inertia: 105.35849501001056
+Minibatch step 14/759360: mean batch inertia: 114.53962772522104, ewa inertia: 105.36695824851927
+Minibatch step 15/759360: mean batch inertia: 141.4383460719902, ewa inertia: 105.40020913029602
+Minibatch step 16/759360: mean batch inertia: 143.61374332138115, ewa inertia: 105.43543465901364
+Minibatch step 17/759360: mean batch inertia: 141.277469926795, ewa inertia: 105.46847412184661
+Minibatch step 18/759360: mean batch inertia: 128.35596998648808, ewa inertia: 105.48957199096341
+Minibatch step 19/759360: mean batch inertia: 95.16298679278489, ewa inertia: 105.48005286557621
+Minibatch step 20/759360: mean batch inertia: 131.08203248552059, ewa inertia: 105.50365296662471
+Minibatch step 21/759360: mean batch inertia: 171.91102493871725, ewa inertia: 105.56486779110986
+Minibatch step 22/759360: mean batch inertia: 161.2131241125404, ewa inertia: 105.61616478032143
+Minibatch step 23/759360: mean batch inertia: 111.42488952639704, ewa inertia: 105.62151930731525
+Minibatch step 24/759360: mean batch inertia: 88.28311388533264, ewa inertia: 105.60553663230132
+Minibatch step 25/759360: mean batch inertia: 89.8376805330231, ewa inertia: 105.59100170169106
+Minibatch step 26/759360: mean batch inertia: 65.04150300098283, ewa inertia: 105.5536228629837
+Minibatch step 27/759360: mean batch inertia: 112.11436282912109, ewa inertia: 105.55967060337146
+Minibatch step 28/759360: mean batch inertia: 99.57569229933068, ewa inertia: 105.55415452630461
+Minibatch step 29/759360: mean batch inertia: 78.3447097251858, ewa inertia: 105.52907265153117
+Minibatch step 30/759360: mean batch inertia: 144.73662159826176, ewa inertia: 105.56521447066949
+Minibatch step 31/759360: mean batch inertia: 101.56830690984118, ewa inertia: 105.5615300906443
+Minibatch step 32/759360: mean batch inertia: 142.98648985051227, ewa inertia: 105.59602870540692
+Minibatch step 33/759360: mean batch inertia: 125.08185535285293, ewa inertia: 105.6139908897661
+Minibatch step 34/759360: mean batch inertia: 135.48860473638237, ewa inertia: 105.64152953779377
+Minibatch step 35/759360: mean batch inertia: 90.31617124206431, ewa inertia: 105.62740250505048
+Minibatch step 36/759360: mean batch inertia: 109.72165993868757, ewa inertia: 105.6311766229346
+Minibatch step 37/759360: mean batch inertia: 128.31219772597078, ewa inertia: 105.65208416203356
+Minibatch step 38/759360: mean batch inertia: 137.51099664118277, ewa inertia: 105.68145195175002
+Minibatch step 39/759360: mean batch inertia: 152.3289958680204, ewa inertia: 105.72445201527758
+Minibatch step 40/759360: mean batch inertia: 93.38099155552653, ewa inertia: 105.71307371881525
+Minibatch step 41/759360: mean batch inertia: 132.11633132397938, ewa inertia: 105.7374124440522
+Minibatch step 42/759360: mean batch inertia: 163.25248617624476, ewa inertia: 105.79043027986184
+Minibatch step 43/759360: mean batch inertia: 125.33768549494027, ewa inertia: 105.80844908954549
+Minibatch step 44/759360: mean batch inertia: 147.7320555239191, ewa inertia: 105.84709459129405
+Minibatch step 45/759360: mean batch inertia: 90.22003930526077, ewa inertia: 105.83268945195266
+Minibatch step 46/759360: mean batch inertia: 142.85447049915336, ewa inertia: 105.86681641348765
+Minibatch step 47/759360: mean batch inertia: 149.22904709235, ewa inertia: 105.90678805009159
+Minibatch step 48/759360: mean batch inertia: 131.25543949192786, ewa inertia: 105.9301546312838
+Minibatch step 49/759360: mean batch inertia: 88.96328624860296, ewa inertia: 105.91451444196046
+Minibatch step 50/759360: mean batch inertia: 126.91280624909317, ewa inertia: 105.93387082829662
+Minibatch step 51/759360: mean batch inertia: 91.78803459750834, ewa inertia: 105.92083108803365
+Minibatch step 52/759360: mean batch inertia: 42.03892691307248, ewa inertia: 105.86194425912119
+Minibatch step 53/759360: mean batch inertia: 126.97024491307161, ewa inertia: 105.88140205245556
+Minibatch step 54/759360: mean batch inertia: 136.03705916739392, ewa inertia: 105.90919976832211
+Minibatch step 55/759360: mean batch inertia: 89.6963060561209, ewa inertia: 105.89425459862912
+Minibatch step 56/759360: mean batch inertia: 124.83894340857383, ewa inertia: 105.91171795798195
+Minibatch step 57/759360: mean batch inertia: 89.4289239044812, ewa inertia: 105.8965239920856
+Minibatch step 58/759360: mean batch inertia: 125.55362574852074, ewa inertia: 105.91464405915305
+Minibatch step 59/759360: mean batch inertia: 142.38727203879645, ewa inertia: 105.9482648071812
+Minibatch step 60/759360: mean batch inertia: 131.9719425124811, ewa inertia: 105.97225363275703
+Minibatch step 61/759360: mean batch inertia: 117.83768571846315, ewa inertia: 105.98319127900017
+Minibatch step 62/759360: mean batch inertia: 106.50541872075993, ewa inertia: 105.98367267225876
+Minibatch step 63/759360: mean batch inertia: 86.5895752557891, ewa inertia: 105.96579504460777
+Minibatch step 64/759360: mean batch inertia: 132.83408543846932, ewa inertia: 105.99056244063372
+Minibatch step 65/759360: mean batch inertia: 79.53781181765422, ewa inertia: 105.9661780923536
+Minibatch step 66/759360: mean batch inertia: 120.7761365511511, ewa inertia: 105.97983002557675
+Minibatch step 67/759360: mean batch inertia: 138.5584423811112, ewa inertia: 106.00986124015563
+Minibatch step 68/759360: mean batch inertia: 81.61851877115268, ewa inertia: 105.98737711371218
+Minibatch step 69/759360: mean batch inertia: 130.0028033863095, ewa inertia: 106.00951471772443
+Minibatch step 70/759360: mean batch inertia: 116.86605733339047, ewa inertia: 106.01952236192112
+Minibatch step 71/759360: mean batch inertia: 86.35869777822786, ewa inertia: 106.00139886312297
+Minibatch step 72/759360: mean batch inertia: 136.11139332920519, ewa inertia: 106.02915448680982
+Minibatch step 73/759360: mean batch inertia: 134.43427912596877, ewa inertia: 106.05533854842265
+Minibatch step 74/759360: mean batch inertia: 140.6265302915302, ewa inertia: 106.08720653795378
+Minibatch step 75/759360: mean batch inertia: 116.31586994719446, ewa inertia: 106.09663539828539
+Minibatch step 76/759360: mean batch inertia: 133.09338241638218, ewa inertia: 106.12152120661216
+Minibatch step 77/759360: mean batch inertia: 94.58233327378989, ewa inertia: 106.11088429472976
+Minibatch step 78/759360: mean batch inertia: 110.35628453122183, ewa inertia: 106.11479773720804
+Minibatch step 79/759360: mean batch inertia: 132.70618159391913, ewa inertia: 106.13930987866561
+Minibatch step 80/759360: mean batch inertia: 95.73659921820804, ewa inertia: 106.12972058024378
+Minibatch step 81/759360: mean batch inertia: 65.69804459359743, ewa inertia: 106.09245035141733
+Minibatch step 82/759360: mean batch inertia: 107.87975673385515, ewa inertia: 106.09409790414006
+Minibatch step 83/759360: mean batch inertia: 166.0088902895439, ewa inertia: 106.14932781899766
+Minibatch step 84/759360: mean batch inertia: 109.34344877129544, ewa inertia: 106.15227218417388
+Minibatch step 85/759360: mean batch inertia: 146.00391799011464, ewa inertia: 106.18900773673393
+Minibatch step 86/759360: mean batch inertia: 129.86139599009323, ewa inertia: 106.21082912567073
+Minibatch step 87/759360: mean batch inertia: 98.86790419492091, ewa inertia: 106.20406036118729
+Minibatch step 88/759360: mean batch inertia: 94.37247606286964, ewa inertia: 106.193153916094
+Minibatch step 89/759360: mean batch inertia: 119.75940550056342, ewa inertia: 106.20565939078759
+Minibatch step 90/759360: mean batch inertia: 108.83670362308047, ewa inertia: 106.20808470752742
+Minibatch step 91/759360: mean batch inertia: 59.32455268759069, ewa inertia: 106.1648671083571
+Minibatch step 92/759360: mean batch inertia: 114.34401535377481, ewa inertia: 106.17240670990151
+Minibatch step 93/759360: mean batch inertia: 101.96492807339014, ewa inertia: 106.16852822384476
+Minibatch step 94/759360: mean batch inertia: 99.500232802079, ewa inertia: 106.16238133801363
+Minibatch step 95/759360: mean batch inertia: 123.07197503360251, ewa inertia: 106.1779687310914
+Minibatch step 96/759360: mean batch inertia: 121.44372197600092, ewa inertia: 106.19204081944197
+Minibatch step 97/759360: mean batch inertia: 147.17667336359696, ewa inertia: 106.22982076786144
+Minibatch step 98/759360: mean batch inertia: 156.29078041945309, ewa inertia: 106.27596734417706
+Minibatch step 99/759360: mean batch inertia: 138.20950696254437, ewa inertia: 106.30540392576245
+Minibatch step 100/759360: mean batch inertia: 92.63064204557318, ewa inertia: 106.29279842544655
+Minibatch step 101/759360: mean batch inertia: 116.92442618198913, ewa inertia: 106.30259874140216
+Minibatch step 102/759360: mean batch inertia: 119.54898266941495, ewa inertia: 106.31480935963829
+Converged (lack of improvement in inertia) at step 102/759360
+2023-07-05 18:35:33 | INFO | learn_kmeans | training is finished
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+OpenBLAS warning: precompiled NUM_THREADS exceeded, adding auxiliary array for thread metadata.
+/var/spool/slurmd/job62380/slurm_script: line 35: 1737395 Segmentation fault      (core dumped) PYTHONPATH=. python3 clustering/kmeans_learning.py --num_workers 64 --mode server --num_samples 1 --km_path ./cluster_models_1/cluster_model_1_{}_{}_{}.joblib --n_clusters "$n_clusters" --max_iter 350 --batch_size 20 --n_init 50 --num_runs $num_runs
+2023-07-05 18:36:19 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=64, distributed=False, mode='server', num_samples=1, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=454, seed=42, init='k-means++', max_iter=350, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0, num_runs=400)
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
+2023-07-05 18:38:50 | INFO | learn_kmeans | for batch number 0 the res size is 0
+2023-07-05 18:50:33 | INFO | learn_kmeans | for batch number 1 the res size is 384
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 2 the res size is 576
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 3 the res size is 768
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 4 the res size is 960
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 5 the res size is 1152
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 6 the res size is 1344
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 7 the res size is 1536
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 8 the res size is 1728
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 9 the res size is 1920
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 10 the res size is 2112
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 11 the res size is 2304
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 12 the res size is 2496
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 13 the res size is 2688
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 14 the res size is 2880
+2023-07-05 18:50:36 | INFO | learn_kmeans | for batch number 15 the res size is 3072
+2023-07-05 18:58:03 | INFO | learn_kmeans | for batch number 16 the res size is 3264
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 17 the res size is 3456
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 18 the res size is 3648
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 19 the res size is 3840
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 20 the res size is 4032
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 21 the res size is 4224
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 22 the res size is 4416
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 23 the res size is 4608
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 24 the res size is 4800
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 25 the res size is 4992
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 26 the res size is 5184
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 27 the res size is 5376
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 28 the res size is 5568
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 29 the res size is 5760
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 30 the res size is 5952
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 31 the res size is 6144
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 32 the res size is 6336
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 33 the res size is 6528
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 34 the res size is 6720
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 35 the res size is 6912
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 36 the res size is 7104
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 37 the res size is 7296
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 38 the res size is 7488
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 39 the res size is 7680
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 40 the res size is 7872
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 41 the res size is 8064
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 42 the res size is 8256
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 43 the res size is 8448
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 44 the res size is 8640
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 45 the res size is 8832
+2023-07-05 18:58:04 | INFO | learn_kmeans | for batch number 46 the res size is 9024
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 47 the res size is 9216
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 48 the res size is 9408
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 49 the res size is 9600
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 50 the res size is 9792
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 51 the res size is 9984
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 52 the res size is 10176
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 53 the res size is 10368
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 54 the res size is 10560
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 55 the res size is 10752
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 56 the res size is 10944
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 57 the res size is 11136
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 58 the res size is 11328
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 59 the res size is 11520
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 60 the res size is 11712
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 61 the res size is 11904
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 62 the res size is 12096
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 63 the res size is 12288
+2023-07-05 18:59:24 | INFO | learn_kmeans | for batch number 64 the res size is 12480
+2023-07-05 19:05:31 | INFO | learn_kmeans | for batch number 65 the res size is 12672
+2023-07-05 19:05:32 | INFO | learn_kmeans | for batch number 66 the res size is 12864
+2023-07-05 19:05:32 | INFO | learn_kmeans | for batch number 67 the res size is 13056
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 68 the res size is 13248
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 69 the res size is 13440
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 70 the res size is 13632
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 71 the res size is 13824
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 72 the res size is 14016
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 73 the res size is 14208
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 74 the res size is 14400
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 75 the res size is 14592
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 76 the res size is 14784
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 77 the res size is 14976
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 78 the res size is 15168
+2023-07-05 19:08:00 | INFO | learn_kmeans | for batch number 79 the res size is 15360
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 80 the res size is 15552
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 81 the res size is 15744
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 82 the res size is 15936
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 83 the res size is 16128
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 84 the res size is 16320
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 85 the res size is 16512
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 86 the res size is 16704
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 87 the res size is 16896
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 88 the res size is 17088
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 89 the res size is 17280
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 90 the res size is 17472
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 91 the res size is 17664
+2023-07-05 19:12:17 | INFO | learn_kmeans | for batch number 92 the res size is 17856
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 93 the res size is 18048
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 94 the res size is 18240
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 95 the res size is 18432
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 96 the res size is 18624
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 97 the res size is 18816
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 98 the res size is 19008
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 99 the res size is 19200
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 100 the res size is 19392
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 101 the res size is 19584
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 102 the res size is 19776
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 103 the res size is 19968
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 104 the res size is 20160
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 105 the res size is 20352
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 106 the res size is 20544
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 107 the res size is 20736
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 108 the res size is 20928
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 109 the res size is 21120
+2023-07-05 19:12:18 | INFO | learn_kmeans | for batch number 110 the res size is 21312
