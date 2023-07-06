@@ -53,22 +53,22 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             warnings.warn("label at {}".format(val_labels_list.max()))
             val_output_convert = (val_output_convert > 0.5).float()
 
-            non_empty_val_output = []
-            non_empty_val_labels = []
-
-            # Iterate over the tensors and check if they are empty or all-zero
-            for i in range(3):
-                for tensor_output, tensor_labels in zip(val_output_convert[0][i], val_labels_list[0][i]):
-                    # Check if the tensor is not empty and contains non-zero elements
-                    if tensor_output.sum().item() != 0 and tensor_labels.sum().item() != 0:
-                        non_empty_val_output.append(tensor_output)
-                        non_empty_val_labels.append(tensor_labels)
-
-            # Convert the non-empty tensors to a single tensor
-            val_output_convert = torch.stack([torch.stack(non_empty_val_output)])
-            val_labels_list = torch.stack([torch.stack(non_empty_val_labels)])
-            warnings.warn("pred new at {}".format(val_output_convert.shape))
-            warnings.warn("label new at {}".format(val_labels_list.shape))
+            # non_empty_val_output = []
+            # non_empty_val_labels = []
+            #
+            # # Iterate over the tensors and check if they are empty or all-zero
+            # for i in range(3):
+            #     for tensor_output, tensor_labels in zip(val_output_convert[0][i], val_labels_list[0][i]):
+            #         # Check if the tensor is not empty and contains non-zero elements
+            #         if tensor_output.sum().item() != 0 and tensor_labels.sum().item() != 0:
+            #             non_empty_val_output.append(tensor_output)
+            #             non_empty_val_labels.append(tensor_labels)
+            #
+            # # Convert the non-empty tensors to a single tensor
+            # val_output_convert = torch.stack([torch.stack(non_empty_val_output)])
+            # val_labels_list = torch.stack([torch.stack(non_empty_val_labels)])
+            # warnings.warn("pred new at {}".format(val_output_convert.shape))
+            # warnings.warn("label new at {}".format(val_labels_list.shape))
             hd_distance = compute_hausdorff_distance(val_output_convert,
                                                      val_labels_list,
                                                      percentile=95.0)
@@ -82,7 +82,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
                     run_acc.update(al, n=nl)
             else:
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                hd95.update(hd_distance)
+                if not torch.isnan(hd_distance).any():
+                    hd95.update(hd_distance)
 
             if args.rank == 0:
                 Dice_TC = run_acc.avg[0]
