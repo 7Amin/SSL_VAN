@@ -44,8 +44,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             val_outputs_list = decollate_batch(logits)
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
             acc_func.reset()
-            hd_distance = compute_hausdorff_distance(np.stack(val_output_convert),
-                                                     np.stack(val_labels_list),
+            hd_distance = compute_hausdorff_distance(torch.stack(val_output_convert),
+                                                     torch.stack(val_labels_list),
                                                      percentile=95.0)
             acc_func(y_pred=val_output_convert, y=val_labels_list)
             acc, not_nans = acc_func.aggregate()
