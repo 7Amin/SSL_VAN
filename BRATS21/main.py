@@ -14,6 +14,7 @@ from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
 from commons.util import fix_outputs_url
 from BRATS21.trainer import run_training
+from BRATS21.tester import run_testing
 
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceCELoss
@@ -193,22 +194,33 @@ def main_worker(gpu, args):
                                                           find_unused_parameters=True)
 
     semantic_classes = ["Dice_Val_TC", "Dice_Val_WT", "Dice_Val_ET"]
-    accuracy = run_training(
-        model=model,
-        train_loader=loader[0],
-        val_loader=loader[1],
-        optimizer=optimizer,
-        loss_func=dice_loss,
-        acc_func=dice_acc,
-        args=args,
-        model_inferer=model_inferer,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        post_sigmoid=post_sigmoid,
-        post_pred=post_pred,
-        semantic_classes=semantic_classes,
-        val_acc_max=best_acc,
-    )
+
+    if args.test_mode:
+        accuracy = run_testing(model=model,
+                               test_loader=loader,
+                               acc_func=dice_acc,
+                               args=args,
+                               model_inferer=model_inferer,
+                               post_sigmoid=post_sigmoid,
+                               post_pred=post_pred)
+
+    else:
+        accuracy = run_training(
+            model=model,
+            train_loader=loader[0],
+            val_loader=loader[1],
+            optimizer=optimizer,
+            loss_func=dice_loss,
+            acc_func=dice_acc,
+            args=args,
+            model_inferer=model_inferer,
+            scheduler=scheduler,
+            start_epoch=start_epoch,
+            post_sigmoid=post_sigmoid,
+            post_pred=post_pred,
+            semantic_classes=semantic_classes,
+            val_acc_max=best_acc,
+        )
     return accuracy
 
 
