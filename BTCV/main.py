@@ -182,6 +182,7 @@ def main_worker(gpu, args):
             args.checkpoint, start_epoch, best_acc))
 
     model.cuda(args.gpu)
+    start_epoch = max(0, start_epoch)
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
