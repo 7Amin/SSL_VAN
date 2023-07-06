@@ -60,7 +60,7 @@ parser.add_argument("--RandRotate90d_prob", default=0.2, type=float, help="RandR
 parser.add_argument("--RandScaleIntensityd_prob", default=0.2, type=float, help="RandScaleIntensityd aug probability")
 parser.add_argument("--RandShiftIntensityd_prob", default=0.2, type=float, help="RandShiftIntensityd aug probability")
 parser.add_argument("--workers", default=2, type=int, help="number of workers")
-parser.add_argument("--test_mode", default=False, type=bool, help="this runner is a test or not")
+parser.add_argument("--test_mode", default=False, action="store_true", help="this runner is a test or not")
 parser.add_argument("--val_mode", default=False, action="store_true", help="this runner is a validation or not")
 parser.add_argument("--distributed", action="store_true", help="start distributed training")
 parser.add_argument("--use_normal_dataset", action="store_true", help="use monai Dataset class")
