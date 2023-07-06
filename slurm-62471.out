@@ -1,0 +1,980 @@
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:139: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:141: UserWarning: Batch size is: 1 epochs 100
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/commons/model_factory.py:345: UserWarning: embed_dims factory = [96, 192, 384, 768]
+  warnings.warn(f'embed_dims factory = {args.embed_dims}')
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:149: UserWarning: Total parameters count 129534807
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:152: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:163: UserWarning:  Best url model is pre_train_96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_PREVANV412_10_500_128_True_5_pre_version2__best.pt, final model url is pre_train_96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_PREVANV412_10_500_128_True_5_pre_version2__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/main.py:172: UserWarning: => loaded checkpoint 'True' (epoch -1) (best_loss 2.7297648311601077)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (best_loss {})".format(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:123: UserWarning: Writing Tensorboard logs to ./runs/pre_train_1/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:133: UserWarning: 0  Thu Jul  6 16:15:10 2023  Epoch: -1
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 0/4500  loss: 0.294747101  time 72.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 1/4500  loss: 0.235946388  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 2/4500  loss: 1.780319812  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 3/4500  loss: 1.780415260  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 4/4500  loss: 1.490580504  time 0.93s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 5/4500  loss: 1.547492516  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 6/4500  loss: 1.984784675  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 7/4500  loss: 2.118565811  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 8/4500  loss: 2.096094208  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 9/4500  loss: 2.051566295  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 10/4500  loss: 2.289077730  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 11/4500  loss: 2.308128519  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 12/4500  loss: 2.131350606  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 13/4500  loss: 2.203840025  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 14/4500  loss: 2.211376312  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 15/4500  loss: 2.187505627  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 16/4500  loss: 2.454165477  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 17/4500  loss: 2.522398893  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 18/4500  loss: 2.601458912  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 19/4500  loss: 2.674195838  time 0.56s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 20/4500  loss: 2.814705485  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 21/4500  loss: 2.869415012  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 22/4500  loss: 2.754991142  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 23/4500  loss: 2.653849254  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 24/4500  loss: 2.549006750  time 6.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 25/4500  loss: 2.589713706  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 26/4500  loss: 2.568074438  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 27/4500  loss: 2.581144550  time 0.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 28/4500  loss: 2.521115430  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 29/4500  loss: 2.516836451  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 30/4500  loss: 2.440848672  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 31/4500  loss: 2.441254910  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 32/4500  loss: 2.461720583  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 33/4500  loss: 2.466263056  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 34/4500  loss: 2.510812728  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 35/4500  loss: 2.596681246  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 36/4500  loss: 2.667358606  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 37/4500  loss: 2.662191158  time 3.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 38/4500  loss: 2.675620823  time 0.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 39/4500  loss: 2.699812080  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 40/4500  loss: 2.762011986  time 1.31s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 41/4500  loss: 2.754746065  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 42/4500  loss: 2.780619443  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 43/4500  loss: 2.817626121  time 4.30s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 44/4500  loss: 2.811099063  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 45/4500  loss: 2.801967371  time 0.58s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 46/4500  loss: 2.743600798  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 47/4500  loss: 2.738522274  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 48/4500  loss: 2.689204896  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 49/4500  loss: 2.682535619  time 8.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 50/4500  loss: 2.776322015  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 51/4500  loss: 2.778531590  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 52/4500  loss: 2.784431582  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 53/4500  loss: 2.802309121  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 54/4500  loss: 2.777139390  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 55/4500  loss: 2.773051414  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 56/4500  loss: 2.764184456  time 0.58s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 57/4500  loss: 2.780087989  time 17.59s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 58/4500  loss: 2.768101364  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 59/4500  loss: 2.768276372  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 60/4500  loss: 2.798176209  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 61/4500  loss: 2.835119874  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 62/4500  loss: 2.876178496  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 63/4500  loss: 2.916538089  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 64/4500  loss: 2.872120002  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 65/4500  loss: 2.901364786  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 66/4500  loss: 2.924659186  time 2.19s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 67/4500  loss: 2.969765508  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 68/4500  loss: 2.956072870  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 69/4500  loss: 2.957471675  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 70/4500  loss: 2.940316156  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 71/4500  loss: 2.921640307  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 72/4500  loss: 2.930684100  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 73/4500  loss: 2.935488567  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 74/4500  loss: 2.952871914  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 75/4500  loss: 2.916278214  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 76/4500  loss: 2.896520580  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 77/4500  loss: 2.919487083  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 78/4500  loss: 2.925993148  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 79/4500  loss: 2.921836395  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 80/4500  loss: 2.914364697  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 81/4500  loss: 2.881709360  time 7.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 82/4500  loss: 2.875718368  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 83/4500  loss: 2.896015456  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 84/4500  loss: 2.903652681  time 4.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 85/4500  loss: 2.871834141  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 86/4500  loss: 2.866740422  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 87/4500  loss: 2.839760873  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 88/4500  loss: 2.855482730  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 89/4500  loss: 2.857666513  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 90/4500  loss: 2.862726969  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 91/4500  loss: 2.833964784  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 92/4500  loss: 2.814467130  time 13.26s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 93/4500  loss: 2.830335581  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 94/4500  loss: 2.802335274  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 95/4500  loss: 2.794616845  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 96/4500  loss: 2.815058055  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 97/4500  loss: 2.828853803  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 98/4500  loss: 2.841863094  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 99/4500  loss: 2.817163783  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 100/4500  loss: 2.829709917  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 101/4500  loss: 2.841307705  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 102/4500  loss: 2.869060723  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 103/4500  loss: 2.882627482  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 104/4500  loss: 2.908165236  time 0.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 105/4500  loss: 2.899421091  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 106/4500  loss: 2.898245222  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 107/4500  loss: 2.918420524  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 108/4500  loss: 2.893127776  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 109/4500  loss: 2.885688610  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 110/4500  loss: 2.905566943  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 111/4500  loss: 2.879657525  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 112/4500  loss: 2.879454945  time 6.43s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 113/4500  loss: 2.887765441  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 114/4500  loss: 2.888582797  time 4.42s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 115/4500  loss: 2.894126546  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 116/4500  loss: 2.895379495  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 117/4500  loss: 2.886089731  time 1.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 118/4500  loss: 2.891263821  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 119/4500  loss: 2.893726520  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 120/4500  loss: 2.905884117  time 7.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 121/4500  loss: 2.909495794  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 122/4500  loss: 2.912244151  time 5.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 123/4500  loss: 2.918222975  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 124/4500  loss: 2.928905930  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 125/4500  loss: 2.919389909  time 3.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 126/4500  loss: 2.906381648  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 127/4500  loss: 2.930920750  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 128/4500  loss: 2.945605694  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 129/4500  loss: 2.955610212  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 130/4500  loss: 2.949142169  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 131/4500  loss: 2.962618779  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 132/4500  loss: 2.976980488  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 133/4500  loss: 2.984991130  time 3.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 134/4500  loss: 2.991175521  time 0.59s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 135/4500  loss: 2.979800923  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 136/4500  loss: 2.998236323  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 137/4500  loss: 2.985605448  time 0.59s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 138/4500  loss: 2.973999631  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 139/4500  loss: 2.988394741  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 140/4500  loss: 2.968480006  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 141/4500  loss: 2.975996247  time 0.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 142/4500  loss: 2.980460688  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 143/4500  loss: 2.978827448  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 144/4500  loss: 3.005376318  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 145/4500  loss: 2.992288954  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 146/4500  loss: 2.995225589  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 147/4500  loss: 2.993581440  time 1.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 148/4500  loss: 3.017042964  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 149/4500  loss: 3.032931357  time 1.58s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 150/4500  loss: 3.034693562  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 151/4500  loss: 3.030661855  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 152/4500  loss: 3.039683152  time 1.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 153/4500  loss: 3.042187305  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 154/4500  loss: 3.042933177  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 155/4500  loss: 3.035466284  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 156/4500  loss: 3.025994084  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 157/4500  loss: 3.035337002  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 158/4500  loss: 3.028719259  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 159/4500  loss: 3.029191948  time 0.58s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 160/4500  loss: 3.026168350  time 12.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 161/4500  loss: 3.033050381  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 162/4500  loss: 3.070753972  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 163/4500  loss: 3.072661395  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 164/4500  loss: 3.067694052  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 165/4500  loss: 3.062126672  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 166/4500  loss: 3.072037186  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 167/4500  loss: 3.084553743  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 168/4500  loss: 3.082884840  time 0.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 169/4500  loss: 3.079349504  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 170/4500  loss: 3.089422222  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 171/4500  loss: 3.080511475  time 3.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 172/4500  loss: 3.095840431  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 173/4500  loss: 3.102403229  time 7.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 174/4500  loss: 3.106523057  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 175/4500  loss: 3.097409478  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 176/4500  loss: 3.099657903  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 177/4500  loss: 3.102925154  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 178/4500  loss: 3.087566186  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 179/4500  loss: 3.096980396  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 180/4500  loss: 3.091487242  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 181/4500  loss: 3.095434511  time 9.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 182/4500  loss: 3.091057739  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 183/4500  loss: 3.077334235  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 184/4500  loss: 3.087141720  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 185/4500  loss: 3.090697341  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 186/4500  loss: 3.079559109  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 187/4500  loss: 3.083675392  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 188/4500  loss: 3.078035070  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 189/4500  loss: 3.067773129  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 190/4500  loss: 3.057241356  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 191/4500  loss: 3.042290956  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 192/4500  loss: 3.045716939  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 193/4500  loss: 3.059533732  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 194/4500  loss: 3.045810389  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 195/4500  loss: 3.045276349  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 196/4500  loss: 3.043677857  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 197/4500  loss: 3.035816595  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 198/4500  loss: 3.034371310  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 199/4500  loss: 3.034540037  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 200/4500  loss: 3.032864824  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 201/4500  loss: 3.030187343  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 202/4500  loss: 3.037668862  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 203/4500  loss: 3.022788160  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 204/4500  loss: 3.020668893  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 205/4500  loss: 3.035021866  time 5.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 206/4500  loss: 3.047957918  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 207/4500  loss: 3.037165742  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 208/4500  loss: 3.037685250  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 209/4500  loss: 3.044573146  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 210/4500  loss: 3.056586657  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 211/4500  loss: 3.061599809  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 212/4500  loss: 3.063516379  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 213/4500  loss: 3.066265329  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 214/4500  loss: 3.071579331  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 215/4500  loss: 3.076464698  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 216/4500  loss: 3.074592126  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 217/4500  loss: 3.075942230  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 218/4500  loss: 3.068462037  time 6.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 219/4500  loss: 3.071293390  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 220/4500  loss: 3.059840038  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 221/4500  loss: 3.057683122  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 222/4500  loss: 3.058385621  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 223/4500  loss: 3.058649910  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 224/4500  loss: 3.066511711  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 225/4500  loss: 3.070869053  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 226/4500  loss: 3.057839663  time 14.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 227/4500  loss: 3.065896463  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 228/4500  loss: 3.064544893  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 229/4500  loss: 3.053378565  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 230/4500  loss: 3.048171085  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 231/4500  loss: 3.037265281  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 232/4500  loss: 3.041052609  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 233/4500  loss: 3.046506048  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 234/4500  loss: 3.044764352  time 4.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 235/4500  loss: 3.041104676  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 236/4500  loss: 3.033607714  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 237/4500  loss: 3.038237110  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 238/4500  loss: 3.051000868  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 239/4500  loss: 3.038395065  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 240/4500  loss: 3.041914853  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 241/4500  loss: 3.041647722  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 242/4500  loss: 3.044254565  time 9.29s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 243/4500  loss: 3.045227985  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 244/4500  loss: 3.047574070  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 245/4500  loss: 3.064836306  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 246/4500  loss: 3.068831947  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 247/4500  loss: 3.063726232  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 248/4500  loss: 3.069875324  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 249/4500  loss: 3.058583472  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:80: UserWarning: SAVED => Epoch -1/100 249/4500  loss: 3.058583472, last best: 2.729764831,  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 250/4500  loss: 3.050793980  time 15.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 251/4500  loss: 3.051129320  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 252/4500  loss: 3.048039425  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 253/4500  loss: 3.045893944  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 254/4500  loss: 3.052162323  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 255/4500  loss: 3.053070710  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 256/4500  loss: 3.041440674  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 257/4500  loss: 3.029701239  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 258/4500  loss: 3.034577890  time 5.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 259/4500  loss: 3.029253694  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 260/4500  loss: 3.022102065  time 2.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 261/4500  loss: 3.018611715  time 6.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 262/4500  loss: 3.022853597  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 263/4500  loss: 3.035591985  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 264/4500  loss: 3.032039525  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 265/4500  loss: 3.030139057  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 266/4500  loss: 3.019511765  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 267/4500  loss: 3.023531421  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 268/4500  loss: 3.021051723  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 269/4500  loss: 3.023494360  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 270/4500  loss: 3.027635789  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 271/4500  loss: 3.019430522  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 272/4500  loss: 3.020725300  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 273/4500  loss: 3.023869843  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 274/4500  loss: 3.027740524  time 9.36s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 275/4500  loss: 3.034152901  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 276/4500  loss: 3.025581956  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 277/4500  loss: 3.033627986  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 278/4500  loss: 3.033930838  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 279/4500  loss: 3.036193224  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 280/4500  loss: 3.042213363  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 281/4500  loss: 3.031700623  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 282/4500  loss: 3.020994159  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 283/4500  loss: 3.019635096  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 284/4500  loss: 3.017089588  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 285/4500  loss: 3.007609098  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 286/4500  loss: 3.001238250  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 287/4500  loss: 3.001619241  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 288/4500  loss: 3.003861544  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 289/4500  loss: 2.994488000  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 290/4500  loss: 2.998307093  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 291/4500  loss: 3.003503110  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 292/4500  loss: 3.007628361  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 293/4500  loss: 3.008492178  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 294/4500  loss: 3.005805027  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 295/4500  loss: 2.998275431  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 296/4500  loss: 3.012627039  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 297/4500  loss: 3.010878108  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 298/4500  loss: 3.008219156  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 299/4500  loss: 3.008765444  time 0.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 300/4500  loss: 3.005979069  time 8.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 301/4500  loss: 3.003524322  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 302/4500  loss: 2.994645444  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 303/4500  loss: 2.997369771  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 304/4500  loss: 2.998433916  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 305/4500  loss: 3.002432010  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 306/4500  loss: 3.006540508  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 307/4500  loss: 3.000805058  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 308/4500  loss: 2.991103558  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 309/4500  loss: 2.989984657  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 310/4500  loss: 2.993968533  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 311/4500  loss: 2.999314627  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 312/4500  loss: 3.002460529  time 5.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 313/4500  loss: 2.999744183  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 314/4500  loss: 2.997010571  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 315/4500  loss: 2.999971048  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 316/4500  loss: 3.002950769  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 317/4500  loss: 3.004817335  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 318/4500  loss: 2.995411706  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 319/4500  loss: 2.999760659  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 320/4500  loss: 3.003075098  time 17.60s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 321/4500  loss: 3.005520955  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 322/4500  loss: 2.997544966  time 0.88s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 323/4500  loss: 2.997576122  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 324/4500  loss: 2.989077981  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 325/4500  loss: 2.988938135  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 326/4500  loss: 2.986437834  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 327/4500  loss: 2.980506911  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 328/4500  loss: 2.973795201  time 11.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 329/4500  loss: 2.977617785  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 330/4500  loss: 2.987300081  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 331/4500  loss: 2.981687877  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 332/4500  loss: 2.978964580  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 333/4500  loss: 2.988549734  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 334/4500  loss: 2.982245215  time 0.60s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 335/4500  loss: 2.982252331  time 0.59s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 336/4500  loss: 2.983681107  time 13.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 337/4500  loss: 2.981176582  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 338/4500  loss: 2.981429260  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 339/4500  loss: 2.982244714  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 340/4500  loss: 2.981724684  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 341/4500  loss: 2.979439949  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 342/4500  loss: 2.979171687  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 343/4500  loss: 2.974900012  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 344/4500  loss: 2.973354859  time 27.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 345/4500  loss: 2.967928806  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 346/4500  loss: 2.970526763  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 347/4500  loss: 2.967859007  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 348/4500  loss: 2.970193222  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 349/4500  loss: 2.970868534  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 350/4500  loss: 2.979500796  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 351/4500  loss: 2.982497091  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 352/4500  loss: 2.974095992  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 353/4500  loss: 2.972224969  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 354/4500  loss: 2.970294258  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 355/4500  loss: 2.962743550  time 1.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 356/4500  loss: 2.964536899  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 357/4500  loss: 2.963496384  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 358/4500  loss: 2.966030424  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 359/4500  loss: 2.963046407  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 360/4500  loss: 2.956343234  time 14.00s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 361/4500  loss: 2.956894179  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 362/4500  loss: 2.954185136  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 363/4500  loss: 2.947631627  time 1.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 364/4500  loss: 2.944934805  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 365/4500  loss: 2.944421346  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 366/4500  loss: 2.947851030  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 367/4500  loss: 2.946500209  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 368/4500  loss: 2.941677120  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 369/4500  loss: 2.943691842  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 370/4500  loss: 2.947831836  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 371/4500  loss: 2.943331342  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 372/4500  loss: 2.946213716  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 373/4500  loss: 2.942830845  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 374/4500  loss: 2.936164981  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 375/4500  loss: 2.938980249  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 376/4500  loss: 2.942689368  time 7.27s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 377/4500  loss: 2.939551153  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 378/4500  loss: 2.940935342  time 2.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 379/4500  loss: 2.946067005  time 1.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 380/4500  loss: 2.944924425  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 381/4500  loss: 2.939947977  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 382/4500  loss: 2.945025009  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 383/4500  loss: 2.948796108  time 0.67s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 384/4500  loss: 2.942537425  time 4.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 385/4500  loss: 2.945720949  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 386/4500  loss: 2.943889505  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 387/4500  loss: 2.938663070  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 388/4500  loss: 2.937579578  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 389/4500  loss: 2.939703278  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 390/4500  loss: 2.941974211  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 391/4500  loss: 2.943377228  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 392/4500  loss: 2.940367174  time 6.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 393/4500  loss: 2.942185236  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 394/4500  loss: 2.945138154  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 395/4500  loss: 2.947202665  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 396/4500  loss: 2.947240578  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 397/4500  loss: 2.947941477  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 398/4500  loss: 2.947360023  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 399/4500  loss: 2.946883161  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 400/4500  loss: 2.944325919  time 1.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 401/4500  loss: 2.944578498  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 402/4500  loss: 2.942777162  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 403/4500  loss: 2.942535947  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 404/4500  loss: 2.942194711  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 405/4500  loss: 2.949762861  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 406/4500  loss: 2.949420970  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 407/4500  loss: 2.948215960  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 408/4500  loss: 2.941399095  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 409/4500  loss: 2.941981659  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 410/4500  loss: 2.941058756  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 411/4500  loss: 2.943788867  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 412/4500  loss: 2.947492045  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 413/4500  loss: 2.952074776  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 414/4500  loss: 2.949063726  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 415/4500  loss: 2.947027197  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 416/4500  loss: 2.941642463  time 0.71s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 417/4500  loss: 2.940847723  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 418/4500  loss: 2.939170830  time 3.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 419/4500  loss: 2.932645951  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 420/4500  loss: 2.931059797  time 0.75s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 421/4500  loss: 2.924673220  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 422/4500  loss: 2.923728178  time 0.61s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 423/4500  loss: 2.927246992  time 0.64s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 424/4500  loss: 2.931067602  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 425/4500  loss: 2.934574901  time 0.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 426/4500  loss: 2.933171832  time 11.54s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 427/4500  loss: 2.934916976  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 428/4500  loss: 2.930234684  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 429/4500  loss: 2.929980210  time 0.57s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 430/4500  loss: 2.936218596  time 0.60s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 431/4500  loss: 2.934667240  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 432/4500  loss: 2.928255655  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 433/4500  loss: 2.926530651  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 434/4500  loss: 2.925096491  time 4.94s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 435/4500  loss: 2.920755973  time 0.65s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 436/4500  loss: 2.926120817  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 437/4500  loss: 2.923058272  time 0.62s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 438/4500  loss: 2.924422114  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 439/4500  loss: 2.927105590  time 0.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 440/4500  loss: 2.924598245  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 441/4500  loss: 2.919956131  time 0.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 442/4500  loss: 2.919568291  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 443/4500  loss: 2.915498945  time 0.69s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 444/4500  loss: 2.915532968  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 445/4500  loss: 2.910087143  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 446/4500  loss: 2.907403046  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 447/4500  loss: 2.907769934  time 0.70s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 448/4500  loss: 2.912199346  time 0.73s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 449/4500  loss: 2.911962788  time 0.72s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 450/4500  loss: 2.915104829  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 451/4500  loss: 2.909686614  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/pretrain/training_2.py:76: UserWarning: Epoch -1/100 452/4500  loss: 2.903952892  time 0.82s
+  warnings.warn(

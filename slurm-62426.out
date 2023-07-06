@@ -596,3 +596,38 @@ loader is ready
 2023-07-06 16:03:58 | INFO | learn_kmeans | for batch number 94 the res size is 18240
 2023-07-06 16:03:58 | INFO | learn_kmeans | for batch number 95 the res size is 18432
 2023-07-06 16:03:58 | INFO | learn_kmeans | for batch number 96 the res size is 18624
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 149, in <module>
+    learn_kmeans(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 85, in learn_kmeans
+    feat = load_data(args)
+  File "/home/karimimonsefi.1/SSL_VAN/clustering/kmeans_learning.py", line 50, in load_data
+    for idx, batch_data in enumerate(training_loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 305, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/resource_sharer.py", line 58, in detach
+    return reduction.recv_handle(conn)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 189, in recv_handle
+    return recvfds(s, 1)[0]
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/reduction.py", line 164, in recvfds
+    raise RuntimeError('received %d items of ancdata' %
+RuntimeError: received 0 items of ancdata
+2023-07-06 16:13:20 | INFO | root | Namespace(a_min=-1000, a_max=1000, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=96, roi_y=96, roi_z=96, num_workers=64, distributed=False, mode='server', num_samples=1, km_path='./cluster_models_1/cluster_model_1_{}_{}_{}.joblib', n_clusters=283, seed=42, init='k-means++', max_iter=350, batch_size=20, tol=0.0, max_no_improvement=100, n_init=50, reassignment_ratio=0.0, num_runs=400)
+Dataset 1 LUNA16: OK number of data: 842
+Dataset 2 Covid 19: OK number of data: 722
+Dataset 3 HNSCC: OK number of data: 954
+Dataset 4 TCIA Colon: OK number of data: 1532
+Dataset 5 TCIA LIDC: OK number of data: 450
+Dataset all training: number of data: 4500
+loader is ready
+2023-07-06 16:18:50 | INFO | learn_kmeans | for batch number 0 the res size is 0
