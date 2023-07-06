@@ -71,7 +71,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             # warnings.warn("label new at {}".format(val_labels_list.shape))
             hd_distance = compute_hausdorff_distance(val_output_convert,
                                                      val_labels_list,
-                                                     percentile=95.0)
+                                                     percentile=95.0,
+                                                     include_background=True)
             acc, not_nans = acc_func.aggregate()
             acc = acc.cuda(args.rank)
             if args.distributed:
