@@ -51,6 +51,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             warnings.warn("label shape at {}".format(val_labels_list.shape))
             warnings.warn("pred at {}".format(val_output_convert.max()))
             warnings.warn("label at {}".format(val_labels_list.max()))
+            val_output_convert = (val_output_convert > 0.5).float()
+
             # non_empty_val_output = []
             # non_empty_val_labels = []
             #
