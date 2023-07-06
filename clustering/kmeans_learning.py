@@ -70,6 +70,7 @@ def load_data(args):
 def learn_kmeans(args):
     filename = "cluster_paths.json"
     np.random.seed(args.seed)
+    url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
     if os.path.isfile(filename):
         with open(filename, 'r') as file:
             data = json.load(file)
@@ -77,6 +78,8 @@ def learn_kmeans(args):
         # Create new file with empty list
         data = []
 
+    if url in data:
+        return
     if len(data) > args.num_runs:
         return
     feat = load_data(args)
@@ -95,7 +98,7 @@ def learn_kmeans(args):
     km_model.fit(feat)
     logger.info(f"training is finished")
     # y_pred = km_model.predict(feat)
-    url = args.km_path.format(args.n_clusters, args.max_iter, args.n_init)
+
     joblib.dump(km_model, url)
     # Append new record to data
     data.append({
