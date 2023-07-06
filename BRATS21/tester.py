@@ -47,16 +47,16 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             acc_func(y_pred=val_output_convert, y=val_labels_list)
             val_output_convert = torch.stack(val_output_convert)
             val_labels_list = torch.stack(val_labels_list)
-            warnings.warn("val_output_convert shape at {}".format(val_output_convert.shape))
-            warnings.warn("val_labels_list shape at {}".format(val_labels_list.shape))
-            warnings.warn("val_output_convert at {}".format(val_output_convert.max()))
-            warnings.warn("val_labels_list at {}".format(val_labels_list.max()))
+            warnings.warn("pred shape at {}".format(val_output_convert.shape))
+            warnings.warn("label shape at {}".format(val_labels_list.shape))
+            warnings.warn("pred at {}".format(val_output_convert.max()))
+            warnings.warn("label at {}".format(val_labels_list.max()))
             non_empty_val_output = []
             non_empty_val_labels = []
 
             # Iterate over the tensors and check if they are empty or all-zero
             for i in range(3):
-                for tensor_output, tensor_labels in zip(val_output_convert, val_labels_list):
+                for tensor_output, tensor_labels in zip(val_output_convert[0], val_labels_list[0]):
                     # Check if the tensor is not empty and contains non-zero elements
                     if tensor_output.sum().item() != 0 and tensor_labels.sum().item() != 0:
                         non_empty_val_output.append(tensor_output)
@@ -65,8 +65,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             # Convert the non-empty tensors to a single tensor
             val_output_convert = torch.stack(non_empty_val_output)
             val_labels_list = torch.stack(non_empty_val_labels)
-            warnings.warn("val_output_convert new at {}".format(val_output_convert.shape))
-            warnings.warn("val_labels_list new at {}".format(val_labels_list.shape))
+            warnings.warn("pred new at {}".format(val_output_convert.shape))
+            warnings.warn("label new at {}".format(val_labels_list.shape))
             hd_distance = compute_hausdorff_distance(val_output_convert,
                                                      val_labels_list,
                                                      percentile=95.0)
