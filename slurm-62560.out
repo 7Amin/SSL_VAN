@@ -1,0 +1,610 @@
+/var/spool/slurmd/job62560/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:133: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:135: UserWarning: Batch size is: 1 epochs 350
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:164: UserWarning: Total parameters count 30745827
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:167: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_True_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_True_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:182: UserWarning: => loaded checkpoint 'True' (epoch 209) (bestacc 0.8451204299926758)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/utils.py:225: UserWarning: y_pred should be a binarized tensor.
+  warnings.warn(f"{name} should be a binarized tensor.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:50: UserWarning: pred shape at torch.Size([1, 3, 256, 256, 256])
+  warnings.warn("pred shape at {}".format(val_output_convert.shape))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:51: UserWarning: label shape at torch.Size([1, 3, 256, 256, 256])
+  warnings.warn("label shape at {}".format(val_labels_list.shape))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 1.0
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:53: UserWarning: label at 1.0
+  warnings.warn("label at {}".format(val_labels_list.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 0/251, Dice_TC: 0.41246581077575684, Dice_WT: 0.9270456433296204, Dice_ET: 0.7638811469078064, HD95: [[ 4.000  28.123]], time 10.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 1/251, Dice_TC: 0.5533870458602905, Dice_WT: 0.9252580404281616, Dice_ET: 0.8299964666366577, HD95: [[ 4.179  15.286]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 2/251, Dice_TC: 0.6553370356559753, Dice_WT: 0.914787769317627, Dice_ET: 0.771495521068573, HD95: [[ 4.701  11.393]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 3/251, Dice_TC: 0.7031500935554504, Dice_WT: 0.9175613522529602, Dice_ET: 0.7880068421363831, HD95: [[ 4.355  9.157]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 4/251, Dice_TC: 0.682675838470459, Dice_WT: 0.9165546298027039, Dice_ET: 0.7593473196029663, HD95: [[ 4.116  9.925]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 5/251, Dice_TC: 0.7222331166267395, Dice_WT: 0.9156516194343567, Dice_ET: 0.7779533267021179, HD95: [[ 3.803  8.507]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999673366546631
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 1 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4573: RuntimeWarning: invalid value encountered in subtract
+  diff_b_a = subtract(b, a)
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 6/251, Dice_TC: 0.7222331166267395, Dice_WT: 0.8801731467247009, Dice_ET: 0.7779533267021179, HD95: [[ 5.203  nan]], time 1.09s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 7/251, Dice_TC: 0.7586275339126587, Dice_WT: 0.8911994099617004, Dice_ET: 0.7995300889015198, HD95: [[ 4.729  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 8/251, Dice_TC: 0.7750862836837769, Dice_WT: 0.895270586013794, Dice_ET: 0.8153418302536011, HD95: [[ 4.476  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 9/251, Dice_TC: 0.7896368503570557, Dice_WT: 0.8985233306884766, Dice_ET: 0.8293003439903259, HD95: [[ 4.228  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 10/251, Dice_TC: 0.7715699076652527, Dice_WT: 0.8929790258407593, Dice_ET: 0.8132338523864746, HD95: [[ 4.316  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 11/251, Dice_TC: 0.7614982724189758, Dice_WT: 0.8953582644462585, Dice_ET: 0.7984529733657837, HD95: [[ 4.161  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 12/251, Dice_TC: 0.7658705711364746, Dice_WT: 0.9009839296340942, Dice_ET: 0.7969772219657898, HD95: [[ 3.918  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 13/251, Dice_TC: 0.7793665528297424, Dice_WT: 0.9038061499595642, Dice_ET: 0.8023715615272522, HD95: [[ 3.798  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 14/251, Dice_TC: 0.7894371747970581, Dice_WT: 0.9054728150367737, Dice_ET: 0.8101155161857605, HD95: [[ 3.850  nan]], time 0.97s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 15/251, Dice_TC: 0.7988299131393433, Dice_WT: 0.9061238169670105, Dice_ET: 0.8116426467895508, HD95: [[ 3.749  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 16/251, Dice_TC: 0.8037599325180054, Dice_WT: 0.9034084677696228, Dice_ET: 0.8151340484619141, HD95: [[ 3.988  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 17/251, Dice_TC: 0.8140252828598022, Dice_WT: 0.9073126912117004, Dice_ET: 0.8204794526100159, HD95: [[ 3.822  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 18/251, Dice_TC: 0.8059747815132141, Dice_WT: 0.9103970527648926, Dice_ET: 0.8266016244888306, HD95: [[ 3.695  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 19/251, Dice_TC: 0.7887950539588928, Dice_WT: 0.9108268022537231, Dice_ET: 0.8085891604423523, HD95: [[ 3.698  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 20/251, Dice_TC: 0.7939577102661133, Dice_WT: 0.9105311036109924, Dice_ET: 0.8105648756027222, HD95: [[ 4.802  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 21/251, Dice_TC: 0.8018595576286316, Dice_WT: 0.9126205444335938, Dice_ET: 0.816573441028595, HD95: [[ 4.674  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999942779541016
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 22/251, Dice_TC: 0.8025678396224976, Dice_WT: 0.9126672148704529, Dice_ET: 0.816573441028595, HD95: [[ 4.881  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 23/251, Dice_TC: 0.80820232629776, Dice_WT: 0.9121989607810974, Dice_ET: 0.8223472237586975, HD95: [[ 4.803  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 24/251, Dice_TC: 0.8074498176574707, Dice_WT: 0.9145025014877319, Dice_ET: 0.8119252920150757, HD95: [[ 4.651  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 25/251, Dice_TC: 0.795067548751831, Dice_WT: 0.9129709005355835, Dice_ET: 0.812009871006012, HD95: [[ 4.611  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 26/251, Dice_TC: 0.7943412065505981, Dice_WT: 0.9148553013801575, Dice_ET: 0.8167166709899902, HD95: [[ 4.492  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 27/251, Dice_TC: 0.7969364523887634, Dice_WT: 0.9166898131370544, Dice_ET: 0.8152117133140564, HD95: [[ 4.507  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 28/251, Dice_TC: 0.7958895564079285, Dice_WT: 0.9114791750907898, Dice_ET: 0.8190251588821411, HD95: [[ 6.106  nan]], time 1.15s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 29/251, Dice_TC: 0.799658477306366, Dice_WT: 0.9116615653038025, Dice_ET: 0.8219724297523499, HD95: [[ 6.059  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 30/251, Dice_TC: 0.7952121496200562, Dice_WT: 0.9121975898742676, Dice_ET: 0.7948457598686218, HD95: [[ 5.965  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 31/251, Dice_TC: 0.8003267645835876, Dice_WT: 0.9123651385307312, Dice_ET: 0.7996066212654114, HD95: [[ 5.887  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 32/251, Dice_TC: 0.7943514585494995, Dice_WT: 0.90887850522995, Dice_ET: 0.8001441359519958, HD95: [[ 7.358  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 33/251, Dice_TC: 0.7960991263389587, Dice_WT: 0.906365692615509, Dice_ET: 0.8033939599990845, HD95: [[ 7.270  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 34/251, Dice_TC: 0.8001055717468262, Dice_WT: 0.9064220190048218, Dice_ET: 0.8009433746337891, HD95: [[ 7.231  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 35/251, Dice_TC: 0.8049860000610352, Dice_WT: 0.9078372120857239, Dice_ET: 0.8053664565086365, HD95: [[ 7.069  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 36/251, Dice_TC: 0.7970990538597107, Dice_WT: 0.9086794257164001, Dice_ET: 0.791607141494751, HD95: [[ 6.938  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 37/251, Dice_TC: 0.780987024307251, Dice_WT: 0.9041940569877625, Dice_ET: 0.791297972202301, HD95: [[ 7.108  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 38/251, Dice_TC: 0.7833235859870911, Dice_WT: 0.9056161642074585, Dice_ET: 0.7748419046401978, HD95: [[ 6.977  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 39/251, Dice_TC: 0.7804804444313049, Dice_WT: 0.9060851335525513, Dice_ET: 0.7744114995002747, HD95: [[ 6.906  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 40/251, Dice_TC: 0.783469021320343, Dice_WT: 0.9044339060783386, Dice_ET: 0.7747998237609863, HD95: [[ 6.852  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 41/251, Dice_TC: 0.7868250608444214, Dice_WT: 0.9036754369735718, Dice_ET: 0.7784768342971802, HD95: [[ 6.825  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 42/251, Dice_TC: 0.7819181084632874, Dice_WT: 0.9040117263793945, Dice_ET: 0.7654627561569214, HD95: [[ 6.773  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 43/251, Dice_TC: 0.7855020761489868, Dice_WT: 0.9044564962387085, Dice_ET: 0.7693969011306763, HD95: [[ 7.031  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 44/251, Dice_TC: 0.789360761642456, Dice_WT: 0.9054065346717834, Dice_ET: 0.7738908529281616, HD95: [[ 6.907  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 45/251, Dice_TC: 0.7923331260681152, Dice_WT: 0.9032268524169922, Dice_ET: 0.7774051427841187, HD95: [[ 7.320  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 46/251, Dice_TC: 0.7961519360542297, Dice_WT: 0.9043558239936829, Dice_ET: 0.7813341617584229, HD95: [[ 7.207  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 47/251, Dice_TC: 0.7975372076034546, Dice_WT: 0.9051968455314636, Dice_ET: 0.7811887860298157, HD95: [[ 7.104  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 48/251, Dice_TC: 0.8007872104644775, Dice_WT: 0.9055812358856201, Dice_ET: 0.7848854660987854, HD95: [[ 7.853  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 49/251, Dice_TC: 0.7985463738441467, Dice_WT: 0.9056559205055237, Dice_ET: 0.7848854660987854, HD95: [[ 7.796  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 50/251, Dice_TC: 0.7977156043052673, Dice_WT: 0.9039427042007446, Dice_ET: 0.7872872948646545, HD95: [[ 7.819  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 51/251, Dice_TC: 0.7996010184288025, Dice_WT: 0.9043964743614197, Dice_ET: 0.7832838296890259, HD95: [[ 7.723  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 52/251, Dice_TC: 0.7973358631134033, Dice_WT: 0.9004328846931458, Dice_ET: 0.782141923904419, HD95: [[ 7.756  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 53/251, Dice_TC: 0.7936559915542603, Dice_WT: 0.8987679481506348, Dice_ET: 0.7762758731842041, HD95: [[ 7.735  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 54/251, Dice_TC: 0.7961917519569397, Dice_WT: 0.8980534672737122, Dice_ET: 0.7796115875244141, HD95: [[ 7.879  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 55/251, Dice_TC: 0.7983301281929016, Dice_WT: 0.8984050154685974, Dice_ET: 0.7813524007797241, HD95: [[ 7.828  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 56/251, Dice_TC: 0.8010486960411072, Dice_WT: 0.8994115591049194, Dice_ET: 0.783940851688385, HD95: [[ 7.726  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 57/251, Dice_TC: 0.8011276125907898, Dice_WT: 0.8994318246841431, Dice_ET: 0.7824534177780151, HD95: [[ 7.724  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 58/251, Dice_TC: 0.802716076374054, Dice_WT: 0.8999924659729004, Dice_ET: 0.7846847772598267, HD95: [[ 7.634  nan]], time 0.99s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 59/251, Dice_TC: 0.8042179942131042, Dice_WT: 0.9011123180389404, Dice_ET: 0.7869132161140442, HD95: [[ 7.531  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 60/251, Dice_TC: 0.8051765561103821, Dice_WT: 0.9011560678482056, Dice_ET: 0.7890669703483582, HD95: [[ 7.469  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 61/251, Dice_TC: 0.8075649738311768, Dice_WT: 0.9013254642486572, Dice_ET: 0.7921664118766785, HD95: [[ 7.522  nan]], time 1.09s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999998807907104
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 62/251, Dice_TC: 0.8082812428474426, Dice_WT: 0.9014790654182434, Dice_ET: 0.7790561318397522, HD95: [[ 7.608  nan]], time 1.41s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 63/251, Dice_TC: 0.7960156202316284, Dice_WT: 0.9008923768997192, Dice_ET: 0.7684325575828552, HD95: [[ 8.176  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 64/251, Dice_TC: 0.7968021035194397, Dice_WT: 0.9013485908508301, Dice_ET: 0.7709505558013916, HD95: [[ 8.148  nan]], time 0.96s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 65/251, Dice_TC: 0.7942386865615845, Dice_WT: 0.9021799564361572, Dice_ET: 0.7680764198303223, HD95: [[ 8.046  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 66/251, Dice_TC: 0.7961010932922363, Dice_WT: 0.9032899737358093, Dice_ET: 0.7705211639404297, HD95: [[ 7.941  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 67/251, Dice_TC: 0.7975642085075378, Dice_WT: 0.9035614132881165, Dice_ET: 0.7688146233558655, HD95: [[ 7.866  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 68/251, Dice_TC: 0.7998148798942566, Dice_WT: 0.9045302867889404, Dice_ET: 0.7717122435569763, HD95: [[ 7.772  nan]], time 1.02s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 69/251, Dice_TC: 0.790589451789856, Dice_WT: 0.8933178782463074, Dice_ET: 0.7668235898017883, HD95: [[ 8.300  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 70/251, Dice_TC: 0.7910948395729065, Dice_WT: 0.8939051628112793, Dice_ET: 0.7664663791656494, HD95: [[ 8.225  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 71/251, Dice_TC: 0.7927646636962891, Dice_WT: 0.8941443562507629, Dice_ET: 0.768688976764679, HD95: [[ 8.130  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 72/251, Dice_TC: 0.7930062413215637, Dice_WT: 0.893857479095459, Dice_ET: 0.7692608833312988, HD95: [[ 8.120  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 73/251, Dice_TC: 0.795037031173706, Dice_WT: 0.8948519825935364, Dice_ET: 0.7717267274856567, HD95: [[ 8.024  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 74/251, Dice_TC: 0.7961735725402832, Dice_WT: 0.8955800533294678, Dice_ET: 0.7739333510398865, HD95: [[ 7.947  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 75/251, Dice_TC: 0.7977518439292908, Dice_WT: 0.8959344625473022, Dice_ET: 0.7760282158851624, HD95: [[ 7.890  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 76/251, Dice_TC: 0.7967111468315125, Dice_WT: 0.8946737051010132, Dice_ET: 0.7720761895179749, HD95: [[ 7.848  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 77/251, Dice_TC: 0.797262966632843, Dice_WT: 0.895461916923523, Dice_ET: 0.7745130658149719, HD95: [[ 7.770  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 78/251, Dice_TC: 0.7980988621711731, Dice_WT: 0.8953410387039185, Dice_ET: 0.775629460811615, HD95: [[ 7.779  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999912977218628
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 79/251, Dice_TC: 0.788665771484375, Dice_WT: 0.8956411480903625, Dice_ET: 0.7673588395118713, HD95: [[ 7.790  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 80/251, Dice_TC: 0.7905758023262024, Dice_WT: 0.8963733315467834, Dice_ET: 0.7690567374229431, HD95: [[ 7.712  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 81/251, Dice_TC: 0.7917627692222595, Dice_WT: 0.8968884348869324, Dice_ET: 0.7682895660400391, HD95: [[ 7.680  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 82/251, Dice_TC: 0.7938830852508545, Dice_WT: 0.8975455164909363, Dice_ET: 0.7705639600753784, HD95: [[ 7.617  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 83/251, Dice_TC: 0.794559895992279, Dice_WT: 0.8981496691703796, Dice_ET: 0.7728263139724731, HD95: [[ 7.621  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 84/251, Dice_TC: 0.7966291308403015, Dice_WT: 0.8989529609680176, Dice_ET: 0.7749173045158386, HD95: [[ 7.548  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 85/251, Dice_TC: 0.7986200451850891, Dice_WT: 0.899615466594696, Dice_ET: 0.7770775556564331, HD95: [[ 7.487  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 86/251, Dice_TC: 0.7978660464286804, Dice_WT: 0.8992894291877747, Dice_ET: 0.7787166833877563, HD95: [[ 8.995  nan]], time 1.35s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 87/251, Dice_TC: 0.7997512221336365, Dice_WT: 0.899675726890564, Dice_ET: 0.7808502912521362, HD95: [[ 8.929  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 88/251, Dice_TC: 0.8001945614814758, Dice_WT: 0.9001679420471191, Dice_ET: 0.7801379561424255, HD95: [[ 8.877  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 89/251, Dice_TC: 0.8005607724189758, Dice_WT: 0.9008899927139282, Dice_ET: 0.7810842394828796, HD95: [[ 8.794  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 90/251, Dice_TC: 0.8002409934997559, Dice_WT: 0.9010666012763977, Dice_ET: 0.7787424325942993, HD95: [[ 8.739  nan]], time 1.01s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 91/251, Dice_TC: 0.8005204796791077, Dice_WT: 0.9013091325759888, Dice_ET: 0.7799262404441833, HD95: [[ 8.659  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 92/251, Dice_TC: 0.8012850284576416, Dice_WT: 0.901290237903595, Dice_ET: 0.7800830602645874, HD95: [[ 8.598  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 93/251, Dice_TC: 0.8026673793792725, Dice_WT: 0.9019467830657959, Dice_ET: 0.7809641361236572, HD95: [[ 8.531  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 94/251, Dice_TC: 0.8037044405937195, Dice_WT: 0.9023106098175049, Dice_ET: 0.7821668386459351, HD95: [[ 8.504  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 95/251, Dice_TC: 0.804722011089325, Dice_WT: 0.9023134112358093, Dice_ET: 0.7807013988494873, HD95: [[ 8.441  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 96/251, Dice_TC: 0.8032374382019043, Dice_WT: 0.9018716812133789, Dice_ET: 0.7768651843070984, HD95: [[ 8.438  nan]], time 0.96s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 97/251, Dice_TC: 0.8042075037956238, Dice_WT: 0.902034342288971, Dice_ET: 0.7779940366744995, HD95: [[ 8.394  nan]], time 0.99s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 98/251, Dice_TC: 0.8058164119720459, Dice_WT: 0.9026331901550293, Dice_ET: 0.7790877819061279, HD95: [[ 8.339  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 99/251, Dice_TC: 0.8073753714561462, Dice_WT: 0.9031635522842407, Dice_ET: 0.7807943820953369, HD95: [[ 8.270  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 100/251, Dice_TC: 0.8077731132507324, Dice_WT: 0.9036790728569031, Dice_ET: 0.781177282333374, HD95: [[ 8.210  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 101/251, Dice_TC: 0.8067870140075684, Dice_WT: 0.9035415649414062, Dice_ET: 0.7779234051704407, HD95: [[ 8.166  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 102/251, Dice_TC: 0.8036481142044067, Dice_WT: 0.9011322855949402, Dice_ET: 0.7739320397377014, HD95: [[ 8.755  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 103/251, Dice_TC: 0.8048200607299805, Dice_WT: 0.9016710519790649, Dice_ET: 0.7755516171455383, HD95: [[ 8.680  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 104/251, Dice_TC: 0.805603563785553, Dice_WT: 0.9016561508178711, Dice_ET: 0.7769670486450195, HD95: [[ 9.000  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 105/251, Dice_TC: 0.8048378825187683, Dice_WT: 0.8988417983055115, Dice_ET: 0.7778268456459045, HD95: [[ 9.513  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 106/251, Dice_TC: 0.8054884672164917, Dice_WT: 0.8994445204734802, Dice_ET: 0.7783347368240356, HD95: [[ 9.438  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 107/251, Dice_TC: 0.8061861991882324, Dice_WT: 0.8997615575790405, Dice_ET: 0.776909589767456, HD95: [[ 9.378  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 108/251, Dice_TC: 0.8075408935546875, Dice_WT: 0.9002800583839417, Dice_ET: 0.7782244682312012, HD95: [[ 9.312  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 109/251, Dice_TC: 0.808303952217102, Dice_WT: 0.9007896184921265, Dice_ET: 0.779370129108429, HD95: [[ 9.255  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 110/251, Dice_TC: 0.8091517090797424, Dice_WT: 0.9009943604469299, Dice_ET: 0.7799819111824036, HD95: [[ 9.209  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 111/251, Dice_TC: 0.8068738579750061, Dice_WT: 0.9004223942756653, Dice_ET: 0.7799819111824036, HD95: [[ 9.179  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 112/251, Dice_TC: 0.8081437945365906, Dice_WT: 0.9009217023849487, Dice_ET: 0.7816882133483887, HD95: [[ 9.110  nan]], time 1.44s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 113/251, Dice_TC: 0.8096877336502075, Dice_WT: 0.9016007781028748, Dice_ET: 0.7833921909332275, HD95: [[ 9.039  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 114/251, Dice_TC: 0.810783326625824, Dice_WT: 0.9020154476165771, Dice_ET: 0.7843096852302551, HD95: [[ 8.978  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 115/251, Dice_TC: 0.8114529848098755, Dice_WT: 0.9021065831184387, Dice_ET: 0.7858098149299622, HD95: [[ 9.012  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 116/251, Dice_TC: 0.8107751607894897, Dice_WT: 0.901353120803833, Dice_ET: 0.7864232063293457, HD95: [[ 8.978  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 117/251, Dice_TC: 0.8111760020256042, Dice_WT: 0.90070641040802, Dice_ET: 0.786737859249115, HD95: [[ 9.117  nan]], time 1.13s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 118/251, Dice_TC: 0.8110085129737854, Dice_WT: 0.9007612466812134, Dice_ET: 0.7868881821632385, HD95: [[ 9.068  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 119/251, Dice_TC: 0.8119944334030151, Dice_WT: 0.9010739922523499, Dice_ET: 0.7870822548866272, HD95: [[ 9.013  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 120/251, Dice_TC: 0.8128510117530823, Dice_WT: 0.9015323519706726, Dice_ET: 0.7884109616279602, HD95: [[ 8.950  nan]], time 1.08s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 121/251, Dice_TC: 0.813396155834198, Dice_WT: 0.901684582233429, Dice_ET: 0.7891524434089661, HD95: [[ 8.895  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 122/251, Dice_TC: 0.8137393593788147, Dice_WT: 0.9022416472434998, Dice_ET: 0.7904435396194458, HD95: [[ 8.834  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 123/251, Dice_TC: 0.8146836757659912, Dice_WT: 0.9019837379455566, Dice_ET: 0.7916683554649353, HD95: [[ 8.811  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 124/251, Dice_TC: 0.8153465986251831, Dice_WT: 0.9022955894470215, Dice_ET: 0.7920004725456238, HD95: [[ 8.758  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 125/251, Dice_TC: 0.8163396120071411, Dice_WT: 0.9027658700942993, Dice_ET: 0.793351948261261, HD95: [[ 8.697  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 126/251, Dice_TC: 0.8157984018325806, Dice_WT: 0.9028105139732361, Dice_ET: 0.7934069037437439, HD95: [[ 8.652  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 127/251, Dice_TC: 0.8165848851203918, Dice_WT: 0.9029927849769592, Dice_ET: 0.7933807373046875, HD95: [[ 8.623  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 128/251, Dice_TC: 0.8169960975646973, Dice_WT: 0.9030822515487671, Dice_ET: 0.7934356331825256, HD95: [[ 8.774  nan]], time 1.01s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 129/251, Dice_TC: 0.8148695230484009, Dice_WT: 0.9033203125, Dice_ET: 0.7931088209152222, HD95: [[ 8.742  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 130/251, Dice_TC: 0.8150040507316589, Dice_WT: 0.9032598733901978, Dice_ET: 0.7921784520149231, HD95: [[ 8.699  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 131/251, Dice_TC: 0.816021740436554, Dice_WT: 0.903645932674408, Dice_ET: 0.7931421399116516, HD95: [[ 8.648  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 132/251, Dice_TC: 0.8163611888885498, Dice_WT: 0.9039685726165771, Dice_ET: 0.7935582995414734, HD95: [[ 8.598  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 133/251, Dice_TC: 0.8176026344299316, Dice_WT: 0.9044392704963684, Dice_ET: 0.7948096394538879, HD95: [[ 8.542  nan]], time 1.00s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 134/251, Dice_TC: 0.818364679813385, Dice_WT: 0.9046012759208679, Dice_ET: 0.7958122491836548, HD95: [[ 8.491  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 135/251, Dice_TC: 0.8191315531730652, Dice_WT: 0.9050781726837158, Dice_ET: 0.7971447706222534, HD95: [[ 8.439  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 136/251, Dice_TC: 0.8198198080062866, Dice_WT: 0.9046739935874939, Dice_ET: 0.7978511452674866, HD95: [[ 8.434  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 137/251, Dice_TC: 0.8190469145774841, Dice_WT: 0.9036747217178345, Dice_ET: 0.7982438802719116, HD95: [[ 8.437  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 138/251, Dice_TC: 0.8160183429718018, Dice_WT: 0.9022430777549744, Dice_ET: 0.7958128452301025, HD95: [[ 8.600  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 139/251, Dice_TC: 0.8162145614624023, Dice_WT: 0.9024935364723206, Dice_ET: 0.7945583462715149, HD95: [[ 8.555  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 140/251, Dice_TC: 0.8170779347419739, Dice_WT: 0.9028616547584534, Dice_ET: 0.7956686019897461, HD95: [[ 8.506  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999996423721313
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 141/251, Dice_TC: 0.8170779347419739, Dice_WT: 0.9028708338737488, Dice_ET: 0.7956686019897461, HD95: [[ 8.475  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 142/251, Dice_TC: 0.8178708553314209, Dice_WT: 0.9033108353614807, Dice_ET: 0.7968755960464478, HD95: [[ 8.425  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 143/251, Dice_TC: 0.8176029920578003, Dice_WT: 0.9034898281097412, Dice_ET: 0.7973873615264893, HD95: [[ 8.395  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 144/251, Dice_TC: 0.8176604509353638, Dice_WT: 0.9038131237030029, Dice_ET: 0.7967923879623413, HD95: [[ 8.349  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 145/251, Dice_TC: 0.8186763525009155, Dice_WT: 0.9043053388595581, Dice_ET: 0.7979546785354614, HD95: [[ 8.299  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 146/251, Dice_TC: 0.8197267055511475, Dice_WT: 0.9047578573226929, Dice_ET: 0.7988331317901611, HD95: [[ 8.249  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 147/251, Dice_TC: 0.8182896375656128, Dice_WT: 0.9029442071914673, Dice_ET: 0.7985460758209229, HD95: [[ 8.301  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 148/251, Dice_TC: 0.8182015419006348, Dice_WT: 0.9027925133705139, Dice_ET: 0.7989736199378967, HD95: [[ 8.276  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 149/251, Dice_TC: 0.8185595870018005, Dice_WT: 0.9025825262069702, Dice_ET: 0.7995975613594055, HD95: [[ 8.518  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 150/251, Dice_TC: 0.8194493651390076, Dice_WT: 0.9022858738899231, Dice_ET: 0.8000815510749817, HD95: [[ 8.513  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 151/251, Dice_TC: 0.8202539086341858, Dice_WT: 0.9025441408157349, Dice_ET: 0.8008541464805603, HD95: [[ 8.471  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 152/251, Dice_TC: 0.819512665271759, Dice_WT: 0.9028705358505249, Dice_ET: 0.8011310696601868, HD95: [[ 8.422  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999822378158569
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 153/251, Dice_TC: 0.8142206072807312, Dice_WT: 0.8970965147018433, Dice_ET: 0.7957543730735779, HD95: [[ 8.794  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 154/251, Dice_TC: 0.8133680820465088, Dice_WT: 0.8974650502204895, Dice_ET: 0.7948665022850037, HD95: [[ 8.747  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 155/251, Dice_TC: 0.8141906261444092, Dice_WT: 0.8975256085395813, Dice_ET: 0.7945014238357544, HD95: [[ 8.715  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 156/251, Dice_TC: 0.8142386078834534, Dice_WT: 0.8976568579673767, Dice_ET: 0.7945346832275391, HD95: [[ 8.711  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 157/251, Dice_TC: 0.8142527341842651, Dice_WT: 0.8977949023246765, Dice_ET: 0.7948431372642517, HD95: [[ 8.772  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 158/251, Dice_TC: 0.8101716041564941, Dice_WT: 0.8969110250473022, Dice_ET: 0.792656660079956, HD95: [[ 8.755  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 159/251, Dice_TC: 0.8108997344970703, Dice_WT: 0.8973539471626282, Dice_ET: 0.7934319376945496, HD95: [[ 8.709  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 160/251, Dice_TC: 0.8117250800132751, Dice_WT: 0.8975903987884521, Dice_ET: 0.7936630249023438, HD95: [[ 8.680  nan]], time 0.97s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 161/251, Dice_TC: 0.8104921579360962, Dice_WT: 0.8971741199493408, Dice_ET: 0.7911469340324402, HD95: [[ 8.676  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 162/251, Dice_TC: 0.8106086850166321, Dice_WT: 0.8969276547431946, Dice_ET: 0.7887670993804932, HD95: [[ 9.194  nan]], time 1.40s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 163/251, Dice_TC: 0.8112307786941528, Dice_WT: 0.897209882736206, Dice_ET: 0.7895654439926147, HD95: [[ 9.319  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 164/251, Dice_TC: 0.8114925622940063, Dice_WT: 0.8975789546966553, Dice_ET: 0.7888208031654358, HD95: [[ 9.621  nan]], time 0.97s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 165/251, Dice_TC: 0.8123009204864502, Dice_WT: 0.8979734778404236, Dice_ET: 0.7897024154663086, HD95: [[ 9.574  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 166/251, Dice_TC: 0.8087196350097656, Dice_WT: 0.898266077041626, Dice_ET: 0.7876573204994202, HD95: [[ 9.534  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 167/251, Dice_TC: 0.8094083666801453, Dice_WT: 0.8985267877578735, Dice_ET: 0.7874947786331177, HD95: [[ 9.488  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 168/251, Dice_TC: 0.8101078271865845, Dice_WT: 0.8989705443382263, Dice_ET: 0.7885987758636475, HD95: [[ 9.438  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 169/251, Dice_TC: 0.8105619549751282, Dice_WT: 0.8992176055908203, Dice_ET: 0.7893691658973694, HD95: [[ 9.391  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 170/251, Dice_TC: 0.8088513612747192, Dice_WT: 0.8976438641548157, Dice_ET: 0.7888427972793579, HD95: [[ 9.422  nan]], time 1.67s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 171/251, Dice_TC: 0.8096960783004761, Dice_WT: 0.8978981971740723, Dice_ET: 0.7895714044570923, HD95: [[ 9.385  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 172/251, Dice_TC: 0.8102620244026184, Dice_WT: 0.898286759853363, Dice_ET: 0.7899239659309387, HD95: [[ 9.339  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 173/251, Dice_TC: 0.8071986436843872, Dice_WT: 0.8977833986282349, Dice_ET: 0.7864944934844971, HD95: [[ 9.321  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 174/251, Dice_TC: 0.807189404964447, Dice_WT: 0.8980835676193237, Dice_ET: 0.7869886755943298, HD95: [[ 9.605  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 175/251, Dice_TC: 0.8070740699768066, Dice_WT: 0.898113489151001, Dice_ET: 0.7869037985801697, HD95: [[ 9.568  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 176/251, Dice_TC: 0.8076727390289307, Dice_WT: 0.898216962814331, Dice_ET: 0.7871362566947937, HD95: [[ 9.572  nan]], time 1.09s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 177/251, Dice_TC: 0.8086031079292297, Dice_WT: 0.8984929919242859, Dice_ET: 0.7881957292556763, HD95: [[ 9.531  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999924898147583
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 178/251, Dice_TC: 0.8042519688606262, Dice_WT: 0.898525059223175, Dice_ET: 0.7837887406349182, HD95: [[ 9.519  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 179/251, Dice_TC: 0.804354190826416, Dice_WT: 0.8986330628395081, Dice_ET: 0.7836889624595642, HD95: [[ 9.479  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 180/251, Dice_TC: 0.8049158453941345, Dice_WT: 0.8984114527702332, Dice_ET: 0.7843021154403687, HD95: [[ 9.504  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 181/251, Dice_TC: 0.8047250509262085, Dice_WT: 0.8986866474151611, Dice_ET: 0.784769594669342, HD95: [[ 9.459  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 182/251, Dice_TC: 0.804915726184845, Dice_WT: 0.898790717124939, Dice_ET: 0.7838046550750732, HD95: [[ 9.455  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 183/251, Dice_TC: 0.8049485087394714, Dice_WT: 0.8980526328086853, Dice_ET: 0.7820984125137329, HD95: [[ 10.025  nan]], time 1.13s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 184/251, Dice_TC: 0.8054293990135193, Dice_WT: 0.8983045220375061, Dice_ET: 0.7822434306144714, HD95: [[ 9.983  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 185/251, Dice_TC: 0.805997908115387, Dice_WT: 0.8984388113021851, Dice_ET: 0.7825307250022888, HD95: [[ 9.941  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 186/251, Dice_TC: 0.8065780997276306, Dice_WT: 0.8987305760383606, Dice_ET: 0.7833971381187439, HD95: [[ 9.900  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 187/251, Dice_TC: 0.8067438006401062, Dice_WT: 0.8988003134727478, Dice_ET: 0.7827728986740112, HD95: [[ 10.083  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 188/251, Dice_TC: 0.8075188398361206, Dice_WT: 0.899153470993042, Dice_ET: 0.7833273410797119, HD95: [[ 10.035  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 189/251, Dice_TC: 0.8065466284751892, Dice_WT: 0.8992114663124084, Dice_ET: 0.7821015119552612, HD95: [[ 10.026  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 190/251, Dice_TC: 0.8048287034034729, Dice_WT: 0.8995093107223511, Dice_ET: 0.7830398082733154, HD95: [[ 9.981  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 191/251, Dice_TC: 0.8047753572463989, Dice_WT: 0.8996573090553284, Dice_ET: 0.7834640741348267, HD95: [[ 9.939  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 192/251, Dice_TC: 0.805480420589447, Dice_WT: 0.8998076319694519, Dice_ET: 0.7839481234550476, HD95: [[ 9.899  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 193/251, Dice_TC: 0.8059180378913879, Dice_WT: 0.8998427391052246, Dice_ET: 0.7830216884613037, HD95: [[ 9.893  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 194/251, Dice_TC: 0.8062514662742615, Dice_WT: 0.9000281095504761, Dice_ET: 0.7823955416679382, HD95: [[ 9.856  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 195/251, Dice_TC: 0.8068247437477112, Dice_WT: 0.8992012143135071, Dice_ET: 0.78296959400177, HD95: [[ 9.833  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 196/251, Dice_TC: 0.8064146637916565, Dice_WT: 0.8991693258285522, Dice_ET: 0.7825384140014648, HD95: [[ 9.840  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 197/251, Dice_TC: 0.8045321702957153, Dice_WT: 0.898139238357544, Dice_ET: 0.7813342809677124, HD95: [[ 9.865  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 198/251, Dice_TC: 0.8007140159606934, Dice_WT: 0.8975019454956055, Dice_ET: 0.7789286375045776, HD95: [[ 10.148  nan]], time 0.98s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 199/251, Dice_TC: 0.8000771403312683, Dice_WT: 0.8977721929550171, Dice_ET: 0.7791550159454346, HD95: [[ 10.137  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 200/251, Dice_TC: 0.8004583716392517, Dice_WT: 0.898051381111145, Dice_ET: 0.7785339951515198, HD95: [[ 10.097  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 201/251, Dice_TC: 0.8008180260658264, Dice_WT: 0.8976351022720337, Dice_ET: 0.7790807485580444, HD95: [[ 10.075  nan]], time 1.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 202/251, Dice_TC: 0.8015437126159668, Dice_WT: 0.8978466391563416, Dice_ET: 0.7799203991889954, HD95: [[ 10.047  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 203/251, Dice_TC: 0.8021990060806274, Dice_WT: 0.898193895816803, Dice_ET: 0.780550479888916, HD95: [[ 10.006  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 204/251, Dice_TC: 0.8021470904350281, Dice_WT: 0.8983738422393799, Dice_ET: 0.7802743315696716, HD95: [[ 9.977  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 205/251, Dice_TC: 0.8029870390892029, Dice_WT: 0.8987299799919128, Dice_ET: 0.7812072038650513, HD95: [[ 9.934  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 206/251, Dice_TC: 0.8031167984008789, Dice_WT: 0.8971813321113586, Dice_ET: 0.7817202806472778, HD95: [[ 9.937  nan]], time 0.80s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 207/251, Dice_TC: 0.8034338355064392, Dice_WT: 0.8973062038421631, Dice_ET: 0.7822915315628052, HD95: [[ 9.900  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 208/251, Dice_TC: 0.8040755987167358, Dice_WT: 0.8975881338119507, Dice_ET: 0.7829318046569824, HD95: [[ 9.860  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 209/251, Dice_TC: 0.8044869899749756, Dice_WT: 0.8977668285369873, Dice_ET: 0.7831109166145325, HD95: [[ 9.824  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 210/251, Dice_TC: 0.8049173355102539, Dice_WT: 0.8977721929550171, Dice_ET: 0.7826681137084961, HD95: [[ 9.794  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 211/251, Dice_TC: 0.805564820766449, Dice_WT: 0.8980012536048889, Dice_ET: 0.7834105491638184, HD95: [[ 9.758  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 212/251, Dice_TC: 0.8061462640762329, Dice_WT: 0.8980956673622131, Dice_ET: 0.7837536334991455, HD95: [[ 9.744  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 213/251, Dice_TC: 0.806067705154419, Dice_WT: 0.897972822189331, Dice_ET: 0.7830204367637634, HD95: [[ 9.727  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 214/251, Dice_TC: 0.8059849739074707, Dice_WT: 0.8980321288108826, Dice_ET: 0.7827348709106445, HD95: [[ 9.697  nan]], time 1.05s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 215/251, Dice_TC: 0.8066496253013611, Dice_WT: 0.8983773589134216, Dice_ET: 0.7835796475410461, HD95: [[ 9.657  nan]], time 0.88s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 216/251, Dice_TC: 0.8069614171981812, Dice_WT: 0.8983971476554871, Dice_ET: 0.7840350270271301, HD95: [[ 9.635  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 217/251, Dice_TC: 0.8066060543060303, Dice_WT: 0.8984036445617676, Dice_ET: 0.7840350270271301, HD95: [[ 9.619  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 218/251, Dice_TC: 0.8051092624664307, Dice_WT: 0.8986292481422424, Dice_ET: 0.7831555604934692, HD95: [[ 9.585  nan]], time 0.90s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 219/251, Dice_TC: 0.804818868637085, Dice_WT: 0.898857831954956, Dice_ET: 0.7832217812538147, HD95: [[ 9.551  nan]], time 0.97s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 220/251, Dice_TC: 0.8049510717391968, Dice_WT: 0.8986462354660034, Dice_ET: 0.7839500904083252, HD95: [[ 9.555  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 221/251, Dice_TC: 0.8054076433181763, Dice_WT: 0.8988981246948242, Dice_ET: 0.7838720679283142, HD95: [[ 9.519  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 222/251, Dice_TC: 0.8045283555984497, Dice_WT: 0.8987277150154114, Dice_ET: 0.7822498083114624, HD95: [[ 9.518  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 223/251, Dice_TC: 0.8051614165306091, Dice_WT: 0.8990292549133301, Dice_ET: 0.7831001877784729, HD95: [[ 9.482  nan]], time 0.85s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 224/251, Dice_TC: 0.8050051927566528, Dice_WT: 0.8990987539291382, Dice_ET: 0.7821722030639648, HD95: [[ 9.454  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 225/251, Dice_TC: 0.8055662512779236, Dice_WT: 0.8989298343658447, Dice_ET: 0.782939612865448, HD95: [[ 9.477  nan]], time 0.92s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 226/251, Dice_TC: 0.8061836361885071, Dice_WT: 0.899063766002655, Dice_ET: 0.7835472822189331, HD95: [[ 9.445  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 227/251, Dice_TC: 0.8065651655197144, Dice_WT: 0.8992536664009094, Dice_ET: 0.7834897637367249, HD95: [[ 9.417  nan]], time 0.91s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 228/251, Dice_TC: 0.8073076009750366, Dice_WT: 0.8994600772857666, Dice_ET: 0.7842047214508057, HD95: [[ 9.385  nan]], time 0.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 229/251, Dice_TC: 0.8079774379730225, Dice_WT: 0.8997684717178345, Dice_ET: 0.7849097847938538, HD95: [[ 9.348  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 230/251, Dice_TC: 0.808415412902832, Dice_WT: 0.8996279239654541, Dice_ET: 0.7837130427360535, HD95: [[ 9.333  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 231/251, Dice_TC: 0.8069983720779419, Dice_WT: 0.8995258808135986, Dice_ET: 0.7835134267807007, HD95: [[ 9.316  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 232/251, Dice_TC: 0.8073603510856628, Dice_WT: 0.8996982574462891, Dice_ET: 0.7842617630958557, HD95: [[ 10.092  nan]], time 1.19s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 233/251, Dice_TC: 0.8074968457221985, Dice_WT: 0.8997851610183716, Dice_ET: 0.7832803130149841, HD95: [[ 10.065  nan]], time 0.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 234/251, Dice_TC: 0.8080680966377258, Dice_WT: 0.8998992443084717, Dice_ET: 0.7836999893188477, HD95: [[ 10.032  nan]], time 0.93s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 235/251, Dice_TC: 0.8081421852111816, Dice_WT: 0.8998960256576538, Dice_ET: 0.783823549747467, HD95: [[ 10.011  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 236/251, Dice_TC: 0.8073919415473938, Dice_WT: 0.899391233921051, Dice_ET: 0.7835103273391724, HD95: [[ 10.250  nan]], time 0.97s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 237/251, Dice_TC: 0.806986927986145, Dice_WT: 0.899454653263092, Dice_ET: 0.7801622748374939, HD95: [[ 10.221  nan]], time 0.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 238/251, Dice_TC: 0.8075767755508423, Dice_WT: 0.8997416496276855, Dice_ET: 0.7808805108070374, HD95: [[ 10.184  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 239/251, Dice_TC: 0.8081455230712891, Dice_WT: 0.8998391628265381, Dice_ET: 0.7814120650291443, HD95: [[ 10.156  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 240/251, Dice_TC: 0.8079826235771179, Dice_WT: 0.8999485969543457, Dice_ET: 0.7813011407852173, HD95: [[ 10.510  nan]], time 1.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.4373428225517273
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 0 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 1 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 241/251, Dice_TC: 0.8046506643295288, Dice_WT: 0.8962765336036682, Dice_ET: 0.7779906392097473, HD95: [[ nan  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 242/251, Dice_TC: 0.8049923181533813, Dice_WT: 0.8961610794067383, Dice_ET: 0.7779527902603149, HD95: [[ nan  nan]], time 0.89s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 243/251, Dice_TC: 0.8044527173042297, Dice_WT: 0.896334707736969, Dice_ET: 0.7765761017799377, HD95: [[ nan  nan]], time 0.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 244/251, Dice_TC: 0.8048298954963684, Dice_WT: 0.8965437412261963, Dice_ET: 0.7767064571380615, HD95: [[ nan  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 245/251, Dice_TC: 0.8040902018547058, Dice_WT: 0.8965855240821838, Dice_ET: 0.7755782604217529, HD95: [[ nan  nan]], time 0.83s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 246/251, Dice_TC: 0.8036679625511169, Dice_WT: 0.8966444730758667, Dice_ET: 0.774552583694458, HD95: [[ nan  nan]], time 0.81s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 247/251, Dice_TC: 0.8041704297065735, Dice_WT: 0.89678555727005, Dice_ET: 0.7750919461250305, HD95: [[ nan  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 248/251, Dice_TC: 0.8043357729911804, Dice_WT: 0.8969876170158386, Dice_ET: 0.7743180990219116, HD95: [[ nan  nan]], time 0.84s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 249/251, Dice_TC: 0.8049657940864563, Dice_WT: 0.8972120881080627, Dice_ET: 0.774877667427063, HD95: [[ nan  nan]], time 1.04s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:91: UserWarning: test 250/251, Dice_TC: 0.8050296902656555, Dice_WT: 0.8974043130874634, Dice_ET: 0.7741855382919312, HD95: [[ nan  nan]], time 0.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:123: UserWarning: Final test acc: 0.8255  time 237.29s
+  warnings.warn("Final test acc: {:.4f}  time {:.2f}s".format(test_avg_acc, time.time() - epoch_time))
