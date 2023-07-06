@@ -83,8 +83,9 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
                 Dice_TC = run_acc.avg[0]
                 Dice_WT = run_acc.avg[1]
                 Dice_ET = run_acc.avg[2]
-                warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {} time {:.2f}s"
-                              .format(idx, len(loader), Dice_TC, Dice_WT, Dice_ET, hd95.avg, time.time() - start_time))
+                warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, hd_distance time {:.2f}s"
+                              .format(idx, len(loader), Dice_TC, Dice_WT, Dice_ET, hd95.avg, hd_distance,
+                                      time.time() - start_time))
 
             start_time = time.time()
 
