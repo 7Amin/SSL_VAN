@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=BRATest
-#SBATCH --time=05:59:59
+#SBATCH --time=00:29:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
