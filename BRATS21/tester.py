@@ -49,8 +49,8 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
             val_labels_list = torch.stack(val_labels_list)
             warnings.warn("val_output_convert shape at {}".format(val_output_convert.shape))
             warnings.warn("val_labels_list shape at {}".format(val_labels_list.shape))
-            warnings.warn("val_output_convert at {}".format(val_output_convert))
-            warnings.warn("val_labels_list at {}".format(val_labels_list))
+            warnings.warn("val_output_convert at {}".format(val_output_convert.max()))
+            warnings.warn("val_labels_list at {}".format(val_labels_list.max()))
             non_empty_val_output = []
             non_empty_val_labels = []
 
