@@ -1,4 +1,4 @@
-/var/spool/slurmd/job62382/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+/var/spool/slurmd/job62383/slurm_script: line 11: cd: SSL_VAN: No such file or directory
 
 ----------------------------------------------------------------------------
   cuda:
@@ -68,7 +68,7 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f"Total args.checkpoint {args.checkpoint}")
 /home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV412_pre
   warnings.warn(f" base_url is {base_url}")
-/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log20/output_False_False
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log10/output_False_False
   warnings.warn(f" output_url 1 is {output_url}")
 /home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is False
   warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
@@ -83,7 +83,7 @@ input_list/dataset_BTCV_List.json
   warnings.warn(f"Total args.checkpoint {args.checkpoint}")
 /home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV412_pre
   warnings.warn(f" base_url is {base_url}")
-/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log20/output_False_False
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log10/output_False_False
   warnings.warn(f" output_url 1 is {output_url}")
 /home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is False
   warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
@@ -101,7 +101,7 @@ Traceback (most recent call last):
     raise ProcessRaisedException(msg, error_index, failed_process.pid)
 torch.multiprocessing.spawn.ProcessRaisedException: 
 
--- Process 0 terminated with the following error:
+-- Process 1 terminated with the following error:
 Traceback (most recent call last):
   File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
     fn(i, *args)
@@ -109,5 +109,5 @@ Traceback (most recent call last):
     fix_outputs_url(args, base_url)
   File "/home/karimimonsefi.1/SSL_VAN/commons/util.py", line 11, in fix_outputs_url
     os.mkdir(output_url)
-FileNotFoundError: [Errno 2] No such file or directory: './runs/BTCV_new/test_log20/output_False_False'
+FileNotFoundError: [Errno 2] No such file or directory: './runs/BTCV_new/test_log10/output_False_False'
 
