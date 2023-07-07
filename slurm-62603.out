@@ -1,0 +1,478 @@
+/var/spool/slurmd/job62603/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:133: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:135: UserWarning: Batch size is: 1 epochs 350
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:164: UserWarning: Total parameters count 15705621
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:167: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_True_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_True_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is False
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:182: UserWarning: => loaded checkpoint 'True' (epoch 89) (bestacc 0.802257239818573)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/utils.py:225: UserWarning: y_pred should be a binarized tensor.
+  warnings.warn(f"{name} should be a binarized tensor.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:50: UserWarning: pred shape at torch.Size([1, 3, 256, 256, 256])
+  warnings.warn("pred shape at {}".format(val_output_convert.shape))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:51: UserWarning: label shape at torch.Size([1, 3, 256, 256, 256])
+  warnings.warn("label shape at {}".format(val_labels_list.shape))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 1.0
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:53: UserWarning: label at 1.0
+  warnings.warn("label at {}".format(val_labels_list.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp 0
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[166.9401, 154.7521,  19.2354]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 0/251, Dice_TC: 0.12635673582553864, Dice_WT: 0.8246472477912903, Dice_ET: 0.5150396823883057, HD95: [[ 166.940  154.752  19.235]], time 11.77s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 166.940  154.752  19.235]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[174.3158, 142.0634,   3.1623]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 1/251, Dice_TC: 0.20600998401641846, Dice_WT: 0.7915819883346558, Dice_ET: 0.6818589568138123, HD95: [[ 170.628  148.408  11.199]], time 4.37s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999997615814209
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 170.628  148.408  11.199]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[156.5225, 134.3523,  14.7309]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 2/251, Dice_TC: 0.23111176490783691, Dice_WT: 0.7714187502861023, Dice_ET: 0.617275059223175, HD95: [[ 165.926  143.723  12.376]], time 4.59s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 165.926  143.723  12.376]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[158.7769, 135.6624,  18.8944]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 3/251, Dice_TC: 0.23381134867668152, Dice_WT: 0.7796961069107056, Dice_ET: 0.6406099796295166, HD95: [[ 164.139  141.708  14.006]], time 4.66s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 164.139  141.708  14.006]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[145.9795, 139.8269,  15.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 4/251, Dice_TC: 0.20033009350299835, Dice_WT: 0.7234534621238708, Dice_ET: 0.5391139984130859, HD95: [[ 160.507  141.331  14.205]], time 4.25s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 160.507  141.331  14.205]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[157.0366, 130.6369,   1.7321]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 5/251, Dice_TC: 0.19928382337093353, Dice_WT: 0.698445737361908, Dice_ET: 0.5796633362770081, HD95: [[ 159.929  139.549  12.126]], time 4.18s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999362230300903
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 0 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4573: RuntimeWarning: invalid value encountered in subtract
+  diff_b_a = subtract(b, a)
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 2 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 159.929  139.549  12.126]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[     nan, 144.0163,      nan]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 6/251, Dice_TC: 0.19928382337093353, Dice_WT: 0.6811531782150269, Dice_ET: 0.5796633362770081, HD95: [[ 159.929  140.187  12.126]], time 3.17s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 159.929  140.187  12.126]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[151.6113, 146.4684,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 7/251, Dice_TC: 0.234712153673172, Dice_WT: 0.6895464658737183, Dice_ET: 0.6186240315437317, HD95: [[ 158.889  140.972  10.735]], time 4.05s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 158.889  140.972  10.735]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[161.2331, 159.4098,   1.7321]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 8/251, Dice_TC: 0.22869735956192017, Dice_WT: 0.6592864394187927, Dice_ET: 0.6480503678321838, HD95: [[ 159.149  143.021  9.735]], time 4.17s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 159.149  143.021  9.735]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[157.7013, 141.2692,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 9/251, Dice_TC: 0.2079513818025589, Dice_WT: 0.6234802603721619, Dice_ET: 0.6497762203216553, HD95: [[ 159.005  142.846  8.861]], time 4.24s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 159.005  142.846  8.861]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[115.8344,  92.9785,  21.5557]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 10/251, Dice_TC: 0.21315522491931915, Dice_WT: 0.6384477019309998, Dice_ET: 0.645660936832428, HD95: [[ 155.080  138.312  10.015]], time 3.78s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.080  138.312  10.015]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[179.4376, 167.9399,  29.8831]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 11/251, Dice_TC: 0.2048102766275406, Dice_WT: 0.648470401763916, Dice_ET: 0.6203950047492981, HD95: [[ 157.110  140.781  11.671]], time 4.16s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 157.110  140.781  11.671]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[174.5636, 163.3328,  19.8746]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 12/251, Dice_TC: 0.19673673808574677, Dice_WT: 0.6487818956375122, Dice_ET: 0.5988532304763794, HD95: [[ 158.452  142.516  12.302]], time 4.23s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 158.452  142.516  12.302]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[150.1100, 143.4033,   1.7321]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 13/251, Dice_TC: 0.19777530431747437, Dice_WT: 0.6433778405189514, Dice_ET: 0.6125479936599731, HD95: [[ 157.857  142.579  11.547]], time 4.22s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 157.857  142.579  11.547]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[130.3879, 125.7998,   2.8284]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 14/251, Dice_TC: 0.2178845852613449, Dice_WT: 0.6480175256729126, Dice_ET: 0.6325643658638, HD95: [[ 156.025  141.461  10.966]], time 4.39s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.025  141.461  10.966]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[149.3015, 146.4049,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 15/251, Dice_TC: 0.21256253123283386, Dice_WT: 0.6370065808296204, Dice_ET: 0.639731764793396, HD95: [[ 155.605  141.770  10.369]], time 4.13s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.605  141.770  10.369]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[119.2351, 111.5661,   3.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 16/251, Dice_TC: 0.2214205116033554, Dice_WT: 0.6395200490951538, Dice_ET: 0.6513969898223877, HD95: [[ 153.466  139.993  9.935]], time 3.86s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.466  139.993  9.935]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[146.9206, 128.0437,   2.2361]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 17/251, Dice_TC: 0.21707165241241455, Dice_WT: 0.6272552013397217, Dice_ET: 0.6567552089691162, HD95: [[ 153.102  139.329  9.508]], time 4.17s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.102  139.329  9.508]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[169.4789, 150.4061,  19.6977]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 18/251, Dice_TC: 0.20897141098976135, Dice_WT: 0.6297112703323364, Dice_ET: 0.6556998491287231, HD95: [[ 153.964  139.912  10.044]], time 4.27s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.964  139.912  10.044]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[157.8182, 146.5140,   7.8102]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 19/251, Dice_TC: 0.20339800417423248, Dice_WT: 0.6270318627357483, Dice_ET: 0.6576019525527954, HD95: [[ 154.157  140.242  9.932]], time 4.19s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.157  140.242  9.932]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[149.6003, 120.9504,   2.2361]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 20/251, Dice_TC: 0.1974574476480484, Dice_WT: 0.6247276663780212, Dice_ET: 0.6569552421569824, HD95: [[ 153.940  139.324  9.566]], time 4.26s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.940  139.324  9.566]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[157.1894, 145.6228,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 21/251, Dice_TC: 0.20738442242145538, Dice_WT: 0.6284255385398865, Dice_ET: 0.667296826839447, HD95: [[ 154.087  139.610  9.195]], time 4.36s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.087  139.610  9.195]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[39.6737, 33.0151,     nan]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 22/251, Dice_TC: 0.22472944855690002, Dice_WT: 0.6411261558532715, Dice_ET: 0.667296826839447, HD95: [[ 149.113  134.975  9.195]], time 2.82s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 149.113  134.975  9.195]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[143.6680, 145.2205,   2.2361]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 23/251, Dice_TC: 0.22330214083194733, Dice_WT: 0.6300858855247498, Dice_ET: 0.6749907732009888, HD95: [[ 148.886  135.402  8.905]], time 4.25s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 148.886  135.402  8.905]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[162.2282, 153.3008,   7.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 24/251, Dice_TC: 0.2237459272146225, Dice_WT: 0.627010703086853, Dice_ET: 0.6655542254447937, HD95: [[ 149.420  136.118  8.829]], time 4.17s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 149.420  136.118  8.829]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[173.2570, 157.8244,  20.2978]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 25/251, Dice_TC: 0.2157111018896103, Dice_WT: 0.6150298714637756, Dice_ET: 0.6478477120399475, HD95: [[ 150.337  136.953  9.270]], time 4.23s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 150.337  136.953  9.270]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[138.2968,   1.4142,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 26/251, Dice_TC: 0.2210686057806015, Dice_WT: 0.6255439519882202, Dice_ET: 0.6581798791885376, HD95: [[ 149.891  131.933  8.979]], time 3.48s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 149.891  131.933  8.979]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[154.3276, 141.4956,   2.4495]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 27/251, Dice_TC: 0.23526820540428162, Dice_WT: 0.6362868547439575, Dice_ET: 0.66179358959198, HD95: [[ 150.049  132.275  8.746]], time 4.21s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 150.049  132.275  8.746]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[144.1230,  58.0431,   2.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 28/251, Dice_TC: 0.24661825597286224, Dice_WT: 0.6392989754676819, Dice_ET: 0.6706399321556091, HD95: [[ 149.845  129.715  8.513]], time 4.19s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 149.845  129.715  8.513]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[172.6974, 174.3029,   2.8284]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 29/251, Dice_TC: 0.2429426908493042, Dice_WT: 0.6310415267944336, Dice_ET: 0.6749760508537292, HD95: [[ 150.606  131.201  8.324]], time 4.28s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999977350234985
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 150.606  131.201  8.324]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[124.1169,   3.1623,  35.0571]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 30/251, Dice_TC: 0.2494346797466278, Dice_WT: 0.6403040289878845, Dice_ET: 0.6518542766571045, HD95: [[ 149.752  127.071  9.186]], time 3.30s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 149.752  127.071  9.186]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[176.5135, 138.5323,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 31/251, Dice_TC: 0.24366207420825958, Dice_WT: 0.6303249001502991, Dice_ET: 0.6540319323539734, HD95: [[ 150.588  127.429  8.943]], time 4.07s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 150.588  127.429  8.943]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[157.6896, 149.7865,   5.1962]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 32/251, Dice_TC: 0.24484409391880035, Dice_WT: 0.6279761791229248, Dice_ET: 0.6558487415313721, HD95: [[ 150.803  128.107  8.830]], time 4.24s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 150.803  128.107  8.830]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[178.6673, 174.4008,   3.6056]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 33/251, Dice_TC: 0.2381378412246704, Dice_WT: 0.6154463887214661, Dice_ET: 0.6539915204048157, HD95: [[ 151.623  129.468  8.676]], time 3.94s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 151.623  129.468  8.676]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[153.7986, 157.4362,   8.6023]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 34/251, Dice_TC: 0.23557056486606598, Dice_WT: 0.6079540252685547, Dice_ET: 0.6422913074493408, HD95: [[ 151.685  130.267  8.674]], time 4.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 151.685  130.267  8.674]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[158.5632, 148.1297,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 35/251, Dice_TC: 0.23558709025382996, Dice_WT: 0.6106035709381104, Dice_ET: 0.6492457985877991, HD95: [[ 151.876  130.763  8.461]], time 4.35s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 151.876  130.763  8.461]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[170.3502, 147.6685,  29.1376]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 36/251, Dice_TC: 0.23468153178691864, Dice_WT: 0.6161840558052063, Dice_ET: 0.6420395970344543, HD95: [[ 152.376  131.220  9.020]], time 4.01s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999996423721313
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 152.376  131.220  9.020]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[177.1152, 172.0102,  11.0905]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 37/251, Dice_TC: 0.22842837870121002, Dice_WT: 0.6033071279525757, Dice_ET: 0.6272842884063721, HD95: [[ 153.027  132.294  9.074]], time 4.21s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.027  132.294  9.074]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[158.4080, 150.5181,   8.1240]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 38/251, Dice_TC: 0.23022042214870453, Dice_WT: 0.6039460897445679, Dice_ET: 0.6160513162612915, HD95: [[ 153.165  132.761  9.050]], time 4.37s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.165  132.761  9.050]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[165.8614, 153.0261,   4.6904]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 39/251, Dice_TC: 0.22837024927139282, Dice_WT: 0.6036065816879272, Dice_ET: 0.6151601672172546, HD95: [[ 153.482  133.268  8.941]], time 4.36s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.482  133.268  8.941]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[149.4443, 135.1925,   2.2361]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 40/251, Dice_TC: 0.22431762516498566, Dice_WT: 0.5995581150054932, Dice_ET: 0.6145428419113159, HD95: [[ 153.383  133.315  8.777]], time 4.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 153.383  133.315  8.777]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[184.6597, 177.3412,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 41/251, Dice_TC: 0.22130087018013, Dice_WT: 0.5917230844497681, Dice_ET: 0.6196911931037903, HD95: [[ 154.128  134.363  8.602]], time 4.04s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999998807907104
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.128  134.363  8.602]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[193.1584, 172.1308,  10.7703]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 42/251, Dice_TC: 0.21835120022296906, Dice_WT: 0.5884658098220825, Dice_ET: 0.6172090768814087, HD95: [[ 155.036  135.241  8.652]], time 4.25s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.036  135.241  8.652]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[159.2186, 152.0554,  17.2206]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 43/251, Dice_TC: 0.2156999707221985, Dice_WT: 0.5851447582244873, Dice_ET: 0.6219404935836792, HD95: [[ 155.131  135.623  8.847]], time 4.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.131  135.623  8.847]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[165.8480, 141.0759,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 44/251, Dice_TC: 0.2127409130334854, Dice_WT: 0.5791642069816589, Dice_ET: 0.6260993480682373, HD95: [[ 155.369  135.745  8.673]], time 3.96s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.369  135.745  8.673]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[163.0946, 156.0282,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 45/251, Dice_TC: 0.21854417026042938, Dice_WT: 0.5803653597831726, Dice_ET: 0.6328007578849792, HD95: [[ 155.537  136.185  8.515]], time 4.12s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.537  136.185  8.515]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[165.1938, 146.8455,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 46/251, Dice_TC: 0.22026734054088593, Dice_WT: 0.5841466784477234, Dice_ET: 0.6386560797691345, HD95: [[ 155.742  136.412  8.355]], time 4.08s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.742  136.412  8.355]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[181.6645, 159.3377,   5.0990]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 47/251, Dice_TC: 0.21962778270244598, Dice_WT: 0.584510862827301, Dice_ET: 0.6373286247253418, HD95: [[ 156.283  136.890  8.287]], time 4.27s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.283  136.890  8.287]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[159.0047, 138.8031,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 48/251, Dice_TC: 0.22057831287384033, Dice_WT: 0.5872767567634583, Dice_ET: 0.6429696679115295, HD95: [[ 156.338  136.929  8.147]], time 4.23s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.338  136.929  8.147]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[158.3619, 146.7004,      nan]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 49/251, Dice_TC: 0.2217174768447876, Dice_WT: 0.5884178280830383, Dice_ET: 0.6429696679115295, HD95: [[ 156.379  137.124  8.147]], time 4.34s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.379  137.124  8.147]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[196.9721, 185.1729,  39.5443]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 50/251, Dice_TC: 0.2175317406654358, Dice_WT: 0.5814840197563171, Dice_ET: 0.6363794207572937, HD95: [[ 157.174  138.066  8.763]], time 4.32s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 157.174  138.066  8.763]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[139.0041,   4.4721,   8.4853]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 51/251, Dice_TC: 0.22576510906219482, Dice_WT: 0.5863569974899292, Dice_ET: 0.6266404986381531, HD95: [[ 156.825  135.497  8.757]], time 4.22s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:52: UserWarning: pred at 0.9999631643295288
+  warnings.warn("pred at {}".format(val_output_convert.max()))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.825  135.497  8.757]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[177.2203, 178.8267,  19.1311]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 52/251, Dice_TC: 0.2214495986700058, Dice_WT: 0.5777103900909424, Dice_ET: 0.6141090393066406, HD95: [[ 157.210  136.315  8.953]], time 4.07s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 157.210  136.315  8.953]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[130.8826, 108.1157,  11.5758]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 53/251, Dice_TC: 0.22145576775074005, Dice_WT: 0.5789914131164551, Dice_ET: 0.6090225577354431, HD95: [[ 156.722  135.793  9.002]], time 3.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.722  135.793  9.002]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[132.3858, 119.0840,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 54/251, Dice_TC: 0.22226664423942566, Dice_WT: 0.5802062749862671, Dice_ET: 0.6133347153663635, HD95: [[ 156.280  135.489  8.856]], time 4.33s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 156.280  135.489  8.856]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[54.7175, 50.0210,  1.7321]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 55/251, Dice_TC: 0.2318708449602127, Dice_WT: 0.5860193371772766, Dice_ET: 0.6182165145874023, HD95: [[ 154.466  133.963  8.729]], time 2.95s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.466  133.963  8.729]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[155.5667, 135.5887,   9.2736]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 56/251, Dice_TC: 0.23702044785022736, Dice_WT: 0.5883195400238037, Dice_ET: 0.6206094026565552, HD95: [[ 154.486  133.991  8.738]], time 3.87s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.486  133.991  8.738]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[167.1054, 147.2365,  13.8510]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 57/251, Dice_TC: 0.23642168939113617, Dice_WT: 0.5883229970932007, Dice_ET: 0.6197563409805298, HD95: [[ 154.703  134.220  8.827]], time 4.08s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.703  134.220  8.827]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[152.3352, 135.2812,   4.3589]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 58/251, Dice_TC: 0.2401304543018341, Dice_WT: 0.5924700498580933, Dice_ET: 0.6238312125205994, HD95: [[ 154.663  134.238  8.751]], time 4.15s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.663  134.238  8.751]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[165.9325, 146.3926,   1.4142]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 59/251, Dice_TC: 0.24020729959011078, Dice_WT: 0.5956975817680359, Dice_ET: 0.6268736124038696, HD95: [[ 154.851  134.440  8.629]], time 4.27s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 154.851  134.440  8.629]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[180.0743, 158.8392,   3.6056]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 60/251, Dice_TC: 0.23850591480731964, Dice_WT: 0.596345067024231, Dice_ET: 0.6292546987533569, HD95: [[ 155.264  134.840  8.546]], time 4.16s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.264  134.840  8.546]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[146.4937, 118.9349,   1.0000]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 61/251, Dice_TC: 0.24082539975643158, Dice_WT: 0.5982222557067871, Dice_ET: 0.6341986060142517, HD95: [[ 155.123  134.584  8.425]], time 4.30s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:87: UserWarning: temp [[ 155.123  134.584  8.425]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:88: UserWarning: hd_distance tensor([[154.8735, 142.9192,  25.0799]], dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/BRATS21/tester.py:99: UserWarning: test 62/251, Dice_TC: 0.24533231556415558, Dice_WT: 0.6010512709617615, Dice_ET: 0.6236451268196106, HD95: [[ 155.119  134.716  8.689]], time 4.38s
+  warnings.warn("test {}/{}, Dice_TC: {}, Dice_WT: {}, Dice_ET: {}, HD95: {}, time {:.2f}s"
