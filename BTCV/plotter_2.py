@@ -29,46 +29,46 @@ colors = [
 ]
 
 models = [
-    # {
-    #     "name": "AttentionUnet",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_AttentionUnet",
-    # },
-    # {
-    #     "name": "DiNTS_Instance",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Instance",
-    # },
-    # {
-    #     "name": "DiNTS_Search",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search",
-    # },
-    # {
-    #     "name": "nnUNet",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet",
-    # },
+    {
+        "name": "AttentionUnet",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_AttentionUnet",
+    },
+    {
+        "name": "DiNTS_Instance",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Instance",
+    },
+    {
+        "name": "DiNTS_Search",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search",
+    },
+    {
+        "name": "nnUNet",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet",
+    },
     {
         "name": "SegResNetVAE",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE",
     },
-    # {
-    #     "name": "SwinUNETR24",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24",
-    # },
-    # {
-    #     "name": "SwinUNETR36",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR36",
-    # },
-    # {
-    #     "name": "SwinUNETR48",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48",
-    # },
-    # {
-    #     "name": "Unetpp",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp",
-    # },
-    # {
-    #     "name": "UNETR16",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR16",
-    # },
+    {
+        "name": "SwinUNETR24",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR24",
+    },
+    {
+        "name": "SwinUNETR36",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR36",
+    },
+    {
+        "name": "SwinUNETR48",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48",
+    },
+    {
+        "name": "Unetpp",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp",
+    },
+    {
+        "name": "UNETR16",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR16",
+    },
     {
         "name": "UNETR32",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32",
