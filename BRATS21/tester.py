@@ -88,7 +88,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
                 warnings.warn("hd_distance {}".format(hd_distance.shape))
                 for i in range(3):
                     if torch.isnan(hd_distance[0][i]):
-                        hd_distance[0][i] = temp[i]
+                        hd_distance[0][i] = temp[0][i]
                 # if not torch.isnan(hd_distance).any():
                 hd95.update(hd_distance)
 
