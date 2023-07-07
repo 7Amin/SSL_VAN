@@ -83,8 +83,13 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=No
                     run_acc.update(al, n=nl)
             else:
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                if not torch.isnan(hd_distance).any():
-                    hd95.update(hd_distance)
+                temp = hd95.val
+                warnings.warn("temp new at {}".format(temp))
+                for i in range(3):
+                    if torch.isnan(hd_distance[i]):
+                        hd_distance[i] = temp[i]
+                # if not torch.isnan(hd_distance).any():
+                hd95.update(hd_distance)
 
             if args.rank == 0:
                 Dice_TC = run_acc.avg[0]
