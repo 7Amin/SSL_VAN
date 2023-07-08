@@ -178,9 +178,6 @@ def get_loader(args):
             transforms.ScaleIntensityRanged(
                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
             ),
-            transforms.CropForegroundd(
-                keys=["image", "label"], source_key="image", k_divisible=[args.roi_x, args.roi_y, args.roi_z]
-            ),
             transforms.ToTensord(keys=["image", "label"]),
         ]
     )
@@ -228,23 +225,9 @@ def get_loader(args):
             sampler=val_sampler,
             pin_memory=True
         )
-
         loader = test_loader
-    # elif args.val_mode:
-    #     extra_val_ds = data.Dataset(data=extra_val, transform=val_transform)
-    #     val_sampler = Sampler(extra_val_ds, shuffle=False) if args.distributed else None
-    #     extra_val_loader = data.DataLoader(
-    #         extra_val_ds,
-    #         batch_size=1,
-    #         shuffle=False,
-    #         num_workers=args.workers,
-    #         sampler=val_sampler,
-    #         pin_memory=True
-    #     )
-    #     loader = extra_val_loader
     else:
         train_ds = data.Dataset(data=train_files, transform=train_transform)
-
         train_sampler = Sampler(train_ds) if args.distributed else None
         train_loader = data.DataLoader(
             train_ds,
