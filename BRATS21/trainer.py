@@ -114,7 +114,6 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
 
             if args.rank == 0:
                 # avg_acc_1 = np.mean(run_acc)
-                avg_acc_1 = run_acc
                 # warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                 #                                                              avg_acc_1, time.time() - start_time))
                 Dice_TC = run_acc.avg[0]
