@@ -76,13 +76,13 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args, cluste
             warnings.warn(
                 "Epoch {}/{} {}/{}  loss: {:.9f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                        run_loss.avg, time.time() - start_time))
-            if idx % 250 == 249:
+            if idx % 100 == 99:
                 warnings.warn(
                     "SAVED => Epoch {}/{} {}/{}  loss: {:.9f}, last best: {:.9f},  time {:.2f}s"
                     .format(epoch, args.max_epochs, idx, len(loader), run_loss.avg, best_loss,
                             time.time() - start_time))
-                if best_loss > run_loss.avg:
-                # if not np.isnan(run_loss.avg):
+                # if best_loss > run_loss.avg:
+                if not np.isnan(run_loss.avg):
                     best_loss = run_loss.avg
                     save_checkpoint(
                         model, epoch - 1, args, best_acc=run_loss.avg, optimizer=optimizer, scheduler=scheduler,
@@ -140,8 +140,8 @@ def run_training_2(
         if args.rank == 0:
             warnings.warn("Final training  {}/{}  loss: {:.4f} last best: {:.9f} time {:.2f}s"
                           .format(epoch, args.max_epochs - 1, train_loss, best_loss, time.time() - epoch_time))
-            # if not np.isnan(train_loss):
-            if best_loss > train_loss:
+            if not np.isnan(train_loss):
+            # if best_loss > train_loss:
                 best_loss = train_loss
                 save_checkpoint(
                     model, epoch, args, best_acc=train_loss, optimizer=optimizer, scheduler=scheduler,
