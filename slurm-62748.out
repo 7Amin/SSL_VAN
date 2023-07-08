@@ -1,0 +1,245 @@
+/var/spool/slurmd/job62748/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:128: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:130: UserWarning: Batch size is: 4 epochs 4000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:164: UserWarning: Total parameters count 121226346
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:167: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log/output_True_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412__best.pt, final model url is 96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:181: UserWarning: => loaded checkpoint 'True' (epoch 5094) (bestacc 0.8460047841072083)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+input_list/dataset_BTCV_List.json
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0035.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(314, 314, 234)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0035.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.999  0.895  0.937  0.931  1.000  0.628  0.957  0.888  0.926  0.893
+  0.729  0.675  0.691  0.686]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 0/6,
+ Dice_background: 0.9985578060150146,
+ Dice_spleen: 0.8945115804672241,
+ Dice_rkid: 0.9369252324104309,
+ Dice_lkid: 0.9305386543273926,
+ Dice_gall: 1.0,
+ Dice_eso: 0.6281818151473999,
+ Dice_liver: 0.9569033980369568,
+ Dice_sto: 0.8876885771751404,
+ Dice_aorta: 0.9261212944984436,
+ Dice_IVC: 0.8934127688407898,
+ Dice_veins: 0.7286802530288696,
+ Dice_pancreas: 0.6748948693275452,
+ Dice_rad: 0.6907817721366882,
+ Dice_lad: 0.6862037777900696
+ time 26.72s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 0/6  acc 0.8452430367469788  time 26.72s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0036.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/inferers/utils.py:253: UserWarning: Sliding window inference results contain NaN or Inf.
+  warnings.warn("Sliding window inference results contain NaN or Inf.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(255, 255, 276)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0036.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.995  0.960  0.962  0.959  0.729  0.801  0.912  0.671  0.857  0.865
+  0.610  0.600  0.733  0.728]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 1/6,
+ Dice_background: 0.9967037439346313,
+ Dice_spleen: 0.9271044135093689,
+ Dice_rkid: 0.9493643045425415,
+ Dice_lkid: 0.9449688196182251,
+ Dice_gall: 0.8644951581954956,
+ Dice_eso: 0.7144907116889954,
+ Dice_liver: 0.9342734217643738,
+ Dice_sto: 0.7795717716217041,
+ Dice_aorta: 0.8914749622344971,
+ Dice_IVC: 0.8793480396270752,
+ Dice_veins: 0.6691002249717712,
+ Dice_pancreas: 0.6372655034065247,
+ Dice_rad: 0.7120758891105652,
+ Dice_lad: 0.7071388959884644
+ time 4.80s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 1/6  acc 0.8290982246398926  time 4.80s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0037.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(241, 241, 246)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0037.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.991  0.727  0.952  0.755  0.923  0.025  0.868  0.002  0.541  0.373
+  0.582  0.232  0.767  0.000]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 2/6,
+ Dice_background: 0.9949572682380676,
+ Dice_spleen: 0.8605442047119141,
+ Dice_rkid: 0.9502395987510681,
+ Dice_lkid: 0.8817662596702576,
+ Dice_gall: 0.8839015960693359,
+ Dice_eso: 0.4845390319824219,
+ Dice_liver: 0.9120703339576721,
+ Dice_sto: 0.5202354788780212,
+ Dice_aorta: 0.7745678424835205,
+ Dice_IVC: 0.7105472087860107,
+ Dice_veins: 0.6401200294494629,
+ Dice_pancreas: 0.5021960735321045,
+ Dice_rad: 0.7305247187614441,
+ Dice_lad: 0.4714259207248688
+ time 2.58s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 2/6  acc 0.7369740605354309  time 2.58s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0038.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(334, 334, 248)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0038.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.998  0.957  0.941  0.941  0.732  0.824  0.969  0.878  0.925  0.864
+  0.815  0.866  0.709  0.679]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 3/6,
+ Dice_background: 0.995631217956543,
+ Dice_spleen: 0.884611189365387,
+ Dice_rkid: 0.9479820132255554,
+ Dice_lkid: 0.8965020179748535,
+ Dice_gall: 0.8458766937255859,
+ Dice_eso: 0.5694356560707092,
+ Dice_liver: 0.9263477325439453,
+ Dice_sto: 0.609755277633667,
+ Dice_aorta: 0.8122061491012573,
+ Dice_IVC: 0.7488250732421875,
+ Dice_veins: 0.6839591264724731,
+ Dice_pancreas: 0.5931169390678406,
+ Dice_rad: 0.7250338792800903,
+ Dice_lad: 0.5233656167984009
+ time 3.75s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 3/6  acc 0.768760621547699  time 3.75s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0039.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(333, 333, 224)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0039.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.999  0.943  0.933  0.919  0.786  0.684  0.966  0.891  0.910  0.879
+  0.755  0.854  0.672  0.654]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 4/6,
+ Dice_background: 0.9962294697761536,
+ Dice_spleen: 0.8963145017623901,
+ Dice_rkid: 0.9450780749320984,
+ Dice_lkid: 0.9010971784591675,
+ Dice_gall: 0.8339971303939819,
+ Dice_eso: 0.5923458337783813,
+ Dice_liver: 0.9343568682670593,
+ Dice_sto: 0.6660478711128235,
+ Dice_aorta: 0.8317679166793823,
+ Dice_IVC: 0.7748794555664062,
+ Dice_veins: 0.6982128024101257,
+ Dice_pancreas: 0.6453659534454346,
+ Dice_rad: 0.7144550085067749,
+ Dice_lad: 0.5494187474250793
+ time 3.00s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 4/6  acc 0.7842546701431274  time 3.00s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:36: UserWarning: image_name img0040.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:21: UserWarning: image shape(254, 254, 292)
+  warnings.warn("image shape{}".format(image.shape))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:25: UserWarning: saved at ./runs/BTCV_new/test_log/output_True_False/96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412/img0040.nii.gz
+  warnings.warn("saved at {}".format(url))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:69: UserWarning: acc [ 0.998  0.965  0.959  0.958  0.445  0.702  0.972  0.869  0.846  0.822
+  0.799  0.779  0.714  0.797]
+  warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:90: UserWarning: test 5/6,
+ Dice_background: 0.9964887499809265,
+ Dice_spleen: 0.9077668786048889,
+ Dice_rkid: 0.9474811553955078,
+ Dice_lkid: 0.9105730652809143,
+ Dice_gall: 0.7691476941108704,
+ Dice_eso: 0.6106140613555908,
+ Dice_liver: 0.9406735897064209,
+ Dice_sto: 0.6998232007026672,
+ Dice_aorta: 0.8341836333274841,
+ Dice_IVC: 0.7826583981513977,
+ Dice_veins: 0.7150270938873291,
+ Dice_pancreas: 0.6676246523857117,
+ Dice_rad: 0.7143149971961975,
+ Dice_lad: 0.5906590819358826
+ time 5.68s
+  warnings.warn("test {}/{},\n Dice_background: {},\n Dice_spleen: {},\n Dice_rkid: {},\n Dice_lkid: {},\n"
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:98: UserWarning: Test 5/6  acc 0.79193115234375  time 5.68s
+  warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/tester.py:130: UserWarning: Final test acc: 0.7919  time 46.54s
+  warnings.warn("Final test acc: {:.4f}  time {:.2f}s".format(test_avg_acc, time.time() - epoch_time))
