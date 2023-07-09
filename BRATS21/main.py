@@ -183,6 +183,8 @@ def main_worker(gpu, args):
             args.checkpoint, start_epoch, best_acc))
 
     model.cuda(args.gpu)
+    if not ('new' in args.logdir):
+        scheduler = None
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
