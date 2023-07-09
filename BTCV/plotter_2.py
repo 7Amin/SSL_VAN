@@ -70,8 +70,20 @@ models = [
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR16",
     },
     {
-        "name": "UNETR32",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32",
+        "name": "VANV412_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV412",
+    },
+    {
+        "name": "VANV4122GL_S",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL",
+    },
+    {
+        "name": "VANV412_L",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV412",
+    },
+    {
+        "name": "VANV4122GL_L",
+        "url": "96-192-384-768_3-3-24-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL",
     },
 ]
 
