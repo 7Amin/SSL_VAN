@@ -109,7 +109,7 @@ def colorizing(data_shape, predicted_data, target_data, original_data):
 
 def plot_data(predicted_data, original_data, target_data, base_url):
     data_shape = original_data.shape
-    for i in range(data_shape[2] // 3, data_shape[2] * 2 // 3):
+    for i in range(data_shape[2] // 3, data_shape[2] * 7 // 8):
         data_shape = original_data.shape
         fig, axes = plt.subplots(2, 1, figsize=(5 * 1, 10))
         image_pred, image_targ = colorizing(data_shape, predicted_data[:, :, i],
