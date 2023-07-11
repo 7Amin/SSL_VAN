@@ -27,6 +27,7 @@ def convert_tensor_to_nii(image_name, args, images):
 
 def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
     model.eval()
+    total_time = 0
     run_acc = AverageMeter()
     start_time = time.time()
     with torch.no_grad():
@@ -94,10 +95,12 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                               .format(idx, len(loader), Dice_background, Dice_spleen, Dice_rkid, Dice_lkid, Dice_gall,
                                       Dice_eso, Dice_liver, Dice_sto, Dice_aorta, Dice_IVC, Dice_veins, Dice_pancreas,
                                       Dice_rad, Dice_lad, time.time() - start_time))
+                total_time = total_time + time.time() - start_time
                 avg_acc = np.mean(run_acc.avg)
                 warnings.warn("Test {}/{}  acc {}  time {:.2f}s".format(idx, len(loader),
                                                                         avg_acc, time.time() - start_time))
             start_time = time.time()
+        warnings.warn("total time {:.2f}s".format(total_time / len(loader)))
     return run_acc.avg
 
 
