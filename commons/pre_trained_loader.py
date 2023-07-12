@@ -17,6 +17,6 @@ def load_pre_trained(args, model):
     loaded_keys = model.load_state_dict(new_state_dict, strict=False)
     warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
     matched_keys = sum(k in model.state_dict() for k in loaded_keys.keys())
-    print(f"Number of matched keys loaded: {matched_keys}")
+    warnings.warn(f"Number of matched keys loaded: {matched_keys}")
     args.model_v = args.model_v + "_pre"
     return model
