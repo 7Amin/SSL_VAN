@@ -31,11 +31,11 @@ parser.add_argument("--base_data",
 parser.add_argument("--json_list", default='../input_list/dataset_BTCV_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
-    "--pretrained_dir", default="./runs/pre_train_1/test_log/", type=str, help="pretrained checkpoint directory"
+    "--pretrained_dir", default="../runs/pre_train_1/test_log/", type=str, help="pretrained checkpoint directory"
 )
 parser.add_argument(
     "--pretrained_model_name",
-    default="pre_train_64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_PREVANV4_20_500_256_True_5__final.pt",
+    default="test__final_1.pt",
     type=str,
     help="pretrained model name",
 )
@@ -90,7 +90,7 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
+parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                        'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL",
                                                                        'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
                                                                        'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE',
@@ -124,7 +124,7 @@ def main_worker(gpu, args):
         )
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
-    loader = get_loader(args)
+
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
         warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
@@ -146,7 +146,7 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
-
+    loader = get_loader(args)
 
     post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
