@@ -25,7 +25,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
-    prev_loss = None
     for idx, batch_data in enumerate(loader):
         if isinstance(batch_data, list):
             data, target = batch_data
@@ -77,7 +76,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         # else:
         #     break
         start_time = time.time()
-        prev_loss = loss
     for param in model.parameters():
         param.grad = None
     return run_loss.avg
