@@ -90,6 +90,7 @@ parser.add_argument("--warmup_epochs", default=50, type=int, help="number of war
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
+parser.add_argument("--freeze", default="no", type=str, choices=['yes', 'no'], help="freeze pretrain layers in training")
 parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL', 'PREVANV412',
                                                                           'PREVANV4GL', 'PREVANV4', 'PREVANV4121GL',
                                                                           'PREVANV4122GL'])
