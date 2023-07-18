@@ -88,6 +88,7 @@ parser.add_argument("--lrschedule", default="warmup_cosine", type=str, help="typ
 parser.add_argument("--max_epochs", default=5000, type=int, help="max number of training epochs")
 parser.add_argument("--warmup_epochs", default=500, type=int, help="number of warmup epochs")
 parser.add_argument("--upsample", default="deconv", type=str, choices=['deconv', 'vae'])
+parser.add_argument("--freeze", default="no", type=str, choices=['yes', 'no'], help="freeze pretrain layers in training")
 parser.add_argument("--model_inferer", default='', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',

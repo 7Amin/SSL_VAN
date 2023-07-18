@@ -11,10 +11,14 @@ def load_pre_trained(args, model):
     new_state_dict = OrderedDict()
     state_dict = model_dict["state_dict"]
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - before")
-    # if "VANV4" in args.model_v or "VANV4GL" in args.model_v or "VANV5GL" in args.model_v or "VANV6GL" in args.model_v:
     for key in list(state_dict.keys()):
         if not ("pre_train_proj" in key):
             new_state_dict[key] = state_dict.pop(key)
+            if args.freeze == "yes":
+                for name, parameter in model.named_parameters():
+                    if name == key:
+                        parameter.requires_grad = False
+                        break
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
     load_result = model.load_state_dict(new_state_dict, strict=False)
     warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
