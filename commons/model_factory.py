@@ -473,8 +473,11 @@ def load_model(args, model, optimizer, scheduler, best_acc, start_epoch):
 
         new_state_dict = OrderedDict()
         for k, v in checkpoint["state_dict"].items():
-            new_state_dict[k.replace("backbone.", "")] = v
+            new_state_dict[k] = v
         model.load_state_dict(new_state_dict, strict=False)
+        if args.freeze != "yes":
+            for name, parameter in model.named_parameters():
+                parameter.requires_grad = True
         if "epoch" in checkpoint:
             start_epoch = checkpoint["epoch"]
         if "best_acc" in checkpoint:
