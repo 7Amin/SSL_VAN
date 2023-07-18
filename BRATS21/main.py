@@ -69,7 +69,7 @@ parser.add_argument("--rank", default=0, type=int, help="node rank for distribut
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
 parser.add_argument("--num_stages", default=4, type=int, help="number of stages in attention")
 parser.add_argument("--embed_dims", default=[64, 128, 256, 512], nargs='+', type=int, help="VAN3D embed dims")
-parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
+parser.add_argument("--infer_overlap", default=0.6, type=float, help="sliding window inference overlap")
 parser.add_argument("--depths", default=[3, 4, 6, 3], nargs='+', type=int, help="VAN3D depths")
 parser.add_argument("--mlp_ratios", default=[8, 8, 4, 4], nargs='+', type=int, help="VAN3D mlp_ratios")
 parser.add_argument("--in_channels", default=4, type=int, help="number of input channels")
