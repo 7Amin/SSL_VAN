@@ -201,6 +201,7 @@ def main_worker(gpu, args):
                                post_label=post_label,
                                post_pred=post_pred)
     else:
+        start_epoch = 0
         accuracy = run_training(
             model=model,
             train_loader=loader[0],
