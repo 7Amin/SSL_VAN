@@ -22,7 +22,7 @@ freeze=$3
 if [ $job -eq 4127 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -31,7 +31,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -40,7 +40,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -49,7 +49,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -58,7 +58,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -67,7 +67,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -76,7 +76,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -85,7 +85,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -94,7 +94,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -103,7 +103,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -112,7 +112,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -121,7 +121,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -130,7 +130,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -139,7 +139,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -148,7 +148,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -157,7 +157,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -166,7 +166,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -175,7 +175,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -184,7 +184,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -193,7 +193,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 1 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze yes  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0002 --checkpoint \
@@ -202,7 +202,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -211,7 +211,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -220,7 +220,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -229,7 +229,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -238,7 +238,7 @@ then
 elif [ $job -eq 4127 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -247,7 +247,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -256,7 +256,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -265,7 +265,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -274,7 +274,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -283,7 +283,7 @@ then
 elif [ $job -eq 4129 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -292,7 +292,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -301,7 +301,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -310,7 +310,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -319,7 +319,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -328,7 +328,7 @@ then
 elif [ $job -eq 41227 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -337,7 +337,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 1 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log1 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -346,7 +346,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 10 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log10 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -355,7 +355,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 20 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log20 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -364,7 +364,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 40 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log40 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -373,7 +373,7 @@ then
 elif [ $job -eq 41229 ] && [ $cluster_size -eq 80 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 BTCV/main.py --use_ssl_pretrained --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6000 \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log80 --save_checkpoint --max_epochs 6700 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
