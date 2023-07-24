@@ -44,14 +44,14 @@ then
   PYTHONPATH=. python3 BRATS21/main.py --squared_dice  --num_samples 1 --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint  --max_epochs 500 \
   --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v UNETR16 --checkpoint
+  --valid_loader valid_loader --model_v UNETR16 --checkpoint --smooth_dr 0.1 --smooth_nr 0.1
 
 elif [ $job -eq 832 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py --squared_dice  --num_samples 1 --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint  --max_epochs 500 \
   --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v UNETR32 --checkpoint --smooth_dr 0.01
+  --valid_loader valid_loader --model_v UNETR32 --checkpoint --smooth_dr 0.1 --smooth_nr 0.1
 
 elif [ $job -eq 900 ]
 then
@@ -79,7 +79,7 @@ then
   PYTHONPATH=. python3 BRATS21/main.py --squared_dice  --num_samples 1 --workers 8 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint  --max_epochs 500 \
   --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v Unetpp --checkpoint --smooth_dr 0.01
+  --valid_loader valid_loader --model_v Unetpp --checkpoint --smooth_dr 0.1 --smooth_nr 0.1
 
 elif [ $job -eq 1300 ]
 then
