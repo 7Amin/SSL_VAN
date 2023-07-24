@@ -46,7 +46,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             #        loss_func(logits[:, 1, :, :, :], target[:, 2, :, :, :]) + \
             #        loss_func(logits[:, 2, :, :, :], target[:, 1, :, :, :])) / 10.1
 
-            loss = loss_func(logits, target)
+            loss = loss_func(logits.double(), target.double())
 
         # if torch.isnan(loss):
         #     loss = prev_loss
@@ -94,8 +94,8 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                     logits = model_inferer(data)
                 else:
                     logits = model(data)
-            val_labels_list = decollate_batch(target)
-            val_outputs_list = decollate_batch(logits)
+            val_labels_list = decollate_batch(target.double())
+            val_outputs_list = decollate_batch(logits.double())
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
             acc_func.reset()
             acc_func(y_pred=val_output_convert, y=val_labels_list)
