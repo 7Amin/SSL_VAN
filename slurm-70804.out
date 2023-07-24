@@ -1,0 +1,776 @@
+/var/spool/slurmd/job70804/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:114: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:134: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:136: UserWarning: Batch size is: 1 epochs 1000
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:134: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:165: UserWarning: Total parameters count 3864047
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:183: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:165: UserWarning: Total parameters count 3864047
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:183: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:161: UserWarning: Writing Tensorboard logs to ./runs/BraTS21_new/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:169: UserWarning: 0  Mon Jul 24 12:29:37 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:169: UserWarning: 1  Mon Jul 24 12:29:37 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 0/500  loss: 0.9933  time 23.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 1/500  loss: 0.9952  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 2/500  loss: 0.9910  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 3/500  loss: 0.9749  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 4/500  loss: 0.9486  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 5/500  loss: 0.9399  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 6/500  loss: 0.9296  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 7/500  loss: 0.9228  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 8/500  loss: 0.9260  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 9/500  loss: 0.9208  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 10/500  loss: 0.9246  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 11/500  loss: 0.9228  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 12/500  loss: 0.9222  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 13/500  loss: 0.9194  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 14/500  loss: 0.9235  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 15/500  loss: 0.9236  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 16/500  loss: 0.9266  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 17/500  loss: 0.9232  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 18/500  loss: 0.9263  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 19/500  loss: 0.9246  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 20/500  loss: 0.9258  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 21/500  loss: 0.9260  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 22/500  loss: 0.9253  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 23/500  loss: 0.9231  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 24/500  loss: 0.9234  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 25/500  loss: 0.9200  time 0.66s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 26/500  loss: 0.9229  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 27/500  loss: 0.9203  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 28/500  loss: 0.9195  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 29/500  loss: 0.9201  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 30/500  loss: 0.9207  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 31/500  loss: 0.9199  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 32/500  loss: 0.9180  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 33/500  loss: 0.9177  time 0.34s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 34/500  loss: 0.9167  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 35/500  loss: 0.9163  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 36/500  loss: 0.9156  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 37/500  loss: 0.9166  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 38/500  loss: 0.9151  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 39/500  loss: 0.9148  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 40/500  loss: 0.9125  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 41/500  loss: 0.9106  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 42/500  loss: 0.9122  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 43/500  loss: 0.9140  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 44/500  loss: 0.9141  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 45/500  loss: 0.9150  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 46/500  loss: 0.9135  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 47/500  loss: 0.9124  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 48/500  loss: 0.9121  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 49/500  loss: 0.9137  time 0.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 50/500  loss: 0.9120  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 51/500  loss: 0.9108  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 52/500  loss: 0.9103  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 53/500  loss: 0.9116  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 54/500  loss: 0.9128  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 55/500  loss: 0.9120  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 56/500  loss: 0.9124  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 57/500  loss: 0.9122  time 0.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 58/500  loss: 0.9120  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 59/500  loss: 0.9122  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 60/500  loss: 0.9128  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 61/500  loss: 0.9123  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 62/500  loss: 0.9137  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 63/500  loss: 0.9137  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 64/500  loss: 0.9146  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 65/500  loss: 0.9142  time 0.30s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 66/500  loss: 0.9118  time 0.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 67/500  loss: 0.9130  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 68/500  loss: 0.9119  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 69/500  loss: 0.9111  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 70/500  loss: 0.9110  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 71/500  loss: 0.9122  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 72/500  loss: 0.9126  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 73/500  loss: 0.9123  time 0.53s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 74/500  loss: 0.9123  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 75/500  loss: 0.9124  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 76/500  loss: 0.9119  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 77/500  loss: 0.9117  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 78/500  loss: 0.9115  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 79/500  loss: 0.9124  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 80/500  loss: 0.9105  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 81/500  loss: 0.9103  time 0.38s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 82/500  loss: 0.9099  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 83/500  loss: 0.9094  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 84/500  loss: 0.9103  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 85/500  loss: 0.9096  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 86/500  loss: 0.9102  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 87/500  loss: 0.9105  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 88/500  loss: 0.9098  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 89/500  loss: 0.9099  time 0.31s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 90/500  loss: 0.9093  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 91/500  loss: 0.9099  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 92/500  loss: 0.9095  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 93/500  loss: 0.9096  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 94/500  loss: 0.9097  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 95/500  loss: 0.9098  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 96/500  loss: 0.9098  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 97/500  loss: 0.9103  time 0.36s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 98/500  loss: 0.9106  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 99/500  loss: 0.9108  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 100/500  loss: 0.9102  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 101/500  loss: 0.9089  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 102/500  loss: 0.9097  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 103/500  loss: 0.9099  time 0.29s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 104/500  loss: 0.9107  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 105/500  loss: 0.9105  time 0.17s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 106/500  loss: 0.9107  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 107/500  loss: 0.9106  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 108/500  loss: 0.9107  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 109/500  loss: 0.9108  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 110/500  loss: 0.9106  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 111/500  loss: 0.9105  time 0.21s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 112/500  loss: 0.9106  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 113/500  loss: 0.9111  time 0.28s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 114/500  loss: 0.9109  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 115/500  loss: 0.9102  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 116/500  loss: 0.9105  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 117/500  loss: 0.9095  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 118/500  loss: 0.9099  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 119/500  loss: 0.9107  time 0.18s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 120/500  loss: 0.9110  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 121/500  loss: 0.9108  time 0.33s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 122/500  loss: 0.9105  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 123/500  loss: 0.9101  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 124/500  loss: 0.9100  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 125/500  loss: 0.9096  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 126/500  loss: 0.9093  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 127/500  loss: 0.9088  time 0.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 128/500  loss: 0.9095  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 129/500  loss: 0.9096  time 0.25s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 130/500  loss: 0.9103  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 131/500  loss: 0.9106  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 132/500  loss: 0.9113  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 133/500  loss: 0.9112  time 0.21s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 134/500  loss: 0.9109  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 135/500  loss: 0.9108  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 136/500  loss: 0.9104  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 137/500  loss: 0.9096  time 0.33s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 138/500  loss: 0.9096  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 139/500  loss: 0.9097  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 140/500  loss: 0.9091  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 141/500  loss: 0.9092  time 0.23s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 142/500  loss: 0.9098  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 143/500  loss: 0.9101  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 144/500  loss: 0.9103  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 145/500  loss: 0.9105  time 0.23s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 146/500  loss: 0.9104  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 147/500  loss: 0.9101  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 148/500  loss: 0.9098  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 149/500  loss: 0.9097  time 0.24s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 150/500  loss: 0.9094  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 151/500  loss: 0.9093  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 152/500  loss: 0.9099  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 153/500  loss: 0.9096  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 154/500  loss: 0.9095  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 155/500  loss: 0.9097  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 156/500  loss: 0.9097  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 157/500  loss: 0.9100  time 0.24s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 158/500  loss: 0.9091  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 159/500  loss: 0.9095  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 160/500  loss: 0.9093  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 161/500  loss: 0.9098  time 0.18s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 162/500  loss: 0.9101  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 163/500  loss: 0.9097  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 164/500  loss: 0.9096  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 165/500  loss: 0.9093  time 0.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 166/500  loss: 0.9086  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 167/500  loss: 0.9086  time 0.24s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 168/500  loss: 0.9076  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 169/500  loss: 0.9075  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 170/500  loss: 0.9066  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 171/500  loss: 0.9063  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 172/500  loss: 0.9068  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 173/500  loss: 0.9064  time 0.16s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 174/500  loss: 0.9070  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 175/500  loss: 0.9072  time 0.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 176/500  loss: 0.9072  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 177/500  loss: 0.9070  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 178/500  loss: 0.9074  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 179/500  loss: 0.9078  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 180/500  loss: 0.9079  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 181/500  loss: 0.9075  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 182/500  loss: 0.9077  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 183/500  loss: 0.9076  time 0.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 184/500  loss: 0.9079  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 185/500  loss: 0.9083  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 186/500  loss: 0.9082  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 187/500  loss: 0.9077  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 188/500  loss: 0.9079  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 189/500  loss: 0.9082  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 190/500  loss: 0.9075  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 191/500  loss: 0.9075  time 0.30s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 192/500  loss: 0.9072  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 193/500  loss: 0.9072  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 194/500  loss: 0.9075  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 195/500  loss: 0.9078  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 196/500  loss: 0.9078  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 197/500  loss: 0.9078  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 198/500  loss: 0.9078  time 0.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 199/500  loss: 0.9075  time 0.26s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 200/500  loss: 0.9073  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 201/500  loss: 0.9076  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 202/500  loss: 0.9074  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 203/500  loss: 0.9070  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 204/500  loss: 0.9067  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 205/500  loss: 0.9066  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 206/500  loss: 0.9070  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 207/500  loss: 0.9074  time 0.25s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 208/500  loss: 0.9072  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 209/500  loss: 0.9071  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 210/500  loss: 0.9074  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 211/500  loss: 0.9071  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 212/500  loss: 0.9072  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 213/500  loss: 0.9071  time 0.16s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 214/500  loss: 0.9068  time 0.28s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 215/500  loss: 0.9061  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 216/500  loss: 0.9062  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 217/500  loss: 0.9062  time 0.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 218/500  loss: 0.9063  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 219/500  loss: 0.9065  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 220/500  loss: 0.9065  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 221/500  loss: 0.9065  time 0.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 222/500  loss: 0.9069  time 0.39s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 223/500  loss: 0.9069  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 224/500  loss: 0.9072  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 225/500  loss: 0.9072  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 226/500  loss: 0.9076  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 227/500  loss: 0.9070  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 228/500  loss: 0.9074  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 229/500  loss: 0.9071  time 0.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 230/500  loss: 0.9075  time 0.26s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 231/500  loss: 0.9076  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 232/500  loss: 0.9078  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 233/500  loss: 0.9074  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 234/500  loss: 0.9077  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 235/500  loss: 0.9078  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 236/500  loss: 0.9073  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 237/500  loss: 0.9076  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 238/500  loss: 0.9079  time 0.16s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 239/500  loss: 0.9076  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 240/500  loss: 0.9073  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 241/500  loss: 0.9074  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 242/500  loss: 0.9077  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 243/500  loss: 0.9079  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 244/500  loss: 0.9078  time 0.42s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 245/500  loss: 0.9079  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 246/500  loss: 0.9080  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 247/500  loss: 0.9075  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 248/500  loss: 0.9075  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 249/500  loss: 0.9074  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 250/500  loss: 0.9075  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 251/500  loss: 0.9075  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 252/500  loss: 0.9079  time 0.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 253/500  loss: 0.9077  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 254/500  loss: 0.9077  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 255/500  loss: 0.9080  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 256/500  loss: 0.9082  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 257/500  loss: 0.9081  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 258/500  loss: 0.9080  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 259/500  loss: 0.9078  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 260/500  loss: 0.9080  time 0.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 261/500  loss: 0.9082  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 262/500  loss: 0.9081  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 263/500  loss: 0.9084  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 264/500  loss: 0.9086  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 265/500  loss: 0.9089  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 266/500  loss: 0.9088  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 267/500  loss: 0.9089  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 268/500  loss: 0.9090  time 0.37s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 269/500  loss: 0.9091  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 270/500  loss: 0.9094  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 271/500  loss: 0.9094  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 272/500  loss: 0.9095  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 273/500  loss: 0.9093  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 274/500  loss: 0.9096  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 275/500  loss: 0.9095  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 276/500  loss: 0.9098  time 0.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 277/500  loss: 0.9097  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 278/500  loss: 0.9095  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 279/500  loss: 0.9094  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 280/500  loss: 0.9094  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 281/500  loss: 0.9097  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 282/500  loss: 0.9096  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 283/500  loss: 0.9097  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 284/500  loss: 0.9097  time 0.36s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 285/500  loss: 0.9101  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 286/500  loss: 0.9100  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 287/500  loss: 0.9099  time 0.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 288/500  loss: 0.9100  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 289/500  loss: 0.9100  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 290/500  loss: 0.9095  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 291/500  loss: 0.9098  time 0.17s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 292/500  loss: 0.9098  time 0.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 293/500  loss: 0.9095  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 294/500  loss: 0.9095  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 295/500  loss: 0.9095  time 0.10s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 296/500  loss: 0.9092  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 297/500  loss: 0.9089  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 298/500  loss: 0.9089  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 299/500  loss: 0.9091  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 300/500  loss: 0.9093  time 0.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 301/500  loss: 0.9094  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 302/500  loss: 0.9090  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 303/500  loss: 0.9093  time 0.34s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 304/500  loss: 0.9090  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 305/500  loss: 0.9092  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 306/500  loss: 0.9092  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 307/500  loss: 0.9092  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 308/500  loss: 0.9090  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 309/500  loss: 0.9090  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 310/500  loss: 0.9090  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 311/500  loss: 0.9088  time 0.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 312/500  loss: 0.9087  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 313/500  loss: 0.9087  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 314/500  loss: 0.9085  time 0.07s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 315/500  loss: 0.9081  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 316/500  loss: 0.9081  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 317/500  loss: 0.9081  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 318/500  loss: 0.9083  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 319/500  loss: 0.9083  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 320/500  loss: 0.9085  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 321/500  loss: 0.9084  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 322/500  loss: 0.9085  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 323/500  loss: 0.9087  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 324/500  loss: 0.9089  time 0.27s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 325/500  loss: 0.9089  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 326/500  loss: 0.9088  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 327/500  loss: 0.9091  time 0.36s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 328/500  loss: 0.9094  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 329/500  loss: 0.9092  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 330/500  loss: 0.9095  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 331/500  loss: 0.9097  time 0.05s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 332/500  loss: 0.9096  time 0.06s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 333/500  loss: 0.9095  time 0.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:73: UserWarning: Epoch 0/1000 334/500  loss: 0.9095  time 0.04s
+  warnings.warn(
