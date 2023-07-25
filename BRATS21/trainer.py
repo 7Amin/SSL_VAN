@@ -53,6 +53,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         #     warnings.warn(
         #         "Epoch {}/{} {}/{} NAN LOSS time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
         #                                                                time.time() - start_time))
+        warnings.warn(f"loss is f{loss}")
         if args.amp:
             scaler.scale(loss).backward()
             # torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
