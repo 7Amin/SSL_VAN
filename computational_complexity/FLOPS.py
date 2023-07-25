@@ -10,10 +10,10 @@ class Config:
         self.roi_x = 96
         self.roi_y = 96
         self.roi_z = 96
-        # self.embed_dims = [96, 192, 384, 768]
-        # self.depths = [3, 3, 24, 3]
-        self.embed_dims = [64, 128, 256, 512]
-        self.depths = [3, 4, 6, 3]
+        self.embed_dims = [96, 192, 384, 768]
+        self.depths = [3, 3, 24, 3]
+        # self.embed_dims = [64, 128, 256, 512]
+        # self.depths = [3, 4, 6, 3]
         self.mlp_ratios = [8, 8, 4, 4]
         self.num_stages = 4
         self.dropout_path_rate = 0.0
