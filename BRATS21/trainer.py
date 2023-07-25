@@ -106,9 +106,9 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                     [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
                 )
                 for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(al, n=nl)
+                    run_acc.update(nl, n=nl)
             else:
-                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
+                run_acc.update(not_nans.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
                 # avg_acc_1 = np.mean(run_acc)
