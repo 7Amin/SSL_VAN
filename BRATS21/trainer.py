@@ -100,15 +100,17 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
             acc_func.reset()
             acc_func(y_pred=val_output_convert, y=val_labels_list)
             acc, not_nans = acc_func.aggregate()
+            warnings.warn(f"acc is f{acc}")
+            warnings.warn(f"not_nans is f{not_nans}")
             acc = acc.cuda(args.rank)
             if args.distributed:
                 acc_list, not_nans_list = distributed_all_gather(
                     [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
                 )
                 for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(nl, n=nl)
+                    run_acc.update(al, n=nl)
             else:
-                run_acc.update(not_nans.cpu().numpy(), n=not_nans.cpu().numpy())
+                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             if args.rank == 0:
                 # avg_acc_1 = np.mean(run_acc)
