@@ -63,7 +63,7 @@ then
 elif [ $job -eq 1000 ]
 then
   PYTHONPATH=. python3 BRATS21/main.py --squared_dice  --num_samples 1 --workers 8 --base_data ../images/BraTS21 \
-  --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint  --max_epochs 1000 \
+  --json_list input_list/dataset_BRATS21_List.json --logdir ./runs/BraTS21_new/test_log --save_checkpoint  --max_epochs 500 \
   --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v SegResNetVAE --checkpoint
 
