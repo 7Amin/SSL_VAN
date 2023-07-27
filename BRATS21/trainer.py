@@ -87,12 +87,12 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                 else:
                     logits = model(data)
             val_labels_list = decollate_batch(target)
-            logits = torch.nan_to_num(logits, nan=-0.01)
+            logits = torch.nan_to_num(logits, nan=-0.1)
             val_outputs_list = decollate_batch(logits)
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
-            if args.rank == 0:
-                warnings.warn(f"value of output is {val_output_convert[0]}")
-                warnings.warn(f"shape value of output is {val_output_convert[0].shape}")
+            # if args.rank == 0:
+            #     warnings.warn(f"value of output is {val_output_convert[0]}")
+            #     warnings.warn(f"shape value of output is {val_output_convert[0].shape}")
 
             acc_func.reset()
             acc_func(y_pred=val_output_convert, y=val_labels_list)
