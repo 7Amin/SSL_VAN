@@ -53,7 +53,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         #     warnings.warn(
         #         "Epoch {}/{} {}/{} NAN LOSS time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
         #                                                                time.time() - start_time))
-        warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+        if args.rank == 0:
+            warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
         if torch.isnan(loss):
             continue
         if args.amp:
@@ -100,9 +101,9 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
             val_labels_list = decollate_batch(target.double())
             val_outputs_list = decollate_batch(logits.double())
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
-            if args.rank == 0:
-                warnings.warn(f"value of output is {val_output_convert[0]}")
-                warnings.warn(f"max value of output is {max(val_output_convert)}")
+            # if args.rank == 0:
+            #     warnings.warn(f"value of output is {val_output_convert[0]}")
+            #     warnings.warn(f"max value of output is {max(val_output_convert)}")
 
             acc_func.reset()
             acc_func(y_pred=val_output_convert, y=val_labels_list)
