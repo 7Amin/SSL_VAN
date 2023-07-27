@@ -1,0 +1,594 @@
+/var/spool/slurmd/job71200/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:114: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/dictionary.py:196: UserWarning: `threshold_values=True/False` is deprecated, please use `threshold=value` instead.
+  warnings.warn("`threshold_values=True/False` is deprecated, please use `threshold=value` instead.")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:134: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:136: UserWarning: Batch size is: 1 epochs 500
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:134: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:165: UserWarning: Total parameters count 6982700
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is False
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:183: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:165: UserWarning: Total parameters count 6982700
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BraTS21_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BraTS21_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_BasicUNetPlusPlus_fold-0__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/main.py:183: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:166: UserWarning: Writing Tensorboard logs to ./runs/BraTS21_new/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:174: UserWarning: 0  Thu Jul 27 00:55:44 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:174: UserWarning: 1  Thu Jul 27 00:55:44 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+BasicUNetPlusPlus features: (32, 32, 64, 128, 256, 32).
+BasicUNetPlusPlus features: (32, 32, 64, 128, 256, 32).
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9838173925257495 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999461991 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 0/500  loss: 0.9919  time 8.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8456240160282441 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.882514006476707 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 1/500  loss: 0.9280  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999869101911709 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9285884771436796 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 2/500  loss: 0.9401  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999461517 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8495338293761929 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 3/500  loss: 0.9363  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8919830114328029 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8145070280920779 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 4/500  loss: 0.9197  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9221887091573524 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9768415864788166 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 5/500  loss: 0.9246  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8562619417581554 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999459975 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 6/500  loss: 0.9251  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9585413669717743 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999447255 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 7/500  loss: 0.9319  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8002842423607477 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.99999999994832 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 8/500  loss: 0.9284  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999493734 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8148408248544263 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 9/500  loss: 0.9263  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9339927332066902 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9385797403696255 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 10/500  loss: 0.9272  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9119357694045158 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999999999947245 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 11/500  loss: 0.9296  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8202963840419919 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8260559085312753 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 12/500  loss: 0.9214  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9494338823739292 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.831635217058655 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 13/500  loss: 0.9192  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9597637780832569 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9996179776470325 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 14/500  loss: 0.9232  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8322973498117578 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.971546563755072 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 15/500  loss: 0.9219  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9887987060548928 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9993276910318146 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 16/500  loss: 0.9261  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8868201837476688 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9758775891611152 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 17/500  loss: 0.9264  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9264746080993463 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9020444238745455 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 18/500  loss: 0.9258  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8971895159909107 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8822789762057677 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 19/500  loss: 0.9240  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9995762491545357 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8565848200506734 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 20/500  loss: 0.9242  time 0.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8806796568797474 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999999999947335 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 21/500  loss: 0.9249  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9520679495285558 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9507485829195164 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 22/500  loss: 0.9261  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7875858482685163 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9170108421238432 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 23/500  loss: 0.9230  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9378106631779626 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8592321196636652 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 24/500  loss: 0.9220  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999472107 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999444571 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 25/500  loss: 0.9250  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999455831 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8033214117265302 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 26/500  loss: 0.9241  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9640963796821027 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8071196608808645 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 27/500  loss: 0.9228  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999471464 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9821180883009379 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 28/500  loss: 0.9251  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9344858252359539 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9988835333895265 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 29/500  loss: 0.9265  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999488455 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9301196752910015 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 30/500  loss: 0.9278  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7966677929150087 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9712592530022328 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 31/500  loss: 0.9264  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9985122563300441 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999999999946637 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 32/500  loss: 0.9286  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9282645697647933 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9994766161804939 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 33/500  loss: 0.9296  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7835742127419978 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8454909196393157 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 34/500  loss: 0.9263  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999332234549928 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9405683861582755 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 35/500  loss: 0.9276  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9857787392604243 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.925009753951834 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 36/500  loss: 0.9283  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9081798310668316 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7233869400061873 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 37/500  loss: 0.9254  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8687692147900705 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8030920105142442 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 38/500  loss: 0.9231  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8192054977657162 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.923050537939399 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 39/500  loss: 0.9218  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7418321826220282 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7051987203070135 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 40/500  loss: 0.9169  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7719239014297213 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999471127 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 41/500  loss: 0.9162  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9565425174975228 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8247330723298149 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 42/500  loss: 0.9156  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9756802530563251 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999434066 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 43/500  loss: 0.9172  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9665977964771271 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999469914 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 44/500  loss: 0.9187  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.890195742594116 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.688875052091225 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 45/500  loss: 0.9159  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.708318505547503 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9915272534590278 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 46/500  loss: 0.9145  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999472182 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7345202369334951 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 47/500  loss: 0.9135  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8219179653493814 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999465429 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 48/500  loss: 0.9135  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9912140183044414 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9865619856791256 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 49/500  loss: 0.9150  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9980562921339585 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999502027 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 50/500  loss: 0.9166  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.853839855779934 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9584392251939718 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 51/500  loss: 0.9164  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999999999945991 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.820451435691091 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 52/500  loss: 0.9163  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9467477633133116 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8260637431579911 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 53/500  loss: 0.9157  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7541281403271479 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999466969 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 54/500  loss: 0.9150  time 0.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8506426721108686 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9991997729556106 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 55/500  loss: 0.9152  time 0.14s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9091682922536641 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999807721098208 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 56/500  loss: 0.9159  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8047933622532082 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9940483735761383 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 57/500  loss: 0.9156  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.835434393328224 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8789911242098294 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 58/500  loss: 0.9146  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7943468155365366 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8305292011992524 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 59/500  loss: 0.9129  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9119986334251982 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9991387321107306 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 60/500  loss: 0.9136  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9818321004224956 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7458312684605503 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 61/500  loss: 0.9128  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999489116 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9994902199899056 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 62/500  loss: 0.9142  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999448922 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7579881636987769 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 63/500  loss: 0.9137  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999999999946884 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8954692788200449 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 64/500  loss: 0.9142  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8395728650474803 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999494996 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 65/500  loss: 0.9143  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999478584 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7507016088839867 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 66/500  loss: 0.9137  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8692808669926009 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8170449525052825 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 67/500  loss: 0.9126  time 0.24s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8720424320295229 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7888373494073868 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 68/500  loss: 0.9115  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8142534767882099 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9084620736920102 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 69/500  loss: 0.9107  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9267563070109086 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.954797955951409 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 70/500  loss: 0.9112  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7628362061413899 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9688959597808304 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 71/500  loss: 0.9105  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999467022 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999453699 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 72/500  loss: 0.9118  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9999999999450764 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8919983760299657 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 73/500  loss: 0.9122  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.870476485930901 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9430388821469818 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 74/500  loss: 0.9121  time 0.12s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9933508786158082 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9890231912783559 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 75/500  loss: 0.9132  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9742735765394245 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9326759875969605 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 76/500  loss: 0.9137  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.9471182293355729 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8441392957473092 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 77/500  loss: 0.9135  time 0.11s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7526582000771641 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7829770919737047 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 78/500  loss: 0.9116  time 0.39s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.7559404855463345 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.999103291467725 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 79/500  loss: 0.9112  time 0.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8433745268949107 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:56: UserWarning: loss is 0.8456619885577557 and <class 'torch.Tensor'> and False
+  warnings.warn(f"loss is {loss} and {type(loss)} and {torch.isnan(loss)}")
+/home/karimimonsefi.1/SSL_VAN/BRATS21/trainer.py:76: UserWarning: Epoch 0/500 80/500  loss: 0.9104  time 0.12s
+  warnings.warn(
