@@ -86,8 +86,8 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                     logits = model_inferer(data)
                 else:
                     logits = model(data)
-            val_labels_list = decollate_batch(target.double())
-            val_outputs_list = decollate_batch(logits.double())
+            val_labels_list = decollate_batch(target)
+            val_outputs_list = decollate_batch(logits)
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
             if args.rank == 0:
                 warnings.warn(f"value of output is {val_output_convert[0]}")
