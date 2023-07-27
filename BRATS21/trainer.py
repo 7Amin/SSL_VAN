@@ -87,6 +87,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sig
                 else:
                     logits = model(data)
             val_labels_list = decollate_batch(target)
+            logits = torch.nan_to_num(logits, nan=-0.01)
             val_outputs_list = decollate_batch(logits)
             val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
             if args.rank == 0:
