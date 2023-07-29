@@ -76,8 +76,9 @@ def datafold_read(datalist, basedir, fold=0, key="training"):
     for d in json_data:
         if "fold" in d and d["fold"] == fold:
             val.append(d)
-        else:
-            tr.append(d)
+        # else:
+        #     tr.append(d)
+        tr.append(d)
 
     return tr, val
 
