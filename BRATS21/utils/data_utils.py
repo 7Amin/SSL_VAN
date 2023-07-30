@@ -78,7 +78,7 @@ def datafold_read(datalist, basedir, fold=0, key="training"):
             val.append(d)
         # else:
         #     tr.append(d)
-        tr.append(d)
+            tr.append(d)
 
     return tr, val
 
