@@ -13,12 +13,14 @@ def load_pre_trained(args, model):
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - before")
     for key in list(state_dict.keys()):
         if not ("pre_train_proj" in key):
-            new_state_dict[key] = state_dict.pop(key)
-            if args.freeze == "yes":
-                for name, parameter in model.named_parameters():
-                    if name == key:
-                        parameter.requires_grad = False
-                        break
+            layer = state_dict.pop(key)
+            if layer.shape == new_state_dict[key].shape:
+                new_state_dict[key] = layer
+                if args.freeze == "yes":
+                    for name, parameter in model.named_parameters():
+                        if name == key:
+                            parameter.requires_grad = False
+                            break
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
     load_result = model.load_state_dict(new_state_dict, strict=False)
     warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
