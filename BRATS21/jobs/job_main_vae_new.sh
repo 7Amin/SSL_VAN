@@ -309,7 +309,7 @@ then
   PYTHONPATH=. python3 BRATS21/main.py --squared_dice --workers 8 --optim_lr 0.0001 --base_data ../images/BraTS21 \
   --json_list input_list/dataset_BRATS21_List.json  --logdir ./runs/BraTS21_new/test_log --save_checkpoint --max_epochs 1000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 15 --model_inferer inferer \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 2 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --checkpoint --loss DiceCELoss
 
 elif [ $job -eq 4129 ]
