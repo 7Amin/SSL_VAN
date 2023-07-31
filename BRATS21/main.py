@@ -17,7 +17,7 @@ from BRATS21.trainer import run_training
 from BRATS21.tester import run_testing
 
 from monai.inferers import sliding_window_inference
-from monai.losses import DiceLoss
+from monai.losses import DiceLoss, DiceCELoss
 from monai.metrics import DiceMetric
 from monai.transforms import Activations, AsDiscrete
 from monai.utils.enums import MetricReduction
@@ -95,6 +95,7 @@ parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'v
 parser.add_argument("--freeze", default="no", type=str, choices=['yes', 'no'], help="freeze pretrain layers in training")
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
+parser.add_argument("--loss", default='DiceLoss', type=str, choices=['DiceCELoss', 'DiceLoss'])
 parser.add_argument("--model_v", default='VANV5GL', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV4GL',
                                                                        'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL",
                                                                        'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
@@ -171,6 +172,8 @@ def main_worker(gpu, args):
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
                args.upsample + "_" + args.model_inferer + "_" + args.valid_loader + "_" + args.model_v + \
                "_fold-" + str(args.fold)
+    if args.loss == "DiceCELoss":
+        base_url = base_url + "_DiceCELoss"
 
     fix_outputs_url(args, base_url)
     best_acc = 0.0
