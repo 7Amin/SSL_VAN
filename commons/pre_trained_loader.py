@@ -11,25 +11,16 @@ def load_pre_trained(args, model):
     new_state_dict = OrderedDict()
     state_dict = model_dict["state_dict"]
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - before")
-    count = 0
     for key in list(state_dict.keys()):
-        if not ("pre_train_proj" in key):
-            model_layer = None
-            layer = state_dict.pop(key)
-            for name, parameter in model.named_parameters():
-                if name == key:
-                    model_layer = parameter
-                    count += 1
-                    break
-            if model_layer is not None and layer.shape == model_layer.shape:
-                new_state_dict[key] = layer
-                if args.freeze == "yes":
-                    for name, parameter in model.named_parameters():
-                        if name == key:
-                            parameter.requires_grad = False
-                            break
+        layer = state_dict.pop(key)
+        if not ("pre_train_proj" in key) and model.state_dict()[key].shape == layer.shape:
+            new_state_dict[key] = layer
+            if args.freeze == "yes":
+                for name, parameter in model.named_parameters():
+                    if name == key:
+                        parameter.requires_grad = False
+                        break
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
-    warnings.warn(f"count is {count} - after")
     load_result = model.load_state_dict(new_state_dict, strict=False)
     warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
     if isinstance(load_result, _IncompatibleKeys):
