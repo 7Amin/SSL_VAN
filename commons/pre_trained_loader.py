@@ -14,9 +14,9 @@ def load_pre_trained(args, model):
     for key in list(state_dict.keys()):
         if not ("pre_train_proj" in key):
             layer = state_dict.pop(key)
-            # warnings.warn(f"key is {key} and layer is: {layer.shape}")
             model_layer = getattr(model, key, None)
             if model_layer is not None and layer.shape == model_layer.shape:
+                warnings.warn(f"key is {key} and layer is: {layer.shape}")
                 new_state_dict[key] = layer
                 if args.freeze == "yes":
                     for name, parameter in model.named_parameters():
@@ -31,7 +31,7 @@ def load_pre_trained(args, model):
     else:
         matched_keys = len(load_result)
 
-    warnings.warn(f"Number of matched keys loaded: {matched_keys}")
+    warnings.warn(f"Number of missing keys keys loaded: {matched_keys}")
 
     args.model_v = args.model_v + "_pre"
     return model
