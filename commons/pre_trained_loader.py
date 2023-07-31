@@ -16,7 +16,7 @@ def load_pre_trained(args, model):
             layer = state_dict.pop(key)
             # warnings.warn(f"key is {key} and layer is: {layer.shape}")
             model_layer = getattr(model, key, None)
-            if layer.shape == model_layer.shape:
+            if model_layer is not None and layer.shape == model_layer.shape:
                 new_state_dict[key] = layer
                 if args.freeze == "yes":
                     for name, parameter in model.named_parameters():
