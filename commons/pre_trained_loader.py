@@ -16,6 +16,7 @@ def load_pre_trained(args, model):
             layer = state_dict.pop(key)
             model_layer = None
             for name, module in model.named_modules():
+                warnings.warn(f"key is {key} and name is: {name}")
                 if name == key:
                     model_layer = module
                     break
