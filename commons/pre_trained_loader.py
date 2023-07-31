@@ -29,7 +29,7 @@ def load_pre_trained(args, model):
                             parameter.requires_grad = False
                             break
     warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
-    warnings.warn(f"count is {len(count)} - after")
+    warnings.warn(f"count is {count} - after")
     load_result = model.load_state_dict(new_state_dict, strict=False)
     warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
     if isinstance(load_result, _IncompatibleKeys):
