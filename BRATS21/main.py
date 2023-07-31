@@ -144,12 +144,16 @@ def main_worker(gpu, args):
         except ValueError:
             raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
 
+    if args.loss == "DiceLoss":
+        loss_f = DiceLoss
+    else:
+        loss_f = DiceCELoss
     if args.squared_dice:
-        dice_loss = DiceLoss(
+        dice_loss = loss_f(
             to_onehot_y=False, sigmoid=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
         )
     else:
-        dice_loss = DiceLoss(to_onehot_y=False, sigmoid=True)
+        dice_loss = loss_f(to_onehot_y=False, sigmoid=True)
     post_sigmoid = Activations(sigmoid=True)
     post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN_BATCH, get_not_nans=True)
