@@ -13456,3 +13456,84 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(
 /home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 41/56  loss: 0.9323  time 0.20s
   warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 42/56  loss: 0.9323  time 2.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 43/56  loss: 0.9326  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 44/56  loss: 0.9324  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 45/56  loss: 0.9323  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 46/56  loss: 0.9320  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 47/56  loss: 0.9320  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 48/56  loss: 0.9318  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 49/56  loss: 0.9316  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 50/56  loss: 0.9314  time 3.37s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 51/56  loss: 0.9314  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 52/56  loss: 0.9311  time 2.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 53/56  loss: 0.9311  time 0.21s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 54/56  loss: 0.9307  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 268/1000 55/56  loss: 0.9304  time 0.20s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  268/999  loss: 0.9304  time 71.38s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 10:19:48 2023  Epoch: 269
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 10:19:48 2023  Epoch: 269
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 269, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 136, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/threading.py", line 316, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 3372279) is killed by signal: Killed. 
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 247, in main_worker
+    accuracy = run_training(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 149, in run_training
+    train_loss = train_epoch(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 23, in train_epoch
+    for idx, batch_data in enumerate(loader):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1272, in _get_data
+    success, data = self._try_get_data()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 3372279) exited unexpectedly
+
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=72097.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
