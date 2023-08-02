@@ -1,0 +1,992 @@
+/var/spool/slurmd/job72106/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:134: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:154: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:156: UserWarning: Batch size is: 1 epochs 1000 and task is Task09_Spleen
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs} and task is {args.task}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:154: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:198: UserWarning: Total parameters count 84644434
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:201: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/MSD_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/MSD_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is False
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:215: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:198: UserWarning: Total parameters count 84644434
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:201: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/MSD_new/test_log/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/MSD_new/test_log/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:215: UserWarning: => loaded checkpoint 'True' (epoch 0) (bestacc 0.0)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:139: UserWarning: Writing Tensorboard logs to ./runs/MSD_new/test_log
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:48:15 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:48:15 2023  Epoch: 0
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:29: UserWarning: input size torch.Size([6, 1, 96, 96, 96])
+  warnings.warn("input size {}".format(data.shape))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:29: UserWarning: input size torch.Size([6, 1, 96, 96, 96])
+  warnings.warn("input size {}".format(data.shape))
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 0/16  loss: 3.7672  time 56.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 1/16  loss: 3.7679  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 2/16  loss: 3.7682  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 3/16  loss: 3.7680  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 4/16  loss: 3.7674  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 5/16  loss: 3.7662  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 6/16  loss: 3.7668  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 7/16  loss: 3.7664  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 8/16  loss: 3.7666  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 9/16  loss: 3.7665  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 10/16  loss: 3.7666  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 11/16  loss: 3.7663  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 12/16  loss: 3.7664  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 13/16  loss: 3.7667  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 14/16  loss: 3.7671  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 0/1000 15/16  loss: 3.7674  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  0/999  loss: 3.7674  time 70.74s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:49:26 2023  Epoch: 1
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:49:26 2023  Epoch: 1
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 0/16  loss: 3.7710  time 6.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 1/16  loss: 3.7695  time 1.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 2/16  loss: 3.7682  time 4.13s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 3/16  loss: 3.7670  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 4/16  loss: 3.7670  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 5/16  loss: 3.7662  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 6/16  loss: 3.7649  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 7/16  loss: 3.7641  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 8/16  loss: 3.7638  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 9/16  loss: 3.7632  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 10/16  loss: 3.7624  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 11/16  loss: 3.7618  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 12/16  loss: 3.7615  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 13/16  loss: 3.7613  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 14/16  loss: 3.7616  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 1/1000 15/16  loss: 3.7612  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  1/999  loss: 3.7612  time 25.07s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:49:51 2023  Epoch: 2
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:49:51 2023  Epoch: 2
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 0/16  loss: 3.7565  time 8.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 1/16  loss: 3.7547  time 2.41s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 2/16  loss: 3.7538  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 3/16  loss: 3.7526  time 0.99s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 4/16  loss: 3.7521  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 5/16  loss: 3.7522  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 6/16  loss: 3.7513  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 7/16  loss: 3.7510  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 8/16  loss: 3.7507  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 9/16  loss: 3.7503  time 3.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 10/16  loss: 3.7499  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 11/16  loss: 3.7495  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 12/16  loss: 3.7487  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 13/16  loss: 3.7486  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 14/16  loss: 3.7482  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 2/1000 15/16  loss: 3.7473  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  2/999  loss: 3.7473  time 27.19s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:50:18 2023  Epoch: 3
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:50:18 2023  Epoch: 3
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 0/16  loss: 3.7352  time 9.58s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 1/16  loss: 3.7358  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 2/16  loss: 3.7303  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 3/16  loss: 3.7307  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 4/16  loss: 3.7291  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 5/16  loss: 3.7296  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 6/16  loss: 3.7274  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 7/16  loss: 3.7272  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 8/16  loss: 3.7260  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 9/16  loss: 3.7255  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 10/16  loss: 3.7239  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 11/16  loss: 3.7233  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 12/16  loss: 3.7222  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 13/16  loss: 3.7208  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 14/16  loss: 3.7197  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 3/1000 15/16  loss: 3.7189  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  3/999  loss: 3.7189  time 24.15s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:50:42 2023  Epoch: 4
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:50:42 2023  Epoch: 4
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 0/16  loss: 3.7037  time 8.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 1/16  loss: 3.7010  time 3.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 2/16  loss: 3.6984  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 3/16  loss: 3.6938  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 4/16  loss: 3.6913  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 5/16  loss: 3.6901  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 6/16  loss: 3.6897  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 7/16  loss: 3.6908  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 8/16  loss: 3.6907  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 9/16  loss: 3.6901  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 10/16  loss: 3.6885  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 11/16  loss: 3.6863  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 12/16  loss: 3.6848  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 13/16  loss: 3.6827  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 14/16  loss: 3.6816  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 4/1000 15/16  loss: 3.6805  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  4/999  loss: 3.6805  time 25.94s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 0/5  acc [ 0.118]  time 70.33s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 0/5  acc 0.11811119318008423  time 70.33s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 1/5  acc [ 0.126]  time 33.69s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 1/5  acc 0.12579503655433655  time 33.69s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 2/5  acc [ 0.129]  time 36.61s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 2/5  acc 0.12942950427532196  time 36.61s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 3/5  acc [ 0.133]  time 18.77s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 3/5  acc 0.13260021805763245  time 18.77s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 4/5  acc [ 0.133]  time 36.29s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 4/5  acc 0.1330513209104538  time 36.29s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:177: UserWarning: Final validation  4/999  acc: 0.1331  time 195.81s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:183: UserWarning: new best (0.000000 --> 0.133051). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:117: UserWarning: Saving checkpoint ./runs/MSD_new/test_log/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task09_Spleen__final.pt
+  warnings.warn(f"Saving checkpoint {filename}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:195: UserWarning: Copying to best model new best model!!!!
+  warnings.warn("Copying to best model new best model!!!!")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:54:36 2023  Epoch: 5
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:54:36 2023  Epoch: 5
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 0/16  loss: 3.6363  time 11.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 1/16  loss: 3.6478  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 2/16  loss: 3.6562  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 3/16  loss: 3.6563  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 4/16  loss: 3.6514  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 5/16  loss: 3.6465  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 6/16  loss: 3.6441  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 7/16  loss: 3.6458  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 8/16  loss: 3.6416  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 9/16  loss: 3.6373  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 10/16  loss: 3.6360  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 11/16  loss: 3.6342  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 12/16  loss: 3.6327  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 13/16  loss: 3.6339  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 14/16  loss: 3.6322  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 5/1000 15/16  loss: 3.6305  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  5/999  loss: 3.6305  time 26.38s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:55:02 2023  Epoch: 6
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:55:02 2023  Epoch: 6
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 0/16  loss: 3.5631  time 8.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 1/16  loss: 3.5763  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 2/16  loss: 3.5757  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 3/16  loss: 3.5818  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 4/16  loss: 3.5842  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 5/16  loss: 3.5813  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 6/16  loss: 3.5816  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 7/16  loss: 3.5815  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 8/16  loss: 3.5770  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 9/16  loss: 3.5717  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 10/16  loss: 3.5691  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 11/16  loss: 3.5653  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 12/16  loss: 3.5623  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 13/16  loss: 3.5593  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 14/16  loss: 3.5587  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 6/1000 15/16  loss: 3.5606  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  6/999  loss: 3.5606  time 23.42s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:55:26 2023  Epoch: 7
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:55:26 2023  Epoch: 7
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 0/16  loss: 3.5065  time 9.45s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 1/16  loss: 3.4990  time 2.30s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 2/16  loss: 3.4871  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 3/16  loss: 3.5010  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 4/16  loss: 3.5050  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 5/16  loss: 3.5134  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 6/16  loss: 3.5102  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 7/16  loss: 3.5164  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 8/16  loss: 3.5138  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 9/16  loss: 3.5111  time 1.32s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 10/16  loss: 3.5107  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 11/16  loss: 3.5097  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 12/16  loss: 3.5061  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 13/16  loss: 3.5039  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 14/16  loss: 3.5006  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 7/1000 15/16  loss: 3.4921  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  7/999  loss: 3.4921  time 25.66s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:55:51 2023  Epoch: 8
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:55:51 2023  Epoch: 8
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 0/16  loss: 3.4890  time 11.46s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 1/16  loss: 3.4795  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 2/16  loss: 3.4663  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 3/16  loss: 3.4606  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 4/16  loss: 3.4643  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 5/16  loss: 3.4651  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 6/16  loss: 3.4489  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 7/16  loss: 3.4422  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 8/16  loss: 3.4374  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 9/16  loss: 3.4350  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 10/16  loss: 3.4385  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 11/16  loss: 3.4368  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 12/16  loss: 3.4342  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 13/16  loss: 3.4269  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 14/16  loss: 3.4259  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 8/1000 15/16  loss: 3.4250  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  8/999  loss: 3.4250  time 25.97s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 13:56:17 2023  Epoch: 9
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 13:56:17 2023  Epoch: 9
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 0/16  loss: 3.3682  time 10.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 1/16  loss: 3.3722  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 2/16  loss: 3.3913  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 3/16  loss: 3.3850  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 4/16  loss: 3.3780  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 5/16  loss: 3.3808  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 6/16  loss: 3.3818  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 7/16  loss: 3.3886  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 8/16  loss: 3.3915  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 9/16  loss: 3.3856  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 10/16  loss: 3.3757  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 11/16  loss: 3.3790  time 1.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 12/16  loss: 3.3750  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 13/16  loss: 3.3751  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 14/16  loss: 3.3699  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 9/1000 15/16  loss: 3.3670  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  9/999  loss: 3.3670  time 25.96s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 9/1000 0/5  acc [ 0.364]  time 61.31s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 9/1000 0/5  acc 0.3642585873603821  time 61.31s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 9/1000 1/5  acc [ 0.373]  time 33.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 9/1000 1/5  acc 0.3731149435043335  time 33.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 9/1000 2/5  acc [ 0.384]  time 36.64s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 9/1000 2/5  acc 0.38401439785957336  time 36.64s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 9/1000 3/5  acc [ 0.393]  time 18.74s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 9/1000 3/5  acc 0.39307549595832825  time 18.74s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 9/1000 4/5  acc [ 0.392]  time 36.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 9/1000 4/5  acc 0.3923354744911194  time 36.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:177: UserWarning: Final validation  9/999  acc: 0.3923  time 186.37s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:183: UserWarning: new best (0.133051 --> 0.392335). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:00:02 2023  Epoch: 10
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:00:02 2023  Epoch: 10
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 0/16  loss: 3.4505  time 9.51s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 1/16  loss: 3.3822  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 2/16  loss: 3.3248  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 3/16  loss: 3.3189  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 4/16  loss: 3.3350  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 5/16  loss: 3.3225  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 6/16  loss: 3.3138  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 7/16  loss: 3.3108  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 8/16  loss: 3.3084  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 9/16  loss: 3.3128  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 10/16  loss: 3.3095  time 1.15s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 11/16  loss: 3.3128  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 12/16  loss: 3.3179  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 13/16  loss: 3.3115  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 14/16  loss: 3.3156  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 10/1000 15/16  loss: 3.3128  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  10/999  loss: 3.3128  time 24.12s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:00:27 2023  Epoch: 11
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:00:27 2023  Epoch: 11
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 0/16  loss: 3.1811  time 5.47s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 1/16  loss: 3.2218  time 5.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 2/16  loss: 3.2659  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 3/16  loss: 3.2794  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 4/16  loss: 3.2836  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 5/16  loss: 3.2939  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 6/16  loss: 3.2802  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 7/16  loss: 3.2906  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 8/16  loss: 3.2899  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 9/16  loss: 3.2861  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 10/16  loss: 3.2873  time 1.43s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 11/16  loss: 3.2887  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 12/16  loss: 3.2877  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 13/16  loss: 3.2897  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 14/16  loss: 3.2852  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 11/1000 15/16  loss: 3.2812  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  11/999  loss: 3.2812  time 25.33s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:00:52 2023  Epoch: 12
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:00:52 2023  Epoch: 12
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 0/16  loss: 3.2403  time 6.68s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 1/16  loss: 3.2753  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 2/16  loss: 3.2441  time 1.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 3/16  loss: 3.2379  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 4/16  loss: 3.2098  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 5/16  loss: 3.2116  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 6/16  loss: 3.2319  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 7/16  loss: 3.2343  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 8/16  loss: 3.2398  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 9/16  loss: 3.2240  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 10/16  loss: 3.2160  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 11/16  loss: 3.2087  time 1.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 12/16  loss: 3.2077  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 13/16  loss: 3.2078  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 14/16  loss: 3.2036  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 12/1000 15/16  loss: 3.2069  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  12/999  loss: 3.2069  time 22.46s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:01:14 2023  Epoch: 13
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:01:14 2023  Epoch: 13
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 0/16  loss: 3.2423  time 5.50s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 1/16  loss: 3.2046  time 3.52s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 2/16  loss: 3.1817  time 3.41s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 3/16  loss: 3.1913  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 4/16  loss: 3.1943  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 5/16  loss: 3.1964  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 6/16  loss: 3.1893  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 7/16  loss: 3.1929  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 8/16  loss: 3.1918  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 9/16  loss: 3.1997  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 10/16  loss: 3.1864  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 11/16  loss: 3.1793  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 12/16  loss: 3.1785  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 13/16  loss: 3.1707  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 14/16  loss: 3.1665  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 13/1000 15/16  loss: 3.1604  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  13/999  loss: 3.1604  time 24.95s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:01:39 2023  Epoch: 14
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:01:39 2023  Epoch: 14
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 0/16  loss: 3.0454  time 11.33s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 1/16  loss: 3.0937  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 2/16  loss: 3.1622  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 3/16  loss: 3.1529  time 1.03s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 4/16  loss: 3.1600  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 5/16  loss: 3.1480  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 6/16  loss: 3.1463  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 7/16  loss: 3.1496  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 8/16  loss: 3.1363  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 9/16  loss: 3.1356  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 10/16  loss: 3.1381  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 11/16  loss: 3.1417  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 12/16  loss: 3.1395  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 13/16  loss: 3.1371  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 14/16  loss: 3.1324  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 14/1000 15/16  loss: 3.1332  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  14/999  loss: 3.1332  time 25.85s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 14/1000 0/5  acc [ 0.422]  time 61.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 14/1000 0/5  acc 0.4219052791595459  time 61.28s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 14/1000 1/5  acc [ 0.431]  time 33.22s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 14/1000 1/5  acc 0.4310898780822754  time 33.22s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 14/1000 2/5  acc [ 0.439]  time 36.58s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 14/1000 2/5  acc 0.43892303109169006  time 36.58s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 14/1000 3/5  acc [ 0.448]  time 18.70s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 14/1000 3/5  acc 0.44755494594573975  time 18.70s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 14/1000 4/5  acc [ 0.447]  time 36.27s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 14/1000 4/5  acc 0.44721370935440063  time 36.27s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:177: UserWarning: Final validation  14/999  acc: 0.4472  time 186.18s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:183: UserWarning: new best (0.392335 --> 0.447214). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:05:28 2023  Epoch: 15
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:05:28 2023  Epoch: 15
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 0/16  loss: 3.0258  time 8.22s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 1/16  loss: 3.1017  time 3.37s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 2/16  loss: 3.0584  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 3/16  loss: 3.0888  time 0.98s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 4/16  loss: 3.0971  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 5/16  loss: 3.1010  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 6/16  loss: 3.0989  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 7/16  loss: 3.1014  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 8/16  loss: 3.0806  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 9/16  loss: 3.0832  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 10/16  loss: 3.0925  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 11/16  loss: 3.0884  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 12/16  loss: 3.0870  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 13/16  loss: 3.0915  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 14/16  loss: 3.0985  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 15/1000 15/16  loss: 3.0997  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  15/999  loss: 3.0997  time 25.08s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:05:53 2023  Epoch: 16
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:05:53 2023  Epoch: 16
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 0/16  loss: 3.0860  time 8.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 1/16  loss: 3.0978  time 4.04s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 2/16  loss: 3.0916  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 3/16  loss: 3.0677  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 4/16  loss: 3.0489  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 5/16  loss: 3.0411  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 6/16  loss: 3.0430  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 7/16  loss: 3.0568  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 8/16  loss: 3.0537  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 9/16  loss: 3.0588  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 10/16  loss: 3.0700  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 11/16  loss: 3.0715  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 12/16  loss: 3.0755  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 13/16  loss: 3.0780  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 14/16  loss: 3.0635  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 16/1000 15/16  loss: 3.0633  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  16/999  loss: 3.0633  time 25.89s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:06:19 2023  Epoch: 17
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:06:19 2023  Epoch: 17
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 0/16  loss: 3.0602  time 9.43s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 1/16  loss: 3.0110  time 2.08s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 2/16  loss: 3.0254  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 3/16  loss: 3.0416  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 4/16  loss: 3.0265  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 5/16  loss: 3.0427  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 6/16  loss: 3.0416  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 7/16  loss: 3.0390  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 8/16  loss: 3.0288  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 9/16  loss: 3.0283  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 10/16  loss: 3.0397  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 11/16  loss: 3.0404  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 12/16  loss: 3.0348  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 13/16  loss: 3.0415  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 14/16  loss: 3.0422  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 17/1000 15/16  loss: 3.0472  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  17/999  loss: 3.0472  time 24.99s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:06:44 2023  Epoch: 18
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:06:44 2023  Epoch: 18
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 0/16  loss: 2.9731  time 8.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 1/16  loss: 2.9556  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 2/16  loss: 2.9959  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 3/16  loss: 2.9963  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 4/16  loss: 2.9945  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 5/16  loss: 2.9824  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 6/16  loss: 2.9924  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 7/16  loss: 2.9919  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 8/16  loss: 2.9842  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 9/16  loss: 2.9832  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 10/16  loss: 2.9935  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 11/16  loss: 2.9939  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 12/16  loss: 3.0006  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 13/16  loss: 3.0064  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 14/16  loss: 3.0058  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 18/1000 15/16  loss: 3.0036  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  18/999  loss: 3.0036  time 22.97s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:07:07 2023  Epoch: 19
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:07:07 2023  Epoch: 19
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 0/16  loss: 3.0908  time 9.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 1/16  loss: 3.0310  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 2/16  loss: 3.0217  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 3/16  loss: 3.0028  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 4/16  loss: 2.9844  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 5/16  loss: 2.9842  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 6/16  loss: 2.9803  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 7/16  loss: 2.9835  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 8/16  loss: 2.9773  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 9/16  loss: 2.9805  time 3.25s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 10/16  loss: 2.9874  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 11/16  loss: 2.9836  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 12/16  loss: 2.9801  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 13/16  loss: 2.9826  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 14/16  loss: 2.9881  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 19/1000 15/16  loss: 2.9742  time 0.97s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:153: UserWarning: Final training  19/999  loss: 2.9742  time 26.12s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 19/1000 0/5  acc [ 0.451]  time 61.62s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 19/1000 0/5  acc 0.4508722722530365  time 61.62s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 19/1000 1/5  acc [ 0.459]  time 33.21s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 19/1000 1/5  acc 0.45880943536758423  time 33.21s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 19/1000 2/5  acc [ 0.466]  time 36.61s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 19/1000 2/5  acc 0.4656294584274292  time 36.61s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 19/1000 3/5  acc [ 0.475]  time 18.72s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 19/1000 3/5  acc 0.474590539932251  time 18.72s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 19/1000 4/5  acc [ 0.474]  time 36.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 19/1000 4/5  acc 0.47389423847198486  time 36.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:177: UserWarning: Final validation  19/999  acc: 0.4739  time 186.53s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:183: UserWarning: new best (0.447214 --> 0.473894). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 14:10:52 2023  Epoch: 20
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 14:10:52 2023  Epoch: 20
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 0/16  loss: 2.9142  time 12.63s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 1/16  loss: 2.9565  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 2/16  loss: 2.9576  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 3/16  loss: 2.9484  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 4/16  loss: 2.9377  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 5/16  loss: 2.9365  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 6/16  loss: 2.9345  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 7/16  loss: 2.9186  time 0.95s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 8/16  loss: 2.9044  time 0.96s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:51: UserWarning: Epoch 20/1000 9/16  loss: 2.9011  time 0.96s
+  warnings.warn(
