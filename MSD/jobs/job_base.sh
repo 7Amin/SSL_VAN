@@ -41,7 +41,7 @@ then
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs $epochs \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 5 --model_inferer inferer \
-  --valid_loader valid_loader --model_v SwinUNETR48 --upsample vae --checkpoint --task $task
+  --valid_loader valid_loader --model_v SwinUNETR48 --upsample vae --checkpoint --task $task --num_samples 4
 
 elif [ $job -eq 816 ]
 then

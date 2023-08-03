@@ -66,6 +66,7 @@ parser.add_argument("--noamp", action="store_true", help="do NOT use amp for tra
 parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
 parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
 parser.add_argument("--num_stages", default=4, type=int, help="number of stages in attention")
+parser.add_argument("--num_samples", default=6, type=int, help="number of samples per case")
 parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
 parser.add_argument("--embed_dims", default=[64, 128, 256, 512], nargs='+', type=int, help="VAN3D embed dims")
 parser.add_argument("--depths", default=[3, 4, 6, 3], nargs='+', type=int, help="VAN3D depths")
