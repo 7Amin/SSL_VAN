@@ -236,3 +236,73 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
 /home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 2/7  acc 0.499565452337265  time 19.83s
   warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 3/7  acc [ 0.499]  time 25.86s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 3/7  acc 0.4991999864578247  time 25.86s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 4/7  acc [ 0.499]  time 18.32s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 4/7  acc 0.49913445115089417  time 18.32s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 5/7  acc [ 0.499]  time 10.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 5/7  acc 0.49882736802101135  time 10.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:100: UserWarning: Val 4/1000 6/7  acc [ 0.499]  time 13.77s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:102: UserWarning: Val 4/1000 6/7  acc 0.4989028573036194  time 13.77s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:177: UserWarning: Final validation  4/999  acc: 0.4989  time 147.75s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:183: UserWarning: new best (0.496975 --> 0.498903). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:117: UserWarning: Saving checkpoint ./runs/MSD_new/test_log/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48_Task10_Colon__final.pt
+  warnings.warn(f"Saving checkpoint {filename}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:195: UserWarning: Copying to best model new best model!!!!
+  warnings.warn("Copying to best model new best model!!!!")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Wed Aug  2 19:53:43 2023  Epoch: 5
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Wed Aug  2 19:53:43 2023  Epoch: 5
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/tensorboardX/event_file_writer.py", line 202, in run
+    data = self._queue.get(True, queue_wait_duration)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/queues.py", line 117, in get
+    res = self._recv_bytes()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/connection.py", line 212, in recv_bytes
+    self._check_closed()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/multiprocessing/connection.py", line 136, in _check_closed
+    raise OSError("handle is closed")
+OSError: handle is closed
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 269, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 136, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 247, in main_worker
+    accuracy = run_training(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 149, in run_training
+    train_loss = train_epoch(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 37, in train_epoch
+    scaler.scale(loss).backward()
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.71 GiB (GPU 0; 39.42 GiB total capacity; 15.31 GiB already allocated; 2.25 GiB free; 35.51 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
