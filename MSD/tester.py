@@ -13,60 +13,63 @@ from monai.data import decollate_batch
 from monai.metrics import compute_hausdorff_distance
 
 
-def test_eval(model, loader, acc_func, args, model_inferer=None, post_sigmoid=None, post_pred=None):
+def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None):
     model.eval()
-    start_time = time.time()
     run_acc = AverageMeter()
     hd95 = AverageMeter()
+    start_time = time.time()
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            data, target = batch_data["image"], batch_data["label"]
+            image_name = batch_data['image_meta_dict']['filename_or_obj'][0].split('/')[-1]
+            # print(image_name)
+            warnings.warn("image_name {}".format(image_name))
+            if isinstance(batch_data, list):
+                data, target = batch_data
+            else:
+                data, target = batch_data["image"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
             with autocast(enabled=args.amp):
                 if model_inferer is not None:
                     logits = model_inferer(data)
                 else:
                     logits = model(data)
-
+            if not logits.is_cuda:
+                target = target.cpu()
             test_labels_list = decollate_batch(target)
-            test_labels_convert = [post_pred(test_label_tensor) for test_label_tensor in test_labels_list]
+            test_labels_convert = [post_label(test_label_tensor) for test_label_tensor in test_labels_list]
 
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
             acc_func.reset()
-            acc_func(y_pred=test_output_convert, y=test_labels_convert)
-            acc, not_nans = acc_func.aggregate()
+            acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc = acc.cuda(args.rank)
             if args.distributed:
-                acc_list, not_nans_list = distributed_all_gather(
-                    [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
+                acc_list = distributed_all_gather(
+                    [acc], out_numpy=True, is_valid=idx < loader.sampler.valid_length
                 )
-                for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(al, n=nl)
+                for al, nl in zip(acc_list):
+                    run_acc.update(al)
             else:
-                val_output_convert = torch.stack(val_output_convert)
-                val_labels_list = torch.stack(val_labels_list)
-                val_output_convert = (val_output_convert > 0.5).float()
-
-                hd_distance = compute_hausdorff_distance(val_output_convert,
-                                                         val_labels_list,
-                                                         percentile=95.0,
-                                                         include_background=True)
-                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                temp = hd95.avg
-                warnings.warn("temp {}".format(temp))
-                warnings.warn("hd_distance {}".format(hd_distance))
-                for i in range(3):
-                    if torch.isnan(hd_distance[0][i]) and hd95.count > 0:
-                        hd_distance[0][i] = temp[0][i]
-                if not torch.isnan(hd_distance).any():
-                    hd95.update(hd_distance)
+                run_acc.update(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0))
+                # hd_distance = compute_hausdorff_distance(val_output_convert,
+                #                                          val_labels_list,
+                #                                          percentile=95.0,
+                #                                          include_background=True)
+                # temp = hd95.avg
+                # warnings.warn("temp {}".format(temp))
+                # warnings.warn("hd_distance {}".format(hd_distance))
+                # for i in range(3):
+                #     if torch.isnan(hd_distance[0][i]) and hd95.count > 0:
+                #         hd_distance[0][i] = temp[0][i]
+                # if not torch.isnan(hd_distance).any():
+                #     hd95.update(hd_distance)
+            warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
             if args.rank == 0:
                 list_size = len(run_acc.avg)
-                warnings.warn("test {}/{}, ".format(idx, len(loader)))
+                warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
                 for i in range(list_size):
-                    Dice_TC = run_acc.avg[i]
-                    warnings.warn("{}: {},".format(i, Dice_TC))
+
+                    warnings.warn("{}: {},".format(i, run_acc.avg[i]))
                 warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
 
             start_time = time.time()
@@ -80,8 +83,8 @@ def run_testing(
     acc_func,
     args,
     model_inferer=None,
-    post_sigmoid=None,
-    post_pred=None,
+    post_label=None,
+    post_pred=None
 ):
     epoch_time = time.time()
     test_avg_acc, hd95_avg = test_eval(
@@ -90,7 +93,7 @@ def run_testing(
         acc_func=acc_func,
         args=args,
         model_inferer=model_inferer,
-        post_sigmoid=post_sigmoid,
+        post_label=post_label,
         post_pred=post_pred,
     )
 

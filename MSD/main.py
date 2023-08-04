@@ -226,15 +226,13 @@ def main_worker(gpu, args):
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
                                                           find_unused_parameters=True)
     if args.test_mode:
-        accuracy = run_testing(
-            model=model,
-            test_loader=loader,
-            acc_func=dice_acc,
-            args=args,
-            model_inferer=model_inferer,
-            post_sigmoid=None,
-            post_pred=post_pred,
-        )
+        accuracy = run_testing(model=model,
+                               test_loader=loader,
+                               acc_func=dice_acc,
+                               args=args,
+                               model_inferer=model_inferer,
+                               post_label=post_label,
+                               post_pred=post_pred)
     elif args.val_mode:
         accuracy = val_epoch(
             model,
