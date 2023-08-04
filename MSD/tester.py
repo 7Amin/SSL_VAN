@@ -104,10 +104,10 @@ def run_testing(
         post_post_pred=post_post_pred
     )
 
-    test_avg_acc = np.mean(test_avg_acc)
+    test_avg_acc_mean = np.mean(test_avg_acc)
 
     if args.rank == 0:
-        warnings.warn("Final test acc: {:.4f}, hd95_avg {:.4f}, time {:.2f}s".format(test_avg_acc, hd95_avg.mean(),
-                                                                                     time.time() - epoch_time))
+        warnings.warn("Final test acc: {}, acc mean: {:.4f}, hd95_avg {:.4f}, time {:.2f}s".format(
+            test_avg_acc, test_avg_acc_mean, hd95_avg.mean(), time.time() - epoch_time))
 
     return test_avg_acc
