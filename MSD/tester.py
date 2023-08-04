@@ -10,10 +10,11 @@ from torch.cuda.amp import autocast
 from utils.utils import AverageMeter, distributed_all_gather
 
 from monai.data import decollate_batch
+from monai.transforms import Activations, AsDiscrete
 from monai.metrics import compute_hausdorff_distance
 
 
-def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None):
+def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
     model.eval()
     run_acc = AverageMeter()
     hd95 = AverageMeter()
@@ -51,6 +52,9 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     run_acc.update(al)
             else:
                 run_acc.update(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0))
+                test_output_convert = torch.stack(test_output_convert)
+                test_labels_list = torch.stack(test_labels_list)
+                # test_output_convert = (test_output_convert > 0.5).float()
                 hd_distance = compute_hausdorff_distance(test_output_convert,
                                                          test_labels_list,
                                                          percentile=95.0,
@@ -63,7 +67,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                         hd_distance[0][i] = temp[0][i]
                 if not torch.isnan(hd_distance).any():
                     hd95.update(hd_distance)
-            warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+
             if args.rank == 0:
                 # warnings.warn("run_acc.avg {}".format(run_acc.avg))
                 list_size = len(run_acc.avg)
@@ -87,6 +91,7 @@ def run_testing(
     post_pred=None
 ):
     epoch_time = time.time()
+    post_post_pred = AsDiscrete(argmax=True, n_classes=args.out_channels)
     test_avg_acc, hd95_avg = test_eval(
         model,
         test_loader,
@@ -95,6 +100,7 @@ def run_testing(
         model_inferer=model_inferer,
         post_label=post_label,
         post_pred=post_pred,
+        post_post_pred=post_post_pred
     )
 
     test_avg_acc = np.mean(test_avg_acc)
