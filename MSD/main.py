@@ -229,8 +229,10 @@ def main_worker(gpu, args):
         accuracy = run_testing(
             model=model,
             val_loader=loader,
+            acc_func=dice_acc,
             args=args,
             model_inferer=model_inferer,
+            post_sigmoid=None,
             post_pred=post_pred,
         )
     elif args.val_mode:

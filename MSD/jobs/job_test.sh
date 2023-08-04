@@ -20,7 +20,7 @@ task=$2
 
 if [ $job -eq 724 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -28,7 +28,7 @@ then
 
 elif [ $job -eq 736 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -37,7 +37,7 @@ then
 elif [ $job -eq 748 ]
 then
 
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -45,7 +45,7 @@ then
 
 elif [ $job -eq 816 ]
 then
-    PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+    PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -53,7 +53,7 @@ then
 
 elif [ $job -eq 832 ]
 then
-    PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+    PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -61,7 +61,7 @@ then
 
 elif [ $job -eq 900 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -69,7 +69,7 @@ then
 
 elif [ $job -eq 1000 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -77,7 +77,7 @@ then
 
 elif [ $job -eq 1100 ]
 then
-    PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+    PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -85,7 +85,7 @@ then
 
 elif [ $job -eq 1200 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -93,7 +93,7 @@ then
 
 elif [ $job -eq 1300 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -101,7 +101,7 @@ then
 
 elif [ $job -eq 1410 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -109,7 +109,7 @@ then
 
 elif [ $job -eq 1420 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -117,7 +117,7 @@ then
 
 elif [ $job -eq 4127 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
@@ -125,7 +125,7 @@ then
   
 elif [ $job -eq 41227 ]
 then
-  PYTHONPATH=. python3 MSD/main.py --val_mode --workers 8 --base_data ../images/MSD \
+  PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
