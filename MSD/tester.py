@@ -63,12 +63,12 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                 #         hd_distance[0][i] = temp[0][i]
                 # if not torch.isnan(hd_distance).any():
                 #     hd95.update(hd_distance)
-            warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
+            # warnings.warn("acc {}".format(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0)))
             if args.rank == 0:
+                warnings.warn("run_acc.avg {}".format(run_acc.avg))
                 list_size = len(run_acc.avg)
                 warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
                 for i in range(list_size):
-
                     warnings.warn("{}: {},".format(i, run_acc.avg[i]))
                 warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
 

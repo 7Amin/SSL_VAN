@@ -173,18 +173,9 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
-    #  The AsDiscrete transform is used to convert the output of the segmentation model into discrete labels.
-    #  The to_onehot=True parameter specifies that the labels should be converted to a one-hot encoding format,
-    #  and the n_classes parameter specifies the number of classes in the segmentation task. This transform is applied
-    #  to the ground truth labels (post_label) and the predicted labels (post_pred).
     post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
-    #  The DiceMetric is a metric used to evaluate the similarity between the predicted segmentation and the ground
-    #  truth segmentation. The include_background=True parameter includes the background class (i.e., the pixels that
-    #  do not belong to any of the segmented classes) in the computation. The reduction=MetricReduction.MEAN parameter
-    #  specifies that the mean of the Dice scores should be computed over all samples in the batch. The
-    #  get_not_nans=True parameter specifies that the metric should only return a value for batches where the ground
-    #  truth labels are not all zeros.
+
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
     model_inferer = partial(
         sliding_window_inference,
