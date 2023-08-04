@@ -65,8 +65,9 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                 for i in range(3):
                     if torch.isnan(hd_distance[0][i]) and hd95.count > 0:
                         hd_distance[0][i] = temp[0][i]
-                if not torch.isnan(hd_distance).any():
-                    hd95.update(hd_distance)
+                # if not torch.isnan(hd_distance).any():
+                #     hd95.update(hd_distance)
+                hd95.update(hd_distance)
 
             if args.rank == 0:
                 # warnings.warn("run_acc.avg {}".format(run_acc.avg))
