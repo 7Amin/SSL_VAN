@@ -228,7 +228,7 @@ def main_worker(gpu, args):
     if args.test_mode:
         accuracy = run_testing(
             model=model,
-            val_loader=loader,
+            test_loader=loader,
             acc_func=dice_acc,
             args=args,
             model_inferer=model_inferer,
