@@ -75,15 +75,13 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
 
     tr = json_data['training']
     val = json_data['validation']
-    extra_val = tr + val
-    return tr, val, test_urls, extra_val
+    return tr, val, test_urls
 
 
 def get_loader(args):
     data_dir = args.base_data
     datalist_json = args.json_list
-    train_files, validation_files, test_files, extra_val = data_read(datalist=datalist_json,
-                                                                     basedir=data_dir, task=args.task)
+    train_files, validation_files, test_files = data_read(datalist=datalist_json, basedir=data_dir, task=args.task)
     train_transform = transforms.Compose(
         [
             transforms.LoadImaged(keys=["image", "label"]),
@@ -154,44 +152,18 @@ def get_loader(args):
 
     train_ds = None
     val_ds = None
-    # if args.test_mode:
-    #     test_transform = transforms.Compose(
-    #         [
-    #             transforms.LoadImaged(keys=["image"]),
-    #             transforms.AddChanneld(keys=["image"]),
-    #             transforms.Orientationd(keys=["image"], axcodes="RAS"),
-    #             transforms.Spacingd(
-    #                 keys=["image"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear")
-    #             ),
-    #             transforms.ScaleIntensityRanged(
-    #                 keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
-    #             ),
-    #             transforms.ToTensord(keys=["image"]),
-    #         ]
-    #     )
-    #     test_ds = data.Dataset(data=test_files, transform=test_transform)
-    #     test_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
-    #     test_loader = data.DataLoader(
-    #         test_ds,
-    #         batch_size=1,
-    #         shuffle=False,
-    #         num_workers=args.workers,
-    #         sampler=test_sampler,
-    #         pin_memory=True
-    #     )
-    #     loader = test_loader
     if args.val_mode or args.test_mode:
-        extra_val_ds = data.Dataset(data=extra_val, transform=val_transform)
-        val_sampler = Sampler(extra_val_ds, shuffle=False) if args.distributed else None
-        extra_val_loader = data.DataLoader(
-            extra_val_ds,
+        test_ds = data.Dataset(data=validation_files, transform=val_transform)
+        val_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
+        test_loader = data.DataLoader(
+            test_ds,
             batch_size=1,
             shuffle=False,
             num_workers=args.workers,
             sampler=val_sampler,
             pin_memory=True
         )
-        loader = extra_val_loader
+        loader = test_loader
     else:
         train_ds = data.Dataset(data=train_files, transform=train_transform)
         train_sampler = Sampler(train_ds) if args.distributed else None
