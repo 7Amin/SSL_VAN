@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=BTCV_PRE
-#SBATCH --time=23:59:59
+#SBATCH --time=05:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
-#SBATCH -p a100-long
+#SBATCH -p a100
 #SBATCH --gpus-per-node=2
 #SBATCH -G 2
 #SBATCH --mem=80gb
