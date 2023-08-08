@@ -1,0 +1,956 @@
+/var/spool/slurmd/job72859/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:109: UserWarning: Found total gpus 2
+  warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:129: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:131: UserWarning: Batch size is: 1 epochs 7800
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
+/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_122gl.py:11: UserWarning: embed_dims GL = [64, 128, 256, 512]
+  warnings.warn(f'embed_dims GL = {embed_dims}')
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:129: UserWarning: 1 gpu 1
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_122gl.py:11: UserWarning: embed_dims GL = [64, 128, 256, 512]
+  warnings.warn(f'embed_dims GL = {embed_dims}')
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:13: UserWarning: new_state_dict len is 0 - before
+  warnings.warn(f"new_state_dict len is {len(new_state_dict)} - before")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:13: UserWarning: new_state_dict len is 0 - before
+  warnings.warn(f"new_state_dict len is {len(new_state_dict)} - before")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:23: UserWarning: new_state_dict len is 3648 - after
+  warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:25: UserWarning: VANV4122GL - Using pretrained self-supervised backbone weights !
+  warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:31: UserWarning: Number of missing keys loaded: 8
+  warnings.warn(f"Number of missing keys loaded: {matched_keys}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:165: UserWarning: Total parameters count 67579560
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log40/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log40/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:23: UserWarning: new_state_dict len is 3648 - after
+  warnings.warn(f"new_state_dict len is {len(new_state_dict)} - after")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:25: UserWarning: VANV4122GL - Using pretrained self-supervised backbone weights !
+  warnings.warn(f"{args.model_v} - Using pretrained self-supervised backbone weights !")
+/home/karimimonsefi.1/SSL_VAN/commons/pre_trained_loader.py:31: UserWarning: Number of missing keys loaded: 8
+  warnings.warn(f"Number of missing keys loaded: {matched_keys}")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:165: UserWarning: Total parameters count 67579560
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:168: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/BTCV_new/test_log40/output_False_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/BTCV_new/test_log40/output_False_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is True
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:182: UserWarning: => loaded checkpoint 'True' (epoch 969) (bestacc 0.11745845526456833)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BTCV/main.py:182: UserWarning: => loaded checkpoint 'True' (epoch 969) (bestacc 0.11745845526456833)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:146: UserWarning: Writing Tensorboard logs to ./runs/BTCV_new/test_log40
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:47:45 2023  Epoch: 969
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:47:45 2023  Epoch: 969
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+input_list/dataset_BTCV_List.json
+input_list/dataset_BTCV_List.json
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1298] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 0/14  loss: 1.5339  time 15.40s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 1/14  loss: 1.4957  time 0.82s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 2/14  loss: 1.4578  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 3/14  loss: 1.4041  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 4/14  loss: 1.4470  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 5/14  loss: 1.4520  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 6/14  loss: 1.4465  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 7/14  loss: 1.4325  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 8/14  loss: 1.4205  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 9/14  loss: 1.4297  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 10/14  loss: 1.4145  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 11/14  loss: 1.3997  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 12/14  loss: 1.3966  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 969/7800 13/14  loss: 1.3941  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  969/7799  loss: 1.3941  time 25.84s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/inferers/utils.py:253: UserWarning: Sliding window inference results contain NaN or Inf.
+  warnings.warn("Sliding window inference results contain NaN or Inf.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/inferers/utils.py:253: UserWarning: Sliding window inference results contain NaN or Inf.
+  warnings.warn("Sliding window inference results contain NaN or Inf.")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 969/7800 0/3  acc [ 0.116]  time 6.74s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 969/7800 0/3  acc 0.11595115065574646  time 6.74s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 969/7800 1/3  acc [ 0.108]  time 5.40s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 969/7800 1/3  acc 0.1083860844373703  time 5.40s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 969/7800 2/3  acc [ 0.109]  time 3.23s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 969/7800 2/3  acc 0.10859083384275436  time 3.23s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  969/7799  acc: 0.1086  time 15.37s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:124: UserWarning: Saving checkpoint ./runs/BTCV_new/test_log40/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre__final.pt
+  warnings.warn(f"Saving checkpoint {filename}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:48:28 2023  Epoch: 970
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:48:28 2023  Epoch: 970
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 0/14  loss: 1.2721  time 3.39s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 1/14  loss: 1.3346  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 2/14  loss: 1.3729  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 3/14  loss: 1.4086  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 4/14  loss: 1.4252  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 5/14  loss: 1.4150  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 6/14  loss: 1.4137  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 7/14  loss: 1.4064  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 8/14  loss: 1.4170  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 9/14  loss: 1.4292  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 10/14  loss: 1.4256  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 11/14  loss: 1.4148  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 12/14  loss: 1.4116  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 970/7800 13/14  loss: 1.4337  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  970/7799  loss: 1.4337  time 13.76s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 970/7800 0/3  acc [ 0.119]  time 5.97s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 970/7800 0/3  acc 0.11917105317115784  time 5.97s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 970/7800 1/3  acc [ 0.112]  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 970/7800 1/3  acc 0.11202572286128998  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 970/7800 2/3  acc [ 0.112]  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 970/7800 2/3  acc 0.11205863952636719  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  970/7799  acc: 0.1121  time 13.29s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:48:57 2023  Epoch: 971
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:48:57 2023  Epoch: 971
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 0/14  loss: 1.3092  time 4.56s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 1/14  loss: 1.3025  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 2/14  loss: 1.2873  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 3/14  loss: 1.2945  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 4/14  loss: 1.2926  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 5/14  loss: 1.2904  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 6/14  loss: 1.2971  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 7/14  loss: 1.3244  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 8/14  loss: 1.3328  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 9/14  loss: 1.3410  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 10/14  loss: 1.3820  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 11/14  loss: 1.3928  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 12/14  loss: 1.4022  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 971/7800 13/14  loss: 1.4037  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  971/7799  loss: 1.4037  time 14.96s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 971/7800 0/3  acc [ 0.122]  time 5.99s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 971/7800 0/3  acc 0.12216243147850037  time 5.99s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 971/7800 1/3  acc [ 0.117]  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 971/7800 1/3  acc 0.11669032275676727  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 971/7800 2/3  acc [ 0.117]  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 971/7800 2/3  acc 0.11733011156320572  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  971/7799  acc: 0.1173  time 13.32s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:49:27 2023  Epoch: 972
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:49:27 2023  Epoch: 972
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 0/14  loss: 1.3663  time 5.76s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 1/14  loss: 1.3100  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 2/14  loss: 1.3168  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 3/14  loss: 1.3530  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 4/14  loss: 1.3607  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 5/14  loss: 1.3849  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 6/14  loss: 1.3977  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 7/14  loss: 1.4208  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 8/14  loss: 1.4457  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 9/14  loss: 1.4400  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 10/14  loss: 1.4447  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 11/14  loss: 1.4437  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 12/14  loss: 1.4436  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 972/7800 13/14  loss: 1.4287  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  972/7799  loss: 1.4287  time 16.07s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 972/7800 0/3  acc [ 0.125]  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 972/7800 0/3  acc 0.12495023757219315  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 972/7800 1/3  acc [ 0.119]  time 4.06s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 972/7800 1/3  acc 0.11883297562599182  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 972/7800 2/3  acc [ 0.118]  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 972/7800 2/3  acc 0.11791008710861206  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  972/7799  acc: 0.1179  time 13.24s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.117458 --> 0.117910). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:202: UserWarning: Copying to best model new best model!!!!
+  warnings.warn("Copying to best model new best model!!!!")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:50:01 2023  Epoch: 973
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:50:01 2023  Epoch: 973
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 0/14  loss: 1.3997  time 3.48s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 1/14  loss: 1.3897  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 2/14  loss: 1.3495  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 3/14  loss: 1.4126  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 4/14  loss: 1.4263  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 5/14  loss: 1.4371  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 6/14  loss: 1.4543  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 7/14  loss: 1.4279  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 8/14  loss: 1.4118  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 9/14  loss: 1.4078  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 10/14  loss: 1.3912  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 11/14  loss: 1.3941  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 12/14  loss: 1.3918  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 973/7800 13/14  loss: 1.3879  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  973/7799  loss: 1.3879  time 13.86s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 973/7800 0/3  acc [ 0.125]  time 5.92s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 973/7800 0/3  acc 0.1250615119934082  time 5.92s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 973/7800 1/3  acc [ 0.119]  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 973/7800 1/3  acc 0.11933806538581848  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 973/7800 2/3  acc [ 0.119]  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 973/7800 2/3  acc 0.1188063845038414  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  973/7799  acc: 0.1188  time 13.24s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.117910 --> 0.118806). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:50:32 2023  Epoch: 974
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:50:32 2023  Epoch: 974
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 0/14  loss: 1.3309  time 4.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 1/14  loss: 1.3869  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 2/14  loss: 1.3702  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 3/14  loss: 1.3552  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 4/14  loss: 1.3230  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 5/14  loss: 1.3377  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 6/14  loss: 1.3464  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 7/14  loss: 1.3381  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 8/14  loss: 1.3450  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 9/14  loss: 1.3406  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 10/14  loss: 1.3533  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 11/14  loss: 1.3479  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 12/14  loss: 1.3435  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 974/7800 13/14  loss: 1.3441  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  974/7799  loss: 1.3441  time 14.79s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 974/7800 0/3  acc [ 0.126]  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 974/7800 0/3  acc 0.12575972080230713  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 974/7800 1/3  acc [ 0.121]  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 974/7800 1/3  acc 0.12075670063495636  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 974/7800 2/3  acc [ 0.120]  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 974/7800 2/3  acc 0.12044808268547058  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  974/7799  acc: 0.1204  time 13.25s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.118806 --> 0.120448). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:51:05 2023  Epoch: 975
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:51:05 2023  Epoch: 975
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 0/14  loss: 1.5443  time 3.49s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 1/14  loss: 1.5549  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 2/14  loss: 1.4946  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 3/14  loss: 1.4423  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 4/14  loss: 1.4264  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 5/14  loss: 1.4641  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 6/14  loss: 1.4482  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 7/14  loss: 1.4554  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 8/14  loss: 1.4299  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 9/14  loss: 1.4218  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 10/14  loss: 1.4178  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 11/14  loss: 1.3984  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 12/14  loss: 1.3987  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 975/7800 13/14  loss: 1.3956  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  975/7799  loss: 1.3956  time 13.92s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 975/7800 0/3  acc [ 0.128]  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 975/7800 0/3  acc 0.1282166838645935  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 975/7800 1/3  acc [ 0.124]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 975/7800 1/3  acc 0.12396201491355896  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 975/7800 2/3  acc [ 0.124]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 975/7800 2/3  acc 0.12359903007745743  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  975/7799  acc: 0.1236  time 13.30s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.120448 --> 0.123599). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:51:37 2023  Epoch: 976
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:51:37 2023  Epoch: 976
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 0/14  loss: 1.2846  time 3.25s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 1/14  loss: 1.2823  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 2/14  loss: 1.3132  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 3/14  loss: 1.3319  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 4/14  loss: 1.4163  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 5/14  loss: 1.4052  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 6/14  loss: 1.4010  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 7/14  loss: 1.3898  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 8/14  loss: 1.3999  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 9/14  loss: 1.4032  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 10/14  loss: 1.3987  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 11/14  loss: 1.3967  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 12/14  loss: 1.4113  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 976/7800 13/14  loss: 1.3951  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  976/7799  loss: 1.3951  time 13.58s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 976/7800 0/3  acc [ 0.125]  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 976/7800 0/3  acc 0.1253363937139511  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 976/7800 1/3  acc [ 0.120]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 976/7800 1/3  acc 0.12019727379083633  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 976/7800 2/3  acc [ 0.120]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 976/7800 2/3  acc 0.12024674564599991  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  976/7799  acc: 0.1202  time 13.29s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:52:06 2023  Epoch: 977
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:52:06 2023  Epoch: 977
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 0/14  loss: 1.3945  time 3.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 1/14  loss: 1.4013  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 2/14  loss: 1.3864  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 3/14  loss: 1.3779  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 4/14  loss: 1.3686  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 5/14  loss: 1.3735  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 6/14  loss: 1.3909  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 7/14  loss: 1.3803  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 8/14  loss: 1.3758  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 9/14  loss: 1.3534  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 10/14  loss: 1.3581  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 11/14  loss: 1.3459  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 12/14  loss: 1.3516  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 977/7800 13/14  loss: 1.3370  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  977/7799  loss: 1.3370  time 14.13s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 977/7800 0/3  acc [ 0.128]  time 5.91s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 977/7800 0/3  acc 0.12781216204166412  time 5.91s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 977/7800 1/3  acc [ 0.122]  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 977/7800 1/3  acc 0.12205149978399277  time 4.07s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 977/7800 2/3  acc [ 0.122]  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 977/7800 2/3  acc 0.12151474505662918  time 3.24s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  977/7799  acc: 0.1215  time 13.23s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:52:35 2023  Epoch: 978
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:52:35 2023  Epoch: 978
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 0/14  loss: 1.4246  time 3.74s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 1/14  loss: 1.4049  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 2/14  loss: 1.3461  time 0.91s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 3/14  loss: 1.3273  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 4/14  loss: 1.3377  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 5/14  loss: 1.3048  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 6/14  loss: 1.3159  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 7/14  loss: 1.3207  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 8/14  loss: 1.3229  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 9/14  loss: 1.3238  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 10/14  loss: 1.3336  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 11/14  loss: 1.3556  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 12/14  loss: 1.3465  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 978/7800 13/14  loss: 1.3397  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  978/7799  loss: 1.3397  time 14.11s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 978/7800 0/3  acc [ 0.130]  time 5.97s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 978/7800 0/3  acc 0.13049735128879547  time 5.97s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 978/7800 1/3  acc [ 0.126]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 978/7800 1/3  acc 0.12625651061534882  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 978/7800 2/3  acc [ 0.126]  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 978/7800 2/3  acc 0.12624335289001465  time 3.25s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  978/7799  acc: 0.1262  time 13.31s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.123599 --> 0.126243). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:53:07 2023  Epoch: 979
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:53:07 2023  Epoch: 979
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 0/14  loss: 1.3411  time 3.29s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 1/14  loss: 1.3344  time 2.38s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 2/14  loss: 1.3550  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 3/14  loss: 1.3295  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 4/14  loss: 1.3711  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 5/14  loss: 1.4238  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 6/14  loss: 1.4042  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 7/14  loss: 1.3941  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 8/14  loss: 1.3833  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 9/14  loss: 1.3752  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 10/14  loss: 1.3629  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 11/14  loss: 1.3643  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 12/14  loss: 1.3531  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 979/7800 13/14  loss: 1.3538  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  979/7799  loss: 1.3538  time 15.14s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 979/7800 0/3  acc [ 0.131]  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 979/7800 0/3  acc 0.13126623630523682  time 5.93s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 979/7800 1/3  acc [ 0.127]  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 979/7800 1/3  acc 0.12707775831222534  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 979/7800 2/3  acc [ 0.127]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 979/7800 2/3  acc 0.12730388343334198  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  979/7799  acc: 0.1273  time 13.28s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.126243 --> 0.127304). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:53:40 2023  Epoch: 980
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:53:40 2023  Epoch: 980
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 0/14  loss: 1.2839  time 4.09s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 1/14  loss: 1.2809  time 0.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 2/14  loss: 1.2803  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 3/14  loss: 1.3055  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 4/14  loss: 1.3350  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 5/14  loss: 1.3241  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 6/14  loss: 1.3186  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 7/14  loss: 1.3239  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 8/14  loss: 1.3239  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 9/14  loss: 1.3262  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 10/14  loss: 1.3333  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 11/14  loss: 1.3533  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 12/14  loss: 1.3529  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 980/7800 13/14  loss: 1.3427  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  980/7799  loss: 1.3427  time 14.38s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 980/7800 0/3  acc [ 0.131]  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 980/7800 0/3  acc 0.13122987747192383  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 980/7800 1/3  acc [ 0.127]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 980/7800 1/3  acc 0.1272474229335785  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 980/7800 2/3  acc [ 0.128]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 980/7800 2/3  acc 0.1275956630706787  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  980/7799  acc: 0.1276  time 13.29s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.127304 --> 0.127596). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:54:13 2023  Epoch: 981
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:54:13 2023  Epoch: 981
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 0/14  loss: 1.3723  time 4.24s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 1/14  loss: 1.2740  time 0.87s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 2/14  loss: 1.2458  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 3/14  loss: 1.2782  time 0.80s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 4/14  loss: 1.2817  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 5/14  loss: 1.2982  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 6/14  loss: 1.2864  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 7/14  loss: 1.2746  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 8/14  loss: 1.2955  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 9/14  loss: 1.2982  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 10/14  loss: 1.3063  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 11/14  loss: 1.3253  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 12/14  loss: 1.3159  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 981/7800 13/14  loss: 1.3199  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  981/7799  loss: 1.3199  time 14.57s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 981/7800 0/3  acc [ 0.133]  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 981/7800 0/3  acc 0.13274745643138885  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 981/7800 1/3  acc [ 0.129]  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 981/7800 1/3  acc 0.12862631678581238  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 981/7800 2/3  acc [ 0.129]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 981/7800 2/3  acc 0.1286754012107849  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  981/7799  acc: 0.1287  time 13.32s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:190: UserWarning: new best (0.127596 --> 0.128675). 
+  warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:54:46 2023  Epoch: 982
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:54:46 2023  Epoch: 982
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 0/14  loss: 1.6226  time 4.30s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 1/14  loss: 1.4156  time 0.84s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 2/14  loss: 1.4043  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 3/14  loss: 1.3762  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 4/14  loss: 1.4002  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 5/14  loss: 1.3837  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 6/14  loss: 1.3783  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 7/14  loss: 1.3607  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 8/14  loss: 1.3544  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 9/14  loss: 1.3493  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 10/14  loss: 1.3408  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 11/14  loss: 1.3319  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 12/14  loss: 1.3338  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 982/7800 13/14  loss: 1.3199  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  982/7799  loss: 1.3199  time 14.53s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 982/7800 0/3  acc [ 0.132]  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 982/7800 0/3  acc 0.1324758231639862  time 5.94s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 982/7800 1/3  acc [ 0.128]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 982/7800 1/3  acc 0.1277635246515274  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 982/7800 2/3  acc [ 0.128]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 982/7800 2/3  acc 0.12764504551887512  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  982/7799  acc: 0.1276  time 13.29s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:55:15 2023  Epoch: 983
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:55:15 2023  Epoch: 983
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 0/14  loss: 1.3877  time 3.85s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 1/14  loss: 1.3784  time 1.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 2/14  loss: 1.3342  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 3/14  loss: 1.3537  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 4/14  loss: 1.3496  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 5/14  loss: 1.3386  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 6/14  loss: 1.3130  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 7/14  loss: 1.3129  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 8/14  loss: 1.3080  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 9/14  loss: 1.3153  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 10/14  loss: 1.3418  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 11/14  loss: 1.3340  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 12/14  loss: 1.3310  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 983/7800 13/14  loss: 1.3318  time 0.77s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  983/7799  loss: 1.3318  time 15.01s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 983/7800 0/3  acc [ 0.130]  time 5.92s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 983/7800 0/3  acc 0.1297270655632019  time 5.92s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 983/7800 1/3  acc [ 0.124]  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 983/7800 1/3  acc 0.12398836016654968  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 983/7800 2/3  acc [ 0.124]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 983/7800 2/3  acc 0.12432348728179932  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  983/7799  acc: 0.1243  time 13.28s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:55:45 2023  Epoch: 984
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:55:45 2023  Epoch: 984
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 0/14  loss: 1.3821  time 4.35s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 1/14  loss: 1.4138  time 0.89s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 2/14  loss: 1.3490  time 0.81s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 3/14  loss: 1.3218  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 4/14  loss: 1.3294  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 5/14  loss: 1.3060  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 6/14  loss: 1.3395  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 7/14  loss: 1.3161  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 8/14  loss: 1.3257  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 9/14  loss: 1.3211  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 10/14  loss: 1.3289  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 11/14  loss: 1.3265  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 12/14  loss: 1.3260  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 984/7800 13/14  loss: 1.3306  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  984/7799  loss: 1.3306  time 14.70s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 984/7800 0/3  acc [ 0.134]  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 984/7800 0/3  acc 0.13396142423152924  time 5.96s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 984/7800 1/3  acc [ 0.129]  time 4.08s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 984/7800 1/3  acc 0.12873880565166473  time 4.09s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 984/7800 2/3  acc [ 0.128]  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 984/7800 2/3  acc 0.1283709853887558  time 3.26s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:184: UserWarning: Final validation  984/7799  acc: 0.1284  time 13.32s
+  warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 0  Mon Aug  7 21:56:15 2023  Epoch: 985
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:154: UserWarning: 1  Mon Aug  7 21:56:15 2023  Epoch: 985
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 0/14  loss: 1.1468  time 3.57s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 1/14  loss: 1.2212  time 0.86s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 2/14  loss: 1.2383  time 0.83s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 3/14  loss: 1.2567  time 0.92s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 4/14  loss: 1.2526  time 0.90s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 5/14  loss: 1.2915  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 6/14  loss: 1.3001  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 7/14  loss: 1.2890  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 8/14  loss: 1.3080  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 9/14  loss: 1.3062  time 0.78s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 10/14  loss: 1.3050  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 11/14  loss: 1.3110  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 12/14  loss: 1.2990  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:58: UserWarning: Epoch 985/7800 13/14  loss: 1.3494  time 0.79s
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:160: UserWarning: Final training  985/7799  loss: 1.3494  time 14.18s
+  warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:107: UserWarning: Val 985/7800 0/3  acc [ 0.132]  time 5.95s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+/home/karimimonsefi.1/SSL_VAN/BTCV/trainer.py:109: UserWarning: Val 985/7800 0/3  acc 0.13236510753631592  time 5.95s
+  warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
