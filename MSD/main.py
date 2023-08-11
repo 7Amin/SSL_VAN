@@ -31,7 +31,7 @@ parser.add_argument("--base_data",
 parser.add_argument("--json_list", default='../input_list/dataset_MSD_List.json',
                     type=str, help="direction of json file of luna16 dataset")
 parser.add_argument(
-    "--pretrained_dir", default="./pretrained_models/", type=str, help="pretrained checkpoint directory"
+    "--pretrained_dir", default="../runs/pre_train_1/test_log/", type=str, help="pretrained checkpoint directory"
 )
 parser.add_argument(
     "--pretrained_model_name",
