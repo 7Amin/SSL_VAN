@@ -186,6 +186,7 @@ def get_loader(args):
             sampler=val_sampler,
             pin_memory=True
         )
-        loader = [train_loader, val_loader]
+        # loader = [train_loader, val_loader]
+        loader = [val_loader, val_loader]
 
     return loader, train_ds, val_ds
