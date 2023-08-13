@@ -40,7 +40,7 @@ then
 elif [ $job -eq 4127 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 MSD/main.py --use_ssl_pretrained --workers 8  --task $task  --base_data ../images/MSD \
-  --json_list input_list/dataset_MSD_List.json  --logdir ./runs/MSD_new/test_log80 --save_checkpoint --max_epochs 950 \
+  --json_list input_list/dataset_MSD_List.json  --logdir ./runs/MSD_new/test_log80 --save_checkpoint --max_epochs 1000 \
   --distributed --use_normal_dataset --batch_size 4 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV412 --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
@@ -49,7 +49,7 @@ then
 elif [ $job -eq 41227 ] && [ $freeze -eq 0 ]
 then
   PYTHONPATH=. python3 MSD/main.py --use_ssl_pretrained --workers 8  --task $task  --base_data ../images/MSD \
-  --json_list input_list/dataset_MSD_List.json  --logdir ./runs/MSD_new/test_log80 --save_checkpoint --max_epochs 950 \
+  --json_list input_list/dataset_MSD_List.json  --logdir ./runs/MSD_new/test_log80 --save_checkpoint --max_epochs 1000 \
   --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer --freeze no  \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --lrschedule none --optim_lr 0.0001 --checkpoint \
