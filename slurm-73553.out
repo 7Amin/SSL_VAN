@@ -114,3 +114,56 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
 /home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre_Task07_Pancreas__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_pre_Task07_Pancreas__final.pt
   warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:207: UserWarning: => loaded checkpoint 'True' (epoch 119) (bestacc 0.5359394550323486)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:207: UserWarning: => loaded checkpoint 'True' (epoch 119) (bestacc 0.5359394550323486)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:139: UserWarning: Writing Tensorboard logs to ./runs/MSD_new/test_log80
+  warnings.warn(f"Writing Tensorboard logs to {args.logdir}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 0  Sat Aug 12 08:28:56 2023  Epoch: 119
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:147: UserWarning: 1  Sat Aug 12 08:28:56 2023  Epoch: 119
+  warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:29: UserWarning: input size torch.Size([1, 1, 500, 500, 236])
+  warnings.warn("input size {}".format(data.shape))
+/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py:29: UserWarning: input size torch.Size([1, 1, 500, 500, 221])
+  warnings.warn("input size {}".format(data.shape))
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 261, in <module>
+    main()
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 137, in main
+    mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/main.py", line 239, in main_worker
+    accuracy = run_training(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 149, in run_training
+    train_loss = train_epoch(
+  File "/home/karimimonsefi.1/SSL_VAN/MSD/trainer.py", line 33, in train_epoch
+    logits = model(data)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1040, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1000, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_122gl.py", line 49, in forward
+    t2 = model(t2)
+  File "/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_121.py", line 108, in forward
+    x = torch.cat((x, v), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 63 for tensor number 1 in the list.
+
