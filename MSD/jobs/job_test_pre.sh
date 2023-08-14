@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=BTCVTPRE
+#SBATCH --job-name=MSD_PRE
 #SBATCH --time=05:59:59
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
