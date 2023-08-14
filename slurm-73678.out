@@ -1,0 +1,1290 @@
+/var/spool/slurmd/job73678/slurm_script: line 11: cd: SSL_VAN: No such file or directory
+
+----------------------------------------------------------------------------
+  cuda:
+----------------------------------------------------------------------------
+     Versions:
+        cuda/10.2
+        cuda/11.0
+        cuda/11.2
+        cuda/11.3
+        cuda/11.4
+        cuda/11.5
+        cuda/11.6
+        cuda/11.7
+        cuda/11.8
+        cuda/12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "cuda" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider cuda/12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:155: UserWarning: 0 gpu 0
+  warnings.warn(f"{args.rank} gpu {args.gpu}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:157: UserWarning: Batch size is: 1 epochs 10 and task is Task07_Pancreas
+  warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs} and task is {args.task}")
+/home/karimimonsefi.1/SSL_VAN/commons/models/van_v4_122gl.py:11: UserWarning: embed_dims GL = [64, 128, 256, 512]
+  warnings.warn(f'embed_dims GL = {embed_dims}')
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/transforms/post/array.py:176: UserWarning: `to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.
+  warnings.warn("`to_onehot=True/False` is deprecated, please use `to_onehot=num_classes` instead.")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:190: UserWarning: Total parameters count 67579560
+  warnings.warn(f"Total parameters count {pytorch_total_params}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:193: UserWarning: Total args.checkpoint True
+  warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:6: UserWarning:  base_url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_Task07_Pancreas
+  warnings.warn(f" base_url is {base_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:8: UserWarning:  output_url 1 is ./runs/MSD_new/test_log/output_True_False
+  warnings.warn(f" output_url 1 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:9: UserWarning:  exists 1 is True
+  warnings.warn(f" exists 1 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:13: UserWarning:  output_url 2 is ./runs/MSD_new/test_log/output_True_False/64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_Task07_Pancreas
+  warnings.warn(f" output_url 2 is {output_url}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:14: UserWarning:  exists 2 is False
+  warnings.warn(f" exists 2 is {os.path.exists(output_url)}")
+/home/karimimonsefi.1/SSL_VAN/commons/util.py:20: UserWarning:  Best url model is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_Task07_Pancreas__best.pt, final model url is 64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_VANV4122GL_Task07_Pancreas__final.pt
+  warnings.warn(f" Best url model is {args.best_model_url}, final model url is {args.final_model_url}")
+/home/karimimonsefi.1/SSL_VAN/MSD/main.py:207: UserWarning: => loaded checkpoint 'True' (epoch 438) (bestacc 0.8031447529792786)
+  warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_227.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/inferers/utils.py:253: UserWarning: Sliding window inference results contain NaN or Inf.
+  warnings.warn("Sliding window inference results contain NaN or Inf.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 2 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4573: RuntimeWarning: invalid value encountered in subtract
+  diff_b_a = subtract(b, a)
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 3 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 3 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 4 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 4 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 5 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 5 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 6 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 6 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 7 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 7 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 8 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 8 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 9 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 9 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 10 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 10 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 11 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 11 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 12 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 12 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 13 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 13 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp 0
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[372.8002, 122.2828,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 0/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.999885618686676,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8665677309036255,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6881964206695557,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 3: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 4: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 5: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 6: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 7: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 8: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 9: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 10: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 11: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 12: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 13: 1.0,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 372.800  122.283  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 38.88s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_328.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:166: UserWarning: the ground truth of class 0 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the ground truth of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 372.800  122.283  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 154.3660,  81.0632,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 1/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9998716115951538,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8605408668518066,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.7221025824546814,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 372.800  138.324  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 18.45s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_050.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 372.800  138.324  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 109.8384,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 2/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9997995495796204,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7857806086540222,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5289997458457947,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 372.800  128.829  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.26s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_321.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 372.800  128.829  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[339.6616, 115.5085,  41.4129,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 3/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9998201131820679,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.80135178565979,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.43459805846214294,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 364.516  125.499  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 28.07s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_421.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 364.516  125.499  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 129.0809, 112.2925,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 4/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9998182058334351,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8095487356185913,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5060213804244995,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 364.516  126.215  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 20.06s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_127.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 364.516  126.215  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 163.2697,  48.6826,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 5/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9997496008872986,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8001444339752197,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5422232747077942,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 364.516  132.391  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 20.18s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_409.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/miniconda3/lib/python3.9/site-packages/monai/metrics/hausdorff_distance.py:168: UserWarning: the prediction of class 2 is all 0, this may result in nan/inf distance.
+  warnings.warn(f"the prediction of class {c} is all 0, this may result in nan/inf distance.")
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 364.516  132.391  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 264.0429,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 6/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996212720870972,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7790640592575073,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.46476277709007263,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 364.516  151.198  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 28.12s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_305.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 364.516  151.198  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[283.4784, 120.6109,  70.8675,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 7/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996474981307983,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7859104871749878,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.4920112192630768,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  147.375  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 11.57s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_029.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  147.375  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 156.0025,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 8/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996047616004944,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7873777747154236,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5251708626747131,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  148.334  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 13.35s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_336.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  148.334  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 123.5525,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 9/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996245503425598,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7931677103042603,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5474182963371277,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  145.856  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 13.52s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_242.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  145.856  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 169.9413,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 10/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996429681777954,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8000049591064453,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5592430830001831,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  148.045  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 17.53s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_046.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  148.045  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 105.5142,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 11/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996525645256042,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8012161254882812,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5722611546516418,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  144.501  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.53s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_107.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  144.501  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 85.4935, 20.8602,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 12/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996576309204102,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8028647899627686,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5891479253768921,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  139.962  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.43s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_311.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  139.962  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 140.8581,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 13/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996625185012817,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.802798330783844,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.577547550201416,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  140.026  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 10.31s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_228.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  140.026  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 108.6517,  59.0577,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 14/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.999667227268219,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7982170581817627,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5802800059318542,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  137.934  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 16.74s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_203.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  137.934  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 129.9393,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 15/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996683597564697,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8005516529083252,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5440124869346619,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  137.435  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 13.05s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_183.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  137.435  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 130.2843,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 16/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996804594993591,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7996597290039062,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5551496744155884,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.386  137.014  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.40s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_277.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.386  137.014  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[347.8477, 167.4332,  38.4174,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 17/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996898174285889,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8024375438690186,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5656802654266357,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  138.704  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 28.83s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_130.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  138.704  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 130.8799,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 18/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996777772903442,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.794524073600769,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5652142763137817,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  138.292  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.05s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_197.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  138.292  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 102.3894,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 19/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996877908706665,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7977360486984253,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5706024765968323,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  136.497  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 9.96s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_378.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  136.497  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 110.4397,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 20/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996932148933411,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8024378418922424,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5434309244155884,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  135.256  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.45s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_379.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  135.256  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 319.9266,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 21/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9997032284736633,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8059740662574768,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5525014400482178,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  143.650  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 18.57s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_125.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  143.650  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 139.3885,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 22/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996809959411621,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7989935874938965,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5548878312110901,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 354.023  143.465  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 16.75s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_019.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 354.023  143.465  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[331.6715, 116.4356,  55.6272,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 23/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996821880340576,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.8004844784736633,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5657605528831482,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  142.339  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 18.58s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_018.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  142.339  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 122.0703,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 24/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996802806854248,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7982839345932007,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5693957209587097,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  141.528  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 7.93s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_296.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  141.528  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 133.0495,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 25/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996546506881714,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7834849953651428,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.577696681022644,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  141.202  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 15.99s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_345.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  141.202  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 108.8502,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 26/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996588826179504,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7862834334373474,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5800235271453857,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  140.004  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 10.76s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_343.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  140.004  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 126.7551,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 27/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996663331985474,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7865320444107056,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5772043466567993,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  139.531  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 10.59s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_388.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  139.531  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 124.3204,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 28/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996718764305115,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7794741988182068,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5819593071937561,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  139.006  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 16.53s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_001.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  139.006  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 130.1373,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 29/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996753931045532,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.78072589635849,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5874921679496765,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  138.710  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.25s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_209.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  138.710  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 153.5287,  57.9828,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 30/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996739625930786,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7793679237365723,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5896580815315247,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  139.188  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 20.55s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_268.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  139.188  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 90.4644, 25.4951,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 31/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996762275695801,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7793819904327393,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5968672633171082,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  137.666  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 6.25s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_024.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  137.666  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 132.0322,  41.9058,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 32/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996675252914429,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7761241793632507,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.5970409512519836,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  137.495  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 13.04s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_042.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  137.495  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 93.7172, 80.1564,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 33/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996599555015564,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7742164731025696,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6063242554664612,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  136.208  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.86s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_215.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  136.208  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 125.7338,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 34/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996623396873474,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7762411832809448,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6068617701530457,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  135.908  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.70s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_191.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  135.908  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 99.2395,     nan,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 35/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996592998504639,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7776257991790771,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6137034893035889,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  134.890  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 5.04s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_361.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  134.890  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 187.4582, 135.0778,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 36/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996526837348938,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.773344874382019,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.614964485168457,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  136.310  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 9.98s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_412.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  136.310  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 281.0785,  72.6254,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 37/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.99965900182724,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7746670842170715,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6106017231941223,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  140.120  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 33.04s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_035.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  140.120  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 128.9283,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 38/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.999657154083252,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7756061553955078,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6159526109695435,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.091  139.833  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 5.12s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_032.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.091  139.833  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[350.8917, 128.3840,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 39/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7767695784568787,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6168221831321716,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  139.547  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 20.48s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_357.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  139.547  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan,  88.0749, 109.5961,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 40/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996417164802551,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7737728357315063,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6172833442687988,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  138.292  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 6.03s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_098.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  138.292  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 172.6477,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 41/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996438026428223,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7714443206787109,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6106562614440918,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  139.110  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 24.11s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_276.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  139.110  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 106.5247, 119.5099,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 42/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996417760848999,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7725772261619568,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6153585910797119,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  138.352  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 13.42s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_120.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  138.352  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan,  77.3288, 265.6473,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 43/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996451735496521,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7728172540664673,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6159340739250183,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  136.965  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 15.50s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_290.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  136.965  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 130.5283,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 44/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996496438980103,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7743779420852661,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6210036873817444,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  136.822  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 15.94s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_160.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  136.822  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 102.4259,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 45/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996509552001953,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7743142247200012,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6254706382751465,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  136.074  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.18s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_374.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  136.074  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 144.1048,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 46/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996477365493774,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7733715772628784,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6239521503448486,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  136.245  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 14.47s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_243.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  136.245  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 139.9354,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 47/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996421933174133,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7686095833778381,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6211958527565002,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  136.322  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.26s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_199.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  136.322  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan,  92.6229, 102.9806,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 48/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996419548988342,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7699217796325684,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6260560750961304,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  135.430  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 10.90s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_418.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  135.430  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 107.1515,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 49/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996390342712402,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7706355452537537,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6194863319396973,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  134.864  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.15s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_129.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  134.864  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 104.9019,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 50/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996364712715149,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7712162137031555,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6230530142784119,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  134.277  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 8.19s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_393.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  134.277  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 124.1199,  75.0600,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 51/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996337890625,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7688268423080444,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.628214418888092,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  134.082  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 23.50s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_279.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  134.082  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 92.8450, 91.8945,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 52/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996353983879089,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7688421010971069,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.629696249961853,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  133.304  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 7.77s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_212.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  133.304  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 149.8987,  50.4494,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 53/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.999632716178894,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7676779627799988,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6307135224342346,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  133.611  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 16.16s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_138.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  133.611  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 181.9371, 134.5865,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 54/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996308088302612,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7672041058540344,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6347872614860535,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  134.490  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 15.14s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_028.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  134.490  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[     nan, 100.0136,      nan,      nan,      nan,      nan,      nan,
+              nan,      nan,      nan,      nan,      nan,      nan,      nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 55/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.999625563621521,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7676769495010376,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6234517693519592,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  133.874  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 10.53s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:26: UserWarning: image_name pancreas_331.nii.gz
+  warnings.warn("image_name {}".format(image_name))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:63: UserWarning: temp [[ 353.036  133.874  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]]
+  warnings.warn("temp {}".format(temp))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:64: UserWarning: hd_distance tensor([[    nan, 99.4342,     nan,     nan,     nan,     nan,     nan,     nan,
+             nan,     nan,     nan,     nan,     nan,     nan]],
+       dtype=torch.float64)
+  warnings.warn("hd_distance {}".format(hd_distance))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:75: UserWarning: test 56/57, len is 14
+  warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 0: 0.9996275901794434,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 1: 0.7685372829437256,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:77: UserWarning: 2: 0.6247770190238953,
+  warnings.warn("{}: {},".format(i, run_acc.avg[i]))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:78: UserWarning: , HD95: [[ 353.036  133.270  nan  nan  nan  nan  nan  nan  nan  nan  nan  nan
+   nan  nan]], time 12.86s
+  warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+/home/karimimonsefi.1/SSL_VAN/MSD/tester.py:110: UserWarning: Final test acc: [ 1.000  0.769  0.625  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+  1.000  1.000  1.000  1.000], acc mean: 0.9566, hd95_avg nan, time 836.98s
+  warnings.warn("Final test acc: {}, acc mean: {:.4f}, hd95_avg {:.4f}, time {:.2f}s".format(
