@@ -165,7 +165,7 @@ def get_loader(args):
                 transforms.ToTensord(keys=["image", "label"]),
             ]
         )
-        test_files = load_decathlon_datalist(datalist_json, True, "validation", base_dir=data_dir)
+        test_files = load_decathlon_datalist(datalist_json, True, "test", base_dir=data_dir)
         test_ds = data.Dataset(data=test_files, transform=test_transform)
         test_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
         test_loader = data.DataLoader(
