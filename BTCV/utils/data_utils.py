@@ -208,8 +208,7 @@ def get_loader(args):
             pin_memory=True,
             persistent_workers=True,
         )
-        # loader = [train_loader, val_loader]
-        loader = [val_loader, val_loader]
+        loader = [train_loader, val_loader]
 
     return loader
 #
