@@ -62,19 +62,14 @@ def data_read(datalist, basedir, task="Task01_BrainTumour"):
         json_data = json.load(f)
 
     json_data = json_data[task]
-    test_urls = []
     for t in ["training", "validation", 'test']:
         for k in json_data[t]:
-            if t != 'test':
-                k["image"] = os.path.join(basedir, task, k["image"])
-                k["label"] = os.path.join(basedir, task, k["label"])
-            else:
-                test_urls.append({
-                    "image": os.path.join(basedir, task, k)
-                })
+            k["image"] = os.path.join(basedir, task, k["image"])
+            k["label"] = os.path.join(basedir, task, k["label"])
 
     tr = json_data['training']
     val = json_data['validation']
+    test_urls = json_data['test']
     return tr, val, test_urls
 
 
@@ -129,6 +124,21 @@ def get_loader(args):
         ]
     )
 
+    test_transform = transforms.Compose(
+        [
+            transforms.LoadImaged(keys=["image", "label"]),
+            transforms.AddChanneld(keys=["image", "label"]),
+            transforms.Orientationd(keys=["image", "label"], axcodes="RAS"),
+            transforms.Spacingd(
+                keys=["image", "label"], pixdim=(args.space_x, args.space_y, args.space_z), mode=("bilinear", "nearest")
+            ),
+            transforms.ScaleIntensityRanged(
+                keys=["image"], a_min=args.a_min, a_max=args.a_max, b_min=args.b_min, b_max=args.b_max, clip=True
+            ),
+            transforms.ToTensord(keys=["image", "label"]),
+        ]
+    )
+
     if args.valid_loader == 'none':
         val_transform = transforms.Compose(
             [
@@ -152,8 +162,8 @@ def get_loader(args):
 
     train_ds = None
     val_ds = None
-    if args.val_mode or args.test_mode:
-        test_ds = data.Dataset(data=validation_files, transform=val_transform)
+    if args.test_mode:
+        test_ds = data.Dataset(data=test_files, transform=test_transform)
         val_sampler = Sampler(test_ds, shuffle=False) if args.distributed else None
         test_loader = data.DataLoader(
             test_ds,
