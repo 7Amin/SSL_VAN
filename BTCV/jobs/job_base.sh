@@ -70,7 +70,7 @@ elif [ $job -eq 1100 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new/test_log --save_checkpoint --max_epochs 5000 \
-  --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 99 --model_inferer inferer \
+  --distributed --use_normal_dataset --batch_size 1 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v AttentionUnet --checkpoint
 
 elif [ $job -eq 1200 ]

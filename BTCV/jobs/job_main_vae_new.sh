@@ -646,7 +646,6 @@ then
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1  --model_v VANV5GL --upsample vae --checkpoint \
   --patch_count 2
 
-
 elif [ $job -eq 524 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
