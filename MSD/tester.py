@@ -4,6 +4,8 @@ import warnings
 import numpy as np
 import torch
 import torch.nn.parallel
+import nibabel as nib
+import os
 import torch.utils.data.distributed
 
 from torch.cuda.amp import autocast
@@ -12,6 +14,16 @@ from utils.utils import AverageMeter, distributed_all_gather
 from monai.data import decollate_batch
 from monai.transforms import Activations, AsDiscrete
 from monai.metrics import compute_hausdorff_distance
+
+
+def convert_tensor_to_nii(image_name, args, images):
+    for image in images:
+        image = torch.squeeze(image).cpu().numpy().astype(np.uint8)
+        warnings.warn("image shape{}".format(image.shape))
+        nifti_img = nib.Nifti1Image(image, affine=np.eye(4))
+        url = os.path.join(args.output_url, image_name)
+        nib.save(nifti_img, url)
+        warnings.warn("saved at {}".format(url))
 
 
 def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None, post_pred=None, post_post_pred=None):
@@ -41,6 +53,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
 
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
+            convert_tensor_to_nii(image_name, args, test_output_convert)
             acc_func.reset()
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc = acc.cuda(args.rank)
