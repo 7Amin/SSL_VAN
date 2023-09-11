@@ -123,9 +123,9 @@ class Config:
     def __init__(self):
         self.base_data = '/media/amin/Amin/MSD-data'
         self.json_list = '../input_list/dataset_MSD_List.json'
-        self.space_x = 1.5
-        self.space_y = 1.5
-        self.space_z = 2.0
+        self.space_x = 1.0
+        self.space_y = 1.0
+        self.space_z = 1.0
         self.a_min = -175.0
         self.a_max = 250.0
         self.b_min = 0.0

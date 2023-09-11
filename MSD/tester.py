@@ -49,6 +49,7 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     logits = model(data)
             if not logits.is_cuda:
                 target = target.cpu()
+            logits = logits[:, :args.out_channels]
             print(f"logits: {logits.shape}")
             print(f"target: {target.shape}")
             test_labels_list = decollate_batch(target)
