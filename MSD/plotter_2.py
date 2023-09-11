@@ -26,38 +26,34 @@ colors = [
 ]
 
 models = [
-    # {
-    #     "name": "AttentionUnet",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_AttentionUnet",
-    # },
     {
         "name": "DiNTS_Instance",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Instance_Task06_Lung",
     },
-    {
-        "name": "DiNTS_Search",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search_Task06_Lung",
-    },
-    {
-        "name": "nnUNet",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_Task06_Lung",
-    },
-    {
-        "name": "SegResNetVAE",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_Task06_Lung",
-    },
-    {
-        "name": "SwinUNETR48",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48_Task06_Lung",
-    },
-    {
-        "name": "Unetpp",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task06_Lung",
-    },
-    {
-        "name": "UNETR32",
-        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32_Task06_Lung",
-    }
+    # {
+    #     "name": "DiNTS_Search",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search_Task06_Lung",
+    # },
+    # {
+    #     "name": "nnUNet",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_Task06_Lung",
+    # },
+    # {
+    #     "name": "SegResNetVAE",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_Task06_Lung",
+    # },
+    # {
+    #     "name": "SwinUNETR48",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48_Task06_Lung",
+    # },
+    # {
+    #     "name": "Unetpp",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task06_Lung",
+    # },
+    # {
+    #     "name": "UNETR32",
+    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32_Task06_Lung",
+    # }
 ]
 
 

@@ -49,12 +49,14 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     logits = model(data)
             if not logits.is_cuda:
                 target = target.cpu()
+            print(logits.shape)
             test_labels_list = decollate_batch(target)
             test_labels_convert = [post_label(test_label_tensor) for test_label_tensor in test_labels_list]
 
             test_labels_list = decollate_batch(logits)
             test_output_convert = [post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
-            convert_tensor_to_nii(image_name, args, test_output_convert)
+            test_output_image_convert = [post_post_pred(test_pred_tensor) for test_pred_tensor in test_labels_list]
+            convert_tensor_to_nii(image_name, args, test_output_image_convert)
             acc_func.reset()
             acc = acc_func(y_pred=test_output_convert, y=test_labels_convert)
             acc = acc.cuda(args.rank)
