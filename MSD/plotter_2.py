@@ -30,30 +30,30 @@ models = [
         "name": "DiNTS_Instance",
         "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Instance_Task06_Lung",
     },
-    # {
-    #     "name": "DiNTS_Search",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search_Task06_Lung",
-    # },
-    # {
-    #     "name": "nnUNet",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_Task06_Lung",
-    # },
-    # {
-    #     "name": "SegResNetVAE",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_Task06_Lung",
-    # },
-    # {
-    #     "name": "SwinUNETR48",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48_Task06_Lung",
-    # },
-    # {
-    #     "name": "Unetpp",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task06_Lung",
-    # },
-    # {
-    #     "name": "UNETR32",
-    #     "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32_Task06_Lung",
-    # }
+    {
+        "name": "DiNTS_Search",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_DiNTS_Search_Task06_Lung",
+    },
+    {
+        "name": "nnUNet",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_nnUNet_Task06_Lung",
+    },
+    {
+        "name": "SegResNetVAE",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SegResNetVAE_Task06_Lung",
+    },
+    {
+        "name": "SwinUNETR48",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_SwinUNETR48_Task06_Lung",
+    },
+    {
+        "name": "Unetpp",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_Unetpp_Task06_Lung",
+    },
+    {
+        "name": "UNETR32",
+        "url": "64-128-256-512_3-4-6-3_8-8-4-4_vae_inferer_valid_loader_UNETR32_Task06_Lung",
+    }
 ]
 
 
@@ -78,13 +78,13 @@ def colorizing(data_shape, predicted_data, target_data, original_data):
 
 def plot_data(predicted_data, original_data, target_data, base_url):
     data_shape = original_data.shape
-    for i in range(data_shape[2] // 100, data_shape[2] * 99 // 100):
+    for i in range(data_shape[2] // 6, data_shape[2] * 5 // 6):
         data_shape = original_data.shape
         fig, axes = plt.subplots(2, 1, figsize=(5 * 1, 10))
 
         if target_data[:, :, i].max() > 0 or predicted_data[:, :, i].max() > 0:
-            print(
-                f"frame i: max predicted is {predicted_data[:, :, i].max()} and target is {target_data[:, :, i].max()}")
+            # print(
+            #     f"frame i: max predicted is {predicted_data[:, :, i].max()} and target is {target_data[:, :, i].max()}")
             image_pred, image_targ = colorizing(data_shape, predicted_data[:, :, i],
                                                 target_data[:, :, i], original_data[:, :, i])
             axes[0].imshow(image_pred)
@@ -95,7 +95,7 @@ def plot_data(predicted_data, original_data, target_data, base_url):
             axes[1].set_title('Target - Slice {}'.format(i))
 
             plt.savefig(base_url + f"/{i}" + ".png")
-            print(base_url + f"/{i}" + ".png")
+            # print(base_url + f"/{i}" + ".png")
             # plt.show()
 
 
@@ -116,11 +116,15 @@ def main_worker(gpu, args):
                 os.mkdir(base + url)
             predicted_path = f'/home/amin/CETI/medical_image/SSL_VAN/runs/MSD_new/test_log/output_True_False/' \
                              f'{model["url"]}/{url}'
-            predicted_img = nib.load(predicted_path)
-            predicted_data = predicted_img.get_fdata().astype(np.uint8)
-            plot_data(predicted_data, data[0][0].cpu().numpy(),
-                      target[0][0].cpu().numpy().astype(np.uint8), base_url=base + url)
             print(base + url)
+            predicted_img = nib.load(predicted_path)
+            predicted_img = predicted_img.get_fdata().astype(np.uint8)
+            plot_data(predicted_img, data[0][0].cpu().numpy(),
+                      target[0][0].cpu().numpy().astype(np.uint8), base_url=base + url)
+            predicted_img = 0
+            data = 0
+            target = 0
+
 
 
 class Config:
