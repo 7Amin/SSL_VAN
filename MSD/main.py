@@ -173,6 +173,7 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
+    get_out_channels(args)
     post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
 
