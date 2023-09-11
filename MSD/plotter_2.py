@@ -78,21 +78,25 @@ def colorizing(data_shape, predicted_data, target_data, original_data):
 
 def plot_data(predicted_data, original_data, target_data, base_url):
     data_shape = original_data.shape
-    for i in range(data_shape[2] // 3, data_shape[2] * 7 // 8):
+    for i in range(data_shape[2] // 100, data_shape[2] * 99 // 100):
         data_shape = original_data.shape
         fig, axes = plt.subplots(2, 1, figsize=(5 * 1, 10))
-        image_pred, image_targ = colorizing(data_shape, predicted_data[:, :, i],
-                                            target_data[:, :, i], original_data[:, :, i])
-        axes[0].imshow(image_pred)
-        axes[0].set_title('Predicted - Slice {}'.format(i))
 
-        image_targ = image_targ.astype(np.uint8)
-        axes[1].imshow(image_targ)
-        axes[1].set_title('Target - Slice {}'.format(i))
+        if target_data[:, :, i].max() > 0 or predicted_data[:, :, i].max() > 0:
+            print(
+                f"frame i: max predicted is {predicted_data[:, :, i].max()} and target is {target_data[:, :, i].max()}")
+            image_pred, image_targ = colorizing(data_shape, predicted_data[:, :, i],
+                                                target_data[:, :, i], original_data[:, :, i])
+            axes[0].imshow(image_pred)
+            axes[0].set_title('Predicted - Slice {}'.format(i))
 
-        plt.savefig(base_url + f"/{i}" + ".png")
-        print(base_url + f"/{i}" + ".png")
-        # plt.show()
+            image_targ = image_targ.astype(np.uint8)
+            axes[1].imshow(image_targ)
+            axes[1].set_title('Target - Slice {}'.format(i))
+
+            plt.savefig(base_url + f"/{i}" + ".png")
+            print(base_url + f"/{i}" + ".png")
+            # plt.show()
 
 
 def main_worker(gpu, args):
