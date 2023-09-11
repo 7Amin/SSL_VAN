@@ -36,7 +36,6 @@ then
 
 elif [ $job -eq 748 ]
 then
-
   PYTHONPATH=. python3 MSD/main.py --test_mode --workers 8 --base_data ../images/MSD \
   --json_list input_list/dataset_MSD_List.json --logdir ./runs/MSD_new/test_log --save_checkpoint --max_epochs 10 \
   --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 64 128 256 512 --depths 3 4 6 3 \
