@@ -159,5 +159,27 @@ class Config:
         self.num_samples = 4
 
 
-acc = main_worker(gpu=0, args=Config())
+def get_out_channels(args):
+    if args.task == "Task01_BrainTumour":
+        args.out_channels = 4
+        args.in_channels = 4
+    elif args.task == "Task02_Heart":  # OK
+        args.out_channels = 2
+    elif args.task == "Task03_Liver":  # OK !!!
+        args.out_channels = 3
+    elif args.task == "Task06_Lung":  # OK
+        args.out_channels = 2
+    elif args.task == "Task07_Pancreas":  # OK
+        args.out_channels = 3
+    elif args.task == "Task08_HepaticVessel":  # OK
+        args.out_channels = 3
+    elif args.task == "Task09_Spleen":  # OK
+        args.out_channels = 2
+    elif args.task == "Task10_Colon":  # OK
+        args.out_channels = 2
+
+
+args = Config()
+get_out_channels(args)
+acc = main_worker(gpu=0, args=args)
 

@@ -68,22 +68,21 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                     run_acc.update(al)
             else:
                 run_acc.update(np.nan_to_num(acc.cpu().numpy()[0], nan=1.0))
-                test_output_convert = torch.stack(test_output_convert)
-                test_labels_list = torch.stack(test_labels_list)
-                # test_output_convert = (test_output_convert > 0.5).float()
-                hd_distance = compute_hausdorff_distance(test_output_convert,
-                                                         test_labels_list,
-                                                         percentile=95.0,
-                                                         include_background=True)
-                temp = hd95.avg
-                warnings.warn("temp {}".format(temp))
-                warnings.warn("hd_distance {}".format(hd_distance))
-                for i in range(3):
-                    if torch.isnan(hd_distance[0][i]) and hd95.count > 0:
-                        hd_distance[0][i] = temp[0][i]
-                # if not torch.isnan(hd_distance).any():
-                #     hd95.update(hd_distance)
-                hd95.update(hd_distance)
+                # test_output_convert = torch.stack(test_output_convert)
+                # test_labels_list = torch.stack(test_labels_list)
+                # hd_distance = compute_hausdorff_distance(test_output_convert,
+                #                                          test_labels_list,
+                #                                          percentile=95.0,
+                #                                          include_background=True)
+                # temp = hd95.avg
+                # warnings.warn("temp {}".format(temp))
+                # warnings.warn("hd_distance {}".format(hd_distance))
+                # for i in range(3):
+                #     if torch.isnan(hd_distance[0][i]) and hd95.count > 0:
+                #         hd_distance[0][i] = temp[0][i]
+                # # if not torch.isnan(hd_distance).any():
+                # #     hd95.update(hd_distance)
+                # hd95.update(hd_distance)
 
             if args.rank == 0:
                 # warnings.warn("run_acc.avg {}".format(run_acc.avg))
@@ -91,11 +90,12 @@ def test_eval(model, loader, acc_func, args, model_inferer=None, post_label=None
                 warnings.warn("test {}/{}, len is {}".format(idx, len(loader), list_size))
                 for i in range(list_size):
                     warnings.warn("{}: {},".format(i, run_acc.avg[i]))
-                warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
+                # warnings.warn(", HD95: {}, time {:.2f}s".format(hd95.avg, time.time() - start_time))
 
             start_time = time.time()
 
-    return run_acc.avg, hd95.avg
+    # return run_acc.avg, hd95.avg
+    return run_acc.avg, [0]
 
 
 def run_testing(

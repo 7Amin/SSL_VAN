@@ -151,7 +151,6 @@ def main_worker(gpu, args):
         )
     torch.cuda.set_device(args.gpu)
     torch.backends.cudnn.benchmark = True
-    get_out_channels(args)
     loader, _, _ = get_loader(args)
     warnings.warn(f"{args.rank} gpu {args.gpu}")
     if args.rank == 0:
@@ -174,7 +173,7 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
-
+    get_out_channels(args)
     post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
 
