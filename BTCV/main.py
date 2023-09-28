@@ -223,6 +223,6 @@ if __name__ == "__main__":
     job_id = os.environ.get('SLURM_JOB_ID', None)
     os.environ['MASTER_ADDR'] = 'localhost'
     # os.environ['MASTER_PORT'] = '12346'
-    master_port = int(job_id) + 12345  
+    master_port = int(job_id) % 20000  + 12345
     os.environ['MASTER_PORT'] = str(master_port)
     main()
