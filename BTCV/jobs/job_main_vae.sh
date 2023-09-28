@@ -844,7 +844,7 @@ elif [ $job -eq 771 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new_1/test_log --save_checkpoint --max_epochs 5000 \
-  --distributed --use_normal_dataset --batch_size 12 --num_stages 2 --embed_dims 64 128 --depths 4 4  \
+  --distributed --use_normal_dataset --batch_size 8 --num_stages 2 --embed_dims 64 128 --depths 4 4  \
   --mlp_ratios 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV7 --upsample vae --checkpoint
 
