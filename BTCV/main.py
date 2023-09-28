@@ -91,7 +91,7 @@ parser.add_argument("--upsample", default="vae", type=str, choices=['deconv', 'v
 parser.add_argument("--freeze", default="no", type=str, choices=['yes', 'no'], help="freeze pretrain layers in training")
 parser.add_argument("--model_inferer", default='inferer', type=str, choices=['none', 'inferer'])
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
-parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', VANV7', 'VANV4GL',
+parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV7', 'VANV4GL',
                                                                        'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL", "VANV7GL",
                                                                        'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
                                                                        'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE',
