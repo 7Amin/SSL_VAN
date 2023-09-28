@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
-#SBATCH -G 4
+#SBATCH -G 2
 #SBATCH --mem=80gb
 
 cd SSL_VAN
@@ -846,7 +846,7 @@ then
   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV_new_1/test_log --save_checkpoint --max_epochs 5000 \
   --distributed --use_normal_dataset --batch_size 6 --num_stages 2 --embed_dims 64 128 --depths 4 4  \
   --mlp_ratios 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 10 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV7 --upsample vae --checkpoint --world_size 2
+  --valid_loader valid_loader --model_v VANV7 --upsample vae --checkpoint
 
 elif [ $job -eq 77 ]
 then
