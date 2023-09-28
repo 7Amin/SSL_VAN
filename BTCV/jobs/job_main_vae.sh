@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=BTCVvae
 #SBATCH --time=05:59:59
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
-#SBATCH -G 4
+#SBATCH -G 2
 #SBATCH --mem=80gb
 
 cd SSL_VAN
@@ -792,13 +792,13 @@ then
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV7GL --upsample vae --checkpoint --patch_count 2
 
-elif [ $job -eq 729 ]
-then
-  srun --nodes=2 python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
-  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
-  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV7GL --upsample vae --checkpoint --patch_count 2 --world_size 2
+# elif [ $job -eq 729 ]
+# then
+#   srun --nodes=2 python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+#   --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
+#   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 3 3 24 3 \
+#   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+#   --valid_loader valid_loader --model_v VANV7GL --upsample vae --checkpoint --patch_count 2 --world_size 2
 
 elif [ $job -eq 736 ]
 then
