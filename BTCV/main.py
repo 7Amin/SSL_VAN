@@ -223,7 +223,7 @@ def main_worker(gpu, args):
 if __name__ == "__main__":
 
     os.environ['MASTER_ADDR'] = 'localhost'
-    # os.environ['MASTER_PORT'] = '12346'
-    master_port = random.randint(10000, 200000) % 20000  + 12345
-    os.environ['MASTER_PORT'] = str(master_port)
+    os.environ['MASTER_PORT'] = '12346'
+    # master_port = random.randint(10000, 200000) % 20000  + 12345
+    # os.environ['MASTER_PORT'] = str(master_port)
     main()
