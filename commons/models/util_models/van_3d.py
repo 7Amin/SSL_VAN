@@ -33,12 +33,12 @@ class Mlp(nn.Module):
         self.drop = nn.Dropout(drop)
         self.linear = linear
         if self.linear:
-            self.relu = nn.ReLU(inplace=True)
+            self.gelu = nn.GELU()
 
     def forward(self, x):
         x = self.fc1(x)
         if self.linear:
-            x = self.relu(x)
+            x = self.gelu(x)
         x = self.dwconv3d(x)
         x = self.act(x)
         x = self.drop(x)

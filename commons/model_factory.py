@@ -2,12 +2,14 @@ from commons.models.van import VAN
 from commons.models.van_v2 import VANV2
 from commons.models.van_v3 import VANV3
 from commons.models.van_v4 import VANV4
+from commons.models.van_v7 import VANV7
 from commons.models.van_v4_1 import VANV41
 from commons.models.van_v4_11 import VANV411
 from commons.models.van_v4_12 import VANV412
 from commons.models.van_v4gl import VANV4GL
 from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
+from commons.models.van_v7gl import VANV7GL
 from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
 from commons.models.van_v4_121gl import VANV4121GL
@@ -172,6 +174,30 @@ def get_model(args):
             dropout_path_rate=0.0,
             # use_checkpoint=True,
         )
+        return model
+    
+    if args.model_v == "VANV7GL":
+        model = VANV7GL(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample,
+                        patch_count=args.patch_count)
+        args.model_v = args.model_v + "_" + str(args.patch_count)
+        return model
+
+    if args.model_v == "VANV7":
+        model = VANV7(embed_dims=args.embed_dims,
+                      mlp_ratios=args.mlp_ratios,
+                      depths=args.depths,
+                      num_stages=args.num_stages,
+                      in_channels=args.in_channels,
+                      out_channels=args.out_channels,
+                      dropout_path_rate=args.dropout_path_rate,
+                      upsample=args.upsample)
         return model
 
     if args.model_v == "VANV6GL":
