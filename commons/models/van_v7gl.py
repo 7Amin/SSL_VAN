@@ -12,8 +12,11 @@ class VANV7GL(nn.Module):
         for i in range(patch_count):
             for j in range(patch_count):
                 for k in range(patch_count):
-                    setattr(self, f"van{i}_{j}_{k}", VANV7(embed_dims[:-1], mlp_ratios[:-1], depths[:-1],
-                                                           num_stages - 1, in_channels, out_channels,
+                    # setattr(self, f"van{i}_{j}_{k}", VANV7(embed_dims[:-1], mlp_ratios[:-1], depths[:-1],
+                    #                                        num_stages - 1, in_channels, out_channels,
+                    #                                        dropout_path_rate, upsample))
+                    setattr(self, f"van{i}_{j}_{k}", VANV7(embed_dims, mlp_ratios, depths,
+                                                           num_stages, in_channels, out_channels,
                                                            dropout_path_rate, upsample))
         self.van = VANV7(embed_dims, mlp_ratios, depths, num_stages, in_channels,
                          out_channels, dropout_path_rate, upsample)
