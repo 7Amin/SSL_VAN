@@ -3,6 +3,7 @@ import os
 import warnings
 import numpy as np
 from functools import partial
+import random
 
 import torch
 import torch.multiprocessing as mp
@@ -223,6 +224,6 @@ if __name__ == "__main__":
     job_id = os.environ.get('SLURM_JOB_ID', None)
     os.environ['MASTER_ADDR'] = 'localhost'
     # os.environ['MASTER_PORT'] = '12346'
-    master_port = int(job_id) % 20000  + 12345
+    master_port = random.randint(200000) % 20000  + 12345
     os.environ['MASTER_PORT'] = str(master_port)
     main()
