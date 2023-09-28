@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=BTCVvae
 #SBATCH --time=05:59:59
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
 #SBATCH -p a100
 #SBATCH --gpus-per-node=2
