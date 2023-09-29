@@ -94,8 +94,8 @@ parser.add_argument("--model_inferer", default='inferer', type=str, choices=['no
 parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=['none', 'valid_loader'])
 parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'VANV2', 'VANV3', 'VANV4', 'VANV7', 'VANV4GL',
                                                                        'VANV4GLV1', 'VANV4GLV2', 'VANV5GL', "VANV6GL", "VANV7GL",
-                                                                       'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
-                                                                       'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE',
+                                                                       'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48', 'VANV6GLSwin',
+                                                                       'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE', 'VANV6Swin',
                                                                        'Unetpp', 'AttentionUnet', 'BasicUNetPlusPlus',
                                                                        'DiNTS_Search', 'DiNTS_Instance', 'VANV41', 'VANV4Swin',
                                                                        'VANV411', 'VANV412', 'VANV4121GL', 'VANV4122GL'])
