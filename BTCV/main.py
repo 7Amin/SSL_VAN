@@ -97,7 +97,7 @@ parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'V
                                                                        'SwinUNETR24', 'SwinUNETR36', 'SwinUNETR48',
                                                                        'UNETR16', 'UNETR32', 'nnUNet', 'SegResNetVAE',
                                                                        'Unetpp', 'AttentionUnet', 'BasicUNetPlusPlus',
-                                                                       'DiNTS_Search', 'DiNTS_Instance', 'VANV41',
+                                                                       'DiNTS_Search', 'DiNTS_Instance', 'VANV41', 'VANV4Swin',
                                                                        'VANV411', 'VANV412', 'VANV4121GL', 'VANV4122GL'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
