@@ -399,6 +399,23 @@ then
   --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
   --valid_loader valid_loader --model_v VANV4122GL --upsample vae --checkpoint
 
+
+elif [ $job -eq 412271 ]
+then
+  PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 64 128 256 512 --depths 6 4 6 4 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --valid_loader valid_loader --model_v VANV4122GLSwin --upsample vae --checkpoint
+
+elif [ $job -eq 412291 ]
+then
+  PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+  --json_list input_list/dataset_BTCV_List.json  --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
+  --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 96 192 384 768 --depths 4 4 24 4 \
+  --mlp_ratios 8 8 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 --model_inferer inferer \
+  --valid_loader valid_loader --model_v VANV4122GLSwin --upsample vae --checkpoint
+
 elif [ $job -eq 421 ]
 then
   PYTHONPATH=. python3 BTCV/main.py  --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \

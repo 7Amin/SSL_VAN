@@ -8,6 +8,7 @@ from commons.models.van_v6_swin import VANV6Swin
 from commons.models.van_v4_1 import VANV41
 from commons.models.van_v4_11 import VANV411
 from commons.models.van_v4_12 import VANV412
+from commons.models.van_v4_12_swin import VANV412Swin
 from commons.models.van_v4gl import VANV4GL
 from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
@@ -17,6 +18,7 @@ from commons.models.van_v4gl_v1 import VANV4GLV1
 from commons.models.van_v4gl_v2 import VANV4GLV2
 from commons.models.van_v4_121gl import VANV4121GL
 from commons.models.van_v4_122gl import VANV4122GL
+from commons.models.van_v4_122gl_swin import VANV4122GLSwin
 from commons.models.unet_p_p import UNetPlusPlus
 from commons.models.basic_unet_plus_plus import BasicUNetPlusPlus
 from commons.models.seg_res_net_vae import SegResNetVAE
@@ -337,6 +339,18 @@ def get_model(args):
                         upsample=args.upsample)
         return model
 
+    
+    if args.model_v == "VANV412Swin":
+        model = VANV412Swin(embed_dims=args.embed_dims,
+                        mlp_ratios=args.mlp_ratios,
+                        depths=args.depths,
+                        num_stages=args.num_stages,
+                        in_channels=args.in_channels,
+                        out_channels=args.out_channels,
+                        dropout_path_rate=args.dropout_path_rate,
+                        upsample=args.upsample)
+        return model
+
     if args.model_v == "VANV4121GL":
         model = VANV4121GL(embed_dims=args.embed_dims,
                            mlp_ratios=args.mlp_ratios,
@@ -350,6 +364,17 @@ def get_model(args):
 
     if args.model_v == "VANV4122GL":
         model = VANV4122GL(embed_dims=args.embed_dims,
+                           mlp_ratios=args.mlp_ratios,
+                           depths=args.depths,
+                           num_stages=args.num_stages,
+                           in_channels=args.in_channels,
+                           out_channels=args.out_channels,
+                           dropout_path_rate=args.dropout_path_rate,
+                           upsample=args.upsample)
+        return model
+
+    if args.model_v == "VANV4122GLSwin":
+        model = VANV4122GLSwin(embed_dims=args.embed_dims,
                            mlp_ratios=args.mlp_ratios,
                            depths=args.depths,
                            num_stages=args.num_stages,
