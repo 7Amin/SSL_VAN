@@ -89,8 +89,8 @@ class Block3D(nn.Module):
         x = self.layer_scale_2.unsqueeze(-1).unsqueeze(-1).unsqueeze(-1) * x
         x = x + self.drop_path(x)
 
-        # x = x.view(B, C, N).permute(0, 2, 1)
-        x = x.view(B, N, C)
+        x = x.view(B, C, N).permute(0, 2, 1)
+        # x = x.view(B, N, C)
         return x
 
 
