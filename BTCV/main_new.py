@@ -15,7 +15,7 @@ from commons.model_factory import get_model, load_model
 from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
 from commons.util import fix_outputs_url
-from BTCV.trainer import run_training
+from BTCV.trainer_new import run_training
 from BTCV.tester import run_testing
 
 from monai.inferers import sliding_window_inference
