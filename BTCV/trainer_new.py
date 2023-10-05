@@ -90,10 +90,11 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
             avg_acc = np.mean(run_acc.avg)
-            warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                            run_acc.avg, time.time() - start_time))
-            warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                            avg_acc, time.time() - start_time))
+            if args.rank == 0:
+                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                                run_acc.avg, time.time() - start_time))
+                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                                avg_acc, time.time() - start_time))
             start_time = time.time()
     return run_acc.avg
 
@@ -126,13 +127,13 @@ def run_training(
     val_acc_max=0.0,
 ):
     for epoch in range(start_epoch, args.max_epochs):
-        warnings.warn(f"GPU {args.gpu}  {time.ctime()}  Epoch: {epoch}")
+        warnings.warn(f"GPU {args.rank}  {time.ctime()}  Epoch: {epoch}")
         epoch_time = time.time()
         model.train()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=None, epoch=epoch, loss_func=loss_func, args=args
         )
-        warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+        warnings.warn("GPU {} | Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(args.rank, epoch, args.max_epochs - 1,
                                                                                      train_loss,
                                                                                      time.time() - epoch_time))
         b_new_best = False
