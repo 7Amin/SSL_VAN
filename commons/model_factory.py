@@ -10,6 +10,7 @@ from commons.models.van_v4_11 import VANV411
 from commons.models.van_v4_12 import VANV412
 from commons.models.van_v4_12_swin import VANV412Swin
 from commons.models.van_v4_121_swin import VANV4121Swin
+from commons.models.van_v4_121_double import VANV4121double
 from commons.models.van_v4gl import VANV4GL
 from commons.models.van_v5gl import VANV5GL
 from commons.models.van_v6gl import VANV6GL
@@ -395,6 +396,18 @@ def get_model(args):
                            dropout_path_rate=args.dropout_path_rate,
                            upsample=args.upsample)
         return model
+    
+    if args.model_v == "VANV4121double":
+        model = VANV4121double(embed_dims=args.embed_dims,
+                           mlp_ratios=args.mlp_ratios,
+                           depths=args.depths,
+                           num_stages=args.num_stages,
+                           in_channels=args.in_channels,
+                           out_channels=args.out_channels,
+                           dropout_path_rate=args.dropout_path_rate,
+                           upsample=args.upsample)
+        return model
+
 
     if args.model_v == "VANV4":
         model = VANV4(embed_dims=args.embed_dims,

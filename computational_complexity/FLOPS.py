@@ -12,9 +12,9 @@ class Config:
         self.roi_z = 96
         # self.embed_dims = [96, 192, 384, 768]
         # self.depths = [3, 3, 24, 3]
-        self.embed_dims = [64, 128, 256, 512]
-        self.depths = [6, 4, 6, 4]
-        self.mlp_ratios = [8, 8, 4, 4]
+        self.embed_dims = [128, 128, 512, 512]
+        self.depths = [4, 4, 4, 4]
+        self.mlp_ratios = [4, 4, 4, 4]
         self.num_stages = 4
 
         # self.embed_dims = [64, 128]
@@ -27,7 +27,7 @@ class Config:
 
 
 args = Config()
-args.model_v = "VANV412"
+args.model_v = "VANV4121double"
 model = get_model(args)
 input_tensor = torch.randn((1, 1, 96, 96, 96))
 flops, params = profile(model, inputs=(input_tensor,))
