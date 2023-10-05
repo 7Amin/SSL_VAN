@@ -196,7 +196,7 @@ def get_loader(args):
             shuffle=False,
             num_workers=args.workers,
             # sampler=train_sampler,
-            sampler=DistributedSampler(train_ds)
+            sampler=DistributedSampler(train_ds),
             pin_memory=True,
             persistent_workers=True,
         )
