@@ -29,7 +29,7 @@ conda activate ssl_van_seg
 
 ### the command to run
 
-srun python3 BTCV/main.py --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
+srun python3 BTCV/main_new.py --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
   --json_list input_list/dataset_BTCV_List.json --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
   --distributed --use_normal_dataset --batch_size 2 --num_stages 4 --embed_dims 128 128 512 512 --depths 3 4 4 4 \
   --mlp_ratios 4 4 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 10 --model_inferer inferer \

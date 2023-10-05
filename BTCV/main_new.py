@@ -4,6 +4,7 @@ import warnings
 import numpy as np
 from functools import partial
 import random
+import builtins
 
 import torch
 import torch.multiprocessing as mp
@@ -61,11 +62,8 @@ parser.add_argument("--RandShiftIntensityd_prob", default=0.1, type=float, help=
 parser.add_argument("--workers", default=8, type=int, help="number of workers")
 parser.add_argument("--test_mode", default=False, action="store_true", help="this runner is a test or not")
 parser.add_argument("--val_mode", default=False, action="store_true", help="this runner is a validation or not")
-parser.add_argument("--distributed", action="store_true", help="start distributed training")
 parser.add_argument("--use_normal_dataset", action="store_true", help="use monai Dataset class")
 parser.add_argument("--noamp", action="store_true", help="do NOT use amp for training")
-parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
-parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
 parser.add_argument("--num_stages", default=4, type=int, help="number of stages in attention")
 parser.add_argument("--infer_overlap", default=0.5, type=float, help="sliding window inference overlap")
 parser.add_argument("--embed_dims", default=[64, 128, 256, 512], nargs='+', type=int, help="VAN3D embed dims")
@@ -76,7 +74,6 @@ parser.add_argument("--out_channels", default=14, type=int, help="number of outp
 parser.add_argument("--dropout_path_rate", default=0.0, type=float, help="drop path rate")
 parser.add_argument("--logdir", default="./runs/BTCV/test_log", type=str, help="directory to save the tensorboard logs")
 parser.add_argument("--use_ssl_pretrained", action="store_true", help="use self-supervised pretrained weights")
-parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")
 parser.add_argument("--squared_dice", action="store_true", help="use squared Dice")
 parser.add_argument("--smooth_dr", default=1e-6, type=float, help="constant added to dice denominator to avoid nan")
 parser.add_argument("--smooth_nr", default=0.0, type=float, help="constant added to dice numerator to avoid zero")
@@ -103,47 +100,23 @@ parser.add_argument("--model_v", default='VANV412', type=str, choices=['VAN', 'V
                                                                        'VANV4121double'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 
+#  DDP config
 
-def main():
-    args = parser.parse_args()
-    args.amp = not args.noamp
-    if args.distributed:
-        args.ngpus_per_node = torch.cuda.device_count()
-        warnings.warn("Found total gpus {}".format(args.ngpus_per_node))
-        args.world_size = args.ngpus_per_node * args.world_size
-        mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
-    else:
-        main_worker(gpu=0, args=args)
+parser.add_argument("--distributed", action="store_true", help="start distributed training")
+parser.add_argument("--rank", default=0, type=int, help="node rank for distributed training")
+parser.add_argument("--world_size", default=1, type=int, help="number of nodes for distributed training")
+parser.add_argument("--dist_backend", default="nccl", type=str, help="dist init_process_group backend=nccl")
+parser.add_argument('--dist-url', default='env://', type=str, help='url used to set up distributed training')
+parser.add_argument('--local_rank', default=-1, type=int, help='local rank for distributed training')
 
 
-def main_worker(gpu, args):
-    if args.distributed:
-        torch.multiprocessing.set_start_method("fork", force=True)
-    np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
-    args.gpu = gpu
-    if args.distributed:
-        args.rank = args.rank * args.ngpus_per_node + gpu
-        dist.init_process_group(
-            backend=args.dist_backend, world_size=args.world_size, rank=args.rank
-        )
-    torch.cuda.set_device(args.gpu)
-    torch.backends.cudnn.benchmark = True
-
-    warnings.warn(f"{args.rank} gpu {args.gpu}")
-    if args.rank == 0:
-        warnings.warn(f"Batch size is: {args.batch_size} epochs {args.max_epochs}")
-
+def load_train_objects(args):
     model = get_model(args)
-
     if args.use_ssl_pretrained:
         try:
             model = load_pre_trained(args, model)
         except ValueError:
             raise ValueError("Self-supervised pre-trained weights not available for" + str(args.model_name))
-
-    #  The Dice coefficient is a metric used to measure the similarity between two sets, and it is often used in image
-    #  segmentation tasks in deep learning. By default, the regular Dice coefficient is used, but if this flag is set,
-    #  the computation will use the squared version of the Dice coefficient.
     if args.squared_dice:
         dice_loss = DiceCELoss(
             to_onehot_y=True, softmax=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
@@ -151,7 +124,6 @@ def main_worker(gpu, args):
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
     loader = get_loader(args)
-
     post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
@@ -166,7 +138,6 @@ def main_worker(gpu, args):
         model_inferer = None
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     warnings.warn(f"Total parameters count {pytorch_total_params}")
-
     start_epoch = 0
     warnings.warn(f"Total args.checkpoint {args.checkpoint}")
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
@@ -178,22 +149,54 @@ def main_worker(gpu, args):
     best_acc = 0.0
     optimizer = get_optimizer(model, args)
     scheduler = get_lr_schedule(args, optimizer, start_epoch)
-
     if args.checkpoint is not None and args.checkpoint:
         model, optimizer, scheduler, best_acc, start_epoch = load_model(args, model, optimizer, scheduler, best_acc,
                                                                         start_epoch)
         warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
             args.checkpoint, start_epoch, best_acc))
+    return model, loader, dice_acc, model_inferer, post_label, post_pred, optimizer, dice_loss, scheduler, start_epoch, best_acc
+        
 
-    model.cuda(args.gpu)
+def main(args):
+
+    if "WORLD_SIZE" in os.environ:
+        args.world_size = int(os.environ["WORLD_SIZE"])
+    world_size = torch.cuda.device_count()
+    print(f'World Size: {world_size}')
+    args.distributed = args.world_size > 1
+    ngpus_per_node = torch.cuda.device_count()
 
     if args.distributed:
-        torch.cuda.set_device(args.gpu)
-        if args.norm_name == "batch":
-            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
-        model.cuda(args.gpu)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu,
-                                                          find_unused_parameters=True)
+        if args.local_rank != -1:
+            args.rank = args.local_rank
+            args.gpu = args.local_rank
+        elif 'SLURM_PROCID' in os.environ: # for slurm scheduler
+            args.rank = int(os.environ['SLURM_PROCID'])
+            args.gpu = args.rank % torch.cuda.device_count()
+        dist.init_process_group(backend=args.dist_backend, init_method=args.dist_url,
+                                world_size=args.world_size, rank=args.rank)
+        
+    if args.rank!=0:
+        def print_pass(*args):
+            pass
+        builtins.print = print_pass
+
+
+    model, loader, dice_acc, model_inferer, post_label, post_pred, optimizer, dice_loss, scheduler, start_epoch, best_acc = load_train_objects(args)
+    if args.distributed:
+        if args.gpu is not None:
+            torch.cuda.set_device(args.gpu)
+            model.cuda(args.gpu)
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
+        else:
+            model.cuda()
+            model = torch.nn.parallel.DistributedDataParallel(model)
+            model_without_ddp = model.module
+    else:
+        raise NotImplementedError("Only DistributedDataParallel is supported.")
+    
+    torch.backends.cudnn.benchmark = True
+
 
     if args.test_mode:
         accuracy = run_testing(model=model,
@@ -222,10 +225,7 @@ def main_worker(gpu, args):
     return accuracy
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
-    os.environ['MASTER_ADDR'] = 'localhost'
-    os.environ['MASTER_PORT'] = '12346'
-    # master_port = random.randint(10000, 200000) % 20000  + 12345
-    # os.environ['MASTER_PORT'] = str(master_port)
-    main()
+    args = parser.parse_args()
+    main(args)
