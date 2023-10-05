@@ -6,6 +6,8 @@ import torch
 
 from monai import data, transforms
 from monai.data import load_decathlon_datalist
+from torch.utils.data.distributed import DistributedSampler
+
 
 
 class Sampler(torch.utils.data.Sampler):
@@ -190,9 +192,11 @@ def get_loader(args):
         train_loader = data.DataLoader(
             train_ds,
             batch_size=args.batch_size,
-            shuffle=(train_sampler is None),
+            # shuffle=(train_sampler is None),
+            shuffle=False,
             num_workers=args.workers,
-            sampler=train_sampler,
+            # sampler=train_sampler,
+            sampler=DistributedSampler(train_ds)
             pin_memory=True,
             persistent_workers=True,
         )
