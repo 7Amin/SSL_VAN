@@ -14,12 +14,12 @@ class ConvBlock(nn.Module):
 
         self.conv = nn.Sequential(
             nn.Conv3d(input_dim, hidden_dim, kernel_size=3, stride=1, padding=1),
-            nn.BatchNorm3d(hidden_dim),
-            # nn.SyncBatchNorm(hidden_dim),
+            # nn.BatchNorm3d(hidden_dim),
+            nn.SyncBatchNorm(hidden_dim),
             nn.LeakyReLU(),
             nn.Conv3d(hidden_dim, output_dim, kernel_size=3, stride=1, padding=1),
-            # nn.SyncBatchNorm(output_dim),
-            nn.BatchNorm3d(output_dim),
+            nn.SyncBatchNorm(output_dim),
+            # nn.BatchNorm3d(output_dim),
             nn.LeakyReLU()
         )
 
