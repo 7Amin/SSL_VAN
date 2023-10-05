@@ -28,25 +28,14 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             data, target = batch_data
         else:
             data, target = batch_data["image"], batch_data["label"]
-        data, target = data.cuda(args.rank), target.cuda(args.rank)
-        # warnings.warn("input shape {}".format(data.shape))
-        for param in model.parameters():
-            param.grad = None
-        with autocast(enabled=args.amp):
-            logits = model(data)
-            # if isinstance(logits, tuple):
-            #     logits = logits[0]
-            # warnings.warn("logits shape {}".format(logits.shape))
-            # warnings.warn("target shape {}".format(target.shape))
-            loss = loss_func(logits, target)
-
-        if args.amp:
-            scaler.scale(loss).backward()
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            loss.backward()
-            optimizer.step()
+        data, target = data.cuda(args.gpu), target.cuda(args.gpu)
+        # for param in model.parameters():
+        #     param.grad = None
+        optimizer.zero_grad()
+        logits = model(data)
+        loss = loss_func(logits, target)
+        loss.backward()
+        optimizer.step()
         if args.distributed:
             loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)
             run_loss.update(
@@ -54,8 +43,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             )
         else:
             run_loss.update(loss.item(), n=args.batch_size)
-        if args.rank == 0:
-            warnings.warn(
+        warnings.warn(
                 "Epoch {}/{} {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
                                                                        run_loss.avg, time.time() - start_time))
 
@@ -75,12 +63,11 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
                 data, target = batch_data
             else:
                 data, target = batch_data["image"], batch_data["label"]
-            data, target = data.cuda(args.rank), target.cuda(args.rank)
-            with autocast(enabled=args.amp):
-                if model_inferer is not None:
-                    logits = model_inferer(data)
-                else:
-                    logits = model(data)
+            data, target = data.cuda(args.gpu), target.cuda(args.gpu)
+            if model_inferer is not None:
+                logits = model_inferer(data)
+            else:
+                logits = model(data)
             if not logits.is_cuda:
                 target = target.cpu()
             val_labels_list = decollate_batch(target)
@@ -90,7 +77,7 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
             acc_func.reset()
             acc_func(y_pred=val_output_convert, y=val_labels_convert)
             acc, not_nans = acc_func.aggregate()
-            acc = acc.cuda(args.rank)
+            acc = acc.cuda(args.gpu)
 
             if args.distributed:
                 acc_list, not_nans_list = distributed_all_gather(
@@ -102,12 +89,11 @@ def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_lab
             else:
                 run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
 
-            if args.rank == 0:
-                avg_acc = np.mean(run_acc.avg)
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             run_acc.avg, time.time() - start_time))
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                             avg_acc, time.time() - start_time))
+            avg_acc = np.mean(run_acc.avg)
+            warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                            run_acc.avg, time.time() - start_time))
+            warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
+                                                                            avg_acc, time.time() - start_time))
             start_time = time.time()
     return run_acc.avg
 
@@ -140,13 +126,13 @@ def run_training(
     val_acc_max=0.0,
 ):
     for epoch in range(start_epoch, args.max_epochs):
-        warnings.warn(f"{args.rank}  {time.ctime()}  Epoch: {epoch}")
+        warnings.warn(f"GPU {args.gpu}  {time.ctime()}  Epoch: {epoch}")
         epoch_time = time.time()
+        model.train()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=None, epoch=epoch, loss_func=loss_func, args=args
         )
-        if args.rank == 0:
-            warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+        warnings.warn("Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
                                                                                      train_loss,
                                                                                      time.time() - epoch_time))
         b_new_best = False
