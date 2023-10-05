@@ -128,7 +128,8 @@ def run_training(
     val_acc_max=0.0,
 ):
     for epoch in range(start_epoch, args.max_epochs):
-        warnings.warn(f"GPU {args.rank}  {time.ctime()}  Epoch: {epoch}")
+        
+        # warnings.warn(f"GPU {args.rank}  {time.ctime()}  Epoch: {epoch}")
         epoch_time = time.time()
         model.train()
         train_loss = train_epoch(
