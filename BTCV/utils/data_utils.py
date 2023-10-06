@@ -212,6 +212,7 @@ def get_loader(args):
             pin_memory=True,
             persistent_workers=True,
         )
+        print(f"train size is {len(train_loader)} | val size is {len(val_loader)}")
         loader = [train_loader, val_loader]
 
     return loader
