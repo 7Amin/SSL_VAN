@@ -85,7 +85,7 @@ def get_loader(args):
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
                 pos=1,
                 neg=1,
-                num_samples=4,
+                num_samples=8,
                 image_key="image",
                 label_key="label",
                 image_threshold=0,
@@ -192,11 +192,9 @@ def get_loader(args):
         train_loader = data.DataLoader(
             train_ds,
             batch_size=args.batch_size,
-            # shuffle=(train_sampler is None),
-            shuffle=False,
+            shuffle=(train_sampler is None),
             num_workers=args.workers,
-            # sampler=train_sampler,
-            sampler=DistributedSampler(train_ds),
+            sampler=train_sampler,
             pin_memory=True,
             persistent_workers=True,
         )
@@ -208,7 +206,7 @@ def get_loader(args):
             batch_size=1,
             shuffle=False,
             num_workers=args.workers,
-            sampler=DistributedSampler(val_ds),
+            sampler=val_sampler,
             pin_memory=True,
             persistent_workers=True,
         )
