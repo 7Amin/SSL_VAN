@@ -53,6 +53,7 @@ class Trainer:
     def _run_batch(self, inputs):
         data, target = inputs["image"], inputs["label"]
         data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
+        print(f"data shape is {data.shape} | target shape is {target.shape}")
         self.optimizer.zero_grad()
         logits = self.model(data)
 
