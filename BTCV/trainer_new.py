@@ -69,7 +69,6 @@ class Trainer:
         return total_loss
     
     def _run_val(self, epoch):
-        print("Start Val")
         self.model.eval()
         run_acc = AverageMeter()
         start_time = time.time()
