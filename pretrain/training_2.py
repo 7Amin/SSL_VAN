@@ -126,7 +126,6 @@ def run_training_2(
     if args.amp:
         scaler = GradScaler()
     train_loss = None
-    clusters = load_clusters(args.cluster_path)
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)
