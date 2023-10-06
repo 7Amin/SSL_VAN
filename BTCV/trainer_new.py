@@ -56,7 +56,7 @@ class Trainer:
         
         self.optimizer.zero_grad()
         logits = self.model(data)
-        print(f"data shape is {data.shape} | target shape is {target.shape} | predict shape is {logits.shape}")
+        # print(f"data shape is {data.shape} | target shape is {target.shape} | predict shape is {logits.shape}")
 
         loss = self.loss_func(logits, target)
         loss.backward()
@@ -136,8 +136,8 @@ class Trainer:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(self.val_acc_max, val_avg_acc))
                     self.val_acc_max = val_avg_acc
                     can_replace_best = True
-                if self.args.rank == 0 and self.args.logdir is not None and self.args.save_checkpoint:
-                    self.save_checkpoint(
+                if self.args.rank == 0 and self.args.logdir is not None and self.args._save_checkpoint:
+                    self._save_checkpoint(
                         self.model, epoch, self.args, best_acc=self.val_acc_max, 
                         optimizer=self.optimizer, scheduler=self.scheduler,
                         filename=self.args.final_model_url
