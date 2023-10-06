@@ -15,7 +15,7 @@ from commons.model_factory import get_model, load_model
 from commons.pre_trained_loader import load_pre_trained
 from commons.optimizer import get_optimizer, get_lr_schedule
 from commons.util import fix_outputs_url
-from BTCV.trainer_new import run_training
+from BTCV.trainer_new import Trainer
 from BTCV.tester import run_testing
 
 from monai.inferers import sliding_window_inference
@@ -207,21 +207,9 @@ def main(args):
                                post_label=post_label,
                                post_pred=post_pred)
     else:
-        accuracy = run_training(
-            model=model,
-            train_loader=loader[0],
-            val_loader=loader[1],
-            optimizer=optimizer,
-            loss_func=dice_loss,
-            acc_func=dice_acc,
-            args=args,
-            model_inferer=model_inferer,
-            scheduler=scheduler,
-            start_epoch=start_epoch,
-            post_label=post_label,
-            post_pred=post_pred,
-            val_acc_max=best_acc,
-        )
+        trainer = Trainer(model, optimizer, scheduler, loader[0], loader[1], start_epoch, post_label, post_pred,
+                          dice_loss, dice_acc, model_inferer, best_acc, args)
+        accuracy = trainer.train()
     return accuracy
 
 

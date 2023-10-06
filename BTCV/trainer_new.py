@@ -19,167 +19,126 @@ from utils.utils import AverageMeter, distributed_all_gather
 from monai.data import decollate_batch
 
 
-def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
-    model.train()
-    start_time = time.time()
-    run_loss = AverageMeter()
-    for idx, batch_data in enumerate(loader):
-        if isinstance(batch_data, list):
-            data, target = batch_data
-        else:
-            data, target = batch_data["image"], batch_data["label"]
-        data, target = data.cuda(args.gpu), target.cuda(args.gpu)
-        # for param in model.parameters():
-        #     param.grad = None
-        optimizer.zero_grad()
-        logits = model(data)
-        loss = loss_func(logits, target)
-        loss.backward()
-        optimizer.step()
-        if args.distributed:
-            loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)
-            run_loss.update(
-                np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0), n=args.batch_size * args.world_size
-            )
-        else:
-            run_loss.update(loss.item(), n=args.batch_size)
-        if args.rank == 0:
-            warnings.warn(
-                "Epoch {}/{} {}/{}  loss: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                       run_loss.avg, time.time() - start_time))
 
-        start_time = time.time()
-    for param in model.parameters():
-        param.grad = None
-    return run_loss.avg
-
-
-def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_label=None, post_pred=None):
-    model.eval()
-    run_acc = AverageMeter()
-    start_time = time.time()
-    with torch.no_grad():
-        for idx, batch_data in enumerate(loader):
-            if isinstance(batch_data, list):
-                data, target = batch_data
-            else:
-                data, target = batch_data["image"], batch_data["label"]
-            data, target = data.cuda(args.gpu), target.cuda(args.gpu)
-            if model_inferer is not None:
-                logits = model_inferer(data)
-            else:
-                logits = model(data)
-            if not logits.is_cuda:
-                target = target.cpu()
-            val_labels_list = decollate_batch(target)
-            val_labels_convert = [post_label(val_label_tensor) for val_label_tensor in val_labels_list]
-            val_outputs_list = decollate_batch(logits)
-            val_output_convert = [post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list]
-            acc_func.reset()
-            acc_func(y_pred=val_output_convert, y=val_labels_convert)
-            acc, not_nans = acc_func.aggregate()
-            acc = acc.cuda(args.gpu)
-
-            if args.distributed:
-                acc_list, not_nans_list = distributed_all_gather(
-                    [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
-                )
-                for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(al, n=nl)
-
-            else:
-                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-
-            avg_acc = np.mean(run_acc.avg)
-            if args.rank == 0:
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                                run_acc.avg, time.time() - start_time))
-                warnings.warn("Val {}/{} {}/{}  acc {}  time {:.2f}s".format(epoch, args.max_epochs, idx, len(loader),
-                                                                                avg_acc, time.time() - start_time))
-            start_time = time.time()
-    return run_acc.avg
-
-
-def save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0, optimizer=None, scheduler=None):
-    state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
-    save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
-    if optimizer is not None:
-        save_dict["optimizer"] = optimizer.state_dict()
-    if scheduler is not None:
-        save_dict["scheduler"] = scheduler.state_dict()
-    filename = os.path.join(args.logdir, filename)
-    torch.save(save_dict, filename)
-    warnings.warn(f"Saving checkpoint {filename}")
-
-
-def run_training(
-    model,
-    train_loader,
-    val_loader,
-    optimizer,
-    loss_func,
-    acc_func,
-    args,
-    model_inferer=None,
-    scheduler=None,
-    start_epoch=0,
-    post_label=None,
-    post_pred=None,
-    val_acc_max=0.0,
-):
-    for epoch in range(start_epoch, args.max_epochs):
+class Trainer: 
+    def __init__(self, model: torch.nn.Module, optimizer: torch.optim.Optimizer,
+                 scheduler, train_loader, val_loader, start_epoch, post_label, post_pred,
+                 loss_func, acc_func, model_inferer, val_acc_max, args) -> None:
         
-        # warnings.warn(f"GPU {args.rank}  {time.ctime()}  Epoch: {epoch}")
-        epoch_time = time.time()
-        model.train()
-        train_loss = train_epoch(
-            model, train_loader, optimizer, scaler=None, epoch=epoch, loss_func=loss_func, args=args
-        )
-        warnings.warn("GPU {} | Final training  {}/{}  loss: {:.4f}  time {:.2f}s".format(args.rank, epoch, args.max_epochs - 1,
-                                                                                     train_loss,
-                                                                                     time.time() - epoch_time))
-        b_new_best = False
-        if (epoch + 1) % args.val_every == 0:
-            if args.distributed:
-                torch.distributed.barrier()
-            epoch_time = time.time()
-            val_avg_acc = val_epoch(
-                model,
-                val_loader,
-                epoch=epoch,
-                acc_func=acc_func,
-                model_inferer=model_inferer,
-                args=args,
-                post_label=post_label,
-                post_pred=post_pred,
-            )
+        self.optimizer = optimizer
+        self.scheduler = scheduler
+        self.train_data = train_loader
+        self.val_loader = val_loader
+        self.args = args
+        self.loss_func = loss_func
+        self.epochs_run = 0
+        self.start_epoch = start_epoch
+        self.model = model
+        self.acc_func = acc_func
+        self.post_label = post_label 
+        self.post_pred = post_pred
+        self.model_inferer = model_inferer
+        self.val_acc_max = val_acc_max
 
-            val_avg_acc = np.mean(val_avg_acc)
+    def _save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0, optimizer=None, scheduler=None):
+        state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
+        save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
+        if optimizer is not None:
+            save_dict["optimizer"] = optimizer.state_dict()
+        if scheduler is not None:
+            save_dict["scheduler"] = scheduler.state_dict()
+        filename = os.path.join(args.logdir, filename)
+        torch.save(save_dict, filename)
+        warnings.warn(f"Saving checkpoint {filename}")
 
-            if args.rank == 0:
-                warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, args.max_epochs - 1,
+    def _run_batch(self, inputs):
+        data, target = inputs["image"], inputs["label"]
+        data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
+        self.optimizer.zero_grad()
+        logits = self.model(data)
+
+        loss = self.loss_func(logits, target)
+        loss.backward()
+        self.optimizer.step()
+        if self.scheduler is not None:
+            self.scheduler.step()
+
+        return loss.item()
+    
+    def _run_epoch(self, epoch):
+        print(f"[GPU {self.args.rank}] Epochs {epoch}, BatchSize: {self.args.batch_size} | Steps: {len(self.train_data)}")
+        total_loss = 0
+        for idx, batch in enumerate(self.train_data):  
+            loss = self._run_batch(batch)
+            total_loss += loss
+            print(f"[GPU {self.args.rank}] Step/Steps: {idx}/{len(self.train_data)} | Total Loss: {total_loss/(idx + 1.0)} | Loss: {loss}")
+
+        return total_loss
+    
+    def _run_val(self, epoch):
+        print("Start Val")
+        self.model.eval()
+        run_acc = AverageMeter()
+        start_time = time.time()
+        if self.args.rank == 0:
+            with torch.no_grad():
+                for idx, batch_data in enumerate(self.val_loader):
+                    data, target = batch_data["image"], batch_data["label"]
+                    data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
+                    if self.model_inferer is not None:
+                        logits = self.model_inferer(data)
+                    else:
+                        logits = self.model(data)
+                    val_labels_list = decollate_batch(target)
+                    val_labels_convert = [self.post_label(val_label_tensor) for val_label_tensor in val_labels_list]
+                    val_outputs_list = decollate_batch(logits)
+                    val_output_convert = [self.post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list]
+                    self.acc_func.reset()
+                    self.acc_func(y_pred=val_output_convert, y=val_labels_convert)
+                    acc, not_nans = self.acc_func.aggregate()
+                    acc = acc.cuda(self.args.gpu)
+                    run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
+                    avg_acc = np.mean(run_acc.avg)
+                if self.args.rank == 0:
+                    warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
+                                                                                      len(self.val_loader), run_acc.avg,
+                                                                                      avg_acc, time.time() - start_time))
+                start_time = time.time()
+        return run_acc.avg
+
+
+    def train(self):
+        for epoch in range(self.epochs_run, self.args.epochs):
+            self.model.train()
+            total_loss = self._run_epoch(epoch)
+            average_loss = total_loss / len(self.train_data)
+            print(f"Epochs is {epoch} and new best loss is {average_loss}")
+
+            if (epoch + 1) % self.args.checkpoint_interval == 0:
+                can_replace_best = False
+                epoch_time = time.time()
+                val_avg_acc = self._run_val(epoch)
+
+                val_avg_acc = np.mean(val_avg_acc)
+
+                if self.args.rank == 0:
+                    warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, self.args.max_epochs - 1,
                                                                                           val_avg_acc,
                                                                                           time.time() - epoch_time))
-                if val_avg_acc > val_acc_max:
-                    warnings.warn("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
-                    val_acc_max = val_avg_acc
-                    b_new_best = True
-                    if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
-                        save_checkpoint(
-                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler,
-                            filename=args.final_model_url
-                        )
-            if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
-                save_checkpoint(model, epoch, args, best_acc=val_acc_max, optimizer=optimizer,
-                                scheduler=scheduler, filename=args.final_model_url)
-                if b_new_best:
-                    warnings.warn("Copying to best model new best model!!!!")
-                    shutil.copyfile(os.path.join(args.logdir, args.final_model_url),
-                                    os.path.join(args.logdir, args.best_model_url))
-
-        if scheduler is not None:
-            scheduler.step()
-
-    warnings.warn("Training Finished !, Best Accuracy: {}".format(val_acc_max))
-
-    return val_acc_max
+                if val_avg_acc > self.val_acc_max:
+                    warnings.warn("new best ({:.6f} --> {:.6f}). ".format(self.val_acc_max, val_avg_acc))
+                    self.val_acc_max = val_avg_acc
+                    can_replace_best = True
+                if self.args.rank == 0 and self.args.logdir is not None and self.args.save_checkpoint:
+                    self.save_checkpoint(
+                        self.model, epoch, self.args, best_acc=self.val_acc_max, 
+                        optimizer=self.optimizer, scheduler=self.scheduler,
+                        filename=self.args.final_model_url
+                    )
+                    if can_replace_best:
+                        warnings.warn("Copying to best model new best model!!!!")
+                        shutil.copyfile(os.path.join(self.args.logdir, self.args.final_model_url),
+                                        os.path.join(self.args.logdir, self.args.best_model_url))
+                        
+        warnings.warn("Training Finished !, Best Accuracy: {}".format(self.val_acc_max))
+        return self.val_acc_max
