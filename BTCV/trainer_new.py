@@ -114,7 +114,7 @@ class Trainer:
             average_loss = total_loss / len(self.train_data)
             print(f"Epochs is {epoch} and new best loss is {average_loss}")
 
-            if (epoch + 1) % self.args.checkpoint_interval == 0:
+            if (epoch + 1) % self.args.val_every == 0:
                 can_replace_best = False
                 epoch_time = time.time()
                 val_avg_acc = self._run_val(epoch)
