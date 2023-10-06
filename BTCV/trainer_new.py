@@ -53,9 +53,10 @@ class Trainer:
     def _run_batch(self, inputs):
         data, target = inputs["image"], inputs["label"]
         data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
-        print(f"data shape is {data.shape} | target shape is {target.shape}")
+        
         self.optimizer.zero_grad()
         logits = self.model(data)
+        print(f"data shape is {data.shape} | target shape is {target.shape} | predict shape is {logits.shape}")
 
         loss = self.loss_func(logits, target)
         loss.backward()
@@ -104,7 +105,7 @@ class Trainer:
                         run_acc.update(al, n=nl)
                 else:
                     run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                    avg_acc = np.mean(run_acc.avg)
+            avg_acc = np.mean(run_acc.avg)
             # if self.args.rank == 0:
             warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
                                                                                     len(self.val_loader), run_acc.avg,
