@@ -6,13 +6,6 @@ import numpy as np
 import torch
 import torch.nn.parallel
 import torch.utils.data.distributed
-#  TensorboardX is a library for visualizing and analyzing the training process of deep learning models using
-#  TensorBoard, a visualization tool that comes with TensorFlow and Pytorch. TensorboardX allows users to visualize and
-#  compare metrics such as loss, accuracy, and gradients, as well as view histograms of weights and biases in real-time
-#  during training
-
-from tensorboardX import SummaryWriter
-from torch.cuda.amp import GradScaler, autocast
 from utils.utils import AverageMeter, distributed_all_gather
 
 from monai.data import decollate_batch
@@ -38,14 +31,14 @@ class Trainer:
         self.model_inferer = model_inferer
         self.val_acc_max = val_acc_max
 
-    def _save_checkpoint(model, epoch, args, filename="model_final.pt", best_acc=0.0, optimizer=None, scheduler=None):
-        state_dict = model.state_dict() if not args.distributed else model.module.state_dict()
-        save_dict = {"epoch": epoch, "best_acc": best_acc, "state_dict": state_dict}
-        if optimizer is not None:
-            save_dict["optimizer"] = optimizer.state_dict()
-        if scheduler is not None:
-            save_dict["scheduler"] = scheduler.state_dict()
-        filename = os.path.join(args.logdir, filename)
+    def _save_checkpoint(self, epoch=0):
+        state_dict = self.model.state_dict() if not self.args.distributed else self.model.module.state_dict()
+        save_dict = {"epoch": epoch, "best_acc": self.val_acc_max, "state_dict": state_dict}
+        if self.optimizer is not None:
+            save_dict["optimizer"] = self.optimizer.state_dict()
+        if self.scheduler is not None:
+            save_dict["scheduler"] = self.scheduler.state_dict()
+        filename = os.path.join(self.args.logdir, self.args.final_model_url)
         torch.save(save_dict, filename)
         print(f"Saving checkpoint {filename}")
 
@@ -135,11 +128,7 @@ class Trainer:
                     self.val_acc_max = val_avg_acc
                     can_replace_best = True
                 if self.args.rank == 0 and self.args.logdir is not None and self.args.checkpoint:
-                    print(f"Saving model in the {self.args.final_model_url}")
-                    self._save_checkpoint(
-                        model=self.model, epoch=epoch, args=self.args, filename=self.args.final_model_url,
-                        best_acc=self.val_acc_max, optimizer=self.optimizer, scheduler=self.scheduler
-                    )
+                    self._save_checkpoint(epoch=epoch)
                     if can_replace_best:
                         print("Copying to best model new best model!!!!")
                         shutil.copyfile(os.path.join(self.args.logdir, self.args.final_model_url),
