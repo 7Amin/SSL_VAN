@@ -108,7 +108,7 @@ class Trainer:
 
 
     def train(self):
-        for epoch in range(self.epochs_run, self.args.epochs):
+        for epoch in range(self.epochs_run, self.args.max_epochs):
             self.model.train()
             total_loss = self._run_epoch(epoch)
             average_loss = total_loss / len(self.train_data)
