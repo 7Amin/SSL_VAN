@@ -80,37 +80,36 @@ class Trainer:
         self.model.eval()
         run_acc = AverageMeter()
         start_time = time.time()
-        if self.args.rank == 0:
-            with torch.no_grad():
-                for idx, batch_data in enumerate(self.val_loader):
-                    data, target = batch_data["image"], batch_data["label"]
-                    data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
-                    if self.model_inferer is not None:
-                        logits = self.model_inferer(data)
-                    else:
-                        logits = self.model(data)
-                    val_labels_list = decollate_batch(target)
-                    val_labels_convert = [self.post_label(val_label_tensor) for val_label_tensor in val_labels_list]
-                    val_outputs_list = decollate_batch(logits)
-                    val_output_convert = [self.post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list]
-                    self.acc_func.reset()
-                    self.acc_func(y_pred=val_output_convert, y=val_labels_convert)
-                    acc, not_nans = self.acc_func.aggregate()
-                    acc = acc.cuda(self.args.gpu)
-                    if self.args.distributed:
-                        acc_list, not_nans_list = distributed_all_gather(
-                            [acc, not_nans], out_numpy=True, is_valid=idx < self.val_loader.sampler.valid_length
-                        )
-                        for al, nl in zip(acc_list, not_nans_list):
-                            run_acc.update(al, n=nl)
-                    else:
-                        run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                        avg_acc = np.mean(run_acc.avg)
-                # if self.args.rank == 0:
-                warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
-                                                                                      len(self.val_loader), run_acc.avg,
-                                                                                      avg_acc, time.time() - start_time))
-                start_time = time.time()
+        with torch.no_grad():
+            for idx, batch_data in enumerate(self.val_loader):
+                data, target = batch_data["image"], batch_data["label"]
+                data, target = data.cuda(self.args.gpu), target.cuda(self.args.gpu)
+                if self.model_inferer is not None:
+                    logits = self.model_inferer(data)
+                else:
+                    logits = self.model(data)
+                val_labels_list = decollate_batch(target)
+                val_labels_convert = [self.post_label(val_label_tensor) for val_label_tensor in val_labels_list]
+                val_outputs_list = decollate_batch(logits)
+                val_output_convert = [self.post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list]
+                self.acc_func.reset()
+                self.acc_func(y_pred=val_output_convert, y=val_labels_convert)
+                acc, not_nans = self.acc_func.aggregate()
+                acc = acc.cuda(self.args.gpu)
+                if self.args.distributed:
+                    acc_list, not_nans_list = distributed_all_gather(
+                        [acc, not_nans], out_numpy=True, is_valid=idx < self.val_loader.sampler.valid_length
+                    )
+                    for al, nl in zip(acc_list, not_nans_list):
+                        run_acc.update(al, n=nl)
+                else:
+                    run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
+                    avg_acc = np.mean(run_acc.avg)
+            # if self.args.rank == 0:
+            warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
+                                                                                    len(self.val_loader), run_acc.avg,
+                                                                                    avg_acc, time.time() - start_time))
+            start_time = time.time()
         return run_acc.avg
 
 
