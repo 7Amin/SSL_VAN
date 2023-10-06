@@ -137,10 +137,10 @@ class Trainer:
                     self.val_acc_max = val_avg_acc
                     can_replace_best = True
                 if self.args.rank == 0 and self.args.logdir is not None and self.args.checkpoint:
+                    print(f"Saving model in the {self.args.final_model_url}")
                     self._save_checkpoint(
-                        self.model, epoch, self.args, best_acc=self.val_acc_max, 
-                        optimizer=self.optimizer, scheduler=self.scheduler,
-                        filename=self.args.final_model_url
+                        self.model, epoch, self.args, filename=self.args.final_model_url,
+                        best_acc=self.val_acc_max, optimizer=self.optimizer, scheduler=self.scheduler
                     )
                     if can_replace_best:
                         warnings.warn("Copying to best model new best model!!!!")
