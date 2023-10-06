@@ -1,7 +1,6 @@
 import os
 import shutil
 import time
-import warnings
 
 import numpy as np
 import torch
@@ -48,7 +47,7 @@ class Trainer:
             save_dict["scheduler"] = scheduler.state_dict()
         filename = os.path.join(args.logdir, filename)
         torch.save(save_dict, filename)
-        warnings.warn(f"Saving checkpoint {filename}")
+        print(f"Saving checkpoint {filename}")
 
     def _run_batch(self, inputs):
         data, target = inputs["image"], inputs["label"]
@@ -107,12 +106,11 @@ class Trainer:
                     run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
             avg_acc = np.mean(run_acc.avg)
             # if self.args.rank == 0:
-            warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
+            print("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
                                                                                     len(self.val_loader), run_acc.avg,
                                                                                     avg_acc, time.time() - start_time))
             start_time = time.time()
         return run_acc.avg
-
 
     def train(self):
         for epoch in range(self.start_epoch, self.args.max_epochs):
@@ -129,23 +127,23 @@ class Trainer:
                 val_avg_acc = np.mean(val_avg_acc)
 
                 if self.args.rank == 0:
-                    warnings.warn("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, self.args.max_epochs - 1,
+                    print("Final validation  {}/{}  acc: {:.4f}  time {:.2f}s".format(epoch, self.args.max_epochs - 1,
                                                                                           val_avg_acc,
                                                                                           time.time() - epoch_time))
                 if val_avg_acc > self.val_acc_max:
-                    warnings.warn("new best ({:.6f} --> {:.6f}). ".format(self.val_acc_max, val_avg_acc))
+                    print("new best ({:.6f} --> {:.6f}). ".format(self.val_acc_max, val_avg_acc))
                     self.val_acc_max = val_avg_acc
                     can_replace_best = True
                 if self.args.rank == 0 and self.args.logdir is not None and self.args.checkpoint:
                     print(f"Saving model in the {self.args.final_model_url}")
                     self._save_checkpoint(
-                        self.model, epoch, self.args, filename=self.args.final_model_url,
+                        model=self.model, epoch=epoch, args=self.args, filename=self.args.final_model_url,
                         best_acc=self.val_acc_max, optimizer=self.optimizer, scheduler=self.scheduler
                     )
                     if can_replace_best:
-                        warnings.warn("Copying to best model new best model!!!!")
+                        print("Copying to best model new best model!!!!")
                         shutil.copyfile(os.path.join(self.args.logdir, self.args.final_model_url),
                                         os.path.join(self.args.logdir, self.args.best_model_url))
                         
-        warnings.warn("Training Finished !, Best Accuracy: {}".format(self.val_acc_max))
+        print("Training Finished !, Best Accuracy: {}".format(self.val_acc_max))
         return self.val_acc_max

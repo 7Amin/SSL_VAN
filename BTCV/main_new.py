@@ -137,9 +137,9 @@ def load_train_objects(args):
     if args.model_inferer == 'none':
         model_inferer = None
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    warnings.warn(f"Total parameters count {pytorch_total_params}")
+    print(f"Total parameters count {pytorch_total_params}")
     start_epoch = 0
-    warnings.warn(f"Total args.checkpoint {args.checkpoint}")
+    print(f"Total args.checkpoint {args.checkpoint}")
     base_url = '-'.join([str(elem) for elem in args.embed_dims]) + "_" + \
                '-'.join([str(elem) for elem in args.depths]) + "_" + \
                '-'.join([str(elem) for elem in args.mlp_ratios]) + "_" +\
@@ -152,7 +152,7 @@ def load_train_objects(args):
     if args.checkpoint is not None and args.checkpoint:
         model, optimizer, scheduler, best_acc, start_epoch = load_model(args, model, optimizer, scheduler, best_acc,
                                                                         start_epoch)
-        warnings.warn("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
+        print("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(
             args.checkpoint, start_epoch, best_acc))
     return model, loader, dice_acc, model_inferer, post_label, post_pred, optimizer, dice_loss, scheduler, start_epoch, best_acc
         
