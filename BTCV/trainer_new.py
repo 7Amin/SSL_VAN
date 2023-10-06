@@ -136,7 +136,7 @@ class Trainer:
                     warnings.warn("new best ({:.6f} --> {:.6f}). ".format(self.val_acc_max, val_avg_acc))
                     self.val_acc_max = val_avg_acc
                     can_replace_best = True
-                if self.args.rank == 0 and self.args.logdir is not None and self.args._save_checkpoint:
+                if self.args.rank == 0 and self.args.logdir is not None and self.args.checkpoint:
                     self._save_checkpoint(
                         self.model, epoch, self.args, best_acc=self.val_acc_max, 
                         optimizer=self.optimizer, scheduler=self.scheduler,
