@@ -176,10 +176,10 @@ def main(args):
         dist.init_process_group(backend=args.dist_backend, init_method=args.dist_url,
                                 world_size=args.world_size, rank=args.rank)
         
-    if args.rank!=0:
-        def print_pass(*args):
-            pass
-        builtins.print = print_pass
+    # if args.rank!=0:
+    #     def print_pass(*args):
+    #         pass
+    #     builtins.print = print_pass
 
 
     model, loader, dice_acc, model_inferer, post_label, post_pred, optimizer, dice_loss, scheduler, start_epoch, best_acc = load_train_objects(args)

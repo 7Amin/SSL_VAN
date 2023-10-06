@@ -31,7 +31,6 @@ class Trainer:
         self.val_loader = val_loader
         self.args = args
         self.loss_func = loss_func
-        self.epochs_run = 0
         self.start_epoch = start_epoch
         self.model = model
         self.acc_func = acc_func
@@ -97,10 +96,17 @@ class Trainer:
                     self.acc_func(y_pred=val_output_convert, y=val_labels_convert)
                     acc, not_nans = self.acc_func.aggregate()
                     acc = acc.cuda(self.args.gpu)
-                    run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-                    avg_acc = np.mean(run_acc.avg)
-                if self.args.rank == 0:
-                    warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
+                    if self.args.distributed:
+                        acc_list, not_nans_list = distributed_all_gather(
+                            [acc, not_nans], out_numpy=True, is_valid=idx < self.val_loader.sampler.valid_length
+                        )
+                        for al, nl in zip(acc_list, not_nans_list):
+                            run_acc.update(al, n=nl)
+                    else:
+                        run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
+                        avg_acc = np.mean(run_acc.avg)
+                # if self.args.rank == 0:
+                warnings.warn("Val {}/{} {}/{}  acc {} | {}  time {:.2f}s".format(epoch, self.args.max_epochs, idx,
                                                                                       len(self.val_loader), run_acc.avg,
                                                                                       avg_acc, time.time() - start_time))
                 start_time = time.time()
@@ -108,11 +114,11 @@ class Trainer:
 
 
     def train(self):
-        for epoch in range(self.epochs_run, self.args.max_epochs):
+        for epoch in range(self.start_epoch, self.args.max_epochs):
             self.model.train()
             total_loss = self._run_epoch(epoch)
             average_loss = total_loss / len(self.train_data)
-            print(f"Epochs is {epoch} and new best loss is {average_loss}")
+            print(f"Epochs is {epoch} | Loss is {average_loss}")
 
             if (epoch + 1) % self.args.val_every == 0:
                 can_replace_best = False

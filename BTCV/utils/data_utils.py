@@ -208,7 +208,7 @@ def get_loader(args):
             batch_size=1,
             shuffle=False,
             num_workers=args.workers,
-            sampler=val_sampler,
+            sampler=DistributedSampler(val_ds),
             pin_memory=True,
             persistent_workers=True,
         )
