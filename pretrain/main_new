@@ -89,7 +89,7 @@ parser.add_argument("--valid_loader", default='valid_loader', type=str, choices=
 parser.add_argument("--freeze", default="no", type=str, choices=['yes', 'no'], help="freeze pretrain layers in training")
 parser.add_argument("--model_v", default='PREVANV6GL', type=str, choices=['PREVANV6GL', 'PREVANV5GL', 'PREVANV412',
                                                                           'PREVANV4GL', 'PREVANV4', 'PREVANV4121GL',
-                                                                          'PREVANV4122GL'])
+                                                                          'PREVANV4122GL', 'PREVANV4121double'])
 parser.add_argument("--mode", default='test', type=str, choices=['server', 'test'])
 parser.add_argument("--patch_count", default=2, type=int, help="split image to patches")
 parser.add_argument("--mask_length", default=5, type=int, help="an integer value")
