@@ -4,7 +4,7 @@
 
 ### e.g. request 4 nodes with 1 gpu each, totally 4 gpus (WORLD_SIZE==4)
 ### Note: --gres=gpu:x should equal to ntasks-per-node
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=10
@@ -14,7 +14,7 @@
 ### change 5-digit MASTER_PORT as you wish, slurm will raise Error if duplicated with others
 ### change WORLD_SIZE as gpus/node * num_nodes
 export MASTER_PORT=12349
-export WORLD_SIZE=4
+export WORLD_SIZE=2
 
 ### get the first node name as master address - customized for vgg slurm
 ### e.g. master(gnodee[2-5],gnoded1) == gnodee2
