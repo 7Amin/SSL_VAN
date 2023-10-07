@@ -85,7 +85,7 @@ def get_loader(args):
                 spatial_size=(args.roi_x, args.roi_y, args.roi_z),
                 pos=1,
                 neg=1,
-                num_samples=5,
+                num_samples=6,
                 image_key="image",
                 label_key="label",
                 image_threshold=0,
