@@ -110,7 +110,8 @@ class Trainer:
             total_loss = self._run_epoch(epoch)
             average_loss = total_loss / len(self.train_data)
             print(f"Epochs is {epoch} | Loss is {average_loss}")
-
+            if epoch > 3500:
+                self.args.val_every = 1
             if (epoch + 1) % self.args.val_every == 0:
                 can_replace_best = False
                 epoch_time = time.time()
