@@ -1,6 +1,7 @@
 import torch
 from thop import profile
-from commons.model_factory import get_model
+# from commons.model_factory import get_model
+from commons.model_factory import get_pre_trained_model as get_model
 
 
 class Config:
@@ -13,9 +14,11 @@ class Config:
         # self.embed_dims = [96, 192, 384, 768]
         # self.depths = [3, 3, 24, 3]
         self.embed_dims = [128, 128, 512, 512]
-        self.depths = [4, 4, 4, 4]
+        self.depths = [4, 4, 5, 5]
         self.mlp_ratios = [4, 4, 4, 4]
         self.num_stages = 4
+        self.cluster_num = 80
+        self.class_size = 500
 
         # self.embed_dims = [64, 128]
         # self.depths = [4, 4]
@@ -27,7 +30,7 @@ class Config:
 
 
 args = Config()
-args.model_v = "VANV4121double"
+args.model_v = "PREVANV4121double"
 model = get_model(args)
 input_tensor = torch.randn((1, 1, 96, 96, 96))
 flops, params = profile(model, inputs=(input_tensor,))
