@@ -6,7 +6,7 @@ class AttentionModule3D(nn.Module):
     def __init__(self, dim):
         super().__init__()
         # self.norm = nn.BatchNorm3d(dim)
-        self.norm = nn.SyncBatchNorm(dim),
+        self.norm = nn.SyncBatchNorm(dim)
         self.conv0 = nn.Conv3d(dim, dim, 5, padding=2, groups=dim)
         self.conv_spatial = nn.Conv3d(dim, dim, 7, stride=1, padding=9, groups=dim, dilation=3)
         self.conv1 = nn.Conv3d(dim, dim, 1)

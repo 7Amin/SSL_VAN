@@ -110,7 +110,7 @@ class OverlapPatchEmbed3D(nn.Module):
         # norm_cfg = dict(type='BN', requires_grad=True)
         # self.norm = build_norm_layer(norm_cfg, embed_dim)[1]
         # self.norm = nn.BatchNorm3d(embed_dim)
-        self.norm = nn.SyncBatchNorm(embed_dim),
+        self.norm = nn.SyncBatchNorm(embed_dim)
 
     def forward(self, x):
 
