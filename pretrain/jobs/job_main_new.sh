@@ -29,8 +29,7 @@ conda activate ssl_van_seg
 
 ### the command to run
 
-srun python3 BTCV/main_new.py --workers 8 --base_data ../images/BTCV/Abdomen/RawData/Training \
-  --json_list input_list/dataset_BTCV_List.json --logdir ./runs/BTCV/test_log --save_checkpoint --max_epochs 5000 \
-  --distributed --use_normal_dataset --batch_size 1 --num_stages 4 --embed_dims 128 128 512 512 --depths 4 4 5 5 \
-  --mlp_ratios 4 4 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 10 --model_inferer inferer \
-  --valid_loader valid_loader --model_v VANV4121double --upsample vae --checkpoint
+srun python3 pretrain/main_new.py --pretrain_v 2 --mode server  --workers 8 --logdir ./runs/pre_train_1/test_log \
+  --save_checkpoint --max_epochs 100 --optim_lr 0.0001 --use_normal_dataset  --batch_size 1 --num_stages 4 \
+  --embed_dims 128 128 512 512 --depths 4 4 5 5 --mlp_ratios 4 4 4 4 --roi_x 96 --roi_y 96 --roi_z 96 --val_every 1 \
+  --upsample vae --checkpoint --cluster_num $cluster_size --model_inferer inferer --valid_loader valid_loader --model_v PREVANV4121double 

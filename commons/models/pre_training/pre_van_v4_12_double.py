@@ -16,12 +16,12 @@ class ConvBlock(nn.Module):
 
         self.conv = nn.Sequential(
             nn.Conv3d(input_dim, hidden_dim, kernel_size=3, stride=1, padding=1),
-            # nn.BatchNorm3d(hidden_dim),
-            nn.SyncBatchNorm(hidden_dim),
+            nn.BatchNorm3d(hidden_dim),
+            # nn.SyncBatchNorm(hidden_dim),
             nn.LeakyReLU(),
             nn.Conv3d(hidden_dim, output_dim, kernel_size=3, stride=1, padding=1),
-            nn.SyncBatchNorm(output_dim),
-            # nn.BatchNorm3d(output_dim),
+            # nn.SyncBatchNorm(output_dim),
+            nn.BatchNorm3d(output_dim),
             nn.LeakyReLU()
         )
 
@@ -44,8 +44,7 @@ class PREVANV4121double(nn.Module):
 
         self.first_conv = ConvBlock(self.embed_dims[0], self.embed_dims[1])
         self.final_conv0 = ConvBlock(self.embed_dims[1])
-        self.pre_train_proj = Projection2(input_dim=out_channels + embed_dims[-1] // 2 ** (num_stages - 1),
-                                          x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
+        self.pre_train_proj = Projection2(input_dim=self.embed_dims[1], x_dim=x_dim, y_dim=y_dim, z_dim=z_dim,
                                           cluster_num=cluster_num, class_size=class_size)
 
         for i in range(num_stages):
